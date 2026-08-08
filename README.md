@@ -22,7 +22,7 @@ The package serves three audiences:
 
 ```bash
 # Clone and enter
-git clone https://github.com/FlowFeel/vi-foundry.git
+git clone [https://github.com/FlowFeel/vi-foundry](https://github.com/FlowFeel/vi-foundry).git
 cd vi-foundry
 
 # Restore the R environment (exact package versions)
@@ -41,7 +41,7 @@ make regression    # Compare all results to the baseline oracle
 
 ## Key Results
 
-Every value below is the manuscript-reported result, stored as ground truth in `baseline/oracle.yml`. The pipeline must reproduce these within numerical tolerance (0.001).
+Every value below is the manuscript-reported result, stored as ground truth in [`baseline/oracle.yml`](baseline/oracle.yml). The pipeline must reproduce these within numerical tolerance (0.001).
 
 | Test | What It Measures | Key Value | Distinguishes VI from Competitors? |
 |------|-----------------|-----------|-----------------------------------|
@@ -101,7 +101,7 @@ Every value below is the manuscript-reported result, stored as ground truth in `
 
 **Simulacrum** — Borrowed from Nancy Cartwright's philosophy of science: a model that captures essential properties of the target system while being explicitly not the target system. In practice: a Dockerized environment with known test data where you verify the pipeline produces correct results before running against real data. The simulacrum is the only place where you have a known baseline. On real data, you don't know the right answer — that's why you're running the analysis.
 
-**Baseline oracle** — A YAML file (`baseline/oracle.yml`) containing every manuscript-reported result as ground truth. Each entry includes: the prediction being tested, the competing hypothesis, the expected values (with numerical tolerance), whether the result supports VI, whether it distinguishes VI from the named competitor, and any caveats. The regression gate compares pipeline output to the oracle — if results diverge, either the code regressed (fix it) or the method improved (update the oracle with proof).
+**Baseline oracle** — A YAML file ([`baseline/oracle.yml`](baseline/oracle.yml)) containing every manuscript-reported result as ground truth. Each entry includes: the prediction being tested, the competing hypothesis, the expected values (with numerical tolerance), whether the result supports VI, whether it distinguishes VI from the named competitor, and any caveats. The regression gate compares pipeline output to the oracle — if results diverge, either the code regressed (fix it) or the method improved (update the oracle with proof).
 
 ### Biological Terms
 
@@ -173,13 +173,13 @@ Seven gates, each depends on the previous:
 | 4. Integration | Full pipeline via Docker simulacrum stack + BDD features | Integration results |
 | 5. Regression | All results match baseline oracle within tolerance | — |
 | 6. R CMD check | Package validation (no errors, warnings, or notes) | Check report |
-| 7. Pages | Deploy simulacra visualizations to GitHub Pages | https://flowfeel.github.io/vi-foundry/ |
+| 7. Pages | Deploy simulacra visualizations to GitHub Pages | [https://flowfeel.github.io/vi-foundry/](https://flowfeel.github.io/vi-foundry/) |
 
 ---
 
 ## Data
 
-All data files are bundled in `data/` with provenance documented in `data/README.md` (YAML format). Sources include NCBI GenBank (plastome sizes, phylogenies), Bobay & Ochman (2017) Table S1 (niche breadth data), Dewar et al. (2024) supplementary (pan-genome data), and Good et al. (2017) (LTEE metagenomic data).
+All data files are bundled in `data/` with provenance documented in [`data/README.md`](data/README.md) (YAML format). Sources include NCBI GenBank (plastome sizes, phylogenies), Bobay & Ochman (2017) Table S1 (niche breadth data), Dewar et al. (2024) supplementary (pan-genome data), and Good et al. (2017) (LTEE metagenomic data).
 
 ---
 
@@ -209,7 +209,7 @@ vi-foundry/
 ## Authors
 
 - **Ed Phil** — Systems architect, foundry standards, R package design
-- **Jan Ritch-Frel** — Author of the VI monograph, data curation
+- **[Jan Ritch-Frel](https://github.com/janfrel)** — Author of the VI monograph, data curation
 - **Flow Feel** — AI platform engineer, implementation, testing, CI/CD
 
 ## License
@@ -220,5 +220,5 @@ MIT
 
 - VI Monograph: "A Trajectory Account of Adaptive Evolution from Homo to the Wider Animal Kingdom" (Jan Ritch-Frel, 2026)
 - Phosphene R Standards: `docs/standards/PHOSPHENE_R_STANDARDS.md`
-- Review file: `drafts/research/monograph-reviews/valence-ingression-review.md`
-- Phased breakdown: `drafts/research/monograph-reviews/vi-foundry-phased-breakdown.md`
+- Review file: `drafts/research/monograph-reviews/valence-ingression-review.md` (in the woodchipper workspace)
+- Phased breakdown: `drafts/research/monograph-reviews/vi-foundry-phased-breakdown.md` (in the woodchipper workspace)

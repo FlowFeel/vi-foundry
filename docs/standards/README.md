@@ -23,9 +23,10 @@ does not need to consult external sources to understand the conventions.
 ## License
 
 These standards documents are licensed under MIT, consistent with the
-repository license. They are reproduced from the Phosphene R Artifact
-Foundry by Ed Phillips ([@phosphene on GitHub](https://github.com/phosphene)).
+[repository license](../../LICENSE). They are reproduced from the
+[Phosphene R Artifact Foundry](https://github.com/FlowFeel/r-artifact-foundry).
 
 ## Author
 
-**Ed Phillips** — [@phosphene](https://github.com/phosphene) — Phosphene R engineering standards, foundry architecture, and design principles.
+**[Ed Phillips](https://github.com/phosphene)** — Phosphene R engineering
+standards, foundry architecture, and design principles.

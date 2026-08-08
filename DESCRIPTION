@@ -5,7 +5,8 @@ Version: 0.1.0
 Authors@R: c(
     person("Ed", "Phillips", role = c("aut", "cre"),
            email = "ed@phosphene.dev", comment = c(GitHub = "phosphene")),
-    person("Jan", "Ritch-Frel", role = "aut"),
+    person("Jan", "Ritch-Frel", role = "aut",
+           comment = c(GitHub = "janfrel")),
     person("Flow", "Feel", role = "aut",
            email = "flow@ind.media", comment = c(GitHub = "FlowFeel", comment = "AI platform engineer"))
   )
@@ -24,7 +25,6 @@ Depends:
     R (>= 4.4.0)
 Imports:
     withr,
-    ggplot2,
     stats,
     utils
 Suggests:
@@ -43,11 +43,7 @@ Suggests:
     knitr,
     rmarkdown,
     readxl,
-    base64enc,
-    ggplot2 (>= 3.4.0),
-    patchwork (>= 1.1.0),
-    dplyr (>= 1.0.0),
-    viridis (>= 0.6.0)
+    base64enc
 Config/testthat/edition: 3
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)

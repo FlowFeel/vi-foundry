@@ -1,6 +1,6 @@
 MIT License
 
-Copyright (c) 2026 Ed Phillips, Jan Ritch-Frel, Flow Feel
+Copyright (c) 2026 Ed Phillips (@phosphene) and Jan Ritch-Frel (@janfrel)
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -22,17 +22,18 @@ SOFTWARE.
 
 ---
 
-## Attribution
+## Authors
 
-- **Ed Phillips** ([@phosphene](https://github.com/phosphene)) —
+- **Ed Phillips** — [@phosphene](https://github.com/phosphene) —
   Phosphene R engineering standards, foundry architecture, DFT axioms,
   STDD framework, MPI Handoff Blueprint, and design principles.
   The standards documents in `docs/standards/` are reproduced from
   the [Phosphene R Artifact Foundry](https://github.com/FlowFeel/r-artifact-foundry).
 
-- **Jan Ritch-Frel** — Author of the Valence-Ingression monograph,
-  data curation, biological expertise.
+- **Jan Ritch-Frel** — [@janfrel](https://github.com/janfrel) —
+  Author of the Valence-Ingression monograph, data curation,
+  biological expertise.
 
-- **Flow Feel** ([@FlowFeel](https://github.com/FlowFeel)) —
+- **Flow Feel** — [@FlowFeel](https://github.com/FlowFeel) —
   AI platform engineer: implementation, testing, CI/CD, package
   development, simulacrum test bed.
