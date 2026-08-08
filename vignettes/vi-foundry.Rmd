@@ -1,7 +1,7 @@
 ---
-title: "VI Foundry: Testing Valence-Ingression Predictions"
+title: "VI Foundry: Testing Valence-Ingression Predictions with R"
 author: "Ed Phil, Jan Ritch-Frel, Flow"
-date: "2026-08-08"
+date: "`r Sys.Date()`"
 output: rmarkdown::html_vignette
 vignette: >
   %\VignetteIndexEntry{VI Foundry}
@@ -9,31 +9,478 @@ vignette: >
   %\VignetteEncoding{UTF-8}
 ---
 
-## Scientific Motivation
+```{r setup, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  fig.width = 7,
+  fig.height = 5
+)
+```
 
-VI predicts that capacity reallocation follows integration-depth ordering:
-deeply integrated functions resist loss more than shallowly integrated ones.
-This is testable via comparative genomics, morphology, and cross-kingdom
-parameter transfer.
+# Scientific Motivation
 
-## Function Map
+## The Valence-Ingression Framework
 
-| Function | VI Prediction | Competitor | Distinguishes? |
-|----------|--------------|------------|----------------|
-| `pgls_orobanchaceae()` | Plastome ~ parasitism | Relaxed selection | No |
-| `gene_loss_ordering()` | Ordered loss by depth | Random loss | Yes |
-| `cross_kingdom_transfer()` | Params transfer across kingdoms | Substrates independent | Yes |
-| `formal_model()` | Biphasic kinetics | Constant rate | Yes |
-| `cusp_catastrophe()` | Irreversibility threshold | Gradual reversibility | Yes |
+Valence-Ingression (VI) is a formal theory of capacity reallocation under
+niche-driven selection. The core claim is that when an organism commits to a
+novel niche, the rate at which it sheds ancestral functions follows a
+**threshold-gated integration-depth ordering**:
 
-## Worked Example
+1. **Integration depth** ($d_i$) — how deeply a trait is wired into the
+   organism's regulatory and functional architecture — determines its
+   resistance to loss.
+2. Traits with $d_i < \theta$ (the protection threshold) are shed rapidly
+   during Phase 1 of niche commitment.
+3. Traits with $d_i \ge \theta$ are retained indefinitely, even under
+   extreme niche specialisation.
+4. The ordering of trait loss across the genome (or phenome) is predictable
+   from integration depth: deeply integrated functions are lost last.
 
-[To be filled in Phase 5]
+This is formalised as the dynamical model:
 
-## Limitations
+$$\frac{dC_i}{dt} = -\lambda \cdot M(t) \cdot I(d_i < \theta)$$
 
-[To be filled in Phase 5]
+where $C_i$ is the retention probability of trait $i$, $M(t)$ is an
+exponentially decaying niche-demand mismatch, $\lambda$ is the shedding
+rate, and $\theta$ is the protection threshold.
 
-## Interpretation Guide
+## What VI Predicts
 
-[To be filled in Phase 5]
+| Test | Prediction | In Brief |
+|------|-----------|----------|
+| **T1** | Plastome size ~ parasitism level | Orobanchaceae PGLS |
+| **T2** | Cross-family gradient replication | 12+ parasitic plant families |
+| **T3** | Biphasic genome reduction | Endosymbiont logistic decay |
+| **T4** | Niche breadth > Ne for gene loss | Bobay & Ochman (2017) |
+| **T5** | Pan-genome fluidity ~ lifestyle | Dewar et al. (2024) |
+| **T6** | Integration-depth determines loss order | Exact permutation test |
+| **T7** | Function-loss co-segregation with sweeps | LTEE (Good et al. 2017) |
+| **L3** | Cross-kingdom parameter transfer | Plants → birds |
+
+## The Gap
+
+Existing theories make overlapping predictions:
+
+- **Relaxed selection** (Lahti et al. 2009) predicts the same loss gradient
+  as VI for T1–T2, but through a different mechanism.
+- **Genetic drift** (Lynch 2007) predicts $\mathrm{N_e}$ is the primary
+  driver of genome reduction — contradicting T4–T5.
+- **Muller's ratchet** predicts accelerating (not decelerating) loss —
+  contradicting T3.
+- **McCutcheon's metabolic complementarity** predicts the same correlation
+  as T3 but does not predict cross-kingdom transfer (L3).
+- **Random loss** predicts no integration-depth ordering — contradicted by
+  T6.
+- **Independent substrates** predicts no parameter transfer across kingdoms —
+  contradicted by L3.
+
+VI is distinguished from competitors by the combination of T3 (biphasic
+kinetics), T4–T5 (niche over Ne), T6 (integration-depth ordering), and
+L3 (cross-kingdom transfer). No single test suffices; the framework's
+strength is convergent evidence across multiple independent predictions.
+
+# Function Map
+
+```{r function-map, echo = FALSE, results = "asis"}
+# Build the function map table
+map <- data.frame(
+  Function = c(
+    "`pgls_orobanchaceae()`",
+    "`pgls_cross_family()`",
+    "`endosymbiont_biphasic()`",
+    "`niche_vs_ne()`",
+    "`pangenome_fluidity()`",
+    "`gene_loss_ordering()`",
+    "`ltee_cosegregation()`",
+    "`transfer_test()`",
+    "`threshold_model()`"
+  ),
+  `VI Prediction` = c(
+    "Plastome size ~ parasitism level",
+    "Gradient replicates across families",
+    "Biphasic (fast→slow) reduction",
+    "Niche breadth > Ne",
+    "Pan-genome ~ lifestyle, not Ne",
+    "Integration-depth orders loss",
+    "Loss co-segregates with sweeps",
+    "Plant params predict bird ordering",
+    "Biphasic: Phase 1 ≫ Phase 2 rate"
+  ),
+  `Competitor Prediction` = c(
+    "Relaxed selection: same gradient",
+    "Stochastic loss: same gradient",
+    "Constant rate (Lynch); accelerating (Muller)",
+    "Drift: Ne is primary driver",
+    "Ne-only model",
+    "Random loss: no ordering",
+    "Independent assortment: 61.7%",
+    "Substrates are independent",
+    "Constant rate; accelerating"
+  ),
+  `Distinguishes VI?` = c(
+    "No",
+    "No",
+    "Yes",
+    "Yes",
+    "Yes",
+    "Yes",
+    "No",
+    "Yes",
+    "Yes"
+  ),
+  `Key Caveat` = c(
+    "Also predicted by relaxed selection",
+    "Also predicted by relaxed selection",
+    "n = 10 genera; McCutcheon's model predicts same",
+    "Tolerance data quality",
+    "Ne data sparse in Dewar et al.",
+    "Requires annotated gene categories",
+    "Hitchhiking confound; reported as suggestive",
+    "Ordering transfers; rate does not",
+    "Model is deterministic, no stochastic component"
+  ),
+  check.names = FALSE
+)
+
+knitr::kable(map, caption = "Summary of VI test functions, competitor predictions, and whether each test distinguishes VI.")
+```
+
+Six of the seven empirical tests (T1–T7) support the VI prediction. But
+only **T3, T4, T5, and T6** distinguish VI from their named competitors.
+The cross-kingdom transfer test (L3) is the strongest: it distinguishes VI
+from all competitors and provides the most stringent falsification
+criterion.
+
+# Worked Example: T6 — Gene-Loss Ordering
+
+This worked example walks through **T6: `gene_loss_ordering()`**, which
+tests VI's core prediction that integration depth determines the order in
+which gene categories are lost during genome reduction.
+
+## Step 1: Load the Required Packages
+
+```{r t6-load}
+library(vi.foundry)
+```
+
+## Step 2: Prepare the Data
+
+The `gene_loss_ordering()` function requires a data frame with gene
+categories, their integration-depth (dependency) scores, and the observed
+loss ranks across one or more parasitic lineages.
+
+The manuscript data for Orobanchaceae and Cuscuta (dodder) gene loss
+produced the following dependency scores and loss ranks:
+
+```{r t6-data}
+gene_data <- data.frame(
+  category = c("ndh", "rpo", "psa", "psb", "atp", "rpl_rps"),
+  dependency_score = c(0, 1, 1, 2, 3, 5),
+  orobanchaceae_loss_rank = c(1, 2, 2, 2, 3, 4),  # Orobanchaceae
+  cuscuta_loss_rank = c(1, 2, 3, 4, 5, 6),          # Cuscuta
+  stringsAsFactors = FALSE
+)
+
+str(gene_data)
+```
+
+The six categories represent functional gene groups:
+
+| Category | Function | Dependency Score | Meaning |
+|----------|----------|-----------------|---------|
+| `ndh` | NADH dehydrogenase | 0 | Shallow — plastid-encoded, non-essential under heterotrophy |
+| `rpo` | RNA polymerase | 1 | Substitutable — host provides |
+| `psa` | Photosystem I | 1 | Substitutable |
+| `psb` | Photosystem II | 2 | Moderately integrated |
+| `atp` | ATP synthase | 3 | Deeply integrated — core metabolism |
+| `rpl_rps` | Ribosomal proteins | 5 | Deepest — translation machinery |
+
+Higher dependency scores reflect deeper functional integration. VI predicts
+that categories with higher scores are retained longer (higher loss rank
+= lost later).
+
+## Step 3: Run the Test
+
+```{r t6-run, warning = FALSE, message = FALSE}
+# The gene_loss_ordering function implements the exact permutation test
+# described in the monograph (§12.4). With 6 categories, 6! = 720
+# permutations exhaust all possible orderings.
+result <- gene_loss_ordering(gene_data, seed = 42, n_perm = 720)
+```
+
+The `n_perm = 720` argument requests an **exact permutation test**: with 6
+categories, 6! = 720 permutations exhaust all possible orderings. Setting
+`seed = 42` ensures reproducibility (DFT Axiom A2).
+
+## Step 4: Examine the Results
+
+```{r t6-examine}
+result$values
+```
+
+The output contains:
+
+| Metric | Value | Interpretation |
+|--------|-------|----------------|
+| `spearman_rho` | ~0.96 | Very high positive correlation — deeply integrated functions are retained longer, exactly as VI predicts |
+| `permutation_p` | ~0.008 | Only about 6 of 720 possible permutations produce a correlation this extreme by chance |
+| `pseudo_r_squared` | ~0.82 | Integration depth explains ~82% of the variance in loss ordering |
+| `cross_family_concordance` | ~0.94 | Orobanchaceae and Cuscuta show nearly identical loss ordering — the pattern is not lineage-specific |
+
+```{r t6-metadata}
+result$metadata
+```
+
+## Step 5: Visualise the Ordering
+
+```{r t6-plot, fig.width = 6, fig.height = 4, fig.cap = "Gene loss rank vs integration depth in Orobanchaceae. Each point is a gene category. The strong positive trend (ρ ≈ 0.96) supports VI's integration-depth ordering prediction."}
+plot(gene_data$dependency_score, gene_data$orobanchaceae_loss_rank,
+     main = "Gene Loss Ordering: Orobanchaceae",
+     xlab = "Integration Depth (Dependency Score)",
+     ylab = "Loss Rank (1 = lost first, 6 = lost last)",
+     pch = 19, cex = 1.5, col = "#1b9e77")
+text(gene_data$dependency_score, gene_data$orobanchaceae_loss_rank,
+     labels = gene_data$category, pos = 4, cex = 0.8)
+abline(lm(orobanchaceae_loss_rank ~ dependency_score, data = gene_data),
+       col = "#d95f02", lwd = 2)
+```
+
+## Step 6: Interpret
+
+The results support VI: integration depth predicts loss ordering with high
+confidence (ρ ≈ 0.96, p ≈ 0.008). The competitor (random loss) predicts
+ρ ≈ 0, which is firmly rejected. The cross-family concordance (~0.94)
+shows the ordering is robust across independently evolved parasitic
+lineages.
+
+**What the test does NOT tell us:**
+- It does not distinguish VI from relaxed selection at the *rate* level
+  (that is T3's job).
+- It does not establish causation — only that integration depth is a
+  strong predictor of retention order.
+- The small number of categories (6) limits resolution; finer-grained
+  analyses with more categories would strengthen the result.
+
+# Limitations
+
+## Statistical Limitations
+
+1. **Small sample sizes**
+   - T1 (Orobanchaceae): 12 species — borderline for PGLS; influential
+     points can swing the result.
+   - T3 (Endosymbionts): 10 genera — sensitivity to individual data points
+     not fully tested; the biphasic fit is fragile.
+   - T6 (Gene Loss): 6 categories — the permutation test is exact but
+     coarse; the minimum achievable p-value is 1/720 ≈ 0.0014.
+
+2. **Non-distinguishing tests**
+   - **T1 (PGLS Orobanchaceae)** and **T2 (Cross-family replication)**
+     predict the same gradient as relaxed selection (Lahti et al. 2009).
+     These tests are necessary but not sufficient. They establish that the
+     predicted pattern exists, but do not adjudicate between mechanisms.
+   - **T7 (LTEE co-segregation)** is reported as suggestive only. The
+     hitchhiking confound means that co-segregation with beneficial
+     sweeps does not necessarily imply passive drift.
+
+3. **Confounds**
+   - **T7 hitchhiking**: loss mutations near beneficial sweeps could be
+     dragged along by selection on linked sites, not by passive drift in
+     unused genes. The arbitrary window (±2000 generations) and potential
+     misspecification of the null (61.7% expected) further weaken the
+     result.
+   - **T3 vs McCutcheon**: metabolic complementarity (McCutcheon & Moran
+     2012) predicts the same biphasic correlation as VI. T3 alone cannot
+     distinguish the two — that requires the cross-kingdom test (L3).
+
+## Methodological Limitations
+
+4. **Rate does not transfer across kingdoms**
+   The cross-kingdom test (L3) shows that the *ordering* of loss is
+   conserved across plants and birds, but the *rate* is not. The
+   plant-derived slope predicts the bird ordering ($\rho = 0.755$,
+   $p = 0.031$) but the actual rate of morphological change in birds
+   differs from the rate of plastome reduction in plants. VI claims
+   universality of ordering, not of rate.
+
+5. **Phylogenetic pseudoreplication in T3**
+   The endosymbiont dataset includes multiple strains from the same genus
+   (e.g., 25+ *Buchnera* strains). The function aggregates to genus means,
+   reducing the effective sample size. A multilevel model would be more
+   appropriate but is not implemented.
+
+6. **No temporal data**
+   All tests are cross-sectional. The VI dynamical model makes predictions
+   about *rates* of change over time, but the empirical tests use
+   contemporary measurements as proxies for evolutionary trajectories.
+   T3's symbiosis age estimates are uncertain and may introduce error.
+
+## What These Functions Cannot Establish
+
+| Cannot establish | Why |
+|-----------------|-----|
+| That VI is the *only* mechanism | Competitors overlap on some predictions |
+| Causation | All tests are correlational (comparative method) |
+| Irreversibility | The cusp catastrophe model is not yet empirically tested |
+| Universal applicability | Only tested on plants, bacteria, and birds |
+| Quantitative parameters | The formal model's parameters ($\lambda$, $\theta$, $\alpha$) are not yet fit to empirical data |
+
+# Interpretation Guide
+
+## Reading the Results
+
+Every test function returns an **A6 proof object** — a list with two
+components:
+
+```{r interpret-structure, eval = FALSE}
+result <- some_test_function(data)
+names(result)
+# [1] "values"   "metadata"
+```
+
+The `values` vector contains the statistical quantities (effect sizes,
+p-values, fit metrics). The `metadata` list records the seed, sample size,
+method, and convergence status.
+
+## What Supports VI
+
+| Observation | Interpretation |
+|-------------|----------------|
+| Significant negative $\beta$ in T1 | Plastome shrinks with parasitism depth |
+| High $|r|$ > 0.9 in T2 | Gradient is robust across families |
+| Biphasic (logistic) model fits better than linear in T3 | Decelerating reduction consistent with threshold gating |
+| Bayes factor > 3 in T3 | Positive evidence for logistic over exponential |
+| niche_R² > ne_R² in T4–T5 | Niche breadth, not drift, drives gene loss |
+| $\rho \gg 0$ and $p < 0.05$ in T6 | Integration depth orders loss |
+| Less than 61.7% in T7 | Loss co-segregates less than expected by chance |
+| $\rho > 0$ and $p < 0.05$ in L3 | Ordering principle transfers across kingdoms |
+
+## What Refutes VI
+
+| Observation | Interpretation |
+|-------------|----------------|
+| Non-significant $\beta$ in T1 | No plastome–parasitism relationship |
+| $|r| \approx 0$ in T2 | Gradient does not replicate |
+| Linear model fits better than logistic in T3 | No biphasic kinetics |
+| ne_R² ≥ niche_R² in T4–T5 | Drift dominates, not niche |
+| $\rho \approx 0$ in T6 | No integration-depth ordering |
+| $\rho \approx 0$ or negative in L3 | Cross-kingdom ordering fails |
+| Observed ≥ expected rate in T7 | No co-segregation deficit |
+
+## Handling INCONCLUSIVE Results
+
+Several tests can produce ambiguous outcomes:
+
+**T1/T2 (non-distinguishing).** Even if significant, these tests do not
+distinguish VI from relaxed selection. A significant result is *necessary*
+for the framework but not *sufficient*. Report as "consistent with VI and
+with relaxed selection." The distinguishing weight must come from T3–T6.
+
+**T3 (biphasic fit).** If the logistic model fails to converge, the
+result is inconclusive — not a refutation. Try:
+- Check the data quality (outliers, missing values)
+- Increase `nls.control(maxiter = ...)` 
+- Use a different start value for the logistic fit parameters
+- Consider a spline-based approach outside the package
+
+**T4/T5 (niche vs Ne).** If niche_R² ≈ ne_R², the result is ambiguous.
+This could mean both mechanisms contribute or that the data lacks
+resolution. Try:
+- Check for collinearity between niche breadth and Ne
+- Test with a reduced dataset excluding intermediate lifestyles
+- Collect additional lifestyle-classified species
+
+**T6 (permutation test).** With $n = 6$ categories, the permutation test
+has limited resolution. If $p > 0.05$, the result is *inconclusive*, not
+a refutation. The minimum achievable p-value is $1/720 \approx 0.0014$.
+Consider:
+- Adding more gene categories (finer functional annotation)
+- Combining loss ranks across multiple lineages (increases effective N)
+- Using the pseudo-R² as a continuous measure of support
+
+**T7 (suggestive only).** The LTEE test is explicitly reported as
+suggestive in the monograph (§12.5). A non-significant result does not
+refute VI. A *significant* result (observed ≥ expected) would be more
+informative, as it would contradict the co-segregation deficit prediction.
+
+**L3 (cross-kingdom).** With $n = 8$ bird structures, the Spearman test
+has limited power. A non-significant result ($p > 0.05$) is inconclusive;
+the expected $\rho$ under the alternative hypothesis is unknown. Report
+the observed $\rho$ and its confidence interval.
+
+## Summary Decision Tree
+
+```
+                     ┌─ T1–T2 significant?
+                     │
+                ┌────┴────┐
+                │         │
+               YES        NO ──→ VI not supported 
+                │              (but also doesn't refute)
+           ┌────┴────┐
+           │         │
+      T3 logistic   T3 linear
+      fits better   fits better ──→ Refutes biphasic prediction
+           │
+      ┌────┴────┐
+      │         │
+   T4–T5      T4–T5
+ niche > Ne  Ne > niche ──→ Refutes niche-over-drift
+      │
+      │    ┌────┴────┐
+      │    │         │
+   T6 ρ ≫ 0 │     T6 ρ ≈ 0 ──→ Refutes integration-depth ordering
+      │    │
+      │    │    ┌────┴────┐
+      │    │    │         │
+      │    │ L3 ρ > 0  L3 ρ ≈ 0 ──→ Refutes cross-kingdom principle
+      │    │    │
+      │    │ ┌──┴──┐
+      │    │ │    │
+      │    │ VI  Ambiguous ──→ More data needed
+      │    │ supported
+      │    │
+      └────┴─────────────────── VI strongly supported
+```
+
+In practice, the strength of the VI framework is that **multiple
+independent tests converge on the same conclusion**. A single ambiguous
+or even refuting result is informative but does not sink the framework
+if the other tests are strong. The cross-kingdom test (L3) carries the
+most weight because it is the most specific — no competitor predicts
+parameter transfer across kingdoms.
+
+## Reporting Convention
+
+When reporting results, use the WCI (Weighted Confidence Index) scale
+from the monograph:
+
+| Tier | WCI Range | Meaning | Example |
+|------|-----------|---------|---------|
+| Tier 1 | > 80 | High confidence | T6 (ρ ≈ 0.96, exact permutation p = 0.008) |
+| Tier 2 | 55–80 | Moderate confidence | L3 (ρ = 0.76, p = 0.031, n = 8) |
+| Tier 3 | < 55 | Low confidence | T7 (suggestive, hitchhiking confound) |
+
+Each test's WCI is computed from six dimensions: theoretical coherence,
+empirical support, replicability, independent uptake, explanatory power,
+and falsifiability. The vignette-level results in the monograph (§12)
+provide the full WCI breakdown for each test.
+
+# References
+
+- Bobay, L.-M. & Ochman, H. (2017). *Impact of effective population size
+  on genome evolution*. Nature Communications.
+- Dewar, A. et al. (2024). *Pan-genome fluidity and lifestyle*. [Data collected
+  for VI monograph.]
+- Good, B. H. et al. (2017). *The dynamics of molecular evolution over 60,000
+  generations*. Nature, 551:45–50.
+- Lahti, D. C. et al. (2009). *Relaxed selection in the wild*. Trends in
+  Ecology & Evolution, 24:487–496.
+- Leiby, N. & Marx, C. J. (2014). *Metabolic erosion primarily through
+  mutation accumulation*. mBio, 5:e01967-14.
+- Lynch, M. (2007). *The frailty of adaptive hypotheses for the origins of
+  organismal complexity*. PNAS, 104:8597–8604.
+- McCutcheon, J. P. & Moran, N. A. (2012). *Extreme genome reduction in
+  symbiotic bacteria*. Nature Reviews Microbiology, 10:13–26.
+- Ritch-Frel, J. & Phil, E. (2026). *Valence-Ingression: A formal framework
+  for capacity reallocation under niche-driven selection*. VI Monograph.
