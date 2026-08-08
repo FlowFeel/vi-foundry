@@ -26,16 +26,20 @@ context("Simulacrum 1: Parameter recovery")
 
 .fit_reduction <- function(data) {
   fit <- stats::lm(plastome_size_bp ~ parasitism_score, data = data)
-  c(slope = unname(stats::coef(fit)[2]),
-    r_squared = unname(summary(fit)$r.squared))
+  c(
+    slope = unname(stats::coef(fit)[2]),
+    r_squared = unname(summary(fit)$r.squared)
+  )
 }
 
 test_that("generate_synthetic_population returns a well-formed panel (A1)", {
   data <- generate_synthetic_population(n = 50L, seed = 42L)
   expect_s3_class(data, "data.frame")
   expect_equal(nrow(data), 50L)
-  expect_true(all(c("species", "trait_depth", "retention_prob",
-                    "plastome_size_bp", "parasitism_score") %in% names(data)))
+  expect_true(all(c(
+    "species", "trait_depth", "retention_prob",
+    "plastome_size_bp", "parasitism_score"
+  ) %in% names(data)))
   expect_true(all(data$trait_depth >= 0 & data$trait_depth <= 5))
   expect_true(all(data$retention_prob >= 0 & data$retention_prob <= 1))
   expect_true(all(data$plastome_size_bp >= 0))
@@ -70,7 +74,7 @@ test_that("recovery is stable across 100 simulations (slope negative in ≥ 95%)
   }
   frac_negative <- mean(slopes < 0)
   expect_gt(frac_negative, 0.95)
-  expect_equal(frac_negative, frac_negative)  # deterministic across reruns
+  expect_equal(frac_negative, frac_negative) # deterministic across reruns
 })
 
 test_that("null control (λ = 0) does NOT recover a reduction signal", {

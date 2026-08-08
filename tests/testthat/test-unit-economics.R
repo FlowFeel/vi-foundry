@@ -14,8 +14,8 @@ context("Economics extension (Phase 6)")
     system = rep(c("news", "taxi"), each = 20),
     year = rep(1990:2009, 2),
     capacity = c(
-      100 * exp(-0.02 * 0:19),   # news:  slow decay
-      100 * exp(-0.10 * 0:19)    # taxi: fast decay
+      100 * exp(-0.02 * 0:19), # news:  slow decay
+      100 * exp(-0.10 * 0:19) # taxi: fast decay
     )
   )
 }
@@ -60,8 +60,10 @@ test_that("cdi_economics returns different values with different seeds", {
 })
 
 test_that("cdi_economics stops with invalid data (no capacity)", {
-  expect_error(cdi_economics(data.frame(system = "x", year = 1)),
-               "missing required columns")
+  expect_error(
+    cdi_economics(data.frame(system = "x", year = 1)),
+    "missing required columns"
+  )
 })
 
 test_that("cdi_economics stops with negative capacity", {
@@ -97,8 +99,10 @@ test_that("option_destruction is deterministic with same seed (A2)", {
 test_that("option_destruction returns named fields in values", {
   dat <- .make_test_data()
   result <- option_destruction(dat, seed = 42)
-  expected_names <- c("n_systems", "mean_early_resid", "mean_late_resid",
-                      "vi_pattern_share", "mean_standard_decay_rate")
+  expected_names <- c(
+    "n_systems", "mean_early_resid", "mean_late_resid",
+    "vi_pattern_share", "mean_standard_decay_rate"
+  )
   expect_true(all(expected_names %in% names(result$values)))
 })
 
@@ -126,8 +130,10 @@ test_that("option_destruction returns per-system data in metadata", {
 # === stochastic_cdi ==========================================================
 
 test_that("stochastic_cdi returns A6 proof object", {
-  result <- stochastic_cdi(mu0 = 0.5, sigma0 = 0.2, cdi_init = 0.01,
-                           dt = 0.01, n_steps = 100, threshold = 0.8, seed = 42)
+  result <- stochastic_cdi(
+    mu0 = 0.5, sigma0 = 0.2, cdi_init = 0.01,
+    dt = 0.01, n_steps = 100, threshold = 0.8, seed = 42
+  )
   expect_true(validate_result(result))
   expect_true("values" %in% names(result))
   expect_true("metadata" %in% names(result))
@@ -137,48 +143,70 @@ test_that("stochastic_cdi returns A6 proof object", {
 })
 
 test_that("stochastic_cdi is deterministic with same seed (A2)", {
-  r1 <- stochastic_cdi(mu0 = 0.5, sigma0 = 0.2, cdi_init = 0.01,
-                       dt = 0.01, n_steps = 1000, threshold = 0.8, seed = 42)
-  r2 <- stochastic_cdi(mu0 = 0.5, sigma0 = 0.2, cdi_init = 0.01,
-                       dt = 0.01, n_steps = 1000, threshold = 0.8, seed = 42)
+  r1 <- stochastic_cdi(
+    mu0 = 0.5, sigma0 = 0.2, cdi_init = 0.01,
+    dt = 0.01, n_steps = 1000, threshold = 0.8, seed = 42
+  )
+  r2 <- stochastic_cdi(
+    mu0 = 0.5, sigma0 = 0.2, cdi_init = 0.01,
+    dt = 0.01, n_steps = 1000, threshold = 0.8, seed = 42
+  )
   expect_equal(r1$values, r2$values)
   expect_equal(r1$metadata$path, r2$metadata$path)
 })
 
 test_that("stochastic_cdi returns different paths with different seeds", {
-  r1 <- stochastic_cdi(mu0 = 0.5, sigma0 = 0.2, cdi_init = 0.01,
-                       dt = 0.01, n_steps = 500, threshold = 0.8, seed = 42)
-  r2 <- stochastic_cdi(mu0 = 0.5, sigma0 = 0.2, cdi_init = 0.01,
-                       dt = 0.01, n_steps = 500, threshold = 0.8, seed = 99)
+  r1 <- stochastic_cdi(
+    mu0 = 0.5, sigma0 = 0.2, cdi_init = 0.01,
+    dt = 0.01, n_steps = 500, threshold = 0.8, seed = 42
+  )
+  r2 <- stochastic_cdi(
+    mu0 = 0.5, sigma0 = 0.2, cdi_init = 0.01,
+    dt = 0.01, n_steps = 500, threshold = 0.8, seed = 99
+  )
   expect_false(isTRUE(all.equal(r1$metadata$path, r2$metadata$path)))
 })
 
 test_that("stochastic_cdi CDI stays in [0, 1]", {
-  result <- stochastic_cdi(mu0 = 0.5, sigma0 = 0.2, cdi_init = 0.01,
-                           dt = 0.01, n_steps = 500, threshold = 0.8, seed = 42)
+  result <- stochastic_cdi(
+    mu0 = 0.5, sigma0 = 0.2, cdi_init = 0.01,
+    dt = 0.01, n_steps = 500, threshold = 0.8, seed = 42
+  )
   path <- result$metadata$path
   expect_true(all(path >= 0 & path <= 1))
 })
 
 test_that("stochastic_cdi returns correct vector length", {
-  result <- stochastic_cdi(mu0 = 0.5, sigma0 = 0.2, cdi_init = 0.01,
-                           dt = 0.01, n_steps = 500, threshold = 0.8, seed = 42)
+  result <- stochastic_cdi(
+    mu0 = 0.5, sigma0 = 0.2, cdi_init = 0.01,
+    dt = 0.01, n_steps = 500, threshold = 0.8, seed = 42
+  )
   expect_equal(length(result$metadata$path), 501)
   expect_equal(length(result$metadata$time), 501)
   expect_equal(result$values["n_steps"], c(n_steps = 500))
 })
 
 test_that("stochastic_cdi rejects invalid parameters", {
-  expect_error(stochastic_cdi(mu0 = -1, sigma0 = 0.2, seed = 42),
-               "mu0 must be a single non-negative number")
-  expect_error(stochastic_cdi(mu0 = 0.5, sigma0 = -0.1, seed = 42),
-               "sigma0 must be a single non-negative number")
-  expect_error(stochastic_cdi(mu0 = 0.5, sigma0 = 0.2, cdi_init = 1.5, seed = 42),
-               "cdi_init must be in")
-  expect_error(stochastic_cdi(mu0 = 0.5, sigma0 = 0.2, threshold = 0, seed = 42),
-               "threshold must be in")
-  expect_error(stochastic_cdi(mu0 = 0.5, sigma0 = 0.2, dt = 0, seed = 42),
-               "dt must be a single positive number")
+  expect_error(
+    stochastic_cdi(mu0 = -1, sigma0 = 0.2, seed = 42),
+    "mu0 must be a single non-negative number"
+  )
+  expect_error(
+    stochastic_cdi(mu0 = 0.5, sigma0 = -0.1, seed = 42),
+    "sigma0 must be a single non-negative number"
+  )
+  expect_error(
+    stochastic_cdi(mu0 = 0.5, sigma0 = 0.2, cdi_init = 1.5, seed = 42),
+    "cdi_init must be in"
+  )
+  expect_error(
+    stochastic_cdi(mu0 = 0.5, sigma0 = 0.2, threshold = 0, seed = 42),
+    "threshold must be in"
+  )
+  expect_error(
+    stochastic_cdi(mu0 = 0.5, sigma0 = 0.2, dt = 0, seed = 42),
+    "dt must be a single positive number"
+  )
 })
 
 # === threshold_disruption ====================================================
@@ -208,8 +236,10 @@ test_that("threshold_disruption reports correct number of systems", {
 
 test_that("threshold_disruption stops without trigger_year column", {
   dat <- .make_test_data()
-  expect_error(threshold_disruption(dat, seed = 42),
-               "missing required column 'trigger_year'")
+  expect_error(
+    threshold_disruption(dat, seed = 42),
+    "missing required column 'trigger_year'"
+  )
 })
 
 test_that("threshold_disruption share_piecewise_win is in [0, 1]", {
@@ -239,8 +269,10 @@ test_that("all economics functions return A6 proof objects with seed metadata", 
 
   r1 <- cdi_economics(dat, seed = 99)
   r2 <- option_destruction(dat, seed = 99)
-  r3 <- stochastic_cdi(mu0 = 0.5, sigma0 = 0.2, cdi_init = 0.01,
-                       dt = 0.01, n_steps = 100, threshold = 0.8, seed = 99)
+  r3 <- stochastic_cdi(
+    mu0 = 0.5, sigma0 = 0.2, cdi_init = 0.01,
+    dt = 0.01, n_steps = 100, threshold = 0.8, seed = 99
+  )
   r4 <- threshold_disruption(th_dat, seed = 99)
 
   expect_equal(r1$metadata$seed, 99)

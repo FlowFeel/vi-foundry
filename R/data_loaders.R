@@ -82,10 +82,14 @@ load_orobanchaceae <- function() {
   data_path <- file.path(data_dir, "species_plastome_data.tsv")
   tree_path <- file.path(data_dir, "orobanchaceae_tree.nwk")
 
-  data <- utils::read.table(data_path, header = TRUE, sep = "\t",
-                             stringsAsFactors = FALSE)
-  names(data) <- c("species", "genus", "accession", "plastome_size_bp",
-                   "parasitism_category", "parasitism_score")
+  data <- utils::read.table(data_path,
+    header = TRUE, sep = "\t",
+    stringsAsFactors = FALSE
+  )
+  names(data) <- c(
+    "species", "genus", "accession", "plastome_size_bp",
+    "parasitism_category", "parasitism_score"
+  )
   data$plastome_size_kb <- data$plastome_size_bp / 1000
 
   tree <- readLines(tree_path, n = 1L)
@@ -94,8 +98,10 @@ load_orobanchaceae <- function() {
   validate_parasitism_scores(data$parasitism_score)
   validate_phylo_tree(tree)
 
-  make_result(data, "orobanchaceae",
-              "NCBI GenBank plastome sizes + parasitism scores")
+  make_result(
+    data, "orobanchaceae",
+    "NCBI GenBank plastome sizes + parasitism scores"
+  )
 }
 
 #' Load cross-family plastome data
@@ -120,18 +126,24 @@ load_cross_family_plastomes <- function() {
   data_dir <- get_data_dir()
   data_path <- file.path(data_dir, "cross_family_plastome_data.tsv")
 
-  data <- utils::read.table(data_path, header = TRUE, sep = "\t",
-                             stringsAsFactors = FALSE)
-  names(data) <- c("species", "family", "accession", "plastome_bp",
-                    "parasitism_level", "parasitism_score",
-                    "outgroup_available")
+  data <- utils::read.table(data_path,
+    header = TRUE, sep = "\t",
+    stringsAsFactors = FALSE
+  )
+  names(data) <- c(
+    "species", "family", "accession", "plastome_bp",
+    "parasitism_level", "parasitism_score",
+    "outgroup_available"
+  )
   data$plastome_size_kb <- data$plastome_bp / 1000
 
   validate_plastome_data(data)
   validate_parasitism_scores(data$parasitism_score)
 
-  make_result(data, "cross_family",
-              "NCBI GenBank, 12+ parasitic plant families")
+  make_result(
+    data, "cross_family",
+    "NCBI GenBank, 12+ parasitic plant families"
+  )
 }
 
 #' Load endosymbiont genome data
@@ -156,13 +168,17 @@ load_endosymbionts <- function() {
   data_dir <- get_data_dir()
   data_path <- file.path(data_dir, "endosymbiont_genome_data.tsv")
 
-  data <- utils::read.table(data_path, header = TRUE, sep = "\t",
-                             stringsAsFactors = FALSE)
+  data <- utils::read.table(data_path,
+    header = TRUE, sep = "\t",
+    stringsAsFactors = FALSE
+  )
 
   validate_endosymbiont_data(data)
 
-  make_result(data, "endosymbionts",
-              "GenBank: Buchnera, Wigglesworthia, Carsonella, Blochmannia")
+  make_result(
+    data, "endosymbionts",
+    "GenBank: Buchnera, Wigglesworthia, Carsonella, Blochmannia"
+  )
 }
 
 #' Load Bobay-Ochman niche data
@@ -192,8 +208,10 @@ load_bobay_ochman <- function() {
 
   validate_niche_data(data)
 
-  make_result(data, "bobay_ochman",
-              "Bobay & Ochman (2017) Table S1, 140+ species")
+  make_result(
+    data, "bobay_ochman",
+    "Bobay & Ochman (2017) Table S1, 140+ species"
+  )
 }
 
 #' Load Dewar pan-genome data
@@ -219,8 +237,10 @@ load_dewar_pangenome <- function() {
 
   validate_pangenome_data(data)
 
-  make_result(data, "dewar_pangenome",
-              "Dewar et al. (2024) supplementary, pan-genome lifestyles")
+  make_result(
+    data, "dewar_pangenome",
+    "Dewar et al. (2024) supplementary, pan-genome lifestyles"
+  )
 }
 
 #' Load island bird morphology data
@@ -246,13 +266,16 @@ load_island_birds <- function() {
 
   if (!file.exists(data_path)) {
     stop("island_bird_morphology.csv not found. Run data preparation first.",
-         call. = FALSE)
+      call. = FALSE
+    )
   }
 
   data <- utils::read.csv(data_path, stringsAsFactors = FALSE)
 
   validate_bird_morphology(data)
 
-  make_result(data, "island_birds",
-              "Island bird flight-loss morphological rankings")
+  make_result(
+    data, "island_birds",
+    "Island bird flight-loss morphological rankings"
+  )
 }

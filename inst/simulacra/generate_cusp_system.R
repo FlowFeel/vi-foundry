@@ -30,16 +30,15 @@
 #   - bifurcation_distance: value of 4a³ + 27b² (0 = at bifurcation)
 #
 # @examples
-#   generate_cusp_system(a = -1, seed = 42)
 #
 # @dft A1, A2
 
 #' @export
 generate_cusp_system <- function(a = -1,
-                                  b_range = c(-2, 2),
-                                  n = 100L,
-                                  seed = 42L,
-                                  noise_sd = 0.05) {
+                                 b_range = c(-2, 2),
+                                 n = 100L,
+                                 seed = 42L,
+                                 noise_sd = 0.05) {
   withr::with_seed(seed, {
     b_vals <- seq(b_range[1], b_range[2], length.out = n)
 

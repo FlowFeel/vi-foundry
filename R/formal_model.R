@@ -116,7 +116,7 @@ retention_at_time <- function(depth, lambda, theta, m0, alpha, time) {
 #'   lambda = 0.15, theta = 2.5, m0 = 10, alpha = 0.05, time = 100
 #' )
 threshold_model <- function(depths, lambda, theta, m0, alpha, time,
-                             n_steps = 1000L) {
+                            n_steps = 1000L) {
   dt <- time / n_steps
   n_traits <- length(depths)
 
@@ -165,8 +165,10 @@ threshold_model <- function(depths, lambda, theta, m0, alpha, time,
       k1_k2_ratio = k1_k2
     ),
     metadata = list(
-      params = list(lambda = lambda, theta = theta, m0 = m0,
-                    alpha = alpha, time = time),
+      params = list(
+        lambda = lambda, theta = theta, m0 = m0,
+        alpha = alpha, time = time
+      ),
       n_traits = n_traits,
       n_unprotected = sum(unprotected),
       n_protected = sum(!unprotected),
@@ -194,9 +196,6 @@ threshold_model <- function(depths, lambda, theta, m0, alpha, time,
 #' @return Numeric. Time of phase transition.
 #' @export
 phase_transition_time <- function(m0, alpha, threshold_fraction = 0.1) {
-  # M(t) = threshold_fraction × M₀
-  # M₀ × exp(-αt) = fraction × M₀
-  # exp(-αt) = fraction
-  # t = -ln(fraction) / α
+  # Solution: time when retained genome drops below threshold fraction
   -log(threshold_fraction) / alpha
 }

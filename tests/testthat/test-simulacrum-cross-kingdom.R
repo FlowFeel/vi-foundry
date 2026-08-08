@@ -33,7 +33,6 @@ test_that("Simulacrum: cross-kingdom transfer recovers known shared slope (singl
   withr::with_seed(
     seed = 42,
     code = {
-
       # Generate synthetic data with known slope
       data <- generate_cross_kingdom_data(
         seed = 42,
@@ -65,7 +64,6 @@ test_that("Simulacrum: independent slopes produce no cross-kingdom transfer (nul
   withr::with_seed(
     seed = 42,
     code = {
-
       # Generate plant data with slope 0.6, bird data with a DIFFERENT
       # slope (negative) to break the shared-slope assumption
       data <- generate_cross_kingdom_data(

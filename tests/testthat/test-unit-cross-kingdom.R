@@ -14,8 +14,8 @@ test_that("fit_plant_model returns valid result on fixture data", {
   )
   result <- fit_plant_model(data, seed = 42)
   expect_true(validate_result(result))
-  expect_gt(result$values["slope"], 0)  # Positive: deeper = retained longer
-  expect_equal(result$values["r_squared"], 1, tolerance = 0.01)  # Perfect fit
+  expect_gt(result$values["slope"], 0) # Positive: deeper = retained longer
+  expect_equal(result$values["r_squared"], 1, tolerance = 0.01) # Perfect fit
 })
 
 test_that("fit_plant_model is deterministic with same seed (A2)", {
@@ -33,8 +33,10 @@ test_that("fit_plant_model is deterministic with same seed (A2)", {
 
 test_that("predict_bird_ordering returns ranks matching dependency ordering", {
   bird_data <- data.frame(
-    structure = c("wing", "keel", "pectoral", "hindlimb", "pelvis",
-                   "feathers", "wing_bones", "asymmetry"),
+    structure = c(
+      "wing", "keel", "pectoral", "hindlimb", "pelvis",
+      "feathers", "wing_bones", "asymmetry"
+    ),
     dependency_score = c(0.0, 1.0, 0.5, 4.0, 3.0, 5.0, 1.5, 1.0),
     observed_rank = c(1, 2, 3, 4, 5, 6, 7, 8)
   )
@@ -42,8 +44,10 @@ test_that("predict_bird_ordering returns ranks matching dependency ordering", {
   expect_length(predicted, 8)
   # Higher dependency → higher predicted rank value → later change
   # But predicted ranks are relative — check ordering is correct
-  expect_gt(predicted[which(bird_data$dependency_score == 5)],
-            predicted[which(bird_data$dependency_score == 0)])
+  expect_gt(
+    predicted[which(bird_data$dependency_score == 5)],
+    predicted[which(bird_data$dependency_score == 0)]
+  )
 })
 
 test_that("predict_bird_ordering validates bird morphology (contract)", {
@@ -64,8 +68,10 @@ test_that("transfer_test returns A6 proof object with plant slope and bird rho",
     orobanchaceae_loss_rank = c(1, 2, 3, 4, 5, 6)
   )
   bird_data <- data.frame(
-    structure = c("wing", "keel", "pectoral", "hindlimb", "pelvis",
-                   "feathers", "wing_bones", "asymmetry"),
+    structure = c(
+      "wing", "keel", "pectoral", "hindlimb", "pelvis",
+      "feathers", "wing_bones", "asymmetry"
+    ),
     dependency_score = c(0.0, 1.0, 0.5, 4.0, 3.0, 5.0, 1.5, 1.0),
     observed_rank = c(1, 3, 2, 4, 5, 6, 7, 8)
   )

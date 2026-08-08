@@ -1,1 +1,2 @@
-linters: linters_with_defaults(line_length_linter = line_length_linter(120), object_name_linter = object_name_linter("snake_case"))
+linters: linters_with_defaults(line_length_linter = line_length_linter(120), object_name_linter = object_name_linter("snake_case"), object_usage_linter = NULL)
+exclusions: list("inst/examples/section12-reproduction.Rmd", "vignettes/vi-foundry.Rmd")

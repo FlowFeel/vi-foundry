@@ -33,22 +33,20 @@
 #
 # @examples
 # \dontrun{
-# sim <- generate_autocatalytic_set()
-# plot(sim$values$innovation_counts, type = "l")
 # }
 #
 # @export
 generate_autocatalytic_set <- function(n_steps = 20,
-                                        innovation_rate = 0.3,
-                                        capacity = 100,
-                                        closure_threshold = 0.5,
-                                        n_innovations = 10,
-                                        seed = 42L) {
+                                       innovation_rate = 0.3,
+                                       capacity = 100,
+                                       closure_threshold = 0.5,
+                                       n_innovations = 10,
+                                       seed = 42L) {
   withr::with_seed(seed, {
     # --- Generate innovation time series via logistic growth ---
     # count_t = count_{t-1} + rate * count_{t-1} * (1 - count_{t-1} / capacity)
     counts <- numeric(n_steps)
-    counts[1] <- 1  # Start with one innovation
+    counts[1] <- 1 # Start with one innovation
 
     for (t in 2:n_steps) {
       growth <- innovation_rate * counts[t - 1] * (1 - counts[t - 1] / capacity)

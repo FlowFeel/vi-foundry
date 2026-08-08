@@ -35,8 +35,10 @@ test_that("plot_pgls_with_phylogeny returns a ggplot object", {
   )
   tree <- ape::read.tree(text = "((Lindenbergia:0.1,Schwalbea:0.2):0.1,Orobanche:0.3);")
   result <- list(
-    values = c(beta = -23.5, r_squared = 0.652, p_value = 1.25e-9,
-               lambda = 0.85, n_species = 3),
+    values = c(
+      beta = -23.5, r_squared = 0.652, p_value = 1.25e-9,
+      lambda = 0.85, n_species = 3
+    ),
     metadata = list(seed = 42, n = 3, converged = TRUE)
   )
 
@@ -56,8 +58,10 @@ test_that("plot_pgls_with_phylogeny is pure (A1 — no side effects)", {
   )
   tree <- ape::read.tree(text = "((A:0.1,B:0.2):0.1,C:0.3);")
   result <- list(
-    values = c(beta = -23.5, r_squared = 0.652, p_value = 1.25e-9,
-               lambda = 0.85, n_species = 3),
+    values = c(
+      beta = -23.5, r_squared = 0.652, p_value = 1.25e-9,
+      lambda = 0.85, n_species = 3
+    ),
     metadata = list(seed = 42, n = 3, converged = TRUE)
   )
 
@@ -76,8 +80,10 @@ test_that("plot_faceted_family_regression returns a ggplot object", {
 
   data <- data.frame(
     species = c("A", "B", "C", "D", "E", "F"),
-    family = c("Orchidaceae", "Orchidaceae", "Orobanchaceae",
-               "Orobanchaceae", "Convolvulaceae", "Convolvulaceae"),
+    family = c(
+      "Orchidaceae", "Orchidaceae", "Orobanchaceae",
+      "Orobanchaceae", "Convolvulaceae", "Convolvulaceae"
+    ),
     plastome_size_kb = c(150, 140, 120, 100, 130, 110),
     parasitism_score = c(0, 1, 0, 2, 1, 3),
     stringsAsFactors = FALSE
@@ -111,8 +117,11 @@ test_that("plot_model_comparison returns a ggplot object with all three models",
   )
   mod_logistic <- tryCatch(
     nls(y ~ fl + (cl - fl) / (1 + exp(rate * (x - mid))),
-        start = list(fl = min(y) * 0.8, cl = max(y) * 1.2,
-                     rate = 0.02, mid = mean(x))),
+      start = list(
+        fl = min(y) * 0.8, cl = max(y) * 1.2,
+        rate = 0.02, mid = mean(x)
+      )
+    ),
     error = function(e) NULL
   )
 
@@ -142,10 +151,10 @@ test_that("plot_partial_residuals returns a ggplot object", {
   .skip_if_no_patchwork()
 
   data <- data.frame(
-  ne = c(1e6, 2e6, 5e5, 1e7, 8e5, 3e6),
-  niche = c(0.2, 0.5, 0.1, 0.8, 0.3, 0.6),
-  genome_size = c(4.5e6, 5.0e6, 4.0e6, 5.5e6, 4.2e6, 4.8e6)
-)
+    ne = c(1e6, 2e6, 5e5, 1e7, 8e5, 3e6),
+    niche = c(0.2, 0.5, 0.1, 0.8, 0.3, 0.6),
+    genome_size = c(4.5e6, 5.0e6, 4.0e6, 5.5e6, 4.2e6, 4.8e6)
+  )
   mod_ne <- lm(genome_size ~ ne, data = data)
   mod_niche <- lm(genome_size ~ niche, data = data)
 
@@ -167,8 +176,10 @@ test_that("plot_fluidity_by_lifestyle returns a ggplot object", {
   data <- data.frame(
     species = c("A", "B", "C", "D", "E", "F"),
     pangenome_fluidity = c(0.8, 0.7, 0.5, 0.4, 0.2, 0.1),
-    lifestyle = c("free_living", "free_living", "commensal", "commensal",
-                   "obligate", "obligate"),
+    lifestyle = c(
+      "free_living", "free_living", "commensal", "commensal",
+      "obligate", "obligate"
+    ),
     stringsAsFactors = FALSE
   )
 
@@ -242,8 +253,10 @@ test_that("plot_retention_trajectory returns a ggplot object", {
       phase1_rate = 19.0, phase2_rate = 1.0, k1_k2_ratio = 19.0
     ),
     metadata = list(
-      params = list(lambda = 0.15, theta = 2.5, m0 = 10,
-                     alpha = 0.05, time = 100),
+      params = list(
+        lambda = 0.15, theta = 2.5, m0 = 10,
+        alpha = 0.05, time = 100
+      ),
       n_traits = 5,
       n_unprotected = 3,
       n_protected = 2,
@@ -268,8 +281,10 @@ test_that("plot_cusp_bifurcation returns a ggplot object", {
   .skip_if_no_ggplot2()
   .skip_if_no_patchwork()
 
-  p <- plot_cusp_bifurcation(a_range = c(-5, 5), b_range = c(-5, 5),
-                              grid_size = 30L)
+  p <- plot_cusp_bifurcation(
+    a_range = c(-5, 5), b_range = c(-5, 5),
+    grid_size = 30L
+  )
   expect_s3_class(p, "ggplot")
 })
 
@@ -300,10 +315,12 @@ test_that("plot_loglog_growth with catalyst matrix returns ggplot", {
 
   counts <- 10 * exp(0.1 * 1:50)
   cmat <- matrix(FALSE, nrow = 5, ncol = 5)
-  diag(cmat[-1, ]) <- TRUE  # Each innovation catalyzes the next
-  cmat[5, 1] <- TRUE  # Cycle closure
-  p <- plot_loglog_growth(counts, catalyst_matrix = cmat,
-                           innovation_names = c("I1", "I2", "I3", "I4", "I5"))
+  diag(cmat[-1, ]) <- TRUE # Each innovation catalyzes the next
+  cmat[5, 1] <- TRUE # Cycle closure
+  p <- plot_loglog_growth(counts,
+    catalyst_matrix = cmat,
+    innovation_names = c("I1", "I2", "I3", "I4", "I5")
+  )
   expect_s3_class(p, "ggplot")
 })
 
@@ -322,8 +339,10 @@ test_that("plot_cross_kingdom_concordance returns a ggplot object", {
     stringsAsFactors = FALSE
   )
   bird_data <- data.frame(
-    structure = c("wing", "keel", "pectoral", "hindlimb", "pelvis",
-                   "feathers", "wing_bones", "asymmetry"),
+    structure = c(
+      "wing", "keel", "pectoral", "hindlimb", "pelvis",
+      "feathers", "wing_bones", "asymmetry"
+    ),
     dependency_score = c(0.0, 1.0, 0.5, 4.0, 3.0, 5.0, 1.5, 1.0),
     observed_rank = c(1, 3, 2, 4, 5, 6, 7, 8),
     stringsAsFactors = FALSE
@@ -390,23 +409,29 @@ test_that("all viz functions are pure (A1 — no file I/O, no side effects)", {
   skip_if_not(requireNamespace("ape", quietly = TRUE), "ape not installed")
 
   # T1
-  d1 <- data.frame(species = c("A","B","C"),
-                   plastome_size_kb = c(150,120,100),
-                   parasitism_score = c(0,1,2),
-                   stringsAsFactors = FALSE)
+  d1 <- data.frame(
+    species = c("A", "B", "C"),
+    plastome_size_kb = c(150, 120, 100),
+    parasitism_score = c(0, 1, 2),
+    stringsAsFactors = FALSE
+  )
   tr <- ape::read.tree(text = "((A:0.1,B:0.2):0.1,C:0.3);")
-  r1 <- list(values = c(beta = -25, r_squared = 0.65, p_value = 0.001,
-                         lambda = 0.8, n_species = 3),
-             metadata = list(seed = 42, n = 3, converged = TRUE))
+  r1 <- list(
+    values = c(
+      beta = -25, r_squared = 0.65, p_value = 0.001,
+      lambda = 0.8, n_species = 3
+    ),
+    metadata = list(seed = 42, n = 3, converged = TRUE)
+  )
   p1 <- plot_pgls_with_phylogeny(d1, tr, r1)
   expect_s3_class(p1, "ggplot")
 
   # T2
   d2 <- data.frame(
-    species = c("A","B","C","D"),
-    family = c("F1","F1","F2","F2"),
-    plastome_size_kb = c(150,140,100,80),
-    parasitism_score = c(0,1,2,3),
+    species = c("A", "B", "C", "D"),
+    family = c("F1", "F1", "F2", "F2"),
+    plastome_size_kb = c(150, 140, 100, 80),
+    parasitism_score = c(0, 1, 2, 3),
     stringsAsFactors = FALSE
   )
   p2 <- plot_faceted_family_regression(d2)
@@ -418,13 +443,17 @@ test_that("all viz functions are pure (A1 — no file I/O, no side effects)", {
 
   # Formal model
   fm <- list(
-    values = c(final_retention1 = 0.3, final_retention2 = 0.6,
-               final_retention3 = 0.9, final_retention4 = 1.0,
-               final_retention5 = 1.0,
-               phase1_rate = 19, phase2_rate = 1, k1_k2_ratio = 19),
+    values = c(
+      final_retention1 = 0.3, final_retention2 = 0.6,
+      final_retention3 = 0.9, final_retention4 = 1.0,
+      final_retention5 = 1.0,
+      phase1_rate = 19, phase2_rate = 1, k1_k2_ratio = 19
+    ),
     metadata = list(
-      params = list(lambda = 0.15, theta = 2.5, m0 = 10,
-                     alpha = 0.05, time = 100),
+      params = list(
+        lambda = 0.15, theta = 2.5, m0 = 10,
+        alpha = 0.05, time = 100
+      ),
       n_traits = 5, converged = TRUE
     )
   )
@@ -441,14 +470,14 @@ test_that("all viz functions are pure (A1 — no file I/O, no side effects)", {
 
   # Cross-kingdom
   plant_data <- data.frame(
-    category = c("a","b","c","d","e","f"),
+    category = c("a", "b", "c", "d", "e", "f"),
     dependency_score = 0:5,
     orobanchaceae_loss_rank = 1:6,
     stringsAsFactors = FALSE
   )
   bird_data <- data.frame(
-    structure = c("a","b","c","d","e","f","g","h"),
-    dependency_score = c(0,0.5,1,1.5,2,3,4,5),
+    structure = c("a", "b", "c", "d", "e", "f", "g", "h"),
+    dependency_score = c(0, 0.5, 1, 1.5, 2, 3, 4, 5),
     observed_rank = 1:8,
     stringsAsFactors = FALSE
   )

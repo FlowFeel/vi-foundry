@@ -58,14 +58,20 @@ plot_true_vs_recovered <- function(marks, param_name, simulacrum_id = "") {
     sim_index = seq_along(true_vals)
   )
 
-  p <- ggplot2::ggplot(df, ggplot2::aes(x = .data$true, y = .data$recovered,
-                                       color = .data$within_ci)) +
-    ggplot2::geom_abline(slope = 1, intercept = 0, linetype = "dashed",
-                         color = "grey50") +
+  p <- ggplot2::ggplot(df, ggplot2::aes(
+    x = .data$true, y = .data$recovered,
+    color = .data$within_ci
+  )) +
+    ggplot2::geom_abline(
+      slope = 1, intercept = 0, linetype = "dashed",
+      color = "grey50"
+    ) +
     ggplot2::geom_point(size = 3, alpha = 0.7) +
-    ggplot2::scale_color_manual(values = c("TRUE" = "#2ecc71", "FALSE" = "#e74c3c"),
-                                labels = c("TRUE" = "Within CI", "FALSE" = "Outside CI"),
-                                name = "Recovery") +
+    ggplot2::scale_color_manual(
+      values = c("TRUE" = "#2ecc71", "FALSE" = "#e74c3c"),
+      labels = c("TRUE" = "Within CI", "FALSE" = "Outside CI"),
+      name = "Recovery"
+    ) +
     ggplot2::labs(
       title = paste0("Simulacrum: ", simulacrum_id),
       subtitle = paste0("Parameter: ", param_name),
@@ -98,17 +104,20 @@ plot_recovery_trajectory <- function(marks, param_name, simulacrum_id = "") {
   df <- data.frame(
     sim_index = sim_idx,
     recovered = recovered_vals,
-    true_value = true_vals[1],  # Constant — true params don't change
+    true_value = true_vals[1], # Constant — true params don't change
     null = null_vals
   )
 
   p <- ggplot2::ggplot(df, ggplot2::aes(x = .data$sim_index)) +
     ggplot2::geom_hline(ggplot2::aes(yintercept = .data$true_value),
-                         color = "#2ecc71", linewidth = 1, linetype = "dashed") +
+      color = "#2ecc71", linewidth = 1, linetype = "dashed"
+    ) +
     ggplot2::geom_line(ggplot2::aes(y = .data$recovered), color = "#3498db", linewidth = 0.8) +
     ggplot2::geom_point(ggplot2::aes(y = .data$recovered), color = "#3498db", size = 2) +
-    ggplot2::geom_point(ggplot2::aes(y = .data$null), color = "#e74c3c",
-                         size = 2, alpha = 0.5) +
+    ggplot2::geom_point(ggplot2::aes(y = .data$null),
+      color = "#e74c3c",
+      size = 2, alpha = 0.5
+    ) +
     ggplot2::labs(
       title = paste0("Recovery trajectory: ", simulacrum_id),
       subtitle = paste0("Parameter: ", param_name),
@@ -135,7 +144,7 @@ plot_recovery_trajectory <- function(marks, param_name, simulacrum_id = "") {
 #' @return ggplot2 object.
 #' @export
 plot_param_space_projection <- function(marks, param_x, param_y,
-                                          simulacrum_id = "") {
+                                        simulacrum_id = "") {
   x_true <- sapply(marks, function(m) m$true_params[[param_x]])
   y_true <- sapply(marks, function(m) m$true_params[[param_y]])
   x_rec <- sapply(marks, function(m) m$recovered_params[[param_x]])
@@ -151,18 +160,29 @@ plot_param_space_projection <- function(marks, param_x, param_y,
 
   p <- ggplot2::ggplot(df) +
     ggplot2::geom_point(ggplot2::aes(x = .data$x_true, y = .data$y_true),
-                         color = "#2ecc71", size = 4, shape = 18, alpha = 0.6) +
-    ggplot2::geom_point(ggplot2::aes(x = .data$x_recovered, y = .data$y_recovered,
-                                     color = .data$within_ci),
-                         size = 3, alpha = 0.8) +
-    ggplot2::geom_segment(ggplot2::aes(x = .data$x_true, y = .data$y_true,
-                                       xend = .data$x_recovered,
-                                       yend = .data$y_recovered,
-                                       color = .data$within_ci),
-                          alpha = 0.3, linewidth = 0.5) +
-    ggplot2::scale_color_manual(values = c("TRUE" = "#3498db", "FALSE" = "#e74c3c"),
-                                labels = c("TRUE" = "Recovered", "FALSE" = "Failed"),
-                                name = "Recovery") +
+      color = "#2ecc71", size = 4, shape = 18, alpha = 0.6
+    ) +
+    ggplot2::geom_point(
+      ggplot2::aes(
+        x = .data$x_recovered, y = .data$y_recovered,
+        color = .data$within_ci
+      ),
+      size = 3, alpha = 0.8
+    ) +
+    ggplot2::geom_segment(
+      ggplot2::aes(
+        x = .data$x_true, y = .data$y_true,
+        xend = .data$x_recovered,
+        yend = .data$y_recovered,
+        color = .data$within_ci
+      ),
+      alpha = 0.3, linewidth = 0.5
+    ) +
+    ggplot2::scale_color_manual(
+      values = c("TRUE" = "#3498db", "FALSE" = "#e74c3c"),
+      labels = c("TRUE" = "Recovered", "FALSE" = "Failed"),
+      name = "Recovery"
+    ) +
     ggplot2::labs(
       title = paste0("Parameter space: ", simulacrum_id),
       subtitle = paste0(param_x, " vs ", param_y),
@@ -205,10 +225,14 @@ plot_recovery_rate <- function(marks, window = 10L, simulacrum_id = "") {
     recovery_rate = rolling_rate
   )
 
-  p <- ggplot2::ggplot(df, ggplot2::aes(x = .data$sim_index,
-                                        y = .data$recovery_rate)) +
-    ggplot2::geom_hline(yintercept = 0.95, color = "#2ecc71",
-                         linetype = "dashed", linewidth = 0.8) +
+  p <- ggplot2::ggplot(df, ggplot2::aes(
+    x = .data$sim_index,
+    y = .data$recovery_rate
+  )) +
+    ggplot2::geom_hline(
+      yintercept = 0.95, color = "#2ecc71",
+      linetype = "dashed", linewidth = 0.8
+    ) +
     ggplot2::geom_line(color = "#3498db", linewidth = 1) +
     ggplot2::geom_point(color = "#3498db", size = 2) +
     ggplot2::ylim(0, 1) +
@@ -234,7 +258,7 @@ plot_recovery_rate <- function(marks, window = 10L, simulacrum_id = "") {
 #' @return Invisible TRUE. Side effect: writes PDF.
 #' @export
 render_simulacra_report <- function(output_dir = "results/simulacra",
-                                     pdf_path = "results/simulacra_report.pdf") {
+                                    pdf_path = "results/simulacra_report.pdf") {
   all_marks <- read_all_marks(output_dir)
 
   if (length(all_marks) == 0) {
@@ -268,8 +292,10 @@ render_simulacra_report <- function(output_dir = "results/simulacra",
 
     # If 2+ params, plot param space projections
     if (length(param_names) >= 2) {
-      p <- plot_param_space_projection(marks, param_names[1],
-                                         param_names[2], sim_id)
+      p <- plot_param_space_projection(
+        marks, param_names[1],
+        param_names[2], sim_id
+      )
       print(p)
     }
   }

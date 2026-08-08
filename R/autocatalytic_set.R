@@ -35,7 +35,7 @@ autocatalytic_closure <- function(innovations, catalyst_matrix) {
   n <- length(innovations)
 
   if (!is.matrix(catalyst_matrix) || nrow(catalyst_matrix) != n ||
-      ncol(catalyst_matrix) != n) {
+        ncol(catalyst_matrix) != n) {
     stop("catalyst_matrix must be n×n matching innovations length", call. = FALSE)
   }
 
@@ -89,8 +89,8 @@ diversity_dependence_sign <- function(innovation_counts, seed = 42L) {
     r2 <- summary(mod)$r.squared
 
     # Test for superlinear (autocatalytic) dynamics
-    # Log-log model: log(innovations) ~ log(time)
-    # Slope > 1 = superlinear (autocatalytic)
+    # Log-log regression of innovations against time
+    # Slope greater than 1 indicates superlinear dynamics
     log_mod <- lm(log(pmax(innovation_counts, 1)) ~ log(time))
     log_slope <- coef(log_mod)[2]
 

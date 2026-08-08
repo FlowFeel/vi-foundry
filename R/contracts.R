@@ -85,15 +85,18 @@ validate_phylo_tree <- function(tree, min_taxa = 3L) {
 #'
 #' @export
 validate_plastome_data <- function(data,
-                                    required_cols = c("species", "plastome_size_kb",
-                                                       "parasitism_score")) {
+                                   required_cols = c(
+                                     "species", "plastome_size_kb",
+                                     "parasitism_score"
+                                   )) {
   if (!is.data.frame(data)) {
     stop("data must be a data.frame", call. = FALSE)
   }
   missing <- setdiff(required_cols, names(data))
   if (length(missing) > 0L) {
     stop(sprintf("data missing required columns: %s", paste(missing, collapse = ", ")),
-         call. = FALSE)
+      call. = FALSE
+    )
   }
   if (!is.numeric(data$plastome_size_kb)) {
     stop("plastome_size_kb must be numeric", call. = FALSE)
@@ -175,17 +178,18 @@ validate_endosymbiont_data <- function(data) {
   missing <- setdiff(required, names(data))
   if (length(missing) > 0L) {
     stop(sprintf("data missing required columns: %s", paste(missing, collapse = ", ")),
-         call. = FALSE)
+      call. = FALSE
+    )
   }
   if (!is.numeric(data$genome_bp) || any(data$genome_bp <= 0, na.rm = TRUE)) {
     stop("genome_bp must be positive numeric", call. = FALSE)
   }
   if (!is.numeric(data$aa_pathways_retained) ||
-      any(data$aa_pathways_retained < 0, na.rm = TRUE)) {
+        any(data$aa_pathways_retained < 0, na.rm = TRUE)) {
     stop("aa_pathways_retained must be non-negative numeric", call. = FALSE)
   }
   if (!is.numeric(data$symbiosis_age_mya) ||
-      any(data$symbiosis_age_mya <= 0, na.rm = TRUE)) {
+        any(data$symbiosis_age_mya <= 0, na.rm = TRUE)) {
     stop("symbiosis_age_mya must be positive numeric", call. = FALSE)
   }
   invisible(TRUE)
@@ -220,7 +224,8 @@ validate_gene_categories <- function(data) {
   missing <- setdiff(required, names(data))
   if (length(missing) > 0L) {
     stop(sprintf("data missing required columns: %s", paste(missing, collapse = ", ")),
-         call. = FALSE)
+      call. = FALSE
+    )
   }
   if (!is.numeric(data$dependency_score)) {
     stop("dependency_score must be numeric", call. = FALSE)
@@ -269,7 +274,8 @@ validate_bird_morphology <- function(data) {
   missing <- setdiff(required, names(data))
   if (length(missing) > 0L) {
     stop(sprintf("data missing required columns: %s", paste(missing, collapse = ", ")),
-         call. = FALSE)
+      call. = FALSE
+    )
   }
   if (!is.numeric(data$dependency_score)) {
     stop("dependency_score must be numeric", call. = FALSE)
@@ -282,7 +288,8 @@ validate_bird_morphology <- function(data) {
   }
   if (nrow(data) < 5L) {
     stop(sprintf("data has %d structures, need >= 5 for Spearman", nrow(data)),
-         call. = FALSE)
+      call. = FALSE
+    )
   }
   invisible(TRUE)
 }
@@ -315,17 +322,20 @@ validate_niche_data <- function(data) {
   ne_cols <- grep("Ne|ne", names(data), value = TRUE)
   if (length(ne_cols) < 1L) {
     stop("data must have a column containing 'Ne' (effective population size)",
-         call. = FALSE)
+      call. = FALSE
+    )
   }
   # Must have lifestyle or niche breadth column
   niche_cols <- grep("niche|lifestyle|Life|habitat", names(data),
-                      value = TRUE, ignore.case = TRUE)
+    value = TRUE, ignore.case = TRUE
+  )
   if (length(niche_cols) < 1L) {
     stop("data must have a niche/lifestyle/habitat column", call. = FALSE)
   }
   if (nrow(data) < 10L) {
     stop(sprintf("data has %d rows, need >= 10 for regression", nrow(data)),
-         call. = FALSE)
+      call. = FALSE
+    )
   }
   invisible(TRUE)
 }
@@ -358,7 +368,9 @@ validate_pangenome_data <- function(data) {
     stop("data must have 'pangenome_fluidity' column", call. = FALSE)
   }
   lifestyle_cols <- grep("lifestyle|Life|Host_or_free|Obligate",
-                         names(data), value = TRUE, ignore.case = TRUE)
+    names(data),
+    value = TRUE, ignore.case = TRUE
+  )
   if (length(lifestyle_cols) < 1L) {
     stop("data must have a lifestyle/host-association column", call. = FALSE)
   }
@@ -366,7 +378,7 @@ validate_pangenome_data <- function(data) {
     stop("pangenome_fluidity must be numeric", call. = FALSE)
   }
   if (any(data$pangenome_fluidity < 0, na.rm = TRUE) ||
-      any(data$pangenome_fluidity > 1, na.rm = TRUE)) {
+        any(data$pangenome_fluidity > 1, na.rm = TRUE)) {
     stop("pangenome_fluidity must be in [0, 1]", call. = FALSE)
   }
   invisible(TRUE)

@@ -64,17 +64,15 @@ NULL
 #'
 #' @export
 generate_cross_kingdom_data <- function(
-    seed = 42L,
-    true_slope = 0.6,
-    plant_noise_sd = 0.5,
-    bird_noise_sd = 0.5,
-    bird_slope = NULL
-  ) {
-
+  seed = 42L,
+  true_slope = 0.6,
+  plant_noise_sd = 0.5,
+  bird_noise_sd = 0.5,
+  bird_slope = NULL
+) {
   withr::with_seed(
     seed = seed,
     code = {
-
       # ---- Plant data (Orobanchaceae gene categories) ----
       plant_categories <- c("ndh", "rpo", "psa", "psb", "atp", "rpl_rps")
       plant_dep <- c(0, 1, 1, 2, 3, 5)

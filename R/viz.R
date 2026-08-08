@@ -71,8 +71,10 @@ plot_pgls_with_phylogeny <- function(data, tree, result) {
       grid::grid.grabExpr({
         old_par <- graphics::par(mar = c(4, 0.5, 4, 0.5), no.readonly = TRUE)
         on.exit(graphics::par(old_par))
-        ape::plot.phylo(tree, show.tip.label = TRUE, cex = 0.6,
-                         direction = "rightwards", x.lim = NULL)
+        ape::plot.phylo(tree,
+          show.tip.label = TRUE, cex = 0.6,
+          direction = "rightwards", x.lim = NULL
+        )
         ape::add.scale.bar(length = 0.1)
       })
     ) +
@@ -83,8 +85,9 @@ plot_pgls_with_phylogeny <- function(data, tree, result) {
   # Compute regression line from model result
   pred_df <- data.frame(
     parasitism_score = seq(min(data$parasitism_score, na.rm = TRUE),
-                           max(data$parasitism_score, na.rm = TRUE),
-                           length.out = 100)
+      max(data$parasitism_score, na.rm = TRUE),
+      length.out = 100
+    )
   )
   mean_x <- mean(data$parasitism_score, na.rm = TRUE)
   mean_y <- mean(data$plastome_size_kb, na.rm = TRUE)
@@ -92,11 +95,10 @@ plot_pgls_with_phylogeny <- function(data, tree, result) {
 
   # Standard error of prediction (approximate from PGLS)
   # Use simple residual standard error as proxy
-  resid_se <- stats::sd(data$plastome_size_kb - pred_df$plastome_pred[1:nrow(data)],
-                        na.rm = TRUE)
+  resid_se <- stats::sd(data$plastome_size_kb - pred_df$plastome_pred[seq_len(nrow(data))], na.rm = TRUE)
   se_x <- stats::sd(data$parasitism_score, na.rm = TRUE)
-  se_factor <- sqrt(1 / n_sp + (pred_df$parasitism_score - mean_x)^2 /
-                      (sum((data$parasitism_score - mean_x)^2, na.rm = TRUE)))
+  ss_x <- sum((data$parasitism_score - mean_x)^2, na.rm = TRUE)
+  se_factor <- sqrt(1 / n_sp + (pred_df$parasitism_score - mean_x)^2 / ss_x)
   pred_df$se <- resid_se * se_factor
   pred_df$lower <- pred_df$plastome_pred - 1.96 * pred_df$se
   pred_df$upper <- pred_df$plastome_pred + 1.96 * pred_df$se
@@ -104,18 +106,26 @@ plot_pgls_with_phylogeny <- function(data, tree, result) {
   scatter <- ggplot2::ggplot(data, ggplot2::aes(
     x = .data$parasitism_score, y = .data$plastome_size_kb
   )) +
-    ggplot2::geom_ribbon(data = pred_df,
-                          ggplot2::aes(y = .data$plastome_pred,
-                                       ymin = .data$lower, ymax = .data$upper),
-                          fill = "#3498db", alpha = 0.2) +
-    ggplot2::geom_line(data = pred_df,
-                        ggplot2::aes(y = .data$plastome_pred),
-                        color = "#2c3e50", linewidth = 1) +
+    ggplot2::geom_ribbon(
+      data = pred_df,
+      ggplot2::aes(
+        y = .data$plastome_pred,
+        ymin = .data$lower, ymax = .data$upper
+      ),
+      fill = "#3498db", alpha = 0.2
+    ) +
+    ggplot2::geom_line(
+      data = pred_df,
+      ggplot2::aes(y = .data$plastome_pred),
+      color = "#2c3e50", linewidth = 1
+    ) +
     ggplot2::geom_point(size = 3, alpha = 0.7, color = "#2980b9") +
     ggplot2::labs(
       title = "B: PGLS: Plastome Size ~ Parasitism",
-      subtitle = sprintf("beta = %.2f, R\u00b2 = %.3f, p = %.2e, n = %d",
-                         beta, r2, pval, n_sp),
+      subtitle = sprintf(
+        "beta = %.2f, R\u00b2 = %.3f, p = %.2e, n = %d",
+        beta, r2, pval, n_sp
+      ),
       x = "Parasitism score",
       y = "Plastome size (kb)"
     ) +
@@ -164,9 +174,11 @@ plot_faceted_family_regression <- function(data) {
     x = .data$parasitism_score, y = .data$plastome_size_kb
   )) +
     ggplot2::geom_point(size = 2, alpha = 0.6, color = "#2980b9") +
-    ggplot2::geom_smooth(method = "lm", se = TRUE, color = "#e74c3c",
-                          fill = "#e74c3c", alpha = 0.15, linewidth = 0.8) +
-    ggplot2::facet_wrap(~ family, scales = "free", ncol = 3) +
+    ggplot2::geom_smooth(
+      method = "lm", se = TRUE, color = "#e74c3c",
+      fill = "#e74c3c", alpha = 0.15, linewidth = 0.8
+    ) +
+    ggplot2::facet_wrap(~family, scales = "free", ncol = 3) +
     ggplot2::labs(
       title = "Cross-family plastome replication",
       subtitle = "Within-family regression: plastome size ~ parasitism",
@@ -246,7 +258,8 @@ plot_model_comparison <- function(data, mod_linear, mod_exp, mod_logistic) {
 
   if (!is.null(mod_logistic)) {
     curves$logistic <- stats::predict(mod_logistic,
-                                       newdata = data.frame(symbiosis_age_mya = x_seq))
+      newdata = data.frame(symbiosis_age_mya = x_seq)
+    )
   } else {
     curves$logistic <- NA_real_
   }
@@ -262,22 +275,30 @@ plot_model_comparison <- function(data, mod_linear, mod_exp, mod_logistic) {
   curves_long <- curves_long[!is.na(curves_long$genome_pred), ]
   rownames(curves_long) <- NULL
 
-  panel_a <- ggplot2::ggplot(data, ggplot2::aes(x = .data$symbiosis_age_mya,
-                                                  y = .data$genome_bp)) +
+  panel_a <- ggplot2::ggplot(data, ggplot2::aes(
+    x = .data$symbiosis_age_mya,
+    y = .data$genome_bp
+  )) +
     ggplot2::geom_point(size = 3, alpha = 0.7, color = "#2c3e50") +
     ggplot2::geom_line(
       data = curves_long,
-      ggplot2::aes(x = .data$x, y = .data$genome_pred,
-                    color = .data$model, linetype = .data$model),
+      ggplot2::aes(
+        x = .data$x, y = .data$genome_pred,
+        color = .data$model, linetype = .data$model
+      ),
       linewidth = 1
     ) +
     ggplot2::scale_color_manual(
-      values = c("Linear" = "#e74c3c", "Exponential" = "#f39c12",
-                  "Logistic" = "#2ecc71")
+      values = c(
+        "Linear" = "#e74c3c", "Exponential" = "#f39c12",
+        "Logistic" = "#2ecc71"
+      )
     ) +
     ggplot2::scale_linetype_manual(
-      values = c("Linear" = "dashed", "Exponential" = "dotted",
-                  "Logistic" = "solid")
+      values = c(
+        "Linear" = "dashed", "Exponential" = "dotted",
+        "Logistic" = "solid"
+      )
     ) +
     ggplot2::labs(
       title = "A: Model Comparison",
@@ -319,12 +340,16 @@ plot_model_comparison <- function(data, mod_linear, mod_exp, mod_logistic) {
   panel_b <- ggplot2::ggplot(resids_long, ggplot2::aes(
     x = .data$x, y = .data$residual, color = .data$model
   )) +
-    ggplot2::geom_hline(yintercept = 0, linetype = "dashed", color = "grey50",
-                         linewidth = 0.5) +
+    ggplot2::geom_hline(
+      yintercept = 0, linetype = "dashed", color = "grey50",
+      linewidth = 0.5
+    ) +
     ggplot2::geom_point(size = 2, alpha = 0.7) +
     ggplot2::scale_color_manual(
-      values = c("Linear" = "#e74c3c", "Exponential" = "#f39c12",
-                  "Logistic" = "#2ecc71")
+      values = c(
+        "Linear" = "#e74c3c", "Exponential" = "#f39c12",
+        "Logistic" = "#2ecc71"
+      )
     ) +
     ggplot2::labs(
       title = "B: Residuals",
@@ -352,15 +377,19 @@ plot_model_comparison <- function(data, mod_linear, mod_exp, mod_logistic) {
     k_exp <- length(stats::coef(mod_exp))
     aic_exp <- stats::AIC(mod_exp)
     aicc_exp <- aic_exp + (2 * k_exp * (k_exp + 1)) / (n_obs - k_exp - 1)
-    aicc_df <- rbind(aicc_df, data.frame(model = "Exponential", aicc = aicc_exp,
-                                          stringsAsFactors = FALSE))
+    aicc_df <- rbind(aicc_df, data.frame(
+      model = "Exponential", aicc = aicc_exp,
+      stringsAsFactors = FALSE
+    ))
   }
   if (!is.null(mod_logistic)) {
     k_log <- length(stats::coef(mod_logistic))
     aic_log <- stats::AIC(mod_logistic)
     aicc_log <- aic_log + (2 * k_log * (k_log + 1)) / (n_obs - k_log - 1)
-    aicc_df <- rbind(aicc_df, data.frame(model = "Logistic", aicc = aicc_log,
-                                          stringsAsFactors = FALSE))
+    aicc_df <- rbind(aicc_df, data.frame(
+      model = "Logistic", aicc = aicc_log,
+      stringsAsFactors = FALSE
+    ))
   }
 
   min_aicc <- min(aicc_df$aicc, na.rm = TRUE)
@@ -372,8 +401,10 @@ plot_model_comparison <- function(data, mod_linear, mod_exp, mod_logistic) {
   )) +
     ggplot2::geom_col(width = 0.6) +
     ggplot2::scale_fill_manual(
-      values = c("Linear" = "#e74c3c", "Exponential" = "#f39c12",
-                  "Logistic" = "#2ecc71")
+      values = c(
+        "Linear" = "#e74c3c", "Exponential" = "#f39c12",
+        "Logistic" = "#2ecc71"
+      )
     ) +
     ggplot2::labs(
       title = "C: \u0394AICc",
@@ -441,13 +472,19 @@ plot_partial_residuals <- function(data, mod_ne, mod_niche) {
     predictor = as.numeric(data[[ne_col]]),
     partial = as.numeric(ne_partial)
   )
-  panel_a <- ggplot2::ggplot(panel_a_df, ggplot2::aes(x = .data$predictor,
-                                                        y = .data$partial)) +
-    ggplot2::geom_hline(yintercept = 0, linetype = "dashed", color = "grey50",
-                         linewidth = 0.5) +
+  panel_a <- ggplot2::ggplot(panel_a_df, ggplot2::aes(
+    x = .data$predictor,
+    y = .data$partial
+  )) +
+    ggplot2::geom_hline(
+      yintercept = 0, linetype = "dashed", color = "grey50",
+      linewidth = 0.5
+    ) +
     ggplot2::geom_point(size = 2, alpha = 0.5, color = "#3498db") +
-    ggplot2::geom_smooth(method = "lm", se = TRUE, color = "#e74c3c",
-                          fill = "#e74c3c", alpha = 0.15, linewidth = 0.8) +
+    ggplot2::geom_smooth(
+      method = "lm", se = TRUE, color = "#e74c3c",
+      fill = "#e74c3c", alpha = 0.15, linewidth = 0.8
+    ) +
     ggplot2::labs(
       title = "A: Partial Residuals: Ne",
       x = "Effective population size (Ne)",
@@ -464,13 +501,19 @@ plot_partial_residuals <- function(data, mod_ne, mod_niche) {
     predictor = as.numeric(data[[niche_col]]),
     partial = as.numeric(niche_partial)
   )
-  panel_b <- ggplot2::ggplot(panel_b_df, ggplot2::aes(x = .data$predictor,
-                                                        y = .data$partial)) +
-    ggplot2::geom_hline(yintercept = 0, linetype = "dashed", color = "grey50",
-                         linewidth = 0.5) +
+  panel_b <- ggplot2::ggplot(panel_b_df, ggplot2::aes(
+    x = .data$predictor,
+    y = .data$partial
+  )) +
+    ggplot2::geom_hline(
+      yintercept = 0, linetype = "dashed", color = "grey50",
+      linewidth = 0.5
+    ) +
     ggplot2::geom_point(size = 2, alpha = 0.5, color = "#2ecc71") +
-    ggplot2::geom_smooth(method = "lm", se = TRUE, color = "#e74c3c",
-                          fill = "#e74c3c", alpha = 0.15, linewidth = 0.8) +
+    ggplot2::geom_smooth(
+      method = "lm", se = TRUE, color = "#e74c3c",
+      fill = "#e74c3c", alpha = 0.15, linewidth = 0.8
+    ) +
     ggplot2::labs(
       title = "B: Partial Residuals: Niche",
       x = "Niche breadth",
@@ -518,19 +561,26 @@ plot_fluidity_by_lifestyle <- function(data) {
 
   # Find lifestyle column
   lifestyle_col <- grep("lifestyle|Life|Host_or_free|Obligate",
-                        names(data), value = TRUE, ignore.case = TRUE)[1]
+    names(data),
+    value = TRUE, ignore.case = TRUE
+  )[1]
   stopifnot(!is.na(lifestyle_col))
 
   # Create ordered factor: free-living -> obligate
-  lifestyle_order <- c("free_living", "free-living", "Free-living",
-                        "Free living", "commensal", "Commensal",
-                        "facultative", "Facultative",
-                        "obligate_intracellular", "obligate",
-                        "Obligate", "Obligate intracellular")
+  lifestyle_order <- c(
+    "free_living", "free-living", "Free-living",
+    "Free living", "commensal", "Commensal",
+    "facultative", "Facultative",
+    "obligate_intracellular", "obligate",
+    "Obligate", "Obligate intracellular"
+  )
   data$.lifestyle <- factor(data[[lifestyle_col]],
-                             levels = intersect(lifestyle_order,
-                                                unique(data[[lifestyle_col]])),
-                             ordered = TRUE)
+    levels = intersect(
+      lifestyle_order,
+      unique(data[[lifestyle_col]])
+    ),
+    ordered = TRUE
+  )
 
   # If no matches, make ordered by appearance and reverse
   if (all(is.na(data$.lifestyle))) {
@@ -540,10 +590,14 @@ plot_fluidity_by_lifestyle <- function(data) {
   p <- ggplot2::ggplot(data, ggplot2::aes(
     x = .data$.lifestyle, y = .data$pangenome_fluidity
   )) +
-    ggplot2::geom_boxplot(outlier.shape = NA, fill = "#bdc3c7",
-                           alpha = 0.4, width = 0.6) +
-    ggplot2::geom_jitter(width = 0.15, size = 2, alpha = 0.6,
-                          color = "#2980b9") +
+    ggplot2::geom_boxplot(
+      outlier.shape = NA, fill = "#bdc3c7",
+      alpha = 0.4, width = 0.6
+    ) +
+    ggplot2::geom_jitter(
+      width = 0.15, size = 2, alpha = 0.6,
+      color = "#2980b9"
+    ) +
     ggplot2::labs(
       title = "Pan-genome fluidity by lifestyle",
       subtitle = "Ordered: free-living to obligate intracellular",
@@ -603,8 +657,10 @@ plot_rank_rank_heatmap <- function(data, show_dendrogram = FALSE) {
 
   # Order rows by dependency score (highest at top)
   data <- data[order(data$dependency_score, decreasing = TRUE), ]
-  data$category <- factor(data$category, levels = rev(unique(data$category)),
-                           ordered = TRUE)
+  data$category <- factor(data$category,
+    levels = rev(unique(data$category)),
+    ordered = TRUE
+  )
 
   # Reshape to long format for heatmap
   heat_data <- stats::reshape(
@@ -620,14 +676,18 @@ plot_rank_rank_heatmap <- function(data, show_dendrogram = FALSE) {
   # Clean lineage names
   heat_data$lineage <- gsub("_", " ", heat_data$lineage)
   heat_data$lineage <- gsub(" orobanchaceae", "", heat_data$lineage,
-                             ignore.case = TRUE)
+    ignore.case = TRUE
+  )
   heat_data$lineage <- gsub(" cuscuta", "", heat_data$lineage,
-                             ignore.case = TRUE)
+    ignore.case = TRUE
+  )
   heat_data$lineage <- tools::toTitleCase(heat_data$lineage)
 
   # Add dependency score label for rows
-  heat_data$category_label <- sprintf("%s (d=%.0f)", heat_data$category,
-                                       heat_data$dependency_score)
+  heat_data$category_label <- sprintf(
+    "%s (d=%.0f)", heat_data$category,
+    heat_data$dependency_score
+  )
 
   p <- ggplot2::ggplot(heat_data, ggplot2::aes(
     x = .data$lineage, y = .data$category_label, fill = .data$loss_rank
@@ -657,8 +717,9 @@ plot_rank_rank_heatmap <- function(data, show_dendrogram = FALSE) {
     hc <- stats::hclust(stats::dist(t(rank_matrix)))
     # Add dendrogram ordering to factor levels
     heat_data$lineage <- factor(heat_data$lineage,
-                                 levels = colnames(rank_matrix)[hc$order],
-                                 ordered = TRUE)
+      levels = colnames(rank_matrix)[hc$order],
+      ordered = TRUE
+    )
     p <- p + ggplot2::aes(x = .data$lineage)
   }
 
@@ -830,8 +891,10 @@ plot_retention_trajectory <- function(model_result, depths = NULL) {
     )
   })
   traj_df <- do.call(rbind, traj_list)
-  traj_df$depth_label <- sprintf("d = %.1f%s", traj_df$depth,
-                                  ifelse(traj_df$protected, " (protected)", ""))
+  traj_df$depth_label <- sprintf(
+    "d = %.1f%s", traj_df$depth,
+    ifelse(traj_df$protected, " (protected)", "")
+  )
 
   # Compute phase boundary
   phase_time <- -log(0.1) / alpha
@@ -843,10 +906,14 @@ plot_retention_trajectory <- function(model_result, depths = NULL) {
     x = .data$time, y = .data$retention,
     color = .data$depth_label, linetype = .data$protected
   )) +
-    ggplot2::geom_hline(yintercept = 1.0, linetype = "dotted", color = "grey70",
-                         linewidth = 0.5) +
-    ggplot2::geom_vline(xintercept = phase_time, linetype = "dashed",
-                         color = "#e74c3c", linewidth = 0.8) +
+    ggplot2::geom_hline(
+      yintercept = 1.0, linetype = "dotted", color = "grey70",
+      linewidth = 0.5
+    ) +
+    ggplot2::geom_vline(
+      xintercept = phase_time, linetype = "dashed",
+      color = "#e74c3c", linewidth = 0.8
+    ) +
     ggplot2::geom_line(linewidth = 1) +
     ggplot2::scale_color_viridis_d(
       option = "D", end = 0.9,
@@ -856,16 +923,22 @@ plot_retention_trajectory <- function(model_result, depths = NULL) {
       values = c("TRUE" = "solid", "FALSE" = "dashed"),
       guide = "none"
     ) +
-    ggplot2::annotate("text", x = phase_time * 1.05, y = 0.1,
-                       label = sprintf("Phase\nboundary\nt = %.1f", phase_time),
-                       hjust = 0, size = 3, color = "#e74c3c") +
-    ggplot2::annotate("text", x = time * 0.9, y = 0.95,
-                       label = sprintf("k\u2081/k\u2082 = %.1f", k1_k2),
-                       hjust = 1, size = 3.5, color = "grey30") +
+    ggplot2::annotate("text",
+      x = phase_time * 1.05, y = 0.1,
+      label = sprintf("Phase\nboundary\nt = %.1f", phase_time),
+      hjust = 0, size = 3, color = "#e74c3c"
+    ) +
+    ggplot2::annotate("text",
+      x = time * 0.9, y = 0.95,
+      label = sprintf("k\u2081/k\u2082 = %.1f", k1_k2),
+      hjust = 1, size = 3.5, color = "grey30"
+    ) +
     ggplot2::labs(
       title = "Retention probability over time",
-      subtitle = sprintf("lambda = %.2f, theta = %.1f, M\u2080 = %.0f, alpha = %.3f",
-                         lambda, theta, m0, alpha),
+      subtitle = sprintf(
+        "lambda = %.2f, theta = %.1f, M\u2080 = %.0f, alpha = %.3f",
+        lambda, theta, m0, alpha
+      ),
       x = "Time",
       y = "Retention probability C\u1d62(t)"
     ) +
@@ -922,18 +995,21 @@ plot_cusp_bifurcation <- function(a_range, b_range, grid_size = 50L) {
   grid$bifurcation <- 4 * grid$a^3 + 27 * grid$b^2
   grid$bifurcation_set <- abs(grid$bifurcation) < 1e-6
 
-  # Number of real roots of x^3 + a*x + b = 0
-  # Discriminant: Delta = (b/2)^2 + (a/3)^3
+  # Count real roots of the cubic
+  # Discriminant determines root count
   grid$delta <- (grid$b / 2)^2 + (grid$a / 3)^3
   grid$n_roots <- ifelse(grid$delta < 0, 3,
-                          ifelse(abs(grid$delta) < 1e-6, 2, 1))
+    ifelse(abs(grid$delta) < 1e-6, 2, 1)
+  )
 
   panel_a <- ggplot2::ggplot(grid, ggplot2::aes(x = .data$a, y = .data$b)) +
     ggplot2::geom_raster(ggplot2::aes(fill = factor(.data$n_roots)),
-                          alpha = 0.7) +
+      alpha = 0.7
+    ) +
     ggplot2::geom_contour(ggplot2::aes(z = .data$bifurcation),
-                           breaks = 0, color = "#e74c3c", linewidth = 1,
-                           linetype = "dashed") +
+      breaks = 0, color = "#e74c3c", linewidth = 1,
+      linetype = "dashed"
+    ) +
     ggplot2::scale_fill_manual(
       values = c("1" = "#bdc3c7", "2" = "#f39c12", "3" = "#3498db"),
       name = "Equilibria",
@@ -1006,15 +1082,23 @@ plot_cusp_bifurcation <- function(a_range, b_range, grid_size = 50L) {
 
   # Only show hysteresis if paths differ
   hysteresis_long <- rbind(
-    data.frame(b = hysteresis_df$b, state = hysteresis_df$forward,
-               path = "Forward", stringsAsFactors = FALSE),
-    data.frame(b = hysteresis_df$b, state = hysteresis_df$reverse,
-               path = "Reverse", stringsAsFactors = FALSE)
+    data.frame(
+      b = hysteresis_df$b, state = hysteresis_df$forward,
+      path = "Forward", stringsAsFactors = FALSE
+    ),
+    data.frame(
+      b = hysteresis_df$b, state = hysteresis_df$reverse,
+      path = "Reverse", stringsAsFactors = FALSE
+    )
   )
 
-  panel_b <- ggplot2::ggplot(hysteresis_long,
-                              ggplot2::aes(x = .data$b, y = .data$state,
-                                            color = .data$path)) +
+  panel_b <- ggplot2::ggplot(
+    hysteresis_long,
+    ggplot2::aes(
+      x = .data$b, y = .data$state,
+      color = .data$path
+    )
+  ) +
     ggplot2::geom_line(linewidth = 1) +
     ggplot2::scale_color_manual(
       values = c("Forward" = "#2ecc71", "Reverse" = "#e74c3c")
@@ -1069,7 +1153,7 @@ plot_cusp_bifurcation <- function(a_range, b_range, grid_size = 50L) {
 #' plot_loglog_growth(counts)
 #' }
 plot_loglog_growth <- function(counts, catalyst_matrix = NULL,
-                                 innovation_names = NULL) {
+                               innovation_names = NULL) {
   stopifnot(is.numeric(counts), length(counts) >= 5)
 
   n <- length(counts)
@@ -1090,16 +1174,23 @@ plot_loglog_growth <- function(counts, catalyst_matrix = NULL,
     x = .data$log_time, y = .data$log_count
   )) +
     ggplot2::geom_point(size = 2.5, alpha = 0.6, color = "#2c3e50") +
-    ggplot2::geom_smooth(method = "lm", se = TRUE, color = "#e74c3c",
-                          fill = "#e74c3c", alpha = 0.15, linewidth = 0.8) +
-    ggplot2::annotate("text", x = max(log_df$log_time) * 0.7,
-                       y = max(log_df$log_count) * 0.9,
-                       label = sprintf("slope = %.3f\nR\u00b2 = %.3f\n%s",
-                                       log_slope, log_r2,
-                                       ifelse(log_slope > 1,
-                                              "Superlinear!",
-                                              "Sublinear")),
-                       hjust = 0, size = 3.5, color = "grey30") +
+    ggplot2::geom_smooth(
+      method = "lm", se = TRUE, color = "#e74c3c",
+      fill = "#e74c3c", alpha = 0.15, linewidth = 0.8
+    ) +
+    ggplot2::annotate("text",
+      x = max(log_df$log_time) * 0.7,
+      y = max(log_df$log_count) * 0.9,
+      label = sprintf(
+        "slope = %.3f\nR\u00b2 = %.3f\n%s",
+        log_slope, log_r2,
+        ifelse(log_slope > 1,
+          "Superlinear!",
+          "Sublinear"
+        )
+      ),
+      hjust = 0, size = 3.5, color = "grey30"
+    ) +
     ggplot2::labs(
       title = "A: Log-log growth",
       subtitle = "Slope > 1 = autocatalytic (superlinear)",
@@ -1145,8 +1236,10 @@ plot_loglog_growth <- function(counts, catalyst_matrix = NULL,
     panel_b <- ggplot2::ggplot() +
       ggplot2::geom_segment(
         data = edges,
-        ggplot2::aes(x = .data$x, y = .data$y,
-                      xend = .data$xend, yend = .data$yend),
+        ggplot2::aes(
+          x = .data$x, y = .data$y,
+          xend = .data$xend, yend = .data$yend
+        ),
         arrow = ggplot2::arrow(length = ggplot2::unit(0.08, "inches")),
         color = "grey60", alpha = 0.5, linewidth = 0.5
       ) +
@@ -1157,15 +1250,19 @@ plot_loglog_growth <- function(counts, catalyst_matrix = NULL,
       ) +
       ggplot2::geom_text(
         data = node_pos,
-        ggplot2::aes(x = .data$x * 1.15, y = .data$y * 1.15,
-                      label = .data$node),
+        ggplot2::aes(
+          x = .data$x * 1.15, y = .data$y * 1.15,
+          label = .data$node
+        ),
         size = 3, check_overlap = TRUE
       ) +
       ggplot2::scale_size_continuous(name = "Catalyzes") +
       ggplot2::labs(
         title = "B: Catalyst network",
-        subtitle = sprintf("Closure: %d/%d catalyzed",
-                           sum(node_pos$catalyzed_by > 0), n_innov)
+        subtitle = sprintf(
+          "Closure: %d/%d catalyzed",
+          sum(node_pos$catalyzed_by > 0), n_innov
+        )
       ) +
       ggplot2::coord_fixed() +
       ggplot2::theme_void() +
@@ -1173,9 +1270,11 @@ plot_loglog_growth <- function(counts, catalyst_matrix = NULL,
   } else {
     # If no matrix, show a placeholder
     panel_b <- ggplot2::ggplot() +
-      ggplot2::annotate("text", x = 0.5, y = 0.5,
-                         label = "No catalyst matrix provided",
-                         size = 4, color = "grey50") +
+      ggplot2::annotate("text",
+        x = 0.5, y = 0.5,
+        label = "No catalyst matrix provided",
+        size = 4, color = "grey50"
+      ) +
       ggplot2::labs(title = "B: Catalyst network") +
       ggplot2::theme_void()
   }
@@ -1239,8 +1338,10 @@ plot_cross_kingdom_concordance <- function(plant_data, bird_data, plant_slope) {
   panel_a <- ggplot2::ggplot(plant_data, ggplot2::aes(
     x = .data$dependency_score, y = .data[[loss_col]]
   )) +
-    ggplot2::geom_smooth(method = "lm", se = TRUE, color = "#2ecc71",
-                          fill = "#2ecc71", alpha = 0.15, linewidth = 0.8) +
+    ggplot2::geom_smooth(
+      method = "lm", se = TRUE, color = "#2ecc71",
+      fill = "#2ecc71", alpha = 0.15, linewidth = 0.8
+    ) +
     ggplot2::geom_point(size = 3, alpha = 0.7, color = "#27ae60") +
     ggplot2::labs(
       title = "A: Plant (Orobanchaceae)",
@@ -1257,7 +1358,8 @@ plot_cross_kingdom_concordance <- function(plant_data, bird_data, plant_slope) {
 
   # Compute bird correlation
   bird_cor <- stats::cor.test(bird_predicted_rank, bird_data$observed_rank,
-                                method = "spearman")
+    method = "spearman"
+  )
 
   panel_b <- ggplot2::ggplot(bird_data, ggplot2::aes(
     x = .data$dependency_score, y = .data$observed_rank
@@ -1324,8 +1426,10 @@ plot_cross_kingdom_concordance <- function(plant_data, bird_data, plant_slope) {
 #' }
 plot_forest_oracle <- function(oracle_results) {
   stopifnot(is.data.frame(oracle_results))
-  required_cols <- c("test_name", "expected", "observed", "tolerance",
-                      "supports_vi", "distinguishes")
+  required_cols <- c(
+    "test_name", "expected", "observed", "tolerance",
+    "supports_vi", "distinguishes"
+  )
   missing <- setdiff(required_cols, names(oracle_results))
   stopifnot(length(missing) == 0L)
 
@@ -1338,13 +1442,16 @@ plot_forest_oracle <- function(oracle_results) {
   # Create row order (reverse for top-to-bottom forest plot)
   oracle_results <- oracle_results[rev(seq_len(nrow(oracle_results))), ]
   oracle_results$row_id <- factor(seq_len(nrow(oracle_results)),
-                                   labels = oracle_results$test_name,
-                                   ordered = TRUE)
+    labels = oracle_results$test_name,
+    ordered = TRUE
+  )
 
   # Add label column
-  oracle_results$label <- sprintf("%s\n%s",
+  oracle_results$label <- sprintf(
+    "%s\n%s",
     ifelse(oracle_results$pass, "\u2713 Pass", "\u2717 Fail"),
-    ifelse(oracle_results$distinguishes, "Distinguishes", "Non-distinguishing"))
+    ifelse(oracle_results$distinguishes, "Distinguishes", "Non-distinguishing")
+  )
 
   p <- ggplot2::ggplot(oracle_results, ggplot2::aes(y = .data$row_id)) +
     # Tolerance band
@@ -1354,13 +1461,16 @@ plot_forest_oracle <- function(oracle_results) {
     ) +
     # Expected dot
     ggplot2::geom_point(
-      ggplot2::aes(x = .data$expected), shape = 19, size = 4,
+      ggplot2::aes(x = .data$expected),
+      shape = 19, size = 4,
       color = "#2c3e50"
     ) +
     # Observed diamond
     ggplot2::geom_point(
-      ggplot2::aes(x = .data$observed,
-                    color = .data$pass),
+      ggplot2::aes(
+        x = .data$observed,
+        color = .data$pass
+      ),
       shape = 18, size = 5
     ) +
     # Color by pass/fail
@@ -1370,8 +1480,10 @@ plot_forest_oracle <- function(oracle_results) {
       name = "Status"
     ) +
     # Reference line
-    ggplot2::geom_vline(xintercept = 0, linetype = "dotted", color = "grey50",
-                         linewidth = 0.5) +
+    ggplot2::geom_vline(
+      xintercept = 0, linetype = "dotted", color = "grey50",
+      linewidth = 0.5
+    ) +
     # Annotations
     ggplot2::geom_text(
       data = oracle_results,

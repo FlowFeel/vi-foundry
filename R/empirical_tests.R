@@ -75,7 +75,8 @@ pgls_orobanchaceae <- function(data, tree, lambda = "ML", seed = 42L) {
 
     s <- summary(mod)
     f_p <- pf(s$fstatistic[1], s$fstatistic[2], s$fstatistic[3],
-              lower.tail = FALSE)
+      lower.tail = FALSE
+    )
 
     result <- list(
       values = c(
@@ -129,8 +130,9 @@ pgls_cross_family <- function(data, seed = 42L) {
     )
 
     cor_result <- cor.test(family_means$plastome_size_kb,
-                           family_means$parasitism_score,
-                           method = "pearson")
+      family_means$parasitism_score,
+      method = "pearson"
+    )
 
     result <- list(
       values = c(
@@ -182,8 +184,9 @@ endosymbiont_biphasic <- function(data, seed = 42L) {
       cbind(genome_bp, aa_pathways_retained, symbiosis_age_mya) ~ genus,
       data = data, FUN = mean
     )
-    genus_means <- genus_means[!is.na(genus_means$symbiosis_age_mya) &
-                                 genus_means$symbiosis_age_mya > 0, ]
+    valid <- !is.na(genus_means$symbiosis_age_mya) &
+      genus_means$symbiosis_age_mya > 0
+    genus_means <- genus_means[valid, ]
 
     x <- genus_means$symbiosis_age_mya
     y <- genus_means$genome_bp
@@ -196,21 +199,26 @@ endosymbiont_biphasic <- function(data, seed = 42L) {
     # Model 2: Exponential decay (constant rate)
     mod_exp <- tryCatch(
       nls(genome_bp ~ a * exp(-b * symbiosis_age_mya),
-          data = genus_means,
-          start = list(a = max(y), b = 0.005),
-          control = nls.control(maxiter = 500)),
+        data = genus_means,
+        start = list(a = max(y), b = 0.005),
+        control = nls.control(maxiter = 500)
+      ),
       error = function(e) NULL
     )
 
     # Model 3: Logistic / saturation (decelerating)
     mod_logistic <- tryCatch(
-      nls(genome_bp ~ floor_val + (ceil_val - floor_val) /
+      nls(
+        genome_bp ~ floor_val + (ceil_val - floor_val) /
           (1 + exp(rate * (symbiosis_age_mya - mid))),
-          data = genus_means,
-          start = list(floor_val = min(y) * 0.8,
-                       ceil_val = max(y) * 1.2,
-                       rate = 0.02, mid = mean(x)),
-          control = nls.control(maxiter = 1000)),
+        data = genus_means,
+        start = list(
+          floor_val = min(y) * 0.8,
+          ceil_val = max(y) * 1.2,
+          rate = 0.02, mid = mean(x)
+        ),
+        control = nls.control(maxiter = 1000)
+      ),
       error = function(e) NULL
     )
 
@@ -284,7 +292,8 @@ niche_vs_ne <- function(data, seed = 42L) {
     ne_col <- grep("Ne", names(data), value = TRUE)[1]
     # Find niche/lifestyle column
     niche_col <- grep("lifestyle|Life|habitat", names(data),
-                      value = TRUE, ignore.case = TRUE)[1]
+      value = TRUE, ignore.case = TRUE
+    )[1]
 
     # Convert lifestyle to numeric niche breadth proxy
     if (!is.numeric(data[[niche_col]])) {
@@ -295,7 +304,8 @@ niche_vs_ne <- function(data, seed = 42L) {
 
     # Find genome size / pangenome size column
     size_col <- grep("genome_size|pan_size|Genome_Size", names(data),
-                     value = TRUE, ignore.case = TRUE)[1]
+      value = TRUE, ignore.case = TRUE
+    )[1]
     if (is.na(size_col)) {
       size_col <- grep("genome", names(data), value = TRUE, ignore.case = TRUE)[1]
     }
@@ -362,7 +372,9 @@ pangenome_fluidity <- function(data, seed = 42L) {
 
     # Find lifestyle column
     lifestyle_col <- grep("lifestyle|Life|Host_or_free|Obligate",
-                          names(data), value = TRUE, ignore.case = TRUE)[1]
+      names(data),
+      value = TRUE, ignore.case = TRUE
+    )[1]
 
     # Find Ne column
     ne_col <- grep("Ne", names(data), value = TRUE)[1]
@@ -463,7 +475,7 @@ gene_loss_ordering <- function(data, seed = 42L, n_perm = 720L) {
       # Exact: all permutations
       perms <- matrix(NA, nrow = factorial(n_items), ncol = n_items)
       for (i in 1:factorial(n_items)) {
-        perms[i, ] <- sample(dep_scores)  # Permute dependency scores
+        perms[i, ] <- sample(dep_scores) # Permute dependency scores
       }
     } else {
       # Monte Carlo: sample permutations
@@ -485,7 +497,8 @@ gene_loss_ordering <- function(data, seed = 42L, n_perm = 720L) {
       concordance <- cor(rhos[1], rhos[2], method = "spearman")
       # Actually compute concordance between lineage rank orders
       concordance <- cor(data[[loss_cols[1]]], data[[loss_cols[2]]],
-                         method = "spearman")
+        method = "spearman"
+      )
     } else {
       concordance <- NA
     }
@@ -545,13 +558,15 @@ ltee_cosegregation <- function(seed = 42L) {
     # Loss mutations near beneficial sweeps (±2000 gen)
     observed_near <- 92L
     total_mutations <- 253L
-    expected_rate <- 0.617  # Expected by chance under uniform timing
+    expected_rate <- 0.617 # Expected by chance under uniform timing
 
     observed_prop <- observed_near / total_mutations
 
     # Binomial test
-    bt <- binom.test(observed_near, total_mutations, p = expected_rate,
-                     alternative = "less")
+    bt <- binom.test(observed_near, total_mutations,
+      p = expected_rate,
+      alternative = "less"
+    )
 
     # Also include mutator vs non-mutator comparison
     # From Leiby & Marx (2014) summary data
@@ -559,7 +574,8 @@ ltee_cosegregation <- function(seed = 42L) {
     mutator_losses <- c(7, 9, 6, 8, 11, 10)
 
     wt <- suppressWarnings(wilcox.test(nonmutator_losses, mutator_losses,
-                                        alternative = "less"))
+      alternative = "less"
+    ))
 
     result <- list(
       values = c(

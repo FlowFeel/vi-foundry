@@ -7,9 +7,8 @@
 # @section Theoretical Context:
 #
 # VI Prediction: positive diversity-dependence (superlinear growth). The
-# autocatalytic growth model predicts log-log slope > 1, R^2 > 0.8, and
-# sign = "positive". Null control (linear, no feedback) should produce
-# is_superlinear = FALSE.
+# Autocatalytic model predicts superlinear slope, good fit, positive sign.
+# Null control (linear, no feedback) should not be superlinear.
 #
 # @dft A2 (stochastic-determination): all RNG wrapped in withr::with_seed()
 #     with Mersenne-Twister + Inversion
@@ -43,15 +42,19 @@ test_that("autocatalytic simulacrum: diversity_dependence_sign detects superline
 
   # Generate autocatalytic data with known parameters
   # DFT A2: all RNG wrapped in withr::with_seed() with Mersenne-Twister + Inversion
-  sim <- withr::with_seed(42, {
-    generate_autocatalytic_set(
-      n_steps = 20,
-      innovation_rate = 0.3,
-      capacity = 100,
-      n_innovations = 10,
-      seed = 42
-    )
-  }, .rng_kind = "Mersenne-Twister", .rng_normal_kind = "Inversion")
+  sim <- withr::with_seed(42,
+    {
+      generate_autocatalytic_set(
+        n_steps = 20,
+        innovation_rate = 0.3,
+        capacity = 100,
+        n_innovations = 10,
+        seed = 42
+      )
+    },
+    .rng_kind = "Mersenne-Twister",
+    .rng_normal_kind = "Inversion"
+  )
 
   # Run diversity_dependence_sign on the time series
   dd_result <- diversity_dependence_sign(
@@ -74,7 +77,7 @@ test_that("autocatalytic simulacrum: diversity_dependence_sign detects superline
     sim$values$catalyst_matrix
   )
 
-  # Assert: achieves_closure = TRUE
+  # Check closure achievement
   expect_true(ac_result$values["achieves_closure"])
 
   # Validate result structure (A6)
@@ -116,17 +119,21 @@ test_that("null control: non-autocatalytic data gives is_superlinear = FALSE", {
   # Generate NON-autocatalytic data: constant innovation rate, no feedback.
   # Linear growth: count_t = count_{t-1} + constant_rate + noise.
   # This should produce log-log slope ~ 1 (linear, not superlinear).
-  null_data <- withr::with_seed(42, {
-    n_steps <- 20
-    constant_rate <- 3
-    counts <- numeric(n_steps)
-    counts[1] <- 1
-    for (t in 2:n_steps) {
-      counts[t] <- counts[t - 1] + constant_rate + stats::rnorm(1, 0, 1)
-      counts[t] <- max(0, counts[t])
-    }
-    counts
-  }, .rng_kind = "Mersenne-Twister", .rng_normal_kind = "Inversion")
+  null_data <- withr::with_seed(42,
+    {
+      n_steps <- 20
+      constant_rate <- 3
+      counts <- numeric(n_steps)
+      counts[1] <- 1
+      for (t in 2:n_steps) {
+        counts[t] <- counts[t - 1] + constant_rate + stats::rnorm(1, 0, 1)
+        counts[t] <- max(0, counts[t])
+      }
+      counts
+    },
+    .rng_kind = "Mersenne-Twister",
+    .rng_normal_kind = "Inversion"
+  )
 
   # Run diversity_dependence_sign on null data
   dd_null <- diversity_dependence_sign(null_data, seed = 42)
@@ -166,14 +173,18 @@ test_that("null control: non-autocatalytic data gives is_superlinear = FALSE", {
 test_that("autocatalytic simulacrum generator returns A6 proof object", {
   source_if_available("generate_autocatalytic.R")
 
-  sim <- withr::with_seed(42, {
-    generate_autocatalytic_set(
-      n_steps = 20,
-      innovation_rate = 0.3,
-      capacity = 100,
-      seed = 42
-    )
-  }, .rng_kind = "Mersenne-Twister", .rng_normal_kind = "Inversion")
+  sim <- withr::with_seed(42,
+    {
+      generate_autocatalytic_set(
+        n_steps = 20,
+        innovation_rate = 0.3,
+        capacity = 100,
+        seed = 42
+      )
+    },
+    .rng_kind = "Mersenne-Twister",
+    .rng_normal_kind = "Inversion"
+  )
 
   # A6: validate_result passes
   expect_true(validate_result(sim))

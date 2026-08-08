@@ -23,10 +23,12 @@ cat(sprintf("Timestamp: %s\n\n", format(Sys.time(), "%Y-%m-%d %H:%M:%S UTC", tz 
 
 results <- test_local(".", filter = filter, reporter = CheckReporter)
 
-cat(sprintf("\n=== Results: %d passed, %d failed, %d skipped ===\n",
-           sum(sapply(results, function(x) sum(x$passed))),
-           sum(sapply(results, function(x) sum(x$failed))),
-           sum(sapply(results, function(x) sum(x$skipped)))))
+cat(sprintf(
+  "\n=== Results: %d passed, %d failed, %d skipped ===\n",
+  sum(sapply(results, function(x) sum(x$passed))),
+  sum(sapply(results, function(x) sum(x$failed))),
+  sum(sapply(results, function(x) sum(x$skipped)))
+))
 
 # Coverage check
 if (requireNamespace("covr", quietly = TRUE)) {

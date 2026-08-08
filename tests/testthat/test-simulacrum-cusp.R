@@ -20,7 +20,7 @@ context("Simulacrum: Cusp catastrophe bifurcation detection")
 
 # True bifurcation point for a = -1 on the function's bifurcation set
 # 4a³ + 27b² = 0 → 4(-1)³ + 27b² = 0 → b² = 4/27 → b = 2/(3√3)
-TRUE_BIFURCATION_B <- 2 / (3 * sqrt(3))
+true_bifurcation_b <- 2 / (3 * sqrt(3))
 
 # === Generate synthetic system near bifurcation ===
 
@@ -45,11 +45,11 @@ test_that("generate_cusp_system produces data near known bifurcation point", {
 test_that("cusp_bifurcation_point detects known bifurcation (a=-1, b=2/(3√3))", {
   # On the bifurcation set: 4a³ + 27b² = 0
   # For a = -1: 4(-1)³ + 27(2/(3√3))² = -4 + 27·(4/27) = -4 + 4 = 0
-  result <- cusp_bifurcation_point(a = -1, b = TRUE_BIFURCATION_B)
+  result <- cusp_bifurcation_point(a = -1, b = true_bifurcation_b)
   expect_true(result$at_bifurcation)
   expect_equal(result$distance, 0, tolerance = 1e-10)
   expect_equal(result$a, -1)
-  expect_equal(result$b, TRUE_BIFURCATION_B)
+  expect_equal(result$b, true_bifurcation_b)
 })
 
 test_that("cusp_bifurcation_point returns FALSE far from bifurcation set", {
@@ -74,8 +74,8 @@ test_that("system shows sudden jump when crossing bifurcation threshold", {
   # The generator picks the upper branch, so we expect a discontinuity.
 
   # Split into before and after bifurcation
-  before <- df$state_true[df$control_b < TRUE_BIFURCATION_B]
-  after  <- df$state_true[df$control_b > TRUE_BIFURCATION_B]
+  before <- df$state_true[df$control_b < true_bifurcation_b]
+  after <- df$state_true[df$control_b > true_bifurcation_b]
 
   # Both groups should have finite values
   expect_true(length(before) > 0)
@@ -85,7 +85,7 @@ test_that("system shows sudden jump when crossing bifurcation threshold", {
   # after bifurcation the state snaps to the negative stable branch
   # (for x³ + a·x + b = 0 with a = -1, b > bifurcation threshold)
   mean_before <- mean(before)
-  mean_after  <- mean(after)
+  mean_after <- mean(after)
 
   # There should be a significant jump (difference > 0.5)
   jump_magnitude <- abs(mean_after - mean_before)
@@ -112,7 +112,7 @@ test_that("cusp hysteresis is detected with stateful equilibrium function", {
   # staying on lower branch)
   expect_equal(result$values["has_hysteresis"], 1, ignore_attr = TRUE)
   expect_gt(result$values["max_difference"], 0.01)
-  expect_equal(result$metadata$seed, 42)  # A2
+  expect_equal(result$metadata$seed, 42) # A2
   expect_equal(result$metadata$n, 50)
 })
 
@@ -166,14 +166,14 @@ test_that("full simulacrum pipeline produces valid A6 proof object", {
   df <- generate_cusp_system(a = -1, b_range = c(-1, 1), n = 100, seed = 42)
 
   # 1. Bifurcation detection
-  bf_result <- cusp_bifurcation_point(a = -1, b = TRUE_BIFURCATION_B)
+  bf_result <- cusp_bifurcation_point(a = -1, b = true_bifurcation_b)
   bifurcation_detected <- bf_result$at_bifurcation
   recovered_distance <- bf_result$distance
 
   # 2. Jump detection: check if there's a significant jump near bifurcation
-  near_bif <- df[abs(df$control_b - TRUE_BIFURCATION_B) < 0.2, ]
-  before_jump <- near_bif$state_true[near_bif$control_b < TRUE_BIFURCATION_B]
-  after_jump  <- near_bif$state_true[near_bif$control_b > TRUE_BIFURCATION_B]
+  near_bif <- df[abs(df$control_b - true_bifurcation_b) < 0.2, ]
+  before_jump <- near_bif$state_true[near_bif$control_b < true_bifurcation_b]
+  after_jump <- near_bif$state_true[near_bif$control_b > true_bifurcation_b]
   jump_detected <- FALSE
   if (length(before_jump) > 0 && length(after_jump) > 0) {
     jump_detected <- abs(mean(before_jump) - mean(after_jump)) > 0.5
@@ -196,7 +196,7 @@ test_that("full simulacrum pipeline produces valid A6 proof object", {
       bifurcation_detected = as.numeric(bifurcation_detected),
       hysteresis_detected = as.numeric(hysteresis_detected),
       true_bifurcation_a = -1,
-      true_bifurcation_b = TRUE_BIFURCATION_B,
+      true_bifurcation_b = true_bifurcation_b,
       recovered_distance = recovered_distance,
       null_control_passes = as.numeric(null_control_passes),
       jump_detected = as.numeric(jump_detected)

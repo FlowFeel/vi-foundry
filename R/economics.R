@@ -33,8 +33,10 @@ validate_econ_data <- function(data, need_trigger = FALSE) {
   required <- c("system", "year", "capacity")
   missing <- setdiff(required, names(data))
   if (length(missing) > 0L) {
-    stop(sprintf("data missing required columns: %s",
-                 paste(missing, collapse = ", ")), call. = FALSE)
+    stop(sprintf(
+      "data missing required columns: %s",
+      paste(missing, collapse = ", ")
+    ), call. = FALSE)
   }
   if (!is.numeric(data$year) || !is.numeric(data$capacity)) {
     stop("year and capacity must be numeric", call. = FALSE)
@@ -149,16 +151,22 @@ cdi_economics <- function(data, seed = 42L) {
       function(p) p$best == "log" || p$decelerating,
       logical(1)
     ))
-    mean_cdi <- mean(vapply(per_system, function(p) p$mean_post_peak_cdi,
-                            numeric(1)))
+    mean_cdi <- mean(vapply(
+      per_system, function(p) p$mean_post_peak_cdi,
+      numeric(1)
+    ))
 
     result <- list(
       values = c(
         n_systems = length(per_system),
-        share_log_best = mean(vapply(per_system, function(p) p$best == "log",
-                                     numeric(1))),
-        share_decelerating = mean(vapply(per_system, function(p) p$decelerating,
-                                         numeric(1))),
+        share_log_best = mean(vapply(
+          per_system, function(p) p$best == "log",
+          numeric(1)
+        )),
+        share_decelerating = mean(vapply(
+          per_system, function(p) p$decelerating,
+          numeric(1)
+        )),
         mean_post_peak_cdi = mean_cdi,
         systems_prefer_logical = systems_prefer_logical
       ),
@@ -273,14 +281,21 @@ option_destruction <- function(data, seed = 42L) {
     result <- list(
       values = c(
         n_systems = length(per_system),
-        mean_early_resid = mean(vapply(per_system, function(p) p$early_resid,
-                                       numeric(1))),
-        mean_late_resid = mean(vapply(per_system, function(p) p$late_resid,
-                                      numeric(1))),
-        vi_pattern_share = mean(vapply(per_system, function(p) p$vi_pattern,
-                                       numeric(1))),
-        mean_standard_decay_rate = mean(vapply(per_system, function(p)
-          p$decay_rate, numeric(1)))
+        mean_early_resid = mean(vapply(
+          per_system, function(p) p$early_resid,
+          numeric(1)
+        )),
+        mean_late_resid = mean(vapply(
+          per_system, function(p) p$late_resid,
+          numeric(1)
+        )),
+        vi_pattern_share = mean(vapply(
+          per_system, function(p) p$vi_pattern,
+          numeric(1)
+        )),
+        mean_standard_decay_rate = mean(vapply(per_system, function(p) {
+          p$decay_rate
+        }, numeric(1)))
       ),
       metadata = list(
         seed = seed,
@@ -355,7 +370,7 @@ stochastic_cdi <- function(mu0, sigma0, cdi_init = 0.01, dt = 0.01,
       stop("sigma0 must be a single non-negative number", call. = FALSE)
     }
     if (!is.numeric(cdi_init) || length(cdi_init) != 1L ||
-        cdi_init < 0 || cdi_init > 1) {
+          cdi_init < 0 || cdi_init > 1) {
       stop("cdi_init must be in [0, 1]", call. = FALSE)
     }
     if (!is.numeric(dt) || length(dt) != 1L || dt <= 0) {
@@ -365,7 +380,7 @@ stochastic_cdi <- function(mu0, sigma0, cdi_init = 0.01, dt = 0.01,
       stop("n_steps must be a single positive integer", call. = FALSE)
     }
     if (!is.numeric(threshold) || length(threshold) != 1L ||
-        threshold <= 0 || threshold > 1) {
+          threshold <= 0 || threshold > 1) {
       stop("threshold must be in (0, 1]", call. = FALSE)
     }
 
@@ -495,7 +510,8 @@ threshold_disruption <- function(data, seed = 42L) {
       early_slope <- coef(m_pw)[2]
       late_slope <- coef(m_pw)[2] + coef(m_pw)[3]
       slope_ratio <- ifelse(abs(early_slope) < 1e-9, NA_real_,
-                            abs(late_slope / early_slope))
+        abs(late_slope / early_slope)
+      )
       lr <- tryCatch(anova(m_lin, m_pw)$"Pr(>F)"[2], error = function(e) NA_real_)
 
       per_system[[sys]] <- list(
@@ -515,12 +531,16 @@ threshold_disruption <- function(data, seed = 42L) {
     result <- list(
       values = c(
         n_systems = length(per_system),
-        mean_delta_aic = mean(vapply(per_system, function(p) p$delta_aic,
-                                     numeric(1))),
-        share_piecewise_win = mean(vapply(per_system, function(p)
-          p$piecewise_win, numeric(1))),
-        mean_slope_ratio = mean(vapply(per_system, function(p)
-          ifelse(is.na(p$slope_ratio), 0, p$slope_ratio), numeric(1)))
+        mean_delta_aic = mean(vapply(
+          per_system, function(p) p$delta_aic,
+          numeric(1)
+        )),
+        share_piecewise_win = mean(vapply(per_system, function(p) {
+          p$piecewise_win
+        }, numeric(1))),
+        mean_slope_ratio = mean(vapply(per_system, function(p) {
+          ifelse(is.na(p$slope_ratio), 0, p$slope_ratio)
+        }, numeric(1)))
       ),
       metadata = list(
         seed = seed,

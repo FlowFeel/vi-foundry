@@ -52,8 +52,10 @@ test_that("retention_at_time approaches equilibrium as time → infinity", {
 # === threshold_model (full numerical integration) ===
 
 test_that("threshold_model returns A6 proof object", {
-  result <- threshold_model(depths = c(0, 1, 2, 3, 5), lambda = 0.15,
-                            theta = 2.5, m0 = 10, alpha = 0.05, time = 100)
+  result <- threshold_model(
+    depths = c(0, 1, 2, 3, 5), lambda = 0.15,
+    theta = 2.5, m0 = 10, alpha = 0.05, time = 100
+  )
   expect_true(validate_result(result))
   expect_equal(result$metadata$n_traits, 5)
   expect_true(result$metadata$converged)
@@ -61,8 +63,10 @@ test_that("threshold_model returns A6 proof object", {
 
 test_that("threshold_model protects deep traits at 1.0", {
   depths <- c(0, 1, 2, 3, 5)
-  result <- threshold_model(depths = depths, lambda = 0.15, theta = 2.5,
-                            m0 = 10, alpha = 0.05, time = 100)
+  result <- threshold_model(
+    depths = depths, lambda = 0.15, theta = 2.5,
+    m0 = 10, alpha = 0.05, time = 100
+  )
   # Traits at depth 3 and 5 should be protected (>= theta=2.5)
   retention <- result$values[grep("final_retention", names(result$values))]
   expect_equal(length(retention), 5)
@@ -73,24 +77,32 @@ test_that("threshold_model protects deep traits at 1.0", {
 
 test_that("threshold_model sheds unprotected traits below 1.0", {
   depths <- c(0, 1, 2, 3, 5)
-  result <- threshold_model(depths = depths, lambda = 0.15, theta = 2.5,
-                            m0 = 10, alpha = 0.05, time = 100)
+  result <- threshold_model(
+    depths = depths, lambda = 0.15, theta = 2.5,
+    m0 = 10, alpha = 0.05, time = 100
+  )
   retention <- result$values[grep("final_retention", names(result$values))]
   # Trait at depth 0 should be most shed
   expect_lt(retention[1], 0.9)
 })
 
 test_that("threshold_model produces biphasic kinetics (k1/k2 > 1)", {
-  result <- threshold_model(depths = c(0, 1, 2, 3, 5), lambda = 0.15,
-                            theta = 2.5, m0 = 10, alpha = 0.05, time = 100)
+  result <- threshold_model(
+    depths = c(0, 1, 2, 3, 5), lambda = 0.15,
+    theta = 2.5, m0 = 10, alpha = 0.05, time = 100
+  )
   expect_gt(result$values["k1_k2_ratio"], 1)
 })
 
 test_that("threshold_model is fully deterministic (A2 — no RNG)", {
-  r1 <- threshold_model(depths = c(0, 1, 2, 3, 5), lambda = 0.15,
-                        theta = 2.5, m0 = 10, alpha = 0.05, time = 100)
-  r2 <- threshold_model(depths = c(0, 1, 2, 3, 5), lambda = 0.15,
-                        theta = 2.5, m0 = 10, alpha = 0.05, time = 100)
+  r1 <- threshold_model(
+    depths = c(0, 1, 2, 3, 5), lambda = 0.15,
+    theta = 2.5, m0 = 10, alpha = 0.05, time = 100
+  )
+  r2 <- threshold_model(
+    depths = c(0, 1, 2, 3, 5), lambda = 0.15,
+    theta = 2.5, m0 = 10, alpha = 0.05, time = 100
+  )
   expect_equal(r1$values, r2$values)
 })
 

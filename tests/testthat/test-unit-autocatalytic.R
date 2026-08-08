@@ -69,7 +69,7 @@ test_that("diversity_dependence_sign detects negative trend", {
 })
 
 test_that("diversity_dependence_sign detects superlinear growth", {
-  counts <- c(1, 4, 9, 16, 25, 36)  # quadratic
+  counts <- c(1, 4, 9, 16, 25, 36) # quadratic
   result <- diversity_dependence_sign(counts, seed = 42)
   expect_true(result$values["is_superlinear"])
 })

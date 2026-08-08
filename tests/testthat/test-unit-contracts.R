@@ -31,8 +31,10 @@ test_that("validate_phylo_tree rejects non-Newick format", {
 
 test_that("validate_phylo_tree enforces minimum taxa", {
   # 2 taxa — should fail with min_taxa=3
-  expect_error(validate_phylo_tree("(A:0.1,B:0.2);", min_taxa = 3L),
-               "need >= 3")
+  expect_error(
+    validate_phylo_tree("(A:0.1,B:0.2);", min_taxa = 3L),
+    "need >= 3"
+  )
 })
 
 # === validate_plastome_data ===
@@ -143,8 +145,10 @@ test_that("validate_gene_categories rejects negative dependency scores", {
 
 test_that("validate_bird_morphology accepts valid data", {
   data <- data.frame(
-    structure = c("wing", "keel", "pectoral", "hindlimb", "pelvis",
-                   "feathers", "wing_bones", "asymmetry"),
+    structure = c(
+      "wing", "keel", "pectoral", "hindlimb", "pelvis",
+      "feathers", "wing_bones", "asymmetry"
+    ),
     dependency_score = c(0, 1, 0.5, 4, 3, 5, 1.5, 1),
     observed_rank = c(1, 2, 3, 4, 5, 6, 7, 8)
   )
@@ -224,13 +228,17 @@ test_that("validate_result accepts valid result object", {
 })
 
 test_that("validate_result rejects missing values", {
-  expect_error(validate_result(list(metadata = list())),
-               "must contain 'values'")
+  expect_error(
+    validate_result(list(metadata = list())),
+    "must contain 'values'"
+  )
 })
 
 test_that("validate_result rejects missing metadata", {
-  expect_error(validate_result(list(values = c(1, 2))),
-               "must contain 'metadata'")
+  expect_error(
+    validate_result(list(values = c(1, 2))),
+    "must contain 'metadata'"
+  )
 })
 
 test_that("validate_result warns on missing seed", {

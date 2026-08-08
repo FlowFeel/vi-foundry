@@ -25,12 +25,14 @@ test_that("mark appends entry to log", {
   dir.create(tmp_dir)
   path <- init_mark_log("test_sim", tmp_dir)
 
-  mark(path, sim_index = 1L,
-       true_params = c(lambda = 0.15, theta = 2.5),
-       recovered_params = c(lambda = 0.14, theta = 2.4),
-       within_ci = TRUE,
-       null_result = 0.1,
-       seed = 42L)
+  mark(path,
+    sim_index = 1L,
+    true_params = c(lambda = 0.15, theta = 2.5),
+    recovered_params = c(lambda = 0.14, theta = 2.4),
+    within_ci = TRUE,
+    null_result = 0.1,
+    seed = 42L
+  )
 
   marks <- read_marks(path)
   expect_length(marks, 1)
@@ -47,12 +49,14 @@ test_that("mark logs multiple entries correctly", {
   path <- init_mark_log("multi_sim", tmp_dir)
 
   for (i in 1:5) {
-    mark(path, sim_index = i,
-         true_params = c(lambda = 0.15),
-         recovered_params = c(lambda = 0.15 + rnorm(1, 0, 0.01)),
-         within_ci = TRUE,
-         null_result = NA,
-         seed = 42L + i)
+    mark(path,
+      sim_index = i,
+      true_params = c(lambda = 0.15),
+      recovered_params = c(lambda = 0.15 + rnorm(1, 0, 0.01)),
+      within_ci = TRUE,
+      null_result = NA,
+      seed = 42L + i
+    )
   }
 
   marks <- read_marks(path)
@@ -88,15 +92,21 @@ test_that("plot_true_vs_recovered returns ggplot object", {
   skip_if_not(requireNamespace("ggplot2", quietly = TRUE), "ggplot2 not installed")
 
   marks <- list(
-    list(true_params = list(lambda = 0.15),
-         recovered_params = list(lambda = 0.14),
-         within_ci = TRUE),
-    list(true_params = list(lambda = 0.15),
-         recovered_params = list(lambda = 0.16),
-         within_ci = TRUE),
-    list(true_params = list(lambda = 0.15),
-         recovered_params = list(lambda = 0.05),
-         within_ci = FALSE)
+    list(
+      true_params = list(lambda = 0.15),
+      recovered_params = list(lambda = 0.14),
+      within_ci = TRUE
+    ),
+    list(
+      true_params = list(lambda = 0.15),
+      recovered_params = list(lambda = 0.16),
+      within_ci = TRUE
+    ),
+    list(
+      true_params = list(lambda = 0.15),
+      recovered_params = list(lambda = 0.05),
+      within_ci = FALSE
+    )
   )
 
   p <- plot_true_vs_recovered(marks, "lambda", "test")
@@ -129,8 +139,10 @@ test_that("plot_param_space_projection returns ggplot for 2 params", {
   marks <- lapply(1:10, function(i) {
     list(
       true_params = list(lambda = 0.15, theta = 2.5),
-      recovered_params = list(lambda = 0.15 + rnorm(1, 0, 0.01),
-                              theta = 2.5 + rnorm(1, 0, 0.1)),
+      recovered_params = list(
+        lambda = 0.15 + rnorm(1, 0, 0.01),
+        theta = 2.5 + rnorm(1, 0, 0.1)
+      ),
       within_ci = i %% 2 == 0
     )
   })
@@ -164,12 +176,15 @@ test_that("render_simulacra_report produces PDF", {
   path <- init_mark_log("viz_test", tmp_dir)
   for (i in 1:5) {
     mark(path, i,
-         c(lambda = 0.15, theta = 2.5),
-         c(lambda = 0.15 + rnorm(1, 0, 0.01),
-           theta = 2.5 + rnorm(1, 0, 0.1)),
-         within_ci = TRUE,
-         null_result = runif(1, 0, 0.2),
-         seed = 42L + i)
+      c(lambda = 0.15, theta = 2.5),
+      c(
+        lambda = 0.15 + rnorm(1, 0, 0.01),
+        theta = 2.5 + rnorm(1, 0, 0.1)
+      ),
+      within_ci = TRUE,
+      null_result = runif(1, 0, 0.2),
+      seed = 42L + i
+    )
   }
 
   result <- render_simulacra_report(tmp_dir, pdf_path)

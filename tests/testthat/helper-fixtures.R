@@ -1,7 +1,7 @@
 # helper-fixtures.R — Shared test fixtures for VI foundry
 #
 # DFT A5: Real in-process fakes, not mocks.
-# FakeDataLoader returns real dataframes from in-memory fixtures.
+# fake_data_loader returns real dataframes from in-memory fixtures.
 
 library(testthat)
 
@@ -23,17 +23,19 @@ library(testthat)
 )
 
 .fixture_bird_morphology <- data.frame(
-  structure = c("wing_prop", "pectoral_muscle", "sternal_keel",
-                "wing_bones", "hindlimb", "pelvic_girdle",
-                "feather_asymmetry", "feather_structure"),
+  structure = c(
+    "wing_prop", "pectoral_muscle", "sternal_keel",
+    "wing_bones", "hindlimb", "pelvic_girdle",
+    "feather_asymmetry", "feather_structure"
+  ),
   dependency_score = c(0.0, 0.5, 1.0, 1.5, 4.0, 3.0, 1.0, 5.0),
   observed_rank = c(1, 3, 2, 4, 5, 6, 7, 8),
   stringsAsFactors = FALSE
 )
 
-# FakeDataLoader — returns real dataframes, not mock recordings
-FakeDataLoader <- R6::new_class(
-  "FakeDataLoader",
+# fake_data_loader — returns real dataframes, not mock recordings
+fake_data_loader <- R6::new_class(
+  "fake_data_loader",
   public = list(
     load = function(name) {
       switch(name,

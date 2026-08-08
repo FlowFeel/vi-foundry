@@ -70,14 +70,14 @@ NULL
 #' @return A6 proof object with data in metadata.
 #' @keywords internal
 generate_biphasic_genome <- function(
-    seed = 42L,
-    n_genera = 10L,
-    age_range = c(20, 200),
-    ancestor_size = 4.5e6,
-    floor_size = 4e5,
-    rate = 0.08,
-    mid = 70,
-    noise_sd = 5000
+  seed = 42L,
+  n_genera = 10L,
+  age_range = c(20, 200),
+  ancestor_size = 4.5e6,
+  floor_size = 4e5,
+  rate = 0.08,
+  mid = 70,
+  noise_sd = 5000
 ) {
   withr::with_seed(seed, {
     # Use Mersenne-Twister + Inversion for full reproducibility (A2)
@@ -98,7 +98,7 @@ generate_biphasic_genome <- function(
     # Generate evenly spaced ages
     ages <- seq(age_range[1], age_range[2], length.out = n_genera)
 
-    # Logistic: genome_bp = floor + (ancestor - floor) / (1 + exp(rate * (age - mid)))
+    # Logistic model for genome reduction over time
     genome_bp_raw <- floor_size + (ancestor_size - floor_size) /
       (1 + exp(rate * (ages - mid)))
 
@@ -172,12 +172,12 @@ generate_biphasic_genome <- function(
 #' @return A6 proof object with data in metadata.
 #' @keywords internal
 generate_constant_rate_genome <- function(
-    seed = 42L,
-    n_genera = 10L,
-    age_range = c(20, 200),
-    ancestor_size = 4.5e6,
-    reduction_rate = 20000,
-    noise_sd = 50000
+  seed = 42L,
+  n_genera = 10L,
+  age_range = c(20, 200),
+  ancestor_size = 4.5e6,
+  reduction_rate = 20000,
+  noise_sd = 50000
 ) {
   withr::with_seed(seed, {
     # Use Mersenne-Twister + Inversion for full reproducibility (A2)
@@ -194,7 +194,7 @@ generate_constant_rate_genome <- function(
 
     ages <- seq(age_range[1], age_range[2], length.out = n_genera)
 
-    # Linear: genome_bp = ancestor_size - reduction_rate * age
+    # Linear model for genome reduction
     genome_bp_raw <- ancestor_size - reduction_rate * ages
 
     # Add noise

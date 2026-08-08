@@ -12,7 +12,7 @@ test_that("gene_loss_ordering returns perfect rho for perfectly ordered data", {
   data <- data.frame(
     category = c("ndh", "rpo", "psa", "psb", "atp", "rpl_rps"),
     dependency_score = c(0, 1, 1, 2, 3, 5),
-    orobanchaceae_loss_rank = c(1, 2, 3, 4, 5, 6)  # Perfectly ordered
+    orobanchaceae_loss_rank = c(1, 2, 3, 4, 5, 6) # Perfectly ordered
   )
   result <- gene_loss_ordering(data, seed = 42)
   expect_true(validate_result(result))
@@ -24,7 +24,7 @@ test_that("gene_loss_ordering returns zero rho for random ordering", {
   data <- data.frame(
     category = c("a", "b", "c", "d", "e", "f"),
     dependency_score = c(0, 1, 2, 3, 4, 5),
-    orobanchaceae_loss_rank = sample(6)  # Random order
+    orobanchaceae_loss_rank = sample(6) # Random order
   )
   result <- gene_loss_ordering(data, seed = 42)
   expect_true(validate_result(result))
@@ -101,8 +101,10 @@ test_that("ltee_cosegregation enrichment ratio < 1 (depletion, not enrichment)",
 # === T1: pgls_orobanchaceae — requires ape, caper (skip if not available) ===
 
 test_that("pgls_orobanchaceae returns expected values on real data", {
-  skip_if_not(file.exists(file.path("data", "species_plastome_data.tsv")),
-              "Bundled data not available")
+  skip_if_not(
+    file.exists(file.path("data", "species_plastome_data.tsv")),
+    "Bundled data not available"
+  )
   skip_if_not(requireNamespace("ape", quietly = TRUE), "ape not installed")
   skip_if_not(requireNamespace("caper", quietly = TRUE), "caper not installed")
 
@@ -119,8 +121,10 @@ test_that("pgls_orobanchaceae returns expected values on real data", {
 # === T3: endosymbiont_biphasic — requires nls ===
 
 test_that("endosymbiont_biphasic returns valid result", {
-  skip_if_not(file.exists(file.path("data", "endosymbiont_genome_data.tsv")),
-              "Bundled data not available")
+  skip_if_not(
+    file.exists(file.path("data", "endosymbiont_genome_data.tsv")),
+    "Bundled data not available"
+  )
 
   loaded <- load_endosymbionts()
   result <- endosymbiont_biphasic(loaded$data, seed = 42)
@@ -133,8 +137,10 @@ test_that("endosymbiont_biphasic returns valid result", {
 # === T4: niche_vs_ne ===
 
 test_that("niche_vs_ne returns valid result", {
-  skip_if_not(file.exists(file.path("data", "bobay_ochman_table_s1.xlsx")),
-              "Bundled data not available")
+  skip_if_not(
+    file.exists(file.path("data", "bobay_ochman_table_s1.xlsx")),
+    "Bundled data not available"
+  )
   skip_if_not(requireNamespace("readxl", quietly = TRUE), "readxl not installed")
 
   loaded <- load_bobay_ochman()
@@ -148,8 +154,10 @@ test_that("niche_vs_ne returns valid result", {
 # === T5: pangenome_fluidity ===
 
 test_that("pangenome_fluidity returns valid result", {
-  skip_if_not(file.exists(file.path("data", "dewar_pangenome_lifestyles.csv")),
-              "Bundled data not available")
+  skip_if_not(
+    file.exists(file.path("data", "dewar_pangenome_lifestyles.csv")),
+    "Bundled data not available"
+  )
 
   loaded <- load_dewar_pangenome()
   result <- pangenome_fluidity(loaded$data, seed = 42)
@@ -163,8 +171,10 @@ test_that("pangenome_fluidity returns valid result", {
 test_that("all test functions return A6 proof objects with seed", {
   # T6 and T7 don't need external data
   r6 <- gene_loss_ordering(
-    data.frame(category = c("a","b","c"), dependency_score = c(0,1,2),
-               lineage1_loss_rank = c(1,2,3)),
+    data.frame(
+      category = c("a", "b", "c"), dependency_score = c(0, 1, 2),
+      lineage1_loss_rank = c(1, 2, 3)
+    ),
     seed = 99
   )
   r7 <- ltee_cosegregation(seed = 99)

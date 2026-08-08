@@ -89,16 +89,16 @@ r_squared <- function(y, y_pred) {
 #'
 #' @export
 test_simulacrum_biphasic <- function(
-    seed = 42L,
-    n_genera = 10L,
-    true_rate = 0.08,
-    age_range = c(20, 200),
-    mid = 70,
-    ancestor_size = 4.5e6,
-    floor_size = 4e5,
-    noise_sd = 5000,
-    null_noise_sd = 50000,
-    null_reduction_rate = 20000
+  seed = 42L,
+  n_genera = 10L,
+  true_rate = 0.08,
+  age_range = c(20, 200),
+  mid = 70,
+  ancestor_size = 4.5e6,
+  floor_size = 4e5,
+  noise_sd = 5000,
+  null_noise_sd = 50000,
+  null_reduction_rate = 20000
 ) {
   withr::with_seed(seed, {
     # Use Mersenne-Twister + Inversion for full reproducibility (A2)
@@ -124,7 +124,7 @@ test_simulacrum_biphasic <- function(
     mod_linear <- stats::lm(y ~ x)
     y_pred_linear <- stats::predict(mod_linear)
     r2_linear <- r_squared(y, y_pred_linear)
-    k_linear <- 3L  # intercept, slope, residual variance
+    k_linear <- 3L # intercept, slope, residual variance
     aicc_linear <- aicc(mod_linear, k_linear, n_genera)
 
     # ---- Model 2: Logistic (biphasic/VI) ----
@@ -146,9 +146,9 @@ test_simulacrum_biphasic <- function(
     if (!is.null(mod_logistic)) {
       y_pred_logistic <- stats::predict(mod_logistic)
       r2_logistic <- r_squared(y, y_pred_logistic)
-      k_logistic <- 5L  # floor, ceil, rate, mid, residual variance
+      k_logistic <- 5L # floor, ceil, rate, mid, residual variance
       aicc_logistic <- aicc(mod_logistic, k_logistic, n_genera)
-      delta_aicc <- aicc_linear - aicc_logistic  # positive = logistic preferred
+      delta_aicc <- aicc_linear - aicc_logistic # positive = logistic preferred
 
       coefs <- stats::coef(mod_logistic)
       recovered_rate <- coefs["rate"]
@@ -214,14 +214,14 @@ test_simulacrum_biphasic <- function(
       null_aicc_logistic <- aicc(null_mod_logistic, k_logistic, n_genera)
       null_delta_aicc <- null_aicc_linear - null_aicc_logistic
     } else {
-      null_delta_aicc <- -Inf  # logistic failed to converge — not preferred
+      null_delta_aicc <- -Inf # logistic failed to converge — not preferred
     }
 
     # A4: Null control — ΔAICc < 4 (logistic NOT strongly preferred)
     if (is.finite(null_delta_aicc)) {
       assertions$null_not_preferred <- null_delta_aicc < 4
     } else {
-      assertions$null_not_preferred <- TRUE  # logistic failed — not preferred
+      assertions$null_not_preferred <- TRUE # logistic failed — not preferred
     }
 
     # ---- Build A6 proof object ----
@@ -276,33 +276,41 @@ test_that("Simulacrum 2: logistic R² > linear R² for biphasic data", {
   result <- test_simulacrum_biphasic(seed = 42)
   expect_true(validate_result(result))
   expect_true(result$values["r2_logistic"] > result$values["r2_linear"],
-              info = "Logistic model should fit biphasic data better than linear")
+    info = "Logistic model should fit biphasic data better than linear"
+  )
 })
 
 test_that("Simulacrum 2: ΔAICc > 4 (logistic strongly preferred)", {
   # Use Mersenne-Twister + Inversion for full reproducibility
   result <- test_simulacrum_biphasic(seed = 42)
   expect_true(result$values["delta_aicc"] > 4,
-              info = "ΔAICc > 4 indicates logistic strongly preferred over linear")
+    info = "ΔAICc > 4 indicates logistic strongly preferred over linear"
+  )
 })
 
 test_that("Simulacrum 2: recovered rate within 50% of true rate (0.08)", {
   result <- test_simulacrum_biphasic(seed = 42)
   expect_true(!is.na(result$values["rate_error_pct"]))
   expect_lt(result$values["rate_error_pct"], 50,
-            info = "Recovered logistic rate should be within 50% of true rate (0.08)")
-  expect_true(result$values["recovered_rate"] > 0.04 &&
-                result$values["recovered_rate"] < 0.12,
-              info = "Recovered rate should be between 0.04 and 0.12 (50% of 0.08)")
+    info = "Recovered logistic rate should be within 50% of true rate (0.08)"
+  )
+  expect_true(
+    result$values["recovered_rate"] > 0.04 &&
+      result$values["recovered_rate"] < 0.12,
+    info = "Recovered rate should be between 0.04 and 0.12 (50% of 0.08)"
+  )
 })
 
 test_that("Simulacrum 2: null control — ΔAICc < 4 (logistic NOT preferred)", {
   result <- test_simulacrum_biphasic(seed = 42)
-  expect_true(is.finite(result$values["null_delta_aicc"]) ||
-                result$values["null_delta_aicc"] == -Inf,
-              info = "Null control should not strongly prefer logistic model")
+  expect_true(
+    is.finite(result$values["null_delta_aicc"]) ||
+      result$values["null_delta_aicc"] == -Inf,
+    info = "Null control should not strongly prefer logistic model"
+  )
   expect_true(result$values["null_delta_aicc"] < 4,
-              info = "ΔAICc < 4 for null data: logistic NOT strongly preferred")
+    info = "ΔAICc < 4 for null data: logistic NOT strongly preferred"
+  )
 })
 
 test_that("Simulacrum 2: deterministic with same seed (A2)", {
@@ -326,7 +334,8 @@ test_that("Simulacrum 2: returns A6 proof object", {
 test_that("Simulacrum 2: full test passes (all assertions met)", {
   result <- test_simulacrum_biphasic(seed = 42)
   expect_true(result$values["test_passed"] == 1,
-              info = "All assertions must pass for Simulacrum 2")
+    info = "All assertions must pass for Simulacrum 2"
+  )
 })
 
 test_that("Simulacrum 2: different seed yields different data but same conclusions", {

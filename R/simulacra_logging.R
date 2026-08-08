@@ -38,10 +38,14 @@ init_mark_log <- function(simulacrum_id, output_dir = "results/simulacra") {
   }
   log_path <- file.path(output_dir, paste0(simulacrum_id, "_marks.yml"))
   # Write empty YAML header
-  cat(sprintf("# Simulacrum marks: %s\n# Generated: %s\nmarks: []\n",
-              simulacrum_id,
-              format(Sys.time(), "%Y-%m-%d %H:%M:%S UTC", tz = "UTC")),
-      file = log_path)
+  cat(
+    sprintf(
+      "# Simulacrum marks: %s\n# Generated: %s\nmarks: []\n",
+      simulacrum_id,
+      format(Sys.time(), "%Y-%m-%d %H:%M:%S UTC", tz = "UTC")
+    ),
+    file = log_path
+  )
   log_path
 }
 
