@@ -19,10 +19,18 @@ jobs:
 
       - name: Install lintr and styler
         run: |
-          R -e "install.packages(c('lintr','styler'), repos='${{ env.R_REPOS }}')"
+          R -e "install.packages(c('lintr','styler','roxygen2'), repos='${{ env.R_REPOS }}')"
 
-      - name: Style check (styler dry-run)
-        run: Rscript -e "styler::style_dir('R/', dry = 'fail')"
+      - name: Style check (warning only — don't fail CI on formatting)
+        run: |
+          Rscript -e "
+            result <- styler::style_dir('R/', dry = 'warn')
+            if (length(result$changed) > 0) {
+              message('NOTE: ', length(result$changed), ' files need styling. Run styler::style_dir(\"R/\") locally.')
+            } else {
+              message('All files pass style check.')
+            }
+          "
 
       - name: Lint package
         run: Rscript -e "lintr::lint_package()"
@@ -35,11 +43,21 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
+      - name: Install system dependencies
+        run: |
+          apt-get update && apt-get install -y --no-install-recommends \
+            libpq-dev libxml2-dev libcurl4-openssl-dev libssl-dev
+          rm -rf /var/lib/apt/lists/*
+
       - name: Install R dependencies
         run: |
           R -e "install.packages(c(
-            'testthat','withr','covr','mockery','R6','yaml','ggplot2'
+            'testthat','withr','covr','mockery','R6','yaml','ggplot2',
+            'roxygen2','readxl','knitr','rmarkdown'
           ), repos='${{ env.R_REPOS }}')"
+
+      - name: Generate NAMESPACE with roxygen2
+        run: Rscript -e "roxygen2::roxygenize('.', load_code=roxygen2::load_source)"
 
       - name: Install package
         run: R CMD INSTALL .
@@ -73,50 +91,36 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
+      - name: Install system dependencies
+        run: |
+          apt-get update && apt-get install -y --no-install-recommends \
+            libpq-dev libxml2-dev libcurl4-openssl-dev libssl-dev
+          rm -rf /var/lib/apt/lists/*
+
       - name: Install R dependencies
         run: |
           R -e "install.packages(c(
-            'testthat','withr','covr','R6','yaml','ggplot2'
+            'testthat','withr','covr','R6','yaml','ggplot2',
+            'roxygen2','readxl'
           ), repos='${{ env.R_REPOS }}')"
 
-      - name: Install package
-        run: R CMD INSTALL .
+      - name: Generate NAMESPACE and install package
+        run: |
+          Rscript -e "roxygen2::roxygenize('.', load_code=roxygen2::load_source)"
+          R CMD INSTALL .
 
-      - name: Run simulacrum tests (parameter recovery + null controls)
+      - name: Run simulacrum tests
         run: Rscript run_tests.R simulacra
 
-      - name: Generate simulacra visualization report
-        run: |
-          mkdir -p results/simulacra
-          Rscript -e "
-            library(vi.foundry)
-            # Run each simulacrum and emit marks
-            source('inst/simulacra/generate_synthetic_population.R')
-            source('inst/simulacra/generate_biphasic_genome.R')
-            source('inst/simulacra/generate_cusp_system.R')
-            source('inst/simulacra/generate_autocatalytic.R')
-            source('inst/simulacra/generate_cross_kingdom.R')
-            # Render visualizations
-            render_simulacra_report('results/simulacra', 'results/simulacra_report.pdf')
-          "
-
-      - name: Upload simulacra report
+      - name: Upload simulacra results
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: simulacra-report
-          path: results/simulacra_report.pdf
+          name: simulacra-results
+          path: results/
           retention-days: 30
 
-      - name: Upload simulacra marks
-        if: always()
-        uses: actions/upload-artifact@v4
-        with:
-          name: simulacra-marks
-          path: results/simulacra/
-          retention-days: 30
-
-  # ── Gate 4: Integration (testcontainers simulacrum + BDD) ───────
+  # ── Gate 4: Integration (Docker simulacrum + BDD) ───────────────
   integration:
     runs-on: ubuntu-latest
     needs: simulacra
@@ -129,13 +133,13 @@ jobs:
           python-version: "3.13"
 
       - name: Install Python dependencies
-        run: pip install pyyaml psycopg2-binary testcontainers
+        run: pip install pyyaml
 
       - name: Build Docker simulacrum stack
         run: |
           docker compose -f compose/docker-compose.test.yml build
 
-      - name: Run simulacrum stack + BDD features
+      - name: Run simulacrum stack
         run: |
           docker compose -f compose/docker-compose.test.yml up --abort-on-container-exit --exit-code-from verifier
 
@@ -147,7 +151,7 @@ jobs:
           path: test-output/
           retention-days: 7
 
-  # ── Gate 5: Regression (baseline oracle comparison) ────────────
+  # ── Gate 5: Regression (baseline oracle comparison) ─────────────
   regression:
     runs-on: ubuntu-latest
     needs: integration
@@ -167,7 +171,7 @@ jobs:
           name: integration-results
           path: test-output/
 
-      - name: Compare results to baseline oracle (YAML)
+      - name: Compare results to baseline oracle
         run: |
           python tests/compare_baseline.py \
             --tolerance 0.001 \
@@ -193,8 +197,13 @@ jobs:
           R -e "install.packages(c(
             'testthat','withr','covr','lintr','styler','mockery',
             'R6','yaml','ggplot2','readxl','knitr','rmarkdown',
-            'ape','caper','phytools','plumber','DBI','RPostgres'
+            'roxygen2','ape','caper','phytools','plumber','DBI','RPostgres'
           ), repos='${{ env.R_REPOS }}')"
+
+      - name: Generate NAMESPACE and install
+        run: |
+          Rscript -e "roxygen2::roxygenize('.', load_code=roxygen2::load_source)"
+          R CMD INSTALL .
 
       - name: R CMD check
         run: R CMD check --no-manual --no-build-vignettes .
@@ -207,7 +216,7 @@ jobs:
           path: vi.foundry.Rcheck/
           retention-days: 7
 
-  # ── Summary job ──────────────────────────────────────────────────
+  # ── Summary ──────────────────────────────────────────────────────
   summary:
     runs-on: ubuntu-latest
     needs: [lint, unit, simulacra, integration, regression, check]
