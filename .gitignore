@@ -1,0 +1,19 @@
+# R
+renv/library/
+*.rds
+.Rhistory
+.RData
+.Rproj.user
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+
+# Docker
+test-output/
+
+# Results (regenerated from pipeline)
+results/*.json
+results/*.txt
+!results/session_info.txt
