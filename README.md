@@ -121,6 +121,18 @@ Every value below is the manuscript-reported result, stored as ground truth in `
 
 ---
 
+## Standards
+
+This repository is self-sufficient. The Phosphene R engineering standards —
+including the MPI Handoff Blueprint, DFT axioms, STDD specification, literate
+documentation requirements, CI/CD guide, and dependency strategy — are
+reproduced in [`docs/standards/`](docs/standards/) so that a reader or
+contributor does not need to consult external sources to understand the
+conventions used here.
+
+All standards documents are authored by **Ed Phillips**
+([@phosphene](https://github.com/phosphene)) and licensed under MIT.
+
 ## How It Is Tested
 
 The testing strategy is a pyramid:
@@ -207,6 +219,6 @@ MIT
 ## Related
 
 - VI Monograph: "A Trajectory Account of Adaptive Evolution from Homo to the Wider Animal Kingdom" (Jan Ritch-Frel, 2026)
-- Phosphene R Standards: `r-artifact-foundry/docs/PHOSPHENE_R_STANDARDS.md`
+- Phosphene R Standards: `docs/standards/PHOSPHENE_R_STANDARDS.md`
 - Review file: `drafts/research/monograph-reviews/valence-ingression-review.md`
 - Phased breakdown: `drafts/research/monograph-reviews/vi-foundry-phased-breakdown.md`

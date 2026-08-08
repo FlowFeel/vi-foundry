@@ -3,9 +3,11 @@ Package: vi.foundry
 Title: VI Foundry — Production-Grade R Artifacts for the Valence-Ingression Monograph
 Version: 0.1.0
 Authors@R: c(
-    person("Ed", "Phil", role = c("aut", "cre"), email = "ed@phosphene.dev"),
+    person("Ed", "Phillips", role = c("aut", "cre"),
+           email = "ed@phosphene.dev", comment = c(GitHub = "phosphene")),
     person("Jan", "Ritch-Frel", role = "aut"),
-    person("Flow", "Feel", role = "aut", email = "flow@ind.media", comment = "AI platform engineer")
+    person("Flow", "Feel", role = "aut",
+           email = "flow@ind.media", comment = c(GitHub = "FlowFeel", comment = "AI platform engineer"))
   )
 Description: Production-grade R artifacts for testing Valence-Ingression (VI)
     framework predictions. Provides PGLS comparative methods, integration-depth
@@ -13,7 +15,8 @@ Description: Production-grade R artifacts for testing Valence-Ingression (VI)
     transfer, formal dynamical model (threshold-gated capacity reallocation),
     and simulacrum test bed for parameter recovery. Implements the MPI Handoff
     Blueprint architecture with DFT axiom compliance, STDD for stochastic
-    operations, and testcontainers simulacrum infrastructure.
+    operations, and testcontainers simulacrum infrastructure. Phosphene R
+    engineering standards are reproduced in docs/standards/ for self-sufficiency.
 License: MIT + file LICENSE
 URL: https://github.com/FlowFeel/vi-foundry
 BugReports: https://github.com/FlowFeel/vi-foundry/issues
@@ -22,8 +25,7 @@ Depends:
 Imports:
     withr,
     stats,
-    utils,
-    yaml
+    utils
 Suggests:
     testthat (>= 3.0.0),
     covr,
@@ -39,7 +41,8 @@ Suggests:
     yaml,
     knitr,
     rmarkdown,
-    readxl
+    readxl,
+    base64enc
 Config/testthat/edition: 3
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
