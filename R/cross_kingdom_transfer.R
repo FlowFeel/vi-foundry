@@ -42,10 +42,10 @@ fit_plant_model <- function(plant_data, seed = 42L) {
 
     result <- list(
       values = c(
-        slope = coef(fit)[2],
-        intercept = coef(fit)[1],
-        r_squared = s$r.squared,
-        p_value = s$coefficients[2, 4]
+        slope = unname(coef(fit)[2]),
+        intercept = unname(coef(fit)[1]),
+        r_squared = unname(s$r.squared),
+        p_value = unname(s$coefficients[2, 4])
       ),
       metadata = list(
         seed = seed,
@@ -119,10 +119,10 @@ transfer_test <- function(plant_data, bird_data, seed = 42L) {
 
     result <- list(
       values = c(
-        plant_slope = plant_slope,
-        bird_rho = cor_result$estimate,
-        bird_p = cor_result$p.value,
-        null_rho = null_cor$estimate
+        plant_slope = unname(plant_slope),
+        bird_rho = unname(cor_result$estimate),
+        bird_p = unname(cor_result$p.value),
+        null_rho = unname(null_cor$estimate)
       ),
       metadata = list(
         seed = seed,
