@@ -14,18 +14,11 @@ jobs:
   lint:
     runs-on: ubuntu-latest
     continue-on-error: true
-    container: rocker/r-ver:4.4.3
+    container: rocker/tidyverse:4.4.3
     steps:
       - uses: actions/checkout@v4
-      - name: Install system dependencies
-        run: |
-          apt-get update && apt-get install -y --no-install-recommends \
-            libxml2-dev libcurl4-openssl-dev libssl-dev
-          rm -rf /var/lib/apt/lists/*
-      - name: Install lintr and styler
-        run: |
-          R -e "install.packages(c('lintr', 'styler', 'roxygen2'), repos='${{ env.R_REPOS }}', dependencies=TRUE)"
-          R -e "library(lintr); library(styler); library(roxygen2); cat('All lint tools installed\n')"
+      - name: Verify lintr available
+        run: R -e "library(lintr); cat('lintr OK\n')"
       - name: Style check
         run: |
           Rscript -e "
@@ -49,15 +42,12 @@ jobs:
 
   unit:
     runs-on: ubuntu-latest
-    container: rocker/r-ver:4.4.3
+    container: rocker/tidyverse:4.4.3
     needs: lint
     steps:
       - uses: actions/checkout@v4
-      - name: Install system dependencies
-        run: |
-          apt-get update && apt-get install -y --no-install-recommends \
-            libpq-dev libxml2-dev libcurl4-openssl-dev libssl-dev
-          rm -rf /var/lib/apt/lists/*
+      - name: Verify lintr available
+        run: R -e "library(lintr); cat('lintr OK\n')"
       - name: Install R dependencies
         run: |
           R -e "install.packages(c(
@@ -88,16 +78,13 @@ jobs:
 
   simulacra:
     runs-on: ubuntu-latest
-    container: rocker/r-ver:4.4.3
+    container: rocker/tidyverse:4.4.3
     needs: unit
     timeout-minutes: 15
     steps:
       - uses: actions/checkout@v4
-      - name: Install system dependencies
-        run: |
-          apt-get update && apt-get install -y --no-install-recommends \
-            libpq-dev libxml2-dev libcurl4-openssl-dev libssl-dev
-          rm -rf /var/lib/apt/lists/*
+      - name: Verify lintr available
+        run: R -e "library(lintr); cat('lintr OK\n')"
       - name: Install R dependencies
         run: |
           R -e "install.packages(c(
@@ -176,7 +163,7 @@ jobs:
 
   check:
     runs-on: ubuntu-latest
-    container: rocker/r-ver:4.4.3
+    container: rocker/tidyverse:4.4.3
     needs: regression
     steps:
       - uses: actions/checkout@v4
