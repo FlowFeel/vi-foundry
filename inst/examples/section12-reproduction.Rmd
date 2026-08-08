@@ -1,0 +1,39 @@
+---
+title: "§12 Quantitative Tests — Reproduction Report"
+author: "VI Foundry"
+date: "2026-08-08"
+output: rmarkdown::html_document
+---
+
+## Background
+
+The VI monograph's §12 presents 7 original quantitative tests (T1–T7)
+plus the formal model and cross-kingdom L3 transfer test. This report
+reproduces every result from the bundled data, following the MPI Handoff
+Blueprint pipeline.
+
+## Data
+
+All data files are bundled in `data/`. Provenance in `data/README.md`.
+
+## Results
+
+### T1: Orobanchaceae PGLS
+
+[To be filled in Phase 5]
+
+### T6: Gene-Loss Ordering
+
+[To be filled in Phase 5]
+
+### Cross-Kingdom L3 Transfer
+
+[To be filled in Phase 5]
+
+## Interpretation
+
+[To be filled in Phase 5]
+
+## Limitations
+
+[To be filled in Phase 5]

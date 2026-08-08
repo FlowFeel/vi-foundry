@@ -1,0 +1,71 @@
+name: VI Foundry CI
+
+on:
+  push:
+    branches: [main, "feature/**"]
+  pull_request:
+    branches: [main]
+
+env:
+  R_REPOS: "https://packagemanager.posit.co/cran/__linux__/jammy/latest"
+
+jobs:
+  # Gate 1: Lint (static analysis)
+  lint:
+    runs-on: ubuntu-latest
+    container: rocker/r-ver:4.4.3
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install lintr
+        run: R -e "install.packages('lintr', repos='https://cloud.r-project.org/')"
+      - name: Lint package
+        run: Rscript -e "lintr::lint_package()"
+
+  # Gate 2: Unit tests (pure logic, no Docker)
+  unit:
+    runs-on: ubuntu-latest
+    container: rocker/r-ver:4.4.3
+    needs: lint
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install dependencies
+        run: |
+          R -e "install.packages(c('testthat','withr','covr','mockery','R6','yaml'), repos='https://cloud.r-project.org/')"
+      - name: Run unit tests
+        run: Rscript -e "testthat::test_local(filter='unit', reporter=testthat::CheckReporter)"
+
+  # Gate 3: Integration (testcontainers simulacrum + BDD)
+  integration:
+    runs-on: ubuntu-latest
+    needs: unit
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - name: Build and run simulacrum stack
+        run: |
+          docker compose -f compose/docker-compose.test.yml up --abort-on-container-exit --exit-code-from verifier
+      - name: Upload results
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: simulation-results
+          path: test-output/
+          retention-days: 7
+
+  # Gate 4: Regression (baseline oracle comparison)
+  regression:
+    runs-on: ubuntu-latest
+    needs: integration
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+      - name: Install dependencies
+        run: pip install pyyaml
+      - name: Compare results to baseline oracle
+        run: |
+          python tests/compare_baseline.py \
+            --tolerance 0.001 \
+            --baseline baseline \
+            --output test-output

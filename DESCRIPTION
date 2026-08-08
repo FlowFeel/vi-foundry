@@ -1,0 +1,45 @@
+Type: Package
+Package: vi.foundry
+Title: VI Foundry — Production-Grade R Artifacts for the Valence-Ingression Monograph
+Version: 0.1.0
+Authors@R: c(
+    person("Ed", "Phil", role = c("aut", "cre"), email = "ed@phosphene.dev"),
+    person("Jan", "Ritch-Frel", role = "aut"),
+    person("Flow", "Feel", role = "aut", email = "flow@ind.media", comment = "AI platform engineer")
+  )
+Description: Production-grade R artifacts for testing Valence-Ingression (VI)
+    framework predictions. Provides PGLS comparative methods, integration-depth
+    ordering tests, biphasic genome reduction models, cross-kingdom parameter
+    transfer, formal dynamical model (threshold-gated capacity reallocation),
+    and simulacrum test bed for parameter recovery. Implements the MPI Handoff
+    Blueprint architecture with DFT axiom compliance, STDD for stochastic
+    operations, and testcontainers simulacrum infrastructure.
+License: MIT + file LICENSE
+URL: https://github.com/FlowFeel/vi-foundry
+BugReports: https://github.com/FlowFeel/vi-foundry/issues
+Depends:
+    R (>= 4.4.0)
+Imports:
+    withr,
+    stats,
+    utils
+Suggests:
+    testthat (>= 3.0.0),
+    covr,
+    lintr,
+    styler,
+    mockery,
+    ape,
+    caper,
+    phytools,
+    plumber,
+    DBI,
+    RPostgres,
+    yaml,
+    knitr,
+    rmarkdown
+Config/testthat/edition: 3
+Encoding: UTF-8
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.3.2
+VignetteBuilder: knitr

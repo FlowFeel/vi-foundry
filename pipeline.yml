@@ -1,0 +1,111 @@
+# pipeline.yml — Analysis pipeline manifest (DFT A3: manifest conformance)
+#
+# Every stage declares inputs, outputs, and the function that executes it.
+# Tests verify the actual pipeline matches this manifest. If someone adds
+# a stage without updating the manifest, the test fails.
+
+stages:
+  # === Data loading ===
+  - name: load_orobanchaceae
+    inputs: [data/species_plastome_data.tsv, data/orobanchaceae_tree.nwk]
+    outputs: [data/raw/orobanchaceae]
+    function: load_orobanchaceae
+
+  - name: load_cross_family
+    inputs: [data/cross_family_plastome_data.tsv]
+    outputs: [data/raw/cross_family]
+    function: load_cross_family_plastomes
+
+  - name: load_endosymbionts
+    inputs: [data/endosymbiont_genome_data.tsv]
+    outputs: [data/raw/endosymbionts]
+    function: load_endosymbionts
+
+  - name: load_bobay_ochman
+    inputs: [data/bobay_ochman_table_s1.xlsx]
+    outputs: [data/raw/bobay_ochman]
+    function: load_bobay_ochman
+
+  - name: load_dewar
+    inputs: [data/dewar_pangenome_lifestyles.csv, data/dewar_pangenome_species.csv, data/dewar_panX_tree.nex]
+    outputs: [data/raw/dewar]
+    function: load_dewar_pangenome
+
+  - name: load_island_birds
+    inputs: [data/island_bird_morphology.csv]
+    outputs: [data/raw/island_birds]
+    function: load_island_birds
+
+  # === Core empirical tests (T1–T7) ===
+  - name: t1_pgls_orobanchaceae
+    inputs: [data/raw/orobanchaceae]
+    outputs: [results/t1_pgls]
+    function: pgls_orobanchaceae
+    params:
+      method: pgls
+      tree: data/orobanchaceae_tree.nwk
+      seed: 42
+
+  - name: t2_cross_family
+    inputs: [data/raw/cross_family]
+    outputs: [results/t2_cross_family]
+    function: pgls_cross_family
+    params:
+      seed: 42
+
+  - name: t3_endosymbiont_biphasic
+    inputs: [data/raw/endosymbionts]
+    outputs: [results/t3_endosymbiont]
+    function: endosymbiont_biphasic
+    params:
+      seed: 42
+
+  - name: t4_niche_vs_ne
+    inputs: [data/raw/bobay_ochman]
+    outputs: [results/t4_niche_vs_ne]
+    function: niche_vs_ne
+    params:
+      seed: 42
+
+  - name: t5_pangenome_fluidity
+    inputs: [data/raw/dewar]
+    outputs: [results/t5_pangenome]
+    function: pangenome_fluidity
+    params:
+      seed: 42
+
+  - name: t6_gene_loss_ordering
+    inputs: [data/raw/orobanchaceae, data/raw/cross_family]
+    outputs: [results/t6_ordering]
+    function: gene_loss_ordering
+    params:
+      permutation: exact
+      n_perm: 720
+      seed: 42
+
+  - name: t7_ltee_cosegregation
+    inputs: [data/raw/ltee]
+    outputs: [results/t7_ltee]
+    function: ltee_cosegregation
+    params:
+      seed: 42
+
+  # === Formal model ===
+  - name: formal_model
+    inputs: []
+    outputs: [results/formal_model]
+    function: threshold_model
+    params:
+      lambda: 0.15
+      theta: 2.5
+      m0: 10.0
+      alpha: 0.05
+      time: 100
+
+  # === Cross-kingdom L3 ===
+  - name: cross_kingdom_l3
+    inputs: [data/raw/orobanchaceae, data/raw/island_birds]
+    outputs: [results/cross_kingdom]
+    function: cross_kingdom_transfer
+    params:
+      seed: 42

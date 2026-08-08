@@ -1,0 +1,117 @@
+# baseline/oracle.yml — Ground truth for all §12 results
+#
+# Every value is the manuscript-reported result. Tolerance is absolute.
+# When results diverge, either update the baseline with proof or fix the regression.
+#
+# supports_vi: does the result support the VI prediction?
+# distinguishes_from_competitor: does the result distinguish VI from the named competitor?
+#   (false = competitor predicts the same pattern; caveat required)
+
+t1_orobanchaceae_pgls:
+  prediction: "Plastome size correlates with parasitism level"
+  competitor: "Relaxed selection (Lahti et al. 2009)"
+  values:
+    beta: -23.5              # kb per parasitism level
+    r_squared: 0.652
+    p_value: 1.25e-9
+    n_species: 12
+  tolerance: 0.001
+  supports_vi: true
+  distinguishes_from_competitor: false
+  caveat: "Relaxed selection predicts the same gradient. Caveat in paper §12.1.2."
+
+t2_cross_family:
+  prediction: "Gene-loss gradient replicates across independent parasitic lineages"
+  competitor: "Stochastic gene loss"
+  values:
+    pearson_r: -0.934
+    n: 91
+    p_value: 1.39e-41
+  tolerance: 0.001
+  supports_vi: true
+  distinguishes_from_competitor: false
+  caveat: "Also predicted by relaxed selection on photosynthetic genes."
+
+t3_endosymbiont_biphasic:
+  prediction: "Genome reduction follows biphasic kinetics (fast then slow)"
+  competitor: "Constant rate (Lynch 2007), accelerating (Muller's ratchet)"
+  values:
+    r_squared: 0.920
+    k1_k2_ratio: 19.0
+    bayes_factor: 6.7          # logistic vs exponential
+  tolerance: 0.01
+  supports_vi: true
+  distinguishes_from_competitor: true
+  caveat: "n=10 genera; sensitivity to individual data points not fully tested."
+
+t4_niche_vs_ne:
+  prediction: "Niche breadth predicts gene loss better than Ne alone"
+  competitor: "Drift (Lynch 2007)"
+  values:
+    niche_r_squared: 0.343
+    ne_r_squared: 0.198
+  tolerance: 0.001
+  supports_vi: true
+  distinguishes_from_competitor: true
+  caveat: null
+
+t5_pangenome_fluidity:
+  prediction: "Pan-genome openness tracks lifestyle (commensal vs free-living)"
+  competitor: "Ne-only model"
+  values:
+    lifestyle_subsumes_ne: true
+  tolerance: 0.001
+  supports_vi: true
+  distinguishes_from_competitor: true
+  caveat: null
+
+t6_gene_loss_ordering:
+  prediction: "Integration-depth determines gene-loss order"
+  competitor: "Random loss"
+  values:
+    spearman_orobanchaceae: 0.955
+    spearman_cuscuta: 0.986
+    cross_family_concordance: 0.941
+    permutation_p: 0.0083     # 6/720 exact permutation
+    quasibinomial_p: 0.0001
+    pseudo_r_squared: 0.82
+  tolerance: 0.001
+  supports_vi: true
+  distinguishes_from_competitor: true
+  caveat: null
+
+t7_ltee_cosegregation:
+  prediction: "Function-loss mutations co-segregate with beneficial mutations"
+  competitor: "Independent assortment"
+  values:
+    observed_pct: 36.4
+    expected_pct: 61.7
+    p_value: 0.0001
+  tolerance: 0.001
+  supports_vi: true
+  distinguishes_from_competitor: false
+  caveat: "Hitchhiking confound; arbitrary window; misspecified null. Reported as suggestive."
+
+formal_model:
+  prediction: "Biphasic kinetics: fast Phase 1, slow Phase 2"
+  competitor: "Constant rate (relaxed selection), accelerating (Muller's ratchet)"
+  values:
+    phase1_rate: 19.0
+    phase2_rate: 1.0
+    r_squared: 0.920
+    bayes_factor: 6.7
+  tolerance: 0.01
+  supports_vi: true
+  distinguishes_from_competitor: true
+  caveat: null
+
+cross_kingdom_l3:
+  prediction: "Plant-derived parameters predict bird morphological change ordering"
+  competitor: "Substrates are independent — no parameter transfer"
+  values:
+    bird_rho: 0.755
+    bird_p: 0.031
+  tolerance: 0.01
+  supports_vi: true
+  distinguishes_from_competitor: true
+  caveat: "Ordering transfers across kingdoms; rate does not."

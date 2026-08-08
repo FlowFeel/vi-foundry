@@ -1,0 +1,368 @@
+species	genus	host	accession	genome_bp	aa_pathways_retained	symbiosis_age_mya
+Buchnera aphidicola str. APS (Acyrthosiphon pisum)	Buchnera	Acyrthosiphon pisum (pea aphid)	NZ_AP036055.1	641802	10	200
+Buchnera aphidicola (Myzus persicae)	Buchnera	Myzus persicae (peach-potato aphid)	NZ_CP172244.1	643512	10	200
+Buchnera aphidicola (Schizaphis graminum)	Buchnera	Schizaphis graminum (greenbug)	NZ_CP029205.1	641689	10	200
+Buchnera aphidicola (Aphis craccivore)	Buchnera	aphid	NZ_CP043999.1	632731	10	200
+Buchnera aphidicola (Aphis gossypii)	Buchnera	aphid	NZ_CP056771.1	628098	10	200
+Buchnera aphidicola (Lachnus tropicalis)	Buchnera	aphid	AP043953.1	419908	10	200
+Buchnera aphidicola str. Sg (Schizaphis graminum)	Buchnera	Schizaphis graminum (greenbug)	NC_004061.1	641454	10	200
+Buchnera aphidicola str. W106 (Myzus persicae)	Buchnera	Myzus persicae (peach-potato aphid)	NZ_CP002699.1	643502	10	200
+Buchnera aphidicola str. USDA (Myzus persicae)	Buchnera	Myzus persicae (peach-potato aphid)	NZ_CP002697.1	643504	10	200
+Buchnera aphidicola str. G002 (Myzus persicae)	Buchnera	Myzus persicae (peach-potato aphid)	NZ_CP002701.1	643517	10	200
+Buchnera aphidicola str. F009 (Myzus persicae)	Buchnera	Myzus persicae (peach-potato aphid)	NZ_CP002703.1	643510	10	200
+Buchnera aphidicola str. LSR1 (Acyrthosiphon pisum)	Buchnera	Acyrthosiphon pisum (pea aphid)	NZ_ACFK00000000.1	642011	10	200
+Buchnera aphidicola str. LSR1 (Acyrthosiphon pisum)	Buchnera	Acyrthosiphon pisum (pea aphid)	NZ_ACFK01000001.1	642011	10	200
+Buchnera aphidicola (Anoecia corni)	Buchnera	aphid	NZ_OZ060371.1	550785	10	200
+Buchnera aphidicola (Myzus persicae)	Buchnera	Myzus persicae (peach-potato aphid)	NZ_MJNC00000000.1	643531	10	200
+Buchnera aphidicola (Myzus persicae)	Buchnera	Myzus persicae (peach-potato aphid)	NZ_MJNC01000002.1	378928	10	200
+Buchnera aphidicola (Sitobion miscanthi)	Buchnera	aphid	NZ_CP084934.1	671355	10	200
+Buchnera aphidicola (Hyalopterus amygdali)	Buchnera	aphid	NZ_OZ060383.1	632418	10	200
+Buchnera aphidicola (Pemphigus immunis)	Buchnera	aphid	NZ_OZ060408.1	597589	10	200
+Buchnera aphidicola (Mindarus abietinus)	Buchnera	aphid	NZ_OZ060398.1	540092	10	200
+Buchnera aphidicola (Takecallis arundicolens)	Buchnera	aphid	NZ_OZ060369.1	434724	10	200
+Buchnera aphidicola (Phyllaphis fagi)	Buchnera	aphid	NZ_OZ060370.1	431406	10	200
+Buchnera aphidicola (Sipha maydis)	Buchnera	aphid	NZ_OZ060381.1	462466	10	200
+Buchnera aphidicola (Pterocallis alni)	Buchnera	aphid	NZ_OZ060377.1	421682	10	200
+Buchnera aphidicola (Uroleucon sonchi)	Buchnera	Uroleucon sp. (aphid)	NZ_CP047588.1	614349	10	200
+Buchnera aphidicola (Protaphis terricola)	Buchnera	aphid	NZ_OZ060405.1	607166	10	200
+Buchnera aphidicola (Eriosoma lanigerum)	Buchnera	aphid	NZ_OZ060395.1	626868	10	200
+Buchnera aphidicola (Thelaxes suberi)	Buchnera	aphid	NZ_OZ060389.1	529515	10	200
+Buchnera aphidicola (Panaphis juglandis)	Buchnera	aphid	NZ_OZ060378.1	433824	10	200
+Buchnera aphidicola (Brachycaudus tragopogonis)	Buchnera	aphid	NZ_OZ060418.1	643003	10	200
+Buchnera aphidicola (Chaitophorus populicola)	Buchnera	aphid	NZ_OZ060382.1	474096	10	200
+Buchnera aphidicola (Drepanosiphum platanoidis)	Buchnera	aphid	NZ_OZ060412.1	448962	10	200
+Buchnera aphidicola (Eriosoma grossulariae)	Buchnera	aphid	NZ_OZ060402.1	606948	10	200
+Buchnera aphidicola (Neophyllaphis podocarpi)	Buchnera	aphid	NZ_OZ060386.1	559180	10	200
+Buchnera aphidicola (Chaetosiphella stipae setosa)	Buchnera	aphid	NZ_OZ060394.1	462000	10	200
+Buchnera aphidicola (Tetraneura ulmi)	Buchnera	aphid	NZ_OZ060366.1	530976	10	200
+Buchnera aphidicola (Pemphigus populi)	Buchnera	aphid	NZ_OZ060372.1	610941	10	200
+Buchnera aphidicola (Cavariella theobaldi)	Buchnera	aphid	NZ_OZ060413.1	587277	10	200
+Wigglesworthia glossinidia endosymbiont of Glossina morsitans morsitans (Yale colony)	Wigglesworthia	Glossina morsitans (tsetse fly)	NC_016893.1	719535	8	65
+Wigglesworthia glossinidia endosymbiont of Glossina morsitans morsitans (Yale colony)	Wigglesworthia	Glossina morsitans (tsetse fly)	CP003315.1	719535	8	65
+Wigglesworthia glossinidia endosymbiont of Glossina brevipalpis	Wigglesworthia	Glossina brevipalpis (tsetse fly)	BA000021.3	697724	8	65
+Blochmannia endosymbiont of Camponotus sp. C-003	Blochmannia	Camponotus sp. (carpenter ant)	NZ_CP097764.1	783921	7	50
+Blochmannia endosymbiont of Camponotus modoc	Blochmannia	Camponotus sp. (carpenter ant)	NZ_CP097765.1	790674	7	50
+Blochmannia endosymbiont of Camponotus modoc	Blochmannia	Camponotus sp. (carpenter ant)	NZ_CP097754.1	789868	7	50
+Candidatus Blochmanniella camponoti	Blochmannia	carpenter ant	NZ_CP097751.1	790946	7	50
+Candidatus Blochmanniella camponoti	Blochmannia	carpenter ant	NZ_CP097750.1	790899	7	50
+Candidatus Blochmanniella camponoti	Blochmannia	carpenter ant	NZ_CP097749.1	791111	7	50
+Blochmannia endosymbiont of Camponotus sp.	Blochmannia	Camponotus sp. (carpenter ant)	NZ_CP097755.1	780543	7	50
+Blochmannia endosymbiont of Camponotus modoc	Blochmannia	Camponotus sp. (carpenter ant)	NZ_CP097758.1	790842	7	50
+Blochmannia endosymbiont of Camponotus sp.	Blochmannia	Camponotus sp. (carpenter ant)	NZ_CP097759.1	790497	7	50
+Blochmannia endosymbiont of Camponotus sp.	Blochmannia	Camponotus sp. (carpenter ant)	NZ_CP097761.1	789542	7	50
+Blochmannia endosymbiont of Camponotus sp.	Blochmannia	Camponotus sp. (carpenter ant)	NZ_CP097757.1	780612	7	50
+Blochmannia endosymbiont of Camponotus sp.	Blochmannia	Camponotus sp. (carpenter ant)	NZ_CP097760.1	789636	7	50
+Blochmannia endosymbiont of Camponotus sp. C-046	Blochmannia	Camponotus sp. (carpenter ant)	NZ_CP097752.1	783790	7	50
+Candidatus Blochmanniella pennsylvanica	Blochmannia	carpenter ant	NZ_CP095401.1	791499	7	50
+Blochmannia endosymbiont of Colobopsis nipponica	Blochmannia	carpenter ant	NZ_CP046533.1	728116	7	50
+Blochmannia endosymbiont of Camponotus nipponensis	Blochmannia	Camponotus sp. (carpenter ant)	NZ_CP046534.1	788522	7	50
+Blochmannia endosymbiont of Camponotus (Colobopsis) obliquus	Blochmannia	Camponotus sp. (carpenter ant)	NZ_CP010049.1	773940	7	50
+Blochmannia endosymbiont of Polyrhachis (Hedomyrma) turneri	Blochmannia	carpenter ant	NZ_CP010048.1	749321	7	50
+Candidatus Blochmanniella chromaiodes str. 640	Blochmannia	carpenter ant	NC_020075.1	791219	7	50
+Candidatus Blochmanniella vafra str. BVAF	Blochmannia	carpenter ant	NC_014909.2	722585	7	50
+Candidatus Blochmanniella pennsylvanica str. BPEN	Blochmannia	carpenter ant	NC_007292.1	791654	7	50
+Candidatus Blochmannia sp. SNP	Blochmannia	carpenter ant	NZ_CP144371.1	783877	7	50
+Candidatus Blochmannia vicinus (nom. nud.)	Blochmannia	carpenter ant	NZ_CP097763.1	778501	7	50
+Candidatus Blochmannia vicinus (nom. nud.)	Blochmannia	carpenter ant	NZ_CP097753.1	776475	7	50
+Candidatus Blochmannia vicinus (nom. nud.)	Blochmannia	carpenter ant	NZ_CP097756.1	775982	7	50
+Candidatus Blochmannia ocreatus (nom. nud.)	Blochmannia	carpenter ant	NZ_CP097762.1	746321	7	50
+Candidatus Blochmannia sp. SNP	Blochmannia	carpenter ant	CP144371.1	783877	7	50
+Candidatus Blochmannia vicinus (nom. nud.)	Blochmannia	carpenter ant	CP125213.1	780225	7	50
+Candidatus Blochmannia vicinus (nom. nud.)	Blochmannia	carpenter ant	CP097763.1	778501	7	50
+Blochmannia endosymbiont of Camponotus sp.	Blochmannia	Camponotus sp. (carpenter ant)	CP097759.1	790497	7	50
+Blochmannia endosymbiont of Camponotus modoc	Blochmannia	Camponotus sp. (carpenter ant)	CP097758.1	790842	7	50
+Blochmannia endosymbiont of Camponotus sp.	Blochmannia	Camponotus sp. (carpenter ant)	CP097757.1	780612	7	50
+Candidatus Blochmannia vicinus (nom. nud.)	Blochmannia	carpenter ant	CP097756.1	775982	7	50
+Blochmannia endosymbiont of Camponotus sp.	Blochmannia	Camponotus sp. (carpenter ant)	CP097755.1	780543	7	50
+Blochmannia endosymbiont of Camponotus modoc	Blochmannia	Camponotus sp. (carpenter ant)	CP097754.1	789868	7	50
+Blochmannia endosymbiont of Camponotus sp. C-046	Blochmannia	Camponotus sp. (carpenter ant)	CP097752.1	783790	7	50
+Candidatus Blochmannia vicinus (nom. nud.)	Blochmannia	carpenter ant	CP097753.1	776475	7	50
+Candidatus Blochmanniella camponoti	Blochmannia	carpenter ant	CP097751.1	790946	7	50
+Blochmannia endosymbiont of Camponotus modoc	Blochmannia	Camponotus sp. (carpenter ant)	CP097765.1	790674	7	50
+Candidatus Blochmanniella camponoti	Blochmannia	carpenter ant	CP097749.1	791111	7	50
+Blochmannia endosymbiont of Camponotus sp.	Blochmannia	Camponotus sp. (carpenter ant)	CP097760.1	789636	7	50
+Candidatus Blochmannia ocreatus (nom. nud.)	Blochmannia	carpenter ant	CP097762.1	746321	7	50
+Candidatus Blochmanniella camponoti	Blochmannia	carpenter ant	CP097750.1	790899	7	50
+Blochmannia endosymbiont of Camponotus sp.	Blochmannia	Camponotus sp. (carpenter ant)	CP097761.1	789542	7	50
+Blochmannia endosymbiont of Camponotus sp. C-003	Blochmannia	Camponotus sp. (carpenter ant)	CP097764.1	783921	7	50
+Candidatus Blochmanniella pennsylvanica	Blochmannia	carpenter ant	CP095401.1	791499	7	50
+Blochmannia endosymbiont of Colobopsis nipponica	Blochmannia	carpenter ant	CP046533.1	728116	7	50
+Blochmannia endosymbiont of Camponotus nipponensis	Blochmannia	Camponotus sp. (carpenter ant)	CP046534.1	788522	7	50
+Blochmannia endosymbiont of Camponotus (Colobopsis) obliquus	Blochmannia	Camponotus sp. (carpenter ant)	CP010049.1	773940	7	50
+Blochmannia endosymbiont of Polyrhachis (Hedomyrma) turneri	Blochmannia	carpenter ant	CP010048.1	749321	7	50
+Candidatus Blochmanniella floridana	Blochmannia	carpenter ant	BX248583.1	705557	7	50
+Candidatus Blochmanniella chromaiodes str. 640	Blochmannia	carpenter ant	CP003903.1	791219	7	50
+Candidatus Blochmanniella vafra str. BVAF	Blochmannia	carpenter ant	CP002189.2	722585	7	50
+Candidatus Blochmanniella pennsylvanica str. BPEN	Blochmannia	carpenter ant	CP000016.1	791654	7	50
+Candidatus Carsonella ruddii	Carsonella	psyllid	CM181098.1	173127	2	150
+Candidatus Carsonella ruddii	Carsonella	psyllid	CM181096.1	169116	2	150
+Candidatus Carsonella ruddii (Anomoneura mori)	Carsonella	psyllid	NZ_AP031380.1	169120	2	150
+Candidatus Carsonella ruddii	Carsonella	psyllid	NZ_CP146451.1	174018	2	150
+Candidatus Carsonella ruddii	Carsonella	psyllid	NZ_CP176402.1	174172	2	150
+Candidatus Carsonella ruddii	Carsonella	psyllid	NZ_CP176403.1	170175	2	150
+Candidatus Carsonella ruddii	Carsonella	psyllid	NZ_CP146392.1	174021	2	150
+Candidatus Carsonella ruddii	Carsonella	psyllid	NZ_CP146389.1	174022	2	150
+Candidatus Carsonella ruddii	Carsonella	psyllid	NZ_CP146395.1	174022	2	150
+Candidatus Carsonella ruddii	Carsonella	psyllid	NZ_CP146386.1	174025	2	150
+Candidatus Carsonella ruddii HC isolate Thao2000	Carsonella	psyllid	NC_018416.1	166163	2	150
+Candidatus Carsonella ruddii CS isolate Thao2000	Carsonella	psyllid	NC_018415.1	162504	2	150
+Candidatus Carsonella ruddii CE isolate Thao2000	Carsonella	psyllid	NC_018414.1	162589	2	150
+Candidatus Carsonella ruddii PC isolate NHV	Carsonella	psyllid	NC_018418.1	159923	2	150
+Candidatus Carsonella ruddii HT isolate Thao2000	Carsonella	psyllid	NC_018417.1	157543	2	150
+Candidatus Carsonella ruddii PV	Carsonella	psyllid	NC_008512.1	159662	2	150
+Candidatus Carsonella ruddii DC	Carsonella	psyllid	NC_021894.1	174014	2	150
+Candidatus Carsonella ruddii (Diaphorina cf. continua)	Carsonella	psyllid	NZ_AP023214.1	173853	2	150
+Candidatus Carsonella ruddii	Carsonella	psyllid	NZ_CP024798.1	174004	2	150
+Candidatus Carsonella ruddii	Carsonella	psyllid	NZ_CP197249.1	173994	2	150
+Candidatus Carsonella ruddii	Carsonella	psyllid	NZ_CP197248.1	174020	2	150
+Candidatus Carsonella ruddii	Carsonella	psyllid	NZ_CP197254.1	166875	2	150
+Candidatus Carsonella ruddii	Carsonella	psyllid	NZ_CP197250.1	168997	2	150
+Candidatus Carsonella ruddii	Carsonella	psyllid	NZ_CP197252.1	172068	2	150
+Candidatus Carsonella ruddii	Carsonella	psyllid	NZ_CP197251.1	168969	2	150
+Candidatus Carsonella ruddii	Carsonella	psyllid	NZ_CP197253.1	165724	2	150
+Candidatus Carsonella ruddii	Carsonella	psyllid	CP197254.1	166875	2	150
+Candidatus Carsonella ruddii	Carsonella	psyllid	CP197253.1	165724	2	150
+Candidatus Carsonella ruddii	Carsonella	psyllid	CP197252.1	172068	2	150
+Candidatus Carsonella ruddii	Carsonella	psyllid	CP197251.1	168969	2	150
+Candidatus Carsonella ruddii	Carsonella	psyllid	CP197250.1	168997	2	150
+Candidatus Carsonella ruddii	Carsonella	psyllid	CP197249.1	173994	2	150
+Candidatus Carsonella ruddii	Carsonella	psyllid	CP197248.1	174020	2	150
+Candidatus Carsonella ruddii	Carsonella	psyllid	NZ_CP019943.1	173802	2	150
+Candidatus Carsonella ruddii	Carsonella	psyllid	NZ_CP012411.1	174018	2	150
+Candidatus Carsonella ruddii	Carsonella	psyllid	NZ_CP092148.1	169046	2	150
+Candidatus Carsonella ruddii	Carsonella	psyllid	NZ_CP092146.1	169056	2	150
+Candidatus Carsonella ruddii	Carsonella	psyllid	NZ_CP092145.1	169051	2	150
+Candidatus Carsonella ruddii	Carsonella	psyllid	NZ_CP092147.1	169064	2	150
+Candidatus Carsonella ruddii DC	Carsonella	psyllid	NZ_AP036056.1	173958	2	150
+Candidatus Carsonella ruddii	Carsonella	psyllid	NZ_CP041245.1	174118	2	150
+Candidatus Carsonella ruddii	Carsonella	psyllid	CP181096.1	169055	2	150
+Candidatus Carsonella ruddii	Carsonella	psyllid	CP181166.1	167918	2	150
+Candidatus Carsonella ruddii	Carsonella	psyllid	CP146451.1	174018	2	150
+Candidatus Carsonella ruddii	Carsonella	psyllid	CP176403.1	170175	2	150
+Candidatus Carsonella ruddii	Carsonella	psyllid	CP176402.1	174172	2	150
+Candidatus Carsonella ruddii	Carsonella	psyllid	NZ_CP146427.1	174016	2	150
+Candidatus Carsonella ruddii	Carsonella	psyllid	NZ_CP146433.1	174022	2	150
+Candidatus Carsonella ruddii	Carsonella	psyllid	NZ_CP146442.1	174019	2	150
+Candidatus Carsonella ruddii	Carsonella	psyllid	NZ_CP146478.1	174018	2	150
+Candidatus Carsonella ruddii	Carsonella	psyllid	NZ_CP146421.1	174017	2	150
+Candidatus Carsonella ruddii	Carsonella	psyllid	NZ_CP146404.1	174021	2	150
+Candidatus Carsonella ruddii	Carsonella	psyllid	NZ_CP146469.1	174018	2	150
+Candidatus Carsonella ruddii	Carsonella	psyllid	NZ_CP146418.1	174018	2	150
+Candidatus Carsonella ruddii	Carsonella	psyllid	NZ_CP146407.1	174021	2	150
+Candidatus Carsonella ruddii	Carsonella	psyllid	NZ_CP146415.1	174016	2	150
+Candidatus Carsonella ruddii	Carsonella	psyllid	NZ_CP146463.1	174013	2	150
+Candidatus Carsonella ruddii	Carsonella	psyllid	NZ_CP146475.1	174020	2	150
+Candidatus Carsonella ruddii	Carsonella	psyllid	NZ_CP146412.1	174019	2	150
+Candidatus Carsonella ruddii	Carsonella	psyllid	NZ_CP147429.1	174020	2	150
+Candidatus Carsonella ruddii	Carsonella	psyllid	NZ_CP146401.1	174025	2	150
+Candidatus Carsonella ruddii	Carsonella	psyllid	NZ_CP146472.1	174020	2	150
+Candidatus Carsonella ruddii	Carsonella	psyllid	NZ_CP146457.1	174019	2	150
+Candidatus Carsonella ruddii	Carsonella	psyllid	NZ_CP146445.1	174020	2	150
+Candidatus Carsonella ruddii	Carsonella	psyllid	NZ_CP146436.1	174021	2	150
+Candidatus Carsonella ruddii	Carsonella	psyllid	NZ_CP146424.1	174022	2	150
+Candidatus Carsonella ruddii	Carsonella	psyllid	NZ_CP146460.1	174021	2	150
+Candidatus Carsonella ruddii	Carsonella	psyllid	NZ_CP146454.1	174020	2	150
+Candidatus Carsonella ruddii	Carsonella	psyllid	NZ_CP146466.1	174021	2	150
+Candidatus Carsonella ruddii	Carsonella	psyllid	NZ_CP146439.1	174023	2	150
+Candidatus Carsonella ruddii	Carsonella	psyllid	NZ_CP146398.1	174022	2	150
+Candidatus Carsonella ruddii	Carsonella	psyllid	NZ_CP147430.1	174020	2	150
+Candidatus Carsonella ruddii	Carsonella	psyllid	NZ_CP146448.1	174024	2	150
+Candidatus Palibaumannia cicadellinicola	Baumannia	sharpshooter	NZ_CP011787.1	632672	8	80
+Candidatus Palibaumannia cicadellinicola	Baumannia	sharpshooter	NZ_CP008985.1	759425	8	80
+Baumannia cicadellinicola str. Hc (Homalodisca coagulata)	Baumannia	Homalodisca sp. (sharpshooter)	NC_007984.1	686194	8	80
+Candidatus Palibaumannia cicadellinicola	Baumannia	sharpshooter	NZ_NJPO00000000.1	667677	8	80
+Candidatus Portiera aleyrodidarum	Portiera	whitefly	NZ_LN649255.1	290195	5	150
+Candidatus Portiera aleyrodidarum	Portiera	whitefly	NZ_LN734649.1	290376	5	150
+Candidatus Portiera aleyrodidarum	Portiera	whitefly	NZ_LNJY00000000.1	375558	5	150
+Candidatus Portiera aleyrodidarum	Portiera	whitefly	NZ_CM014390.1	375688	5	150
+Candidatus Portiera aleyrodidarum	Portiera	whitefly	NZ_CP016343.1	359359	5	150
+Candidatus Portiera aleyrodidarum	Portiera	whitefly	NZ_CP016327.1	354523	5	150
+Candidatus Portiera aleyrodidarum MED (Bemisia tabaci)	Portiera	Bemisia tabaci (whitefly)	NZ_CP016304.1	352068	5	150
+Candidatus Portiera aleyrodidarum MED (Bemisia tabaci)	Portiera	Bemisia tabaci (whitefly)	NZ_CP007563.1	357461	5	150
+Candidatus Portiera aleyrodidarum BT-B-HRs	Portiera	whitefly	NC_018677.1	351658	5	150
+Candidatus Portiera aleyrodidarum BT-QVLC	Portiera	whitefly	NC_018676.1	350928	5	150
+Candidatus Portiera aleyrodidarum BT-QVLC	Portiera	whitefly	NC_018618.1	357472	5	150
+Candidatus Portiera aleyrodidarum	Portiera	whitefly	NZ_JBUYCJ000000000.1	353669	5	150
+Candidatus Portiera aleyrodidarum	Portiera	whitefly	NZ_CM143712.1	353769	5	150
+Candidatus Portiera aleyrodidarum	Portiera	whitefly	NZ_JBUYCE000000000.1	353900	5	150
+Candidatus Portiera aleyrodidarum	Portiera	whitefly	NZ_CM143729.1	353900	5	150
+Candidatus Portiera aleyrodidarum	Portiera	whitefly	NZ_JBUYCI000000000.1	355863	5	150
+Candidatus Portiera aleyrodidarum	Portiera	whitefly	NZ_CM143709.1	355863	5	150
+Candidatus Portiera aleyrodidarum	Portiera	whitefly	NZ_JBUYCG000000000.1	352228	5	150
+Candidatus Portiera aleyrodidarum	Portiera	whitefly	NZ_CM143711.1	352228	5	150
+Candidatus Portiera aleyrodidarum	Portiera	whitefly	NZ_JBUYCK000000000.1	355828	5	150
+Candidatus Portiera aleyrodidarum	Portiera	whitefly	NZ_CM143713.1	355928	5	150
+Candidatus Portiera aleyrodidarum	Portiera	whitefly	NZ_JBUYCH000000000.1	355359	5	150
+Candidatus Portiera aleyrodidarum	Portiera	whitefly	NZ_CM143708.1	355459	5	150
+Candidatus Portiera aleyrodidarum	Portiera	whitefly	NZ_JBUYCF000000000.1	353523	5	150
+Candidatus Portiera aleyrodidarum	Portiera	whitefly	NZ_CM143710.1	353523	5	150
+Candidatus Portiera aleyrodidarum	Portiera	whitefly	CM143729.1	353900	5	150
+Candidatus Portiera aleyrodidarum	Portiera	whitefly	CM143711.1	352228	5	150
+Candidatus Portiera aleyrodidarum	Portiera	whitefly	CM143710.1	353523	5	150
+Candidatus Portiera aleyrodidarum	Portiera	whitefly	CM143709.1	355863	5	150
+Candidatus Portiera aleyrodidarum BT-B-HRs	Portiera	whitefly	NC_018507.1	358242	5	150
+Candidatus Portiera aleyrodidarum	Portiera	whitefly	CP016343.1	359359	5	150
+Candidatus Portiera aleyrodidarum	Portiera	whitefly	CP016327.1	354523	5	150
+Candidatus Portiera aleyrodidarum MED (Bemisia tabaci)	Portiera	Bemisia tabaci (whitefly)	CP016304.1	352068	5	150
+Candidatus Portiera aleyrodidarum	Portiera	whitefly	LN734649.1	290376	5	150
+Candidatus Portiera aleyrodidarum	Portiera	whitefly	LN649255.1	290195	5	150
+Candidatus Portiera aleyrodidarum	Portiera	whitefly	LN649236.1	280822	5	150
+Candidatus Portiera aleyrodidarum MED (Bemisia tabaci)	Portiera	Bemisia tabaci (whitefly)	CP007563.1	357461	5	150
+Candidatus Portiera aleyrodidarum BT-QVLC	Portiera	whitefly	CP003835.1	357472	5	150
+Candidatus Portiera aleyrodidarum TV	Portiera	whitefly	CP004358.1	280663	5	150
+Candidatus Portiera aleyrodidarum BT-B-HRs	Portiera	whitefly	CP003868.1	351658	5	150
+Candidatus Portiera aleyrodidarum BT-QVLC	Portiera	whitefly	CP003867.1	350928	5	150
+Candidatus Portiera aleyrodidarum BT-B-HRs	Portiera	whitefly	CP003708.1	358242	5	150
+Candidatus Tremblayella princeps	Tremblaya	mealybug	NZ_FLRF00000000.1	137475	3	150
+Candidatus Tremblayella princeps	Tremblaya	mealybug	LN999057.1	143340	3	150
+Candidatus Tremblayella princeps	Tremblaya	mealybug	LN999056.1	141620	3	150
+Candidatus Tremblayella princeps	Tremblaya	mealybug	LN999011.1	138410	3	150
+Candidatus Tremblayella princeps	Tremblaya	mealybug	LN998830.1	144042	3	150
+Candidatus Tremblayella princeps	Tremblaya	mealybug	LN998829.1	140306	3	150
+Candidatus Tremblaya princeps PCVAL	Tremblaya	mealybug	CP002918.1	138931	3	150
+Candidatus Tremblaya princeps PCIT	Tremblaya	mealybug	CP002244.1	138927	3	150
+Candidatus Karelsulcia muelleri	Sulcia	Auchenorrhyncha	NZ_AP028057.1	192344	8	260
+Candidatus Karelsulcia muelleri	Sulcia	Auchenorrhyncha	NZ_OZ035013.1	189789	8	260
+Candidatus Karelsulcia muelleri	Sulcia	Auchenorrhyncha	NZ_JBWVKA000000000.1	190851	8	260
+Candidatus Karelsulcia muelleri	Sulcia	Auchenorrhyncha	NZ_CM153193.1	190851	8	260
+Candidatus Karelsulcia muelleri	Sulcia	Auchenorrhyncha	NZ_JBWVJY000000000.1	190852	8	260
+Candidatus Karelsulcia muelleri	Sulcia	Auchenorrhyncha	NZ_CM153198.1	190852	8	260
+Candidatus Karelsulcia muelleri	Sulcia	Auchenorrhyncha	NZ_JBWVKD000000000.1	190830	8	260
+Candidatus Karelsulcia muelleri	Sulcia	Auchenorrhyncha	NZ_CM153195.1	190830	8	260
+Candidatus Karelsulcia muelleri	Sulcia	Auchenorrhyncha	NZ_JBWVJX000000000.1	190843	8	260
+Candidatus Karelsulcia muelleri	Sulcia	Auchenorrhyncha	NZ_CM153199.1	190843	8	260
+Candidatus Karelsulcia muelleri	Sulcia	Auchenorrhyncha	NZ_JBWVKE000000000.1	190830	8	260
+Candidatus Karelsulcia muelleri	Sulcia	Auchenorrhyncha	NZ_CM153197.1	190830	8	260
+Candidatus Karelsulcia muelleri	Sulcia	Auchenorrhyncha	NZ_JBWVKF000000000.1	190776	8	260
+Candidatus Karelsulcia muelleri	Sulcia	Auchenorrhyncha	NZ_CM153192.1	190776	8	260
+Candidatus Karelsulcia muelleri	Sulcia	Auchenorrhyncha	NZ_JBWVJZ000000000.1	190862	8	260
+Candidatus Karelsulcia muelleri	Sulcia	Auchenorrhyncha	NZ_CM153189.1	190862	8	260
+Candidatus Karelsulcia muelleri	Sulcia	Auchenorrhyncha	NZ_CP093905.1	190560	8	260
+Candidatus Karelsulcia muelleri	Sulcia	Auchenorrhyncha	NZ_CP093900.1	190314	8	260
+Candidatus Karelsulcia muelleri	Sulcia	Auchenorrhyncha	NZ_CP093906.1	190964	8	260
+Candidatus Karelsulcia muelleri	Sulcia	Auchenorrhyncha	NZ_CP093902.1	190701	8	260
+Candidatus Karelsulcia muelleri	Sulcia	Auchenorrhyncha	NZ_CP093909.1	190814	8	260
+Candidatus Karelsulcia muelleri	Sulcia	Auchenorrhyncha	NZ_CP093904.1	190298	8	260
+Candidatus Karelsulcia muelleri	Sulcia	Auchenorrhyncha	NZ_CP093903.1	190781	8	260
+Candidatus Karelsulcia muelleri	Sulcia	Auchenorrhyncha	NZ_CP093901.1	189814	8	260
+Candidatus Karelsulcia muelleri	Sulcia	Auchenorrhyncha	NZ_CP093893.1	190512	8	260
+Candidatus Karelsulcia muelleri	Sulcia	Auchenorrhyncha	NZ_CP093897.1	190404	8	260
+Candidatus Karelsulcia muelleri	Sulcia	Auchenorrhyncha	NZ_CP093892.1	190377	8	260
+Candidatus Karelsulcia muelleri	Sulcia	Auchenorrhyncha	NZ_CP093898.1	190780	8	260
+Candidatus Karelsulcia muelleri	Sulcia	Auchenorrhyncha	NZ_CP093890.1	190656	8	260
+Candidatus Karelsulcia muelleri	Sulcia	Auchenorrhyncha	NZ_CP093895.1	189955	8	260
+Candidatus Karelsulcia muelleri	Sulcia	Auchenorrhyncha	NZ_CP093891.1	192889	8	260
+Candidatus Karelsulcia muelleri	Sulcia	Auchenorrhyncha	NZ_CP093896.1	192854	8	260
+Candidatus Karelsulcia muelleri	Sulcia	Auchenorrhyncha	NZ_CP093894.1	190852	8	260
+Candidatus Karelsulcia muelleri	Sulcia	Auchenorrhyncha	NZ_CP110506.1	156628	8	260
+Candidatus Karelsulcia muelleri	Sulcia	Auchenorrhyncha	NZ_CP110505.1	157002	8	260
+Candidatus Karelsulcia muelleri	Sulcia	Auchenorrhyncha	CM153199.1	190843	8	260
+Candidatus Karelsulcia muelleri	Sulcia	Auchenorrhyncha	CM153198.1	190852	8	260
+Candidatus Karelsulcia muelleri	Sulcia	Auchenorrhyncha	CM153197.1	190830	8	260
+Candidatus Karelsulcia muelleri	Sulcia	Auchenorrhyncha	CM153195.1	190830	8	260
+Candidatus Karelsulcia muelleri	Sulcia	Auchenorrhyncha	CM153193.1	190851	8	260
+Candidatus Karelsulcia muelleri	Sulcia	Auchenorrhyncha	CM153192.1	190776	8	260
+Candidatus Karelsulcia muelleri	Sulcia	Auchenorrhyncha	CM153189.1	190862	8	260
+Candidatus Karelsulcia muelleri	Sulcia	Auchenorrhyncha	NZ_CP110507.1	155965	8	260
+Candidatus Karelsulcia muelleri	Sulcia	Auchenorrhyncha	NZ_CP110504.1	156525	8	260
+Candidatus Karelsulcia muelleri	Sulcia	Auchenorrhyncha	NZ_CP093908.1	190867	8	260
+Candidatus Karelsulcia muelleri	Sulcia	Auchenorrhyncha	NZ_CP093907.1	190661	8	260
+Candidatus Karelsulcia muelleri	Sulcia	Auchenorrhyncha	NZ_CP093899.1	192793	8	260
+Candidatus Karelsulcia muelleri	Sulcia	Auchenorrhyncha	NZ_CP013212.1	190657	8	260
+Candidatus Karelsulcia muelleri	Sulcia	Auchenorrhyncha	NZ_CP024849.1	192240	8	260
+Candidatus Karelsulcia muelleri	Sulcia	Auchenorrhyncha	NZ_CP060020.1	190827	8	260
+Candidatus Karelsulcia muelleri	Sulcia	Auchenorrhyncha	NZ_CP028359.1	156578	8	260
+Candidatus Karelsulcia muelleri	Sulcia	Auchenorrhyncha	CP142806.1	188541	8	260
+Candidatus Karelsulcia muelleri	Sulcia	Auchenorrhyncha	CP176558.1	273775	8	260
+Candidatus Karelsulcia muelleri	Sulcia	Auchenorrhyncha	CP176557.1	267001	8	260
+Candidatus Karelsulcia muelleri	Sulcia	Auchenorrhyncha	CP176556.1	273431	8	260
+Candidatus Karelsulcia muelleri	Sulcia	Auchenorrhyncha	CP176555.1	244998	8	260
+Candidatus Karelsulcia muelleri	Sulcia	Auchenorrhyncha	CP176554.1	273174	8	260
+Candidatus Karelsulcia muelleri	Sulcia	Auchenorrhyncha	CP176553.1	273942	8	260
+Candidatus Karelsulcia muelleri	Sulcia	Auchenorrhyncha	CP176552.1	272934	8	260
+Candidatus Karelsulcia muelleri	Sulcia	Auchenorrhyncha	CP176551.1	273110	8	260
+Candidatus Karelsulcia muelleri	Sulcia	Auchenorrhyncha	CP176550.1	271463	8	260
+Candidatus Karelsulcia muelleri	Sulcia	Auchenorrhyncha	CP176549.1	250223	8	260
+Candidatus Karelsulcia muelleri	Sulcia	Auchenorrhyncha	CP176548.1	274354	8	260
+Candidatus Karelsulcia muelleri	Sulcia	Auchenorrhyncha	CP176547.1	272132	8	260
+Candidatus Karelsulcia muelleri	Sulcia	Auchenorrhyncha	CP176546.1	272467	8	260
+Candidatus Karelsulcia muelleri	Sulcia	Auchenorrhyncha	CP176545.1	273397	8	260
+Candidatus Karelsulcia muelleri	Sulcia	Auchenorrhyncha	CP176544.1	273397	8	260
+Candidatus Karelsulcia muelleri	Sulcia	Auchenorrhyncha	CP176543.1	274007	8	260
+Candidatus Karelsulcia muelleri	Sulcia	Auchenorrhyncha	CP176542.1	272093	8	260
+Candidatus Karelsulcia muelleri	Sulcia	Auchenorrhyncha	CP176541.1	268835	8	260
+Candidatus Karelsulcia muelleri	Sulcia	Auchenorrhyncha	NZ_QWZP00000000.1	253942	8	260
+Candidatus Nasuia deltocephalincola	Nasuia	leafhopper	NZ_CP094189.1	111527	4	80
+Candidatus Nasuia deltocephalincola	Nasuia	leafhopper	NZ_CP094195.1	111869	4	80
+Candidatus Nasuia deltocephalincola	Nasuia	leafhopper	NZ_CP094194.1	107786	4	80
+Candidatus Nasuia deltocephalincola	Nasuia	leafhopper	NZ_CP094181.1	112473	4	80
+Candidatus Nasuia deltocephalincola	Nasuia	leafhopper	NZ_CP094190.1	109972	4	80
+Candidatus Nasuia deltocephalincola	Nasuia	leafhopper	NZ_CP094192.1	111471	4	80
+Candidatus Nasuia deltocephalincola	Nasuia	leafhopper	NZ_CP094197.1	112590	4	80
+Candidatus Nasuia deltocephalincola	Nasuia	leafhopper	NZ_CP094193.1	112724	4	80
+Candidatus Nasuia deltocephalincola	Nasuia	leafhopper	NZ_CP094196.1	112119	4	80
+Candidatus Nasuia deltocephalincola	Nasuia	leafhopper	CM155245.1	106162	4	80
+Candidatus Nasuia deltocephalincola	Nasuia	leafhopper	CM155246.1	106174	4	80
+Candidatus Nasuia deltocephalincola	Nasuia	leafhopper	CM155244.1	106173	4	80
+Candidatus Nasuia deltocephalincola	Nasuia	leafhopper	CM153196.1	106256	4	80
+Candidatus Nasuia deltocephalincola	Nasuia	leafhopper	CM153194.1	106252	4	80
+Candidatus Nasuia deltocephalincola	Nasuia	leafhopper	CM153191.1	106118	4	80
+Candidatus Nasuia deltocephalincola	Nasuia	leafhopper	CM153190.1	106178	4	80
+Candidatus Nasuia deltocephalincola	Nasuia	leafhopper	CP142807.1	107039	4	80
+Candidatus Nasuia deltocephalincola	Nasuia	leafhopper	CP199870.1	108468	4	80
+Candidatus Nasuia deltocephalincola	Nasuia	leafhopper	CP195846.1	108461	4	80
+Candidatus Nasuia deltocephalincola	Nasuia	leafhopper	NZ_CP094191.1	111644	4	80
+Candidatus Nasuia deltocephalincola	Nasuia	leafhopper	CP129522.1	121476	4	80
+Candidatus Nasuia deltocephalincola	Nasuia	leafhopper	AP028058.1	113316	4	80
+Candidatus Nasuia deltocephalincola	Nasuia	leafhopper	CP094188.1	113174	4	80
+Candidatus Nasuia deltocephalincola	Nasuia	leafhopper	CP094187.1	116146	4	80
+Candidatus Nasuia deltocephalincola	Nasuia	leafhopper	CP094186.1	113015	4	80
+Candidatus Nasuia deltocephalincola	Nasuia	leafhopper	CP094185.1	111534	4	80
+Candidatus Nasuia deltocephalincola	Nasuia	leafhopper	CP094184.1	112892	4	80
+Candidatus Nasuia deltocephalincola	Nasuia	leafhopper	CP094183.1	113390	4	80
+Candidatus Nasuia deltocephalincola	Nasuia	leafhopper	CP094182.1	112105	4	80
+Candidatus Nasuia deltocephalincola	Nasuia	leafhopper	CP094180.1	113098	4	80
+Candidatus Nasuia deltocephalincola	Nasuia	leafhopper	CP024850.1	113652	4	80
+Candidatus Nasuia deltocephalincola	Nasuia	leafhopper	CP060019.1	113715	4	80
+Candidatus Nasuia deltocephalincola	Nasuia	leafhopper	CP021173.1	144602	4	80
+Candidatus Nasuia deltocephalincola	Nasuia	leafhopper	CP013211.1	112031	4	80
+Candidatus Nasuia deltocephalinicola str. NAS-ALF	Nasuia	leafhopper	CP006059.1	112091	4	80
+Candidatus Hodgkinia cicadicola	Hodgkinia	cicada	CP154721.1	182872	5	100
+Candidatus Hodgkinia cicadicola	Hodgkinia	cicada	CP154722.1	143372	5	100
+Candidatus Hodgkinia cicadicola	Hodgkinia	cicada	CP154720.1	147950	5	100
+Candidatus Hodgkinia cicadicola	Hodgkinia	cicada	CP154719.1	149494	5	100
+Candidatus Hodgkinia cicadicola	Hodgkinia	cicada	CP154640.1	149520	5	100
+Candidatus Hodgkinia cicadicola	Hodgkinia	cicada	CP154718.1	149548	5	100
+Candidatus Hodgkinia cicadicola	Hodgkinia	cicada	CP152464.1	113974	5	100
+Candidatus Hodgkinia cicadicola	Hodgkinia	cicada	CP152463.1	139260	5	100
+Candidatus Hodgkinia cicadicola	Hodgkinia	cicada	CP152462.1	137181	5	100
+Candidatus Hodgkinia cicadicola	Hodgkinia	cicada	CP154717.1	149829	5	100
+Candidatus Hodgkinia cicadicola	Hodgkinia	cicada	CP152461.1	114469	5	100
+Candidatus Hodgkinia cicadicola	Hodgkinia	cicada	CP152299.1	146497	5	100
+Candidatus Hodgkinia cicadicola	Hodgkinia	cicada	CP178247.1	115562	5	100
+Candidatus Hodgkinia cicadicola	Hodgkinia	cicada	CP178246.1	117350	5	100
+Candidatus Hodgkinia cicadicola	Hodgkinia	cicada	CP118773.1	143746	5	100
+Candidatus Hodgkinia cicadicola	Hodgkinia	cicada	CP119778.1	130417	5	100
+Candidatus Hodgkinia cicadicola	Hodgkinia	cicada	CP119775.1	121230	5	100
+Candidatus Hodgkinia cicadicola	Hodgkinia	cicada	CP119777.1	119979	5	100
+Candidatus Hodgkinia cicadicola	Hodgkinia	cicada	CP119776.1	111516	5	100
+Candidatus Hodgkinia cicadicola	Hodgkinia	cicada	QEXT01000012.1	117430	5	100
+Candidatus Hodgkinia cicadicola	Hodgkinia	cicada	CP025310.1	105760	5	100
+Candidatus Hodgkinia cicadicola	Hodgkinia	cicada	CP025405.1	140417	5	100
+Candidatus Hodgkinia cicadicola	Hodgkinia	cicada	CP025404.1	137055	5	100
+Candidatus Hodgkinia cicadicola	Hodgkinia	cicada	CP025406.1	133249	5	100
+Candidatus Hodgkinia cicadicola	Hodgkinia	cicada	CP025316.1	125912	5	100
+Candidatus Hodgkinia cicadicola	Hodgkinia	cicada	CP025311.1	116502	5	100
+Candidatus Hodgkinia cicadicola	Hodgkinia	cicada	CP025312.1	129059	5	100
+Candidatus Hodgkinia cicadicola	Hodgkinia	cicada	CP025313.1	129540	5	100
+Candidatus Hodgkinia cicadicola	Hodgkinia	cicada	CP024987.1	148642	5	100
+Candidatus Hodgkinia cicadicola	Hodgkinia	cicada	CP024748.1	145143	5	100
+Candidatus Hodgkinia cicadicola	Hodgkinia	cicada	CP024747.1	130881	5	100
+Candidatus Hodgkinia cicadicola	Hodgkinia	cicada	CP024746.1	128037	5	100
+Candidatus Hodgkinia cicadicola	Hodgkinia	cicada	CP024745.1	126271	5	100
+Candidatus Hodgkinia cicadicola	Hodgkinia	cicada	CP024744.1	121924	5	100
+Candidatus Hodgkinia cicadicola	Hodgkinia	cicada	NXGT01000073.1	111394	5	100
+Candidatus Hodgkinia cicadicola	Hodgkinia	cicada	CP007233.1	140570	5	100
+Candidatus Hodgkinia cicadicola	Hodgkinia	cicada	CP007232.1	133698	5	100
+Candidatus Hodgkinia cicadicola	Hodgkinia	cicada	CP008699.1	150297	5	100
+Candidatus Hodgkinia cicadicola Dsem	Hodgkinia	cicada	CP001226.1	143795	5	100

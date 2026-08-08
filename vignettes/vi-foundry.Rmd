@@ -1,0 +1,39 @@
+---
+title: "VI Foundry: Testing Valence-Ingression Predictions"
+author: "Ed Phil, Jan Ritch-Frel, Flow"
+date: "2026-08-08"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{VI Foundry}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+## Scientific Motivation
+
+VI predicts that capacity reallocation follows integration-depth ordering:
+deeply integrated functions resist loss more than shallowly integrated ones.
+This is testable via comparative genomics, morphology, and cross-kingdom
+parameter transfer.
+
+## Function Map
+
+| Function | VI Prediction | Competitor | Distinguishes? |
+|----------|--------------|------------|----------------|
+| `pgls_orobanchaceae()` | Plastome ~ parasitism | Relaxed selection | No |
+| `gene_loss_ordering()` | Ordered loss by depth | Random loss | Yes |
+| `cross_kingdom_transfer()` | Params transfer across kingdoms | Substrates independent | Yes |
+| `formal_model()` | Biphasic kinetics | Constant rate | Yes |
+| `cusp_catastrophe()` | Irreversibility threshold | Gradual reversibility | Yes |
+
+## Worked Example
+
+[To be filled in Phase 5]
+
+## Limitations
+
+[To be filled in Phase 5]
+
+## Interpretation Guide
+
+[To be filled in Phase 5]

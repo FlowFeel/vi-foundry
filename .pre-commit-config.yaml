@@ -1,0 +1,9 @@
+repos:
+  - repo: https://github.com/lorenzwalthert/precommit
+    rev: v0.4.3.9003
+    hooks:
+      - id: style-files
+        args: [--style_transformer=styler::tidyverse_style]
+      - id: lintr
+      - id: parsable-R
+      - id: no-browser-statement

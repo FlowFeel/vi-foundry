@@ -1,0 +1,92 @@
+species	family	accession	plastome_bp	parasitism_level	parasitism_score	outgroup_available
+Aristolochia kwangsiensis	Aristolochiaceae	OR187839	159735	autotroph	0	outgroup for Hydnoraceae
+Ehretia acuminata	Boraginaceae	PX921620	156475	autotroph	0	outgroup for Lennoaceae
+Euphorbia pekinensis	Euphorbiaceae	PP957930	162899	autotroph	0	outgroup for Rafflesiaceae/Apodanthaceae
+Buckleya henryi	Santalaceae	PP056268	157521	autotroph	0	is outgroup
+Saxifraga zhiminiae	Saxifragaceae	PZ168318	151448	autotroph	0	outgroup for Cynomoriaceae
+Zygophyllum rosowii	Zygophyllaceae	OL804281	104403	autotroph	0	outgroup for Krameriaceae
+Krameria erecta	Krameriaceae	NC_063627	177797	hemiparasite	1	yes: Zygophyllum (Zygophyllaceae)
+Krameria bicolor	Krameriaceae	NC_043800	172606	hemiparasite	1	yes
+Krameria lanceolata	Krameriaceae	NC_043801	171851	hemiparasite	1	yes
+Macrosolen parasiticus	Loranthaceae	NC_088733	127769	hemiparasite	1	yes: Santalaceae autotrophs
+Macrosolen bibracteolatus	Loranthaceae	NC_088734	127059	hemiparasite	1	yes
+Psittacanthus sonorae	Loranthaceae	PP313080	125427	hemiparasite	1	yes
+Taxillus sericus	Loranthaceae	NC_088731	123879	hemiparasite	1	yes
+Psittacanthus schiedeanus	Loranthaceae	OR701826	122586	hemiparasite	1	yes
+Taxillus sutchuenensis	Loranthaceae	PZ127291	122537	hemiparasite	1	yes
+Taxillus thibetensis	Loranthaceae	NC_088730	122497	hemiparasite	1	yes
+Scurrula atropurpurea	Loranthaceae	NC_088739	122457	hemiparasite	1	yes
+Scurrula balansae	Loranthaceae	NC_088729	122438	hemiparasite	1	yes
+Psittacanthus palmeri	Loranthaceae	PP236144	122407	hemiparasite	1	yes
+Scurrula buddleioides	Loranthaceae	NC_088738	122292	hemiparasite	1	yes
+Dendrophthoe pentandra	Loranthaceae	PV622733	122291	hemiparasite	1	yes
+Psittacanthus auriculatus	Loranthaceae	PP236145	121238	hemiparasite	1	yes
+Helixanthera terrestris	Loranthaceae	NC_088732	121217	hemiparasite	1	yes
+Taxillus caloreas	Loranthaceae	NC_088736	120663	hemiparasite	1	yes
+Helixanthera sampsonii	Loranthaceae	NC_088728	120658	hemiparasite	1	yes
+Psittacanthus rhynchanthus	Loranthaceae	PP579889	120345	hemiparasite	1	yes
+Taxillus delavayi	Loranthaceae	NC_088737	119914	hemiparasite	1	yes
+Scurrula pulverulenta	Loranthaceae	NC_088735	119811	hemiparasite	1	yes
+Santalum boninense	Santalaceae	NC_077481	144263	hemiparasite	1	yes: Buckleya
+Santalum ellipticum	Santalaceae	NC_077482	144250	hemiparasite	1	yes
+Santalum paniculatum	Santalaceae	NC_077484	144239	hemiparasite	1	yes
+Santalum yasi	Santalaceae	NC_077486	144019	hemiparasite	1	yes
+Santalum leptocladum	Santalaceae	NC_077480	143923	hemiparasite	1	yes
+Santalum pyrularium	Santalaceae	NC_077485	143895	hemiparasite	1	yes
+Santalum lanceolatum	Santalaceae	NC_077483	143801	hemiparasite	1	yes
+Santalum spicatum	Santalaceae	NC_077487	143638	hemiparasite	1	yes
+Santalum acuminatum	Santalaceae	NC_077488	143291	hemiparasite	1	yes
+Thesium decaryanum	Santalaceae	OR712484	141066	hemiparasite	1	yes
+Nanodea muscosa	Santalaceae	OR712478	140372	hemiparasite	1	yes
+Phacellaria rigidula	Santalaceae	NC_077597	138492	hemiparasite	1	yes
+Thesium chinense	Santalaceae	MW148617	138487	hemiparasite	1	yes
+Thesium bavarum	Santalaceae	PP622701	138399	hemiparasite	1	yes
+Thesium alpinum	Santalaceae	PP622700	137095	hemiparasite	1	yes
+Viscum articulatum	Viscaceae	NC_056292	131825	hemiparasite	1	yes: Santalaceae autotrophs
+Korthalsella rubra	Viscaceae	NC_084055	131760	hemiparasite	1	yes
+Viscum minimum	Viscaceae	NC_027829	131016	hemiparasite	1	yes
+Viscum ovalifolium	Viscaceae	NC_048986	129465	hemiparasite	1	yes
+Viscum album	Viscaceae	NC_028012	128921	hemiparasite	1	yes
+Viscum coloratum	Viscaceae	NC_035414	128744	hemiparasite	1	yes
+Viscum liquidambaricola	Viscaceae	NC_048985	128601	hemiparasite	1	yes
+Viscum trachycarpum	Viscaceae	OR712485	128593	hemiparasite	1	yes
+Viscum diospyrosicola	Viscaceae	PQ152954	126315	hemiparasite	1	yes
+Viscum crassulae	Viscaceae	NC_027959	126064	hemiparasite	1	yes
+Cynomorium coccineum	Cynomoriaceae	KX270752	45519	holoparasite	2	yes: Saxifraga (Saxifragaceae)
+Hydnora triceps	Hydnoraceae	NC_065052	28658	holoparasite	2	yes: Aristolochia (Aristolochiaceae)
+Prosopanche panguanensis	Hydnoraceae	NC_065054	28262	holoparasite	2	yes
+Prosopanche bonacinae	Hydnoraceae	NC_065053	28246	holoparasite	2	yes
+Hydnora visseri	Hydnoraceae	NC_029358	27233	holoparasite	2	yes
+Hydnora africana	Hydnoraceae	NC_065136	26957	holoparasite	2	yes
+Hydnora longicollis	Hydnoraceae	NC_065051	26714	holoparasite	2	yes
+Hydnora arabica	Hydnoraceae	NC_065211	24790	holoparasite	2	yes
+Hydnora esculenta	Hydnoraceae	NC_065050	24479	holoparasite	2	yes
+Hydnora abyssinica	Hydnoraceae	PQ083270	23425	holoparasite	2	yes
+Lennoa madreporoides	Lennoaceae	NC_039720	83675	holoparasite	2	yes: Ehretia (Boraginaceae)
+Pholisma arenarium	Lennoaceae	NC_039719	81198	holoparasite	2	yes: Ehretia (Boraginaceae)
+Pilostyles hamiltonii	Apodanthaceae	NC_029236	15167	extreme holoparasite	3	yes: Euphorbiaceae (Euphorbia)
+Pilostyles aethiopica	Apodanthaceae	NC_029235	11348	extreme holoparasite	3	yes: Euphorbiaceae
+Sarcophyte sanguinea	Balanophoraceae	NC_080979	28384	extreme holoparasite	3	yes: Euphorbiaceae/Saxifragaceae
+Lophophytum pyramidale	Balanophoraceae	PQ766330	20902	extreme holoparasite	3	yes
+Lophophytum leandri	Balanophoraceae	MT834848	20892	extreme holoparasite	3	yes
+Rhopalocnemis phalloides	Balanophoraceae	MZ269413	19137	extreme holoparasite	3	yes
+Thonningia sanguinea	Balanophoraceae	OQ810029	19013	extreme holoparasite	3	yes
+Lophophytum mirabile	Balanophoraceae	PQ766329	18859	extreme holoparasite	3	yes
+Rhopalocnemis sp.	Balanophoraceae	PQ849603	18347	extreme holoparasite	3	yes
+Langsdorffia hypogaea	Balanophoraceae	PQ766324	17684	extreme holoparasite	3	yes
+Ombrophytum subterraneum	Balanophoraceae	MT834847	17313	extreme holoparasite	3	yes
+Corynaea crassa	Balanophoraceae	PQ766322	16644	extreme holoparasite	3	yes
+Scybalium depressum	Balanophoraceae	PQ766325	16513	extreme holoparasite	3	yes
+Balanophora tobiracola	Balanophoraceae	PV464432	16290	extreme holoparasite	3	yes
+Balanophora harlandii	Balanophoraceae	PV464428	15889	extreme holoparasite	3	yes
+Helosis cayennensis	Balanophoraceae	PQ766323	15715	extreme holoparasite	3	yes
+Balanophora japonica	Balanophoraceae	PV464427	15646	extreme holoparasite	3	yes
+Balanophora reflexa	Balanophoraceae	KX784266	15507	extreme holoparasite	3	yes
+Balanophora laxiflora	Balanophoraceae	KX784265	15505	extreme holoparasite	3	yes
+Balanophora nipponica	Balanophoraceae	PV464429	15189	extreme holoparasite	3	yes
+Balanophora fungosa	Balanophoraceae	PV464424	14968	extreme holoparasite	3	yes
+Balanophora yakushimensis	Balanophoraceae	NC_062820	14624	extreme holoparasite	3	yes
+Balanophora subcupularis	Balanophoraceae	PV464430	14259	extreme holoparasite	3	yes
+Rafflesia lagascae	Rafflesiaceae	HM803263	369	extreme holoparasite	3	yes: Euphorbiaceae (Euphorbia)
+Rafflesia cantleyi	Rafflesiaceae	HM803258	369	extreme holoparasite	3	yes: Euphorbiaceae
+Rafflesia arnoldii	Rafflesiaceae	HM803255	369	extreme holoparasite	3	yes: Euphorbiaceae

@@ -1,0 +1,145 @@
+species	genus	accession	plastome_length_bp	parasitism_category	parasitism_score
+Aeginetia indica	Aeginetia	MN529629	86212	4_extreme_holoparasite	4
+Aeginetia sinensis	Aeginetia	NC_086658	86073	4_extreme_holoparasite	4
+Agalinis auriculata	Agalinis	X64570	71	1_hemiparasite	1
+Agalinis fasciculata	Agalinis	PZ319439	144732	1_hemiparasite	1
+Aphyllon californicum	Aphyllon	HG515539	123739	1_hemiparasite	1
+Aphyllon epigalium subsp. epigalium	Aphyllon	MH050785	103216	1_hemiparasite	1
+Aphyllon epigalium subsp. notocalifornicum	Aphyllon	MH050786	103932	1_hemiparasite	1
+Aphyllon fasciculatum	Aphyllon	MH499249	107663	1_hemiparasite	1
+Aphyllon uniflorum var. occidentale	Aphyllon	MH499250	106661	1_hemiparasite	1
+Aphyllon uniflorum var. uniflorum	Aphyllon	MH580290	104640	1_hemiparasite	1
+Bartsia alpina	Bartsia	PP328778	153329	1_hemiparasite	1
+Brandisia cauliflora	Brandisia	OP242181	154714	0_autotroph	0
+Brandisia chevalieri	Brandisia	NC_077467	155069	0_autotroph	0
+Brandisia discolor	Brandisia	NC_077468	155232	0_autotroph	0
+Brandisia glabrescens	Brandisia	OP262715	155336	0_autotroph	0
+Brandisia hancei	Brandisia	OP262720	155343	0_autotroph	0
+Brandisia hancei x Brandisia discolor	Brandisia	NC_077474	155232	0_autotroph	0
+Brandisia kwangsiensis	Brandisia	OP262734	159469	0_autotroph	0
+Brandisia racemosa	Brandisia	OP262738	154833	0_autotroph	0
+Brandisia rosea var. flava	Brandisia	OP262741	155119	0_autotroph	0
+Brandisia scandens	Brandisia	NC_077473	155086	0_autotroph	0
+Brandisia swinglei	Brandisia	OP262748	155391	0_autotroph	0
+Castilleja indivisa	Castilleja	OK469601	515	1_hemiparasite	1
+Castilleja paramensis	Castilleja	NC_031805	152926	1_hemiparasite	1
+Centranthera grandiflora	Centranthera	NC_059747	147655	1_hemiparasite	1
+Cistanche deserticola	Cistanche	NC_021111	102657	3_holoparasite	3
+Cistanche phelypaea	Cistanche	NC_025642	94380	3_holoparasite	3
+Conopholis americana	Conopholis	NC_023131	45673	3_holoparasite	3
+Cymbaria daurica	Cymbaria	NC_064104	151545	1_hemiparasite	1
+Cymbaria mongolica	Cymbaria	NC_064388	149431	1_hemiparasite	1
+Diphelypaea coccinea	Diphelypaea	NC_043877	66616	1_hemiparasite	1
+Epifagus virginiana	Epifagus	NC_001568	70028	3_holoparasite	3
+Euphrasia christii	Euphrasia	PZ094977	144811	1_hemiparasite	1
+Euphrasia cisalpina	Euphrasia	PZ095197	144811	1_hemiparasite	1
+Euphrasia hirtella	Euphrasia	PZ095195	144829	1_hemiparasite	1
+Euphrasia kerneri	Euphrasia	PZ095198	122518	1_hemiparasite	1
+Euphrasia minima	Euphrasia	PZ095194	144812	1_hemiparasite	1
+Euphrasia officinalis subsp. pratensis	Euphrasia	PP335070	144849	1_hemiparasite	1
+Euphrasia picta	Euphrasia	PZ095196	118190	1_hemiparasite	1
+Euphrasia regelii	Euphrasia	NC_045041	153026	1_hemiparasite	1
+Euphrasia salisburgensis	Euphrasia	PZ095193	144735	1_hemiparasite	1
+Gleadovia mupinensis	Gleadovia	NC_086656	114774	4_extreme_holoparasite	4
+Lamourouxia sp. UCB	Lamourouxia	X64571	71	1_hemiparasite	1
+Lathraea japonica	Lathraea	NC_086659	143840	2_obligate_hemiparasite	2
+Lathraea squamaria	Lathraea	NC_027838	150504	2_obligate_hemiparasite	2
+Lindenbergia indica	Lindenbergia	NC_080204	154284	0_autotroph	0
+Lindenbergia philippensis	Lindenbergia	NC_022859	155103	0_autotroph	0
+Melampyrum cristatum	Melampyrum	PP484617	144004	1_hemiparasite	1
+Melampyrum koreanum	Melampyrum	NC_057523	143865	1_hemiparasite	1
+Melampyrum laxum	Melampyrum	NC_086660	143906	1_hemiparasite	1
+Melampyrum pratense	Melampyrum	PP484618	143163	1_hemiparasite	1
+Melampyrum roseum	Melampyrum	NC_053791	143896	1_hemiparasite	1
+Melampyrum roseum var. japonicum	Melampyrum	OL999303	143580	1_hemiparasite	1
+Melampyrum roseum var. ovalifolium	Melampyrum	OL999304	143551	1_hemiparasite	1
+Melampyrum setaceum	Melampyrum	NC_068006	143584	1_hemiparasite	1
+Melampyrum setaceum var. nakaianum	Melampyrum	OL999306	143512	1_hemiparasite	1
+Melampyrum sylvaticum	Melampyrum	PP484619	143891	1_hemiparasite	1
+Monochasma savatieri	Monochasma	PV415187	164474	1_hemiparasite	1
+Orobanche austrohispanica	Orobanche	NC_031441	81994	3_holoparasite	3
+Orobanche boninsimae	Orobanche	PP066984	91288	3_holoparasite	3
+Orobanche cernua var. cumana	Orobanche	KT387722	89851	3_holoparasite	3
+Orobanche coerulescens	Orobanche	PP066997	90039	3_holoparasite	3
+Orobanche coerulescens f. albiflora	Orobanche	PP066998	89611	3_holoparasite	3
+Orobanche crenata	Orobanche	NC_024845	87529	3_holoparasite	3
+Orobanche densiflora	Orobanche	NC_031442	83024	3_holoparasite	3
+Orobanche gracilis	Orobanche	NC_023464	65533	3_holoparasite	3
+Orobanche latisquama	Orobanche	NC_025641	80361	3_holoparasite	3
+Orobanche pancicii	Orobanche	NC_031443	88525	3_holoparasite	3
+Orobanche pycnostachya	Orobanche	NC_072314	91898	3_holoparasite	3
+Orobanche pycnostachya var. filicicola	Orobanche	PQ492240	91529	3_holoparasite	3
+Orobanche rapum-genistae	Orobanche	NC_031444	91517	3_holoparasite	3
+Pedicularis alaschanica	Pedicularis	PP234559	147224	1_hemiparasite	1
+Pedicularis armata	Pedicularis	PX776210	149113	1_hemiparasite	1
+Pedicularis aschistorrhyncha	Pedicularis	NC_080931	148333	1_hemiparasite	1
+Pedicularis batangensis	Pedicularis	PX776209	151168	1_hemiparasite	1
+Pedicularis bicolor	Pedicularis	NC_087843	152785	1_hemiparasite	1
+Pedicularis bidentata	Pedicularis	PX776204	148531	1_hemiparasite	1
+Pedicularis cephalantha	Pedicularis	NC_060560	147087	1_hemiparasite	1
+Pedicularis cheilanthifolia	Pedicularis	NC_036010	155159	1_hemiparasite	1
+Pedicularis chinensis	Pedicularis	NC_080928	149828	1_hemiparasite	1
+Pedicularis corydaloides	Pedicularis	NC_080927	149240	1_hemiparasite	1
+Pedicularis cranolopha	Pedicularis	PX776206	150129	1_hemiparasite	1
+Pedicularis crenata	Pedicularis	NC_080926	147082	1_hemiparasite	1
+Pedicularis decorissima	Pedicularis	PX776205	151146	1_hemiparasite	1
+Pedicularis densispica	Pedicularis	NC_080925	145122	1_hemiparasite	1
+Pedicularis dissecta	Pedicularis	NC_056312	152120	1_hemiparasite	1
+Pedicularis elongata subsp. elongata	Pedicularis	PP541849	152210	1_hemiparasite	1
+Pedicularis elwesii	Pedicularis	NC_080924	149108	1_hemiparasite	1
+Pedicularis flava	Pedicularis	PQ759906	149087	1_hemiparasite	1
+Pedicularis giraldiana	Pedicularis	NC_087844	147975	1_hemiparasite	1
+Pedicularis gracilis	Pedicularis	NC_080923	148368	1_hemiparasite	1
+Pedicularis hacquetii	Pedicularis	PP541850	152211	1_hemiparasite	1
+Pedicularis hallaisanensis	Pedicularis	NC_037433	143469	1_hemiparasite	1
+Pedicularis ishidoyana	Pedicularis	NC_029700	152571	1_hemiparasite	1
+Pedicularis kansuensis	Pedicularis	OR198072	146484	1_hemiparasite	1
+Pedicularis kongboensis	Pedicularis	NC_080930	151691	1_hemiparasite	1
+Pedicularis lachnoglossa	Pedicularis	NC_080922	152384	1_hemiparasite	1
+Pedicularis longiflora	Pedicularis	NC_046852	153547	1_hemiparasite	1
+Pedicularis lyrata	Pedicularis	NC_080921	149508	1_hemiparasite	1
+Pedicularis megalantha	Pedicularis	NC_080920	148399	1_hemiparasite	1
+Pedicularis melampyriflora	Pedicularis	NC_081481	151062	1_hemiparasite	1
+Pedicularis mollis	Pedicularis	NC_080919	152206	1_hemiparasite	1
+Pedicularis muscicola	Pedicularis	NC_046853	152907	1_hemiparasite	1
+Pedicularis nigra	Pedicularis	OL544940	145726	1_hemiparasite	1
+Pedicularis oederi	Pedicularis	NC_046854	153139	1_hemiparasite	1
+Pedicularis oederi var. sinensis	Pedicularis	MW770457	153770	1_hemiparasite	1
+Pedicularis oliveriana	Pedicularis	NC_080918	162362	1_hemiparasite	1
+Pedicularis palustris subsp. palustris	Pedicularis	PP541851	148737	1_hemiparasite	1
+Pedicularis plicata	Pedicularis	NC_080917	147800	1_hemiparasite	1
+Pedicularis resupinata	Pedicularis	NC_046397	153145	1_hemiparasite	1
+Pedicularis rhinanthoides	Pedicularis	NC_080916	149108	1_hemiparasite	1
+Pedicularis rudis	Pedicularis	NC_060688	151443	1_hemiparasite	1
+Pedicularis rupicola	Pedicularis	NC_080915	147805	1_hemiparasite	1
+Pedicularis semitorta	Pedicularis	PX776211	146134	1_hemiparasite	1
+Pedicularis shansiensis	Pedicularis	NC_058762	151902	1_hemiparasite	1
+Pedicularis siphonantha	Pedicularis	NC_080914	148407	1_hemiparasite	1
+Pedicularis spicata	Pedicularis	PX673993	146244	1_hemiparasite	1
+Pedicularis striata	Pedicularis	NC_081482	152146	1_hemiparasite	1
+Pedicularis trichocymba	Pedicularis	PX776208	151857	1_hemiparasite	1
+Pedicularis verticillata	Pedicularis	MT040753	142733	1_hemiparasite	1
+Phacellanthus tubiflorus	Phacellanthus	OP605902	97030	1_hemiparasite	1
+Phelipanche aegyptiaca	Phelipanche	KU212370	60947	3_holoparasite	3
+Phelipanche purpurea	Phelipanche	NC_023132	62891	3_holoparasite	3
+Phelipanche ramosa	Phelipanche	NC_023465	62304	3_holoparasite	3
+Phtheirospermum japonicum	Phtheirospermum	NC_053792	153397	1_hemiparasite	1
+Pterygiella cylindrica	Pterygiella	NC_063636	154859	1_hemiparasite	1
+Pterygiella duclouxii	Pterygiella	NC_063637	154874	1_hemiparasite	1
+Pterygiella tenuisecta	Pterygiella	PX776207	154062	1_hemiparasite	1
+Rehmannia chingii	Rehmannia	NC_033534	154055	0_autotroph	0
+Rehmannia chrysantha	Rehmannia	PX170676	153789	0_autotroph	0
+Rehmannia elata	Rehmannia	MW149490	155622	0_autotroph	0
+Rehmannia glutinosa	Rehmannia	MW013795	153797	0_autotroph	0
+Rehmannia henryi	Rehmannia	NC_034309	153890	0_autotroph	0
+Rehmannia piasezkii	Rehmannia	NC_034311	153925	0_autotroph	0
+Rehmannia solanifolia	Rehmannia	NC_034310	153989	0_autotroph	0
+Rhinanthus alectorolophus subsp. alectorolophus	Rhinanthus	PP541885	145309	1_hemiparasite	1
+Rhinanthus freynii	Rhinanthus	PP541886	145369	1_hemiparasite	1
+Rhinanthus minor	Rhinanthus	PP541887	145323	1_hemiparasite	1
+Schwalbea americana	Schwalbea	NC_023115	160910	1_hemiparasite	1
+Siphonostegia chinensis	Siphonostegia	NC_046038	148961	1_hemiparasite	1
+Striga asiatica	Striga	NC_067570	191085	1_hemiparasite	1
+Triaenophora shennongjiaensis	Triaenophora	NC_039781	155319	0_autotroph	0
+Triphysaria versicolor	Triphysaria	NC_053793	152583	1_hemiparasite	1
+Xylanche himalaica	Xylanche	MN175500	106466	1_hemiparasite	1

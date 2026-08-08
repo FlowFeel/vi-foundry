@@ -1,0 +1,86 @@
+# docker-compose.test.yml — The simulacrum stack
+#
+# Read-only source mounts prevent accidental contamination.
+# Writable output volume shared with verifier.
+# Postgres healthcheck ensures DB ready before R/Python start.
+# service_completed_successfully: verifier waits for analysis to finish.
+
+services:
+  r-runtime:
+    build:
+      context: ..
+      dockerfile: docker/r-runtime/Dockerfile
+    volumes:
+      - ../R:/workspace/R:ro
+      - ../tests:/workspace/tests:ro
+      - ../data:/workspace/data:ro
+      - ../inst:/workspace/inst:ro
+      - ../baseline:/workspace/baseline:ro
+      - ../pipeline.yml:/workspace/pipeline.yml:ro
+      - test-output:/workspace/output
+    environment:
+      - R_LIBS_USER=/usr/local/lib/R/site-library
+    depends_on:
+      postgres:
+        condition: service_healthy
+    networks:
+      - sim-net
+
+  python-runtime:
+    build:
+      context: ..
+      dockerfile: docker/python-runtime/Dockerfile
+    volumes:
+      - ../tests:/workspace/tests:ro
+      - ../baseline:/workspace/baseline:ro
+      - test-output:/workspace/output
+    environment:
+      - PYTHONPATH=/workspace
+    depends_on:
+      postgres:
+        condition: service_healthy
+    networks:
+      - sim-net
+
+  postgres:
+    image: postgres:16
+    environment:
+      POSTGRES_DB: simulation_test
+      POSTGRES_USER: sim
+      POSTGRES_PASSWORD: simulacrum
+    volumes:
+      - ../tests/fixtures/schema.sql:/docker-entrypoint-initdb.d/01-schema.sql:ro
+      - ../tests/fixtures/seed.sql:/docker-entrypoint-initdb.d/02-seed.sql:ro
+      - pg-test-data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U sim -d simulation_test"]
+      interval: 5s
+      retries: 20
+      start_period: 10s
+    networks:
+      - sim-net
+
+  verifier:
+    build:
+      context: ..
+      dockerfile: docker/verifier/Dockerfile
+    volumes:
+      - test-output:/workspace/output:ro
+      - ../baseline:/workspace/baseline:ro
+    depends_on:
+      r-runtime:
+        condition: service_completed_successfully
+    environment:
+      - TOLERANCE=0.001
+      - BASELINE_DIR=/workspace/baseline
+      - OUTPUT_DIR=/workspace/output
+    networks:
+      - sim-net
+
+volumes:
+  test-output:
+  pg-test-data:
+
+networks:
+  sim-net:
+    driver: bridge
