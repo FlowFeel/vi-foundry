@@ -10,16 +10,13 @@ env:
   R_REPOS: "https://cloud.r-project.org/"
 
 jobs:
-  # ── Gate 1: Lint ────────────────────────────────────────────────
   lint:
     runs-on: ubuntu-latest
     container: rocker/r-ver:4.4.3
     steps:
       - uses: actions/checkout@v4
-
       - name: Install lintr and styler
         run: R -e "install.packages(c('lintr','styler','roxygen2'), repos='${{ env.R_REPOS }}')"
-
       - name: Style check (non-blocking)
         run: |
           Rscript -e "
@@ -29,7 +26,6 @@ jobs:
             )
             message('Style check complete (non-blocking)')
           "
-
       - name: Lint package
         run: |
           Rscript -e "
@@ -42,36 +38,29 @@ jobs:
             }
           "
 
-  # ── Gate 2: Unit tests ──────────────────────────────────────────
   unit:
     runs-on: ubuntu-latest
     container: rocker/r-ver:4.4.3
     needs: lint
     steps:
       - uses: actions/checkout@v4
-
       - name: Install system dependencies
         run: |
           apt-get update && apt-get install -y --no-install-recommends \
             libpq-dev libxml2-dev libcurl4-openssl-dev libssl-dev
           rm -rf /var/lib/apt/lists/*
-
       - name: Install R dependencies
         run: |
           R -e "install.packages(c(
             'testthat','withr','covr','mockery','R6','yaml','ggplot2',
             'roxygen2','readxl','knitr','rmarkdown'
           ), repos='${{ env.R_REPOS }}')"
-
       - name: Generate NAMESPACE
         run: Rscript -e "roxygen2::roxygenize('.', load_code=roxygen2::load_source)"
-
       - name: Install package
         run: R CMD INSTALL .
-
       - name: Run unit tests
         run: Rscript run_tests.R unit
-
       - name: Check coverage
         run: |
           Rscript -e "
@@ -80,7 +69,6 @@ jobs:
             message('Coverage: ', round(pct, 2), '%')
             if (pct < 80) stop('Coverage below 80%: ', round(pct, 2), '%')
           "
-
       - name: Upload coverage
         if: always()
         uses: actions/upload-artifact@v4
@@ -89,7 +77,6 @@ jobs:
           path: coverage-report.json
           retention-days: 7
 
-  # ── Gate 3: Simulacra + GitHub Pages viz ────────────────────────
   simulacra:
     runs-on: ubuntu-latest
     container: rocker/r-ver:4.4.3
@@ -97,119 +84,34 @@ jobs:
     timeout-minutes: 15
     steps:
       - uses: actions/checkout@v4
-
       - name: Install system dependencies
         run: |
           apt-get update && apt-get install -y --no-install-recommends \
             libpq-dev libxml2-dev libcurl4-openssl-dev libssl-dev
           rm -rf /var/lib/apt/lists/*
-
       - name: Install R dependencies
         run: |
           R -e "install.packages(c(
             'testthat','withr','covr','R6','yaml','ggplot2',
-            'roxygen2','readxl'
+            'roxygen2','readxl','base64enc'
           ), repos='${{ env.R_REPOS }}')"
-
       - name: Generate NAMESPACE and install
         run: |
           Rscript -e "roxygen2::roxygenize('.', load_code=roxygen2::load_source)"
           R CMD INSTALL .
-
       - name: Run simulacrum tests
         run: Rscript run_tests.R simulacra
-
       - name: Generate simulacra visualizations
         run: |
-          mkdir -p results/simulacra
-          Rscript -e "
-            library(vi.foundry)
-            source('inst/simulacra/generate_synthetic_population.R')
-            source('inst/simulacra/generate_biphasic_genome.R')
-            source('inst/simulacra/generate_cusp_system.R')
-            source('inst/simulacra/generate_autocatalytic.R')
-            source('inst/simulacra/generate_cross_kingdom.R')
-            render_simulacra_report('results/simulacra', 'results/simulacra_report.pdf')
-          "
-
-      - name: Generate HTML viz for GitHub Pages
-        run: |
-          mkdir -p docs
-          Rscript -e "
-            library(vi.foundry)
-            library(ggplot2)
-
-            # Read all marks
-            all_marks <- read_all_marks('results/simulacra')
-
-            # Build HTML page with embedded plots
-            plots_html <- ''
-            for (sim_id in names(all_marks)) {
-              marks <- all_marks[[sim_id]]
-              if (length(marks) == 0) next
-              param_names <- names(marks[[1]]$true_params)
-              if (is.null(param_names)) next
-
-              for (pname in param_names) {
-                p <- plot_true_vs_recovered(marks, pname, sim_id)
-                tmp <- tempfile(fileext='.png')
-                ggsave(tmp, p, width=8, height=6, dpi=150)
-                plots_html <- paste0(plots_html,
-                  '<h3>', sim_id, ' — ', pname, '</h3>',
-                  '<img src=\"data:image/png;base64,',
-                  base64enc::base64encode(tmp),
-                  '\" />')
-              }
-            }
-
-            html <- paste0('
-<!DOCTYPE html>
-<html>
-<head>
-  <title>VI Foundry — Simulacra Visualizations</title>
-  <style>
-    body { font-family: system-ui, sans-serif; max-width: 1000px; margin: 0 auto; padding: 20px; }
-    h1 { color: #2c3e50; }
-    h3 { color: #34495e; margin-top: 30px; }
-    img { max-width: 100%; border: 1px solid #eee; }
-    .header { background: #2c3e50; color: white; padding: 20px; border-radius: 8px; margin-bottom: 20px; }
-    .summary { background: #f8f9fa; padding: 15px; border-radius: 4px; margin: 10px 0; }
-  </style>
-</head>
-<body>
-  <div class=\"header\">
-    <h1>VI Foundry — Simulacra Parameter Recovery</h1>
-    <p>Generated: ', format(Sys.time(), \"%Y-%m-%d %H:%M UTC\"), '</p>
-  </div>
-  <div class=\"summary\">
-    <p>Each plot shows true parameters (x-axis) vs recovered parameters (y-axis).
-    Points on the diagonal = successful recovery. Points scattered = noise.
-    Green = within CI, Red = outside CI.</p>
-  </div>
-  ', plots_html, '
-</body>
-</html>')
-
-            writeLines(html, 'docs/index.html')
-            message('Generated docs/index.html')
-          "
-
+          mkdir -p results/simulacra docs
+          Rscript scripts/generate_viz.R
       - name: Upload simulacra report
         if: always()
         uses: actions/upload-artifact@v4
         with:
           name: simulacra-report
-          path: results/simulacra_report.pdf
+          path: results/
           retention-days: 30
-
-      - name: Upload simulacra marks
-        if: always()
-        uses: actions/upload-artifact@v4
-        with:
-          name: simulacra-marks
-          path: results/simulacra/
-          retention-days: 30
-
       - name: Upload viz HTML
         if: always()
         uses: actions/upload-artifact@v4
@@ -218,27 +120,21 @@ jobs:
           path: docs/
           retention-days: 30
 
-  # ── Gate 4: Integration ─────────────────────────────────────────
   integration:
     runs-on: ubuntu-latest
     needs: simulacra
     timeout-minutes: 30
     steps:
       - uses: actions/checkout@v4
-
       - uses: actions/setup-python@v5
         with:
           python-version: "3.13"
-
       - name: Install Python dependencies
         run: pip install pyyaml
-
       - name: Build Docker simulacrum stack
         run: docker compose -f compose/docker-compose.test.yml build
-
       - name: Run simulacrum stack
         run: docker compose -f compose/docker-compose.test.yml up --abort-on-container-exit --exit-code-from verifier
-
       - name: Upload integration results
         if: always()
         uses: actions/upload-artifact@v4
@@ -247,26 +143,21 @@ jobs:
           path: test-output/
           retention-days: 7
 
-  # ── Gate 5: Regression ──────────────────────────────────────────
   regression:
     runs-on: ubuntu-latest
     needs: integration
     steps:
       - uses: actions/checkout@v4
-
       - uses: actions/setup-python@v5
         with:
           python-version: "3.13"
-
       - name: Install dependencies
         run: pip install pyyaml
-
       - name: Download integration results
         uses: actions/download-artifact@v4
         with:
           name: integration-results
           path: test-output/
-
       - name: Compare to baseline oracle
         run: |
           python tests/compare_baseline.py \
@@ -274,20 +165,17 @@ jobs:
             --baseline baseline \
             --output test-output
 
-  # ── Gate 6: R CMD check ─────────────────────────────────────────
   check:
     runs-on: ubuntu-latest
     container: rocker/r-ver:4.4.3
     needs: regression
     steps:
       - uses: actions/checkout@v4
-
       - name: Install system dependencies
         run: |
           apt-get update && apt-get install -y --no-install-recommends \
             libpq-dev libxml2-dev libcurl4-openssl-dev libssl-dev
           rm -rf /var/lib/apt/lists/*
-
       - name: Install R dependencies
         run: |
           R -e "install.packages(c(
@@ -295,15 +183,12 @@ jobs:
             'R6','yaml','ggplot2','readxl','knitr','rmarkdown',
             'roxygen2','ape','caper','phytools','plumber','DBI','RPostgres'
           ), repos='${{ env.R_REPOS }}')"
-
       - name: Generate NAMESPACE and install
         run: |
           Rscript -e "roxygen2::roxygenize('.', load_code=roxygen2::load_source)"
           R CMD INSTALL .
-
       - name: R CMD check
         run: R CMD check --no-manual --no-build-vignettes .
-
       - name: Upload check results
         if: always()
         uses: actions/upload-artifact@v4
@@ -312,7 +197,6 @@ jobs:
           path: vi.foundry.Rcheck/
           retention-days: 7
 
-  # ── GitHub Pages: Deploy simulacra viz ──────────────────────────
   pages:
     runs-on: ubuntu-latest
     needs: [simulacra]
@@ -329,20 +213,16 @@ jobs:
         with:
           name: simulacra-viz
           path: site/
-
       - name: Setup Pages
         uses: actions/configure-pages@v4
-
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
           path: site/
-
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
 
-  # ── Summary ──────────────────────────────────────────────────────
   summary:
     runs-on: ubuntu-latest
     needs: [lint, unit, simulacra, integration, regression, check, pages]
