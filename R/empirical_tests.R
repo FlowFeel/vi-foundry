@@ -79,7 +79,7 @@ pgls_orobanchaceae <- function(data, tree, lambda = "ML", seed = 42L) {
     )
 
     result <- list(
-      values = c(
+      values = list(
         beta = coef(mod)[2],
         r_squared = s$adj.r.squared,
         p_value = f_p,
@@ -135,7 +135,7 @@ pgls_cross_family <- function(data, seed = 42L) {
     )
 
     result <- list(
-      values = c(
+      values = list(
         pearson_r = cor_result$estimate,
         n = nrow(family_means),
         p_value = cor_result$p.value
@@ -244,7 +244,7 @@ endosymbiont_biphasic <- function(data, seed = 42L) {
     }
 
     result <- list(
-      values = c(
+      values = list(
         r_squared = r2,
         k1_k2_ratio = k1_k2,
         bayes_factor = bf
@@ -326,7 +326,7 @@ niche_vs_ne <- function(data, seed = 42L) {
     aic_niche <- AIC(mod_niche)
 
     result <- list(
-      values = c(
+      values = list(
         niche_r_squared = r2_niche,
         ne_r_squared = r2_ne,
         aic_niche = aic_niche,
@@ -401,7 +401,7 @@ pangenome_fluidity <- function(data, seed = 42L) {
     subsumes <- r2_lifestyle > r2_ne
 
     result <- list(
-      values = c(
+      values = list(
         lifestyle_subsumes_ne = subsumes,
         niche_r_squared = r2_lifestyle,
         ne_r_squared = ifelse(is.na(r2_ne), 0, r2_ne)
@@ -509,7 +509,7 @@ gene_loss_ordering <- function(data, seed = 42L, n_perm = 720L) {
     pseudo_r2 <- summary(mod)$r.squared
 
     result <- list(
-      values = c(
+      values = list(
         spearman_rho = mean_rho,
         permutation_p = perm_p,
         pseudo_r_squared = pseudo_r2,
@@ -578,7 +578,7 @@ ltee_cosegregation <- function(seed = 42L) {
     ))
 
     result <- list(
-      values = c(
+      values = list(
         observed_pct = observed_prop * 100,
         expected_pct = expected_rate * 100,
         p_value = bt$p.value,

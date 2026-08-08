@@ -16,8 +16,8 @@ test_that("autocatalytic_closure detects complete closure", {
   ), nrow = 3, byrow = TRUE)
   result <- autocatalytic_closure(innovations, catalyst_matrix)
   expect_true(validate_result(result))
-  expect_true(result$values["achieves_closure"])
-  expect_equal(result$values["n_catalyzed"], 3)
+  expect_true(result$values[["achieves_closure"]])
+  expect_equal(result$values[["n_catalyzed"]], 3)
 })
 
 test_that("autocatalytic_closure detects incomplete closure", {
@@ -29,8 +29,8 @@ test_that("autocatalytic_closure detects incomplete closure", {
     TRUE, FALSE, FALSE
   ), nrow = 3, byrow = TRUE)
   result <- autocatalytic_closure(innovations, catalyst_matrix)
-  expect_false(result$values["achieves_closure"])
-  expect_equal(result$values["n_catalyzed"], 2)
+  expect_false(result$values[["achieves_closure"]])
+  expect_equal(result$values[["n_catalyzed"]], 2)
 })
 
 test_that("autocatalytic_closure returns closure fraction", {
@@ -42,7 +42,7 @@ test_that("autocatalytic_closure returns closure fraction", {
     FALSE, FALSE, FALSE, FALSE
   ), nrow = 4, byrow = TRUE)
   result <- autocatalytic_closure(innovations, catalyst_matrix)
-  expect_equal(result$values["closure_fraction"], 0.75)
+  expect_equal(result$values[["closure_fraction"]], 0.75)
 })
 
 test_that("autocatalytic_closure errors on mismatched dimensions", {
@@ -57,21 +57,21 @@ test_that("diversity_dependence_sign detects positive trend", {
   counts <- c(10, 20, 30, 40, 50)
   result <- diversity_dependence_sign(counts, seed = 42)
   expect_true(validate_result(result))
-  expect_equal(result$values["sign"], c(sign = "positive"))
-  expect_gt(result$values["slope"], 0)
+  expect_equal(result$values[["sign"]], "positive")
+  expect_gt(result$values[["slope"]], 0)
 })
 
 test_that("diversity_dependence_sign detects negative trend", {
   counts <- c(50, 40, 30, 20, 10)
   result <- diversity_dependence_sign(counts, seed = 42)
-  expect_equal(result$values["sign"], c(sign = "negative"))
-  expect_lt(result$values["slope"], 0)
+  expect_equal(result$values[["sign"]], "negative")
+  expect_lt(result$values[["slope"]], 0)
 })
 
 test_that("diversity_dependence_sign detects superlinear growth", {
   counts <- c(1, 4, 9, 16, 25, 36) # quadratic
   result <- diversity_dependence_sign(counts, seed = 42)
-  expect_true(result$values["is_superlinear"])
+  expect_true(result$values[["is_superlinear"]])
 })
 
 test_that("diversity_dependence_sign is deterministic with same seed (A2)", {

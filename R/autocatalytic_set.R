@@ -46,7 +46,7 @@ autocatalytic_closure <- function(innovations, catalyst_matrix) {
   achieves_closure <- n_catalyzed == n
 
   result <- list(
-    values = c(
+    values = list(
       achieves_closure = achieves_closure,
       n_catalyzed = n_catalyzed,
       n_total = n,
@@ -85,17 +85,17 @@ diversity_dependence_sign <- function(innovation_counts, seed = 42L) {
     # Positive slope = increasing diversity (positive dependence)
     # Negative slope = decreasing diversity (negative dependence)
     mod <- lm(innovation_counts ~ time)
-    slope <- coef(mod)[2]
+    slope <- unname(coef(mod)[2])
     r2 <- summary(mod)$r.squared
 
     # Test for superlinear (autocatalytic) dynamics
     # Log-log regression of innovations against time
     # Slope greater than 1 indicates superlinear dynamics
     log_mod <- lm(log(pmax(innovation_counts, 1)) ~ log(time))
-    log_slope <- coef(log_mod)[2]
+    log_slope <- unname(coef(log_mod)[2])
 
     result <- list(
-      values = c(
+      values = list(
         sign = ifelse(slope > 0, "positive", "negative"),
         slope = slope,
         r_squared = r2,

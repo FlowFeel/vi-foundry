@@ -37,10 +37,10 @@ init_mark_log <- function(simulacrum_id, output_dir = "results/simulacra") {
     dir.create(output_dir, recursive = TRUE)
   }
   log_path <- file.path(output_dir, paste0(simulacrum_id, "_marks.yml"))
-  # Write empty YAML header
+  # Write empty YAML header (marks: without [] so items can be appended)
   cat(
     sprintf(
-      "# Simulacrum marks: %s\n# Generated: %s\nmarks: []\n",
+      "# Simulacrum marks: %s\n# Generated: %s\nmarks:\n",
       simulacrum_id,
       format(Sys.time(), "%Y-%m-%d %H:%M:%S UTC", tz = "UTC")
     ),
@@ -79,12 +79,14 @@ mark <- function(log_path, sim_index, true_params, recovered_params,
     extra = extra
   )
 
-  # Append as YAML block
-  yaml_str <- yaml::as.yaml(list(mark_entry))
-  # Remove the leading "- " that as.yaml adds for lists, reformat
-  yaml_str <- sub("^- ", "  - ", yaml_str)
-
-  cat(yaml_str, "\n", file = log_path, append = TRUE)
+  # Read existing marks, append, and rewrite the full file
+  existing <- tryCatch(
+    yaml::read_yaml(log_path)$marks,
+    error = function(e) list()
+  )
+  all_marks <- c(existing, list(mark_entry))
+  yaml_doc <- list(marks = all_marks)
+  yaml::write_yaml(yaml_doc, log_path)
   invisible(TRUE)
 }
 

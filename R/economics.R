@@ -157,7 +157,7 @@ cdi_economics <- function(data, seed = 42L) {
     ))
 
     result <- list(
-      values = c(
+      values = list(
         n_systems = length(per_system),
         share_log_best = mean(vapply(
           per_system, function(p) p$best == "log",
@@ -279,7 +279,7 @@ option_destruction <- function(data, seed = 42L) {
     }
 
     result <- list(
-      values = c(
+      values = list(
         n_systems = length(per_system),
         mean_early_resid = mean(vapply(
           per_system, function(p) p$early_resid,
@@ -407,7 +407,7 @@ stochastic_cdi <- function(mu0, sigma0, cdi_init = 0.01, dt = 0.01,
     }
 
     result <- list(
-      values = c(
+      values = list(
         final_cdi = cdi[n + 1],
         max_cdi = max(cdi),
         first_passage = ifelse(is.na(fp_time), NA_real_, fp_time),
@@ -529,7 +529,7 @@ threshold_disruption <- function(data, seed = 42L) {
     }
 
     result <- list(
-      values = c(
+      values = list(
         n_systems = length(per_system),
         mean_delta_aic = mean(vapply(
           per_system, function(p) p$delta_aic,

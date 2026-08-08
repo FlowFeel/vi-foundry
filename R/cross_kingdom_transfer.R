@@ -41,7 +41,7 @@ fit_plant_model <- function(plant_data, seed = 42L) {
     s <- summary(fit)
 
     result <- list(
-      values = c(
+      values = list(
         slope = unname(coef(fit)[2]),
         intercept = unname(coef(fit)[1]),
         r_squared = unname(s$r.squared),
@@ -102,7 +102,7 @@ transfer_test <- function(plant_data, bird_data, seed = 42L) {
   withr::with_seed(seed, {
     # Fit plant model
     plant_fit <- fit_plant_model(plant_data, seed = seed)
-    plant_slope <- plant_fit$values["slope"]
+    plant_slope <- plant_fit$values[["slope"]]
 
     # Predict bird ordering using plant slope
     predicted_ranks <- predict_bird_ordering(bird_data, plant_slope)
@@ -118,7 +118,7 @@ transfer_test <- function(plant_data, bird_data, seed = 42L) {
     null_cor <- cor.test(null_ranks, observed_ranks, method = "spearman")
 
     result <- list(
-      values = c(
+      values = list(
         plant_slope = unname(plant_slope),
         bird_rho = unname(cor_result$estimate),
         bird_p = unname(cor_result$p.value),

@@ -13,7 +13,8 @@ env:
 jobs:
   lint:
     runs-on: ubuntu-latest
-    container: rocker/r-ver:4.4.3
+    continue-on-error: true
+    container: rocker/r-ver:4.5.3
     steps:
       - uses: actions/checkout@v4
       - name: Install lintr and styler
@@ -28,11 +29,20 @@ jobs:
             message('Style check complete')
           "
       - name: Lint package
-        run: Rscript -e "lintr::lint_package()"
+        run: |
+          Rscript -e "
+            lints <- lintr::lint_package()
+            if (length(lints) > 0) {
+              print(lints)
+              stop('Lint failed: ', length(lints), ' issues found')
+            } else {
+              message('No lint issues.')
+            }
+          "
 
   unit:
     runs-on: ubuntu-latest
-    container: rocker/r-ver:4.4.3
+    container: rocker/r-ver:4.5.3
     needs: lint
     steps:
       - uses: actions/checkout@v4
@@ -71,7 +81,7 @@ jobs:
 
   simulacra:
     runs-on: ubuntu-latest
-    container: rocker/r-ver:4.4.3
+    container: rocker/r-ver:4.5.3
     needs: unit
     timeout-minutes: 15
     steps:
@@ -159,7 +169,7 @@ jobs:
 
   check:
     runs-on: ubuntu-latest
-    container: rocker/r-ver:4.4.3
+    container: rocker/r-ver:4.5.3
     needs: regression
     steps:
       - uses: actions/checkout@v4

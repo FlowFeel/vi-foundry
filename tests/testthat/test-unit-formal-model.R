@@ -68,11 +68,11 @@ test_that("threshold_model protects deep traits at 1.0", {
     m0 = 10, alpha = 0.05, time = 100
   )
   # Traits at depth 3 and 5 should be protected (>= theta=2.5)
-  retention <- result$values[grep("final_retention", names(result$values))]
+  retention <- result$values[["final_retention"]]
   expect_equal(length(retention), 5)
   # Protected traits (depth 3, 5 → indices 4, 5) should be 1.0
-  expect_gte(retention[4], 0.99)
-  expect_gte(retention[5], 0.99)
+  expect_gte(retention[[4]], 0.99)
+  expect_gte(retention[[5]], 0.99)
 })
 
 test_that("threshold_model sheds unprotected traits below 1.0", {
@@ -81,9 +81,9 @@ test_that("threshold_model sheds unprotected traits below 1.0", {
     depths = depths, lambda = 0.15, theta = 2.5,
     m0 = 10, alpha = 0.05, time = 100
   )
-  retention <- result$values[grep("final_retention", names(result$values))]
+  retention <- result$values[["final_retention"]]
   # Trait at depth 0 should be most shed
-  expect_lt(retention[1], 0.9)
+  expect_lt(retention[[1]], 0.9)
 })
 
 test_that("threshold_model produces biphasic kinetics (k1/k2 > 1)", {
@@ -91,7 +91,7 @@ test_that("threshold_model produces biphasic kinetics (k1/k2 > 1)", {
     depths = c(0, 1, 2, 3, 5), lambda = 0.15,
     theta = 2.5, m0 = 10, alpha = 0.05, time = 100
   )
-  expect_gt(result$values["k1_k2_ratio"], 1)
+  expect_gt(result$values[["k1_k2_ratio"]], 1)
 })
 
 test_that("threshold_model is fully deterministic (A2 — no RNG)", {

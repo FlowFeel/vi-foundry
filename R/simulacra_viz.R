@@ -68,7 +68,7 @@ plot_true_vs_recovered <- function(marks, param_name, simulacrum_id = "") {
     ) +
     ggplot2::geom_point(size = 3, alpha = 0.7) +
     ggplot2::scale_color_manual(
-      values = c("TRUE" = "#2ecc71", "FALSE" = "#e74c3c"),
+      values = list("TRUE" = "#2ecc71", "FALSE" = "#e74c3c"),
       labels = c("TRUE" = "Within CI", "FALSE" = "Outside CI"),
       name = "Recovery"
     ) +
@@ -179,7 +179,7 @@ plot_param_space_projection <- function(marks, param_x, param_y,
       alpha = 0.3, linewidth = 0.5
     ) +
     ggplot2::scale_color_manual(
-      values = c("TRUE" = "#3498db", "FALSE" = "#e74c3c"),
+      values = list("TRUE" = "#3498db", "FALSE" = "#e74c3c"),
       labels = c("TRUE" = "Recovered", "FALSE" = "Failed"),
       name = "Recovery"
     ) +

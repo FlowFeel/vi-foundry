@@ -158,7 +158,7 @@ threshold_model <- function(depths, lambda, theta, m0, alpha, time,
   k1_k2 <- if (phase2_rate > 0) phase1_rate / phase2_rate else Inf
 
   result <- list(
-    values = c(
+    values = list(
       final_retention = retention,
       phase1_rate = phase1_rate,
       phase2_rate = phase2_rate,

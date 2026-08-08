@@ -84,7 +84,7 @@ cusp_hysteresis_check <- function(control_values, equilibrium_fn, seed = 42L) {
     has_hysteresis <- any(differences > 0.01, na.rm = TRUE)
 
     result <- list(
-      values = c(
+      values = list(
         has_hysteresis = has_hysteresis,
         max_difference = max(differences, na.rm = TRUE),
         n_control_values = n

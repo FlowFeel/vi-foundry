@@ -59,10 +59,10 @@ plot_pgls_with_phylogeny <- function(data, tree, result) {
   stopifnot(inherits(tree, "phylo"))
   stopifnot(is.list(result), "values" %in% names(result))
 
-  beta <- unname(result$values["beta"])
-  r2 <- unname(result$values["r_squared"])
-  pval <- unname(result$values["p_value"])
-  n_sp <- unname(result$values["n_species"])
+  beta <- unname(result$values[["beta"]])
+  r2 <- unname(result$values[["r_squared"]])
+  pval <- unname(result$values[["p_value"]])
+  n_sp <- unname(result$values[["n_species"]])
 
   # --- Panel A: Phylogenetic tree (left margin) ---
   # Use grid::viewport via a custom ggplot annotation
@@ -289,13 +289,13 @@ plot_model_comparison <- function(data, mod_linear, mod_exp, mod_logistic) {
       linewidth = 1
     ) +
     ggplot2::scale_color_manual(
-      values = c(
+      values = list(
         "Linear" = "#e74c3c", "Exponential" = "#f39c12",
         "Logistic" = "#2ecc71"
       )
     ) +
     ggplot2::scale_linetype_manual(
-      values = c(
+      values = list(
         "Linear" = "dashed", "Exponential" = "dotted",
         "Logistic" = "solid"
       )
@@ -346,7 +346,7 @@ plot_model_comparison <- function(data, mod_linear, mod_exp, mod_logistic) {
     ) +
     ggplot2::geom_point(size = 2, alpha = 0.7) +
     ggplot2::scale_color_manual(
-      values = c(
+      values = list(
         "Linear" = "#e74c3c", "Exponential" = "#f39c12",
         "Logistic" = "#2ecc71"
       )
@@ -401,7 +401,7 @@ plot_model_comparison <- function(data, mod_linear, mod_exp, mod_logistic) {
   )) +
     ggplot2::geom_col(width = 0.6) +
     ggplot2::scale_fill_manual(
-      values = c(
+      values = list(
         "Linear" = "#e74c3c", "Exponential" = "#f39c12",
         "Logistic" = "#2ecc71"
       )
@@ -790,7 +790,7 @@ plot_observed_vs_expected_bar <- function(observed, expected, ci) {
       width = 0.15, linewidth = 0.8, na.rm = TRUE
     ) +
     ggplot2::scale_fill_manual(
-      values = c("Observed" = "#3498db", "Expected (chance)" = "#e74c3c")
+      values = list("Observed" = "#3498db", "Expected (chance)" = "#e74c3c")
     ) +
     ggplot2::labs(
       title = "LTEE: function-loss co-segregation",
@@ -900,7 +900,7 @@ plot_retention_trajectory <- function(model_result, depths = NULL) {
   phase_time <- -log(0.1) / alpha
 
   # Extract rates for annotation
-  k1_k2 <- unname(model_result$values["k1_k2_ratio"])
+  k1_k2 <- unname(model_result$values[["k1_k2_ratio"]])
 
   p <- ggplot2::ggplot(traj_df, ggplot2::aes(
     x = .data$time, y = .data$retention,
@@ -920,7 +920,7 @@ plot_retention_trajectory <- function(model_result, depths = NULL) {
       name = "Integration depth"
     ) +
     ggplot2::scale_linetype_manual(
-      values = c("TRUE" = "solid", "FALSE" = "dashed"),
+      values = list("TRUE" = "solid", "FALSE" = "dashed"),
       guide = "none"
     ) +
     ggplot2::annotate("text",
@@ -1011,7 +1011,7 @@ plot_cusp_bifurcation <- function(a_range, b_range, grid_size = 50L) {
       linetype = "dashed"
     ) +
     ggplot2::scale_fill_manual(
-      values = c("1" = "#bdc3c7", "2" = "#f39c12", "3" = "#3498db"),
+      values = list("1" = "#bdc3c7", "2" = "#f39c12", "3" = "#3498db"),
       name = "Equilibria",
       labels = c("1" = "1 stable", "2" = "2 (fold)", "3" = "3 (bistable)")
     ) +
@@ -1101,7 +1101,7 @@ plot_cusp_bifurcation <- function(a_range, b_range, grid_size = 50L) {
   ) +
     ggplot2::geom_line(linewidth = 1) +
     ggplot2::scale_color_manual(
-      values = c("Forward" = "#2ecc71", "Reverse" = "#e74c3c")
+      values = list("Forward" = "#2ecc71", "Reverse" = "#e74c3c")
     ) +
     ggplot2::labs(
       title = "B: Hysteresis loop",
@@ -1475,7 +1475,7 @@ plot_forest_oracle <- function(oracle_results) {
     ) +
     # Color by pass/fail
     ggplot2::scale_color_manual(
-      values = c("TRUE" = "#2ecc71", "FALSE" = "#e74c3c"),
+      values = list("TRUE" = "#2ecc71", "FALSE" = "#e74c3c"),
       labels = c("TRUE" = "Pass", "FALSE" = "Fail"),
       name = "Status"
     ) +

@@ -75,7 +75,7 @@ test_that("cdi_economics stops with negative capacity", {
 test_that("cdi_economics reports correct number of systems", {
   dat <- .make_test_data()
   result <- cdi_economics(dat, seed = 42)
-  expect_equal(result$values["n_systems"], c(n_systems = 2))
+  expect_equal(result$values[["n_systems"]], 2)
 })
 
 # === option_destruction ======================================================
@@ -116,8 +116,8 @@ test_that("option_destruction stops with invalid data (no system col)", {
 test_that("option_destruction vi_pattern_share is in [0, 1]", {
   dat <- .make_test_data()
   result <- option_destruction(dat, seed = 42)
-  expect_true(result$values["vi_pattern_share"] >= 0)
-  expect_true(result$values["vi_pattern_share"] <= 1)
+  expect_true(result$values[["vi_pattern_share"]] >= 0)
+  expect_true(result$values[["vi_pattern_share"]] <= 1)
 })
 
 test_that("option_destruction returns per-system data in metadata", {
@@ -183,7 +183,7 @@ test_that("stochastic_cdi returns correct vector length", {
   )
   expect_equal(length(result$metadata$path), 501)
   expect_equal(length(result$metadata$time), 501)
-  expect_equal(result$values["n_steps"], c(n_steps = 500))
+  expect_equal(result$values[["n_steps"]], 500)
 })
 
 test_that("stochastic_cdi rejects invalid parameters", {
@@ -231,7 +231,7 @@ test_that("threshold_disruption is deterministic with same seed (A2)", {
 test_that("threshold_disruption reports correct number of systems", {
   dat <- .make_threshold_data()
   result <- threshold_disruption(dat, seed = 42)
-  expect_equal(result$values["n_systems"], c(n_systems = 2))
+  expect_equal(result$values[["n_systems"]], 2)
 })
 
 test_that("threshold_disruption stops without trigger_year column", {
@@ -245,8 +245,8 @@ test_that("threshold_disruption stops without trigger_year column", {
 test_that("threshold_disruption share_piecewise_win is in [0, 1]", {
   dat <- .make_threshold_data()
   result <- threshold_disruption(dat, seed = 42)
-  expect_true(result$values["share_piecewise_win"] >= 0)
-  expect_true(result$values["share_piecewise_win"] <= 1)
+  expect_true(result$values[["share_piecewise_win"]] >= 0)
+  expect_true(result$values[["share_piecewise_win"]] <= 1)
 })
 
 test_that("threshold_disruption per-system data has delta_aic, slope_ratio", {

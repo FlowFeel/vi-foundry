@@ -34,7 +34,7 @@ library(testthat)
 )
 
 # fake_data_loader — returns real dataframes, not mock recordings
-fake_data_loader <- R6::new_class(
+fake_data_loader <- R6::R6Class(
   "fake_data_loader",
   public = list(
     load = function(name) {
@@ -49,4 +49,4 @@ fake_data_loader <- R6::new_class(
       c("orobanchaceae", "gene_categories", "bird_morphology")
     }
   )
-)
+)$new()
