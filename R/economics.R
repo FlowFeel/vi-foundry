@@ -381,8 +381,8 @@ stochastic_cdi <- function(mu0, sigma0, cdi_init = 0.01, dt = 0.01,
       c <- max(0.001, min(c, 0.999))
       drift <- mu0 * c * (1 - c)
       vol <- sigma0 * (1 - c)
-      dW <- stats::rnorm(1, 0, sqrt(dt))
-      c_new <- c + drift * dt + vol * dW
+      d_w <- stats::rnorm(1, 0, sqrt(dt))
+      c_new <- c + drift * dt + vol * d_w
       c_new <- max(0, min(c_new, 1))
       cdi[i + 1] <- c_new
       time[i + 1] <- i * dt

@@ -136,8 +136,8 @@ threshold_model <- function(depths, lambda, theta, m0, alpha, time,
 
     for (i in seq_len(n_traits)) {
       if (unprotected[i]) {
-        dC <- -lambda * m_t * retention[i] * dt
-        retention[i] <- max(0, retention[i] + dC)
+        d_c <- -lambda * m_t * retention[i] * dt
+        retention[i] <- max(0, retention[i] + d_c)
       }
       # Protected traits stay at 1.0 (no change)
     }

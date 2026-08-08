@@ -812,8 +812,8 @@ plot_retention_trajectory <- function(model_result, depths = NULL) {
     m_t <- m0 * exp(-alpha * t_current)
     for (i in seq_along(depths)) {
       if (depths[i] < theta) {
-        dC <- -lambda * m_t * retention_matrix[step, i] * dt
-        retention_matrix[step + 1, i] <- max(0, retention_matrix[step, i] + dC)
+        d_c <- -lambda * m_t * retention_matrix[step, i] * dt
+        retention_matrix[step + 1, i] <- max(0, retention_matrix[step, i] + d_c)
       }
       # Protected traits stay at 1.0
     }

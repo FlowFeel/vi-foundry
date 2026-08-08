@@ -307,7 +307,8 @@ niche_vs_ne <- function(data, seed = 42L) {
 
     # Model 2: Niche only
     niche_data <- data[!is.na(niche_numeric) & !is.na(data[[size_col]]), ]
-    mod_niche <- lm(as.numeric(niche_data[[size_col]]) ~ niche_numeric[!is.na(niche_numeric) & !is.na(data[[size_col]])])
+    niche_valid <- !is.na(niche_numeric) & !is.na(data[[size_col]])
+    mod_niche <- lm(as.numeric(niche_data[[size_col]]) ~ niche_numeric[niche_valid])
     r2_niche <- summary(mod_niche)$r.squared
 
     # AIC comparison

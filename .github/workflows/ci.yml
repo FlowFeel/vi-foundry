@@ -4,8 +4,8 @@ on:
   push:
     branches: [main, "feature/**"]
   pull_request:
-  workflow_dispatch:
     branches: [main]
+  workflow_dispatch:
 
 env:
   R_REPOS: "https://cloud.r-project.org/"
@@ -18,26 +18,17 @@ jobs:
       - uses: actions/checkout@v4
       - name: Install lintr and styler
         run: R -e "install.packages(c('lintr','styler','roxygen2'), repos='${{ env.R_REPOS }}')"
-      - name: Style check (non-blocking)
+      - name: Style check
         run: |
           Rscript -e "
             result <- tryCatch(
               styler::style_dir('R/', dry = 'warn'),
               error = function(e) { message('Styler error: ', e$message); NULL }
             )
-            message('Style check complete (non-blocking)')
+            message('Style check complete')
           "
-      - name: Lint package (non-blocking)
-        run: |
-          Rscript -e "
-            lints <- tryCatch(lintr::lint_package(), error = function(e) { message('Lint error: ', e$message); list() })
-            if (length(lints) > 0) {
-              message('NOTE: ', length(lints), ' lint issues found (non-blocking)')
-            } else {
-              message('No lint issues.')
-            }
-          "
-        continue-on-error: true
+      - name: Lint package
+        run: Rscript -e "lintr::lint_package()"
 
   unit:
     runs-on: ubuntu-latest
@@ -54,7 +45,7 @@ jobs:
         run: |
           R -e "install.packages(c(
             'testthat','withr','covr','mockery','R6','yaml','ggplot2',
-            'roxygen2','readxl','knitr','rmarkdown'
+            'roxygen2','readxl','knitr','rmarkdown','patchwork','dplyr','viridis'
           ), repos='${{ env.R_REPOS }}')"
       - name: Generate NAMESPACE
         run: Rscript -e "roxygen2::roxygenize('.', load_code=roxygen2::load_source)"
@@ -94,7 +85,7 @@ jobs:
         run: |
           R -e "install.packages(c(
             'testthat','withr','covr','R6','yaml','ggplot2',
-            'roxygen2','readxl','base64enc'
+            'roxygen2','readxl','base64enc','patchwork','dplyr','viridis'
           ), repos='${{ env.R_REPOS }}')"
       - name: Generate NAMESPACE and install
         run: |
@@ -102,15 +93,15 @@ jobs:
           R CMD INSTALL .
       - name: Run simulacrum tests
         run: Rscript run_tests.R simulacra
-      - name: Generate simulacra visualizations
+      - name: Generate visualizations
         run: |
           mkdir -p results/simulacra docs
-          Rscript scripts/generate_viz.R
-      - name: Upload simulacra report
+          Rscript scripts/render_pages.R
+      - name: Upload simulacra results
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: simulacra-report
+          name: simulacra-results
           path: results/
           retention-days: 30
       - name: Upload viz HTML
@@ -182,7 +173,8 @@ jobs:
           R -e "install.packages(c(
             'testthat','withr','covr','lintr','styler','mockery',
             'R6','yaml','ggplot2','readxl','knitr','rmarkdown',
-            'roxygen2','ape','caper','phytools','plumber','DBI','RPostgres'
+            'roxygen2','ape','caper','phytools','plumber','DBI','RPostgres',
+            'patchwork','dplyr','viridis','base64enc'
           ), repos='${{ env.R_REPOS }}')"
       - name: Generate NAMESPACE and install
         run: |
