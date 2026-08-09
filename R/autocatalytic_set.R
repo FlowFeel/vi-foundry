@@ -90,9 +90,12 @@ diversity_dependence_sign <- function(innovation_counts, seed = 42L) {
 
     # Test for superlinear (autocatalytic) dynamics
     # Log-log regression of innovations against time
-    # Slope greater than 1 indicates superlinear dynamics
+    # Slope greater than 1 indicates superlinear dynamics. Use a small margin
+    # above 1.0 so that exactly-linear data (true slope = 1) is not flagged
+    # superlinear by floating-point noise in the regression estimate.
     log_mod <- lm(log(pmax(innovation_counts, 1)) ~ log(time))
     log_slope <- unname(coef(log_mod)[2])
+    superlinear_margin <- 1e-6
 
     result <- list(
       values = list(
@@ -100,7 +103,7 @@ diversity_dependence_sign <- function(innovation_counts, seed = 42L) {
         slope = slope,
         r_squared = r2,
         log_log_slope = log_slope,
-        is_superlinear = log_slope > 1.0
+        is_superlinear = log_slope > 1.0 + superlinear_margin
       ),
       metadata = list(
         seed = seed,

@@ -32,6 +32,26 @@ get_data_dir <- function() {
   "data"
 }
 
+#' Resolve a bundled data file, accounting for gzip compression.
+#'
+#' `R CMD build` may gzip-compress data files (e.g. `.csv` -> `.csv.gz`) in
+#' the installed package. This returns the path to the uncompressed file if it
+#' exists, otherwise the `.gz` variant, so loaders work against both the
+#' source tree and the built/installed package. `read.csv`/`read.table` read
+#' `.gz` paths transparently.
+#'
+#' @param file Character. Filename within data/.
+#' @return Character. Path to the file (uncompressed or .gz).
+#' @keywords internal
+resolve_data_file <- function(file) {
+  data_dir <- get_data_dir()
+  p <- file.path(data_dir, file)
+  if (file.exists(p)) return(p)
+  pgz <- paste0(p, ".gz")
+  if (file.exists(pgz)) return(pgz)
+  p
+}
+
 #' Helper: create result object (A6: check-result)
 #'
 #' Wraps data with metadata into a structured proof object.
@@ -41,15 +61,19 @@ get_data_dir <- function() {
 #' @param source Description of data source.
 #' @return List with data, metadata (name, source, n, loaded_at).
 #' @keywords internal
-make_result <- function(data, name, source) {
-  list(
-    data = data,
-    metadata = list(
-      name = name,
-      source = source,
-      n = nrow(data),
-      loaded_at = format(Sys.time(), "%Y-%m-%d %H:%M:%S UTC", tz = "UTC")
-    )
+make_result <- function(data, name, source, ...) {
+  extras <- list(...)
+  c(
+    list(
+      data = data,
+      metadata = list(
+        name = name,
+        source = source,
+        n = nrow(data),
+        loaded_at = format(Sys.time(), "%Y-%m-%d %H:%M:%S UTC", tz = "UTC")
+      )
+    ),
+    extras
   )
 }
 
@@ -78,9 +102,8 @@ make_result <- function(data, name, source) {
 #' head(result$data)
 #' }
 load_orobanchaceae <- function() {
-  data_dir <- get_data_dir()
-  data_path <- file.path(data_dir, "species_plastome_data.tsv")
-  tree_path <- file.path(data_dir, "orobanchaceae_tree.nwk")
+  data_path <- resolve_data_file("species_plastome_data.tsv")
+  tree_path <- resolve_data_file("orobanchaceae_tree.nwk")
 
   data <- utils::read.table(data_path,
     header = TRUE, sep = "\t",
@@ -100,7 +123,8 @@ load_orobanchaceae <- function() {
 
   make_result(
     data, "orobanchaceae",
-    "NCBI GenBank plastome sizes + parasitism scores"
+    "NCBI GenBank plastome sizes + parasitism scores",
+    tree = tree
   )
 }
 
@@ -123,8 +147,7 @@ load_orobanchaceae <- function() {
 #'
 #' @export
 load_cross_family_plastomes <- function() {
-  data_dir <- get_data_dir()
-  data_path <- file.path(data_dir, "cross_family_plastome_data.tsv")
+  data_path <- resolve_data_file("cross_family_plastome_data.tsv")
 
   data <- utils::read.table(data_path,
     header = TRUE, sep = "\t",
@@ -165,8 +188,7 @@ load_cross_family_plastomes <- function() {
 #'
 #' @export
 load_endosymbionts <- function() {
-  data_dir <- get_data_dir()
-  data_path <- file.path(data_dir, "endosymbiont_genome_data.tsv")
+  data_path <- resolve_data_file("endosymbiont_genome_data.tsv")
 
   data <- utils::read.table(data_path,
     header = TRUE, sep = "\t",
@@ -199,8 +221,7 @@ load_endosymbionts <- function() {
 #'
 #' @export
 load_bobay_ochman <- function() {
-  data_dir <- get_data_dir()
-  data_path <- file.path(data_dir, "bobay_ochman_table_s1.xlsx")
+  data_path <- resolve_data_file("bobay_ochman_table_s1.xlsx")
 
   data <- readxl::read_xlsx(data_path, skip = 1)
   data <- as.data.frame(data)
@@ -230,8 +251,7 @@ load_bobay_ochman <- function() {
 #'
 #' @export
 load_dewar_pangenome <- function() {
-  data_dir <- get_data_dir()
-  data_path <- file.path(data_dir, "dewar_pangenome_lifestyles.csv")
+  data_path <- resolve_data_file("dewar_pangenome_lifestyles.csv")
 
   data <- utils::read.csv(data_path, stringsAsFactors = FALSE)
 
@@ -261,8 +281,7 @@ load_dewar_pangenome <- function() {
 #'
 #' @export
 load_island_birds <- function() {
-  data_dir <- get_data_dir()
-  data_path <- file.path(data_dir, "island_bird_morphology.csv")
+  data_path <- resolve_data_file("island_bird_morphology.csv")
 
   if (!file.exists(data_path)) {
     stop("island_bird_morphology.csv not found. Run data preparation first.",

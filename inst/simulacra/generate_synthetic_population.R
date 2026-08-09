@@ -81,7 +81,7 @@ generate_synthetic_population <- function(n = 50L,
         depths = depths, lambda = lambda, theta = theta,
         m0 = m0, alpha = alpha, time = time
       )
-      retention_exact <- model$values[grep("^final_retention", names(model$values))]
+      retention_exact <- model$values[["final_retention"]]
 
       # Add measurement noise, clamped to [0, 1]
       retention_noisy <- retention_exact + stats::rnorm(n, 0, noise_sd)

@@ -49,26 +49,26 @@ pgls_orobanchaceae <- function(data, tree, lambda = "ML", seed = 42L) {
     data <- data[data$tip_label %in% tree$tip.label, ]
     tree <- ape::drop.tip(tree, tree$tip.label[!tree$tip.label %in% data$tip_label])
 
-    # Use genus means for species with multiple entries
-    genus_means <- aggregate(
-      cbind(plastome_size_bp, parasitism_score) ~ tip_label,
+    # Per-species means (one row per matched tip; the tree is species-level)
+    species_means <- aggregate(
+      cbind(plastome_size_kb, parasitism_score) ~ tip_label,
       data = data, FUN = mean
     )
-    rownames(genus_means) <- genus_means$tip_label
+    rownames(species_means) <- species_means$tip_label
 
     # Create comparative.data object
     comp_dat <- caper::comparative.data(
       phy = tree,
-      data = genus_means,
+      data = species_means,
       names.col = tip_label,
       vcv = TRUE,
       na.omit = FALSE,
       warn.dropped = FALSE
     )
 
-    # PGLS model
+    # PGLS model (fit in kb so beta is in kb/level, matching the oracle units)
     mod <- caper::pgls(
-      plastome_size_bp ~ parasitism_score,
+      plastome_size_kb ~ parasitism_score,
       data = comp_dat,
       lambda = lambda
     )
