@@ -153,7 +153,7 @@ The testing strategy is a pyramid:
               └─────────┘
 ```
 
-- **15 test files**, **162 test cases** (`test_that` blocks)
+- **17 test files**, **201 test cases** (`test_that` blocks)
 - **5 simulacra** — each generates synthetic data with known ground truth, runs the pipeline, verifies parameter recovery, and confirms the null control does NOT recover (specificity)
 - **Baseline oracle** — YAML ground truth for every manuscript value, compared within numerical tolerance
 - **5 BDD feature files** — statistical contracts in Gherkin (same seed → same output, pipeline idempotency, numerical stability, parameter recovery)
@@ -188,14 +188,14 @@ All data files are bundled in `data/` with provenance documented in [`data/READM
 ```
 vi-foundry/
 ├── R/                    Pure functional library (10 files, 14+ exported functions)
-├── tests/                Test suite (15 files, 162 test cases)
+├── tests/                Test suite (17 files, 201 test cases)
 ├── baseline/             Ground truth oracle (YAML — human-readable)
 ├── data/                 Bundled datasets with provenance
 ├── inst/simulacra/       Synthetic data generators (5 files)
 ├── inst/examples/        Literate analysis report (R Markdown)
 ├── vignettes/            Package vignette (R Markdown)
 ├── compose/              Docker simulacrum stack (docker-compose)
-├── docker/               Dockerfiles (R, Python, Postgres, Verifier)
+├── docker/               Dockerfiles (R runtime, Verifier; Postgres via compose)
 ├── scripts/              Utility scripts (viz generation)
 ├── archive/              Pre-foundry scripts (with migration map)
 ├── pipeline.yml          Pipeline manifest (DFT A3: manifest conformance)
@@ -220,5 +220,5 @@ MIT
 
 - VI Monograph: "A Trajectory Account of Adaptive Evolution from Homo to the Wider Animal Kingdom" (Jan Ritch-Frel, 2026)
 - Phosphene R Standards: `docs/standards/PHOSPHENE_R_STANDARDS.md`
-- Review file: `drafts/research/monograph-reviews/valence-ingression-review.md` (in the woodchipper workspace)
-- Phased breakdown: `drafts/research/monograph-reviews/vi-foundry-phased-breakdown.md` (in the woodchipper workspace)
+- Review: [`docs/review/valence-ingression-review.md`](docs/review/valence-ingression-review.md) — critical review of the VI monograph and the foundry artifacts (numbered Remarks R1… and Review Items 1–6; the code cites these directly)
+- Phased breakdown: [`docs/review/vi-foundry-phased-breakdown.md`](docs/review/vi-foundry-phased-breakdown.md) — phase-by-phase build, gate status, and the open data-reconciliation work (items 4–6)

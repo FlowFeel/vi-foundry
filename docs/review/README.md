@@ -1,0 +1,28 @@
+# Review & Phased Breakdown
+
+This directory holds the critical review of the Valence-Ingression (VI) framework
+monograph and of this repository's computational artifacts, together with the
+phased breakdown of how the foundry was built.
+
+These documents are authored by **Ed Phillips**
+([@phosphene](https://github.com/phosphene)) and licensed under MIT, consistent
+with the standards in [`docs/standards/`](../standards/).
+
+## Contents
+
+| Document | What it is |
+|----------|-----------|
+| [`valence-ingression-review.md`](valence-ingression-review.md) | Critical review of the VI monograph (Ritch-Frel, v9) and the vi-foundry artifacts. Numbered **Remarks** (R1…) and **Review Items** (1–6). The foundry's code cites these directly. |
+| [`vi-foundry-phased-breakdown.md`](vi-foundry-phased-breakdown.md) | Phase-by-phase breakdown of the foundry build, current gate status, and the open data-reconciliation work (items 4–6). |
+
+## How the code references this review
+
+The test suite and pipeline cite this review by number so that a skip or a
+divergence points at a specific, written finding rather than an opaque message:
+
+- **Remark R1** — the framework's name is ambiguous; see the *Valence-Ingression*
+  glossary entry in the root [`README.md`](../../README.md).
+- **Review items 4–6** — the data-reconciliation items. They are the reason the
+  regression gate `skip()`s T6 and L3 (no bundled data) and reports numerical
+  drift on T1–T5 / T7 (bundled data does not yet reproduce the oracle). See the
+  breakdown for the per-entry status table.
