@@ -84,32 +84,30 @@ generate_cusp_system <- function(a = -1,
   })
 }
 
-#' Create a stateful equilibrium function for hysteresis detection
+#' Create a pure branch-following equilibrium function
 #'
-#' Wraps the cusp equilibrium solver with a stateful branch-following
-#' behavior. The function tracks the previous equilibrium state and
-#' selects the nearest stable equilibrium, simulating the path-dependent
-#' behavior of a real cusp catastrophe system.
+#' Returns a PURE function `(control_b, prev_state) -> next_state` that solves
+#' the cusp equilibrium x^3 + a*x + b = 0 and returns the real root nearest
+#' `prev_state` (branch-following). For single-root regions prev_state is
+#' ignored. This function holds NO internal state — the branch-following
+#' state is threaded by cusp_hysteresis_check(), which makes the path-
+#' dependence contract explicit (previously this was a stateful closure using
+#' `<<-`, which hid the detection logic in the simulacrum).
 #'
 #' @param a Numeric. First control parameter (splitting factor).
-#' @param initial_state Numeric. Initial state for the first call.
-#'   Default 0.
 #'
-#' @return Function that takes a single numeric argument (control_b)
-#'   and returns the equilibrium state, following the nearest branch.
+#' @return Function(control_b, prev_state) -> numeric (nearest stable root).
 #'
 #' @keywords internal
-make_cusp_equilibrium_fn <- function(a = -1, initial_state = 0) {
-  state <- initial_state
-  function(b) {
+make_cusp_equilibrium_fn <- function(a = -1) {
+  function(b, prev_state) {
     roots <- polyroot(c(b, a, 0, 1))
     real_roots <- Re(roots)[abs(Im(roots)) < 1e-10]
     if (length(real_roots) == 1) {
-      state <<- real_roots[1]
+      real_roots[1]
     } else {
-      # Pick the real root closest to the previous state
-      state <<- real_roots[which.min(abs(real_roots - state))]
+      # Pick the real root closest to the previous state (branch-following).
+      real_roots[which.min(abs(real_roots - prev_state))]
     }
-    state
   }
 }

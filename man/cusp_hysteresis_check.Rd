@@ -4,17 +4,26 @@
 \alias{cusp_hysteresis_check}
 \title{Check for hysteresis (path dependence)}
 \usage{
-cusp_hysteresis_check(control_values, equilibrium_fn, seed = 42L)
+cusp_hysteresis_check(
+  control_values,
+  equilibrium_fn,
+  seed = 42L,
+  initial_state = 0
+)
 }
 \arguments{
 \item{control_values}{Numeric vector. Control parameter values to test.}
 
-\item{equilibrium_fn}{Function. Maps control value → equilibrium state.}
+\item{equilibrium_fn}{Function(control_value, prev_state) -> next_state.
+Must be pure (no hidden state). See the contract above.}
 
 \item{seed}{Integer. Seed for reproducibility.}
+
+\item{initial_state}{Numeric. Starting state for the forward sweep.
+Default 0.}
 }
 \value{
-List (A6): values (has_hysteresis, forward_states, reverse_states),
+List (A6): values (has_hysteresis, max_difference, n_control_values),
 metadata.
 }
 \description{
@@ -22,3 +31,15 @@ VI predicts that the forward path (increasing commitment) differs from
 the reverse path (decreasing commitment) — this is the hallmark of
 irreversibility in the cusp catastrophe.
 }
+\section{Branch-following contract}{
+
+
+equilibrium_fn must be a PURE function \verb{(control_value, prev_state) -> next_state} that returns the stable equilibrium nearest \code{prev_state}
+(branch-following). The branch-following state is threaded by THIS
+function, not hidden inside a stateful closure — making the path-
+dependence contract explicit. The reverse sweep starts from the forward
+sweep's FINAL state (the standard hysteresis protocol: ramp up, then ramp
+down from the top); in a multi-valued equilibrium (e.g. the cusp) the two
+sweeps follow different branches, producing forward != reverse.
+}
+

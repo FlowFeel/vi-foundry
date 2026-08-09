@@ -37,7 +37,7 @@ test_that("cusp_bifurcation_point distance is symmetric in b sign", {
 test_that("cusp_hysteresis_check detects hysteresis in step function", {
   # Hysteretic function: jumps up at control = 6, down at control = 4
   # This creates hysteresis when traversed forward vs reverse
-  hyst_fn <- function(x) ifelse(x >= 6, 1, 0)
+  hyst_fn <- function(x, prev_state) ifelse(x >= 6, 1, 0)
   control_vals <- seq(0, 10, by = 0.5)
   result <- cusp_hysteresis_check(control_vals, hyst_fn, seed = 42)
   expect_true(validate_result(result))
@@ -47,7 +47,7 @@ test_that("cusp_hysteresis_check detects hysteresis in step function", {
 })
 
 test_that("cusp_hysteresis_check detects no hysteresis in linear function", {
-  linear_fn <- function(x) x
+  linear_fn <- function(x, prev_state) x
   control_vals <- seq(0, 10, by = 0.5)
   result <- cusp_hysteresis_check(control_vals, linear_fn, seed = 42)
   expect_true(is.numeric(result$values[["max_difference"]]))
@@ -55,7 +55,7 @@ test_that("cusp_hysteresis_check detects no hysteresis in linear function", {
 })
 
 test_that("cusp_hysteresis_check is deterministic with same seed (A2)", {
-  step_fn <- function(x) ifelse(x >= 5, 1, 0)
+  step_fn <- function(x, prev_state) ifelse(x >= 5, 1, 0)
   control_vals <- seq(0, 10, by = 0.5)
   r1 <- cusp_hysteresis_check(control_vals, step_fn, seed = 42)
   r2 <- cusp_hysteresis_check(control_vals, step_fn, seed = 42)
