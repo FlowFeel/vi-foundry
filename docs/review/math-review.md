@@ -3,6 +3,9 @@
 **Author:** Ed Phillips ([@phosphene](https://github.com/phosphene))
 **Date:** August 2026
 **License:** MIT
+**Status:** All seven issues RESOLVED — see
+[`refactoring-plan.md`](refactoring-plan.md) § "Execution log". Each issue
+heading below is tagged with its resolution.
 
 ---
 
@@ -30,7 +33,7 @@ The audit found seven issues, ranked by severity:
 
 ---
 
-## Issue 1 — T7: the claim is the opposite of the result
+## Issue 1 — T7: the claim is the opposite of the result  *(RESOLVED, Phase 1)*
 
 ### The claim
 
@@ -84,7 +87,7 @@ The naming and documentation must be corrected to match the math. Either:
 
 ---
 
-## Issue 2 — `threshold_model`: the docstring's ODE is a third equation
+## Issue 2 — `threshold_model`: the docstring's ODE is a third equation  *(RESOLVED, Phase 1)*
 
 ### The claim (docstring)
 
@@ -134,7 +137,7 @@ broken (it integrates a different equation than it claims to) — when in fact t
 
 ---
 
-## Issue 3 — `threshold_model` k1/k2: a displacement ratio, not a rate ratio
+## Issue 3 — `threshold_model` k1/k2: a displacement ratio, not a rate ratio  *(RESOLVED, Phase 2a)*
 
 ### The claim
 
@@ -179,7 +182,7 @@ fit to the retention trajectory. As is, the number 281,000 is being read as
 
 ---
 
-## Issue 4 — `cusp_hysteresis_check`: detects hysteresis only via an undocumented stateful-closure contract
+## Issue 4 — `cusp_hysteresis_check`: detects hysteresis only via an undocumented stateful-closure contract  *(RESOLVED, Phase 3)*
 
 > **Correction (post-review).** An earlier version of this section stated the
 > function "cannot detect hysteresis by construction" and is "always FALSE."
@@ -256,7 +259,7 @@ moves the state into the function.)
 
 ---
 
-## Issue 5 — T2: family-mean correlation, not within-family replication
+## Issue 5 — T2: family-mean correlation, not within-family replication  *(RESOLVED, Phase 1)*
 
 ### The claim
 
@@ -298,7 +301,7 @@ and their concordance). And align the oracle's n (91 species vs. 15 families).
 
 ---
 
-## Issue 6 — `diversity_dependence_sign`: "positive" ≠ diversity-dependent
+## Issue 6 — `diversity_dependence_sign`: "positive" ≠ diversity-dependent  *(RESOLVED, Phase 2b)*
 
 ### The claim
 
@@ -345,7 +348,7 @@ a proxy, not the definitive diversity-dependence test.
 
 ---
 
-## Issue 7 — `transfer_test`: a one-draw null and a ranking that discards the slope
+## Issue 7 — `transfer_test`: a one-draw null and a ranking that discards the slope  *(RESOLVED, Phase 2c)*
 
 ### The claim
 

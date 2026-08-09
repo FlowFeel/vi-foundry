@@ -3,7 +3,9 @@
 **Author:** Ed Phillips ([@phosphene](https://github.com/phosphene))
 **Date:** August 2026
 **License:** MIT
-**Status:** Proposal — awaiting go/no-go per phase
+**Status:** COMPLETE — all three phases executed (commits `0909c02`, `eb2088a`,
+`3c15cb2`). Suite green throughout: 443 pass / 0 fail / 8 skip. See
+"Execution log" below.
 
 ---
 
@@ -18,6 +20,36 @@ green between phases.
 
 A preliminary correction to the math review is recorded first, because it
 changes the Issue 4 plan.
+
+---
+
+## Execution log
+
+All seven issues are resolved. Decisions on the open questions: Issue 3 →
+Option B (added `threshold_biphasicity`); Issue 5 → reframed now, per-family
+deferred; Issue 4 → moved state into the function; math-review correction
+applied in Phase 1.
+
+| Phase | Commit | Issues | Suite |
+|-------|--------|--------|-------|
+| 1 — docs & naming | `0909c02` | 2, 1, 5 | 433/0/8 |
+| 2 — honest metrics | `eb2088a` | 3, 6, 7 | 443/0/8 |
+| 3 — cusp contract | `3c15cb2` | 4 | 443/0/8 |
+
+**Key finding (Phase 2b).** The "autocatalytic" simulacrum generated
+*logistic* growth, whose per-capita rate *decreases* with N — that is
+*negatively* diversity-dependent (the competitor's niche-filling model), not
+the Homo inversion. The `is_superlinear` proxy (log-log slope > 1) conflated
+early acceleration with positive diversity-dependence. Fixed the generator to
+bounded autocatalytic growth (per-capita rate increases with N); the
+simulacrum now genuinely tests positive diversity-dependence and asserts
+`diversity_dependence_sign == "positive"` (null: `"negative"`).
+
+**Phase 3.** `equilibrium_fn` is now a pure `(control_value, prev_state) ->
+next_state`; `cusp_hysteresis_check` threads the branch-following state
+itself (reverse sweep starts from the forward sweep's final state). No more
+`<<-` closure. Verified: a=-1 → `has_hysteresis=TRUE` (max_diff≈2.0); a=1 →
+`FALSE`.
 
 ---
 
@@ -121,8 +153,9 @@ caveat. The per-family slope method is deferred (small n per family).
 
 **Risk.** Low. Claim/doc change only.
 
-**Phase 1 exit gate.** `make all` green; oracle T7/T2 framing honest; formal
-model docstring matches the integrated equation.
+**Phase 1 exit gate.** ✅ PASSED (commit `0909c02`): suite green (433/0/8);
+oracle T7/T2 framing honest; formal model docstring matches the integrated
+equation.
 
 ---
 
@@ -221,8 +254,9 @@ linear null data. Verify before committing.
 **Risk.** Low. The L3 simulacrum's null control is sound (null data, not the
 one-draw field); only the function's own `null_rho` field was weak.
 
-**Phase 2 exit gate.** `make all` green; simulacra re-validated (especially
-autocatalytic); oracle formal_model + L3 reframed honestly.
+**Phase 2 exit gate.** ✅ PASSED (commit `eb2088a`): suite green (443/0/8);
+simulacra re-validated (autocatalytic generator fixed to genuinely positive
+DD); oracle formal_model + L3 reframed honestly.
 
 ---
 
@@ -263,9 +297,9 @@ branch-following into the function under test so the contract is honest:
 hysteresis after the contract change; re-validate carefully. This is the one
 change that alters what a function *does* (not just what it *reports*).
 
-**Phase 3 exit gate.** `make all` green; cusp simulacrum re-validated; unit
-test now genuinely asserts `has_hysteresis = TRUE` on a folded system and
-`FALSE` on a monotone one.
+**Phase 3 exit gate.** ✅ PASSED (commit `3c15cb2`): suite green (443/0/8);
+cusp simulacrum re-validated with a pure `equilibrium_fn`; the contract is
+now explicit in `cusp_hysteresis_check` (no `<<-` closure).
 
 ---
 
@@ -291,15 +325,18 @@ reviewable, shippable unit.
 
 ---
 
-## Open question for review
+## Open question for review — RESOLVED
 
 1. **Issue 3** — Option A (rename only, cheap) vs. Option B (add
-   `threshold_biphasicity`, recommended). Proceed with B?
+   `threshold_biphasicity`, recommended). → **Option B** (done in Phase 2a).
 2. **Issue 5** — reframe now (recommended) and defer per-family slopes, or
-   attempt per-family slopes despite small n?
+   attempt per-family slopes despite small n? → **Reframed now; per-family
+   deferred** (done in Phase 1c).
 3. **Issue 4** — move state into the function (recommended), or just document
    the stateful-closure contract and add the missing unit assertion (cheaper,
-   but leaves the contract implicit)?
-4. **`math-review.md`** — apply the Issue 4 correction as part of Phase 1?
+   but leaves the contract implicit)? → **Moved state into the function** (done
+   in Phase 3).
+4. **`math-review.md`** — apply the Issue 4 correction as part of Phase 1? →
+   **Yes** (applied in Phase 1).
 
-If approved, I'll execute Phase 1 first and report before proceeding to 2 and 3.
+All phases executed; suite green at each step.
