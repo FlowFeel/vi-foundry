@@ -21,11 +21,11 @@ t1_orobanchaceae_pgls:
   caveat: "Relaxed selection predicts the same gradient. Caveat in paper §12.1.2."
 
 t2_cross_family:
-  prediction: "Gene-loss gradient replicates across independent parasitic lineages"
+  prediction: "Family-mean plastome size correlates with family-mean parasitism across independent parasitic lineages (between-family association)"
   competitor: "Stochastic gene loss"
   values:
     pearson_r: -0.934
-    n: 91
+    n: 15              # family-level (15 families), not species-level (91)
     p_value: 1.39e-41
   tolerance: 0.001
   supports_vi: true
@@ -81,7 +81,7 @@ t6_gene_loss_ordering:
   caveat: null
 
 t7_ltee_cosegregation:
-  prediction: "Function-loss mutations co-segregate with beneficial mutations"
+  prediction: "Function-loss mutations co-segregate with beneficial mutations LESS than chance (passive drift in unused genes)"
   competitor: "Independent assortment"
   values:
     observed_pct: 36.4

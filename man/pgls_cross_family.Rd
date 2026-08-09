@@ -21,8 +21,12 @@ independently evolved parasitic plant families.
 \section{Theoretical Context}{
 
 
-VI Prediction D5: the gene-loss gradient replicates across independent
-parasitic origins. Competitor: stochastic gene loss / relaxed selection —
-both predict the same pattern. Does NOT distinguish VI from competitors.
+VI Prediction D5: the gene-loss gradient appears across independent
+parasitic origins. This implementation tests whether family-MEAN plastome
+size correlates with family-MEAN parasitism across the independent
+parasitic lineages (a between-family association, n = number of
+families), NOT whether the within-family slope replicates per family.
+Competitor: stochastic gene loss / relaxed selection — both predict the
+same pattern. Does NOT distinguish VI from competitors.
 }
 

@@ -93,9 +93,9 @@ test_that("ltee_cosegregation returns A6 proof object", {
   expect_equal(result$metadata$n, 253)
 })
 
-test_that("ltee_cosegregation enrichment ratio < 1 (depletion, not enrichment)", {
+test_that("ltee_cosegregation depletion ratio < 1 (depletion, not enrichment)", {
   result <- ltee_cosegregation(seed = 42)
-  expect_lt(result$values[["enrichment_ratio"]], c(enrichment_ratio = 1.0))
+  expect_lt(result$values[["depletion_ratio"]], c(depletion_ratio = 1.0))
 })
 
 # === T1: pgls_orobanchaceae — requires ape, caper (skip if not available) ===

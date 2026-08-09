@@ -27,7 +27,7 @@ List (A6):
 \item{metadata}{List: params, n_traits, n_steps, converged, method}
 }
 \description{
-Solves dC_i/dt = -λ × M(t) × I(d_i < θ) for a panel of traits.
+Solves dC_i/dt = -λ × M(t) × C_i × I(d_i < θ) for a panel of traits.
 }
 \section{Theoretical Context}{
 

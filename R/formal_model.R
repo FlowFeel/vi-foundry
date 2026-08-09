@@ -1,6 +1,11 @@
 #' Formal dynamical model of threshold-gated capacity reallocation
 #'
-#' The VI formal model: dC_i/dt = -λ × M(t) × I(d_i < θ)
+#' The VI formal model: dC_i/dt = -λ × M(t) × C_i × I(d_i < θ)
+#'
+#' NOTE: the C_i factor (current retention) is essential — without it the ODE
+#' is linear (dC/dt = -λM) whose solution C(T) = 1 - λ∫M dt goes negative;
+#' with it the ODE is exponential (dC/dt = -λMC) whose solution
+#' C(T) = exp(-λ∫M dt) stays in [0, 1], matching retention_at_time().
 #' where C_i = retention probability of trait i, M(t) = decaying niche-demand
 #' mismatch, d_i = integration depth, θ = protection threshold, λ = shedding rate.
 #'
@@ -88,7 +93,7 @@ retention_at_time <- function(depth, lambda, theta, m0, alpha, time) {
 
 #' Threshold-gated capacity reallocation model (full numerical integration)
 #'
-#' Solves dC_i/dt = -λ × M(t) × I(d_i < θ) for a panel of traits.
+#' Solves dC_i/dt = -λ × M(t) × C_i × I(d_i < θ) for a panel of traits.
 #'
 #' @param depths Numeric vector. Integration depths for each trait.
 #' @param lambda Numeric. Shedding rate.

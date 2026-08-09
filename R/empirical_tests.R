@@ -112,9 +112,13 @@ pgls_orobanchaceae <- function(data, tree, lambda = "ML", seed = 42L) {
 #'
 #' @section Theoretical Context:
 #'
-#' VI Prediction D5: the gene-loss gradient replicates across independent
-#' parasitic origins. Competitor: stochastic gene loss / relaxed selection —
-#' both predict the same pattern. Does NOT distinguish VI from competitors.
+#' VI Prediction D5: the gene-loss gradient appears across independent
+#' parasitic origins. This implementation tests whether family-MEAN plastome
+#' size correlates with family-MEAN parasitism across the independent
+#' parasitic lineages (a between-family association, n = number of
+#' families), NOT whether the within-family slope replicates per family.
+#' Competitor: stochastic gene loss / relaxed selection — both predict the
+#' same pattern. Does NOT distinguish VI from competitors.
 #'
 #' @dft A1, A2, A6
 #'
@@ -581,18 +585,27 @@ gene_loss_ordering <- function(data, seed = 42L, n_perm = 720L) {
 #' T7: LTEE Function-Loss Co-segregation
 #'
 #' Tests whether metabolic function loss in the LTEE co-segregates with
-#' beneficial mutations more than expected by chance.
+#' beneficial mutations LESS than expected by chance — consistent with
+#' passive drift in unused genes (VI prediction). The observed proportion
+#' (36.4%) is depleted relative to the chance expectation (61.7%); the
+#' binomial test uses alternative = "less" for this reason.
 #'
 #' @param seed Integer. Seed for reproducibility.
 #'
-#' @return List (A6): values (observed_pct, expected_pct, p_value), metadata.
+#' @return List (A6): values (observed_pct, expected_pct, p_value,
+#'   mutator_vs_nonmutator_p, depletion_ratio), metadata.
 #'
 #' @section Theoretical Context:
 #'
 #' VI Prediction: function-loss mutations co-segregate with beneficial
-#' mutations (passive drift in unused genes). Competitor: independent
+#' mutations LESS than chance (passive drift in unused genes — their loss
+#' is not concentrated near adaptive sweeps). Competitor: independent
 #' assortment predicts 61.7% co-segregation. Reported as suggestive due
 #' to hitchhiking confound.
+#'
+#' What supports VI: observed co-segregation is significantly LOWER than
+#' expected by chance (depletion_ratio < 1). What refutes VI: observed
+#' rate equals or exceeds expected rate.
 #'
 #' @dft A1, A2, A6
 #'
@@ -628,7 +641,7 @@ ltee_cosegregation <- function(seed = 42L) {
         expected_pct = expected_rate * 100,
         p_value = bt$p.value,
         mutator_vs_nonmutator_p = wt$p.value,
-        enrichment_ratio = observed_prop / expected_rate
+        depletion_ratio = observed_prop / expected_rate
       ),
       metadata = list(
         seed = seed,

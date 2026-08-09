@@ -23,7 +23,7 @@ The audit found seven issues, ranked by severity:
 | 1 | **Severe** | `ltee_cosegregation` (T7) | The claim is the *opposite* of the result |
 | 2 | **Severe** | `threshold_model` docstring | The stated ODE is a third equation that gives nonsense |
 | 3 | **Moderate** | `threshold_model` k1/k2 | A displacement ratio, mislabeled as a rate ratio |
-| 4 | **Moderate** | `cusp_hysteresis_check` | Structurally cannot detect hysteresis |
+| 4 | **Moderate** | `cusp_hysteresis_check` | Detects hysteresis only via an undocumented stateful-closure contract |
 | 5 | **Moderate** | `pgls_cross_family` (T2) | Tests family-mean correlation, not within-family replication |
 | 6 | **Moderate** | `diversity_dependence_sign` | "Positive" means increasing, not diversity-dependent |
 | 7 | **Minor** | `transfer_test` / `predict_bird_ordering` | Null is one draw; ranking discards the transferred slope |
@@ -179,7 +179,21 @@ fit to the retention trajectory. As is, the number 281,000 is being read as
 
 ---
 
-## Issue 4 — `cusp_hysteresis_check`: cannot detect hysteresis by construction
+## Issue 4 — `cusp_hysteresis_check`: detects hysteresis only via an undocumented stateful-closure contract
+
+> **Correction (post-review).** An earlier version of this section stated the
+> function "cannot detect hysteresis by construction" and is "always FALSE."
+> That was overclaimed. The cusp simulacrum passes `has_hysteresis = TRUE`
+> because `make_cusp_equilibrium_fn()` (in
+> `inst/simulacra/generate_cusp_system.R`) is a **stateful closure** — it uses
+> `<<-` to track the previous state and follow the nearest equilibrium branch
+> across calls. So hysteresis *is* detected, but through an **undocumented
+> contract**: the caller must pass a stateful closure that does
+> branch-following via side effects. `cusp_hysteresis_check` itself carries no
+> state; with a pure `equilibrium_fn` (e.g. `function(x) ifelse(x>0, x^2,
+> -x^2)`) it returns `has_hysteresis = FALSE` always, which is what the
+> original review observed. The real defect is a **misplaced contract**, not
+> "cannot detect by construction."
 
 ### The claim
 
@@ -204,25 +218,41 @@ differences <- abs(forward_states - rev(reverse_states))
 has_hysteresis <- any(differences > 0.01)
 ```
 
-Both loops call `equilibrium_fn()` **afresh on each control value**, discarding
-`state` each iteration. Hysteresis *requires* that the state depends on the
-previous state (path dependence) — but here the state at step `i` depends only
-on `control_values[i]`, not on `state[i-1]`. So
+Both loops call `equilibrium_fn()` **afresh on each control value**, and
+`cusp_hysteresis_check` itself discards `state` each iteration — it carries no
+state of its own. Hysteresis *requires* that the state depends on the previous
+state (path dependence). With a **pure** `equilibrium_fn` (state a function of
+control only), the state at step `i` depends only on `control_values[i]`, so
 `forward_states == rev(reverse_states)` always, `differences` is always 0, and
 `has_hysteresis` is **always FALSE**.
 
+The function only detects hysteresis when the caller passes a **stateful
+closure** that does branch-following via side effects (`<<-`) — which is what
+the simulacrum's `make_cusp_equilibrium_fn()` does. But that contract is
+undocumented: the `@param equilibrium_fn` docstring says "Maps control value →
+equilibrium state," implying a pure function.
+
 ### The verification
 
-Tested with an equilibrium function that has a genuine fold
+Tested with a pure equilibrium function that has a genuine fold
 (`ifelse(x > 0, x^2, -x^2)`): `has_hysteresis = FALSE`, `max_difference = 0`.
+The simulacrum, using the stateful `make_cusp_equilibrium_fn`, does report
+`has_hysteresis = TRUE` — confirming the detection works *only* via the
+caller's closure, not via the function under test.
 
 ### The fix
 
-A real hysteresis check must carry state forward: initialize `state` at the
-starting control value, then update `state <- equilibrium_fn(control_values[i],
-state)` (or use a relaxation/iteration that depends on the previous state), so
-that the forward and reverse traversals can settle to different branches. As
-written, the function is a no-op that always reports "no hysteresis."
+A real hysteresis check must carry state forward **inside the function**: the
+contract for `equilibrium_fn` should be a pure `function(control, state) ->
+new_state` (or `function(control) -> roots_vector` with the function picking
+the branch nearest the carried state). `cusp_hysteresis_check` should carry
+`state` through the forward sweep (initialized at the first control) and the
+reverse sweep (initialized at the last control), so the two paths can settle
+to different branches. As written, the branch-following logic is misplaced in
+the caller's closure, the contract is undocumented, and the unit test never
+asserts `has_hysteresis = TRUE` (only that `max_difference` is numeric) — so
+unit coverage of hysteresis detection is zero. (The refactoring plan, Phase 3,
+moves the state into the function.)
 
 ---
 

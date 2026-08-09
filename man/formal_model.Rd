@@ -4,11 +4,16 @@
 \alias{formal_model}
 \title{Formal dynamical model of threshold-gated capacity reallocation}
 \description{
-The VI formal model: dC_i/dt = -λ × M(t) × I(d_i < θ)
-where C_i = retention probability of trait i, M(t) = decaying niche-demand
-mismatch, d_i = integration depth, θ = protection threshold, λ = shedding rate.
+The VI formal model: dC_i/dt = -λ × M(t) × C_i × I(d_i < θ)
 }
 \details{
+NOTE: the C_i factor (current retention) is essential — without it the ODE
+is linear (dC/dt = -λM) whose solution C(T) = 1 - λ∫M dt goes negative;
+with it the ODE is exponential (dC/dt = -λMC) whose solution
+C(T) = exp(-λ∫M dt) stays in \link{0, 1}, matching retention_at_time().
+where C_i = retention probability of trait i, M(t) = decaying niche-demand
+mismatch, d_i = integration depth, θ = protection threshold, λ = shedding rate.
+
 This module implements the numerical integration of the formal model,
 equilibrium predictions, and phase transition analysis.
 }
