@@ -14,7 +14,7 @@ jobs:
   lint:
     runs-on: ubuntu-latest
     continue-on-error: true
-    container: rocker/tidyverse:4.4.3
+    container: rocker/tidyverse:4.5.3
     steps:
       - uses: actions/checkout@v4
       - name: Install lintr
@@ -42,7 +42,7 @@ jobs:
 
   unit:
     runs-on: ubuntu-latest
-    container: rocker/tidyverse:4.4.3
+    container: rocker/tidyverse:4.5.3
     needs: lint
     steps:
       - uses: actions/checkout@v4
@@ -80,7 +80,7 @@ jobs:
 
   simulacra:
     runs-on: ubuntu-latest
-    container: rocker/tidyverse:4.4.3
+    container: rocker/tidyverse:4.5.3
     needs: unit
     steps:
       - uses: actions/checkout@v4
@@ -111,7 +111,7 @@ jobs:
 
   integration:
     runs-on: ubuntu-latest
-    container: rocker/tidyverse:4.4.3
+    container: rocker/tidyverse:4.5.3
     needs: simulacra
     steps:
       - uses: actions/checkout@v4
@@ -134,7 +134,7 @@ jobs:
 
   regression:
     runs-on: ubuntu-latest
-    container: rocker/tidyverse:4.4.3
+    container: rocker/tidyverse:4.5.3
     needs: integration
     steps:
       - uses: actions/checkout@v4
@@ -157,7 +157,7 @@ jobs:
 
   check:
     runs-on: ubuntu-latest
-    container: rocker/tidyverse:4.4.3
+    container: rocker/tidyverse:4.5.3
     needs: regression
     steps:
       - uses: actions/checkout@v4
