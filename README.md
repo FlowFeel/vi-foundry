@@ -222,4 +222,5 @@ MIT
 - Phosphene R Standards: `docs/standards/PHOSPHENE_R_STANDARDS.md`
 - Review: [`docs/review/valence-ingression-review.md`](docs/review/valence-ingression-review.md) — critical review of the VI monograph and the foundry artifacts (numbered Remarks R1… and Review Items 1–6; the code cites these directly)
 - Calculation review: [`docs/review/calculation-review.md`](docs/review/calculation-review.md) — literate walkthrough of the calculation audit: each divergence traced to its root cause, with the data, the broken output, the diagnosis, and the fix
+- Math review: [`docs/review/math-review.md`](docs/review/math-review.md) — audit of the mathematics vs. the implementation vs. the claims (seven issues ranked by severity; two severe: a T7 sign error and a wrong formal-model ODE docstring)
 - Phased breakdown: [`docs/review/vi-foundry-phased-breakdown.md`](docs/review/vi-foundry-phased-breakdown.md) — phase-by-phase build, gate status, and the open data-reconciliation work (items 4–6)
