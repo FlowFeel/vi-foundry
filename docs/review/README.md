@@ -16,6 +16,7 @@ with the standards in [`docs/standards/`](../standards/).
 | [`valence-ingression-review.md`](valence-ingression-review.md) | Critical review of the VI monograph (Ritch-Frel, v9) and the vi-foundry artifacts. Numbered **Remarks** (R1…) and **Review Items** (1–6). The foundry's code cites these directly. |
 | [`calculation-review.md`](calculation-review.md) | Literate walkthrough of the calculation audit: for each oracle entry, the prediction, the broken output, the root-cause diagnosis, and the fix. The analysis-level companion to the review. |
 | [`math-review.md`](math-review.md) | Audit of the mathematics vs. the implementation vs. the claims: does the code realize the math it states, and do the claims follow? Seven issues ranked by severity (two severe). |
+| [`refactoring-plan.md`](refactoring-plan.md) | Execution plan for the math-review issues: proposed refactoring, blast radius, risk, and phasing for each of the seven issues (three phases, safest-first). |
 | [`vi-foundry-phased-breakdown.md`](vi-foundry-phased-breakdown.md) | Phase-by-phase breakdown of the foundry build, current gate status, and the open data-reconciliation work (items 4–6). |
 
 ## How the code references this review
