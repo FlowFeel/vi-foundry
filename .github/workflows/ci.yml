@@ -54,7 +54,7 @@ jobs:
         run: |
           R -e "install.packages(c(
             'testthat','withr','covr','mockery','R6','yaml','ggplot2',
-            'roxygen2','readxl','knitr','rmarkdown','patchwork','dplyr','viridis'
+            'roxygen2','readxl','knitr','rmarkdown','patchwork','dplyr','viridis','ape','caper','phytools','base64enc','DBI','RPostgres'
           ), repos='${{ env.R_REPOS }}')"
       - name: Generate NAMESPACE
         run: Rscript -e "roxygen2::roxygenize('.', load_code=roxygen2::load_source)"
@@ -92,7 +92,7 @@ jobs:
         run: |
           R -e "install.packages(c(
             'testthat','withr','R6','yaml','ggplot2',
-            'roxygen2','readxl','knitr','rmarkdown','patchwork','dplyr','viridis'
+            'roxygen2','readxl','knitr','rmarkdown','patchwork','dplyr','viridis','ape','caper','phytools','base64enc','DBI','RPostgres'
           ), repos='${{ env.R_REPOS }}')"
       - name: Generate NAMESPACE and install
         run: |
@@ -123,7 +123,7 @@ jobs:
         run: |
           R -e "install.packages(c(
             'testthat','withr','R6','yaml','ggplot2',
-            'roxygen2','readxl','knitr','rmarkdown','patchwork','dplyr','viridis'
+            'roxygen2','readxl','knitr','rmarkdown','patchwork','dplyr','viridis','ape','caper','phytools','base64enc','DBI','RPostgres'
           ), repos='${{ env.R_REPOS }}')"
       - name: Generate NAMESPACE and install
         run: |
@@ -146,7 +146,7 @@ jobs:
         run: |
           R -e "install.packages(c(
             'testthat','withr','R6','yaml','ggplot2',
-            'roxygen2','readxl','knitr','rmarkdown','patchwork','dplyr','viridis'
+            'roxygen2','readxl','knitr','rmarkdown','patchwork','dplyr','viridis','ape','caper','phytools','base64enc','DBI','RPostgres'
           ), repos='${{ env.R_REPOS }}')"
       - name: Generate NAMESPACE and install
         run: |
@@ -169,14 +169,14 @@ jobs:
         run: |
           R -e "install.packages(c(
             'testthat','withr','R6','yaml','ggplot2',
-            'roxygen2','readxl','knitr','rmarkdown','patchwork','dplyr','viridis'
+            'roxygen2','readxl','knitr','rmarkdown','patchwork','dplyr','viridis','ape','caper','phytools','base64enc','DBI','RPostgres'
           ), repos='${{ env.R_REPOS }}')"
       - name: Generate NAMESPACE and install
         run: |
           Rscript -e "roxygen2::roxygenize('.', load_code=roxygen2::load_source)"
           R CMD INSTALL .
       - name: R CMD check
-        run: rcmdcheck::rcmdcheck(".", args = c("--no-manual", "--as-cran"))
+        run: rcmdcheck::rcmdcheck(".", args = c("--no-manual", "--as-cran"), error_on = "error")
 
   pages:
     runs-on: ubuntu-latest
