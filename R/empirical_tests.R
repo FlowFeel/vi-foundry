@@ -190,13 +190,18 @@ endosymbiont_biphasic <- function(data, seed = 42L) {
 
     x <- genus_means$symbiosis_age_mya
     y <- genus_means$genome_bp
+    n_obs <- length(y)
 
-    # Model 1: Linear
+    # R² from predicted values (1 - RSS/TSS), matching the simulacrum helper.
+    r2_from_pred <- function(yv, yv_pred) {
+      1 - sum((yv - yv_pred)^2) / sum((yv - mean(yv))^2)
+    }
+
+    # Model 1: Linear (constant rate)
     mod_linear <- lm(genome_bp ~ symbiosis_age_mya, data = genus_means)
-    r2_linear <- summary(mod_linear)$r.squared
-    aic_linear <- AIC(mod_linear)
+    r2_linear <- r2_from_pred(y, predict(mod_linear))
 
-    # Model 2: Exponential decay (constant rate)
+    # Model 2: Exponential decay (constant-rate competitor)
     mod_exp <- tryCatch(
       nls(genome_bp ~ a * exp(-b * symbiosis_age_mya),
         data = genus_means,
@@ -206,39 +211,71 @@ endosymbiont_biphasic <- function(data, seed = 42L) {
       error = function(e) NULL
     )
 
-    # Model 3: Logistic / saturation (decelerating)
-    mod_logistic <- tryCatch(
-      nls(
-        genome_bp ~ floor_val + (ceil_val - floor_val) /
-          (1 + exp(rate * (symbiosis_age_mya - mid))),
-        data = genus_means,
-        start = list(
-          floor_val = min(y) * 0.8,
-          ceil_val = max(y) * 1.2,
-          rate = 0.02, mid = mean(x)
+    # Model 3: Logistic / saturation (biphasic/VI). Try a spread of start
+    # values — nls is sensitive to starts on noisy cross-sectional data.
+    fit_logistic <- function(starts) {
+      tryCatch(
+        nls(
+          genome_bp ~ floor_val + (ceil_val - floor_val) /
+            (1 + exp(rate * (symbiosis_age_mya - mid_val))),
+          data = genus_means,
+          start = starts,
+          control = nls.control(maxiter = 1000)
         ),
-        control = nls.control(maxiter = 1000)
-      ),
-      error = function(e) NULL
-    )
+        error = function(e) NULL
+      )
+    }
+    mod_logistic <- NULL
+    for (rt in c(0.005, 0.01, 0.02, 0.05)) {
+      mod_logistic <- fit_logistic(list(
+        floor_val = min(y) * 0.8,
+        ceil_val = max(y) * 1.2,
+        rate = rt, mid_val = mean(x)
+      ))
+      if (!is.null(mod_logistic)) break
+    }
 
     # Extract results from best model
     if (!is.null(mod_logistic)) {
-      s <- summary(mod_logistic)
-      r2 <- 1 - s$sigma^2 * s$df[2] / var(y, na.rm = TRUE) * (s$df[2] - 1)
-      aic_logistic <- AIC(mod_logistic)
+      r2 <- r2_from_pred(y, predict(mod_logistic))
 
-      # k1/k2 ratio from logistic rate
+      # k1/k2 from the logistic curve's decline rate at the youngest vs
+      # oldest observed ages. For a decelerating (biphasic) curve, the rate
+      # at young ages (Phase 1, fast) exceeds the rate at old ages (Phase 2,
+      # slow), so k1/k2 > 1. The previous version used abs(coefs["rate"])
+      # which is just the logistic steepness parameter, not a rate ratio.
       coefs <- coef(mod_logistic)
-      k1_k2 <- abs(coefs["rate"])
+      floor_v <- coefs["floor_val"]
+      ceil_v <- coefs["ceil_val"]
+      rate_v <- coefs["rate"]
+      mid_v <- coefs["mid_val"]
+      slope_at <- function(xv) {
+        u <- exp(rate_v * (xv - mid_v))
+        abs((ceil_v - floor_v) * rate_v * u / (1 + u)^2)
+      }
+      k1 <- slope_at(min(x))
+      k2 <- slope_at(max(x))
+      k1_k2 <- if (k2 > 0) k1 / k2 else Inf
 
-      # Bayes factor (BIC approximation)
-      n_obs <- length(y)
-      bic_linear <- n_obs * log(deviance(mod_linear) / n_obs) + 2 * log(n_obs)
-      bic_logistic <- n_obs * log(deviance(mod_logistic) / n_obs) + 4 * log(n_obs)
-      bf <- exp((bic_linear - bic_logistic) / 2)
+      # Bayes factor from BIC (logistic vs the best competitor)
+      bic_logistic <- n_obs * log(deviance(mod_logistic) / n_obs) +
+        4 * log(n_obs)
+      competitor <- if (!is.null(mod_exp)) mod_exp else mod_linear
+      k_comp <- if (!is.null(mod_exp)) 3 else 2
+      bic_comp <- n_obs * log(deviance(competitor) / n_obs) +
+        k_comp * log(n_obs)
+      bf <- exp((bic_comp - bic_logistic) / 2)
     } else {
-      r2 <- r2_linear
+      # Logistic did not converge — report the best available model and NA
+      # for the biphasic-specific quantities. On noisy cross-sectional data
+      # this is expected: biphasic kinetics is a within-lineage temporal
+      # prediction, and a cross-sectional regression across unrelated
+      # lineages (which started at different genome sizes) cannot test it.
+      r2 <- if (!is.null(mod_exp)) {
+        r2_from_pred(y, predict(mod_exp))
+      } else {
+        r2_linear
+      }
       k1_k2 <- NA
       bf <- NA
     }
@@ -251,10 +288,11 @@ endosymbiont_biphasic <- function(data, seed = 42L) {
       ),
       metadata = list(
         seed = seed,
-        n = nrow(genus_means),
+        n = n_obs,
         n_genera = length(unique(genus_means$genus)),
         model_logistic_fit = !is.null(mod_logistic),
         model_exp_fit = !is.null(mod_exp),
+        r2_linear = r2_linear,
         converged = !is.null(mod_logistic)
       )
     )
@@ -288,42 +326,47 @@ niche_vs_ne <- function(data, seed = 42L) {
   withr::with_seed(seed, {
     validate_niche_data(data)
 
-    # Find Ne column
-    ne_col <- grep("Ne", names(data), value = TRUE)[1]
-    # Find niche/lifestyle column
+    # Response: pan-genome size (the gene-loss / capacity proxy VI predicts).
+    # Prefer a pan-genome column; fall back to genome size only if absent.
+    # The prior implementation regressed Genome Size (the core genome), which
+    # is not the quantity VI predicts — see review item 6.
+    pan_col <- grep("pan", names(data), value = TRUE, ignore.case = TRUE)[1]
+    if (is.na(pan_col)) {
+      pan_col <- grep("genome", names(data), value = TRUE, ignore.case = TRUE)[1]
+    }
+    response <- as.numeric(data[[pan_col]])
+
+    # Niche predictor: lifestyle as a factor (categorical / ANOVA-style model).
+    # Using as.numeric(factor(...)) would assign arbitrary integers to
+    # categories and regress on a meaningless linear trend; the factor model
+    # measures genuine between-category variance.
     niche_col <- grep("lifestyle|Life|habitat", names(data),
       value = TRUE, ignore.case = TRUE
     )[1]
+    niche_factor <- as.factor(data[[niche_col]])
 
-    # Convert lifestyle to numeric niche breadth proxy
-    if (!is.numeric(data[[niche_col]])) {
-      niche_numeric <- as.numeric(factor(data[[niche_col]]))
-    } else {
-      niche_numeric <- data[[niche_col]]
-    }
+    # Ne predictor: anchor to ^Ne to avoid matching unrelated columns (e.g.
+    # "Nematodes" in the Dewar data). Use the first Ne estimate.
+    ne_col <- grep("^Ne", names(data), value = TRUE)[1]
+    ne_numeric <- suppressWarnings(as.numeric(data[[ne_col]]))
 
-    # Find genome size / pangenome size column
-    size_col <- grep("genome_size|pan_size|Genome_Size", names(data),
-      value = TRUE, ignore.case = TRUE
-    )[1]
-    if (is.na(size_col)) {
-      size_col <- grep("genome", names(data), value = TRUE, ignore.case = TRUE)[1]
-    }
+    # Pan-genome size and Ne span orders of magnitude, so regress on log
+    # scale (the standard allometric transform). This is also the scale on
+    # which the manuscript oracle was computed. Both models use the SAME
+    # complete-case subset so the R² and AIC comparisons are fair.
+    both_ok <- !is.na(response) & !is.na(niche_factor) &
+      !is.na(ne_numeric) & ne_numeric > 0
 
-    # Model 1: Ne only
-    ne_data <- data[!is.na(data[[ne_col]]) & !is.na(data[[size_col]]), ]
-    mod_ne <- lm(as.numeric(ne_data[[size_col]]) ~ as.numeric(ne_data[[ne_col]]))
-    r2_ne <- summary(mod_ne)$r.squared
-
-    # Model 2: Niche only
-    niche_data <- data[!is.na(niche_numeric) & !is.na(data[[size_col]]), ]
-    niche_valid <- !is.na(niche_numeric) & !is.na(data[[size_col]])
-    mod_niche <- lm(as.numeric(niche_data[[size_col]]) ~ niche_numeric[niche_valid])
+    # Niche model: log(pan-genome) ~ lifestyle
+    mod_niche <- lm(log(response[both_ok]) ~ niche_factor[both_ok])
     r2_niche <- summary(mod_niche)$r.squared
 
-    # AIC comparison
-    aic_ne <- AIC(mod_ne)
+    # Ne model: log(pan-genome) ~ log(Ne)
+    mod_ne <- lm(log(response[both_ok]) ~ log(ne_numeric[both_ok]))
+    r2_ne <- summary(mod_ne)$r.squared
+
     aic_niche <- AIC(mod_niche)
+    aic_ne <- AIC(mod_ne)
 
     result <- list(
       values = list(
@@ -334,10 +377,11 @@ niche_vs_ne <- function(data, seed = 42L) {
       ),
       metadata = list(
         seed = seed,
-        n = nrow(ne_data),
+        n = sum(both_ok),
+        response_col = pan_col,
         ne_col = ne_col,
         niche_col = niche_col,
-        size_col = size_col,
+        scale = "log",
         converged = TRUE
       )
     )
@@ -376,8 +420,9 @@ pangenome_fluidity <- function(data, seed = 42L) {
       value = TRUE, ignore.case = TRUE
     )[1]
 
-    # Find Ne column
-    ne_col <- grep("Ne", names(data), value = TRUE)[1]
+    # Find Ne column — anchor to ^Ne$ to avoid matching unrelated columns
+    # such as "Nematodes" (a host-type indicator in the Dewar data).
+    ne_col <- grep("^Ne$", names(data), value = TRUE)[1]
 
     fluidity <- data$pangenome_fluidity
 
