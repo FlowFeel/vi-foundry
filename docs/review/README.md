@@ -19,6 +19,7 @@ with the standards in [`docs/standards/`](../standards/).
 | [`refactoring-plan.md`](refactoring-plan.md) | Execution plan for the math-review issues: proposed refactoring, blast radius, risk, and phasing for each of the seven issues (three phases, safest-first). |
 | [`vi-foundry-phased-breakdown.md`](vi-foundry-phased-breakdown.md) | Phase-by-phase breakdown of the foundry build, current gate status, and the open data-reconciliation work (items 4–6). |
 | [`algorithms-and-findings.md`](algorithms-and-findings.md) | Formal, literate survey of every algorithm, its prediction, its competitor, and a plain-language reading of the current result. The synthesis of what the foundry establishes, what it does not, and what that means for the framework. |
+| [`empirical-testing-expansion-plan.md`](empirical-testing-expansion-plan.md) | Proposal for moving the three "testable but not yet tested" modules (Homo inversion, cusp irreversibility, cross-kingdom transfer) toward tested. Phases: fix the L3 wiring bug + contracts; drop-in empirical hooks; quantitative magnitude metrics; regression-gate enforcement. Honest about the data boundary. |
 
 ## How the code references this review
 
