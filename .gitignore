@@ -4,6 +4,11 @@ renv/library/
 .Rhistory
 .RData
 .Rproj.user
+*.Rcheck/
+vi.foundry_*.tar.gz
+# testthat artifacts
+tests/testthat/Rplots.pdf
+tests/testthat/_problems/
 
 # Python
 __pycache__/
