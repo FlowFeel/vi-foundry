@@ -97,22 +97,24 @@ formal_model:
   competitor: "Constant rate (relaxed selection), accelerating (Muller's ratchet)"
   # These are DETERMINISTIC ODE outputs (regression targets), not empirical
   # values. The threshold_model is fully deterministic (A2: no RNG), so these
-  # are exact. k1/k2 >> 1 is the biphasic signature; phase1 ~ 1 / phase2 ~ 0
-  # confirms threshold-gated capacity reallocation (unprotected traits shed in
-  # Phase 1, protected traits retained at 1.0). The empirical biphasic test on
-  # real endosymbiont data is T3; this entry guards the theoretical model's
-  # numerics against code regressions.
+  # are exact. threshold_biphasicity ~ 1.0 is the real biphasic signature:
+  # protected traits (d >= theta) retain at 1.0, unprotected (d < theta) shed
+  # to ~0. early_late_displacement_ratio is a descriptive temporal displacement
+  # ratio (large when the exponential decay finishes early), NOT a rate ratio.
+  # The empirical biphasic test on real endosymbiont data is T3; this entry
+  # guards the theoretical model's numerics against code regressions.
   values:
     phase1_rate: 0.9999964
     phase2_rate: 3.558952e-06
-    k1_k2_ratio: 280980.5944134
+    early_late_displacement_ratio: 280980.5944134
+    threshold_biphasicity: 1.0
   tolerance: 0.001
   supports_vi: true
   distinguishes_from_competitor: true
   caveat: "Deterministic ODE outputs (final_retention = [~0, ~0, ~0, 1, 1] for depths [0,1,2,3,5] with theta=2.5). Not empirical — see T3 for the empirical biphasic test."
 
 cross_kingdom_l3:
-  prediction: "Plant-derived parameters predict bird morphological change ordering"
+  prediction: "Plant-derived slope SIGN predicts bird morphological change ordering (ordering-concordance transfer; slope magnitude does not transfer)"
   competitor: "Substrates are independent — no parameter transfer"
   values:
     bird_rho: 0.755

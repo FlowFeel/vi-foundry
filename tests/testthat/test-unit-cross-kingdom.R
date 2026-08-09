@@ -98,9 +98,10 @@ test_that("transfer_test is deterministic with same seed (A2)", {
   expect_equal(r1$values, r2$values)
 })
 
-test_that("transfer_test null control has lower rho than plant-derived", {
+test_that("transfer_test null control has a null p-value from a distribution", {
   # With perfectly ordered plant data and correlated bird data,
-  # the plant slope should predict bird ordering better than random
+  # the plant slope should predict bird ordering better than random.
+  # The null is now a 1000-draw distribution (not a single random slope).
   plant_data <- data.frame(
     category = c("a", "b", "c", "d", "e", "f"),
     dependency_score = c(0, 1, 2, 3, 4, 5),
@@ -112,6 +113,10 @@ test_that("transfer_test null control has lower rho than plant-derived", {
     observed_rank = c(1, 2, 3, 4, 5, 6, 7, 8)
   )
   result <- transfer_test(plant_data, bird_data, seed = 42)
-  # Null rho should typically be lower (though with fixed seed it's deterministic)
   expect_true(is.finite(result$values[["bird_rho"]]))
+  # null_p is a proper p-value from a null distribution, in [0, 1]
+  expect_true(is.numeric(result$values[["null_p"]]))
+  expect_gte(result$values[["null_p"]], 0)
+  expect_lte(result$values[["null_p"]], 1)
+  expect_true(is.numeric(result$values[["null_rho"]]))
 })

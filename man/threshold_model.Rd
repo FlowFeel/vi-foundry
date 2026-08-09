@@ -23,7 +23,7 @@ threshold_model(depths, lambda, theta, m0, alpha, time, n_steps = 1000L)
 }
 \value{
 List (A6):
-\item{values}{Named numeric: final_retention vector, phase1_rate, phase2_rate, k1_k2_ratio}
+\item{values}{Named numeric: final_retention vector, phase1_rate, phase2_rate, early_late_displacement_ratio, threshold_biphasicity}
 \item{metadata}{List: params, n_traits, n_steps, converged, method}
 }
 \description{

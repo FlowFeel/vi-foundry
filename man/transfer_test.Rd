@@ -14,9 +14,22 @@ transfer_test(plant_data, bird_data, seed = 42L)
 \item{seed}{Integer. Seed for reproducibility.}
 }
 \value{
-List (A6): values (plant_slope, bird_rho, bird_p, null_rho), metadata.
+List (A6): values (plant_slope, bird_rho, bird_p, null_rho,
+null_p), metadata.
 }
 \description{
 Fits on plant data, predicts bird ordering, computes Spearman ρ between
 predicted and observed bird ranks. Also runs null control (random slope).
 }
+\section{Note on "transfer"}{
+
+
+predict_bird_ordering() ranks (plant_slope * dependency_score), and
+rank(a*x) = rank(x) for any a > 0, so the plant slope MAGNITUDE is
+discarded — only the slope SIGN transfers (a positive plant slope yields
+the same ordering as dependency_score itself). This is an ordering-
+concordance test (does bird observed_rank agree with dependency_score?),
+not a full parameter transfer. This matches the oracle caveat ("Ordering
+transfers across kingdoms; rate does not").
+}
+

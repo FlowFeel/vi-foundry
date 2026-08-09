@@ -86,12 +86,16 @@ test_that("threshold_model sheds unprotected traits below 1.0", {
   expect_lt(retention[[1]], 0.9)
 })
 
-test_that("threshold_model produces biphasic kinetics (k1/k2 > 1)", {
+test_that("threshold_model produces biphasic kinetics (threshold_biphasicity ~ 1)", {
   result <- threshold_model(
     depths = c(0, 1, 2, 3, 5), lambda = 0.15,
     theta = 2.5, m0 = 10, alpha = 0.05, time = 100
   )
-  expect_gt(result$values[["k1_k2_ratio"]], 1)
+  # The real biphasic signal: protected traits retain at 1.0, unprotected shed
+  # to ~0, so the difference of means is ~1.0.
+  expect_equal(result$values[["threshold_biphasicity"]], 1.0, tolerance = 1e-6)
+  # The displacement ratio is descriptive (large when decay finishes early).
+  expect_gt(result$values[["early_late_displacement_ratio"]], 1)
 })
 
 test_that("threshold_model is fully deterministic (A2 — no RNG)", {

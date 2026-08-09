@@ -2,7 +2,7 @@
 % Please edit documentation in R/autocatalytic_set.R
 \name{diversity_dependence_sign}
 \alias{diversity_dependence_sign}
-\title{Compute diversity-dependence sign}
+\title{Compute diversity-dependence and growth-direction metrics}
 \usage{
 diversity_dependence_sign(innovation_counts, seed = 42L)
 }
@@ -12,9 +12,21 @@ diversity_dependence_sign(innovation_counts, seed = 42L)
 \item{seed}{Integer. Seed for reproducibility.}
 }
 \value{
-List (A6): values (sign, slope, r_squared), metadata.
+List (A6): values (growth_direction, growth_slope, growth_r_squared,
+log_log_slope, is_superlinear, diversity_dependence_slope,
+diversity_dependence_sign), metadata.
 }
 \description{
-For a time series of innovation counts, determine whether diversity
-is increasing (positive dependence) or decreasing (negative dependence).
+For a time series of innovation counts, compute:
+\itemize{
+\item growth_direction / growth_slope: whether counts increase over time (NOT
+diversity-dependence — just growth).
+\item is_superlinear: log-log slope > 1, a power-law proxy for accelerating
+growth (exploratory; conflates early acceleration with positive DD).
+\item diversity_dependence_slope / diversity_dependence_sign: the GENUINE
+diversity-dependence test — the slope of per-capita innovation rate
+(dN/dt)/N against diversity N. Positive = per-capita rate increases
+with N (the Homo inversion); negative = rate decreases with N
+(niche-filling, the competitor's model).
+}
 }

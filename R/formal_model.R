@@ -104,7 +104,7 @@ retention_at_time <- function(depth, lambda, theta, m0, alpha, time) {
 #' @param n_steps Integer. Number of integration steps. Default 1000.
 #'
 #' @return List (A6):
-#'   \item{values}{Named numeric: final_retention vector, phase1_rate, phase2_rate, k1_k2_ratio}
+#'   \item{values}{Named numeric: final_retention vector, phase1_rate, phase2_rate, early_late_displacement_ratio, threshold_biphasicity}
 #'   \item{metadata}{List: params, n_traits, n_steps, converged, method}
 #'
 #' @section Theoretical Context:
@@ -159,15 +159,26 @@ threshold_model <- function(depths, lambda, theta, m0, alpha, time,
   phase2_unprotected <- retention_history[phase1_end + 1L, ] - retention_history[n_steps + 1L, ]
   phase2_rate <- mean(phase2_unprotected[unprotected], na.rm = TRUE)
 
-  # k1/k2 ratio (biphasic indicator)
-  k1_k2 <- if (phase2_rate > 0) phase1_rate / phase2_rate else Inf
+  # Early/late temporal displacement ratio (descriptive, NOT a rate ratio).
+  # This is large by arithmetic when the exponential decay finishes early;
+  # it measures how completely Phase 1 finished, not a two-phase rate ratio.
+  # The genuine biphasic signal is the threshold gate (see threshold_biphasicity).
+  early_late_displacement_ratio <- if (phase2_rate > 0) phase1_rate / phase2_rate else Inf
+
+  # Threshold biphasicity: the real biphasic signature. Protected traits
+  # (d >= theta) retain at 1.0; unprotected traits (d < theta) shed to ~0.
+  # A value near 1.0 means the threshold gate cleanly separates the two classes.
+  prot_ret <- if (sum(!unprotected) > 0) mean(retention[!unprotected]) else NA_real_
+  unprot_ret <- if (sum(unprotected) > 0) mean(retention[unprotected]) else NA_real_
+  threshold_biphasicity <- prot_ret - unprot_ret
 
   result <- list(
     values = list(
       final_retention = retention,
       phase1_rate = phase1_rate,
       phase2_rate = phase2_rate,
-      k1_k2_ratio = k1_k2
+      early_late_displacement_ratio = early_late_displacement_ratio,
+      threshold_biphasicity = threshold_biphasicity
     ),
     metadata = list(
       params = list(

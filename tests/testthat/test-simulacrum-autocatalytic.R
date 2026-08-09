@@ -47,7 +47,7 @@ test_that("autocatalytic simulacrum: diversity_dependence_sign detects superline
       generate_autocatalytic_set(
         n_steps = 20,
         innovation_rate = 0.3,
-        capacity = 100,
+        capacity = 30,
         n_innovations = 10,
         seed = 42
       )
@@ -62,14 +62,20 @@ test_that("autocatalytic simulacrum: diversity_dependence_sign detects superline
     seed = 42
   )
 
-  # Assert: sign = "positive" (increasing diversity)
-  expect_equal(dd_result$values[["sign"]], "positive")
+  # Assert: growth_direction = "positive" (increasing diversity)
+  expect_equal(dd_result$values[["growth_direction"]], "positive")
 
   # Assert: is_superlinear = TRUE (log-log slope > 1, autocatalytic)
   expect_true(dd_result$values[["is_superlinear"]])
 
-  # Assert: R^2 > 0.8 (good fit — logistic growth is strongly monotonic)
-  expect_gt(dd_result$values[["r_squared"]], 0.8)
+  # Assert: GENUINE positive diversity-dependence (per-capita rate increases
+  # with N — the Homo inversion signature). The generator is bounded
+  # autocatalytic, so this must read positive (unlike logistic growth, which
+  # is negatively diversity-dependent).
+  expect_equal(dd_result$values[["diversity_dependence_sign"]], "positive")
+
+  # Assert: R^2 > 0.8 (good fit — autocatalytic growth is strongly monotonic)
+  expect_gt(dd_result$values[["growth_r_squared"]], 0.8)
 
   # Run autocatalytic_closure on the catalyst matrix
   ac_result <- autocatalytic_closure(
@@ -90,9 +96,10 @@ test_that("autocatalytic simulacrum: diversity_dependence_sign detects superline
     values = c(
       test_passed = TRUE,
       sim_achieves_closure = as.numeric(sim$values$achieves_closure),
-      dd_sign = as.numeric(dd_result$values[["sign"]] == "positive"),
+      dd_growth_direction = as.numeric(dd_result$values[["growth_direction"]] == "positive"),
       dd_superlinear = as.numeric(dd_result$values[["is_superlinear"]]),
-      dd_r_squared = dd_result$values[["r_squared"]],
+      dd_positive_dependence = as.numeric(dd_result$values[["diversity_dependence_sign"]] == "positive"),
+      dd_r_squared = dd_result$values[["growth_r_squared"]],
       ac_closure = as.numeric(ac_result$values[["achieves_closure"]]),
       ac_closure_fraction = ac_result$values[["closure_fraction"]]
     ),
@@ -102,7 +109,7 @@ test_that("autocatalytic simulacrum: diversity_dependence_sign detects superline
       seed = 42,
       n_steps = 20,
       innovation_rate = 0.3,
-      capacity = 100,
+      capacity = 30,
       n_innovations = 10,
       rng_kind = "Mersenne-Twister",
       rng_normal_kind = "Inversion",
@@ -129,6 +136,11 @@ test_that("null control: non-autocatalytic data gives is_superlinear = FALSE", {
   # Linear growth has log-log slope ~ 1, not > 1
   expect_false(dd_null$values[["is_superlinear"]])
 
+  # Assert: GENUINE diversity-dependence is NEGATIVE (linear growth has
+  # per-capita rate k/N decreasing with N — niche-filling, not the Homo
+  # inversion). The null must NOT read positive diversity-dependence.
+  expect_equal(dd_null$values[["diversity_dependence_sign"]], "negative")
+
   # Validate result structure (A6)
   expect_true(validate_result(dd_null))
 
@@ -138,8 +150,9 @@ test_that("null control: non-autocatalytic data gives is_superlinear = FALSE", {
       test_passed = TRUE,
       dd_superlinear = as.numeric(dd_null$values[["is_superlinear"]]),
       dd_log_log_slope = dd_null$values[["log_log_slope"]],
-      dd_r_squared = dd_null$values[["r_squared"]],
-      dd_sign = as.numeric(dd_null$values[["sign"]] == "positive")
+      dd_r_squared = dd_null$values[["growth_r_squared"]],
+      dd_growth_direction = as.numeric(dd_null$values[["growth_direction"]] == "positive"),
+      dd_positive_dependence = as.numeric(dd_null$values[["diversity_dependence_sign"]] == "positive")
     ),
     metadata = list(
       test = "null-control-autocatalytic",
@@ -165,7 +178,7 @@ test_that("autocatalytic simulacrum generator returns A6 proof object", {
       generate_autocatalytic_set(
         n_steps = 20,
         innovation_rate = 0.3,
-        capacity = 100,
+        capacity = 30,
         seed = 42
       )
     },
@@ -183,7 +196,7 @@ test_that("autocatalytic simulacrum generator returns A6 proof object", {
   # metadata contains seed and n
   expect_equal(sim$metadata$seed, 42)
   expect_equal(sim$metadata$n, 20)
-  expect_equal(sim$metadata$model, "logistic_growth")
+  expect_equal(sim$metadata$model, "autocatalytic_growth")
 
   # innovation_counts has correct length
   expect_equal(length(sim$values$innovation_counts), 20)
