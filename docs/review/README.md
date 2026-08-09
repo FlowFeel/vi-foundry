@@ -18,6 +18,7 @@ with the standards in [`docs/standards/`](../standards/).
 | [`math-review.md`](math-review.md) | Audit of the mathematics vs. the implementation vs. the claims: does the code realize the math it states, and do the claims follow? Seven issues ranked by severity (two severe). |
 | [`refactoring-plan.md`](refactoring-plan.md) | Execution plan for the math-review issues: proposed refactoring, blast radius, risk, and phasing for each of the seven issues (three phases, safest-first). |
 | [`vi-foundry-phased-breakdown.md`](vi-foundry-phased-breakdown.md) | Phase-by-phase breakdown of the foundry build, current gate status, and the open data-reconciliation work (items 4–6). |
+| [`algorithms-and-findings.md`](algorithms-and-findings.md) | Formal, literate survey of every algorithm, its prediction, its competitor, and a plain-language reading of the current result. The synthesis of what the foundry establishes, what it does not, and what that means for the framework. |
 
 ## How the code references this review
 
