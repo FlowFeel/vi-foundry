@@ -1,9 +1,14 @@
 # docker-compose.test.yml — The simulacrum stack
 #
-# Read-only source mounts prevent accidental contamination.
-# Writable output volume shared with verifier.
-# Postgres healthcheck ensures DB ready before R/Python start.
-# service_completed_successfully: verifier waits for analysis to finish.
+# The r-runtime installs the package from the mounted source, runs the
+# simulacrum (parameter-recovery) and integration (end-to-end) testthat gates,
+# and writes a success marker to the shared output volume on exit. Postgres is
+# available so the data-integrity BDD scenario can run a real DB round-trip
+# (set RUN_DB_INTEGRATION=true). The verifier waits for the r-runtime to
+# complete, then checks the success marker.
+#
+# Read-only source mounts prevent accidental contamination. The writable
+# output volume is shared between r-runtime and verifier.
 
 services:
   r-runtime:
@@ -11,31 +16,24 @@ services:
       context: ..
       dockerfile: docker/r-runtime/Dockerfile
     volumes:
-      - ../R:/workspace/R:ro
-      - ../tests:/workspace/tests:ro
-      - ../data:/workspace/data:ro
-      - ../inst:/workspace/inst:ro
-      - ../baseline:/workspace/baseline:ro
-      - ../pipeline.yml:/workspace/pipeline.yml:ro
+      - ..:/workspace:ro
       - test-output:/workspace/output
+    working_dir: /workspace
+    command: >
+      sh -c "
+        R CMD INSTALL /workspace &&
+        Rscript run_tests.R simulacra &&
+        Rscript run_tests.R integration &&
+        touch /workspace/output/success
+      "
     environment:
       - R_LIBS_USER=/usr/local/lib/R/site-library
-    depends_on:
-      postgres:
-        condition: service_healthy
-    networks:
-      - sim-net
-
-  python-runtime:
-    build:
-      context: ..
-      dockerfile: docker/python-runtime/Dockerfile
-    volumes:
-      - ../tests:/workspace/tests:ro
-      - ../baseline:/workspace/baseline:ro
-      - test-output:/workspace/output
-    environment:
-      - PYTHONPATH=/workspace
+      - RUN_DB_INTEGRATION=true
+      - PGHOST=postgres
+      - PGPORT=5432
+      - PGDATABASE=simulation_test
+      - PGUSER=sim
+      - PGPASSWORD=simulacrum
     depends_on:
       postgres:
         condition: service_healthy
@@ -66,14 +64,9 @@ services:
       dockerfile: docker/verifier/Dockerfile
     volumes:
       - test-output:/workspace/output:ro
-      - ../baseline:/workspace/baseline:ro
     depends_on:
       r-runtime:
         condition: service_completed_successfully
-    environment:
-      - TOLERANCE=0.001
-      - BASELINE_DIR=/workspace/baseline
-      - OUTPUT_DIR=/workspace/output
     networks:
       - sim-net
 
