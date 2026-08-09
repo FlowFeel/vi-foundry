@@ -28,8 +28,8 @@ library(testthat)
 
 context("Simulacrum 2: Biphasic kinetics")
 
-# Source the generator
-source(file.path("inst", "simulacra", "generate_biphasic_genome.R"))
+# Generator is sourced by helper-simulacra.R (inst/simulacra/ is outside R/,
+# so it is not exported via NAMESPACE).
 
 # ---- Helper: compute AICc ----
 
@@ -151,7 +151,7 @@ test_simulacrum_biphasic <- function(
       delta_aicc <- aicc_linear - aicc_logistic # positive = logistic preferred
 
       coefs <- stats::coef(mod_logistic)
-      recovered_rate <- coefs["rate"]
+      recovered_rate <- unname(coefs["rate"])
       rate_error_pct <- abs(recovered_rate - true_rate) / true_rate * 100
     } else {
       r2_logistic <- 0
@@ -275,7 +275,7 @@ test_simulacrum_biphasic <- function(
 test_that("Simulacrum 2: logistic R² > linear R² for biphasic data", {
   result <- test_simulacrum_biphasic(seed = 42)
   expect_true(validate_result(result))
-  expect_true(result$values["r2_logistic"] > result$values["r2_linear"],
+  expect_true(result$values[["r2_logistic"]] > result$values[["r2_linear"]],
     info = "Logistic model should fit biphasic data better than linear"
   )
 })
@@ -283,20 +283,20 @@ test_that("Simulacrum 2: logistic R² > linear R² for biphasic data", {
 test_that("Simulacrum 2: ΔAICc > 4 (logistic strongly preferred)", {
   # Use Mersenne-Twister + Inversion for full reproducibility
   result <- test_simulacrum_biphasic(seed = 42)
-  expect_true(result$values["delta_aicc"] > 4,
+  expect_true(result$values[["delta_aicc"]] > 4,
     info = "ΔAICc > 4 indicates logistic strongly preferred over linear"
   )
 })
 
 test_that("Simulacrum 2: recovered rate within 50% of true rate (0.08)", {
   result <- test_simulacrum_biphasic(seed = 42)
-  expect_true(!is.na(result$values["rate_error_pct"]))
-  expect_lt(result$values["rate_error_pct"], 50,
+  expect_true(!is.na(result$values[["rate_error_pct"]]))
+  expect_true(result$values[["rate_error_pct"]] < 50,
     info = "Recovered logistic rate should be within 50% of true rate (0.08)"
   )
   expect_true(
-    result$values["recovered_rate"] > 0.04 &&
-      result$values["recovered_rate"] < 0.12,
+    result$values[["recovered_rate"]] > 0.04 &&
+      result$values[["recovered_rate"]] < 0.12,
     info = "Recovered rate should be between 0.04 and 0.12 (50% of 0.08)"
   )
 })
@@ -304,11 +304,11 @@ test_that("Simulacrum 2: recovered rate within 50% of true rate (0.08)", {
 test_that("Simulacrum 2: null control — ΔAICc < 4 (logistic NOT preferred)", {
   result <- test_simulacrum_biphasic(seed = 42)
   expect_true(
-    is.finite(result$values["null_delta_aicc"]) ||
-      result$values["null_delta_aicc"] == -Inf,
+    is.finite(result$values[["null_delta_aicc"]]) ||
+      result$values[["null_delta_aicc"]] == -Inf,
     info = "Null control should not strongly prefer logistic model"
   )
-  expect_true(result$values["null_delta_aicc"] < 4,
+  expect_true(result$values[["null_delta_aicc"]] < 4,
     info = "ΔAICc < 4 for null data: logistic NOT strongly preferred"
   )
 })
@@ -333,7 +333,7 @@ test_that("Simulacrum 2: returns A6 proof object", {
 
 test_that("Simulacrum 2: full test passes (all assertions met)", {
   result <- test_simulacrum_biphasic(seed = 42)
-  expect_true(result$values["test_passed"] == 1,
+  expect_true(result$values[["test_passed"]] == 1,
     info = "All assertions must pass for Simulacrum 2"
   )
 })
@@ -343,11 +343,11 @@ test_that("Simulacrum 2: different seed yields different data but same conclusio
   r2 <- test_simulacrum_biphasic(seed = 99)
   # Different seed should produce different data
   expect_true(
-    r1$values["r2_logistic"] != r2$values["r2_logistic"] ||
-      r1$values["r2_linear"] != r2$values["r2_linear"],
+    r1$values[["r2_logistic"]] != r2$values[["r2_logistic"]] ||
+      r1$values[["r2_linear"]] != r2$values[["r2_linear"]],
     info = "Different seeds should produce different data (different R² values)"
   )
   # Both should still pass the test
-  expect_true(r1$values["test_passed"] == 1)
-  expect_true(r2$values["test_passed"] == 1)
+  expect_true(r1$values[["test_passed"]] == 1)
+  expect_true(r2$values[["test_passed"]] == 1)
 })

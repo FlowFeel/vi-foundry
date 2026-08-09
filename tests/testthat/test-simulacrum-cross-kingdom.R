@@ -48,10 +48,10 @@ test_that("Simulacrum: cross-kingdom transfer recovers known shared slope (singl
       expect_true(validate_result(result))
 
       # Plant slope should be positive (recovered from the data)
-      expect_gt(unname(result$values["plant_slope"]), 0)
+      expect_gt(unname(result$values[["plant_slope"]]), 0)
 
       # Assert: ordering transfers across kingdoms (bird_rho > 0.7)
-      expect_gt(result$values["bird_rho"], 0.7)
+      expect_gt(result$values[["bird_rho"]], 0.7)
     }
   )
 })
@@ -80,7 +80,7 @@ test_that("Simulacrum: independent slopes produce no cross-kingdom transfer (nul
       result <- transfer_test(data$plant, data$bird, seed = 42)
 
       # Assert: bird_rho < 0.3 (no transfer across independent slopes)
-      expect_lt(result$values["bird_rho"], 0.3)
+      expect_lt(result$values[["bird_rho"]], 0.3)
     }
   )
 })
@@ -126,9 +126,9 @@ test_that("Simulacrum: cross-kingdom transfer robust across 50 simulations (90%+
     )
 
     result <- transfer_test(data$plant, data$bird, seed = test_seed)
-    rho_values[i] <- result$values["bird_rho"]
+    rho_values[i] <- result$values[["bird_rho"]]
 
-    if (result$values["bird_rho"] > 0.7) {
+    if (result$values[["bird_rho"]] > 0.7) {
       n_recovered <- n_recovered + 1
     }
   }
@@ -172,9 +172,9 @@ test_that("Simulacrum: independent slopes null control robust across 50 simulati
     )
 
     result <- transfer_test(data$plant, data$bird, seed = test_seed)
-    null_rho_values[i] <- result$values["bird_rho"]
+    null_rho_values[i] <- result$values[["bird_rho"]]
 
-    if (result$values["bird_rho"] < 0.3) {
+    if (result$values[["bird_rho"]] < 0.3) {
       specificity_passes <- specificity_passes + 1
     }
   }
@@ -211,7 +211,7 @@ test_that("Simulacrum: independent slopes null control robust across 50 simulati
     bird_noise_sd = 0.5
   )
   result <- transfer_test(data$plant, data$bird, seed = 42)
-  bird_rho <- unname(result$values["bird_rho"])
+  bird_rho <- unname(result$values[["bird_rho"]])
 
   # ── Null control: independent slopes (seed 42) ──
   data_null <- generate_cross_kingdom_data(
@@ -222,7 +222,7 @@ test_that("Simulacrum: independent slopes null control robust across 50 simulati
     bird_noise_sd = 0.5
   )
   result_null <- transfer_test(data_null$plant, data_null$bird, seed = 42)
-  null_rho <- unname(result_null$values["bird_rho"])
+  null_rho <- unname(result_null$values[["bird_rho"]])
 
   # ── 50-simulation recovery rate ──
   n_sims <- 50
@@ -237,7 +237,7 @@ test_that("Simulacrum: independent slopes null control robust across 50 simulati
       bird_noise_sd = 0.5
     )
     r <- transfer_test(d$plant, d$bird, seed = 6000L + i)
-    if (unname(r$values["bird_rho"]) > 0.7) {
+    if (unname(r$values[["bird_rho"]]) > 0.7) {
       n_recovered <- n_recovered + 1
     }
 
@@ -249,7 +249,7 @@ test_that("Simulacrum: independent slopes null control robust across 50 simulati
       bird_noise_sd = 0.5
     )
     r_null <- transfer_test(d_null$plant, d_null$bird, seed = 8000L + i)
-    if (unname(r_null$values["bird_rho"]) < 0.3) {
+    if (unname(r_null$values[["bird_rho"]]) < 0.3) {
       specificity_passes <- specificity_passes + 1
     }
   }
@@ -276,8 +276,8 @@ test_that("Simulacrum: independent slopes null control robust across 50 simulati
       recovery_rate = n_recovered / n_sims,
       specificity_passes = specificity_passes,
       specificity_rate = specificity_passes / n_sims,
-      plant_slope = unname(result$values["plant_slope"]),
-      bird_p = unname(result$values["bird_p"]),
+      plant_slope = unname(result$values[["plant_slope"]]),
+      bird_p = unname(result$values[["bird_p"]]),
       null_bird_rho = null_rho,
       n_plant = 6,
       n_bird = 8,
