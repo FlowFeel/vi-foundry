@@ -221,4 +221,5 @@ MIT
 - VI Monograph: "A Trajectory Account of Adaptive Evolution from Homo to the Wider Animal Kingdom" (Jan Ritch-Frel, 2026)
 - Phosphene R Standards: `docs/standards/PHOSPHENE_R_STANDARDS.md`
 - Review: [`docs/review/valence-ingression-review.md`](docs/review/valence-ingression-review.md) — critical review of the VI monograph and the foundry artifacts (numbered Remarks R1… and Review Items 1–6; the code cites these directly)
+- Calculation review: [`docs/review/calculation-review.md`](docs/review/calculation-review.md) — literate walkthrough of the calculation audit: each divergence traced to its root cause, with the data, the broken output, the diagnosis, and the fix
 - Phased breakdown: [`docs/review/vi-foundry-phased-breakdown.md`](docs/review/vi-foundry-phased-breakdown.md) — phase-by-phase build, gate status, and the open data-reconciliation work (items 4–6)

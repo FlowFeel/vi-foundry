@@ -1,7 +1,8 @@
-# Review & Phased Breakdown
+# Review, Calculation Audit & Phased Breakdown
 
 This directory holds the critical review of the Valence-Ingression (VI) framework
-monograph and of this repository's computational artifacts, together with the
+monograph and of this repository's computational artifacts, the literate
+calculation audit that traces every divergence to its root cause, and the
 phased breakdown of how the foundry was built.
 
 These documents are authored by **Ed Phillips**
@@ -13,6 +14,7 @@ with the standards in [`docs/standards/`](../standards/).
 | Document | What it is |
 |----------|-----------|
 | [`valence-ingression-review.md`](valence-ingression-review.md) | Critical review of the VI monograph (Ritch-Frel, v9) and the vi-foundry artifacts. Numbered **Remarks** (R1…) and **Review Items** (1–6). The foundry's code cites these directly. |
+| [`calculation-review.md`](calculation-review.md) | Literate walkthrough of the calculation audit: for each oracle entry, the prediction, the broken output, the root-cause diagnosis, and the fix. The analysis-level companion to the review. |
 | [`vi-foundry-phased-breakdown.md`](vi-foundry-phased-breakdown.md) | Phase-by-phase breakdown of the foundry build, current gate status, and the open data-reconciliation work (items 4–6). |
 
 ## How the code references this review
