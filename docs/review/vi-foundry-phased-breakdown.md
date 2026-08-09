@@ -18,15 +18,16 @@ tracked here is the review's items 4–6.
 | Unit (`make unit`) | 10 | 309 expectations | ✅ green |
 | Simulacra (`make simulacra`) | 5 | 107 expectations | ✅ green |
 | Integration (`make integration`) | 1 | 13 expectations (1 skip) | ✅ green |
-| Regression (`make regression`) | 1 | 9 skips | ⚠️ items 4–6 |
-| **Full suite** | **17** | **429 pass / 0 fail / 10 skip** | ✅ no failures |
+| Regression (`make regression`) | 1 | 4 pass / 7 skips | ⚠️ items 4–6 |
+| **Full suite** | **17** | **433 pass / 0 fail / 8 skip** | ✅ no failures |
 
 Coverage gate (CI, `unit` job): ≥ 80%, enforced. Lint (`lintr`): non-blocking
 advisory in CI. R CMD check (`check` job): `error_on = "error"`.
 
-The 10 skips are not failures: 1 integration skip is the Postgres round-trip
-(requires `RUN_DB_INTEGRATION=true` / the Docker stack); 9 regression skips are
-the data-reconciliation items 4–6 from the review.
+The 8 skips are not failures: 1 integration skip is the Postgres round-trip
+(requires `RUN_DB_INTEGRATION=true` / the Docker stack); 7 regression skips are
+2 missing datasets (items 4–5), 4 data-version drift where the science holds
+(item 6), and 1 method misspecification (T3, R6).
 
 ---
 
@@ -115,9 +116,12 @@ corroboration, not method validity.
   data. Crucially, a known gate matching zero files is a hard error in
   `run_tests.R` — the gate cannot pass by running nothing.
 
-**Status:** structurally complete; **empirically open (items 4–6)**. 9 skips:
-T6 + L3 have no bundled data (items 4–5); T1–T5 + T7 drift (item 6). Closing
-the items converts skips to enforced `expect_equal` automatically.
+**Status:** structurally complete; **partially passing**. After the
+calculation review, 2 entries pass (T5, formal_model) and T4 confirms VI (niche
+subsumes Ne). 7 skips remain: T6 + L3 have no bundled data (items 4–5); T1, T2,
+T4, T7 drift on data-version (item 6 — science holds); T3 is method-misspecified
+(R6 — cross-sectional cannot test within-lineage kinetics). Closing the items
+converts the skips into enforced `expect_equal` checks automatically.
 
 ## Phase 5 — CI/CD (seven gates)
 
@@ -177,8 +181,10 @@ regression gate and a fully enforced oracle. They are owned by the review
 | 5 | L3 cross-kingdom | `island_bird_morphology.csv` not bundled | skip → `expect_equal` (bird ρ, p) |
 | 6 | T1–T5, T7 | bundled data drifts from oracle | skip → `expect_equal` (per-field, tol) |
 
-Until then, the regression gate is honest by design: it reports the 9 skips
+Until then, the regression gate is honest by design: it reports the 7 skips
 with reasons, rather than passing silently. The foundry's claim today is
 **"the instrument is calibrated and the methodology is validated on synthetic
-data; the empirical corroboration of the discriminating predictions is pending
-data reconciliation."**
+data; two discriminating predictions are now empirically corroborated (T5,
+formal_model) and a third is confirmed (T4, niche subsumes Ne); the remaining
+discriminating predictions are pending data reconciliation (items 4-6) and a
+method redesign (T3, R6)."**
