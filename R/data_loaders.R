@@ -298,3 +298,46 @@ load_island_birds <- function() {
     "Island bird flight-loss morphological rankings"
   )
 }
+
+#' Load Orobanchaceae retention matrix
+#
+#' Loads the 8-species × 6-gene-category plastid-gene retention matrix with
+#' parasitism scores and integration-depth (dependency) scores. This is the
+#' empirical data for the formal model (the author's original 8×6 matrix,
+#' correctly flattened gene-major — see Remark R7).
+#
+#' @return List with data (data frame) and metadata.
+#
+#' @section Theoretical Context:
+#
+#' The retention matrix is the empirical basis for `empirical_formal_model()`:
+#' VI predicts dep > 0 (deeper integration → more retention) and para < 0
+#' (deeper parasitism → less retention). The competitor (random loss)
+#' predicts no dep effect. The author's original additive GLM produced the
+#' wrong sign due to a data-flattening bug (`as.vector(t(retention))` is
+#' species-major; `rep(dep_scores, each=8)` is gene-major). This dataset
+#' uses the corrected flattening (`as.vector(retention)`, gene-major).
+#
+#' @dft
+#' - A1, A6
+#'
+#' @export
+load_retention_matrix <- function() {
+  data_path <- resolve_data_file("orobanchaceae_retention_matrix.tsv")
+
+  if (!file.exists(data_path)) {
+    stop("orobanchaceae_retention_matrix.tsv not found.", call. = FALSE)
+  }
+
+  data <- utils::read.table(data_path,
+    header = TRUE, sep = "\t",
+    stringsAsFactors = FALSE
+  )
+
+  validate_retention_data(data)
+
+  make_result(
+    data, "retention_matrix",
+    "Orobanchaceae 8x6 plastid-gene retention matrix (corrected flattening)"
+  )
+}

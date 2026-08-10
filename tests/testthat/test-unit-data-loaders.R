@@ -135,6 +135,40 @@ test_that("load_island_birds errors gracefully when data missing", {
   expect_error(load_island_birds(), "not found")
 })
 
+test_that("load_island_birds returns valid result when data bundled", {
+  skip_if_not(
+    has_bundled_data("island_bird_morphology.csv"),
+    "Bird data not bundled"
+  )
+
+  result <- load_island_birds()
+  expect_true(is_data_result(result))
+  expect_true("structure" %in% names(result$data))
+  expect_true("dependency_score" %in% names(result$data))
+  expect_true("observed_rank" %in% names(result$data))
+  expect_true(result$metadata$n >= 5)
+})
+
+test_that("load_retention_matrix returns valid result", {
+  skip_if_not(
+    has_bundled_data("orobanchaceae_retention_matrix.tsv"),
+    "Retention matrix not bundled"
+  )
+
+  result <- load_retention_matrix()
+  expect_true(is_data_result(result))
+  expect_s3_class(result$data, "data.frame")
+  expect_equal(result$metadata$name, "retention_matrix")
+  expect_equal(result$metadata$n, 48)  # 8 species x 6 gene categories
+  expect_true("species" %in% names(result$data))
+  expect_true("parasitism_score" %in% names(result$data))
+  expect_true("gene_category" %in% names(result$data))
+  expect_true("dependency_score" %in% names(result$data))
+  expect_true("retention" %in% names(result$data))
+  expect_true(all(result$data$retention >= 0))
+  expect_true(all(result$data$retention <= 1))
+})
+
 test_that("all loaders return A6 proof objects with metadata", {
   skip_if_not(
     has_bundled_data("species_plastome_data.tsv"),

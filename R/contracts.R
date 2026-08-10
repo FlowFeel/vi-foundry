@@ -294,6 +294,70 @@ validate_bird_morphology <- function(data) {
   invisible(TRUE)
 }
 
+#' Validate Orobanchaceae retention-matrix data
+#
+#' Checks that the input maps species × gene-category retention probabilities
+#' with parasitism scores and integration-depth (dependency) scores — the
+#' 8×6 matrix from the author's formal-model script (correctly flattened:
+#' gene-major, one row per species-gene pair).
+#
+#' @param data Data frame with species, parasitism_score, gene_category,
+#'   dependency_score, and retention columns.
+#
+#' @return Invisible TRUE if valid. Stops with error if invalid.
+#
+#' @section Theoretical Context:
+#
+#' The retention matrix is the empirical data for the formal model: it
+#' records plastid-gene retention (0–1) for 8 Orobanchaceae species across a
+#' parasitism gradient (0–4) and 6 gene categories with dependency scores
+#' (0–5). VI predicts: higher dependency → higher retention (dep > 0);
+#' deeper parasitism → lower retention (para < 0). The competitor (random
+#' loss) predicts no dep effect. The author's original GLM produced the wrong
+#' sign because of a data-flattening bug (Remark R7); this validator guards
+#' the corrected dataset.
+#
+#' @dft
+#' - A1 (pure-io-separation): pure function
+#'
+#' @export
+validate_retention_data <- function(data) {
+  required <- c("species", "parasitism_score", "gene_category",
+    "dependency_score", "retention")
+  if (!is.data.frame(data)) {
+    stop("data must be a data.frame", call. = FALSE)
+  }
+  missing <- setdiff(required, names(data))
+  if (length(missing) > 0L) {
+    stop(sprintf("data missing required columns: %s",
+      paste(missing, collapse = ", ")), call. = FALSE)
+  }
+  if (!is.numeric(data$parasitism_score)) {
+    stop("parasitism_score must be numeric", call. = FALSE)
+  }
+  if (any(data$parasitism_score < 0, na.rm = TRUE)) {
+    stop("parasitism_score must be non-negative", call. = FALSE)
+  }
+  if (!is.numeric(data$dependency_score)) {
+    stop("dependency_score must be numeric", call. = FALSE)
+  }
+  if (any(data$dependency_score < 0, na.rm = TRUE)) {
+    stop("dependency_score must be non-negative", call. = FALSE)
+  }
+  if (!is.numeric(data$retention)) {
+    stop("retention must be numeric", call. = FALSE)
+  }
+  if (any(data$retention < 0, na.rm = TRUE) ||
+        any(data$retention > 1, na.rm = TRUE)) {
+    stop("retention must be in [0, 1]", call. = FALSE)
+  }
+  if (nrow(data) < 10L) {
+    stop(sprintf("data has %d rows, need >= 10 for GLM", nrow(data)),
+      call. = FALSE)
+  }
+  invisible(TRUE)
+}
+
 #' Validate Bobay-Ochman niche data
 #'
 #' Checks that the input has species, Ne, and niche breadth columns
