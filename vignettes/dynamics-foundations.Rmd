@@ -1,0 +1,312 @@
+---
+title: "Dynamics Foundations of the VI Foundry"
+author: "Ed Phillips, Jan Ritch-Frel, Flow Feel"
+date: "`r Sys.Date()`"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Dynamics Foundations}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r setup, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  fig.align = "center",
+  warning = FALSE,
+  message = FALSE
+)
+
+library(vi.foundry)
+library(ggplot2)
+```
+
+## Overview
+
+This document gives the mathematical foundations of the **dynamics module** of
+the VI (Valence-Ingression) framework. Three families of dynamics are treated:
+
+1. The **cusp catastrophe** — how a bistable equilibrium `x³ + ax + b = 0`
+   produces hysteresis and irreversibility.
+2. **Autocatalytic growth** — why the per-capita innovation rate *rises* with
+   diversity (the "Homo inversion") and why growth stays bounded.
+3. **Cross-kingdom transfer** — what transfers between biological and cultural
+   domains (the *sign* of a pattern) and what does not (its *magnitude*).
+4. **Economics** — commitment-driven (CDI) option-value decay and stochastic
+   CDI paths.
+
+Every result that is *proved* here is returned as a `vi_proof` object
+(statement, LaTeX-like derivation, `QED` result, a `verified` flag and a
+`numeric_check` cab), and every module result is wrapped in an S3 class
+(`vi_cusp_result`, `vi_autocatalytic_result`, `vi_economics_result`) built on
+the shared `vi_dynamics_result` base — the Phosphene R Standards §7
+three-layer pattern (constructor → validator → helper).
+
+All functions obey the DFT axioms: **A1** (pure IO separation), **A2**
+(determinism), **A6** (check-result with provenance).
+
+---
+
+## 1. The Cusp Catastrophe
+
+### 1.1 The equilibrium
+
+The dynamics module tracks a system whose equilibrium solves the canonical
+cusp normal form
+
+$$x^3 + a\,x + b = 0,$$
+
+where $x$ is the state (e.g. an attained diversity level or a commitment) and
+$b$ is the swept control parameter, while $a$ sets the shape of the response
+surface.
+
+```{r cusp-first-look}
+proof_pos <- prove_cusp_bifurcation(a = 1, b = 0.3)
+proof_pos$verified               # no bifurcation for a > 0
+proof_neg <- prove_cusp_bifurcation(a = -1, b = 0.2)
+proof_neg$verified               # bistable (3 real roots) for a < 0
+```
+
+### 1.2 The bifurcation set
+
+The discriminant of the cubic $x^3 + p x + q$ is
+$\Delta = -4p^3 - 27q^2$. With $p = a$ and $q = b$:
+
+$$\Delta(a,b) = -4a^3 - 27b^2.$$
+
+* **Case a > 0.** Since $-4a^3 < 0$ and $-27b^2 \le 0$, always $\Delta < 0$:
+  exactly **one real root**, so the response is single-valued and there is no
+  bifurcation.
+* **Case a < 0.** Now $-4a^3 > 0$, so $\Delta > 0$ precisely when
+  $27b^2 < -4a^3$, i.e.
+
+$$|b| < b_{\mathrm{crit}} := \frac{2}{3\sqrt{3}}\,(-a)^{3/2},$$
+
+which yields **three real roots** — the bistable regime. The boundary where
+the cubic acquires a double root is the **bifurcation set**:
+
+$$\boxed{\,4a^3 + 27b^2 = 0\,}$$
+
+```{r cusp-bif-set}
+b_crit <- (2 / (3 * sqrt(3))) * 1^(3 / 2)   # for a = -1
+b_crit
+```
+
+### 1.3 Hysteresis derivation
+
+Within the bistable region there are two *stable* branches (an upper and a
+lower) separated by an unstable middle branch. When the control $b$ is ramped
+up, branch-following keeps the state on the upper branch until it collapses at
+the upper saddle-node; when $b$ is ramped back down, the state persists on the
+lower branch. The forward and reverse sweeps therefore trace **different**
+paths — path dependence, i.e. **hysteresis**.
+
+The hysteresis loop *area* is the integral of the branch separation over the
+bistable range,
+
+$$A = \int_{-b_{\mathrm{crit}}}^{b_{\mathrm{crit}}}
+   \big(x_{\mathrm{hi}}(b) - x_{\mathrm{lo}}(b)\big)\,db,$$
+
+where $x_{\mathrm{hi}}$ and $x_{\mathrm{lo}}$ are the two outer real roots of
+the cubic. This analytical area is reproduced by the trapezoid-rule loop area
+recovered from the numeric forward/reverse sweeps.
+
+```{r cusp-loop}
+loop_proof <- prove_hysteresis_loop_area(a = -1, control_range = c(-2, 2), n = 200)
+loop_proof$verified   # numeric area matches analytic area
+loop_proof$numeric_check
+```
+
+```{r cusp-plot, fig.width=6, fig.height=4}
+eq_fn <- make_cusp_equilibrium_fn(a = -1)
+cv <- seq(-2, 2, length.out = 200)
+res <- cusp_hysteresis_check(cv, eq_fn, seed = 42L)
+df <- data.frame(
+  control  = rep(cv, 2),
+  state    = c(res$values$forward_states, res$values$reverse_states),
+  sweep    = rep(c("forward", "reverse"), each = length(cv))
+)
+ggplot(df, aes(control, state, colour = sweep)) +
+  geom_line() +
+  labs(title = "Hysteresis loop of the cusp (a = -1)",
+       x = "control b", y = "equilibrium state x") +
+  theme_minimal()
+```
+
+---
+
+## 2. Autocatalytic Growth
+
+### 2.1 Per-capita rate increases with diversity
+
+Consider autocatalytic growth
+
+$$\frac{dN}{dt} = r\,N\left(\frac12 + \frac12\,\frac{N}{N+K}\right),$$
+
+so the per-capita rate is
+
+$$f(N) = r\left(\frac12 + \frac12\,\frac{N}{N+K}\right).$$
+
+Differentiating,
+
+$$\frac{df}{dN} = \frac{r}{2}\,\frac{d}{dN}\!\left(\frac{N}{N+K}\right)
+= \frac{r}{2}\,\frac{K}{(N+K)^2} > 0 \qquad (N>0).$$
+
+The per-capita rate is **monotonically increasing** — the "Homo inversion".
+By contrast the logistic per-capita rate $g(N)=r(1-N/K)$ has
+$dg/dN = -r/K < 0$: niche-filling predicts a *decreasing* per-capita rate.
+This sign flip is exactly what distinguishes VI from its competitor.
+
+```{r dd-sign}
+dd_proof <- prove_dd_sign(r = 1, K = 10, N_max = 100, n_grid = 100)
+dd_proof$verified
+dd_proof$numeric_check   # min d/dN of per-capita rate (positive)
+```
+
+### 2.2 Boundedness
+
+At $N=0$ the rate is $f(0) = r/2$; as $N \to \infty$, $N/(N+K)\to 1$ so
+$f(N) \to r$. Since $0 \le N/(N+K) < 1$, we always have
+$r/2 \le f(N) < r$:
+
+* the rate is **bounded below** by $r/2$ and **above** by $r$ (no blow-up);
+* growth is at most linear in $N$, so counts cannot explode in finite time.
+
+```{r bounded}
+bnd_proof <- prove_autocatalytic_growth_rate(r = 1, K = 10, N_max = 5000, n_grid = 100)
+bnd_proof$verified
+```
+
+```{r growth-plot, fig.width=6, fig.height=4}
+NN <- seq(0, 200, length.out = 400)
+df2 <- data.frame(
+  N = NN,
+  rate = 1 * (0.5 + 0.5 * NN / (NN + 10))
+)
+ggplot(df2, aes(N, rate)) +
+  geom_hline(yintercept = c(0.5, 1), lty = 2, colour = "grey40") +
+  geom_line(colour = "#C0392B", linewidth = 1) +
+  labs(title = "Autocatalytic per-capita rate: 0.5r up to r (bounded)",
+       y = "per-capita rate f(N)") +
+  theme_minimal()
+```
+
+The `vi_autocatalytic_result` class packages these quantities. We can coerce a
+raw `diversity_dependence_sign()` output into the classed result:
+
+```{r auto-class}
+counts <- c(1, 2, 4, 8, 15, 28, 52, 96, 180, 340)
+raw <- diversity_dependence_sign(counts, seed = 42L)
+res <- as_vi_autocatalytic_result(raw)
+res$values$diversity_dependence_sign
+summary(res)
+```
+
+---
+
+## 3. Cross-Kingdom Transfer
+
+The inference framework is *scaled across kingdoms*: a pattern that is an
+inversion-invariant **sign** (e.g. "positive diversity-dependence", "negative
+option decay in commitment") is expected to reproduce across biological and
+cultural substratescars — **the sign transfers**. What does **not** transfer is
+**magnitude**: the numeric slope or area depends on domain-specific units,
+time scales, and carrying capacities.
+
+Viewed through the cusp, the *shape* of the bifurcation (presence/absence of
+hysteresis, positive loop area) is the transferable invariant; the specific
+$a,K,r$ are per-system. Proof functions verify a **sign/structure** invariant,
+never a magnitude, which is why `prove_dd_sign()` proves a *sign* (positive vs
+negative) and `prove_autocatalytic_growth_rate()` proves *boundedness* (a
+qualitative, magnitude-free property).
+
+The cross-kingdom expectation is therefore:
+
+| Property | Transfers? | Why |
+|----------|-----------|-----|
+| Sign of diversity-dependence | Yes | sign is inversion-invariant |
+| Presence of hysteresis | Yes | structural, magnitude-free |
+| Boundedness of growth | Yes | qualitative, no units |
+| Numeric per-capita slope | No | domain-specific magnitude |
+| Loop area (absolute) | No | units depend on control scaling |
+
+---
+
+## 4. Economics
+
+### 4.1 CDI trajectory
+
+Commitment-driven disruptions are described by a *commitment-diversity index*
+(CDI) trajectory that accrues fast early and decelerates as it saturates —
+commitment is a bounded sum of committed capacity, so CDI lives in
+$[0,1]$.
+
+### 4.2 Option-value decay
+
+Standard options theory decays the value of the pivot option exponentially in
+*time*; VI couples decay to *commitment*: because remaining capacity is
+$1 - \text{CDI}$, the option value falls monotonically as CDI rises.
+
+```{r econ-opt}
+cdi_grid <- seq(0, 1, length.out = 30)
+k <- 2
+option_value <- exp(-k * cdi_grid)
+econ <- vi_economics_result(
+  cdi = cdi_grid,
+  option_value = option_value,
+  stochastic_paths = matrix(rep(cdi_grid, 3), ncol = 3),
+  threshold_disruption = cdi_grid > 0.8
+)
+all(diff(econ$values$option_value) <= 0)   # non-increasing option value
+```
+
+### 4.3 Stochastic CDI paths
+
+Because CDI is a bounded quantity it is sensible to model it as a
+mean-reverting, *bounded* stochastic process: each simulated path is clamped
+to $[0,1]$.
+
+```{r econ-stoch}
+set.seed(42)
+sres <- stochastic_cdi(mu0 = 0.5, sigma0 = 0.2, cdi_init = 0.01,
+                       n_steps = 200L, threshold = 0.8, seed = 42L)
+path <- sres$metadata$path
+range(path)           # within [0, 1]
+```
+
+```{r econ-plot, fig.width=6, fig.height=4}
+df3 <- data.frame(
+  step = seq_along(path),
+  cdi  = path
+)
+ggplot(df3, aes(step, cdi)) +
+  geom_hline(yintercept = c(0, 1), lty = 2, colour = "grey40") +
+  geom_line(colour = "#2E86C1") +
+  labs(title = "Stochastic CDI path (bounded in [0, 1])",
+       x = "time step", y = "CDI") +
+  ylim(0, 1) +
+  theme_minimal()
+```
+
+The `vi_economics_result` class bundles the CDI trajectory, option-value
+schedule, stochastic paths, and disruption outcome, and — like all
+dynamics results — prints, summarises to a tidy data.frame, and converts via
+`as.data.frame()`.
+
+---
+
+## Summary
+
+The dynamics module is mathematically closed at three levels:
+
+* **Cusp catastrophe** — bifurcation set $4a^3 + 27b^2 = 0$, hysteresis
+  derived from branch-following, loop area verified analytically vs
+  numerically.
+* **Autocatalytic growth** — strictly increasing per-capita rate (positive
+  DD), bounded between $r/2$ and $r$: the substrate for the Homo inversion.
+* **Economics** — bounded CDI, monotone option decay in commitment.
+
+Because the proofs fix *signs and structure* rather than magnitudes, their
+conclusions transfer across kingdoms while the specifics are per-system — the
+central epistemology of the VI framework.
