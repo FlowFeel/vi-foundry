@@ -790,3 +790,409 @@ plot_dd_contrast <- function(contrast_result) {
 
   patchwork::wrap_plots(p1, p2, ncol = 2)
 }
+
+# =====================================================================
+# Realm 4 — The cross-kingdom transfer explorer
+# =====================================================================
+#
+# THEORETICAL MOTIVATION (math-review Issue 7 + Remark R7):
+#
+# The cross-kingdom transfer is the monograph's strongest claim: a model
+# fit to one kingdom (plants) predicts the ordering in another (birds).
+# But the foundry's transfer_test() transfers only the slope SIGN — ranking
+# discards magnitude by construction (Issue 7). And the empirical GLM
+# (empirical_formal_model()) forces all birds to the same parasitism level
+# (para_for_transfer = 3), which makes ITS transfer sign-only too: when para
+# is constant, rank(logistic(a + b*dep + c*const)) = rank(dep) if b > 0.
+#
+# This realm asks: when would the FULL model (both coefficients + the
+# logistic link) transfer genuinely MORE than the sign alone? Answer: when
+# the target kingdom has VARYING parasitism scores, so the model can use
+# its para coefficient to modulate predictions — information the sign-only
+# transfer (which ignores para) cannot access.
+#
+# The experiment: generate synthetic plant + bird data with KNOWN
+# coefficients and controllable noise. At low noise, the GLM recovers both
+# coefficients accurately, so the model transfer (using dep + para)
+# outperforms the sign-only transfer (using dep alone). As noise increases,
+# the GLM's coefficient estimates degrade, and the model transfer's
+# advantage shrinks — converging toward the sign-only transfer, which is
+# robust to magnitude noise (it only needs the sign right). At extreme
+# noise, the model's noisy para coefficient can even HURT (dipping below
+# sign-only), because it injects noise the sign-only transfer avoids.
+
+#' Generate synthetic transfer data (internal)
+#'
+#' Generates a synthetic plant retention matrix (species x gene_category)
+#' and matching bird data with VARYING parasitism scores, both from the
+#' same true model (known dep_coef > 0, para_coef < 0). The plant matrix
+#' has controllable noise; the bird data is noise-free (it is the
+#' "ground truth" ordering to be predicted).
+#'
+#' Plant and bird use SEPARATE seed streams (plant = seed, bird = seed +
+#' 1000) so that plant noise does not shift the bird RNG state — the bird
+#' data is identical across noise levels, isolating the effect of plant
+#' noise on the transfer.
+#'
+#' @param n_species Integer. Number of plant species. Default 8.
+#' @param n_gene_categories Integer. Number of gene categories. Default 6.
+#' @param n_birds Integer. Number of bird structures. Default 10.
+#' @param dep_coef Numeric. True dependency coefficient (> 0, VI). Default 0.8.
+#' @param para_coef Numeric. True parasitism coefficient (< 0). Default -0.5.
+#' @param noise_sd Numeric. SD of retention noise on the plant matrix. Default 0.05.
+#' @param seed Integer. RNG seed. Default 42.
+#' @return List: plant_data (data.frame), bird_data (data.frame).
+#' @keywords internal
+generate_transfer_data <- function(n_species = 8, n_gene_categories = 6,
+                                    n_birds = 10, dep_coef = 0.8, para_coef = -0.5,
+                                    noise_sd = 0.05, seed = 42L) {
+  plant_seed <- seed
+  bird_seed <- seed + 1000L
+
+  # --- Plant matrix: n_species x n_gene_categories ---
+  species <- paste0("sp", seq_len(n_species))
+  parasitism_scores <- seq(0, 4, length.out = n_species)
+  gene_categories <- c("ndh", "rpo", "psa", "psb", "atp", "rpl_rps")[
+    seq_len(n_gene_categories)
+  ]
+  dependency_scores <- seq(0, 5, length.out = n_gene_categories)
+
+  grid <- expand.grid(
+    gene_category = gene_categories, species = species,
+    stringsAsFactors = FALSE
+  )
+  grid$dependency_score <- dependency_scores[
+    match(grid$gene_category, gene_categories)
+  ]
+  grid$parasitism_score <- parasitism_scores[
+    match(grid$species, species)
+  ]
+
+  eta <- dep_coef * grid$dependency_score + para_coef * grid$parasitism_score
+  withr::with_seed(plant_seed, {
+    grid$retention <- pmax(
+      pmin(stats::plogis(eta) + stats::rnorm(nrow(grid), 0, noise_sd), 1),
+      0
+    )
+  })
+
+  plant_data <- grid[, c("species", "parasitism_score", "gene_category",
+                         "dependency_score", "retention")]
+
+  # --- Bird data: VARYING dep AND para (the key: para varies) ---
+  withr::with_seed(bird_seed, {
+    bird_dep <- seq(0, 5, length.out = n_birds)
+    bird_para <- stats::runif(n_birds, 0, 4)
+  })
+  bird_eta <- dep_coef * bird_dep + para_coef * bird_para
+  bird_retention <- stats::plogis(bird_eta)
+  # observed_rank: 1 = first to change = lowest retention (matches real data
+  # convention: Wing proportions dep=0 -> rank 1; Feather structure dep=5 -> rank 8)
+  bird_observed_rank <- rank(bird_retention, ties.method = "average")
+
+  bird_data <- data.frame(
+    structure = paste0("bird", seq_len(n_birds)),
+    dependency_score = bird_dep,
+    parasitism_score = bird_para,
+    observed_rank = bird_observed_rank,
+    stringsAsFactors = FALSE
+  )
+
+  list(plant_data = plant_data, bird_data = bird_data)
+}
+
+#' Simulate cross-kingdom transfer: model vs sign-only
+#'
+#' Fits the corrected GLM (retention ~ dep + para, quasibinomial — Remark R7)
+#' to a plant retention matrix, then predicts bird retention TWO ways:
+#'
+#' 1. **Model transfer**: uses BOTH coefficients + the logistic link. Predicts
+#'    each bird's retention from its own dep AND para scores. This carries
+#'    the model's nonlinearity and both coefficients — genuine model transfer.
+#' 2. **Sign-only transfer**: fits a linear model (retention ~ dep, ignoring
+#'    para), predicts bird ordering with slope * dep, then ranks. After
+#'    ranking, only the slope SIGN survives (Issue 7) — magnitude is
+#'    discarded.
+#'
+#' When birds have VARYING parasitism scores, the model transfer has
+#' information the sign-only transfer lacks (the para modulation). At low
+#' plant noise, model_rho > sign_only_rho. As noise increases, they converge.
+#'
+#' @param plant_data Data frame. Retention matrix (species x gene_category).
+#' @param bird_data Data frame. Must have dependency_score, parasitism_score,
+#'   observed_rank.
+#' @param seed Integer. Default 42.
+#'
+#' @return List (A6):
+#'   \item{values}{List: `model_rho`, `model_p`, `sign_only_rho`,
+#'     `sign_only_p`, `dep_coefficient`, `para_coefficient`, `dep_slope`,
+#'     `model_advantage` (model_rho - sign_only_rho)}
+#'   \item{metadata}{List: `n`, `n_species`, `n_gene_categories`, `n_birds`,
+#'     `method`, `seed`, `converged`}
+#'
+#' @section Theoretical Context:
+#'
+#' VI Prediction: the full model (dep + para, logistic) transfers across
+#' kingdoms — a plant-derived model predicts bird ordering. Competitor:
+#' substrate-independence (rho ~= 0). Issue 7: ranking discards magnitude,
+#' so the sign-only transfer is the weakest form of cross-kingdom transfer.
+#' The model transfer is stronger — it carries the para coefficient, which
+#' the sign-only transfer cannot. This realm makes the distinction visible
+#' and shows when the model genuinely outperforms the sign.
+#'
+#' @section Risk note:
+#'
+#' The synthetic bird data has VARYING parasitism scores — this is what
+#' makes the model transfer differ from the sign-only transfer. The REAL
+#' bird data (island_bird_morphology.csv) has no parasitism column, so
+#' empirical_formal_model() forces all birds to the same para level, making
+#' its transfer sign-only by construction. This realm is therefore
+#' speculative: it shows what the transfer COULD look like with richer
+#' target-kingdom data, not what it does look like with the data we have.
+#'
+#' @dft A1, A2, A6
+#'
+#' @export
+#' @examples
+#' data <- generate_transfer_data(noise_sd = 0.05)
+#' result <- glm_transfer(data$plant_data, data$bird_data)
+#' result$values$model_rho       # > sign_only_rho at low noise
+#' result$values$model_advantage # > 0 (model outperforms sign)
+glm_transfer <- function(plant_data, bird_data, seed = 42L) {
+  validate_retention_data(plant_data)
+
+  # --- Model transfer: GLM (dep + para, quasibinomial, logistic link) ---
+  fit <- stats::glm(
+    retention ~ dependency_score + parasitism_score,
+    data = plant_data,
+    family = quasibinomial()
+  )
+  dep_coef <- stats::coef(fit)[["dependency_score"]]
+  para_coef <- stats::coef(fit)[["parasitism_score"]]
+
+  bird_pred_model <- stats::predict(fit,
+    newdata = data.frame(
+      dependency_score = bird_data$dependency_score,
+      parasitism_score = bird_data$parasitism_score
+    ),
+    type = "response"
+  )
+  model_ct <- stats::cor.test(bird_pred_model, bird_data$observed_rank,
+    method = "spearman", exact = FALSE
+  )
+  model_rho <- as.numeric(model_ct$estimate)
+  model_p <- model_ct$p.value
+
+  # --- Sign-only transfer: linear (dep only), then rank ---
+  fit_lin <- stats::lm(retention ~ dependency_score, data = plant_data)
+  dep_slope <- stats::coef(fit_lin)[["dependency_score"]]
+
+  bird_pred_sign <- dep_slope * bird_data$dependency_score
+  sign_ct <- stats::cor.test(bird_pred_sign, bird_data$observed_rank,
+    method = "spearman", exact = FALSE
+  )
+  sign_only_rho <- as.numeric(sign_ct$estimate)
+  sign_only_p <- sign_ct$p.value
+
+  result <- list(
+    values = list(
+      model_rho = model_rho,
+      model_p = model_p,
+      sign_only_rho = sign_only_rho,
+      sign_only_p = sign_only_p,
+      dep_coefficient = dep_coef,
+      para_coefficient = para_coef,
+      dep_slope = dep_slope,
+      model_advantage = model_rho - sign_only_rho
+    ),
+    metadata = list(
+      n = nrow(plant_data),
+      n_species = length(unique(plant_data$species)),
+      n_gene_categories = length(unique(plant_data$gene_category)),
+      n_birds = nrow(bird_data),
+      method = "glm_transfer (model vs sign-only)",
+      seed = seed,
+      converged = fit$converged
+    )
+  )
+
+  validate_result(result)
+  result
+}
+
+#' Sweep plant noise and show model vs sign-only transfer degradation
+#'
+#' Sweeps the plant-matrix noise level and returns the model-transfer rho
+#' and sign-only-transfer rho at each level. At low noise, the model
+#' transfer (using both dep + para) outperforms the sign-only transfer
+#' (using dep alone). As noise increases, the GLM's coefficient estimates
+#' degrade, and the model advantage shrinks — converging toward the
+#' sign-only transfer, which is robust to magnitude noise (it only needs
+#' the dep sign right).
+#'
+#' @param noise_grid Numeric vector. Noise SD values to sweep. Default
+#'   seq(0, 0.3, by = 0.05).
+#' @param n_species Integer. Default 8.
+#' @param n_gene_categories Integer. Default 6.
+#' @param n_birds Integer. Default 10.
+#' @param dep_coef Numeric. True dep coefficient. Default 0.8.
+#' @param para_coef Numeric. True para coefficient. Default -0.5.
+#' @param seed Integer. Default 42.
+#'
+#' @return List (A6):
+#'   \item{values}{List: `sweep` (data frame: noise_sd, model_rho,
+#'     sign_only_rho, model_advantage), `low_noise_advantage`,
+#'     `convergence_noise`}
+#'   \item{metadata}{List: `n`, `noise_grid`, `params`, `method`, `seed`,
+#'     `converged`}
+#'
+#' @section Theoretical Context:
+#'
+#' This sweep makes Issue 7 (ranking discards magnitude) VISIBLE as a
+#' quantitative phenomenon: the sign-only transfer is flat across noise
+#' (it only needs the sign), while the model transfer degrades (its
+#' coefficient estimates get noisier). The gap between them is the
+#' "information lost to ranking" — the magnitude the sign-only transfer
+#' discards. At convergence, that gap is zero: the model has degraded to
+#' the point where it offers no advantage over the sign alone.
+#'
+#' @section Risk note:
+#'
+#' At EXTREME noise (beyond the default grid), the model transfer can dip
+#' BELOW the sign-only transfer: the noisy para coefficient injects noise
+#' that the sign-only transfer (ignoring para) avoids. This is an honest
+#' finding, not a bug: the model transfer is not unconditionally superior —
+#' it pays a noise penalty for using the para coefficient. The default grid
+#' (0 to 0.3) stays in the convergence regime; extending to 0.5 reveals
+#' the crossover.
+#'
+#' @dft A1, A2, A6
+#'
+#' @export
+#' @examples
+#' result <- sweep_transfer_robustness(noise_grid = seq(0, 0.3, by = 0.05))
+#' result$values$low_noise_advantage  # > 0 (model outperforms at low noise)
+sweep_transfer_robustness <- function(noise_grid = seq(0, 0.3, by = 0.05),
+                                       n_species = 8, n_gene_categories = 6,
+                                       n_birds = 10, dep_coef = 0.8, para_coef = -0.5,
+                                       seed = 42L) {
+  results <- lapply(noise_grid, function(noise) {
+    data <- generate_transfer_data(
+      n_species = n_species, n_gene_categories = n_gene_categories,
+      n_birds = n_birds, dep_coef = dep_coef, para_coef = para_coef,
+      noise_sd = noise, seed = seed
+    )
+    transfer <- glm_transfer(data$plant_data, data$bird_data, seed = seed)
+    list(
+      noise_sd = noise,
+      model_rho = transfer$values[["model_rho"]],
+      sign_only_rho = transfer$values[["sign_only_rho"]],
+      model_advantage = transfer$values[["model_advantage"]]
+    )
+  })
+
+  sweep_df <- data.frame(
+    noise_sd = vapply(results, `[[`, numeric(1), "noise_sd"),
+    model_rho = vapply(results, `[[`, numeric(1), "model_rho"),
+    sign_only_rho = vapply(results, `[[`, numeric(1), "sign_only_rho"),
+    model_advantage = vapply(results, `[[`, numeric(1), "model_advantage")
+  )
+
+  # Low-noise advantage: model_rho - sign_only_rho at the lowest noise
+  low_noise_advantage <- sweep_df$model_advantage[1]
+
+  # Convergence noise: the lowest noise where |model_advantage| < 0.01
+  conv_idx <- which(abs(sweep_df$model_advantage) < 0.01)
+  convergence_noise <- if (length(conv_idx) > 0) sweep_df$noise_sd[min(conv_idx)] else NA_real_
+
+  result <- list(
+    values = list(
+      sweep = sweep_df,
+      low_noise_advantage = low_noise_advantage,
+      convergence_noise = convergence_noise
+    ),
+    metadata = list(
+      n = length(noise_grid),
+      noise_grid = noise_grid,
+      params = list(
+        n_species = n_species, n_gene_categories = n_gene_categories,
+        n_birds = n_birds, dep_coef = dep_coef, para_coef = para_coef
+      ),
+      method = "transfer_robustness_sweep",
+      seed = seed,
+      converged = TRUE
+    )
+  )
+
+  validate_result(result)
+  result
+}
+
+#' Visualize transfer breakdown: model vs sign-only across noise
+#'
+#' Plots noise (x) vs rho (y), with the model-transfer and sign-only-
+#' transfer curves overlaid. Shows when the model beats the sign (low
+#' noise) and when they converge (high noise).
+#'
+#' @param sweep_result List. A [sweep_transfer_robustness()] result.
+#'
+#' @return A ggplot2 object.
+#'
+#' @section Theoretical Context:
+#'
+#' This visualization makes math-review Issue 7 (ranking discards
+#' magnitude) visible as a gap between two curves: the model-transfer rho
+#' (which carries magnitude) starts high and degrades; the sign-only-
+#' transfer rho (which discards magnitude) is flat. The gap is the
+#' information lost to ranking. As noise increases, the gap closes — the
+#' model degrades to the sign.
+#'
+#' @dft A1, A6
+#'
+#' @export
+#' @examples
+#' \dontrun{
+#' result <- sweep_transfer_robustness()
+#' plot_transfer_breakdown(result)
+#' }
+plot_transfer_breakdown <- function(sweep_result) {
+  df <- sweep_result$values$sweep
+
+  # Reshape to long format for overlay
+  long_df <- data.frame(
+    noise_sd = rep(df$noise_sd, 2),
+    rho = c(df$model_rho, df$sign_only_rho),
+    transfer = rep(c("Model (dep + para)", "Sign-only (dep alone)"), each = nrow(df))
+  )
+
+  p <- ggplot2::ggplot(long_df, ggplot2::aes(x = .data$noise_sd, y = .data$rho,
+                                              color = .data$transfer)) +
+    ggplot2::geom_line(linewidth = 1) +
+    ggplot2::geom_point(size = 2) +
+    ggplot2::scale_color_manual(values = c(
+      "Model (dep + para)" = "#2ecc71",
+      "Sign-only (dep alone)" = "#e74c3c"
+    )) +
+    ggplot2::labs(
+      title = "Cross-kingdom transfer: model vs sign-only across plant noise",
+      subtitle = paste0(
+        "Model outperforms at low noise; converges as noise degrades coefficients. ",
+        "Gap = information lost to ranking (Issue 7)."
+      ),
+      x = "Plant retention noise (SD)",
+      y = "Cross-kingdom Spearman rho",
+      color = "Transfer method",
+      caption = paste0(
+        "Low-noise advantage: ",
+        format(sweep_result$values$low_noise_advantage, digits = 3),
+        if (!is.na(sweep_result$values$convergence_noise)) {
+          paste0(" | Convergence at noise = ",
+                 format(sweep_result$values$convergence_noise, digits = 2))
+        } else " | No convergence in range"
+      )
+    ) +
+    ggplot2::theme_minimal(base_size = 12) +
+    ggplot2::theme(legend.position = "bottom")
+
+  p
+}

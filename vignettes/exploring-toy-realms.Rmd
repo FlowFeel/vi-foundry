@@ -344,6 +344,108 @@ through time, long enough to estimate the per-capita-rate-vs-diversity slope
 on both sides of the threshold. No such dataset exists; the realm makes the
 prediction and its data requirement concrete.
 
+## Realm 4 — The cross-kingdom transfer
+
+### What it explores
+
+The cross-kingdom transfer is the monograph's strongest claim: a model fit to
+one kingdom (plants) predicts the ordering in another (birds). But the
+foundry's `transfer_test()` transfers only the slope *sign* — ranking
+discards magnitude by construction (math-review Issue 7). And the empirical
+GLM (`empirical_formal_model()`) forces all birds to the same parasitism
+level, which makes *its* transfer sign-only too: when para is constant,
+$\text{rank}(\text{logistic}(a + b \cdot \text{dep} + c \cdot \text{const})) =
+\text{rank}(\text{dep})$ if $b > 0$.
+
+This realm asks: **when would the full model (both coefficients + the
+logistic link) transfer genuinely more than the sign alone?** Answer: when
+the target kingdom has *varying* parasitism scores, so the model can use its
+para coefficient to modulate predictions — information the sign-only transfer
+(which ignores para) cannot access.
+
+### Risk note: why this is speculative
+
+The synthetic bird data has *varying* parasitism scores — this is what makes
+the model transfer differ from the sign-only transfer. The **real** bird data
+(`island_bird_morphology.csv`) has no parasitism column, so
+`empirical_formal_model()` forces all birds to the same para level, making its
+transfer sign-only by construction. This realm is therefore speculative: it
+shows what the transfer *could* look like with richer target-kingdom data, not
+what it does look like with the data we have.
+
+### Worked example: model vs sign-only at low noise
+
+```{r glm-transfer}
+d <- vi.foundry:::generate_transfer_data(noise_sd = 0.05, seed = 42L)
+transfer <- glm_transfer(d$plant_data, d$bird_data, seed = 42L)
+```
+
+The model-transfer rho is `r round(transfer$values$model_rho, 4)`; the
+sign-only-transfer rho is `r round(transfer$values$sign_only_rho, 4)`. The
+model advantage is `r round(transfer$values$model_advantage, 4)` — positive,
+confirming the model outperforms the sign at low noise. The GLM recovers the
+dep coefficient as `r round(transfer$values$dep_coefficient, 4)` (true: 0.8)
+and the para coefficient as `r round(transfer$values$para_coefficient, 4)`
+(true: -0.5).
+
+### Worked example: the noise sweep
+
+```{r transfer-sweep}
+transfer_sweep <- sweep_transfer_robustness(
+  noise_grid = seq(0, 0.3, by = 0.05)
+)
+```
+
+```{r transfer-sweep-table}
+transfer_sweep$values$sweep
+```
+
+The sign-only rho is flat at `r round(transfer_sweep$values$sweep$sign_only_rho[1], 4)`
+across all noise levels — it depends only on the dep sign, which doesn't flip.
+The model rho starts at `r round(transfer_sweep$values$sweep$model_rho[1], 4)`
+(zero noise) and degrades to `r round(tail(transfer_sweep$values$sweep$model_rho, 1), 4)`
+(at noise = 0.3), converging to the sign-only rho. The low-noise advantage is
+`r round(transfer_sweep$values$low_noise_advantage, 4)`; convergence occurs at
+noise = `r round(transfer_sweep$values$convergence_noise, 4)`.
+
+```{r plot-transfer-sweep, fig.alt = "Plot of noise vs rho, showing the model-transfer curve starting high and degrading down to the flat sign-only-transfer line."}
+plot_transfer_breakdown(transfer_sweep)
+```
+
+The gap between the two curves is the *information lost to ranking* (Issue 7):
+the magnitude the sign-only transfer discards. As noise increases, the gap
+closes — the model degrades to the sign.
+
+### What this teaches
+
+1. **Ranking discards magnitude (Issue 7), visible as a gap.** The sign-only
+   transfer is flat across noise (it only needs the sign); the model transfer
+   degrades (its coefficient estimates get noisier). The gap is the magnitude
+   information the sign-only transfer throws away.
+
+2. **The model transfer is not unconditionally superior.** At extreme noise
+   (beyond the default grid, e.g. 0.4–0.5), the model's noisy para
+   coefficient injects noise that the sign-only transfer avoids — the model
+   can dip *below* the sign-only transfer. The model pays a noise penalty for
+   using the para coefficient. This is an honest finding: the model transfer
+   outperforms only when the GLM coefficients are well-estimated.
+
+3. **The real bird data makes the empirical transfer sign-only.** With no
+   parasitism column in the real bird data, `empirical_formal_model()` forces
+   all birds to the same para level — making the empirical transfer
+   sign-only by construction. Richer target-kingdom data (with varying
+   parasitism) would let the model transfer genuinely outperform.
+
+### The experiment that would fill this realm
+
+A real target-kingdom dataset with *varying* parasitism/commitment scores
+(not just dependency scores): e.g., bird morphology data with a per-species
+parasitism or commitment-level column, or a third substrate (economic
+specialization) with varying commitment. The GLM transfer would then be
+empirical, and the model-vs-sign gap would be a real, testable quantity —
+not a synthetic one. The foundry now has the plant data (R7) and the bird
+data (bundled); the varying-parasitism column is the open empirical frontier.
+
 ## Limitations
 
 The toy realms are **theoretical exploration, not empirical test**:

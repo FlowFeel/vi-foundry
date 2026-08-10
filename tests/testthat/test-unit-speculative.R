@@ -346,3 +346,129 @@ test_that("plot_dd_contrast returns a plot object", {
   # patchwork returns a patchwork object; ggplot returns "ggplot"
   expect_true(any(c("ggplot", "patchwork") %in% class(p)))
 })
+
+# === glm_transfer ===
+
+test_that("glm_transfer returns A6 proof object", {
+  d <- vi.foundry:::generate_transfer_data(noise_sd = 0.05, seed = 42L)
+  result <- glm_transfer(d$plant_data, d$bird_data, seed = 42L)
+  expect_true(validate_result(result))
+  for (k in c("model_rho", "sign_only_rho", "model_advantage",
+              "dep_coefficient", "para_coefficient")) {
+    expect_true(k %in% names(result$values))
+  }
+})
+
+test_that("glm_transfer: model outperforms sign-only at low noise", {
+  d <- vi.foundry:::generate_transfer_data(noise_sd = 0.05, seed = 42L)
+  result <- glm_transfer(d$plant_data, d$bird_data, seed = 42L)
+  expect_gt(result$values$model_rho, result$values$sign_only_rho)
+  expect_gt(result$values$model_advantage, 0)
+})
+
+test_that("glm_transfer: dep coefficient is positive (VI signature)", {
+  d <- vi.foundry:::generate_transfer_data(noise_sd = 0.05, seed = 42L)
+  result <- glm_transfer(d$plant_data, d$bird_data, seed = 42L)
+  expect_gt(result$values$dep_coefficient, 0)
+})
+
+test_that("glm_transfer: para coefficient is negative (VI signature)", {
+  d <- vi.foundry:::generate_transfer_data(noise_sd = 0.05, seed = 42L)
+  result <- glm_transfer(d$plant_data, d$bird_data, seed = 42L)
+  expect_lt(result$values$para_coefficient, 0)
+})
+
+test_that("glm_transfer is deterministic (A2)", {
+  d <- vi.foundry:::generate_transfer_data(noise_sd = 0.1, seed = 42L)
+  r1 <- glm_transfer(d$plant_data, d$bird_data, seed = 42L)
+  r2 <- glm_transfer(d$plant_data, d$bird_data, seed = 42L)
+  expect_equal(r1$values, r2$values)
+})
+
+test_that("glm_transfer validates plant data", {
+  bird <- data.frame(structure = "b", dependency_score = 1,
+                     parasitism_score = 1, observed_rank = 1)
+  expect_error(glm_transfer(data.frame(), bird), "missing required columns")
+})
+
+test_that("generate_transfer_data produces valid retention matrix", {
+  d <- vi.foundry:::generate_transfer_data(noise_sd = 0.05, seed = 42L)
+  expect_true(validate_retention_data(d$plant_data))
+  expect_equal(nrow(d$plant_data), 8 * 6)  # 8 species x 6 gene categories
+  expect_equal(nrow(d$bird_data), 10)
+})
+
+test_that("generate_transfer_data: bird data is independent of plant noise", {
+  d0 <- vi.foundry:::generate_transfer_data(noise_sd = 0, seed = 42L)
+  d1 <- vi.foundry:::generate_transfer_data(noise_sd = 0.5, seed = 42L)
+  expect_identical(d0$bird_data, d1$bird_data)
+})
+
+test_that("generate_transfer_data is deterministic (A2)", {
+  d1 <- vi.foundry:::generate_transfer_data(noise_sd = 0.1, seed = 42L)
+  d2 <- vi.foundry:::generate_transfer_data(noise_sd = 0.1, seed = 42L)
+  expect_identical(d1$plant_data, d2$plant_data)
+  expect_identical(d1$bird_data, d2$bird_data)
+})
+
+# === sweep_transfer_robustness ===
+
+test_that("sweep_transfer_robustness returns A6 proof object", {
+  result <- sweep_transfer_robustness(noise_grid = seq(0, 0.3, by = 0.1))
+  expect_true(validate_result(result))
+  expect_true("sweep" %in% names(result$values))
+  expect_true("low_noise_advantage" %in% names(result$values))
+})
+
+test_that("sweep produces one row per noise value", {
+  grid <- seq(0, 0.3, by = 0.05)
+  result <- sweep_transfer_robustness(noise_grid = grid)
+  expect_equal(nrow(result$values$sweep), length(grid))
+})
+
+test_that("sweep: low-noise advantage is positive (model > sign)", {
+  result <- sweep_transfer_robustness(noise_grid = seq(0, 0.3, by = 0.05))
+  expect_gt(result$values$low_noise_advantage, 0)
+})
+
+test_that("sweep: sign-only rho is flat across noise (Issue 7)", {
+  result <- sweep_transfer_robustness(noise_grid = seq(0, 0.3, by = 0.05))
+  # sign_only_rho depends only on the dep sign, which doesn't flip
+  sign_rhos <- result$values$sweep$sign_only_rho
+  expect_equal(max(sign_rhos) - min(sign_rhos), 0)
+})
+
+test_that("sweep: model_advantage decreases as noise increases", {
+  result <- sweep_transfer_robustness(noise_grid = seq(0, 0.3, by = 0.05))
+  advantages <- result$values$sweep$model_advantage
+  # The advantage should be monotonically non-increasing
+  expect_true(all(diff(advantages) <= 1e-10))
+})
+
+test_that("sweep: model and sign converge at high noise", {
+  result <- sweep_transfer_robustness(noise_grid = seq(0, 0.3, by = 0.05))
+  # At the highest noise in the default grid, advantage should be near 0
+  last_adv <- tail(result$values$sweep$model_advantage, 1)
+  expect_lt(abs(last_adv), 0.05)
+})
+
+test_that("sweep is deterministic (A2)", {
+  r1 <- sweep_transfer_robustness(noise_grid = seq(0, 0.3, by = 0.1))
+  r2 <- sweep_transfer_robustness(noise_grid = seq(0, 0.3, by = 0.1))
+  expect_equal(r1$values$sweep, r2$values$sweep)
+})
+
+# === plot_transfer_breakdown ===
+
+test_that("plot_transfer_breakdown returns a ggplot object", {
+  result <- sweep_transfer_robustness(noise_grid = seq(0, 0.3, by = 0.1))
+  p <- plot_transfer_breakdown(result)
+  expect_s3_class(p, "ggplot")
+})
+
+test_that("plot_transfer_breakdown maps noise to x and rho to y", {
+  result <- sweep_transfer_robustness(noise_grid = seq(0, 0.3, by = 0.1))
+  p <- plot_transfer_breakdown(result)
+  expect_true(grepl("noise", p$labels$x, ignore.case = TRUE))
+  expect_true(grepl("rho", p$labels$y, ignore.case = TRUE))
+})

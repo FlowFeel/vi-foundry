@@ -363,7 +363,7 @@ in `diversity_dependence_contrast()`'s roxygen for the full analysis.
 
 ---
 
-## Phase 4 — Cross-kingdom transfer explorer
+## Phase 4 — Cross-kingdom transfer explorer  ✅ DONE
 
 ### What it explores
 
@@ -429,34 +429,56 @@ plot_transfer_breakdown <- function(sweep_result) { ... }
 
 ### Exit criteria
 
-- [ ] `glm_transfer()` returns A6 with `cross_kingdom_rho` (model) and
+- [x] `glm_transfer()` returns A6 with `cross_kingdom_rho` (model) and
       `sign_only_rho` (sign), with model ≥ sign
-- [ ] `sweep_transfer_robustness()` shows the model-transfer rho decaying
+- [x] `sweep_transfer_robustness()` shows the model-transfer rho decaying
       toward the sign-only rho as noise increases
-- [ ] `plot_transfer_breakdown()` renders the overlay
-- [ ] Unit test: at zero noise, model rho > sign-only rho; at high noise,
+- [x] `plot_transfer_breakdown()` renders the overlay
+- [x] Unit test: at zero noise, model rho > sign-only rho; at high noise,
       they converge
-- [ ] Vignette Section 4 renders
-- [ ] Suite green
+- [x] Vignette Section 4 renders
+- [x] Suite green
 
 ### The experiment that would fill this realm
 
-A real plant retention matrix (the 8×6 Orobanchaceae matrix, now bundled) +
-real bird morphology data (now bundled) + a third substrate (e.g., economic
-specialization, or a second animal kingdom). The GLM transfer would then be
-empirical, not synthetic. The foundry now has the first two (R7 + data
-bundling); the third is the open empirical frontier.
+A real target-kingdom dataset with *varying* parasitism/commitment scores
+(not just dependency scores): e.g., bird morphology data with a per-species
+parasitism column, or a third substrate (economic specialization) with
+varying commitment. The GLM transfer would then be empirical, and the
+model-vs-sign gap would be a real, testable quantity. The foundry now has
+the plant data (R7) and the bird data (bundled); the varying-parasitism
+column is the open empirical frontier.
 
-### Risk
+### Risk — and the finding it surfaced (resolved)
 
-This phase builds on the R7 finding (the corrected GLM) and the newly bundled
-data. The `glm_transfer()` function reuses `empirical_formal_model()`'s GLM
-fit but adds a synthetic-data path (via `generate_synthetic_population()` or a
-new synthetic retention-matrix generator). Medium risk: the synthetic
-retention matrix must have the same structure as the real one (species × gene
-categories, with dep and para scores), or the GLM transfer won't be
-comparable. The cleanest approach: generalize `generate_synthetic_population()`
-to produce a retention matrix (species × genes) rather than a flat panel.
+This phase builds on the R7 finding (the corrected GLM) and the bundled data.
+The `glm_transfer()` function reuses the GLM fit from `empirical_formal_model()`
+but adds a synthetic-data path (via a new internal generator,
+`generate_transfer_data()`, rather than modifying
+`generate_synthetic_population()` — which serves a different purpose in the
+simulacra).
+
+**Key design decision:** the synthetic bird data has *varying* parasitism
+scores — this is the only way to make the model transfer differ from the
+sign-only transfer. When para is constant (as in the real bird data),
+`rank(logistic(a + b·dep + c·const)) = rank(dep)` if b > 0 — the transfer is
+sign-only by construction. The varying para is what lets the model transfer
+genuinely outperform.
+
+**Seed-stream bug found and fixed:** the initial prototype used a single
+`withr::with_seed()` for both plant and bird generation. At noise = 0,
+`rnorm(n, 0, 0)` consumes no RNG draws, shifting the bird-data RNG state
+relative to noise > 0 — so the bird data changed with the noise level,
+confounding the sweep. Fixed by using separate seed streams (plant = seed,
+bird = seed + 1000), making the bird data identical across noise levels and
+isolating the effect of plant noise on the transfer.
+
+**Honest finding (beyond the plan):** at extreme noise (beyond the default
+grid, e.g. 0.4–0.5), the model transfer dips *below* the sign-only transfer.
+The noisy para coefficient injects noise that the sign-only transfer (ignoring
+para) avoids. The model transfer is not unconditionally superior — it pays a
+noise penalty for using the para coefficient. This is documented in the risk
+note of `sweep_transfer_robustness()` and in vignette Section 4.
 
 ---
 
