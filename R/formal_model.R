@@ -163,7 +163,12 @@ threshold_model <- function(depths, lambda, theta, m0, alpha, time,
   # This is large by arithmetic when the exponential decay finishes early;
   # it measures how completely Phase 1 finished, not a two-phase rate ratio.
   # The genuine biphasic signal is the threshold gate (see threshold_biphasicity).
-  early_late_displacement_ratio <- if (phase2_rate > 0) phase1_rate / phase2_rate else Inf
+  # Guard the all-protected edge case (theta <= min(depths)): no unprotected
+  # traits, so phase1_rate / phase2_rate are NaN (mean of empty set).
+  early_late_displacement_ratio <-
+    if (is.na(phase2_rate) || is.na(phase1_rate)) NA_real_
+    else if (phase2_rate > 0) phase1_rate / phase2_rate
+    else Inf
 
   # Threshold biphasicity: the real biphasic signature. Protected traits
   # (d >= theta) retain at 1.0; unprotected traits (d < theta) shed to ~0.

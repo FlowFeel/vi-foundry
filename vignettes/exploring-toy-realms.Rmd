@@ -1,0 +1,183 @@
+---
+title: "Exploring VI in Toy Realms"
+author: "Ed Phillips"
+date: "`r Sys.Date()`"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Exploring VI in Toy Realms}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r setup, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  fig.width = 7,
+  fig.height = 4.5
+)
+library(vi.foundry)
+```
+
+## Scientific motivation
+
+The empirical tests in the vi-foundry are blocked on data (Review Items 4–6:
+gene-category data, island-bird morphology, hominin/economic time series).
+The formal model is a theoretical ODE that cannot fail — it simulates VI's
+equation and produces VI's prediction by construction. Between these lies a
+gap: a layer that lets a reader *explore* the consequences of VI across
+parameter space and hypothetical substrates, without claiming empirical test.
+
+The **toy realms** fill this gap. Each realm is a self-contained "what if"
+world with a simulator, a set of dials, and a visualization. They ask: *if VI
+were true, what would we expect to see in worlds we have not measured?* The
+answer sharpens the predictions and, when the data arrives, makes the
+empirical tests more discriminating.
+
+This is **not** empirical testing. The realms do not source new data, do not
+claim to corroborate VI, and do not replace the blocked empirical work. Each
+realm names the experiment that would convert it from speculative to
+empirical. See `docs/review/toy-realms-plan.md` for the full execution plan.
+
+## Method overview
+
+| Realm | What it explores | Reuses | Status |
+|-------|-----------------|--------|--------|
+| 1. Genome reduction | The threshold gate as a control parameter | `threshold_model()` | Built |
+| 2. Irreversibility | Hysteresis loop area vs. cusp parameter `a` | `cusp_hysteresis_check()` | Planned |
+| 3. *Homo* inversion | Diversity-dependence sign flip | `generate_autocatalytic_set()` | Planned |
+| 4. Cross-kingdom | When model transfer beats sign-only transfer | `empirical_formal_model()` | Planned |
+
+## Realm 1 — The threshold gate
+
+### What it explores
+
+The threshold gate is the heart of VI's biphasic prediction. The formal model
+([`threshold_model()`](../reference/threshold_model.html)) integrates:
+
+$$\frac{dC_i}{dt} = -\lambda \cdot M(t) \cdot C_i \cdot \mathbb{1}(d_i < \theta)$$
+
+where $C_i$ is the retention probability of trait $i$, $M(t) = M_0 e^{-\alpha t}$
+is the decaying niche-demand mismatch, $d_i$ is the trait's integration depth,
+and $\theta$ is the protection threshold. Traits with $d_i \geq \theta$ are
+protected (retention = 1.0); traits with $d_i < \theta$ are shed
+(retention $\to 0$).
+
+The **biphasic signal** is the gate itself: protected traits retain at 1.0
+while unprotected traits shed to ~0, producing a sharp contrast
+(`threshold_biphasicity` ≈ 1.0). This is the real biphasic signature — not
+the temporal displacement ratio (math-review Issue 3, resolved).
+
+This realm makes the gate *visible* as a control parameter. By sweeping
+$\theta$ across a grid, we can watch the gate open (biphasicity → 1) when
+$\theta$ separates protected from unprotected traits, and close (biphasicity
+→ 0) when $\theta$ is below the minimum depth (all protected) or above the
+maximum depth (all unprotected).
+
+### Worked example
+
+Consider a hypothetical organism with five traits at integration depths
+`r paste(c(0, 1, 2, 3, 5), collapse = ", ")`. We sweep $\theta$ from 0 to 6:
+
+```{r sweep}
+result <- sweep_threshold(
+  depths = c(0, 1, 2, 3, 5),
+  theta_grid = seq(0, 6, by = 0.25)
+)
+```
+
+The sweep returns a data frame with one row per $\theta$ value:
+
+```{r sweep-head}
+head(result$values$sweep, 8)
+```
+
+The peak biphasicity is `r result$values$peak_biphasicity` at
+$\theta = `r result$values$peak_theta`$. This is where the gate is maximally
+open — the cleanest separation between protected and unprotected traits.
+
+```{r plot-gate, fig.alt = "Threshold gate: biphasicity vs theta. The gate opens at theta > 0, stays at 1.0 through the interior, and closes at theta > 5."}
+plot_threshold_gate(result)
+```
+
+The shaded region is the "gate open" zone — the parameter range where VI's
+biphasic prediction is active. The vertical dashed lines mark each trait's
+depth; the gate composition changes at each one.
+
+### What this teaches
+
+1. **The biphasic signal IS the gate.** The `threshold_biphasicity` metric
+   captures the protected-vs-unprotected contrast. It is 1.0 whenever both
+   classes are non-empty, and 0 when one class is empty. This is the signal
+   the math-review (Issue 3) identified as the real biphasic signature — not
+   the temporal displacement ratio.
+
+2. **The gate is a step function.** The biphasicity rises sharply from 0 to 1
+   as $\theta$ crosses the minimum depth, stays at 1 through the interior,
+   and falls sharply to 0 as $\theta$ crosses the maximum depth. The gate is
+   binary — it is either open or closed.
+
+3. **The R6 method-misspecification is visceral.** A cross-sectional
+   regression across organisms with *different* $\theta$ values would see
+   noise, not a logistic — which is exactly why T3 fails on real
+   endosymbiont data. Different lineages have different thresholds (different
+   dependency architectures, different parasitism levels), so pooling them
+   cross-sectionally destroys the within-lineage biphasic signal.
+
+### Skewing the dependency architecture
+
+The gate's shape depends on the dependency architecture. A uniform
+architecture (`c(0, 1, 2, 3, 5)`) opens the gate gradually. A skewed
+architecture — many shallow traits, few deep — changes the composition:
+
+```{r skewed}
+skewed <- sweep_threshold(
+  depths = c(0, 0, 0, 1, 5, 5),
+  theta_grid = seq(0, 6, by = 0.25)
+)
+plot_threshold_gate(skewed)
+```
+
+The gate still opens and closes, but the protected/unprotected counts change
+differently. At $\theta = 0.5$, three traits are unprotected (the three at
+depth 0) and three are protected — a different composition from the uniform
+case.
+
+### The experiment that would fill this realm
+
+A real organism with a known dependency architecture (gene categories +
+integration-depth scores) and a measured retention trajectory across a
+parasitism/commitment gradient. The $\theta$-sweep would then be calibrated
+against real data, and the gate's $\theta$ would be an empirical estimate,
+not a dial. The foundry's `empirical_formal_model()` (Remark R7) is a step
+in this direction — it fits the retention matrix to estimate $dep$ and $para$
+effects — but the full gate calibration requires gene-category data (Item 4).
+
+## Limitations
+
+The toy realms are **theoretical exploration, not empirical test**:
+
+- They do not source new data.
+- They do not claim to corroborate VI.
+- They do not replace the blocked empirical work (Items 4–6).
+- The sweep uses the default ODE parameters ($\lambda = 0.15$, $M_0 = 10$,
+  $\alpha = 0.05$, $t = 100$); with different parameters, the unprotected
+  traits may not fully shed, and the biphasicity would be less than 1.0 in
+  the interior. The gate shape (0 → contrast → 0) is robust, but the
+  plateau height is parameter-dependent.
+
+## Interpretation guide
+
+| What you see | What it means |
+|-------------|---------------|
+| Biphasicity = 0 at $\theta = 0$ | All traits protected — no contrast (gate closed) |
+| Biphasicity = 1 in the interior | Gate open — clean separation between protected and unprotected |
+| Biphasicity = 0 at $\theta > \max(d)$ | All traits unprotected — no contrast (gate closed) |
+| Vertical dashed lines | Trait depths — gate composition changes here |
+| Peak $\theta$ | The threshold that maximally separates the two classes |
+
+The key insight: **the threshold gate is the biphasic signal**. When the
+gate is open (both classes exist), VI's biphasic prediction is active. When
+the gate is closed (one class empty), there is no biphasic contrast. This is
+why T3's cross-sectional regression fails — it pools organisms with different
+gates, averaging the contrast away.

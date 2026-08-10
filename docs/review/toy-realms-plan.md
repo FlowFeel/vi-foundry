@@ -82,7 +82,7 @@ vignette is the Layer 2 deliverable required by
 
 ---
 
-## Phase 1 — Genome-reduction explorer
+## Phase 1 — Genome-reduction explorer  ✅ DONE
 
 ### What it explores
 
@@ -134,14 +134,21 @@ plot_threshold_gate <- function(sweep_result) { ... }
 
 **`vignettes/exploring-toy-realms.Rmd`** — Section 1: "The threshold gate."
 
-### Exit criteria
+### Exit criteria  ✅ all met
 
-- [ ] `sweep_threshold()` returns an A6 proof object with per-θ results
-- [ ] `plot_threshold_gate()` renders a ggplot showing θ vs biphasicity
-- [ ] Unit test: sweeping θ from 0 to max(depths) shows biphasicity rising
+- [x] `sweep_threshold()` returns an A6 proof object with per-θ results
+- [x] `plot_threshold_gate()` renders a ggplot showing θ vs biphasicity
+- [x] Unit test: sweeping θ from 0 to max(depths) shows biphasicity rising
       from ~0 to ~1 then falling back to ~0 (the gate opens then closes)
-- [ ] Vignette Section 1 renders with a worked example
-- [ ] Suite green
+- [x] Vignette Section 1 renders with a worked example
+- [x] Suite green (516 pass / 0 fail / 9 skip)
+
+**Also fixed:** a latent edge-case bug in `threshold_model()` — the
+all-protected case (θ ≤ min(depths)) crashed because `phase2_rate` was NaN
+(mean of empty unprotected set) and the `if (phase2_rate > 0)` guard didn't
+handle NaN. Added an `is.na()` guard. The all-protected case now returns
+`threshold_biphasicity = NA` and `early_late_displacement_ratio = NA`
+gracefully instead of crashing.
 
 ### The experiment that would fill this realm
 
