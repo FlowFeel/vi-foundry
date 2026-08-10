@@ -153,6 +153,87 @@ not a dial. The foundry's `empirical_formal_model()` (Remark R7) is a step
 in this direction — it fits the retention matrix to estimate $dep$ and $para$
 effects — but the full gate calibration requires gene-category data (Item 4).
 
+## Realm 2 — Irreversibility
+
+### What it explores
+
+Irreversibility is VI's sharpest departure from gradual reversibility. The
+[cusp catastrophe](../reference/cusp_hysteresis_check.html) models a system
+where smooth changes in a control parameter produce sudden, irreversible
+jumps in state. The cusp equilibrium is:
+
+$$x^3 + a \cdot x + b = 0$$
+
+where $x$ is the state, $a$ is the splitting factor, and $b$ is the normal
+factor. For $a < 0$, the system has two stable equilibria (a cusp); crossing
+the bifurcation set ($4a^3 + 27b^2 = 0$) forces a jump. For $a \geq 0$, there
+is a single equilibrium (no bifurcation, fully reversible).
+
+The **hysteresis loop area** quantifies irreversibility: if you sweep $b$
+forward (increasing) then reverse (decreasing), the forward and reverse paths
+enclose a loop. The area of that loop is zero for a reversible system ($a \geq
+0$) and positive for an irreversible system ($a < 0$), growing as $|a|$
+increases.
+
+### Worked example
+
+We sweep the cusp parameter $a$ from 1 (no bifurcation) through 0 (the
+bifurcation point) to $-2$ (deep in the cusp region), computing the loop
+area at each value:
+
+```{r sweep-irrev}
+irrev <- sweep_cusp_irreversibility(
+  a_grid = seq(1, -2, by = -0.1),
+  control_values = seq(-2, 2, length.out = 100)
+)
+```
+
+The sweep returns a data frame with one row per $a$ value:
+
+```{r irrev-head}
+head(irrev$values$sweep, 6)
+tail(irrev$values$sweep, 6)
+```
+
+The peak loop area is `r round(irrev$values$peak_loop_area, 3)` at $a =
+`r irrev$values$peak_a` — the most negative $a$ in the grid, where the cusp
+region is widest.
+
+```{r plot-irrev, fig.alt = "Irreversibility sweep: loop area vs a. The area is 0 for a >= 0 and rises for a < 0, showing irreversibility emerging at the bifurcation."}
+plot_irreversibility_sweep(irrev)
+```
+
+The shaded region is the cusp region ($a < 0$) — where VI's irreversibility
+prediction is active. The dashed line marks the bifurcation ($a = 0$). For
+$a \geq 0$, the loop area is exactly 0 (the system is fully reversible). For
+$a < 0$, the loop area rises as $|a|$ grows — the cusp region widens, and the
+hysteresis loop grows.
+
+### What this teaches
+
+1. **Irreversibility is quantitative, not boolean.** `cusp_hysteresis_check()`
+   returns a boolean (`has_hysteresis`), but the loop area is a continuous
+   measure of *how much* irreversibility there is. A system at $a = -0.5$ has
+   a small loop; a system at $a = -2$ has a large one.
+
+2. **Irreversibility emerges at the bifurcation.** The loop area is exactly 0
+   for $a \geq 0$ and rises discontinuously for $a < 0$. This is the
+   bifurcation — the point where VI predicts irreversibility emerges.
+
+3. **The loop area is robust to the path.** The loop area is the same
+   regardless of which branch you start on (the loop encloses the same area
+   either way). This makes the metric reliable: it depends only on the system
+   ($a$), not on the observer's starting point.
+
+### The experiment that would fill this realm
+
+A real system (a lineage, an ecosystem, an economy) where the control
+parameter (parasitism depth, commitment, complexity) has been ramped both up
+and down, with the state (genome size, capacity, diversity) measured at each
+point. The loop area would then be an empirical quantity. No such experiment
+exists for capacity reallocation; the realm makes this absence visible — the
+reader can see exactly what data would count as the test.
+
 ## Limitations
 
 The toy realms are **theoretical exploration, not empirical test**:

@@ -159,7 +159,7 @@ real data, and the gate's θ would be an empirical estimate, not a dial.
 
 ---
 
-## Phase 2 — Irreversibility explorer
+## Phase 2 — Irreversibility explorer  ✅ DONE
 
 ### What it explores
 

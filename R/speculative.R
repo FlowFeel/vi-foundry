@@ -203,3 +203,231 @@ plot_threshold_gate <- function(sweep_result) {
 
   p
 }
+
+# =====================================================================
+# Realm 2 — Irreversibility explorer
+# =====================================================================
+
+#' Compute the hysteresis loop area
+#'
+#' Runs [cusp_hysteresis_check()] and computes the area enclosed between the
+#' forward and reverse equilibrium paths using the trapezoid rule. Zero area
+#' means no hysteresis (the system is reversible); large area means strong
+#' irreversibility (the forward and reverse paths enclose a loop).
+#'
+#' This is the *quantitative* irreversibility metric — [cusp_hysteresis_check()]
+#' returns a boolean (`has_hysteresis`) and a max pointwise difference; this
+#' function returns the full loop area, which is a continuous measure of how
+#' irreversible the system is.
+#'
+#' @param control_values Numeric vector. The control parameter path (e.g., a
+#'   sequence of `b` values from low to high).
+#' @param equilibrium_fn Function. Pure `(control_value, prev_state) -> state`.
+#'   Typically from [make_cusp_equilibrium_fn()].
+#' @param seed Integer. Seed for reproducibility. Default 42.
+#' @param initial_state Numeric. Starting state for the forward sweep. Default 0.
+#'
+#' @return List (A6):
+#'   \item{values}{Named: `loop_area`, `max_difference`, `has_hysteresis`,
+#'     `n_control_values`}
+#'   \item{metadata}{List: `seed`, `n`, `control_range`, `initial_state`,
+#'     `method`, `converged`}
+#'
+#' @section Theoretical Context:
+#'
+#' VI Prediction: irreversibility — the forward path (increasing commitment)
+#' differs from the reverse path (decreasing commitment). The loop area
+#' quantifies *how much* they differ. A system with no bifurcation (e.g.,
+#' `a >= 0` in the cusp) has loop area = 0 (fully reversible). A system deep
+#' in the cusp region (`a << 0`) has a large loop area (strongly irreversible).
+#'
+#' Competitor: gradual reversibility predicts loop area = 0 always (no
+#' bifurcation, smooth recovery).
+#'
+#' @dft A1, A2, A6
+#'
+#' @export
+#' @examples
+#' eq_fn <- make_cusp_equilibrium_fn(a = -1)
+#' result <- hysteresis_loop_area(seq(-2, 2, length.out = 100), eq_fn)
+#' result$values$loop_area  # > 0 (cusp region: irreversible)
+hysteresis_loop_area <- function(control_values, equilibrium_fn, seed = 42L,
+                                  initial_state = 0) {
+  hyst <- cusp_hysteresis_check(
+    control_values = control_values,
+    equilibrium_fn = equilibrium_fn,
+    seed = seed,
+    initial_state = initial_state
+  )
+
+  fwd <- hyst$values$forward_states
+  rev_states <- hyst$values$reverse_states
+  cv <- hyst$values$control_values
+
+  # rev(rev_states) is ordered by increasing control (matching forward).
+  # Signed loop area via the trapezoid rule:
+  #   area = integral of (forward - reverse) d(control)
+  diff_vals <- fwd - rev(rev_states)
+  dx <- diff(cv)
+  signed_area <- sum(0.5 * dx * (diff_vals[-length(diff_vals)] +
+                                   diff_vals[-1]), na.rm = TRUE)
+  loop_area <- abs(signed_area)
+
+  result <- list(
+    values = list(
+      loop_area = loop_area,
+      max_difference = hyst$values$max_difference,
+      has_hysteresis = hyst$values$has_hysteresis,
+      n_control_values = length(cv)
+    ),
+    metadata = list(
+      seed = seed,
+      n = length(cv),
+      control_range = range(cv),
+      initial_state = initial_state,
+      method = "trapezoid_rule",
+      converged = TRUE
+    )
+  )
+
+  validate_result(result)
+  result
+}
+
+#' Sweep the cusp parameter `a` and compute loop area at each value
+#'
+#' For each `a` in `a_grid`, creates a cusp equilibrium function
+#' ([make_cusp_equilibrium_fn()]), runs [hysteresis_loop_area()], and records
+#' the loop area. This shows irreversibility emerging at the bifurcation
+#' (`a = 0`): for `a >= 0` (no bifurcation) the loop area is 0; for `a < 0`
+#' (cusp region) the loop area rises as `|a|` increases (the cusp region
+#' widens, producing a larger hysteresis loop).
+#'
+#' @param a_grid Numeric vector. Values of the cusp parameter `a` to sweep.
+#' @param control_values Numeric vector. The control parameter path (`b`
+#'   values). Default `seq(-2, 2, length.out = 100)`.
+#' @param seed Integer. Seed for reproducibility. Default 42.
+#' @param initial_state Numeric. Starting state for each forward sweep.
+#'   Default 0.
+#'
+#' @return List (A6):
+#'   \item{values}{List: `sweep` (data frame: a, loop_area, has_hysteresis,
+#'     max_difference), `peak_loop_area`, `peak_a`, `bifurcation_a`}
+#'   \item{metadata}{List: `n`, `a_grid`, `control_range`, `seed`,
+#'     `initial_state`, `method`, `converged`}
+#'
+#' @section Theoretical Context:
+#'
+#' VI Prediction: irreversibility emerges discontinuously at the bifurcation.
+#' For `a >= 0` the system has a single equilibrium (no bifurcation, fully
+#' reversible, loop area = 0). For `a < 0` the system has a cusp (two stable
+#' equilibria); the loop area grows as `|a|` increases because the cusp
+#' region widens. This makes irreversibility *quantitative* and shows exactly
+#' where it emerges.
+#'
+#' Competitor: gradual reversibility predicts loop area = 0 for all `a` (no
+#' bifurcation ever).
+#'
+#' @dft A1, A2, A6
+#'
+#' @export
+#' @examples
+#' result <- sweep_cusp_irreversibility(
+#'   a_grid = seq(1, -2, by = -0.25),
+#'   control_values = seq(-2, 2, length.out = 100)
+#' )
+#' result$values$peak_a  # most negative a (largest loop area)
+sweep_cusp_irreversibility <- function(a_grid,
+                                       control_values = seq(-2, 2, length.out = 100),
+                                       seed = 42L,
+                                       initial_state = 0) {
+  results <- lapply(a_grid, function(a) {
+    eq_fn <- make_cusp_equilibrium_fn(a = a)
+    hysteresis_loop_area(
+      control_values = control_values,
+      equilibrium_fn = eq_fn,
+      seed = seed,
+      initial_state = initial_state
+    )
+  })
+
+  sweep_df <- data.frame(
+    a = a_grid,
+    loop_area = vapply(results, function(r) r$values$loop_area, numeric(1)),
+    has_hysteresis = vapply(results, function(r) r$values$has_hysteresis, logical(1)),
+    max_difference = vapply(results, function(r) r$values$max_difference, numeric(1))
+  )
+
+  peak_idx <- which.max(sweep_df$loop_area)
+
+  result <- list(
+    values = list(
+      sweep = sweep_df,
+      peak_loop_area = sweep_df$loop_area[[peak_idx]],
+      peak_a = sweep_df$a[[peak_idx]],
+      bifurcation_a = 0
+    ),
+    metadata = list(
+      n = length(a_grid),
+      a_grid = a_grid,
+      control_range = range(control_values),
+      seed = seed,
+      initial_state = initial_state,
+      method = "cusp_irreversibility_sweep",
+      converged = TRUE
+    )
+  )
+
+  validate_result(result)
+  result
+}
+
+#' Visualize the irreversibility sweep: `a` vs loop area
+#'
+#' Plots the cusp parameter `a` (x-axis) against the hysteresis loop area
+#' (y-axis) from a [sweep_cusp_irreversibility()] result. The loop area is 0
+#' for `a >= 0` (no bifurcation, reversible) and rises for `a < 0` (cusp
+#' region, irreversible). The cusp region is shaded; the bifurcation point
+#' (`a = 0`) is marked with a dashed line.
+#'
+#' @param sweep_result List. A [sweep_cusp_irreversibility()] result.
+#'
+#' @return A ggplot2 object.
+#'
+#' @section Theoretical Context:
+#'
+#' Irreversibility is VI's sharpest departure from gradual reversibility.
+#' This visualization shows that irreversibility is *quantitative* (loop
+#' area, not just a boolean) and that it emerges at the bifurcation (`a = 0`).
+#' The shaded region is where VI's irreversibility prediction is active.
+#'
+#' @dft A1, A6
+#'
+#' @export
+#' @examples
+#' \dontrun{
+#' result <- sweep_cusp_irreversibility(a_grid = seq(1, -2, by = -0.25))
+#' plot_irreversibility_sweep(result)
+#' }
+plot_irreversibility_sweep <- function(sweep_result) {
+  df <- sweep_result$values$sweep
+
+  p <- ggplot2::ggplot(df, ggplot2::aes(x = .data$a, y = .data$loop_area)) +
+    # Shade the cusp region (a < 0: irreversible)
+    ggplot2::geom_area(data = df[df$a <= 0, ], fill = "#e74c3c", alpha = 0.15) +
+    ggplot2::geom_line(color = "#e74c3c", linewidth = 1) +
+    ggplot2::geom_point(size = 2, color = "#e74c3c") +
+    # Vertical line at the bifurcation (a = 0)
+    ggplot2::geom_vline(xintercept = 0, linetype = "dashed", color = "grey50") +
+    ggplot2::labs(
+      title = "Irreversibility: hysteresis loop area vs cusp parameter a",
+      subtitle = paste0("Loop area = 0 for a \u2265 0 (reversible); ",
+                        "rises for a < 0 (cusp region: irreversible)"),
+      x = "Cusp parameter a",
+      y = "Hysteresis loop area",
+      caption = "Dashed line = bifurcation (a = 0). Shaded = cusp region."
+    ) +
+    ggplot2::theme_minimal(base_size = 12)
+
+  p
+}

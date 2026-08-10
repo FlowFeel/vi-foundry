@@ -84,30 +84,7 @@ generate_cusp_system <- function(a = -1,
   })
 }
 
-#' Create a pure branch-following equilibrium function
-#'
-#' Returns a PURE function `(control_b, prev_state) -> next_state` that solves
-#' the cusp equilibrium x^3 + a*x + b = 0 and returns the real root nearest
-#' `prev_state` (branch-following). For single-root regions prev_state is
-#' ignored. This function holds NO internal state — the branch-following
-#' state is threaded by cusp_hysteresis_check(), which makes the path-
-#' dependence contract explicit (previously this was a stateful closure using
-#' `<<-`, which hid the detection logic in the simulacrum).
-#'
-#' @param a Numeric. First control parameter (splitting factor).
-#'
-#' @return Function(control_b, prev_state) -> numeric (nearest stable root).
-#'
-#' @keywords internal
-make_cusp_equilibrium_fn <- function(a = -1) {
-  function(b, prev_state) {
-    roots <- polyroot(c(b, a, 0, 1))
-    real_roots <- Re(roots)[abs(Im(roots)) < 1e-10]
-    if (length(real_roots) == 1) {
-      real_roots[1]
-    } else {
-      # Pick the real root closest to the previous state (branch-following).
-      real_roots[which.min(abs(real_roots - prev_state))]
-    }
-  }
-}
+# make_cusp_equilibrium_fn() has moved to R/cusp_catastrophe.R and is now
+# exported from the package. It is no longer defined here to avoid a
+# duplicate definition when the simulacra generators are sourced.
+# Simulacra tests and scripts use the exported package version.

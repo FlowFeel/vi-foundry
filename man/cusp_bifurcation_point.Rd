@@ -17,6 +17,6 @@ the distance to the bifurcation set.
 }
 \description{
 The cusp catastrophe has two control parameters (a, b) and the
-bifurcation set is: |b| ≤ 2 × (a/3)^(3/2) / (27)^(1/2)
+bifurcation set is: |b| <= 2 × (a/3)^(3/2) / (27)^(1/2)
 Simplified: bifurcation occurs when 4a³ + 27b² = 0
 }

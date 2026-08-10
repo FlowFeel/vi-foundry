@@ -23,8 +23,8 @@ Must be pure (no hidden state). See the contract above.}
 Default 0.}
 }
 \value{
-List (A6): values (has_hysteresis, max_difference, n_control_values),
-metadata.
+List (A6): values (has_hysteresis, max_difference, n_control_values,
+forward_states, reverse_states, control_values), metadata.
 }
 \description{
 VI predicts that the forward path (increasing commitment) differs from

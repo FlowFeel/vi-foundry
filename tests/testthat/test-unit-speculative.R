@@ -121,3 +121,127 @@ test_that("plot_threshold_gate handles single-point sweep gracefully", {
   result <- sweep_threshold(depths = c(0, 1, 2, 3, 5), theta_grid = c(2.5))
   expect_error(plot_threshold_gate(result), NA)
 })
+
+# === hysteresis_loop_area ===
+
+.cusp_cv <- seq(-2, 2, length.out = 100)
+
+.cusp_a_neg1 <- make_cusp_equilibrium_fn(a = -1)
+.cusp_a_pos1 <- make_cusp_equilibrium_fn(a = 1)
+
+test_that("hysteresis_loop_area returns A6 proof object", {
+  result <- hysteresis_loop_area(.cusp_cv, .cusp_a_neg1)
+  expect_true(validate_result(result))
+  expect_true("loop_area" %in% names(result$values))
+  expect_true("max_difference" %in% names(result$values))
+  expect_true("has_hysteresis" %in% names(result$values))
+})
+
+test_that("hysteresis_loop_area is 0 for a=1 (no bifurcation)", {
+  result <- hysteresis_loop_area(.cusp_cv, .cusp_a_pos1)
+  expect_equal(result$values$loop_area, 0, tolerance = 1e-10)
+  expect_false(result$values$has_hysteresis)
+})
+
+test_that("hysteresis_loop_area is > 0 for a=-1 (cusp region)", {
+  result <- hysteresis_loop_area(.cusp_cv, .cusp_a_neg1)
+  expect_gt(result$values$loop_area, 0.5)
+  expect_true(result$values$has_hysteresis)
+})
+
+test_that("hysteresis_loop_area is deterministic (A2)", {
+  r1 <- hysteresis_loop_area(.cusp_cv, .cusp_a_neg1)
+  r2 <- hysteresis_loop_area(.cusp_cv, .cusp_a_neg1)
+  expect_equal(r1$values, r2$values)
+})
+
+test_that("hysteresis_loop_area is robust to initial_state", {
+  # The loop area is the same regardless of which branch you start on
+  r0 <- hysteresis_loop_area(.cusp_cv, .cusp_a_neg1, initial_state = 0)
+  r1 <- hysteresis_loop_area(.cusp_cv, .cusp_a_neg1, initial_state = 1.0)
+  r2 <- hysteresis_loop_area(.cusp_cv, .cusp_a_neg1, initial_state = -1.0)
+  expect_equal(r0$values$loop_area, r1$values$loop_area, tolerance = 1e-6)
+  expect_equal(r0$values$loop_area, r2$values$loop_area, tolerance = 1e-6)
+})
+
+# === sweep_cusp_irreversibility ===
+
+test_that("sweep_cusp_irreversibility returns A6 proof object", {
+  result <- sweep_cusp_irreversibility(
+    a_grid = seq(1, -2, by = -0.5),
+    control_values = .cusp_cv
+  )
+  expect_true(validate_result(result))
+  expect_true("sweep" %in% names(result$values))
+  expect_true("peak_loop_area" %in% names(result$values))
+  expect_true("bifurcation_a" %in% names(result$values))
+})
+
+test_that("sweep_cusp_irreversibility produces one row per a value", {
+  a_grid <- seq(1, -2, by = -0.5)
+  result <- sweep_cusp_irreversibility(a_grid = a_grid, control_values = .cusp_cv)
+  expect_equal(nrow(result$values$sweep), length(a_grid))
+  expect_equal(result$values$sweep$a, a_grid)
+})
+
+test_that("sweep shows loop area = 0 for a >= 0 (no bifurcation)", {
+  result <- sweep_cusp_irreversibility(
+    a_grid = c(1, 0.5, 0),
+    control_values = .cusp_cv
+  )
+  expect_true(all(result$values$sweep$loop_area < 1e-10))
+  expect_false(any(result$values$sweep$has_hysteresis))
+})
+
+test_that("sweep shows loop area rising for a < 0 (cusp region)", {
+  result <- sweep_cusp_irreversibility(
+    a_grid = seq(1, -2, by = -0.25),
+    control_values = .cusp_cv
+  )
+  df <- result$values$sweep
+  # The peak loop area should be at the most negative a
+  expect_lt(result$values$peak_a, -1.5)
+  # Some a < 0 values should have loop area > 0
+  cusp_rows <- df[df$a < -0.5, ]
+  expect_true(any(cusp_rows$loop_area > 0.1))
+})
+
+test_that("loop area is monotonic in |a| for a < 0", {
+  result <- sweep_cusp_irreversibility(
+    a_grid = seq(-0.1, -2, by = -0.1),
+    control_values = .cusp_cv
+  )
+  df <- result$values$sweep
+  # As a becomes more negative (|a| increases), loop area should be
+  # monotonically non-decreasing
+  expect_true(all(diff(df$loop_area) >= -1e-10))
+})
+
+test_that("sweep_cusp_irreversibility is deterministic (A2)", {
+  r1 <- sweep_cusp_irreversibility(a_grid = seq(1, -1, by = -0.5),
+                                    control_values = .cusp_cv)
+  r2 <- sweep_cusp_irreversibility(a_grid = seq(1, -1, by = -0.5),
+                                    control_values = .cusp_cv)
+  expect_equal(r1$values$sweep, r2$values$sweep)
+})
+
+# === plot_irreversibility_sweep ===
+
+test_that("plot_irreversibility_sweep returns ggplot object", {
+  result <- sweep_cusp_irreversibility(
+    a_grid = seq(1, -2, by = -0.5),
+    control_values = .cusp_cv
+  )
+  p <- plot_irreversibility_sweep(result)
+  expect_s3_class(p, "ggplot")
+})
+
+test_that("plot_irreversibility_sweep maps a to x and loop_area to y", {
+  result <- sweep_cusp_irreversibility(
+    a_grid = seq(1, -2, by = -0.5),
+    control_values = .cusp_cv
+  )
+  p <- plot_irreversibility_sweep(result)
+  expect_true(grepl("a", p$labels$x, ignore.case = TRUE))
+  expect_true(grepl("area", p$labels$y, ignore.case = TRUE))
+})
