@@ -159,6 +159,37 @@ proportional-reduction analysis (normalize by ancestral size), or (c) a direct
 fit of the formal threshold model to the data. This is a method-design task, not
 a bug fix. Until then, T3 `skip()`s honestly with R² = 0.24 / k1-k2 = NA.
 
+### R7 — The author's formal-model GLM has a data-flattening bug (root cause of the wrong sign)
+
+The author's original empirical formal model
+(`archive/pre-foundry-scripts/run_formal_model.R`) — a quasibinomial GLM,
+`retention ~ dep + para`, fit to a real 8×6 plastid-gene retention matrix —
+produced the wrong sign on `dep` (−0.83, VI predicts > 0), a non-significant
+`para` (p = 0.59), and a wrong-signed cross-kingdom ρ (−0.755, oracle says
++0.755). [`modeling-sim-viz-review.md`](modeling-sim-viz-review.md) Part I
+initially attributed this to model misspecification (additive where VI predicts
+interaction) plus quasi-separation from the autotroph row.
+
+That diagnosis was **incomplete**. The root cause is a **data-flattening bug**:
+the script uses `as.vector(t(retention))` (species-major: 6 values per species)
+where it should use `as.vector(retention)` (gene-major: 8 values per gene). The
+`dep` vector is `rep(dep_scores, each = 8)` — gene-major. The mismatch shuffles
+`dep` ↔ `retention`, so the GLM fits scrambled data.
+
+**The fix is one character** — remove the `t()`. With correct alignment, the
+additive GLM gives `dep = +0.84` (p = 0.0008), `para` p < 0.0001, pseudo-R² =
+0.55, and cross-kingdom ρ = +0.755 — all matching VI predictions. The additive
+specification is adequate; the interaction GLM is theoretically preferred but
+not needed for the sign in this dataset. The direct threshold-model fit (R6
+option, step function) is too rigid (R² = 0.33) and produces degenerate rankings.
+
+The foundry replaced this fixable one-character bug with a theoretical ODE
+simulation (`R/formal_model.R`) that does not fit the 8×6 matrix and cannot
+fail empirically. **Action:** restore the empirical GLM with the flattening bug
+fixed as the formal model. See
+[`formal-model-reproduction.md`](formal-model-reproduction.md) for the full
+reproduction, fix, and five-model contrast.
+
 ---
 
 ## Review Items

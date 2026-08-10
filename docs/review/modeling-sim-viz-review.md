@@ -81,6 +81,21 @@ Three things are wrong:
 
 ### Why the GLM is broken: it is misspecified
 
+> **⚠ Correction (superseded).** The diagnosis below — that the GLM is broken
+> because it is *misspecified* (additive where VI predicts interaction) — was
+> **incomplete**. The root cause is a **data-flattening bug**: the author's
+> script uses `as.vector(t(retention))` (species-major) where it should use
+> `as.vector(retention)` (gene-major), scrambling `dep` ↔ `retention`. With
+> the one-character fix, the additive GLM gives `dep = +0.84` (p = 0.0008),
+> `para` p < 0.0001, and cross-kingdom ρ = +0.755 — all matching VI. The
+> additive specification is adequate; the interaction is theoretically
+> preferred but not needed for the sign. See
+> [`formal-model-reproduction.md`](formal-model-reproduction.md) for the full
+> corrected analysis. The broader finding — that the foundry hid the broken
+> GLM by replacing it with a non-empirical ODE — stands and is strengthened:
+> the foundry replaced a *fixable one-character bug* with a simulation that
+> cannot fail.
+
 The VI prediction is an **interaction**: dependency depth matters *more* at
 higher parasitism (deeper commitment). At `para = 0` (autotroph), every trait
 is retained regardless of depth; at `para = 4` (holoparasite), only the
