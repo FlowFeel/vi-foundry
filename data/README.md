@@ -38,6 +38,20 @@ dewar_pangenome_species.csv:
   version: "2026-07-19"
   description: "Pan-genome species-level data"
 
+orobanchaceae_retention_matrix.tsv:
+  source: "archive/pre-foundry-scripts/run_formal_model.R (corrected flattening)"
+  version: "2026-08-10"
+  description: "8-species x 6-gene-category plastid-gene retention matrix (Remark R7)"
+  columns: [species, parasitism_score, gene_category, dependency_score, retention]
+  note: "Corrected gene-major flattening (as.vector(retention), not as.vector(t(retention))). The author's original script had a species-major flattening bug that scrambled dep <-> retention and produced the wrong GLM sign."
+
+island_bird_morphology.csv:
+  source: "archive/pre-foundry-scripts/run_formal_model.R + run_cross_kingdom_L3.R"
+  version: "2026-08-10"
+  description: "8 island-bird flight-loss traits with dependency scores and observed change ranks"
+  columns: [structure, dependency_score, observed_rank]
+  note: "Used by load_island_birds() and empirical_formal_model() cross-kingdom transfer."
+
 dewar_panX_tree.nex:
   source: "Dewar et al. (2024) supplementary"
   version: "2026-07-19"

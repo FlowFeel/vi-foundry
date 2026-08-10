@@ -84,32 +84,7 @@ generate_cusp_system <- function(a = -1,
   })
 }
 
-#' Create a stateful equilibrium function for hysteresis detection
-#'
-#' Wraps the cusp equilibrium solver with a stateful branch-following
-#' behavior. The function tracks the previous equilibrium state and
-#' selects the nearest stable equilibrium, simulating the path-dependent
-#' behavior of a real cusp catastrophe system.
-#'
-#' @param a Numeric. First control parameter (splitting factor).
-#' @param initial_state Numeric. Initial state for the first call.
-#'   Default 0.
-#'
-#' @return Function that takes a single numeric argument (control_b)
-#'   and returns the equilibrium state, following the nearest branch.
-#'
-#' @keywords internal
-make_cusp_equilibrium_fn <- function(a = -1, initial_state = 0) {
-  state <- initial_state
-  function(b) {
-    roots <- polyroot(c(b, a, 0, 1))
-    real_roots <- Re(roots)[abs(Im(roots)) < 1e-10]
-    if (length(real_roots) == 1) {
-      state <<- real_roots[1]
-    } else {
-      # Pick the real root closest to the previous state
-      state <<- real_roots[which.min(abs(real_roots - state))]
-    }
-    state
-  }
-}
+# make_cusp_equilibrium_fn() has moved to R/cusp_catastrophe.R and is now
+# exported from the package. It is no longer defined here to avoid a
+# duplicate definition when the simulacra generators are sourced.
+# Simulacra tests and scripts use the exported package version.

@@ -143,10 +143,10 @@ save_4panel_png <- function(p1, p2, p3, p4, width = 12, height = 10,
   grDevices::png(tmp, width = width, height = height, units = "in", res = dpi)
   grid::grid.newpage()
   grid::pushViewport(grid::viewport(layout = grid::grid.layout(2, 2)))
-  grid::print(p1, vp = grid::viewport(layout.pos.row = 1, layout.pos.col = 1))
-  grid::print(p2, vp = grid::viewport(layout.pos.row = 1, layout.pos.col = 2))
-  grid::print(p3, vp = grid::viewport(layout.pos.row = 2, layout.pos.col = 1))
-  grid::print(p4, vp = grid::viewport(layout.pos.row = 2, layout.pos.col = 2))
+  print(p1, vp = grid::viewport(layout.pos.row = 1, layout.pos.col = 1))
+  print(p2, vp = grid::viewport(layout.pos.row = 1, layout.pos.col = 2))
+  print(p3, vp = grid::viewport(layout.pos.row = 2, layout.pos.col = 1))
+  print(p4, vp = grid::viewport(layout.pos.row = 2, layout.pos.col = 2))
   grid::popViewport()
   grDevices::dev.off()
   b64 <- base64enc::base64encode(tmp)
@@ -475,8 +475,8 @@ render_key_results <- function() {
     c("T6", "Gene-loss ordering", "Functional dependency vs retention order",
       "ρ = 0.955, exact permutation p = 0.0083",
       "Yes — random loss predicts no ordering"),
-    c("T7", "LTEE co-segregation", "Function-loss co-segregates with beneficial mutations",
-      "Observed 36.4% vs expected 61.7%, p = 0.0001",
+    c("T7", "LTEE co-segregation", "Function-loss depleted near beneficial sweeps",
+      "Observed 36.4% vs expected 61.7%, p = 0.0001 (depletion, not enrichment)",
       "No — hitchhiking confound; reported as suggestive"),
     c("FM", "Formal model", "Biphasic kinetics: fast Phase 1, slow Phase 2",
       "Phase1 rate 19.0, Phase2 rate 1.0, R² = 0.920, BF = 6.7",
@@ -503,6 +503,123 @@ render_key_results <- function() {
     "<th>Test</th><th>What it measures</th><th>Key value</th>",
     "<th>Distinguishes VI from competitors?</th>",
     "</tr></thead><tbody>", body, "</tbody></table>"
+  )
+}
+
+# ---------------------------------------------------------------------------
+# 6b. Toy Realms (speculative simulation — 4 explorable predictions)
+# ---------------------------------------------------------------------------
+render_toy_realms <- function() {
+  plots <- list()
+
+  # Realm 1: threshold gate sweep
+  r1 <- tryCatch({
+    sweep <- sweep_threshold(
+      depths = seq(0, 5, length.out = 50),
+      lambda = 0.15, theta = 2.5, m0 = 10, alpha = 0.05, time = 100
+    )
+    p <- plot_threshold_gate(sweep)
+    b64 <- save_plot_png(p, width = 8, height = 5)
+    paste0(
+      "<h3>Realm 1 — The threshold gate</h3>",
+      "<div class=\"summary\"><p><strong>What it explores:</strong> ",
+      "How genome retention collapses as parasitism crosses the protection ",
+      "threshold. Below the threshold, retention is ~1; above, it collapses to ~0. ",
+      "<strong>What it teaches:</strong> The gate is sharp, not gradual — ",
+      "VI predicts a threshold, not a smooth decline.</p></div>",
+      "<figure class=\"plot\"><img src=\"data:image/png;base64,", b64,
+      "\" alt=\"Threshold gate: retention vs parasitism depth, showing sharp collapse at theta\" />",
+      "<figcaption>Sweep over 50 depths; vertical dashed line = protection threshold.</figcaption></figure>"
+    )
+  }, error = function(e) {
+    paste0("<h3>Realm 1 — The threshold gate</h3>",
+           "<p class=\"placeholder\">Plot unavailable: ", html_escape(conditionMessage(e)), "</p>")
+  })
+  plots <- c(plots, r1)
+
+  # Realm 2: irreversibility sweep
+  r2 <- tryCatch({
+    sweep <- sweep_cusp_irreversibility(
+      a_grid = seq(1, -2, by = -0.25),
+      control_values = seq(-2, 2, length.out = 100)
+    )
+    p <- plot_irreversibility_sweep(sweep)
+    b64 <- save_plot_png(p, width = 8, height = 5)
+    paste0(
+      "<h3>Realm 2 — Irreversibility</h3>",
+      "<div class=\"summary\"><p><strong>What it explores:</strong> ",
+      "How hysteresis loop area grows as the cusp system crosses the bifurcation ",
+      "(a < 0). Loop area = 0 for a >= 0 (reversible); rises for a < 0 (irreversible). ",
+      "<strong>What it teaches:</strong> Irreversibility is quantitative ",
+      "(loop area, not just a boolean) and emerges at the bifurcation.</p></div>",
+      "<figure class=\"plot\"><img src=\"data:image/png;base64,", b64,
+      "\" alt=\"Irreversibility: hysteresis loop area vs cusp parameter a\" />",
+      "<figcaption>Sweep over a = 1 to -2; shaded region = cusp (irreversible).</figcaption></figure>"
+    )
+  }, error = function(e) {
+    paste0("<h3>Realm 2 — Irreversibility</h3>",
+           "<p class=\"placeholder\">Plot unavailable: ", html_escape(conditionMessage(e)), "</p>")
+  })
+  plots <- c(plots, r2)
+
+  # Realm 3: diversity-dependence contrast
+  r3 <- tryCatch({
+    contrast <- diversity_dependence_contrast(n_steps = 20, capacity = 30)
+    p <- plot_dd_contrast(contrast)
+    b64 <- save_plot_png(p, width = 12, height = 5)
+    paste0(
+      "<h3>Realm 3 — The Homo inversion</h3>",
+      "<div class=\"summary\"><p><strong>What it explores:</strong> ",
+      "The diversity-dependence sign flip: positive DD (autocatalytic, the Homo ",
+      "inversion) vs negative DD (logistic, niche-filling). Both trajectories grow, ",
+      "but the per-capita-rate-vs-N slope has opposite signs. ",
+      "<strong>What it teaches:</strong> The Homo inversion is a DD sign flip, ",
+      "not just a growth direction — the discriminator is the slope sign, not ",
+      "whether growth occurs.</p></div>",
+      "<figure class=\"plot\"><img src=\"data:image/png;base64,", b64,
+      "\" alt=\"DD contrast: autocatalytic vs logistic trajectories and per-capita-rate slopes\" />",
+      "<figcaption>Left: both trajectories grow. Right: AC slope positive (green), logistic negative (red).</figcaption></figure>"
+    )
+  }, error = function(e) {
+    paste0("<h3>Realm 3 — The Homo inversion</h3>",
+           "<p class=\"placeholder\">Plot unavailable: ", html_escape(conditionMessage(e)), "</p>")
+  })
+  plots <- c(plots, r3)
+
+  # Realm 4: cross-kingdom transfer breakdown
+  r4 <- tryCatch({
+    sweep <- sweep_transfer_robustness(noise_grid = seq(0, 0.3, by = 0.05))
+    p <- plot_transfer_breakdown(sweep)
+    b64 <- save_plot_png(p, width = 8, height = 5)
+    paste0(
+      "<h3>Realm 4 — Cross-kingdom transfer</h3>",
+      "<div class=\"summary\"><p><strong>What it explores:</strong> ",
+      "When does the full GLM model (dep + para) outperform the sign-only transfer ",
+      "(dep alone)? At low plant noise, the model transfer wins; as noise increases, ",
+      "they converge. <strong>What it teaches:</strong> The gap between the two ",
+      "curves is the information lost to ranking (Issue 7) — the magnitude the ",
+      "sign-only transfer discards.</p></div>",
+      "<figure class=\"plot\"><img src=\"data:image/png;base64,", b64,
+      "\" alt=\"Transfer breakdown: model vs sign-only rho across noise levels\" />",
+      "<figcaption>Green = model (dep + para); red = sign-only (dep alone). Gap = info lost to ranking.</figcaption></figure>"
+    )
+  }, error = function(e) {
+    paste0("<h3>Realm 4 — Cross-kingdom transfer</h3>",
+           "<p class=\"placeholder\">Plot unavailable: ", html_escape(conditionMessage(e)), "</p>")
+  })
+  plots <- c(plots, r4)
+
+  paste0(
+    "<div class=\"summary\"><p>The toy realms are <strong>speculative simulation, not empirical test</strong>. ",
+    "They make VI's predictions explorable across parameter space and hypothetical ",
+    "substrates, using synthetic data with known parameters. Each realm ends with ",
+    "\"the experiment that would fill this realm\" — the dataset that would convert ",
+    "it from speculative to empirical. See ",
+    "<a href=\"https://github.com/FlowFeel/vi-foundry/blob/main/docs/review/toy-realms-plan.md\">",
+    "the toy realms plan</a> and ",
+    "<a href=\"https://github.com/FlowFeel/vi-foundry/blob/main/vignettes/exploring-toy-realms.Rmd\">",
+    "the vignette</a> for the full literate treatment.</p></div>",
+    paste(plots, collapse = "\n")
   )
 }
 
@@ -588,19 +705,21 @@ html <- paste0(
   render_key_results(),
   "</div>\n",
 
+  # Section 5: Toy Realms
+  "<div class=\"section\">",
+  "<h2>5. Toy Realms — Speculative Simulation</h2>",
+  render_toy_realms(),
+  "</div>\n",
+
   # Footer
   "<div class=\"footer\">",
   "<p><strong>VI Foundry</strong> — production-grade computational artifacts ",
   "for the Valence-Ingression framework monograph.</p>",
   "<p>Standards: ",
-  "<a href=\"docs/standards/PHOSPHENE_R_STANDARDS.md\">Phosphene R Standards</a>",
+  "<a href=\"https://github.com/FlowFeel/vi-foundry/blob/main/docs/standards/PHOSPHENE_R_STANDARDS.md\">Phosphene R Standards</a>",
   "&nbsp;|&nbsp;<a href=\"", repo_url, "\">Repository</a>",
-  "&nbsp;|&nbsp;Review: ",
-  "<a href=\"drafts/research/monograph-reviews/valence-ingression-review.md\">",
-  "monograph review</a>",
-  "&nbsp;|&nbsp;Phased breakdown: ",
-  "<a href=\"drafts/research/monograph-reviews/vi-foundry-phased-breakdown.md\">",
-  "vi-foundry phased breakdown</a></p>",
+  "&nbsp;|&nbsp;<a href=\"https://github.com/FlowFeel/vi-foundry/blob/main/docs/review/README.md\">Review docs</a>",
+  "&nbsp;|&nbsp;<a href=\"https://github.com/FlowFeel/vi-foundry/blob/main/vignettes/exploring-toy-realms.Rmd\">Toy realms vignette</a></p>",
   "<p>Generated by <span class=\"mono\">scripts/render_pages.R</span> at ",
   timestamp, " — fully self-contained (no external requests).</p>",
   "</div>\n",

@@ -33,7 +33,7 @@ logistic/saturation model should fit best. Competitors: constant rate
 The biphasic shape is unique to VI's threshold-gated model. This test
 DOES distinguish VI from constant-rate and ratchet models.
 
-What supports VI: logistic model has lowest AICc and highest R\u00b2.
+What supports VI: logistic model has lowest AICc and highest R^2.
 What refutes VI: linear or exponential models fit better.
 }
 

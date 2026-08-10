@@ -53,14 +53,14 @@ test_that("fake_data_loader errors on unknown fixture", {
 
 test_that("load_orobanchaceae returns valid result with data and tree", {
   skip_if_not(
-    file.exists(file.path("data", "species_plastome_data.tsv")),
+    has_bundled_data("species_plastome_data.tsv"),
     "Bundled data not available"
   )
 
   result <- load_orobanchaceae()
 
   # A6: check-result — returns structured proof object
-  expect_true(validate_result(result))
+  expect_true(is_data_result(result))
   expect_true("data" %in% names(result))
   expect_true("metadata" %in% names(result))
 
@@ -78,24 +78,24 @@ test_that("load_orobanchaceae returns valid result with data and tree", {
 
 test_that("load_cross_family_plastomes returns valid result", {
   skip_if_not(
-    file.exists(file.path("data", "cross_family_plastome_data.tsv")),
+    has_bundled_data("cross_family_plastome_data.tsv"),
     "Bundled data not available"
   )
 
   result <- load_cross_family_plastomes()
-  expect_true(validate_result(result))
+  expect_true(is_data_result(result))
   expect_true("family" %in% names(result$data))
   expect_true(result$metadata$n > 10)
 })
 
 test_that("load_endosymbionts returns valid result", {
   skip_if_not(
-    file.exists(file.path("data", "endosymbiont_genome_data.tsv")),
+    has_bundled_data("endosymbiont_genome_data.tsv"),
     "Bundled data not available"
   )
 
   result <- load_endosymbionts()
-  expect_true(validate_result(result))
+  expect_true(is_data_result(result))
   expect_true("genome_bp" %in% names(result$data))
   expect_true("symbiosis_age_mya" %in% names(result$data))
   expect_true(all(result$data$genome_bp > 0))
@@ -103,12 +103,12 @@ test_that("load_endosymbionts returns valid result", {
 
 test_that("load_dewar_pangenome returns valid result", {
   skip_if_not(
-    file.exists(file.path("data", "dewar_pangenome_lifestyles.csv")),
+    has_bundled_data("dewar_pangenome_lifestyles.csv"),
     "Bundled data not available"
   )
 
   result <- load_dewar_pangenome()
-  expect_true(validate_result(result))
+  expect_true(is_data_result(result))
   expect_true("pangenome_fluidity" %in% names(result$data))
   expect_true(all(result$data$pangenome_fluidity >= 0))
   expect_true(all(result$data$pangenome_fluidity <= 1))
@@ -116,28 +116,62 @@ test_that("load_dewar_pangenome returns valid result", {
 
 test_that("load_bobay_ochman returns valid result", {
   skip_if_not(
-    file.exists(file.path("data", "bobay_ochman_table_s1.xlsx")),
+    has_bundled_data("bobay_ochman_table_s1.xlsx"),
     "Bundled data not available"
   )
   skip_if_not(requireNamespace("readxl", quietly = TRUE), "readxl not installed")
 
   result <- load_bobay_ochman()
-  expect_true(validate_result(result))
+  expect_true(is_data_result(result))
   expect_true(result$metadata$n >= 100)
 })
 
 test_that("load_island_birds errors gracefully when data missing", {
   skip_if(
-    file.exists(file.path("data", "island_bird_morphology.csv")),
+    has_bundled_data("island_bird_morphology.csv"),
     "Bird data exists — test the positive path instead"
   )
 
   expect_error(load_island_birds(), "not found")
 })
 
+test_that("load_island_birds returns valid result when data bundled", {
+  skip_if_not(
+    has_bundled_data("island_bird_morphology.csv"),
+    "Bird data not bundled"
+  )
+
+  result <- load_island_birds()
+  expect_true(is_data_result(result))
+  expect_true("structure" %in% names(result$data))
+  expect_true("dependency_score" %in% names(result$data))
+  expect_true("observed_rank" %in% names(result$data))
+  expect_true(result$metadata$n >= 5)
+})
+
+test_that("load_retention_matrix returns valid result", {
+  skip_if_not(
+    has_bundled_data("orobanchaceae_retention_matrix.tsv"),
+    "Retention matrix not bundled"
+  )
+
+  result <- load_retention_matrix()
+  expect_true(is_data_result(result))
+  expect_s3_class(result$data, "data.frame")
+  expect_equal(result$metadata$name, "retention_matrix")
+  expect_equal(result$metadata$n, 48)  # 8 species x 6 gene categories
+  expect_true("species" %in% names(result$data))
+  expect_true("parasitism_score" %in% names(result$data))
+  expect_true("gene_category" %in% names(result$data))
+  expect_true("dependency_score" %in% names(result$data))
+  expect_true("retention" %in% names(result$data))
+  expect_true(all(result$data$retention >= 0))
+  expect_true(all(result$data$retention <= 1))
+})
+
 test_that("all loaders return A6 proof objects with metadata", {
   skip_if_not(
-    file.exists(file.path("data", "species_plastome_data.tsv")),
+    has_bundled_data("species_plastome_data.tsv"),
     "Bundled data not available"
   )
 

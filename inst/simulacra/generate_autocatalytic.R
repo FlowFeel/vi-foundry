@@ -1,9 +1,12 @@
 # generate_autocatalytic.R — Simulacrum 4: Autocatalytic Set
 #
-# Generates synthetic innovation time series with KNOWN autocatalytic closure.
-# Logistic growth model: innovation rate increases with diversity (positive
-# diversity-dependence), producing a superlinear growth trajectory that
-# approaches carrying capacity.
+# Generates synthetic innovation time series with KNOWN autocatalytic closure
+# and GENUINELY positive diversity-dependence (the Homo inversion signature).
+# Bounded autocatalytic growth: per-capita innovation rate increases with
+# diversity N (from 0.5*innovation_rate to innovation_rate as N approaches
+# capacity), producing superlinear growth. This is distinct from logistic
+# growth, whose per-capita rate DECREASES with N (niche-filling — the
+# competitor's model, negatively diversity-dependent).
 #
 # @section Theoretical Context:
 #
@@ -43,13 +46,16 @@ generate_autocatalytic_set <- function(n_steps = 20,
                                        n_innovations = 10,
                                        seed = 42L) {
   withr::with_seed(seed, {
-    # --- Generate innovation time series via logistic growth ---
-    # count_t = count_{t-1} + rate * count_{t-1} * (1 - count_{t-1} / capacity)
+    # --- Generate innovation time series via bounded autocatalytic growth ---
+    # per-capita rate = r * (0.5 + 0.5 * N/(N+capacity)), which INCREASES with
+    # N (positive diversity-dependence). dN/dt = pc_rate * N. Bounded: the
+    # per-capita rate saturates at r, so N grows ~exp(rt) without blowing up.
     counts <- numeric(n_steps)
     counts[1] <- 1 # Start with one innovation
 
     for (t in 2:n_steps) {
-      growth <- innovation_rate * counts[t - 1] * (1 - counts[t - 1] / capacity)
+      pc_rate <- innovation_rate * (0.5 + 0.5 * counts[t - 1] / (counts[t - 1] + capacity))
+      growth <- pc_rate * counts[t - 1]
       counts[t] <- counts[t - 1] + growth
       # Ensure non-negative
       counts[t] <- max(0, counts[t])
@@ -102,7 +108,7 @@ generate_autocatalytic_set <- function(n_steps = 20,
         capacity = capacity,
         closure_threshold = closure_threshold,
         n_innovations = n_innovations,
-        model = "logistic_growth",
+        model = "autocatalytic_growth",
         converged = TRUE
       )
     )

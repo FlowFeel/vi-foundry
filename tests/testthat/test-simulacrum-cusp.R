@@ -98,30 +98,32 @@ test_that("system shows sudden jump when crossing bifurcation threshold", {
 
 # === Verify hysteresis: forward path ≠ reverse path ===
 
-test_that("cusp hysteresis is detected with stateful equilibrium function", {
-  # Create a stateful equilibrium function that follows the nearest branch
-  eq_fn <- make_cusp_equilibrium_fn(a = -1, initial_state = 1.0)
+test_that("cusp hysteresis is detected with pure branch-following equilibrium function", {
+  # Create a pure equilibrium function; the branch-following state is
+  # threaded by cusp_hysteresis_check (not hidden in a closure).
+  eq_fn <- make_cusp_equilibrium_fn(a = -1)
   # Control values crossing the bifurcation threshold both ways
   control_vals <- seq(-1, 1, length.out = 50)
 
-  result <- cusp_hysteresis_check(control_vals, eq_fn, seed = 42)
+  result <- cusp_hysteresis_check(control_vals, eq_fn, seed = 42,
+                                  initial_state = 1.0)
 
   expect_true(validate_result(result))
   # Hysteresis should be detected — forward path (increasing b,
   # staying on upper branch) ≠ reverse path (decreasing b,
   # staying on lower branch)
-  expect_equal(result$values["has_hysteresis"], 1, ignore_attr = TRUE)
-  expect_gt(result$values["max_difference"], 0.01)
+  expect_true(result$values[["has_hysteresis"]])
+  expect_gt(result$values[["max_difference"]], 0.01)
   expect_equal(result$metadata$seed, 42) # A2
   expect_equal(result$metadata$n, 50)
 })
 
 test_that("cusp hysteresis is deterministic with same seed (A2)", {
-  eq_fn <- make_cusp_equilibrium_fn(a = -1, initial_state = 1.0)
+  eq_fn <- make_cusp_equilibrium_fn(a = -1)
   control_vals <- seq(-1, 1, length.out = 50)
 
-  r1 <- cusp_hysteresis_check(control_vals, eq_fn, seed = 42)
-  r2 <- cusp_hysteresis_check(control_vals, eq_fn, seed = 42)
+  r1 <- cusp_hysteresis_check(control_vals, eq_fn, seed = 42, initial_state = 1.0)
+  r2 <- cusp_hysteresis_check(control_vals, eq_fn, seed = 42, initial_state = 1.0)
 
   expect_equal(r1$values, r2$values)
 })
@@ -149,14 +151,15 @@ test_that("null control (a=1, b=0) shows no bifurcation", {
 test_that("null control shows no hysteresis", {
   # For a = 1, the system has a single stable equilibrium for all b
   # No branch switching possible → no hysteresis
-  eq_fn <- make_cusp_equilibrium_fn(a = 1, initial_state = 0)
+  eq_fn <- make_cusp_equilibrium_fn(a = 1)
   control_vals <- seq(-2, 2, length.out = 50)
 
-  result <- cusp_hysteresis_check(control_vals, eq_fn, seed = 42)
+  result <- cusp_hysteresis_check(control_vals, eq_fn, seed = 42,
+                                  initial_state = 0)
 
   expect_true(validate_result(result))
-  expect_equal(result$values["has_hysteresis"], 0, ignore_attr = TRUE)
-  expect_lt(result$values["max_difference"], 0.01)
+  expect_false(result$values[["has_hysteresis"]])
+  expect_lt(result$values[["max_difference"]], 0.01)
 })
 
 # === A6 proof object: full validation ===
@@ -180,10 +183,11 @@ test_that("full simulacrum pipeline produces valid A6 proof object", {
   }
 
   # 3. Hysteresis detection
-  eq_fn <- make_cusp_equilibrium_fn(a = -1, initial_state = 1.0)
+  eq_fn <- make_cusp_equilibrium_fn(a = -1)
   control_vals <- seq(-1, 1, length.out = 50)
-  hyst_result <- cusp_hysteresis_check(control_vals, eq_fn, seed = 42)
-  hysteresis_detected <- as.logical(hyst_result$values["has_hysteresis"])
+  hyst_result <- cusp_hysteresis_check(control_vals, eq_fn, seed = 42,
+                                       initial_state = 1.0)
+  hysteresis_detected <- as.logical(hyst_result$values[["has_hysteresis"]])
 
   # 4. Null control passes
   null_df <- generate_cusp_system(a = 1, b_range = c(-2, 2), n = 100, seed = 42)
@@ -217,11 +221,11 @@ test_that("full simulacrum pipeline produces valid A6 proof object", {
   )
 
   expect_true(validate_result(proof))
-  expect_equal(proof$values["bifurcation_detected"], 1, ignore_attr = TRUE)
-  expect_equal(proof$values["hysteresis_detected"], 1, ignore_attr = TRUE)
-  expect_equal(proof$values["null_control_passes"], 1, ignore_attr = TRUE)
-  expect_equal(proof$values["jump_detected"], 1, ignore_attr = TRUE)
-  expect_equal(unname(proof$values["recovered_distance"]), 0, tolerance = 1e-10)
+  expect_equal(proof$values[["bifurcation_detected"]], 1, ignore_attr = TRUE)
+  expect_equal(proof$values[["hysteresis_detected"]], 1, ignore_attr = TRUE)
+  expect_equal(proof$values[["null_control_passes"]], 1, ignore_attr = TRUE)
+  expect_equal(proof$values[["jump_detected"]], 1, ignore_attr = TRUE)
+  expect_equal(unname(proof$values[["recovered_distance"]]), 0, tolerance = 1e-10)
   expect_equal(proof$metadata$seed, 42L)
   expect_equal(proof$metadata$n, 100)
 })

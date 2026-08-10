@@ -101,7 +101,7 @@ test_that("recovery run returns a validated A6 proof object", {
 
   # Reference (noiseless) true slope from the deterministic model
   true_data <- generate_synthetic_population(n = 50L, seed = 42L, noise_sd = 0)
-  true_slope <- .fit_reduction(true_data)["slope"]
+  true_slope <- unname(.fit_reduction(true_data)["slope"])
 
   # Single noisy recovery (seed 42) for the within-CI check
   rec_data <- generate_synthetic_population(n = 50L, seed = 42L)

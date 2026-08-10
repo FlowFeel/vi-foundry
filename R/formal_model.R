@@ -1,6 +1,11 @@
 #' Formal dynamical model of threshold-gated capacity reallocation
 #'
-#' The VI formal model: dC_i/dt = -λ × M(t) × I(d_i < θ)
+#' The VI formal model: dC_i/dt = -λ × M(t) × C_i × I(d_i < θ)
+#'
+#' NOTE: the C_i factor (current retention) is essential — without it the ODE
+#' is linear (dC/dt = -λM) whose solution C(T) = 1 - λ∫M dt goes negative;
+#' with it the ODE is exponential (dC/dt = -λMC) whose solution
+#' C(T) = exp(-λ∫M dt) stays in [0, 1], matching retention_at_time().
 #' where C_i = retention probability of trait i, M(t) = decaying niche-demand
 #' mismatch, d_i = integration depth, θ = protection threshold, λ = shedding rate.
 #'
@@ -88,7 +93,7 @@ retention_at_time <- function(depth, lambda, theta, m0, alpha, time) {
 
 #' Threshold-gated capacity reallocation model (full numerical integration)
 #'
-#' Solves dC_i/dt = -λ × M(t) × I(d_i < θ) for a panel of traits.
+#' Solves dC_i/dt = -λ × M(t) × C_i × I(d_i < θ) for a panel of traits.
 #'
 #' @param depths Numeric vector. Integration depths for each trait.
 #' @param lambda Numeric. Shedding rate.
@@ -99,7 +104,8 @@ retention_at_time <- function(depth, lambda, theta, m0, alpha, time) {
 #' @param n_steps Integer. Number of integration steps. Default 1000.
 #'
 #' @return List (A6):
-#'   \item{values}{Named numeric: final_retention vector, phase1_rate, phase2_rate, k1_k2_ratio}
+#'   \item{values}{Named numeric: final_retention vector, phase1_rate,
+#'     phase2_rate, early_late_displacement_ratio, threshold_biphasicity}
 #'   \item{metadata}{List: params, n_traits, n_steps, converged, method}
 #'
 #' @section Theoretical Context:
@@ -154,15 +160,35 @@ threshold_model <- function(depths, lambda, theta, m0, alpha, time,
   phase2_unprotected <- retention_history[phase1_end + 1L, ] - retention_history[n_steps + 1L, ]
   phase2_rate <- mean(phase2_unprotected[unprotected], na.rm = TRUE)
 
-  # k1/k2 ratio (biphasic indicator)
-  k1_k2 <- if (phase2_rate > 0) phase1_rate / phase2_rate else Inf
+  # Early/late temporal displacement ratio (descriptive, NOT a rate ratio).
+  # This is large by arithmetic when the exponential decay finishes early;
+  # it measures how completely Phase 1 finished, not a two-phase rate ratio.
+  # The genuine biphasic signal is the threshold gate (see threshold_biphasicity).
+  # Guard the all-protected edge case (theta <= min(depths)): no unprotected
+  # traits, so phase1_rate / phase2_rate are NaN (mean of empty set).
+  early_late_displacement_ratio <-
+    if (is.na(phase2_rate) || is.na(phase1_rate)) {
+      NA_real_
+    } else if (phase2_rate > 0) {
+      phase1_rate / phase2_rate
+    } else {
+      Inf
+    }
+
+  # Threshold biphasicity: the real biphasic signature. Protected traits
+  # (d >= theta) retain at 1.0; unprotected traits (d < theta) shed to ~0.
+  # A value near 1.0 means the threshold gate cleanly separates the two classes.
+  prot_ret <- if (sum(!unprotected) > 0) mean(retention[!unprotected]) else NA_real_
+  unprot_ret <- if (sum(unprotected) > 0) mean(retention[unprotected]) else NA_real_
+  threshold_biphasicity <- prot_ret - unprot_ret
 
   result <- list(
     values = list(
       final_retention = retention,
       phase1_rate = phase1_rate,
       phase2_rate = phase2_rate,
-      k1_k2_ratio = k1_k2
+      early_late_displacement_ratio = early_late_displacement_ratio,
+      threshold_biphasicity = threshold_biphasicity
     ),
     metadata = list(
       params = list(
@@ -198,4 +224,131 @@ threshold_model <- function(depths, lambda, theta, m0, alpha, time,
 phase_transition_time <- function(m0, alpha, threshold_fraction = 0.1) {
   # Solution: time when retained genome drops below threshold fraction
   -log(threshold_fraction) / alpha
+}
+
+#' Empirical formal model: additive GLM fit to the retention matrix
+#'
+#' Fits `retention ~ dependency_score + parasitism_score` (quasibinomial GLM)
+#' to the 8×6 Orobanchaceae retention matrix, then tests cross-kingdom
+#' transfer by predicting bird-trait retention at a fixed parasitism level
+#' and correlating the predicted ordering with observed morphological-change
+#' ranks (Spearman).
+#'
+#' This is the empirical formal model — the corrected version of the author's
+#' original GLM from `archive/pre-foundry-scripts/run_formal_model.R`. The
+#' author's script had a data-flattening bug (`as.vector(t(retention))` is
+#' species-major; `rep(dep_scores, each = 8)` is gene-major) that scrambled
+#' `dep` and `retention`, producing the wrong sign on `dep` (−0.83 instead
+#' of +0.84). With the corrected dataset (`load_retention_matrix()`), the
+#' GLM confirms VI: `dep > 0` (p < 0.001), `para < 0` (p < 0.001),
+#' cross-kingdom ρ = +0.755. See Remark R7 and
+#' `docs/review/formal-model-reproduction.md`.
+#'
+#' The theoretical companion is [threshold_model()] (the deterministic ODE
+#' simulation, which does not fit data and cannot fail empirically).
+#'
+#' @param plant_data Data frame. The retention matrix (from
+#'   [load_retention_matrix()]). Requires columns: `dependency_score`,
+#'   `parasitism_score`, `retention`.
+#' @param bird_data Data frame. Island-bird morphology (from
+#'   [load_island_birds()]). Requires columns: `dependency_score`,
+#'   `observed_rank`.
+#' @param para_for_transfer Numeric. Parasitism level at which to evaluate
+#'   the GLM for cross-kingdom prediction (default 3 = "deep commitment").
+#' @param seed Integer. Unused (the GLM is deterministic, A2) — included for
+#'   contract consistency.
+#'
+#' @return List (A6):
+#'   \item{values}{Named numeric: intercept, dep_coefficient, dep_p_value,
+#'     para_coefficient, para_p_value, pseudo_r_squared, cross_kingdom_rho,
+#'     cross_kingdom_p, dep_positive, para_negative, vi_confirmed}
+#'   \item{metadata}{List: n, n_species, n_gene_categories, method, seed,
+#'     para_for_transfer}
+#'
+#' @section Theoretical Context:
+#'
+#' VI Prediction: `dep > 0` (deeper integration → higher retention),
+#' `para < 0` (deeper parasitism → lower retention), and cross-kingdom
+#' ρ > 0 (plant-derived model predicts bird ordering).
+#'
+#' Competitors: random loss (dep ≈ 0), relaxed selection (para ns),
+#' substrate-independence (ρ ≈ 0 or negative).
+#'
+#' @dft A1, A2, A6
+#'
+#' @export
+#' @examples
+#' \dontrun{
+#' plant <- load_retention_matrix()
+#' bird <- load_island_birds()
+#' result <- empirical_formal_model(plant$data, bird$data)
+#' result$values$dep_coefficient # ~ +0.84 (VI predicts > 0)
+#' result$values$cross_kingdom_rho # ~ +0.755
+#' }
+empirical_formal_model <- function(plant_data, bird_data,
+                                   para_for_transfer = 3, seed = 42L) {
+  validate_retention_data(plant_data)
+  validate_bird_morphology(bird_data)
+
+  # Fit the additive quasibinomial GLM: retention ~ dep + para
+  fit <- stats::glm(
+    retention ~ dependency_score + parasitism_score,
+    data = plant_data,
+    family = quasibinomial()
+  )
+  s <- summary(fit)
+
+  intercept <- stats::coef(fit)[[1]]
+  dep_coef <- stats::coef(fit)[[2]]
+  para_coef <- stats::coef(fit)[[3]]
+  dep_p <- s$coefficients[2, 4]
+  para_p <- s$coefficients[3, 4]
+  pseudo_r2 <- 1 - fit$deviance / fit$null.deviance
+
+  # Cross-kingdom transfer: predict bird retention at para_for_transfer
+  bird_pred <- stats::predict(fit,
+    newdata = data.frame(
+      dependency_score = bird_data$dependency_score,
+      parasitism_score = rep(para_for_transfer, nrow(bird_data))
+    ),
+    type = "response"
+  )
+  ct <- stats::cor.test(bird_pred, bird_data$observed_rank,
+    method = "spearman", exact = FALSE
+  )
+  cross_kingdom_rho <- as.numeric(ct$estimate)
+  cross_kingdom_p <- ct$p.value
+
+  # VI predictions
+  dep_positive <- dep_coef > 0
+  para_negative <- para_coef < 0
+  vi_confirmed <- dep_positive && para_negative && cross_kingdom_rho > 0
+
+  result <- list(
+    values = list(
+      intercept = intercept,
+      dep_coefficient = dep_coef,
+      dep_p_value = dep_p,
+      para_coefficient = para_coef,
+      para_p_value = para_p,
+      pseudo_r_squared = pseudo_r2,
+      cross_kingdom_rho = cross_kingdom_rho,
+      cross_kingdom_p = cross_kingdom_p,
+      dep_positive = dep_positive,
+      para_negative = para_negative,
+      vi_confirmed = vi_confirmed
+    ),
+    metadata = list(
+      n = nrow(plant_data),
+      n_species = length(unique(plant_data$species)),
+      n_gene_categories = length(unique(plant_data$gene_category)),
+      method = "quasibinomial GLM (retention ~ dep + para)",
+      seed = seed,
+      para_for_transfer = para_for_transfer,
+      converged = fit$converged
+    )
+  )
+
+  validate_result(result)
+  result
 }

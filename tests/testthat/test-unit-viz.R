@@ -250,7 +250,8 @@ test_that("plot_retention_trajectory returns a ggplot object", {
       final_retention1 = 0.3, final_retention2 = 0.6,
       final_retention3 = 0.9, final_retention4 = 1.0,
       final_retention5 = 1.0,
-      phase1_rate = 19.0, phase2_rate = 1.0, k1_k2_ratio = 19.0
+      phase1_rate = 19.0, phase2_rate = 1.0,
+      early_late_displacement_ratio = 19.0, threshold_biphasicity = 1.0
     ),
     metadata = list(
       params = list(
@@ -447,7 +448,8 @@ test_that("all viz functions are pure (A1 — no file I/O, no side effects)", {
       final_retention1 = 0.3, final_retention2 = 0.6,
       final_retention3 = 0.9, final_retention4 = 1.0,
       final_retention5 = 1.0,
-      phase1_rate = 19, phase2_rate = 1, k1_k2_ratio = 19
+      phase1_rate = 19, phase2_rate = 1,
+      early_late_displacement_ratio = 19, threshold_biphasicity = 1
     ),
     metadata = list(
       params = list(

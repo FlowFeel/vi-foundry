@@ -217,7 +217,7 @@ plot_faceted_family_regression <- function(data) {
 #' The biphasic shape is unique to VI's threshold-gated model. This test
 #' DOES distinguish VI from constant-rate and ratchet models.
 #'
-#' What supports VI: logistic model has lowest AICc and highest R\u00b2.
+#' What supports VI: logistic model has lowest AICc and highest R^2.
 #' What refutes VI: linear or exponential models fit better.
 #'
 #' @dft A1 (pure — data in, ggplot2 object out), A6 (structured, inspectable)
@@ -899,8 +899,14 @@ plot_retention_trajectory <- function(model_result, depths = NULL) {
   # Compute phase boundary
   phase_time <- -log(0.1) / alpha
 
-  # Extract rates for annotation
-  k1_k2 <- unname(model_result$values[["k1_k2_ratio"]])
+  # Extract biphasic metrics for annotation. early_late_displacement_ratio
+  # is a temporal displacement ratio (descriptive); threshold_biphasicity is
+  # the genuine biphasic signal (protected − unprotected retention). Fall
+  # back gracefully if a field is absent (older proof objects).
+  displacement <- if (!is.null(model_result$values[["early_late_displacement_ratio"]]))
+    unname(model_result$values[["early_late_displacement_ratio"]]) else NA_real_
+  biphasicity <- if (!is.null(model_result$values[["threshold_biphasicity"]]))
+    unname(model_result$values[["threshold_biphasicity"]]) else NA_real_
 
   p <- ggplot2::ggplot(traj_df, ggplot2::aes(
     x = .data$time, y = .data$retention,
@@ -930,7 +936,7 @@ plot_retention_trajectory <- function(model_result, depths = NULL) {
     ) +
     ggplot2::annotate("text",
       x = time * 0.9, y = 0.95,
-      label = sprintf("k\u2081/k\u2082 = %.1f", k1_k2),
+      label = sprintf("threshold biphasicity = %.2f", biphasicity),
       hjust = 1, size = 3.5, color = "grey30"
     ) +
     ggplot2::labs(
@@ -1024,53 +1030,42 @@ plot_cusp_bifurcation <- function(a_range, b_range, grid_size = 50L) {
     ggplot2::theme_minimal(base_size = 11) +
     ggplot2::theme(legend.position = "bottom")
 
-  # Panel B: Hysteresis loop
+  # Panel B: Hysteresis loop. Uses the SAME branch-following contract as
+  # cusp_hysteresis_check(): the reverse sweep starts from the forward sweep's
+  # FINAL state (ramp up, then ramp down from the top), so the two paths can
+  # settle to different branches in the bistable region. Previously both
+  # sweeps started from x=0, which produced a loop for the wrong reason
+  # (different starting points, not path dependence).
   n_pts <- 100
-  ctrl_seq <- seq(-3, 3, length.out = n_pts)
-
-  # Forward path: increasing commitment
-  forward_state <- function(x) {
-    # Equilibrium: x^3 + a*x + b = 0, solve for x given a, b
-    # Use the cubic formula approximation
-    x^3 + (-0.5) * x + 0.5 * x
-  }
-
-  # Simplified hysteresis: use a = -0.5 (bistable), vary b
   a_fixed <- -0.5
   b_seq_path <- seq(b_range[1], b_range[2], length.out = n_pts)
 
-  # Approximate equilibrium states
-  # For each (a_fixed, b), solve x^3 + a*x + b = 0
-  # Use simple Newton iterations
+  # Newton solver for the nearest real root of x^3 + a*x + b = 0
+  solve_nearest <- function(b_val, x_guess, a) {
+    for (iter in 1:50) {
+      fx <- x_guess^3 + a * x_guess + b_val
+      fpx <- 3 * x_guess^2 + a
+      if (abs(fpx) < 1e-10) break
+      x_new <- x_guess - fx / fpx
+      if (abs(x_new - x_guess) < 1e-8) break
+      x_guess <- x_new
+    }
+    x_guess
+  }
+
+  # Forward sweep: increasing b, state threaded from x=0
   forward_states <- numeric(n_pts)
   x_guess <- 0
   for (i in seq_len(n_pts)) {
-    b_val <- b_seq_path[i]
-    # Newton: f(x) = x^3 + a*x + b, f'(x) = 3*x^2 + a
-    for (iter in 1:20) {
-      fx <- x_guess^3 + a_fixed * x_guess + b_val
-      fpx <- 3 * x_guess^2 + a_fixed
-      if (abs(fpx) < 1e-10) break
-      x_new <- x_guess - fx / fpx
-      if (abs(x_new - x_guess) < 1e-8) break
-      x_guess <- x_new
-    }
+    x_guess <- solve_nearest(b_seq_path[i], x_guess, a_fixed)
     forward_states[i] <- x_guess
   }
 
-  # Reverse path: start from end
+  # Reverse sweep: decreasing b, starting from the forward sweep's FINAL
+  # state (standard hysteresis protocol).
   reverse_states <- numeric(n_pts)
-  x_guess <- 0
   for (i in seq_len(n_pts)) {
-    b_val <- rev(b_seq_path)[i]
-    for (iter in 1:20) {
-      fx <- x_guess^3 + a_fixed * x_guess + b_val
-      fpx <- 3 * x_guess^2 + a_fixed
-      if (abs(fpx) < 1e-10) break
-      x_new <- x_guess - fx / fpx
-      if (abs(x_new - x_guess) < 1e-8) break
-      x_guess <- x_new
-    }
+    x_guess <- solve_nearest(rev(b_seq_path)[i], x_guess, a_fixed)
     reverse_states[i] <- x_guess
   }
 

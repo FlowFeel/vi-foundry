@@ -17,8 +17,7 @@ jobs:
     container: rocker/tidyverse:4.5.3
     steps:
       - uses: actions/checkout@v4
-      - name: Install lintr
-        run: R -e "install.packages(c('lintr', 'styler', 'roxygen2'), repos='${{ env.R_REPOS }}')"
+      - uses: ./.github/actions/setup-r-deps
       - name: Style check
         run: |
           Rscript -e "
@@ -46,16 +45,7 @@ jobs:
     needs: lint
     steps:
       - uses: actions/checkout@v4
-      - name: Install system dependencies
-        run: |
-          apt-get update && apt-get install -y --no-install-recommends libpq-dev
-          rm -rf /var/lib/apt/lists/*
-      - name: Install R dependencies
-        run: |
-          R -e "install.packages(c(
-            'testthat','withr','covr','mockery','R6','yaml','ggplot2',
-            'roxygen2','readxl','knitr','rmarkdown','patchwork','dplyr','viridis'
-          ), repos='${{ env.R_REPOS }}')"
+      - uses: ./.github/actions/setup-r-deps
       - name: Generate NAMESPACE
         run: Rscript -e "roxygen2::roxygenize('.', load_code=roxygen2::load_source)"
       - name: Install package
@@ -84,22 +74,15 @@ jobs:
     needs: unit
     steps:
       - uses: actions/checkout@v4
-      - name: Install system dependencies
-        run: |
-          apt-get update && apt-get install -y --no-install-recommends libpq-dev
-          rm -rf /var/lib/apt/lists/*
-      - name: Install R dependencies
-        run: |
-          R -e "install.packages(c(
-            'testthat','withr','R6','yaml','ggplot2',
-            'roxygen2','readxl','knitr','rmarkdown','patchwork','dplyr','viridis'
-          ), repos='${{ env.R_REPOS }}')"
+      - uses: ./.github/actions/setup-r-deps
       - name: Generate NAMESPACE and install
         run: |
           Rscript -e "roxygen2::roxygenize('.', load_code=roxygen2::load_source)"
           R CMD INSTALL .
       - name: Run simulacra tests
         run: Rscript run_tests.R simulacra
+      - name: Emit simulacrum marks
+        run: Rscript scripts/run_simulacra.R --n-sims 20
       - name: Generate visualizations
         run: Rscript scripts/generate_viz.R
       - name: Upload simulacra results
@@ -107,6 +90,11 @@ jobs:
         with:
           name: simulacra-results
           path: results/
+      - name: Upload regenerated pages HTML
+        uses: actions/upload-artifact@v4
+        with:
+          name: pages-html
+          path: docs/index.html
           retention-days: 7
 
   integration:
@@ -115,16 +103,7 @@ jobs:
     needs: simulacra
     steps:
       - uses: actions/checkout@v4
-      - name: Install system dependencies
-        run: |
-          apt-get update && apt-get install -y --no-install-recommends libpq-dev
-          rm -rf /var/lib/apt/lists/*
-      - name: Install R dependencies
-        run: |
-          R -e "install.packages(c(
-            'testthat','withr','R6','yaml','ggplot2',
-            'roxygen2','readxl','knitr','rmarkdown','patchwork','dplyr','viridis'
-          ), repos='${{ env.R_REPOS }}')"
+      - uses: ./.github/actions/setup-r-deps
       - name: Generate NAMESPACE and install
         run: |
           Rscript -e "roxygen2::roxygenize('.', load_code=roxygen2::load_source)"
@@ -138,16 +117,7 @@ jobs:
     needs: integration
     steps:
       - uses: actions/checkout@v4
-      - name: Install system dependencies
-        run: |
-          apt-get update && apt-get install -y --no-install-recommends libpq-dev
-          rm -rf /var/lib/apt/lists/*
-      - name: Install R dependencies
-        run: |
-          R -e "install.packages(c(
-            'testthat','withr','R6','yaml','ggplot2',
-            'roxygen2','readxl','knitr','rmarkdown','patchwork','dplyr','viridis'
-          ), repos='${{ env.R_REPOS }}')"
+      - uses: ./.github/actions/setup-r-deps
       - name: Generate NAMESPACE and install
         run: |
           Rscript -e "roxygen2::roxygenize('.', load_code=roxygen2::load_source)"
@@ -161,50 +131,44 @@ jobs:
     needs: regression
     steps:
       - uses: actions/checkout@v4
-      - name: Install system dependencies
-        run: |
-          apt-get update && apt-get install -y --no-install-recommends libpq-dev
-          rm -rf /var/lib/apt/lists/*
-      - name: Install R dependencies
-        run: |
-          R -e "install.packages(c(
-            'testthat','withr','R6','yaml','ggplot2',
-            'roxygen2','readxl','knitr','rmarkdown','patchwork','dplyr','viridis'
-          ), repos='${{ env.R_REPOS }}')"
+      - uses: ./.github/actions/setup-r-deps
       - name: Generate NAMESPACE and install
         run: |
           Rscript -e "roxygen2::roxygenize('.', load_code=roxygen2::load_source)"
           R CMD INSTALL .
       - name: R CMD check
-        run: rcmdcheck::rcmdcheck(".", args = c("--no-manual", "--as-cran"))
+        run: Rscript -e "rcmdcheck::rcmdcheck('.', args = c('--no-manual', '--as-cran'), error_on = 'error')"
 
   pages:
     runs-on: ubuntu-latest
     needs: [simulacra]
     permissions:
-      contents: read
-      pages: write
-      id-token: write
+      contents: write
     steps:
       - uses: actions/checkout@v4
-      - name: Download simulacra results
+      - name: Download regenerated index.html
         uses: actions/download-artifact@v4
         with:
-          name: simulacra-results
-          path: results/
-      - name: Copy visualizations to docs
-        run: |
-          mkdir -p docs/simulacra
-          cp results/simulacra/*.png docs/simulacra/ 2>/dev/null || true
-          cp results/simulacra/*.pdf docs/simulacra/ 2>/dev/null || true
-      - name: Build Pages artifact
-        uses: actions/configure-pages@v5
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
-        with:
+          name: pages-html
           path: docs/
-      - name: Deploy to GitHub Pages
-        uses: actions/deploy-pages@v4
+      - name: Verify pages HTML
+        run: |
+          test -f docs/index.html
+          grep -q "Toy Realms" docs/index.html
+          grep -q "Simulacra Overview" docs/index.html
+          echo "Pages HTML verified: contains simulacra + toy realms sections"
+      - name: Commit regenerated pages to main
+        if: github.ref == 'refs/heads/main' && github.event_name == 'push'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add docs/index.html
+          if git diff --cached --quiet; then
+            echo "No changes to docs/index.html"
+          else
+            git commit -m "docs(pages): auto-regenerate index.html with latest simulacra marks [skip ci]"
+            git push
+          fi
 
   summary:
     runs-on: ubuntu-latest
@@ -222,4 +186,4 @@ jobs:
           echo "| Integration | ${{ needs.integration.result }} |" >> $GITHUB_STEP_SUMMARY
           echo "| Regression | ${{ needs.regression.result }} |" >> $GITHUB_STEP_SUMMARY
           echo "| R CMD Check | ${{ needs.check.result }} |" >> $GITHUB_STEP_SUMMARY
-          echo "| Pages Deploy | ${{ needs.pages.result }} |" >> $GITHUB_STEP_SUMMARY
+          echo "| Pages | ${{ needs.pages.result }} |" >> $GITHUB_STEP_SUMMARY

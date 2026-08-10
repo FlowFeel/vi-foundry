@@ -106,6 +106,6 @@ stages:
   - name: cross_kingdom_l3
     inputs: [data/raw/orobanchaceae, data/raw/island_birds]
     outputs: [results/cross_kingdom]
-    function: cross_kingdom_transfer
+    function: transfer_test
     params:
       seed: 42

@@ -93,7 +93,18 @@ predict_bird_ordering <- function(bird_data, plant_slope) {
 #' @param bird_data Data frame with structure, dependency_score, observed_rank.
 #' @param seed Integer. Seed for reproducibility.
 #'
-#' @return List (A6): values (plant_slope, bird_rho, bird_p, null_rho), metadata.
+#' @return List (A6): values (plant_slope, bird_rho, bird_p, null_rho,
+#'   null_p), metadata.
+#'
+#' @section Note on "transfer":
+#'
+#' predict_bird_ordering() ranks (plant_slope * dependency_score), and
+#' rank(a*x) = rank(x) for any a > 0, so the plant slope MAGNITUDE is
+#' discarded — only the slope SIGN transfers (a positive plant slope yields
+#' the same ordering as dependency_score itself). This is an ordering-
+#' concordance test (does bird observed_rank agree with dependency_score?),
+#' not a full parameter transfer. This matches the oracle caveat ("Ordering
+#' transfers across kingdoms; rate does not").
 #'
 #' @dft A1, A2, A6
 #'
@@ -111,24 +122,35 @@ transfer_test <- function(plant_data, bird_data, seed = 42L) {
     observed_ranks <- bird_data$observed_rank
     cor_result <- cor.test(predicted_ranks, observed_ranks, method = "spearman")
 
-    # Null control: random slope
-    random_slope <- runif(1, -1, 1)
-    null_predicted <- random_slope * bird_data$dependency_score
-    null_ranks <- rank(null_predicted, ties.method = "average")
-    null_cor <- cor.test(null_ranks, observed_ranks, method = "spearman")
+    # Null control: distribution of random slopes (not a single draw). A
+    # single runif(1) draw cannot support a null p-value; a distribution can.
+    # null_p = proportion of random-slope orderings whose |rho| meets or
+    # exceeds the observed |bird_rho|.
+    n_null <- 1000L
+    obs_abs_rho <- abs(unname(cor_result$estimate))
+    null_rhos <- replicate(n_null, {
+      random_slope <- runif(1, -1, 1)
+      null_predicted <- random_slope * bird_data$dependency_score
+      null_ranks <- rank(null_predicted, ties.method = "average")
+      cor(null_ranks, observed_ranks, method = "spearman")
+    })
+    null_rho_mean <- mean(null_rhos, na.rm = TRUE)
+    null_p <- mean(abs(null_rhos) >= obs_abs_rho, na.rm = TRUE)
 
     result <- list(
       values = list(
         plant_slope = unname(plant_slope),
         bird_rho = unname(cor_result$estimate),
         bird_p = unname(cor_result$p.value),
-        null_rho = unname(null_cor$estimate)
+        null_rho = null_rho_mean,
+        null_p = null_p
       ),
       metadata = list(
         seed = seed,
         n_plant = nrow(plant_data),
         n_bird = nrow(bird_data),
         n_bird_structures = length(unique(bird_data$structure)),
+        n_null = n_null,
         converged = TRUE
       )
     )

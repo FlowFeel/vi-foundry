@@ -4,7 +4,7 @@
 \alias{make_result}
 \title{Helper: create result object (A6: check-result)}
 \usage{
-make_result(data, name, source)
+make_result(data, name, source, ...)
 }
 \arguments{
 \item{data}{The loaded data.}

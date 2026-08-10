@@ -57,21 +57,32 @@ test_that("diversity_dependence_sign detects positive trend", {
   counts <- c(10, 20, 30, 40, 50)
   result <- diversity_dependence_sign(counts, seed = 42)
   expect_true(validate_result(result))
-  expect_equal(result$values[["sign"]], "positive")
-  expect_gt(result$values[["slope"]], 0)
+  expect_equal(result$values[["growth_direction"]], "positive")
+  expect_gt(result$values[["growth_slope"]], 0)
 })
 
 test_that("diversity_dependence_sign detects negative trend", {
   counts <- c(50, 40, 30, 20, 10)
   result <- diversity_dependence_sign(counts, seed = 42)
-  expect_equal(result$values[["sign"]], "negative")
-  expect_lt(result$values[["slope"]], 0)
+  expect_equal(result$values[["growth_direction"]], "negative")
+  expect_lt(result$values[["growth_slope"]], 0)
 })
 
 test_that("diversity_dependence_sign detects superlinear growth", {
   counts <- c(1, 4, 9, 16, 25, 36) # quadratic
   result <- diversity_dependence_sign(counts, seed = 42)
   expect_true(result$values[["is_superlinear"]])
+})
+
+test_that("diversity_dependence_sign computes genuine diversity-dependence", {
+  # Linear growth: per-capita rate = k/N decreases with N -> negative DD
+  lin <- 3 * seq_len(20)
+  r_lin <- diversity_dependence_sign(lin, seed = 42)
+  expect_equal(r_lin$values[["diversity_dependence_sign"]], "negative")
+  # Exponential growth: per-capita rate constant -> DD slope ~ 0 (not positive)
+  exp_counts <- round(exp(0.3 * seq_len(20)))
+  r_exp <- diversity_dependence_sign(exp_counts, seed = 42)
+  expect_true(r_exp$values[["diversity_dependence_slope"]] < 0.01)
 })
 
 test_that("diversity_dependence_sign is deterministic with same seed (A2)", {

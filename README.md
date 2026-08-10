@@ -50,6 +50,39 @@ Every value below is the manuscript-reported result, stored as ground truth in [
 | T6: Gene-loss ordering | Functional dependency vs retention order | ρ = 0.955, exact permutation p = 0.0083 | Yes — random loss predicts no ordering |
 | L3: Cross-kingdom transfer | Plant parameters predict bird morphology | ρ = 0.755, p = 0.031 | Yes — substrate independence predicts no transfer |
 
+**Live visualizations:** [https://flowfeel.github.io/vi-foundry/](https://flowfeel.github.io/vi-foundry/) — simulacra parameter recovery, baseline oracle, key results, and four speculative toy realms (threshold gate, irreversibility, Homo inversion, cross-kingdom transfer), all with literate context.
+
+---
+
+## Documentation
+
+The foundry ships a complete review trail — every claim traced to its root cause, every algorithm surveyed with its prediction and competitor, every finding recorded as a numbered Remark or Review Item that the code cites directly. All documents are in [`docs/review/`](docs/review/) (see the [review index](docs/review/README.md) for the full list).
+
+### Critical review
+
+| Document | What it is |
+|----------|-----------|
+| [Valence-ingression review](docs/review/valence-ingression-review.md) | Critical review of the VI monograph (Ritch-Frel, v9) and the foundry artifacts. Numbered **Remarks** (R1–R7) and **Review Items** (1–6). The foundry's code cites these directly. |
+| [Calculation review](docs/review/calculation-review.md) | Literate walkthrough of the calculation audit: for each oracle entry, the prediction, the broken output, the root-cause diagnosis, and the fix. |
+| [Math review](docs/review/math-review.md) | Audit of the mathematics vs. the implementation vs. the claims (seven issues ranked by severity; two severe). All seven resolved by the three-phase refactoring. |
+| [Refactoring plan](docs/review/refactoring-plan.md) | Execution plan for the math-review issues: proposed refactoring, blast radius, risk, and three-phase ordering (safest-first). Status: COMPLETE. |
+
+### Build history and synthesis
+
+| Document | What it is |
+|----------|-----------|
+| [Phased breakdown](docs/review/vi-foundry-phased-breakdown.md) | Phase-by-phase breakdown of the foundry build, current gate status, and the open data-reconciliation work (items 4–6). |
+| [Algorithms & findings](docs/review/algorithms-and-findings.md) | Formal literate survey of every algorithm, its prediction, its competitor, and a plain-language reading of the current result. The synthesis of what the foundry establishes, what it does not, and what that means for the framework. |
+
+### Modeling, data, and the empirical frontier
+
+| Document | What it is |
+|----------|-----------|
+| [Modeling, sim & viz review](docs/review/modeling-sim-viz-review.md) | Review of the author's existing modeling (finds the original empirical GLM was broken by a data-flattening bug; the foundry hid this with a theoretical simulation). Evaluation of the sim/viz infrastructure (three latent viz bugs found and fixed). Proposal for a speculative simulation capacity. |
+| [Formal model reproduction](docs/review/formal-model-reproduction.md) | Deep-dive reproduction of the broken GLM. **Root cause:** `as.vector(t(retention))` misaligns dep and retention. **Fix:** remove one `t()`. The corrected additive GLM gives dep = +0.84 (p = 0.0008), para p < 0.0001, cross-kingdom ρ = +0.755 — all matching VI. Recorded as **Remark R7**. |
+| [Empirical-testing expansion plan](docs/review/empirical-testing-expansion-plan.md) | Proposal for moving the three "testable but not yet tested" modules (Homo inversion, cusp irreversibility, cross-kingdom transfer) toward tested. Honest about the data boundary. |
+| [Toy realms plan](docs/review/toy-realms-plan.md) | Execution plan for the speculative simulation capacity: four phased toy realms that make VI's predictions explorable without claiming empirical test. Status: COMPLETE — all 4 realms built, tested, and documented. |
+
 ---
 
 ## Glossary
@@ -153,7 +186,7 @@ The testing strategy is a pyramid:
               └─────────┘
 ```
 
-- **15 test files**, **162 test cases** (`test_that` blocks)
+- **18 test files**, **267 test cases** (`test_that` blocks)
 - **5 simulacra** — each generates synthetic data with known ground truth, runs the pipeline, verifies parameter recovery, and confirms the null control does NOT recover (specificity)
 - **Baseline oracle** — YAML ground truth for every manuscript value, compared within numerical tolerance
 - **5 BDD feature files** — statistical contracts in Gherkin (same seed → same output, pipeline idempotency, numerical stability, parameter recovery)
@@ -173,7 +206,7 @@ Seven gates, each depends on the previous:
 | 4. Integration | Full pipeline via Docker simulacrum stack + BDD features | Integration results |
 | 5. Regression | All results match baseline oracle within tolerance | — |
 | 6. R CMD check | Package validation (no errors, warnings, or notes) | Check report |
-| 7. Pages | Deploy simulacra visualizations to GitHub Pages | [https://flowfeel.github.io/vi-foundry/](https://flowfeel.github.io/vi-foundry/) |
+| 7. Pages | Verify + commit regenerated visualizations to `docs/` (served via legacy branch deployment from `main/docs`) | [https://flowfeel.github.io/vi-foundry/](https://flowfeel.github.io/vi-foundry/) |
 
 ---
 
@@ -187,16 +220,17 @@ All data files are bundled in `data/` with provenance documented in [`data/READM
 
 ```
 vi-foundry/
-├── R/                    Pure functional library (10 files, 14+ exported functions)
-├── tests/                Test suite (15 files, 162 test cases)
+├── R/                    Pure functional library (12 files, 30+ exported functions)
+├── tests/                Test suite (18 files, 267 test cases)
 ├── baseline/             Ground truth oracle (YAML — human-readable)
 ├── data/                 Bundled datasets with provenance
 ├── inst/simulacra/       Synthetic data generators (5 files)
-├── inst/examples/        Literate analysis report (R Markdown)
-├── vignettes/            Package vignette (R Markdown)
+├── inst/examples/        Literate analysis reports (R Markdown)
+├── vignettes/            Package vignettes (foundry + toy realms)
+├── docs/                 GitHub Pages site + review docs + standards
 ├── compose/              Docker simulacrum stack (docker-compose)
-├── docker/               Dockerfiles (R, Python, Postgres, Verifier)
-├── scripts/              Utility scripts (viz generation)
+├── docker/               Dockerfiles (R runtime, Verifier; Postgres via compose)
+├── scripts/              Utility scripts (viz generation, pipeline, simulacra)
 ├── archive/              Pre-foundry scripts (with migration map)
 ├── pipeline.yml          Pipeline manifest (DFT A3: manifest conformance)
 ├── .github/workflows/    CI pipeline (7 gates)
@@ -219,6 +253,6 @@ MIT
 ## Related
 
 - VI Monograph: "A Trajectory Account of Adaptive Evolution from Homo to the Wider Animal Kingdom" (Jan Ritch-Frel, 2026)
-- Phosphene R Standards: `docs/standards/PHOSPHENE_R_STANDARDS.md`
-- Review file: `drafts/research/monograph-reviews/valence-ingression-review.md` (in the woodchipper workspace)
-- Phased breakdown: `drafts/research/monograph-reviews/vi-foundry-phased-breakdown.md` (in the woodchipper workspace)
+- Phosphene R Standards: [`docs/standards/PHOSPHENE_R_STANDARDS.md`](docs/standards/PHOSPHENE_R_STANDARDS.md)
+- Live visualizations: [https://flowfeel.github.io/vi-foundry/](https://flowfeel.github.io/vi-foundry/)
+- Review index: [`docs/review/README.md`](docs/review/README.md) — links to all 11 review documents

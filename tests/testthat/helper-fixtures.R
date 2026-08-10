@@ -5,6 +5,29 @@
 
 library(testthat)
 
+# Resolve a bundled data file (installed with the package). "" if absent.
+# Tests must use this rather than relative `data/` paths: testthat runs from
+# tests/testthat/, so `file.path("data", ...)` would resolve to the wrong place
+# and every bundled-data test would silently skip even when data is present.
+# Also checks the `.gz` variant: `R CMD build` may gzip data files.
+bundled_data <- function(file) {
+  p <- system.file("data", file, package = "vi.foundry")
+  if (nzchar(p)) return(p)
+  system.file("data", paste0(file, ".gz"), package = "vi.foundry")
+}
+has_bundled_data <- function(file) {
+  nzchar(bundled_data(file))
+}
+
+# Loader results carry data + provenance (data/metadata), distinct from the
+# analysis proof objects (values/metadata) that validate_result() checks.
+is_data_result <- function(result) {
+  is.list(result) &&
+    !is.null(result$data) &&
+    is.list(result$metadata) &&
+    all(c("name", "source", "n", "loaded_at") %in% names(result$metadata))
+}
+
 # Small deterministic fixtures for unit tests
 .fixture_orobanchaceae <- data.frame(
   species = c("Lindenbergia", "Schwalbea", "Orobanche", "Phelipanche", "Conopholis"),

@@ -4,6 +4,11 @@ renv/library/
 .Rhistory
 .RData
 .Rproj.user
+*.Rcheck/
+vi.foundry_*.tar.gz
+# testthat artifacts
+tests/testthat/Rplots.pdf
+tests/testthat/_problems/
 
 # Python
 __pycache__/
@@ -16,4 +21,5 @@ test-output/
 # Results (regenerated from pipeline)
 results/*.json
 results/*.txt
+results/simulacra/
 !results/session_info.txt
