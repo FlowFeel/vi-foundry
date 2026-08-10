@@ -94,7 +94,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: pages-html
-          path: docs/index.html
+          path: docs/*.html
           retention-days: 7
 
   integration:
@@ -146,7 +146,7 @@ jobs:
       contents: write
     steps:
       - uses: actions/checkout@v4
-      - name: Download regenerated index.html
+      - name: Download regenerated pages HTML
         uses: actions/download-artifact@v4
         with:
           name: pages-html
@@ -154,19 +154,23 @@ jobs:
       - name: Verify pages HTML
         run: |
           test -f docs/index.html
-          grep -q "Toy Realms" docs/index.html
-          grep -q "Simulacra Overview" docs/index.html
-          echo "Pages HTML verified: contains simulacra + toy realms sections"
+          test -f docs/simulacra.html
+          test -f docs/baseline-oracle.html
+          test -f docs/key-results.html
+          test -f docs/toy-realms.html
+          grep -q "Toy Realms" docs/toy-realms.html
+          grep -q "Simulacra" docs/simulacra.html
+          echo "Pages HTML verified: 5 pages present"
       - name: Commit regenerated pages to main
         if: github.ref == 'refs/heads/main' && github.event_name == 'push'
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add docs/index.html
+          git add docs/*.html docs/*.md
           if git diff --cached --quiet; then
-            echo "No changes to docs/index.html"
+            echo "No changes to docs/"
           else
-            git commit -m "docs(pages): auto-regenerate index.html with latest simulacra marks [skip ci]"
+            git commit -m "docs(pages): auto-regenerate multi-page site with latest simulacra marks [skip ci]"
             git push
           fi
 

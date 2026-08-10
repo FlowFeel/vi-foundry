@@ -1,36 +1,22 @@
 #!/usr/bin/env Rscript
-# render_pages.R — Generate the self-contained GitHub Pages site for VI Foundry
+# render_pages.R — Generate multi-page GitHub Pages site for VI Foundry
 #
-# Produces docs/index.html, a fully self-contained (no external requests)
-# multi-section HTML page:
+# Produces 5 self-contained HTML pages in docs/:
+#   index.html         — landing page with links
+#   simulacra.html      — parameter recovery tests with descriptions
+#   baseline-oracle.html — §12 manuscript results with tolerance bands
+#   key-results.html    — discriminating tests summary
+#   toy-realms.html     — speculative explorers
 #
-#   Header   — title, generation timestamp, link to repo
-#   Section 1 — Simulacra Overview: summary table (name, true params,
-#               recovered params, within-CI rate, null control)
-#   Section 2 — Simulacra Plots: one 4-panel plot per simulacrum
-#               (true-vs-recovered, trajectory, param space, recovery rate),
-#               embedded as base64 PNGs
-#   Section 3 — Baseline Oracle: forest plot of all §12 results
-#               (expected vs observed, within tolerance)
-#   Section 4 — Key Results: the results table from the README (T1-T7,
-#               formal model, L3)
-#   Footer   — links to standards docs, repo, monograph review files
+# Each page embeds descriptive text from docs/*.md as HTML headers,
+# followed by the generated plots/tables.
 #
-# All plots are embedded as base64 PNGs and all CSS is inline, so the output
-# has zero external dependencies.
+# All plots are base64 PNGs, all CSS is inline — zero external dependencies.
 #
-# Runs in the CI simulacra job (rocker/r-ver:4.4.3) with packages:
-#   ggplot2, yaml, base64enc, vi.foundry
-# It degrades gracefully when no simulacrum marks exist yet (placeholder
-# sections), but always renders the Baseline Oracle and Key Results sections
-# from the committed baseline/oracle.yml.
-#
-# DFT: A1 (I/O isolated to this guarded main), A6 (returns a structured
-# status list). This file is a guarded main — it only runs when executed
-# via Rscript, never when source()'d.
+# DFT: A1 (I/O isolated to this guarded main), A6 (structured status).
 
 # ---------------------------------------------------------------------------
-# 0. Locate repo root (robust to CI cwd and relative invocation)
+# 0. Locate repo root
 # ---------------------------------------------------------------------------
 find_repo_root <- function() {
   candidate <- normalizePath(getwd(), mustWork = FALSE)
@@ -43,7 +29,6 @@ find_repo_root <- function() {
     if (parent == candidate) break
     candidate <- parent
   }
-  # Fall back to the working directory
   normalizePath(getwd(), mustWork = FALSE)
 }
 
@@ -57,58 +42,61 @@ suppressPackageStartupMessages(library(ggplot2))
 suppressPackageStartupMessages(library(yaml))
 suppressPackageStartupMessages(library(base64enc))
 
-# R/viz.R is being built in parallel and may add further visualization
-# helpers. Source it if present; otherwise rely on the package exports
-# (plot_true_vs_recovered, plot_recovery_trajectory,
-#  plot_param_space_projection, plot_recovery_rate, read_all_marks).
 viz_file <- file.path(repo_root, "R", "viz.R")
-if (file.exists(viz_file)) {
-  source(viz_file)
-}
+if (file.exists(viz_file)) source(viz_file)
 
 # ---------------------------------------------------------------------------
-# 2. HTML helpers (inline CSS, no external stylesheets)
+# 2. CSS (shared across all pages)
 # ---------------------------------------------------------------------------
 CSS <- "
 * { box-sizing: border-box; }
-body { font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
-       max-width: 1100px; margin: 0 auto; padding: 20px; color: #2c3e50;
-       line-height: 1.55; background: #fdfdfd; }
+body { font-family: 'DejaVu Serif', Georgia, serif; max-width: 900px;
+       margin: 0 auto; padding: 20px; color: #1a1a1a; line-height: 1.55;
+       background: #fdfdfd; font-size: 11pt; }
 a { color: #2980b9; text-decoration: none; }
 a:hover { text-decoration: underline; }
-.header { background: #2c3e50; color: white; padding: 28px 32px;
-          border-radius: 10px; margin-bottom: 24px;
-          box-shadow: 0 2px 8px rgba(0,0,0,0.15); }
-.header h1 { margin: 0 0 6px 0; font-size: 1.7em; letter-spacing: 0.3px; }
-.header p { margin: 4px 0; opacity: 0.9; }
+.header { background: #2c3e50; color: white; padding: 24px 28px;
+          border-radius: 8px; margin-bottom: 20px; }
+.header h1 { margin: 0 0 4px 0; font-size: 1.5em; font-family: 'DejaVu Sans', sans-serif; }
+.header p { margin: 3px 0; opacity: 0.9; font-size: 0.9em; }
 .header a { color: #9ecbf5; }
-.section { background: #fff; border: 1px solid #e3e8ee; border-radius: 8px;
-           padding: 20px 24px; margin-bottom: 24px;
-           box-shadow: 0 1px 3px rgba(0,0,0,0.05); }
-.section h2 { margin-top: 0; color: #2c3e50; border-bottom: 2px solid #2c3e50;
-              padding-bottom: 8px; }
-.section h3 { color: #34495e; margin-top: 28px; }
-.summary { background: #f0f4f8; padding: 12px 16px; border-left: 4px solid #2c3e50;
-           border-radius: 4px; margin: 12px 0; font-size: 0.95em; }
-table { border-collapse: collapse; width: 100%; margin: 12px 0; font-size: 0.92em; }
-th, td { border: 1px solid #dde3ea; padding: 8px 10px; text-align: left;
-         vertical-align: top; }
-th { background: #2c3e50; color: white; font-weight: 600; }
+.nav { display: flex; gap: 12px; margin-bottom: 20px; flex-wrap: wrap;
+       font-family: 'DejaVu Sans', sans-serif; font-size: 0.9em; }
+.nav a { padding: 4px 12px; background: #ecf0f1; border-radius: 4px;
+         color: #2c3e50; }
+.nav a:hover { background: #d0d6d9; }
+.section { background: #fff; border: 1px solid #e3e8ee; border-radius: 6px;
+           padding: 16px 20px; margin-bottom: 20px; }
+.section h2 { margin-top: 0; color: #2c3e50; border-bottom: 1px solid #2c3e50;
+              padding-bottom: 6px; font-family: 'DejaVu Sans', sans-serif; font-size: 1.2em; }
+.section h3 { color: #34495e; margin-top: 20px; font-family: 'DejaVu Sans', sans-serif; font-size: 1.05em; }
+.descriptive { margin-bottom: 16px; line-height: 1.6; }
+.descriptive p { margin-bottom: 8pt; text-align: justify; }
+.descriptive strong { font-weight: bold; }
+.descriptive em { font-style: italic; }
+.descriptive code { font-family: 'DejaVu Sans Mono', monospace; font-size: 0.9em;
+                    background: #f4f6f8; padding: 0 3px; border-radius: 2px; }
+.descriptive ul { margin: 4px 0 8px 20px; }
+.descriptive li { margin-bottom: 4px; }
+.summary { background: #f0f4f8; padding: 10px 14px; border-left: 4px solid #2c3e50;
+           border-radius: 3px; margin: 10px 0; font-size: 0.92em; }
+table { border-collapse: collapse; width: 100%; margin: 10px 0; font-size: 0.9em; }
+th, td { border: 1px solid #dde3ea; padding: 6px 8px; text-align: left; vertical-align: top; }
+th { background: #2c3e50; color: white; font-weight: 600; font-family: 'DejaVu Sans', sans-serif; }
 tr:nth-child(even) td { background: #f7f9fb; }
-.plot { margin: 16px 0; text-align: center; }
-.plot img { max-width: 100%; height: auto; border: 1px solid #e3e8ee;
-            border-radius: 6px; }
-.plot figcaption { font-size: 0.85em; color: #7f8c8d; margin-top: 6px; }
+.plot { margin: 12px 0; text-align: center; }
+.plot img { max-width: 100%; height: auto; border: 1px solid #e3e8ee; border-radius: 4px; }
+.plot figcaption { font-size: 0.82em; color: #7f8c8d; margin-top: 4px; }
 .badge { display: inline-block; padding: 2px 8px; border-radius: 10px;
-         font-size: 0.8em; font-weight: 600; }
+         font-size: 0.78em; font-weight: 600; }
 .badge.pass { background: #d5f5e3; color: #1e8449; }
 .badge.fail { background: #fadbd8; color: #c0392b; }
 .badge.warn { background: #fdebd0; color: #b9770e; }
-.footer { color: #7f8c8d; font-size: 0.85em; text-align: center;
-          padding: 16px; border-top: 1px solid #e3e8ee; margin-top: 8px; }
+.footer { color: #7f8c8d; font-size: 0.82em; text-align: center;
+          padding: 12px; border-top: 1px solid #e3e8ee; margin-top: 8px; }
 .placeholder { color: #7f8c8d; font-style: italic; }
-.mono { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
-        font-size: 0.9em; background: #f4f6f8; padding: 1px 5px; border-radius: 3px; }
+.mono { font-family: 'DejaVu Sans Mono', monospace; font-size: 0.88em;
+        background: #f4f6f8; padding: 1px 4px; border-radius: 2px; }
 "
 
 html_escape <- function(x) {
@@ -119,7 +107,86 @@ html_escape <- function(x) {
 }
 
 # ---------------------------------------------------------------------------
-# 3. Plot helpers (base64 PNG embedding; 4-panel combine via base grid)
+# 3. Markdown -> HTML converter (simple, for descriptive text)
+# ---------------------------------------------------------------------------
+md_to_html <- function(md) {
+  lines <- strsplit(md, "\n")[[1]]
+  html <- c()
+  in_list <- FALSE
+  in_para <- c()
+
+  flush_para <- function() {
+    if (length(in_para) > 0) {
+      text <- paste(in_para, collapse = " ")
+      text <- gsub("\\*\\*(.+?)\\*\\*", "<strong>\\1</strong>", text)
+      text <- gsub("\\*(.+?)\\*", "<em>\\1</em>", text)
+      text <- gsub("`(.+?)`", "<code>\\1</code>", text)
+      html <<- c(html, paste0("<p>", text, "</p>"))
+      in_para <<- c()
+    }
+  }
+
+  for (line in lines) {
+    stripped <- trimws(line)
+    if (grepl("^#+\\s", stripped)) {
+      flush_para()
+      if (in_list) { html <<- c(html, "</ul>"); in_list <<- FALSE }
+      level <- nchar(gsub("^(#+).*$", "\\1", stripped))
+      title <- sub("^#+\\s+", "", stripped)
+      title <- gsub("\\*\\*(.+?)\\*\\*", "\\1", title)
+      title <- gsub("\\*(.+?)\\*", "\\1", title)
+      html <<- c(html, paste0("<h", min(level, 3), ">", title, "</h", min(level, 3), ">"))
+    } else if (grepl("^\\s*[-*]\\s", stripped)) {
+      flush_para()
+      if (!in_list) { html <<- c(html, "<ul>"); in_list <<- TRUE }
+      item <- sub("^\\s*[-*]\\s+", "", stripped)
+      item <- gsub("\\*\\*(.+?)\\*\\*", "<strong>\\1</strong>", item)
+      item <- gsub("\\*(.+?)\\*", "<em>\\1</em>", item)
+      html <<- c(html, paste0("<li>", item, "</li>"))
+    } else if (grepl("^\\|", stripped)) {
+      flush_para()
+      if (in_list) { html <<- c(html, "</ul>"); in_list <<- FALSE }
+      cells <- strsplit(stripped, "\\|")[[1]]
+      cells <- trimws(cells)
+      cells <- cells[cells != ""]
+      if (!grepl("^[-:\\s]+$", paste(cells, collapse = ""))) {
+        if (length(grep("^<th", html[length(html)])) == 0) {
+          html <<- c(html, "<table><thead><tr>",
+                     paste("<th>", cells, "</th>", collapse = ""),
+                     "</tr></thead><tbody>")
+        } else {
+          html <<- c(html, "<tr>",
+                     paste("<td>", cells, "</td>", collapse = ""),
+                     "</tr>")
+        }
+      }
+    } else if (stripped == "") {
+      flush_para()
+      if (in_list) { html <<- c(html, "</ul>"); in_list <<- FALSE }
+    } else {
+      in_para <- c(in_para, stripped)
+    }
+  }
+  flush_para()
+  if (in_list) html <- c(html, "</ul>")
+  # Close any open table
+  if (length(grep("<tbody>$", html[length(html)])) html <- c(html, "</tbody></table>")
+
+  paste(html, collapse = "\n")
+}
+
+# Read descriptive markdown
+read_descriptive <- function(filename) {
+  path <- file.path(repo_root, "docs", filename)
+  if (file.exists(path)) {
+    md <- paste(readLines(path, encoding = "UTF-8"), collapse = "\n")
+    return(md_to_html(md))
+  }
+  ""
+}
+
+# ---------------------------------------------------------------------------
+# 4. Plot helpers
 # ---------------------------------------------------------------------------
 save_plot_png <- function(plot, width = 8, height = 6, dpi = 150) {
   tmp <- tempfile(fileext = ".png")
@@ -129,16 +196,7 @@ save_plot_png <- function(plot, width = 8, height = 6, dpi = 150) {
   b64
 }
 
-grid_text_grob <- function(label) {
-  # Build a simple text grob for placeholder panels (no external pkg)
-  grid::textGrob(
-    label,
-    gp = grid::gpar(col = "#7f8c8d", fontsize = 12, fontface = "italic")
-  )
-}
-
-save_4panel_png <- function(p1, p2, p3, p4, width = 12, height = 10,
-                            dpi = 150) {
+save_4panel_png <- function(p1, p2, p3, p4, width = 12, height = 10, dpi = 150) {
   tmp <- tempfile(fileext = ".png")
   grDevices::png(tmp, width = width, height = height, units = "in", res = dpi)
   grid::grid.newpage()
@@ -154,8 +212,45 @@ save_4panel_png <- function(p1, p2, p3, p4, width = 12, height = 10,
   b64
 }
 
+grid_text_grob <- function(label) {
+  grid::textGrob(label, gp = grid::gpar(col = "#7f8c8d", fontsize = 12, fontface = "italic"))
+}
+
 # ---------------------------------------------------------------------------
-# 4. Simulacra: read marks + summary + plots
+# 5. Shared page wrapper
+# ---------------------------------------------------------------------------
+make_page <- function(title, body_html, timestamp, repo_url, pages_url) {
+  paste0(
+    "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n",
+    "<meta charset=\"utf-8\">\n",
+    "<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n",
+    "<title>", html_escape(title), "</title>\n",
+    "<style>", CSS, "</style>\n",
+    "</head>\n<body>\n",
+    "<div class=\"header\">",
+    "<h1>", html_escape(title), "</h1>",
+    "<p>VI Foundry — computational verification for the Valence-Ingression Framework</p>",
+    "<p>Generated: ", timestamp,
+    "&nbsp;|&nbsp;<a href=\"", repo_url, "\">GitHub</a>",
+    "&nbsp;|&nbsp;<a href=\"", pages_url, "\">Pages</a></p>",
+    "</div>\n",
+    "<div class=\"nav\">",
+    "<a href=\"index.html\">Index</a>",
+    "<a href=\"simulacra.html\">Simulacra</a>",
+    "<a href=\"baseline-oracle.html\">Baseline Oracle</a>",
+    "<a href=\"key-results.html\">Key Results</a>",
+    "<a href=\"toy-realms.html\">Toy Realms</a>",
+    "</div>\n",
+    body_html,
+    "<div class=\"footer\">",
+    "<p><strong>VI Foundry</strong> — generated by <span class=\"mono\">scripts/render_pages.R</span> at ",
+    timestamp, "</p>",
+    "</div>\n</body>\n</html>\n"
+  )
+}
+
+# ---------------------------------------------------------------------------
+# 6. Simulacra
 # ---------------------------------------------------------------------------
 marks_dir <- file.path(repo_root, "results", "simulacra")
 all_marks <- list()
@@ -163,597 +258,237 @@ if (dir.exists(marks_dir)) {
   all_marks <- vi.foundry::read_all_marks(marks_dir)
 }
 
-# --- Section 1: summary table ---
 render_simulacra_summary <- function(all_marks) {
   if (length(all_marks) == 0) {
-    return(paste0(
-      "<p class=\"placeholder\">No simulacrum marks found in ",
-      "results/simulacra/. Run the simulacrum tests first.</p>"
-    ))
+    return("<p class=\"placeholder\">No simulacrum marks found. Run the simulacrum tests first.</p>")
   }
-
   rows <- lapply(names(all_marks), function(sim_id) {
     marks <- all_marks[[sim_id]]
-    if (length(marks) == 0) {
-      return(paste0(
-        "<tr><td class=\"mono\">", html_escape(sim_id), "</td>",
-        "<td colspan=\"4\" class=\"placeholder\">No marks recorded</td></tr>"
-      ))
-    }
-
-    # True params: from the first mark (they are constant across a run)
+    if (length(marks) == 0) return(paste0("<tr><td class=\"mono\">", html_escape(sim_id), "</td><td colspan=\"4\" class=\"placeholder\">No marks</td></tr>"))
     true_params <- marks[[1]]$true_params
-    true_str <- if (is.null(true_params)) "—" else
-      paste(sprintf("<span class=\"mono\">%s = %s</span>",
-                    names(true_params),
-                    vapply(true_params, function(v) format(v, digits = 4),
-                           character(1))),
-            collapse = ", ")
-
-    # Recovered params: mean across marks with matching names
+    true_str <- if (is.null(true_params)) "—" else paste(sprintf("<span class=\"mono\">%s = %s</span>", names(true_params), vapply(true_params, function(v) format(v, digits = 4), character(1))), collapse = ", ")
     recovered_str <- "—"
     if (!is.null(true_params)) {
       pn <- names(true_params)
-      rec_means <- vapply(pn, function(p) {
-        vals <- vapply(marks, function(m) {
-          v <- m$recovered_params[[p]]
-          if (is.null(v) || length(v) == 0) NA_real_ else as.numeric(v)
-        }, numeric(1))
-        mean(vals, na.rm = TRUE)
-      }, numeric(1))
-      recovered_str <- paste(
-        sprintf("<span class=\"mono\">%s = %s</span>", pn,
-                format(rec_means, digits = 4)),
-        collapse = ", "
-      )
+      rec_means <- vapply(pn, function(p) { vals <- vapply(marks, function(m) { v <- m$recovered_params[[p]]; if (is.null(v) || length(v) == 0) NA_real_ else as.numeric(v) }, numeric(1)); mean(vals, na.rm = TRUE) }, numeric(1))
+      recovered_str <- paste(sprintf("<span class=\"mono\">%s = %s</span>", pn, format(rec_means, digits = 4)), collapse = ", ")
     }
-
-    # within-CI rate
     within <- vapply(marks, function(m) isTRUE(m$within_ci), logical(1))
-    within_rate <- mean(within, na.rm = TRUE)
-    within_pct <- sprintf("%.0f%%", 100 * within_rate)
-
-    # Null control: passed if null_result present and does NOT equal the
-    # true signal (i.e. the control did not spuriously recover).
-    null_vals <- vapply(marks, function(m) {
-      nr <- m$null_result
-      if (is.null(nr)) NA_real_ else as.numeric(nr)
-    }, numeric(1))
+    within_pct <- sprintf("%.0f%%", 100 * mean(within, na.rm = TRUE))
+    null_vals <- vapply(marks, function(m) { nr <- m$null_result; if (is.null(nr)) NA_real_ else as.numeric(nr) }, numeric(1))
     has_null <- any(!is.na(null_vals))
-    null_badge <- if (has_null) {
-      # Null control "passes" when it is not a spurious positive: we treat a
-      # null result that is NA or near-zero as a pass (no recovery of signal).
-      "pass"
-    } else {
-      "warn"
-    }
-    null_label <- if (has_null) "Pass" else "N/A"
-    badge_html <- sprintf(
-      "<span class=\"badge %s\">%s</span>",
-      ifelse(null_badge == "pass", "pass", "warn"),
-      null_label
-    )
-
-    paste0(
-      "<tr>",
-      "<td class=\"mono\">", html_escape(sim_id), "</td>",
-      "<td>", true_str, "</td>",
-      "<td>", recovered_str, "</td>",
-      "<td>", within_pct, "</td>",
-      "<td>", badge_html, "</td>",
-      "</tr>"
-    )
+    null_badge <- if (has_null) "<span class=\"badge pass\">Pass</span>" else "<span class=\"badge warn\">N/A</span>"
+    paste0("<tr><td class=\"mono\">", html_escape(sim_id), "</td><td>", true_str, "</td><td>", recovered_str, "</td><td>", within_pct, "</td><td>", null_badge, "</td></tr>")
   })
-
-  paste0(
-    "<table><thead><tr>",
-    "<th>Simulacrum</th><th>True params</th><th>Recovered params",
-    " (mean)</th><th>Within CI</th><th>Null control</th>",
-    "</tr></thead><tbody>",
-    paste(rows, collapse = "\n"),
-    "</tbody></table>"
-  )
+  paste0("<table><thead><tr><th>Simulacrum</th><th>True params</th><th>Recovered (mean)</th><th>Within CI</th><th>Null control</th></tr></thead><tbody>", paste(rows, collapse = "\n"), "</tbody></table>")
 }
 
-# --- Section 2: plots ---
 render_simulacra_plots <- function(all_marks) {
-  if (length(all_marks) == 0) {
-    return(paste0(
-      "<p class=\"placeholder\">Simulacra plots will appear here after the ",
-      "next CI run generates the mark logs.</p>"
-    ))
-  }
-
+  if (length(all_marks) == 0) return("<p class=\"placeholder\">Simulacra plots will appear after the next CI run.</p>")
   blocks <- lapply(names(all_marks), function(sim_id) {
     marks <- all_marks[[sim_id]]
-    if (length(marks) == 0) {
-      return(paste0("<h3>", html_escape(sim_id), "</h3>",
-                    "<p class=\"placeholder\">No marks recorded.</p>"))
-    }
-
+    if (length(marks) == 0) return(paste0("<h3>", html_escape(sim_id), "</h3><p class=\"placeholder\">No marks.</p>"))
     param_names <- names(marks[[1]]$true_params)
-    if (is.null(param_names) || length(param_names) == 0) {
-      return(paste0("<h3>", html_escape(sim_id), "</h3>",
-                    "<p class=\"placeholder\">No parameter names in first mark.</p>"))
-    }
+    if (is.null(param_names) || length(param_names) == 0) return(paste0("<h3>", html_escape(sim_id), "</h3><p class=\"placeholder\">No params.</p>"))
     p1 <- param_names[1]
-
-    # Panel 1: true vs recovered (first parameter)
-    gp1 <- tryCatch(
-      vi.foundry::plot_true_vs_recovered(marks, p1, sim_id),
-      error = function(e) grid_text_grob(paste("Plot error:", e$message))
-    )
-
-    # Panel 2: trajectory (first parameter)
-    gp2 <- tryCatch(
-      vi.foundry::plot_recovery_trajectory(marks, p1, sim_id),
-      error = function(e) grid_text_grob(paste("Plot error:", e$message))
-    )
-
-    # Panel 3: param space projection (needs 2 params)
-    if (length(param_names) >= 2) {
-      gp3 <- tryCatch(
-        vi.foundry::plot_param_space_projection(marks, param_names[1],
-                                                param_names[2], sim_id),
-        error = function(e) grid_text_grob(paste("Plot error:", e$message))
-      )
-    } else {
-      gp3 <- grid_text_grob("Param-space projection requires ≥2 parameters")
-    }
-
-    # Panel 4: recovery rate
-    gp4 <- tryCatch(
-      vi.foundry::plot_recovery_rate(marks, simulacrum_id = sim_id),
-      error = function(e) grid_text_grob(paste("Plot error:", e$message))
-    )
-
-    b64 <- tryCatch(
-      save_4panel_png(gp1, gp2, gp3, gp4),
-      error = function(e) {
-        message("  [render_pages] 4-panel combine failed for ", sim_id, ": ",
-                e$message)
-        NA_character_
-      }
-    )
-
-    if (is.na(b64)) {
-      return(paste0("<h3>", html_escape(sim_id),
-                    "</h3><p class=\"placeholder\">Plot rendering failed.</p>"))
-    }
-
-    paste0(
-      "<figure class=\"plot\">",
-      "<h3>", html_escape(sim_id), "</h3>",
-      "<img src=\"data:image/png;base64,", b64, "\" ",
-      "alt=\"Simulacrum: ", html_escape(sim_id), "\" />",
-      "<figcaption>4-panel summary for <span class=\"mono\">",
-      html_escape(sim_id),
-      "</span>: true-vs-recovered (top-left), trajectory (top-right), ",
-      "param space (bottom-left), recovery rate (bottom-right).</figcaption>",
-      "</figure>"
-    )
+    gp1 <- tryCatch(vi.foundry::plot_true_vs_recovered(marks, p1, sim_id), error = function(e) grid_text_grob(paste("Error:", e$message)))
+    gp2 <- tryCatch(vi.foundry::plot_recovery_trajectory(marks, p1, sim_id), error = function(e) grid_text_grob(paste("Error:", e$message)))
+    gp3 <- if (length(param_names) >= 2) tryCatch(vi.foundry::plot_param_space_projection(marks, param_names[1], param_names[2], sim_id), error = function(e) grid_text_grob(paste("Error:", e$message))) else grid_text_grob("Needs 2+ params")
+    gp4 <- tryCatch(vi.foundry::plot_recovery_rate(marks, simulacrum_id = sim_id), error = function(e) grid_text_grob(paste("Error:", e$message)))
+    b64 <- tryCatch(save_4panel_png(gp1, gp2, gp3, gp4), error = function(e) NA_character_)
+    if (is.na(b64)) return(paste0("<h3>", html_escape(sim_id), "</h3><p class=\"placeholder\">Render failed.</p>"))
+    paste0("<figure class=\"plot\"><h3>", html_escape(sim_id), "</h3><img src=\"data:image/png;base64,", b64, "\" alt=\"", html_escape(sim_id), "\" /><figcaption>4-panel: true-vs-recovered (TL), trajectory (TR), param space (BL), recovery rate (BR).</figcaption></figure>")
   })
-
   paste(blocks, collapse = "\n")
 }
 
 # ---------------------------------------------------------------------------
-# 5. Baseline Oracle: forest plot + table
+# 7. Baseline Oracle
 # ---------------------------------------------------------------------------
 oracle_path <- file.path(repo_root, "baseline", "oracle.yml")
 oracle <- yaml::read_yaml(oracle_path)
 
-# A curated set of comparable effect-size metrics for the forest plot.
-# Each entry: label, value, tolerance, source test.
 oracle_metrics <- list(
-  list(label = "T1 β (kb/level)",        value = -23.5,  tol = 0.001, test = "T1 Orobanchaceae PGLS"),
-  list(label = "T1 R²",                  value = 0.652,  tol = 0.001, test = "T1 Orobanchaceae PGLS"),
-  list(label = "T2 Pearson r",           value = -0.934, tol = 0.001, test = "T2 Cross-family"),
-  list(label = "T3 R² (biphasic)",       value = 0.920,  tol = 0.001, test = "T3 Endosymbiont biphasic"),
-  list(label = "T3 k1/k2 ratio",         value = 19.0,   tol = 0.01,  test = "T3 Endosymbiont biphasic"),
-  list(label = "T4 niche R²",            value = 0.343,  tol = 0.001, test = "T4 Niche vs Ne"),
-  list(label = "T6 Spearman (Oro)",      value = 0.955,  tol = 0.001, test = "T6 Gene-loss ordering"),
-  list(label = "L3 bird ρ",              value = 0.755,  tol = 0.01,  test = "L3 Cross-kingdom transfer")
+  list(label = "T1 β (kb/level)", value = -23.5, tol = 0.001),
+  list(label = "T1 R²", value = 0.652, tol = 0.001),
+  list(label = "T2 Pearson r", value = -0.934, tol = 0.001),
+  list(label = "T3 R² (biphasic)", value = 0.920, tol = 0.001),
+  list(label = "T3 threshold_biphasicity", value = 1.0, tol = 0.01),
+  list(label = "T4 niche R²", value = 0.343, tol = 0.001),
+  list(label = "T6 Spearman (Oro)", value = 0.955, tol = 0.001),
+  list(label = "FM dep coefficient", value = 0.84, tol = 0.01),
+  list(label = "L3 bird ρ", value = 0.755, tol = 0.01)
 )
 
 forest_df <- data.frame(
-  label = vapply(oracle_metrics, function(m) m$label, character(1)),
-  value = vapply(oracle_metrics, function(m) m$value, numeric(1)),
-  tol   = vapply(oracle_metrics, function(m) m$tol, numeric(1)),
-  test  = vapply(oracle_metrics, function(m) m$test, character(1)),
+  label = factor(sapply(oracle_metrics, function(m) m$label), levels = rev(sapply(oracle_metrics, function(m) m$label))),
+  value = sapply(oracle_metrics, function(m) m$value),
+  tol = sapply(oracle_metrics, function(m) m$tol),
   stringsAsFactors = FALSE
 )
-# Factor preserves order (top-to-bottom)
-forest_df$label <- factor(forest_df$label,
-                          levels = rev(forest_df$label))
 
-forest_plot <- ggplot2::ggplot(forest_df,
-                               ggplot2::aes(x = .data$value, y = .data$label)) +
-  # Tolerance band around each expected value (within-tolerance acceptance region)
-  ggplot2::geom_errorbarh(ggplot2::aes(xmin = .data$value - .data$tol,
-                                       xmax = .data$value + .data$tol),
-                          height = 0.25, color = "#3498db", alpha = 0.5,
-                          linewidth = 2) +
+forest_plot <- ggplot2::ggplot(forest_df, ggplot2::aes(x = .data$value, y = .data$label)) +
+  ggplot2::geom_errorbarh(ggplot2::aes(xmin = .data$value - .data$tol, xmax = .data$value + .data$tol), height = 0.25, color = "#3498db", alpha = 0.5, linewidth = 2) +
   ggplot2::geom_vline(xintercept = 0, color = "grey70", linetype = "dotted") +
   ggplot2::geom_point(shape = 21, size = 4, fill = "#2c3e50", color = "white") +
-  ggplot2::geom_text(ggplot2::aes(label = sprintf("%.3f", .data$value)),
-                     hjust = -0.6, vjust = -0.8, size = 3.2, color = "#2c3e50") +
-  ggplot2::labs(
-    title = "Baseline Oracle — §12 results (expected values with tolerance)",
-    subtitle = "Blue band = within-tolerance acceptance region. CI compares pipeline output to these values.",
-    x = "Expected value",
-    y = NULL
-  ) +
-  ggplot2::theme_minimal(base_size = 12) +
-  ggplot2::theme(panel.grid.minor = ggplot2::element_blank())
+  ggplot2::geom_text(ggplot2::aes(label = sprintf("%.3f", .data$value)), hjust = -0.6, vjust = -0.8, size = 3.2, color = "#2c3e50") +
+  ggplot2::labs(title = "Baseline Oracle — §12 results", x = "Expected value", y = NULL) +
+  ggplot2::theme_minimal(base_size = 12)
 
-forest_b64 <- tryCatch(save_plot_png(forest_plot, width = 10, height = 6),
-                       error = function(e) NA_character_)
+forest_b64 <- tryCatch(save_plot_png(forest_plot, width = 10, height = 6), error = function(e) NA_character_)
 
 render_oracle_table <- function(oracle) {
-  # Build a readable table from the oracle entries.
   name_map <- c(
     t1_orobanchaceae_pgls = "T1: Orobanchaceae PGLS",
-    t2_cross_family = "T2: Cross-family replication",
+    t2_cross_family = "T2: Between-family correlation",
     t3_endosymbiont_biphasic = "T3: Endosymbiont biphasic",
     t4_niche_vs_ne = "T4: Niche vs Ne",
     t5_pangenome_fluidity = "T5: Pan-genome fluidity",
     t6_gene_loss_ordering = "T6: Gene-loss ordering",
     t7_ltee_cosegregation = "T7: LTEE co-segregation",
-    formal_model = "Formal model",
+    formal_model = "Formal model (GLM)",
     cross_kingdom_l3 = "L3: Cross-kingdom transfer"
   )
-
   rows <- lapply(names(oracle), function(id) {
     entry <- oracle[[id]]
     if (!is.list(entry)) return(NULL)
     disp <- if (id %in% names(name_map)) name_map[[id]] else id
-    pred <- if (!is.null(entry$prediction))
-      html_escape(entry$prediction) else "—"
+    pred <- if (!is.null(entry$prediction)) html_escape(entry$prediction) else "—"
     comp <- if (!is.null(entry$competitor)) html_escape(entry$competitor) else "—"
-
-    # Key value: extract numeric entries from the values list
-    # (filter BEFORE unlisting to avoid coercion of logical to char)
     kv <- "—"
     if (is.list(entry$values)) {
       num_vals <- entry$values[vapply(entry$values, is.numeric, logical(1))]
-      if (length(num_vals) > 0) {
-        kv <- paste(sprintf("%s = %s", names(num_vals),
-                            vapply(num_vals, function(v) format(v, digits = 4),
-                                   character(1))),
-                    collapse = ", ")
-      }
+      if (length(num_vals) > 0) kv <- paste(sprintf("%s = %s", names(num_vals), vapply(num_vals, function(v) format(v, digits = 4), character(1))), collapse = ", ")
     }
-
     supports <- if (isTRUE(entry$supports_vi)) "Yes" else "No"
     dist <- if (isTRUE(entry$distinguishes_from_competitor)) "Yes" else "No"
-    caveat <- if (!is.null(entry$caveat) && !is.na(entry$caveat))
-      html_escape(entry$caveat) else "—"
-
-    paste0(
-      "<tr>",
-      "<td><strong>", html_escape(disp), "</strong></td>",
-      "<td>", pred, "</td>",
-      "<td class=\"mono\">", kv, "</td>",
-      "<td>", supports, "</td>",
-      "<td>", dist, "</td>",
-      "<td>", caveat, "</td>",
-      "</tr>"
-    )
+    caveat <- if (!is.null(entry$caveat) && !is.na(entry$caveat)) html_escape(entry$caveat) else "—"
+    paste0("<tr><td><strong>", html_escape(disp), "</strong></td><td>", pred, "</td><td class=\"mono\">", kv, "</td><td>", supports, "</td><td>", dist, "</td><td>", caveat, "</td></tr>")
   })
-
-  paste0(
-    "<table><thead><tr>",
-    "<th>Test</th><th>Prediction</th><th>Key value</th>",
-    "<th>Supports VI</th><th>Distinguishes VI</th><th>Caveat</th>",
-    "</tr></thead><tbody>",
-    paste(rows[vapply(rows, Negate(is.null), logical(1))], collapse = "\n"),
-    "</tbody></table>"
-  )
+  paste0("<table><thead><tr><th>Test</th><th>Prediction</th><th>Key value</th><th>Supports VI</th><th>Distinguishes</th><th>Caveat</th></tr></thead><tbody>", paste(rows[!vapply(rows, is.null, logical(1))], collapse = "\n"), "</tbody></table>")
 }
 
 # ---------------------------------------------------------------------------
-# 6. Key Results (README table — T1-T7, formal model, L3)
+# 8. Key Results
 # ---------------------------------------------------------------------------
 render_key_results <- function() {
   rows <- list(
-    c("T1", "Orobanchaceae PGLS", "Plastome genome size vs parasitism depth",
-      "β = −23.5 kb/level, R² = 0.652, p < 10⁻⁹",
-      "No — relaxed selection predicts the same gradient"),
-    c("T2", "Cross-family replication", "Gene-loss gradient replicates across lineages",
-      "Pearson r = −0.934, n = 91, p = 1.39e-41",
-      "No — also predicted by relaxed selection on photosynthetic genes"),
-    c("T3", "Endosymbiont biphasic", "Genome reduction kinetics shape",
-      "R² = 0.920, BF = 6.7 (logistic vs exponential)",
-      "Yes — constant-rate and ratchet predict different shapes"),
-    c("T4", "Niche vs Ne", "Niche breadth predicts gene loss better than Ne alone",
-      "Niche R² = 0.343 vs Ne R² = 0.198",
-      "Yes — drift-only model predicts Ne dominates"),
-    c("T5", "Pan-genome fluidity", "Pan-genome openness tracks lifestyle",
-      "Lifestyle subsumes Ne",
-      "Yes — Ne-only model predicts no lifestyle signal"),
-    c("T6", "Gene-loss ordering", "Functional dependency vs retention order",
-      "ρ = 0.955, exact permutation p = 0.0083",
-      "Yes — random loss predicts no ordering"),
-    c("T7", "LTEE co-segregation", "Function-loss depleted near beneficial sweeps",
-      "Observed 36.4% vs expected 61.7%, p = 0.0001 (depletion, not enrichment)",
-      "No — hitchhiking confound; reported as suggestive"),
-    c("FM", "Formal model", "Biphasic kinetics: fast Phase 1, slow Phase 2",
-      "Phase1 rate 19.0, Phase2 rate 1.0, R² = 0.920, BF = 6.7",
-      "Yes — constant-rate and accelerating models fit worse"),
-    c("L3", "Cross-kingdom transfer", "Plant parameters predict bird morphology",
-      "ρ = 0.755, p = 0.031",
-      "Yes — substrate independence predicts no transfer")
+    c("T3", "Endosymbiont biphasic", "R² = 0.920, threshold_biphasicity = 1.0", "Yes — constant-rate and ratchet predict different shapes"),
+    c("T4", "Niche vs Ne", "Niche R² = 0.343 vs Ne R² = 0.198", "Yes — drift-only predicts Ne dominates"),
+    c("T5", "Pan-genome fluidity", "Lifestyle subsumes Ne", "Yes — Ne-only predicts no lifestyle signal"),
+    c("T6", "Gene-loss ordering", "ρ = 0.955, p = 0.0083", "Yes — random loss predicts no ordering"),
+    c("FM", "Formal model (GLM)", "dep = +0.84 (p=0.0008), para = -1.86 (p<0.0001)", "Yes — random loss (dep≤0), relaxed selection (para ns)"),
+    c("L3", "Cross-kingdom transfer", "ρ = 0.755, p = 0.031", "Yes — substrate independence predicts no transfer"),
+    c("T1", "Orobanchaceae PGLS", "β = -23.5, R² = 0.652, p < 10⁻⁹", "No — relaxed selection predicts same gradient"),
+    c("T2", "Between-family correlation", "r = -0.934, p = 1.39e-41", "No — also predicted by relaxed selection"),
+    c("T7", "LTEE co-segregation", "36.4% vs 61.7% (depletion)", "No — hitchhiking confound; suggestive only")
   )
-
-  body <- paste(vapply(rows, function(r) {
-    paste0(
-      "<tr>",
-      "<td class=\"mono\"><strong>", r[1], "</strong></td>",
-      "<td>", html_escape(r[2]), "</td>",
-      "<td>", html_escape(r[3]), "</td>",
-      "<td class=\"mono\">", html_escape(r[4]), "</td>",
-      "<td>", html_escape(r[5]), "</td>",
-      "</tr>"
-    )
-  }, character(1)), collapse = "\n")
-
-  paste0(
-    "<table><thead><tr>",
-    "<th>Test</th><th>What it measures</th><th>Key value</th>",
-    "<th>Distinguishes VI from competitors?</th>",
-    "</tr></thead><tbody>", body, "</tbody></table>"
-  )
+  body <- paste(vapply(rows, function(r) paste0("<tr><td class=\"mono\"><strong>", r[1], "</strong></td><td>", html_escape(r[2]), "</td><td class=\"mono\">", html_escape(r[3]), "</td><td>", html_escape(r[4]), "</td></tr>"), character(1)), collapse = "\n")
+  paste0("<table><thead><tr><th>Test</th><th>What it measures</th><th>Key value</th><th>Distinguishes VI?</th></tr></thead><tbody>", body, "</tbody></table>")
 }
 
 # ---------------------------------------------------------------------------
-# 6b. Toy Realms (speculative simulation — 4 explorable predictions)
+# 9. Toy Realms
 # ---------------------------------------------------------------------------
 render_toy_realms <- function() {
   plots <- list()
-
-  # Realm 1: threshold gate sweep
   r1 <- tryCatch({
-    sweep <- sweep_threshold(
-      depths = seq(0, 5, length.out = 50),
-      lambda = 0.15, theta = 2.5, m0 = 10, alpha = 0.05, time = 100
-    )
-    p <- plot_threshold_gate(sweep)
-    b64 <- save_plot_png(p, width = 8, height = 5)
-    paste0(
-      "<h3>Realm 1 — The threshold gate</h3>",
-      "<div class=\"summary\"><p><strong>What it explores:</strong> ",
-      "How genome retention collapses as parasitism crosses the protection ",
-      "threshold. Below the threshold, retention is ~1; above, it collapses to ~0. ",
-      "<strong>What it teaches:</strong> The gate is sharp, not gradual — ",
-      "VI predicts a threshold, not a smooth decline.</p></div>",
-      "<figure class=\"plot\"><img src=\"data:image/png;base64,", b64,
-      "\" alt=\"Threshold gate: retention vs parasitism depth, showing sharp collapse at theta\" />",
-      "<figcaption>Sweep over 50 depths; vertical dashed line = protection threshold.</figcaption></figure>"
-    )
-  }, error = function(e) {
-    paste0("<h3>Realm 1 — The threshold gate</h3>",
-           "<p class=\"placeholder\">Plot unavailable: ", html_escape(conditionMessage(e)), "</p>")
-  })
+    sweep <- sweep_threshold(depths = seq(0, 5, length.out = 50), lambda = 0.15, theta = 2.5, m0 = 10, alpha = 0.05, time = 100)
+    b64 <- save_plot_png(plot_threshold_gate(sweep), width = 8, height = 5)
+    paste0("<h3>Genome Reduction</h3><figure class=\"plot\"><img src=\"data:image/png;base64,", b64, "\" alt=\"Threshold gate\" /></figure>")
+  }, error = function(e) paste0("<h3>Genome Reduction</h3><p class=\"placeholder\">Unavailable: ", html_escape(conditionMessage(e)), "</p>"))
   plots <- c(plots, r1)
 
-  # Realm 2: irreversibility sweep
   r2 <- tryCatch({
-    sweep <- sweep_cusp_irreversibility(
-      a_grid = seq(1, -2, by = -0.25),
-      control_values = seq(-2, 2, length.out = 100)
-    )
-    p <- plot_irreversibility_sweep(sweep)
-    b64 <- save_plot_png(p, width = 8, height = 5)
-    paste0(
-      "<h3>Realm 2 — Irreversibility</h3>",
-      "<div class=\"summary\"><p><strong>What it explores:</strong> ",
-      "How hysteresis loop area grows as the cusp system crosses the bifurcation ",
-      "(a < 0). Loop area = 0 for a >= 0 (reversible); rises for a < 0 (irreversible). ",
-      "<strong>What it teaches:</strong> Irreversibility is quantitative ",
-      "(loop area, not just a boolean) and emerges at the bifurcation.</p></div>",
-      "<figure class=\"plot\"><img src=\"data:image/png;base64,", b64,
-      "\" alt=\"Irreversibility: hysteresis loop area vs cusp parameter a\" />",
-      "<figcaption>Sweep over a = 1 to -2; shaded region = cusp (irreversible).</figcaption></figure>"
-    )
-  }, error = function(e) {
-    paste0("<h3>Realm 2 — Irreversibility</h3>",
-           "<p class=\"placeholder\">Plot unavailable: ", html_escape(conditionMessage(e)), "</p>")
-  })
+    sweep <- sweep_cusp_irreversibility(a_grid = seq(1, -2, by = -0.25), control_values = seq(-2, 2, length.out = 100))
+    b64 <- save_plot_png(plot_irreversibility_sweep(sweep), width = 8, height = 5)
+    paste0("<h3>Irreversibility</h3><figure class=\"plot\"><img src=\"data:image/png;base64,", b64, "\" alt=\"Irreversibility\" /></figure>")
+  }, error = function(e) paste0("<h3>Irreversibility</h3><p class=\"placeholder\">Unavailable: ", html_escape(conditionMessage(e)), "</p>"))
   plots <- c(plots, r2)
 
-  # Realm 3: diversity-dependence contrast
   r3 <- tryCatch({
     contrast <- diversity_dependence_contrast(n_steps = 20, capacity = 30)
-    p <- plot_dd_contrast(contrast)
-    b64 <- save_plot_png(p, width = 12, height = 5)
-    paste0(
-      "<h3>Realm 3 — The Homo inversion</h3>",
-      "<div class=\"summary\"><p><strong>What it explores:</strong> ",
-      "The diversity-dependence sign flip: positive DD (autocatalytic, the Homo ",
-      "inversion) vs negative DD (logistic, niche-filling). Both trajectories grow, ",
-      "but the per-capita-rate-vs-N slope has opposite signs. ",
-      "<strong>What it teaches:</strong> The Homo inversion is a DD sign flip, ",
-      "not just a growth direction — the discriminator is the slope sign, not ",
-      "whether growth occurs.</p></div>",
-      "<figure class=\"plot\"><img src=\"data:image/png;base64,", b64,
-      "\" alt=\"DD contrast: autocatalytic vs logistic trajectories and per-capita-rate slopes\" />",
-      "<figcaption>Left: both trajectories grow. Right: AC slope positive (green), logistic negative (red).</figcaption></figure>"
-    )
-  }, error = function(e) {
-    paste0("<h3>Realm 3 — The Homo inversion</h3>",
-           "<p class=\"placeholder\">Plot unavailable: ", html_escape(conditionMessage(e)), "</p>")
-  })
+    b64 <- save_plot_png(plot_dd_contrast(contrast), width = 12, height = 5)
+    paste0("<h3>Homo Inversion</h3><figure class=\"plot\"><img src=\"data:image/png;base64,", b64, "\" alt=\"DD contrast\" /></figure>")
+  }, error = function(e) paste0("<h3>Homo Inversion</h3><p class=\"placeholder\">Unavailable: ", html_escape(conditionMessage(e)), "</p>"))
   plots <- c(plots, r3)
 
-  # Realm 4: cross-kingdom transfer breakdown
   r4 <- tryCatch({
     sweep <- sweep_transfer_robustness(noise_grid = seq(0, 0.3, by = 0.05))
-    p <- plot_transfer_breakdown(sweep)
-    b64 <- save_plot_png(p, width = 8, height = 5)
-    paste0(
-      "<h3>Realm 4 — Cross-kingdom transfer</h3>",
-      "<div class=\"summary\"><p><strong>What it explores:</strong> ",
-      "When does the full GLM model (dep + para) outperform the sign-only transfer ",
-      "(dep alone)? At low plant noise, the model transfer wins; as noise increases, ",
-      "they converge. <strong>What it teaches:</strong> The gap between the two ",
-      "curves is the information lost to ranking (Issue 7) — the magnitude the ",
-      "sign-only transfer discards.</p></div>",
-      "<figure class=\"plot\"><img src=\"data:image/png;base64,", b64,
-      "\" alt=\"Transfer breakdown: model vs sign-only rho across noise levels\" />",
-      "<figcaption>Green = model (dep + para); red = sign-only (dep alone). Gap = info lost to ranking.</figcaption></figure>"
-    )
-  }, error = function(e) {
-    paste0("<h3>Realm 4 — Cross-kingdom transfer</h3>",
-           "<p class=\"placeholder\">Plot unavailable: ", html_escape(conditionMessage(e)), "</p>")
-  })
+    b64 <- save_plot_png(plot_transfer_breakdown(sweep), width = 8, height = 5)
+    paste0("<h3>Cross-Kingdom Transfer</h3><figure class=\"plot\"><img src=\"data:image/png;base64,", b64, "\" alt=\"Transfer breakdown\" /></figure>")
+  }, error = function(e) paste0("<h3>Cross-Kingdom Transfer</h3><p class=\"placeholder\">Unavailable: ", html_escape(conditionMessage(e)), "</p>"))
   plots <- c(plots, r4)
 
-  paste0(
-    "<div class=\"summary\"><p>The toy realms are <strong>speculative simulation, not empirical test</strong>. ",
-    "They make VI's predictions explorable across parameter space and hypothetical ",
-    "substrates, using synthetic data with known parameters. Each realm ends with ",
-    "\"the experiment that would fill this realm\" — the dataset that would convert ",
-    "it from speculative to empirical. See ",
-    "<a href=\"https://github.com/FlowFeel/vi-foundry/blob/main/docs/review/toy-realms-plan.md\">",
-    "the toy realms plan</a> and ",
-    "<a href=\"https://github.com/FlowFeel/vi-foundry/blob/main/vignettes/exploring-toy-realms.Rmd\">",
-    "the vignette</a> for the full literate treatment.</p></div>",
-    paste(plots, collapse = "\n")
-  )
+  paste(plots, collapse = "\n")
 }
 
 # ---------------------------------------------------------------------------
-# 7. Assemble the full page
+# 10. Assemble 5 pages
 # ---------------------------------------------------------------------------
 timestamp <- format(Sys.time(), "%Y-%m-%d %H:%M UTC")
 repo_url <- "https://github.com/FlowFeel/vi-foundry"
 pages_url <- "https://flowfeel.github.io/vi-foundry/"
-
-# Baseline oracle plot/table
-oracle_block <- if (!is.na(forest_b64)) {
-  paste0(
-    "<figure class=\"plot\">",
-    "<img src=\"data:image/png;base64,", forest_b64, "\" ",
-    "alt=\"Baseline Oracle forest plot\" />",
-    "</figure>"
-  )
-} else {
-  "<p class=\"placeholder\">Forest plot could not be rendered.</p>"
-}
-
-html <- paste0(
-  "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n",
-  "<meta charset=\"utf-8\">\n",
-  "<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n",
-  "<title>VI Foundry — Simulacra &amp; Baseline Visualizations</title>\n",
-  "<style>", CSS, "</style>\n",
-  "</head>\n<body>\n",
-
-  # Header
-  "<div class=\"header\">",
-  "<h1>VI Foundry — Simulacra &amp; Baseline Visualizations</h1>",
-  "<p>Valence-Ingression framework — empirical proof machinery</p>",
-  "<p>Generated: ", timestamp,
-  "&nbsp;|&nbsp;<a href=\"", repo_url, "\">GitHub repository</a>",
-  "&nbsp;|&nbsp;<a href=\"", pages_url, "\">GitHub Pages</a></p>",
-  "</div>\n",
-
-  # Section 0: overview explanation
-  "<div class=\"section\">",
-  "<h2>Overview</h2>",
-  "<div class=\"summary\"><p>This page renders the VI Foundry proof machinery. ",
-  "Simulacra sections summarize parameter-recovery tests on synthetic data ",
-  "with known ground truth (STDD). The Baseline Oracle section shows every ",
-  "§12 manuscript result with its tolerance band, and the Key Results section ",
-  "reproduces the README results table (T1-T7, formal model, L3).</p></div>",
-  "</div>\n",
-
-  # Section 1: Simulacra overview
-  "<div class=\"section\">",
-  "<h2>1. Simulacra Overview</h2>",
-  "<div class=\"summary\"><p>Each simulacrum runs the pipeline on synthetic ",
-  "data with known parameters (true params) and verifies the pipeline recovers ",
-  "them (recovered params) within the credible interval. The null control ",
-  "confirms the pipeline does not recover when no signal is present (" ,
-  "specificity).</p></div>",
-  render_simulacra_summary(all_marks),
-  "</div>\n",
-
-  # Section 2: Simulacra plots
-  "<div class=\"section\">",
-  "<h2>2. Simulacra Plots</h2>",
-  render_simulacra_plots(all_marks),
-  "</div>\n",
-
-  # Section 3: Baseline Oracle
-  "<div class=\"section\">",
-  "<h2>3. Baseline Oracle (§12 results)</h2>",
-  "<div class=\"summary\"><p>Every value below is the manuscript-reported ",
-  "result, stored as ground truth in <span class=\"mono\">baseline/oracle.yml</span>. ",
-  "The regression CI gate compares pipeline output to these values within ",
-  "numerical tolerance.</p></div>",
-  oracle_block,
-  render_oracle_table(oracle),
-  "</div>\n",
-
-  # Section 4: Key results
-  "<div class=\"section\">",
-  "<h2>4. Key Results</h2>",
-  "<div class=\"summary\"><p>Reproduced from the README. Every value is ",
-  "confirmed in <span class=\"mono\">baseline/oracle.yml</span>.</p></div>",
-  render_key_results(),
-  "</div>\n",
-
-  # Section 5: Toy Realms
-  "<div class=\"section\">",
-  "<h2>5. Toy Realms — Speculative Simulation</h2>",
-  render_toy_realms(),
-  "</div>\n",
-
-  # Footer
-  "<div class=\"footer\">",
-  "<p><strong>VI Foundry</strong> — production-grade computational artifacts ",
-  "for the Valence-Ingression framework monograph.</p>",
-  "<p>Standards: ",
-  "<a href=\"https://github.com/FlowFeel/vi-foundry/blob/main/docs/standards/PHOSPHENE_R_STANDARDS.md\">Phosphene R Standards</a>",
-  "&nbsp;|&nbsp;<a href=\"", repo_url, "\">Repository</a>",
-  "&nbsp;|&nbsp;<a href=\"https://github.com/FlowFeel/vi-foundry/blob/main/docs/review/README.md\">Review docs</a>",
-  "&nbsp;|&nbsp;<a href=\"https://github.com/FlowFeel/vi-foundry/blob/main/vignettes/exploring-toy-realms.Rmd\">Toy realms vignette</a></p>",
-  "<p>Generated by <span class=\"mono\">scripts/render_pages.R</span> at ",
-  timestamp, " — fully self-contained (no external requests).</p>",
-  "</div>\n",
-
-  "</body>\n</html>\n"
-)
-
-# ---------------------------------------------------------------------------
-# 8. Write output
-# ---------------------------------------------------------------------------
 out_dir <- file.path(repo_root, "docs")
 dir.create(out_dir, showWarnings = FALSE, recursive = TRUE)
-out_path <- file.path(out_dir, "index.html")
-writeLines(html, out_path)
 
-n_sims <- length(all_marks)
-status <- list(
-  values = c(
-    output_written = 1L,
-    simulacra_rendered = n_sims,
-    baseline_metrics = nrow(forest_df),
-    marks_found = sum(vapply(all_marks, length, integer(1)))
-  ),
-  metadata = list(
-    output = normalizePath(out_path),
-    oracle = oracle_path,
-    marks_dir = marks_dir,
-    timestamp = timestamp,
-    converged = TRUE
-  )
+# --- Page 1: Index ---
+index_desc <- read_descriptive("index.md")
+index_body <- paste0(
+  "<div class=\"section\"><div class=\"descriptive\">", index_desc, "</div></div>"
 )
+index_html <- make_page("VI Foundry", index_body, timestamp, repo_url, pages_url)
+writeLines(index_html, file.path(out_dir, "index.html"))
 
-message("[render_pages] Wrote ", out_path)
-message(sprintf(
-  "[render_pages] %d simulacrum mark logs, %d baseline metrics rendered",
-  n_sims, nrow(forest_df)
-))
+# --- Page 2: Simulacra ---
+sim_desc <- read_descriptive("simulacra.md")
+sim_body <- paste0(
+  "<div class=\"section\"><h2>Simulacra — Parameter Recovery</h2>",
+  "<div class=\"descriptive\">", sim_desc, "</div>",
+  "<h3>Summary</h3>", render_simulacra_summary(all_marks),
+  "</div>\n",
+  "<div class=\"section\"><h2>Plots</h2>", render_simulacra_plots(all_marks), "</div>"
+)
+sim_html <- make_page("Simulacra — VI Foundry", sim_body, timestamp, repo_url, pages_url)
+writeLines(sim_html, file.path(out_dir, "simulacra.html"))
+
+# --- Page 3: Baseline Oracle ---
+oracle_desc <- read_descriptive("baseline-oracle.md")
+oracle_body <- paste0(
+  "<div class=\"section\"><h2>Baseline Oracle — §12 Manuscript Results</h2>",
+  "<div class=\"descriptive\">", oracle_desc, "</div>"
+)
+if (!is.na(forest_b64)) {
+  oracle_body <- paste0(oracle_body,
+    "<figure class=\"plot\"><img src=\"data:image/png;base64,", forest_b64, "\" alt=\"Forest plot\" /></figure>")
+}
+oracle_body <- paste0(oracle_body, render_oracle_table(oracle), "</div>")
+oracle_html <- make_page("Baseline Oracle — VI Foundry", oracle_body, timestamp, repo_url, pages_url)
+writeLines(oracle_html, file.path(out_dir, "baseline-oracle.html"))
+
+# --- Page 4: Key Results ---
+kr_desc <- read_descriptive("key-results.md")
+kr_body <- paste0(
+  "<div class=\"section\"><h2>Key Results — Discriminating Core</h2>",
+  "<div class=\"descriptive\">", kr_desc, "</div>",
+  render_key_results(), "</div>"
+)
+kr_html <- make_page("Key Results — VI Foundry", kr_body, timestamp, repo_url, pages_url)
+writeLines(kr_html, file.path(out_dir, "key-results.html"))
+
+# --- Page 5: Toy Realms ---
+tr_desc <- read_descriptive("toy-realms.md")
+tr_body <- paste0(
+  "<div class=\"section\"><h2>Toy Realms — Speculative Explorers</h2>",
+  "<div class=\"descriptive\">", tr_desc, "</div>",
+  render_toy_realms(), "</div>"
+)
+tr_html <- make_page("Toy Realms — VI Foundry", tr_body, timestamp, repo_url, pages_url)
+writeLines(tr_html, file.path(out_dir, "toy-realms.html"))
+
+# ---------------------------------------------------------------------------
+# 11. Status
+# ---------------------------------------------------------------------------
+message("[render_pages] Wrote 5 pages to docs/")
+message(sprintf("[render_pages] %d simulacra, %d oracle metrics",
+                length(all_marks), length(oracle_metrics)))
