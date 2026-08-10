@@ -104,7 +104,8 @@ retention_at_time <- function(depth, lambda, theta, m0, alpha, time) {
 #' @param n_steps Integer. Number of integration steps. Default 1000.
 #'
 #' @return List (A6):
-#'   \item{values}{Named numeric: final_retention vector, phase1_rate, phase2_rate, early_late_displacement_ratio, threshold_biphasicity}
+#'   \item{values}{Named numeric: final_retention vector, phase1_rate,
+#'     phase2_rate, early_late_displacement_ratio, threshold_biphasicity}
 #'   \item{metadata}{List: params, n_traits, n_steps, converged, method}
 #'
 #' @section Theoretical Context:
@@ -166,9 +167,13 @@ threshold_model <- function(depths, lambda, theta, m0, alpha, time,
   # Guard the all-protected edge case (theta <= min(depths)): no unprotected
   # traits, so phase1_rate / phase2_rate are NaN (mean of empty set).
   early_late_displacement_ratio <-
-    if (is.na(phase2_rate) || is.na(phase1_rate)) NA_real_
-    else if (phase2_rate > 0) phase1_rate / phase2_rate
-    else Inf
+    if (is.na(phase2_rate) || is.na(phase1_rate)) {
+      NA_real_
+    } else if (phase2_rate > 0) {
+      phase1_rate / phase2_rate
+    } else {
+      Inf
+    }
 
   # Threshold biphasicity: the real biphasic signature. Protected traits
   # (d >= theta) retain at 1.0; unprotected traits (d < theta) shed to ~0.
@@ -277,11 +282,11 @@ phase_transition_time <- function(m0, alpha, threshold_fraction = 0.1) {
 #' plant <- load_retention_matrix()
 #' bird <- load_island_birds()
 #' result <- empirical_formal_model(plant$data, bird$data)
-#' result$values$dep_coefficient  # ~ +0.84 (VI predicts > 0)
-#' result$values$cross_kingdom_rho  # ~ +0.755
+#' result$values$dep_coefficient # ~ +0.84 (VI predicts > 0)
+#' result$values$cross_kingdom_rho # ~ +0.755
 #' }
 empirical_formal_model <- function(plant_data, bird_data,
-                                    para_for_transfer = 3, seed = 42L) {
+                                   para_for_transfer = 3, seed = 42L) {
   validate_retention_data(plant_data)
   validate_bird_morphology(bird_data)
 

@@ -322,15 +322,19 @@ validate_bird_morphology <- function(data) {
 #'
 #' @export
 validate_retention_data <- function(data) {
-  required <- c("species", "parasitism_score", "gene_category",
-    "dependency_score", "retention")
+  required <- c(
+    "species", "parasitism_score", "gene_category",
+    "dependency_score", "retention"
+  )
   if (!is.data.frame(data)) {
     stop("data must be a data.frame", call. = FALSE)
   }
   missing <- setdiff(required, names(data))
   if (length(missing) > 0L) {
-    stop(sprintf("data missing required columns: %s",
-      paste(missing, collapse = ", ")), call. = FALSE)
+    stop(sprintf(
+      "data missing required columns: %s",
+      paste(missing, collapse = ", ")
+    ), call. = FALSE)
   }
   if (!is.numeric(data$parasitism_score)) {
     stop("parasitism_score must be numeric", call. = FALSE)
@@ -353,7 +357,8 @@ validate_retention_data <- function(data) {
   }
   if (nrow(data) < 10L) {
     stop(sprintf("data has %d rows, need >= 10 for GLM", nrow(data)),
-      call. = FALSE)
+      call. = FALSE
+    )
   }
   invisible(TRUE)
 }

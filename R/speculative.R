@@ -72,7 +72,7 @@ NULL
 #'   depths = c(0, 1, 2, 3, 5),
 #'   theta_grid = seq(0, 6, by = 0.5)
 #' )
-#' result$values$peak_theta  # θ where the gate is maximally open
+#' result$values$peak_theta # θ where the gate is maximally open
 sweep_threshold <- function(depths, theta_grid, lambda = 0.15,
                             m0 = 10, alpha = 0.05, time = 100) {
   n_theta <- length(theta_grid)
@@ -179,8 +179,10 @@ plot_threshold_gate <- function(sweep_result) {
   df <- sweep_result$values$sweep
   depths <- sweep_result$metadata$depths
 
-  p <- ggplot2::ggplot(df, ggplot2::aes(x = .data$theta,
-                                        y = .data$threshold_biphasicity)) +
+  p <- ggplot2::ggplot(df, ggplot2::aes(
+    x = .data$theta,
+    y = .data$threshold_biphasicity
+  )) +
     # Shade the "gate open" region (biphasicity > 0)
     ggplot2::geom_area(fill = "#3498db", alpha = 0.15) +
     ggplot2::geom_line(color = "#3498db", linewidth = 1) +
@@ -196,8 +198,10 @@ plot_threshold_gate <- function(sweep_result) {
       subtitle = "The gate opens when \u03b8 separates protected from unprotected traits",
       x = "Protection threshold \u03b8",
       y = "threshold_biphasicity\n(protected \u2212 unprotected retention)",
-      caption = paste("Dashed lines = trait depths:",
-                      paste(unique(depths), collapse = ", "))
+      caption = paste(
+        "Dashed lines = trait depths:",
+        paste(unique(depths), collapse = ", ")
+      )
     ) +
     ggplot2::theme_minimal(base_size = 12)
 
@@ -250,9 +254,9 @@ plot_threshold_gate <- function(sweep_result) {
 #' @examples
 #' eq_fn <- make_cusp_equilibrium_fn(a = -1)
 #' result <- hysteresis_loop_area(seq(-2, 2, length.out = 100), eq_fn)
-#' result$values$loop_area  # > 0 (cusp region: irreversible)
+#' result$values$loop_area # > 0 (cusp region: irreversible)
 hysteresis_loop_area <- function(control_values, equilibrium_fn, seed = 42L,
-                                  initial_state = 0) {
+                                 initial_state = 0) {
   hyst <- cusp_hysteresis_check(
     control_values = control_values,
     equilibrium_fn = equilibrium_fn,
@@ -336,7 +340,7 @@ hysteresis_loop_area <- function(control_values, equilibrium_fn, seed = 42L,
 #'   a_grid = seq(1, -2, by = -0.25),
 #'   control_values = seq(-2, 2, length.out = 100)
 #' )
-#' result$values$peak_a  # most negative a (largest loop area)
+#' result$values$peak_a # most negative a (largest loop area)
 sweep_cusp_irreversibility <- function(a_grid,
                                        control_values = seq(-2, 2, length.out = 100),
                                        seed = 42L,
@@ -421,8 +425,10 @@ plot_irreversibility_sweep <- function(sweep_result) {
     ggplot2::geom_vline(xintercept = 0, linetype = "dashed", color = "grey50") +
     ggplot2::labs(
       title = "Irreversibility: hysteresis loop area vs cusp parameter a",
-      subtitle = paste0("Loop area = 0 for a \u2265 0 (reversible); ",
-                        "rises for a < 0 (cusp region: irreversible)"),
+      subtitle = paste0(
+        "Loop area = 0 for a \u2265 0 (reversible); ",
+        "rises for a < 0 (cusp region: irreversible)"
+      ),
       x = "Cusp parameter a",
       y = "Hysteresis loop area",
       caption = "Dashed line = bifurcation (a = 0). Shaded = cusp region."
@@ -432,6 +438,7 @@ plot_irreversibility_sweep <- function(sweep_result) {
   p
 }
 
+# nolint start
 # =====================================================================
 # Realm 3 — The Homo-inversion explorer
 # =====================================================================
@@ -461,7 +468,6 @@ plot_irreversibility_sweep <- function(sweep_result) {
 # growth, no blow-up. At feedback=1 this reduces to r*(0.5+0.5*N/(N+K)),
 # exactly matching the existing generate_autocatalytic_set() dynamics
 # (verified: identical time series at feedback=1).
-
 #' Generate a diversity time series with parameterized feedback (internal)
 #'
 #' Generates an innovation-count time series whose per-capita rate blends
@@ -482,21 +488,22 @@ plot_irreversibility_sweep <- function(sweep_result) {
 #' @return Numeric vector. Innovation counts over time.
 #' @keywords internal
 generate_dd_series <- function(n_steps, innovation_rate, capacity, feedback,
-                                seed = 42L) {
+                               seed = 42L) {
   withr::with_seed(seed, {
     counts <- numeric(n_steps)
     counts[1] <- 1
     for (t in seq_len(n_steps)[-1]) {
-      N <- counts[t - 1]
+      n_count <- counts[t - 1]  # nolint: object_name_linter.
       pc_rate <- innovation_rate * (
-        feedback * (0.5 + 0.5 * N / (N + capacity)) +
-          (1 - feedback) * capacity / (N + capacity)
+        feedback * (0.5 + 0.5 * n_count / (n_count + capacity)) +
+          (1 - feedback) * capacity / (n_count + capacity)
       )
-      counts[t] <- max(0, counts[t - 1] + pc_rate * N)
+      counts[t] <- max(0, counts[t - 1] + pc_rate * n_count)
     }
     counts
   })
 }
+# nolint end
 
 #' Compute the diversity-dependence contrast
 #'
@@ -543,17 +550,19 @@ generate_dd_series <- function(n_steps, innovation_rate, capacity, feedback,
 #' @export
 #' @examples
 #' result <- diversity_dependence_contrast(n_steps = 20, capacity = 30)
-#' result$values$contrast  # > 0 (Homo inversion signature)
+#' result$values$contrast # > 0 (Homo inversion signature)
 diversity_dependence_contrast <- function(n_steps = 20, innovation_rate = 0.3,
-                                           capacity = 30, seed = 42L) {
+                                          capacity = 30, seed = 42L) {
   # Autocatalytic: feedback = 1 (positive DD, Homo inversion)
   ac_counts <- generate_dd_series(n_steps, innovation_rate, capacity,
-                                   feedback = 1, seed = seed)
+    feedback = 1, seed = seed
+  )
   ac_dd <- diversity_dependence_sign(ac_counts, seed = seed)
 
   # Logistic: feedback = 0 (negative DD, niche-filling)
   log_counts <- generate_dd_series(n_steps, innovation_rate, capacity,
-                                    feedback = 0, seed = seed)
+    feedback = 0, seed = seed
+  )
   log_dd <- diversity_dependence_sign(log_counts, seed = seed)
 
   ac_slope <- ac_dd$values[["diversity_dependence_slope"]]
@@ -633,12 +642,13 @@ diversity_dependence_contrast <- function(n_steps = 20, innovation_rate = 0.3,
 #' @export
 #' @examples
 #' result <- sweep_endogenous_k(feedback_grid = seq(0, 1, by = 0.1))
-#' result$values$bifurcation_feedback  # theoretical = 2/3
+#' result$values$bifurcation_feedback # theoretical = 2/3
 sweep_endogenous_k <- function(feedback_grid, n_steps = 20, innovation_rate = 0.3,
-                                capacity = 30, seed = 42L) {
+                               capacity = 30, seed = 42L) {
   results <- lapply(feedback_grid, function(fb) {
     counts <- generate_dd_series(n_steps, innovation_rate, capacity,
-                                  feedback = fb, seed = seed)
+      feedback = fb, seed = seed
+    )
     dd <- diversity_dependence_sign(counts, seed = seed)
     list(
       feedback = fb,
@@ -669,8 +679,12 @@ sweep_endogenous_k <- function(feedback_grid, n_steps = 20, innovation_rate = 0.
       f1 <- sweep_df$feedback[last_neg]
       f2 <- sweep_df$feedback[first_pos]
       f1 - s1 * (f2 - f1) / (s2 - s1)
-    } else NA_real_
-  } else NA_real_
+    } else {
+      NA_real_
+    }
+  } else {
+    NA_real_
+  }
 
   result <- list(
     values = list(
@@ -734,23 +748,29 @@ plot_dd_contrast <- function(contrast_result) {
     time = rep(seq_len(n), 2),
     counts = c(ac, lo),
     model = rep(c("Autocatalytic (Homo inversion)", "Logistic (niche-filling)"),
-                each = n)
+      each = n
+    )
   )
 
   # DD slope data: per-capita rate vs N
-  N_prev <- c(ac[-n], lo[-n])
-  pc_rate <- c(diff(ac) / pmax(ac[-n], .Machine$double.xmin),
-               diff(lo) / pmax(lo[-n], .Machine$double.xmin))
+  n_prev <- c(ac[-n], lo[-n])  # nolint: object_name_linter.
+  pc_rate <- c(
+    diff(ac) / pmax(ac[-n], .Machine$double.xmin),
+    diff(lo) / pmax(lo[-n], .Machine$double.xmin)
+  )
   dd_df <- data.frame(
-    N = N_prev,
+    N = n_prev,
     pc_rate = pc_rate,
     model = rep(c("Autocatalytic (Homo inversion)", "Logistic (niche-filling)"),
-                each = n - 1)
+      each = n - 1
+    )
   )
 
   # Two-panel plot
-  p1 <- ggplot2::ggplot(traj_df, ggplot2::aes(x = .data$time, y = .data$counts,
-                                               color = .data$model)) +
+  p1 <- ggplot2::ggplot(traj_df, ggplot2::aes(
+    x = .data$time, y = .data$counts,
+    color = .data$model
+  )) +
     ggplot2::geom_line(linewidth = 1) +
     ggplot2::geom_point(size = 1.5) +
     ggplot2::scale_color_manual(values = c(
@@ -763,11 +783,15 @@ plot_dd_contrast <- function(contrast_result) {
       x = "Time", y = "Innovation count"
     ) +
     ggplot2::theme_minimal(base_size = 11) +
-    ggplot2::theme(legend.position = "bottom",
-                   legend.title = ggplot2::element_blank())
+    ggplot2::theme(
+      legend.position = "bottom",
+      legend.title = ggplot2::element_blank()
+    )
 
-  p2 <- ggplot2::ggplot(dd_df, ggplot2::aes(x = .data$N, y = .data$pc_rate,
-                                            color = .data$model)) +
+  p2 <- ggplot2::ggplot(dd_df, ggplot2::aes(
+    x = .data$N, y = .data$pc_rate,
+    color = .data$model
+  )) +
     ggplot2::geom_point(size = 2) +
     ggplot2::geom_smooth(method = "lm", se = FALSE, linewidth = 0.8) +
     ggplot2::scale_color_manual(values = c(
@@ -775,15 +799,19 @@ plot_dd_contrast <- function(contrast_result) {
       "Logistic (niche-filling)" = "#e74c3c"
     )) +
     ggplot2::labs(
-      subtitle = paste0("DD slope: AC = ",
-                        format(contrast_result$values$autocatalytic_dd_slope, digits = 3),
-                        " (positive), Log = ",
-                        format(contrast_result$values$logistic_dd_slope, digits = 3),
-                        " (negative)"),
+      subtitle = paste0(
+        "DD slope: AC = ",
+        format(contrast_result$values$autocatalytic_dd_slope, digits = 3),
+        " (positive), Log = ",
+        format(contrast_result$values$logistic_dd_slope, digits = 3),
+        " (negative)"
+      ),
       x = "Diversity N", y = "Per-capita rate (dN/dt)/N",
-      caption = paste0("Contrast = ",
-                       format(contrast_result$values$contrast, digits = 3),
-                       " (positive = Homo inversion)")
+      caption = paste0(
+        "Contrast = ",
+        format(contrast_result$values$contrast, digits = 3),
+        " (positive = Homo inversion)"
+      )
     ) +
     ggplot2::theme_minimal(base_size = 11) +
     ggplot2::theme(legend.position = "none")
@@ -844,8 +872,8 @@ plot_dd_contrast <- function(contrast_result) {
 #' @return List: plant_data (data.frame), bird_data (data.frame).
 #' @keywords internal
 generate_transfer_data <- function(n_species = 8, n_gene_categories = 6,
-                                    n_birds = 10, dep_coef = 0.8, para_coef = -0.5,
-                                    noise_sd = 0.05, seed = 42L) {
+                                   n_birds = 10, dep_coef = 0.8, para_coef = -0.5,
+                                   noise_sd = 0.05, seed = 42L) {
   plant_seed <- seed
   bird_seed <- seed + 1000L
 
@@ -876,8 +904,10 @@ generate_transfer_data <- function(n_species = 8, n_gene_categories = 6,
     )
   })
 
-  plant_data <- grid[, c("species", "parasitism_score", "gene_category",
-                         "dependency_score", "retention")]
+  plant_data <- grid[, c(
+    "species", "parasitism_score", "gene_category",
+    "dependency_score", "retention"
+  )]
 
   # --- Bird data: VARYING dep AND para (the key: para varies) ---
   withr::with_seed(bird_seed, {
@@ -956,7 +986,7 @@ generate_transfer_data <- function(n_species = 8, n_gene_categories = 6,
 #' @examples
 #' data <- generate_transfer_data(noise_sd = 0.05)
 #' result <- glm_transfer(data$plant_data, data$bird_data)
-#' result$values$model_rho       # > sign_only_rho at low noise
+#' result$values$model_rho # > sign_only_rho at low noise
 #' result$values$model_advantage # > 0 (model outperforms sign)
 glm_transfer <- function(plant_data, bird_data, seed = 42L) {
   validate_retention_data(plant_data)
@@ -1071,11 +1101,11 @@ glm_transfer <- function(plant_data, bird_data, seed = 42L) {
 #' @export
 #' @examples
 #' result <- sweep_transfer_robustness(noise_grid = seq(0, 0.3, by = 0.05))
-#' result$values$low_noise_advantage  # > 0 (model outperforms at low noise)
+#' result$values$low_noise_advantage # > 0 (model outperforms at low noise)
 sweep_transfer_robustness <- function(noise_grid = seq(0, 0.3, by = 0.05),
-                                       n_species = 8, n_gene_categories = 6,
-                                       n_birds = 10, dep_coef = 0.8, para_coef = -0.5,
-                                       seed = 42L) {
+                                      n_species = 8, n_gene_categories = 6,
+                                      n_birds = 10, dep_coef = 0.8, para_coef = -0.5,
+                                      seed = 42L) {
   results <- lapply(noise_grid, function(noise) {
     data <- generate_transfer_data(
       n_species = n_species, n_gene_categories = n_gene_categories,
@@ -1165,8 +1195,10 @@ plot_transfer_breakdown <- function(sweep_result) {
     transfer = rep(c("Model (dep + para)", "Sign-only (dep alone)"), each = nrow(df))
   )
 
-  p <- ggplot2::ggplot(long_df, ggplot2::aes(x = .data$noise_sd, y = .data$rho,
-                                              color = .data$transfer)) +
+  p <- ggplot2::ggplot(long_df, ggplot2::aes(
+    x = .data$noise_sd, y = .data$rho,
+    color = .data$transfer
+  )) +
     ggplot2::geom_line(linewidth = 1) +
     ggplot2::geom_point(size = 2) +
     ggplot2::scale_color_manual(values = c(
@@ -1186,9 +1218,13 @@ plot_transfer_breakdown <- function(sweep_result) {
         "Low-noise advantage: ",
         format(sweep_result$values$low_noise_advantage, digits = 3),
         if (!is.na(sweep_result$values$convergence_noise)) {
-          paste0(" | Convergence at noise = ",
-                 format(sweep_result$values$convergence_noise, digits = 2))
-        } else " | No convergence in range"
+          paste0(
+            " | Convergence at noise = ",
+            format(sweep_result$values$convergence_noise, digits = 2)
+          )
+        } else {
+          " | No convergence in range"
+        }
       )
     ) +
     ggplot2::theme_minimal(base_size = 12) +

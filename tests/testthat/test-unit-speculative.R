@@ -80,8 +80,10 @@ test_that("sweep_threshold is deterministic (A2 — no RNG)", {
 
 test_that("sweep_threshold metadata records params and depths", {
   depths <- c(0, 1, 2, 3, 5)
-  result <- sweep_threshold(depths = depths, theta_grid = seq(0, 6, 0.5),
-                            lambda = 0.2, m0 = 15)
+  result <- sweep_threshold(
+    depths = depths, theta_grid = seq(0, 6, 0.5),
+    lambda = 0.2, m0 = 15
+  )
   expect_equal(result$metadata$depths, depths)
   expect_equal(result$metadata$n_traits, 5)
   expect_equal(result$metadata$params$lambda, 0.2)
@@ -218,10 +220,14 @@ test_that("loop area is monotonic in |a| for a < 0", {
 })
 
 test_that("sweep_cusp_irreversibility is deterministic (A2)", {
-  r1 <- sweep_cusp_irreversibility(a_grid = seq(1, -1, by = -0.5),
-                                    control_values = .cusp_cv)
-  r2 <- sweep_cusp_irreversibility(a_grid = seq(1, -1, by = -0.5),
-                                    control_values = .cusp_cv)
+  r1 <- sweep_cusp_irreversibility(
+    a_grid = seq(1, -1, by = -0.5),
+    control_values = .cusp_cv
+  )
+  r2 <- sweep_cusp_irreversibility(
+    a_grid = seq(1, -1, by = -0.5),
+    control_values = .cusp_cv
+  )
   expect_equal(r1$values$sweep, r2$values$sweep)
 })
 
@@ -284,8 +290,10 @@ test_that("diversity_dependence_contrast is deterministic (A2)", {
 test_that("generate_dd_series at feedback=1 matches existing autocatalytic generator", {
   # Source the existing generator
   source(system.file("simulacra", "generate_autocatalytic.R", package = "vi.foundry"))
-  existing <- generate_autocatalytic_set(n_steps = 20, innovation_rate = 0.3,
-                                         capacity = 30, seed = 42L)
+  existing <- generate_autocatalytic_set(
+    n_steps = 20, innovation_rate = 0.3,
+    capacity = 30, seed = 42L
+  )
   new <- generate_dd_series(20, 0.3, 30, feedback = 1, seed = 42L)
   expect_equal(existing$values$innovation_counts, new)
 })
@@ -327,9 +335,9 @@ test_that("sweep shows DD sign flipping from negative to positive", {
 
 test_that("sweep measured bifurcation is close to theoretical (2/3)", {
   result <- sweep_endogenous_k(feedback_grid = seq(0, 1, by = 0.05))
-  expect_equal(result$values$bifurcation_feedback, 2/3)
+  expect_equal(result$values$bifurcation_feedback, 2 / 3)
   # Measured bifurcation should be close to 2/3 (within 0.1)
-  expect_lt(abs(result$values$measured_bifurcation_feedback - 2/3), 0.1)
+  expect_lt(abs(result$values$measured_bifurcation_feedback - 2 / 3), 0.1)
 })
 
 test_that("sweep_endogenous_k is deterministic (A2)", {
@@ -353,8 +361,10 @@ test_that("glm_transfer returns A6 proof object", {
   d <- vi.foundry:::generate_transfer_data(noise_sd = 0.05, seed = 42L)
   result <- glm_transfer(d$plant_data, d$bird_data, seed = 42L)
   expect_true(validate_result(result))
-  for (k in c("model_rho", "sign_only_rho", "model_advantage",
-              "dep_coefficient", "para_coefficient")) {
+  for (k in c(
+    "model_rho", "sign_only_rho", "model_advantage",
+    "dep_coefficient", "para_coefficient"
+  )) {
     expect_true(k %in% names(result$values))
   }
 })
@@ -386,15 +396,17 @@ test_that("glm_transfer is deterministic (A2)", {
 })
 
 test_that("glm_transfer validates plant data", {
-  bird <- data.frame(structure = "b", dependency_score = 1,
-                     parasitism_score = 1, observed_rank = 1)
+  bird <- data.frame(
+    structure = "b", dependency_score = 1,
+    parasitism_score = 1, observed_rank = 1
+  )
   expect_error(glm_transfer(data.frame(), bird), "missing required columns")
 })
 
 test_that("generate_transfer_data produces valid retention matrix", {
   d <- vi.foundry:::generate_transfer_data(noise_sd = 0.05, seed = 42L)
   expect_true(validate_retention_data(d$plant_data))
-  expect_equal(nrow(d$plant_data), 8 * 6)  # 8 species x 6 gene categories
+  expect_equal(nrow(d$plant_data), 8 * 6) # 8 species x 6 gene categories
   expect_equal(nrow(d$bird_data), 10)
 })
 

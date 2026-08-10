@@ -194,11 +194,11 @@ test_that("empirical_formal_model confirms VI on real retention matrix", {
   result <- empirical_formal_model(plant$data, bird$data)
 
   # VI predictions (Remark R7): corrected flattening gives the right signs
-  expect_gt(result$values$dep_coefficient, 0)       # ~ +0.84
-  expect_lt(result$values$para_coefficient, 0)       # ~ -1.86
-  expect_gt(result$values$cross_kingdom_rho, 0)      # ~ +0.755
+  expect_gt(result$values$dep_coefficient, 0)
+  expect_lt(result$values$para_coefficient, 0)
+  expect_gt(result$values$cross_kingdom_rho, 0)
   expect_true(result$values$vi_confirmed)
-  expect_gt(result$values$pseudo_r_squared, 0.4)     # ~ 0.55
+  expect_gt(result$values$pseudo_r_squared, 0.4)
   expect_equal(result$metadata$n, 48)                # 8 species x 6 genes
 })
 
