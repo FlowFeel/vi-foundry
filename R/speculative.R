@@ -431,3 +431,362 @@ plot_irreversibility_sweep <- function(sweep_result) {
 
   p
 }
+
+# =====================================================================
+# Realm 3 — The Homo-inversion explorer
+# =====================================================================
+#
+# RISK AND WORKAROUND (documented):
+#
+# The toy-realms-plan.md proposed the per-capita rate formula:
+#   pc_rate = r * (feedback + (1-feedback) * N/(N+K))
+# with feedback=0 -> logistic (negative DD) and feedback=0.5 -> autocatalytic
+# (positive DD). This formula is WRONG: at feedback=0 it gives r*N/(N+K),
+# whose derivative w.r.t. N is r*K/(N+K)^2 > 0 — ALWAYS positive DD. The
+# function N/(N+K) is increasing in N, so (1-feedback)*N/(N+K) is always
+# increasing; the formula interpolates between two POSITIVE-DD forms, not
+# between logistic and autocatalytic.
+#
+# WORKAROUND: blend two bounded functions — one increasing (autocatalytic),
+# one decreasing (bounded logistic):
+#   autocatalytic(N) = 0.5 + 0.5*N/(N+K)   [increasing, bounded (0.5, 1)]
+#   bounded_logistic(N) = K/(N+K)           [decreasing, bounded (0, 1)]
+#   pc_rate = r * [feedback * autocatalytic(N) + (1-feedback) * bounded_logistic(N)]
+#
+# Analytical derivative:
+#   d(pc_rate)/dN = r * K/(N+K)^2 * (1.5*feedback - 1)
+# This is negative for feedback < 2/3 (niche-filling), positive for
+# feedback > 2/3 (Homo inversion), zero at feedback = 2/3 (the bifurcation).
+# Both terms are bounded in (0, 1), so pc_rate stays in (0, r) — no negative
+# growth, no blow-up. At feedback=1 this reduces to r*(0.5+0.5*N/(N+K)),
+# exactly matching the existing generate_autocatalytic_set() dynamics
+# (verified: identical time series at feedback=1).
+
+#' Generate a diversity time series with parameterized feedback (internal)
+#'
+#' Generates an innovation-count time series whose per-capita rate blends
+#' autocatalytic (positive DD) and bounded-logistic (negative DD) growth:
+#'   pc_rate = r * [feedback * (0.5 + 0.5*N/(N+K)) + (1-feedback) * K/(N+K)]
+#' At feedback=0: bounded logistic (negative DD, niche-filling).
+#' At feedback=1: bounded autocatalytic (positive DD, Homo inversion) —
+#'   matches generate_autocatalytic_set() exactly.
+#' Bifurcation at feedback = 2/3 (DD slope = 0).
+#'
+#' @param n_steps Integer. Time series length.
+#' @param innovation_rate Numeric. Base rate r.
+#' @param capacity Numeric. Carrying capacity K.
+#' @param feedback Numeric in [0, 1]. 0 = logistic (negative DD), 1 =
+#'   autocatalytic (positive DD). Bifurcation at 2/3.
+#' @param seed Integer. RNG seed (unused — deterministic, A2 — but kept for
+#'   contract consistency).
+#' @return Numeric vector. Innovation counts over time.
+#' @keywords internal
+generate_dd_series <- function(n_steps, innovation_rate, capacity, feedback,
+                                seed = 42L) {
+  withr::with_seed(seed, {
+    counts <- numeric(n_steps)
+    counts[1] <- 1
+    for (t in seq_len(n_steps)[-1]) {
+      N <- counts[t - 1]
+      pc_rate <- innovation_rate * (
+        feedback * (0.5 + 0.5 * N / (N + capacity)) +
+          (1 - feedback) * capacity / (N + capacity)
+      )
+      counts[t] <- max(0, counts[t - 1] + pc_rate * N)
+    }
+    counts
+  })
+}
+
+#' Compute the diversity-dependence contrast
+#'
+#' Generates two matched innovation time series — one with logistic growth
+#' (feedback = 0, negative DD, niche-filling — the competitor's model) and one
+#' with autocatalytic growth (feedback = 1, positive DD, the Homo inversion —
+#' VI's prediction) — and computes the diversity-dependence slope for each via
+#' [diversity_dependence_sign()]. The *contrast* is the difference: positive
+#' = the Homo inversion signature (autocatalytic DD slope > logistic DD slope).
+#'
+#' This makes the DD sign flip *visible*: the two trajectories have the same
+#' growth direction (both increase) but opposite DD signs — the per-capita-
+#' rate-vs-N slope flips from negative (logistic) to positive (autocatalytic).
+#'
+#' @param n_steps Integer. Time series length. Default 20.
+#' @param innovation_rate Numeric. Base rate. Default 0.3.
+#' @param capacity Numeric. Carrying capacity. Default 30.
+#' @param seed Integer. Default 42.
+#'
+#' @return List (A6):
+#'   \item{values}{List: `autocatalytic_dd_slope`, `autocatalytic_dd_sign`,
+#'     `logistic_dd_slope`, `logistic_dd_sign`, `contrast`, `contrast_sign`,
+#'     `autocatalytic_counts`, `logistic_counts`}
+#'   \item{metadata}{List: `n`, `params`, `method`, `seed`, `converged`}
+#'
+#' @section Theoretical Context:
+#'
+#' VI Prediction: the Homo inversion — positive diversity-dependence (per-
+#' capita innovation rate increases with diversity N). Competitor: niche-
+#' filling — negative diversity-dependence (per-capita rate decreases with N).
+#' Both produce growing time series, but the DD slope has opposite signs. The
+#' contrast quantifies the difference: positive contrast = VI signature.
+#'
+#' @section Risk note:
+#'
+#' The formula used here (blend of autocatalytic + bounded-logistic) corrects
+#' a bug in the original toy-realms-plan.md, which proposed
+#' `r*(feedback + (1-feedback)*N/(N+K))` — a formula that is always positive-DD
+#' (N/(N+K) is increasing in N, so the blend is always increasing). See the
+#' comment block above `generate_dd_series()` for the full analysis.
+#'
+#' @dft A1, A2, A6
+#'
+#' @export
+#' @examples
+#' result <- diversity_dependence_contrast(n_steps = 20, capacity = 30)
+#' result$values$contrast  # > 0 (Homo inversion signature)
+diversity_dependence_contrast <- function(n_steps = 20, innovation_rate = 0.3,
+                                           capacity = 30, seed = 42L) {
+  # Autocatalytic: feedback = 1 (positive DD, Homo inversion)
+  ac_counts <- generate_dd_series(n_steps, innovation_rate, capacity,
+                                   feedback = 1, seed = seed)
+  ac_dd <- diversity_dependence_sign(ac_counts, seed = seed)
+
+  # Logistic: feedback = 0 (negative DD, niche-filling)
+  log_counts <- generate_dd_series(n_steps, innovation_rate, capacity,
+                                    feedback = 0, seed = seed)
+  log_dd <- diversity_dependence_sign(log_counts, seed = seed)
+
+  ac_slope <- ac_dd$values[["diversity_dependence_slope"]]
+  log_slope <- log_dd$values[["diversity_dependence_slope"]]
+  contrast <- ac_slope - log_slope
+
+  result <- list(
+    values = list(
+      autocatalytic_dd_slope = ac_slope,
+      autocatalytic_dd_sign = ac_dd$values[["diversity_dependence_sign"]],
+      logistic_dd_slope = log_slope,
+      logistic_dd_sign = log_dd$values[["diversity_dependence_sign"]],
+      contrast = contrast,
+      contrast_sign = ifelse(contrast > 0, "positive", "negative"),
+      autocatalytic_counts = ac_counts,
+      logistic_counts = log_counts
+    ),
+    metadata = list(
+      n = n_steps,
+      params = list(
+        innovation_rate = innovation_rate,
+        capacity = capacity,
+        feedback_ac = 1,
+        feedback_log = 0
+      ),
+      method = "dd_contrast",
+      seed = seed,
+      converged = TRUE
+    )
+  )
+
+  validate_result(result)
+  result
+}
+
+#' Sweep the endogenous-K feedback parameter
+#'
+#' Sweeps the feedback parameter (cultural complexity / endogenous-K strength)
+#' across a grid and returns the diversity-dependence sign at each level. Shows
+#' the bifurcation from negative DD (niche-filling, feedback < 2/3) to positive
+#' DD (Homo inversion, feedback > 2/3). The theoretical bifurcation is at
+#' feedback = 2/3; the measured bifurcation (from the linear regression in
+#' [diversity_dependence_sign()]) is approximate but close.
+#'
+#' @param feedback_grid Numeric vector. Feedback values in [0, 1] to sweep.
+#' @param n_steps Integer. Time series length. Default 20.
+#' @param innovation_rate Numeric. Base rate. Default 0.3.
+#' @param capacity Numeric. Carrying capacity. Default 30.
+#' @param seed Integer. Default 42.
+#'
+#' @return List (A6):
+#'   \item{values}{List: `sweep` (data frame: feedback, dd_slope, dd_sign),
+#'     `bifurcation_feedback` (theoretical = 2/3), `measured_bifurcation_feedback`}
+#'   \item{metadata}{List: `n`, `feedback_grid`, `params`, `method`, `seed`,
+#'     `converged`}
+#'
+#' @section Theoretical Context:
+#'
+#' VI Prediction: the Homo inversion is a bifurcation — there is a threshold
+#' in cultural complexity (feedback strength) beyond which diversity-
+#' dependence flips from negative (niche-filling) to positive (autocatalytic).
+#' This sweep makes the bifurcation explorable: below the threshold, the
+#' system is niche-filling (competitor); above it, the system is autocatalytic
+#' (VI). The threshold is the endogenous-K bifurcation (Review Item 3).
+#'
+#' @section Risk note:
+#'
+#' See [diversity_dependence_contrast()] — the feedback formula corrects a bug
+#' in the original plan. The theoretical bifurcation is at feedback = 2/3
+#' (where the analytical DD slope = 0). The *measured* bifurcation (where the
+#' linear regression slope crosses zero) is approximate because the regression
+#' fits a linear approximation to a nonlinear per-capita-rate function; the
+#' sign is reliable but the exact crossing point may differ slightly from 2/3.
+#'
+#' @dft A1, A2, A6
+#'
+#' @export
+#' @examples
+#' result <- sweep_endogenous_k(feedback_grid = seq(0, 1, by = 0.1))
+#' result$values$bifurcation_feedback  # theoretical = 2/3
+sweep_endogenous_k <- function(feedback_grid, n_steps = 20, innovation_rate = 0.3,
+                                capacity = 30, seed = 42L) {
+  results <- lapply(feedback_grid, function(fb) {
+    counts <- generate_dd_series(n_steps, innovation_rate, capacity,
+                                  feedback = fb, seed = seed)
+    dd <- diversity_dependence_sign(counts, seed = seed)
+    list(
+      feedback = fb,
+      dd_slope = dd$values[["diversity_dependence_slope"]],
+      dd_sign = dd$values[["diversity_dependence_sign"]],
+      counts = counts
+    )
+  })
+
+  sweep_df <- data.frame(
+    feedback = vapply(results, `[[`, numeric(1), "feedback"),
+    dd_slope = vapply(results, `[[`, numeric(1), "dd_slope"),
+    dd_sign = vapply(results, `[[`, character(1), "dd_sign"),
+    stringsAsFactors = FALSE
+  )
+
+  # Measured bifurcation: the feedback where dd_slope crosses zero.
+  # Find the sign change (last negative, first positive).
+  neg_idx <- which(sweep_df$dd_slope < 0)
+  pos_idx <- which(sweep_df$dd_slope > 0)
+  measured_bif <- if (length(neg_idx) > 0 && length(pos_idx) > 0) {
+    # Linear interpolation between last negative and first positive
+    last_neg <- max(neg_idx)
+    first_pos <- min(pos_idx[pos_idx > last_neg])
+    if (length(first_pos) > 0 && first_pos > last_neg) {
+      s1 <- sweep_df$dd_slope[last_neg]
+      s2 <- sweep_df$dd_slope[first_pos]
+      f1 <- sweep_df$feedback[last_neg]
+      f2 <- sweep_df$feedback[first_pos]
+      f1 - s1 * (f2 - f1) / (s2 - s1)
+    } else NA_real_
+  } else NA_real_
+
+  result <- list(
+    values = list(
+      sweep = sweep_df,
+      bifurcation_feedback = 2 / 3,
+      measured_bifurcation_feedback = measured_bif
+    ),
+    metadata = list(
+      n = length(feedback_grid),
+      feedback_grid = feedback_grid,
+      params = list(
+        innovation_rate = innovation_rate,
+        capacity = capacity,
+        n_steps = n_steps
+      ),
+      method = "endogenous_k_sweep",
+      seed = seed,
+      converged = TRUE
+    )
+  )
+
+  validate_result(result)
+  result
+}
+
+#' Visualize the diversity-dependence contrast
+#'
+#' Overlays the autocatalytic and logistic innovation trajectories (left) and
+#' their per-capita-rate-vs-N slopes (right) in one figure. The DD sign flip
+#' is visible: the autocatalytic per-capita rate increases with N (positive
+#' slope, Homo inversion); the logistic per-capita rate decreases with N
+#' (negative slope, niche-filling).
+#'
+#' @param contrast_result List. A [diversity_dependence_contrast()] result.
+#'
+#' @return A ggplot2 object (two-panel: trajectory + DD slope).
+#'
+#' @section Theoretical Context:
+#'
+#' The Homo inversion is the framework's signature theoretical contribution.
+#' This visualization makes the DD sign flip — the core of the prediction —
+#' visible in one figure. Both trajectories grow (positive growth direction),
+#' but their per-capita-rate-vs-N slopes have opposite signs: that is the
+#' Homo inversion.
+#'
+#' @dft A1, A6
+#'
+#' @export
+#' @examples
+#' \dontrun{
+#' result <- diversity_dependence_contrast(n_steps = 20, capacity = 30)
+#' plot_dd_contrast(result)
+#' }
+plot_dd_contrast <- function(contrast_result) {
+  ac <- contrast_result$values$autocatalytic_counts
+  lo <- contrast_result$values$logistic_counts
+  n <- length(ac)
+
+  # Trajectory data
+  traj_df <- data.frame(
+    time = rep(seq_len(n), 2),
+    counts = c(ac, lo),
+    model = rep(c("Autocatalytic (Homo inversion)", "Logistic (niche-filling)"),
+                each = n)
+  )
+
+  # DD slope data: per-capita rate vs N
+  N_prev <- c(ac[-n], lo[-n])
+  pc_rate <- c(diff(ac) / pmax(ac[-n], .Machine$double.xmin),
+               diff(lo) / pmax(lo[-n], .Machine$double.xmin))
+  dd_df <- data.frame(
+    N = N_prev,
+    pc_rate = pc_rate,
+    model = rep(c("Autocatalytic (Homo inversion)", "Logistic (niche-filling)"),
+                each = n - 1)
+  )
+
+  # Two-panel plot
+  p1 <- ggplot2::ggplot(traj_df, ggplot2::aes(x = .data$time, y = .data$counts,
+                                               color = .data$model)) +
+    ggplot2::geom_line(linewidth = 1) +
+    ggplot2::geom_point(size = 1.5) +
+    ggplot2::scale_color_manual(values = c(
+      "Autocatalytic (Homo inversion)" = "#2ecc71",
+      "Logistic (niche-filling)" = "#e74c3c"
+    )) +
+    ggplot2::labs(
+      title = "Diversity-dependence contrast: Homo inversion vs niche-filling",
+      subtitle = "Both trajectories grow — but DD slopes have opposite signs",
+      x = "Time", y = "Innovation count"
+    ) +
+    ggplot2::theme_minimal(base_size = 11) +
+    ggplot2::theme(legend.position = "bottom",
+                   legend.title = ggplot2::element_blank())
+
+  p2 <- ggplot2::ggplot(dd_df, ggplot2::aes(x = .data$N, y = .data$pc_rate,
+                                            color = .data$model)) +
+    ggplot2::geom_point(size = 2) +
+    ggplot2::geom_smooth(method = "lm", se = FALSE, linewidth = 0.8) +
+    ggplot2::scale_color_manual(values = c(
+      "Autocatalytic (Homo inversion)" = "#2ecc71",
+      "Logistic (niche-filling)" = "#e74c3c"
+    )) +
+    ggplot2::labs(
+      subtitle = paste0("DD slope: AC = ",
+                        format(contrast_result$values$autocatalytic_dd_slope, digits = 3),
+                        " (positive), Log = ",
+                        format(contrast_result$values$logistic_dd_slope, digits = 3),
+                        " (negative)"),
+      x = "Diversity N", y = "Per-capita rate (dN/dt)/N",
+      caption = paste0("Contrast = ",
+                       format(contrast_result$values$contrast, digits = 3),
+                       " (positive = Homo inversion)")
+    ) +
+    ggplot2::theme_minimal(base_size = 11) +
+    ggplot2::theme(legend.position = "none")
+
+  patchwork::wrap_plots(p1, p2, ncol = 2)
+}

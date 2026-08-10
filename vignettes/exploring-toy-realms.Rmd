@@ -234,6 +234,116 @@ point. The loop area would then be an empirical quantity. No such experiment
 exists for capacity reallocation; the realm makes this absence visible — the
 reader can see exactly what data would count as the test.
 
+## Realm 3 — The Homo inversion
+
+### What it explores
+
+The *Homo* inversion is the framework's signature theoretical contribution:
+the prediction that, after a substrate shift, innovations generate further
+innovations faster than they are lost — *positive diversity-dependence* (the
+per-capita innovation rate increases with diversity $N$). This is distinct
+from standard niche-filling, where the per-capita rate *decreases* with $N$
+(negative diversity-dependence, logistic growth).
+
+This realm makes the DD sign flip *visible*. It generates two matched
+diversity time series — one autocatalytic (positive DD, the *Homo* inversion)
+and one logistic (negative DD, niche-filling) — and overlays them. Both
+trajectories grow (positive growth direction), but their per-capita-rate-vs-$N$
+slopes have opposite signs: that is the *Homo* inversion.
+
+It also explores the **endogenous-K bifurcation** (Review Item 3): the
+prediction that there is a threshold in cultural complexity beyond which DD
+flips from negative (niche-filling) to positive (autocatalytic). Sweeping the
+feedback parameter shows this flip.
+
+### Risk note: the corrected feedback formula
+
+The execution plan (`docs/review/toy-realms-plan.md`) proposed the per-capita
+rate formula $r \times (\text{feedback} + (1-\text{feedback}) \times N/(N+K))$,
+intended to interpolate between logistic (feedback = 0, negative DD) and
+autocatalytic (feedback = 0.5, positive DD). **This formula is wrong**: at
+feedback = 0 it gives $r \times N/(N+K)$, whose derivative w.r.t. $N$ is
+$rK/(N+K)^2 > 0$ — always positive DD. The function $N/(N+K)$ is *increasing*
+in $N$, so the blend is always increasing; it cannot produce negative DD at
+any feedback value.
+
+The workaround blends two bounded functions — one increasing (autocatalytic),
+one decreasing (bounded logistic):
+
+$$\text{pc\_rate} = r \times [\text{feedback} \times (0.5 + 0.5 N/(N+K)) + (1-\text{feedback}) \times K/(N+K)]$$
+
+The analytical derivative is $rK/(N+K)^2 \times (1.5\,\text{feedback} - 1)$:
+negative for feedback $< 2/3$ (niche-filling), positive for feedback $> 2/3$
+(*Homo* inversion), zero at feedback $= 2/3$ (the bifurcation). At feedback = 1
+this reduces to $r(0.5 + 0.5N/(N+K))$, exactly matching the existing
+`generate_autocatalytic_set()` dynamics (verified: identical time series).
+
+### Worked example: the contrast
+
+```{r dd-contrast}
+contrast <- diversity_dependence_contrast(n_steps = 20, capacity = 30)
+```
+
+The autocatalytic DD slope is `r round(contrast$values$autocatalytic_dd_slope, 6)`
+(positive — the *Homo* inversion); the logistic DD slope is
+`r round(contrast$values$logistic_dd_slope, 6)` (negative — niche-filling). The
+contrast is `r round(contrast$values$contrast, 6)` — positive, confirming the
+VI signature.
+
+```{r plot-dd-contrast, fig.alt = "Two-panel plot: left shows autocatalytic and logistic trajectories both growing; right shows per-capita rate vs N with opposite slopes (autocatalytic increasing, logistic decreasing)."}
+plot_dd_contrast(contrast)
+```
+
+The left panel shows both trajectories growing — they look similar. The right
+panel reveals the difference: the autocatalytic per-capita rate *increases*
+with $N$ (green, positive slope), while the logistic per-capita rate
+*decreases* with $N$ (red, negative slope). That slope flip is the *Homo*
+inversion.
+
+### Worked example: the endogenous-K sweep
+
+```{r dd-sweep}
+dd_sweep <- sweep_endogenous_k(feedback_grid = seq(0, 1, by = 0.05))
+```
+
+The sweep shows the DD sign flipping from negative to positive:
+
+```{r dd-sweep-table}
+head(dd_sweep$values$sweep, 8)
+tail(dd_sweep$values$sweep, 8)
+```
+
+The theoretical bifurcation is at feedback = `r round(dd_sweep$values$bifurcation_feedback, 4)`
+(2/3); the measured bifurcation (where the linear regression slope crosses
+zero) is `r round(dd_sweep$values$measured_bifurcation_feedback, 4)` — very
+close to the theoretical value.
+
+### What this teaches
+
+1. **The DD sign is the *Homo* inversion signature.** Both logistic and
+   autocatalytic growth produce growing time series — growth direction alone
+   cannot distinguish them. The per-capita-rate-vs-$N$ slope is the
+   discriminator: positive = *Homo* inversion, negative = niche-filling.
+
+2. **The bifurcation is quantitative.** The DD slope doesn't just flip; it
+   crosses zero continuously. The endogenous-K bifurcation is a threshold in
+   cultural complexity (the feedback parameter), and the sweep shows exactly
+   where it is (feedback $\approx 2/3$).
+
+3. **The measured bifurcation is approximate.** The linear regression in
+   `diversity_dependence_sign()` fits a linear approximation to a nonlinear
+   per-capita-rate function. The sign is reliable, but the exact crossing
+   point may differ slightly from the theoretical $2/3$. This is documented as
+   a known limitation.
+
+### The experiment that would fill this realm
+
+A hominin (or any cultural-species) diversification time series spanning the
+putative complexity threshold: innovation counts or cultural-variant counts
+through time, long enough to estimate the per-capita-rate-vs-diversity slope
+on both sides of the threshold. No such dataset exists; the realm makes the
+prediction and its data requirement concrete.
+
 ## Limitations
 
 The toy realms are **theoretical exploration, not empirical test**:

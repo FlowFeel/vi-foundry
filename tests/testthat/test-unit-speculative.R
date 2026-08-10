@@ -245,3 +245,104 @@ test_that("plot_irreversibility_sweep maps a to x and loop_area to y", {
   expect_true(grepl("a", p$labels$x, ignore.case = TRUE))
   expect_true(grepl("area", p$labels$y, ignore.case = TRUE))
 })
+
+# === diversity_dependence_contrast ===
+
+test_that("diversity_dependence_contrast returns A6 proof object", {
+  result <- diversity_dependence_contrast(n_steps = 20, capacity = 30)
+  expect_true(validate_result(result))
+  expect_true("autocatalytic_dd_slope" %in% names(result$values))
+  expect_true("logistic_dd_slope" %in% names(result$values))
+  expect_true("contrast" %in% names(result$values))
+})
+
+test_that("diversity_dependence_contrast: autocatalytic DD is positive (Homo inversion)", {
+  result <- diversity_dependence_contrast(n_steps = 20, capacity = 30)
+  expect_gt(result$values$autocatalytic_dd_slope, 0)
+  expect_equal(result$values$autocatalytic_dd_sign, "positive")
+})
+
+test_that("diversity_dependence_contrast: logistic DD is negative (niche-filling)", {
+  result <- diversity_dependence_contrast(n_steps = 20, capacity = 30)
+  expect_lt(result$values$logistic_dd_slope, 0)
+  expect_equal(result$values$logistic_dd_sign, "negative")
+})
+
+test_that("diversity_dependence_contrast: contrast is positive (VI signature)", {
+  result <- diversity_dependence_contrast(n_steps = 20, capacity = 30)
+  expect_gt(result$values$contrast, 0)
+  expect_equal(result$values$contrast_sign, "positive")
+})
+
+test_that("diversity_dependence_contrast is deterministic (A2)", {
+  r1 <- diversity_dependence_contrast(n_steps = 20, capacity = 30)
+  r2 <- diversity_dependence_contrast(n_steps = 20, capacity = 30)
+  expect_equal(r1$values$contrast, r2$values$contrast)
+  expect_equal(r1$values$autocatalytic_counts, r2$values$autocatalytic_counts)
+})
+
+test_that("generate_dd_series at feedback=1 matches existing autocatalytic generator", {
+  # Source the existing generator
+  source(system.file("simulacra", "generate_autocatalytic.R", package = "vi.foundry"))
+  existing <- generate_autocatalytic_set(n_steps = 20, innovation_rate = 0.3,
+                                         capacity = 30, seed = 42L)
+  new <- generate_dd_series(20, 0.3, 30, feedback = 1, seed = 42L)
+  expect_equal(existing$values$innovation_counts, new)
+})
+
+test_that("generate_dd_series at feedback=0 gives negative DD", {
+  counts <- generate_dd_series(20, 0.3, 30, feedback = 0, seed = 42L)
+  dd <- diversity_dependence_sign(counts, seed = 42L)
+  expect_equal(dd$values$diversity_dependence_sign, "negative")
+})
+
+# === sweep_endogenous_k ===
+
+test_that("sweep_endogenous_k returns A6 proof object", {
+  result <- sweep_endogenous_k(feedback_grid = seq(0, 1, by = 0.1))
+  expect_true(validate_result(result))
+  expect_true("sweep" %in% names(result$values))
+  expect_true("bifurcation_feedback" %in% names(result$values))
+})
+
+test_that("sweep_endogenous_k produces one row per feedback value", {
+  fb_grid <- seq(0, 1, by = 0.1)
+  result <- sweep_endogenous_k(feedback_grid = fb_grid)
+  expect_equal(nrow(result$values$sweep), length(fb_grid))
+  expect_equal(result$values$sweep$feedback, fb_grid)
+})
+
+test_that("sweep shows DD sign flipping from negative to positive", {
+  result <- sweep_endogenous_k(feedback_grid = seq(0, 1, by = 0.05))
+  df <- result$values$sweep
+  # At low feedback: negative DD (niche-filling)
+  expect_equal(df$dd_sign[[1]], "negative")
+  # At high feedback: positive DD (Homo inversion)
+  expect_equal(df$dd_sign[[nrow(df)]], "positive")
+  # There should be a sign flip somewhere in the interior
+  signs <- df$dd_sign
+  flips <- sum(diff(as.integer(factor(signs, levels = c("negative", "positive")))) != 0)
+  expect_gte(flips, 1)
+})
+
+test_that("sweep measured bifurcation is close to theoretical (2/3)", {
+  result <- sweep_endogenous_k(feedback_grid = seq(0, 1, by = 0.05))
+  expect_equal(result$values$bifurcation_feedback, 2/3)
+  # Measured bifurcation should be close to 2/3 (within 0.1)
+  expect_lt(abs(result$values$measured_bifurcation_feedback - 2/3), 0.1)
+})
+
+test_that("sweep_endogenous_k is deterministic (A2)", {
+  r1 <- sweep_endogenous_k(feedback_grid = seq(0, 1, by = 0.1))
+  r2 <- sweep_endogenous_k(feedback_grid = seq(0, 1, by = 0.1))
+  expect_equal(r1$values$sweep, r2$values$sweep)
+})
+
+# === plot_dd_contrast ===
+
+test_that("plot_dd_contrast returns a plot object", {
+  result <- diversity_dependence_contrast(n_steps = 20, capacity = 30)
+  p <- plot_dd_contrast(result)
+  # patchwork returns a patchwork object; ggplot returns "ggplot"
+  expect_true(any(c("ggplot", "patchwork") %in% class(p)))
+})

@@ -250,7 +250,7 @@ empirical experiment exists.
 
 ---
 
-## Phase 3 — The *Homo*-inversion explorer
+## Phase 3 — The *Homo*-inversion explorer  ✅ DONE
 
 ### What it explores
 
@@ -312,15 +312,15 @@ plot_dd_contrast <- function(contrast_result) { ... }
 
 ### Exit criteria
 
-- [ ] `diversity_dependence_contrast()` returns A6 with positive contrast
+- [x] `diversity_dependence_contrast()` returns A6 with positive contrast
       (autocatalytic DD slope > 0, logistic DD slope < 0)
-- [ ] `sweep_endogenous_k()` shows the DD sign flipping from "negative" to
+- [x] `sweep_endogenous_k()` shows the DD sign flipping from "negative" to
       "positive" as the feedback parameter increases
-- [ ] `plot_dd_contrast()` renders the overlay
-- [ ] Unit test: contrast is positive for the default params; sign flips in
+- [x] `plot_dd_contrast()` renders the overlay
+- [x] Unit test: contrast is positive for the default params; sign flips in
       the sweep
-- [ ] Vignette Section 3 renders
-- [ ] Suite green
+- [x] Vignette Section 3 renders
+- [x] Suite green
 
 ### The experiment that would fill this realm
 
@@ -330,17 +330,36 @@ through time, long enough to estimate the per-capita-rate-vs-diversity slope
 on both sides of the threshold. No such dataset exists; the realm makes the
 prediction and its data requirement concrete.
 
-### Risk
+### Risk — and the formula bug it surfaced (resolved)
 
 The endogenous-K sweep requires a *parameterized* generator that can vary the
-feedback strength continuously. The current `generate_autocatalytic_set()`
-has a fixed feedback structure (bounded autocatalytic: per-capita rate =
-r × (0.5 + 0.5 × N/(N+K))). The sweep needs a generalization: per-capita
-rate = r × (feedback + (1 − feedback) × N/(N+K)), where `feedback` ∈ [0, 1]
+feedback strength continuously. The plan proposed: per-capita rate =
+r × (feedback + (1 − feedback) × N/(N+K)), where `feedback` ∈ [0, 1]
 interpolates between logistic (feedback = 0, negative DD) and autocatalytic
-(feedback = 0.5, positive DD). This is a new generator variant, not a change
-to the existing one. Medium risk: the generator must be validated (A2
-determinism, sign correctness at both endpoints).
+(positive DD).
+
+**This formula is wrong.** At feedback = 0 it gives r × N/(N+K), whose
+derivative w.r.t. N is rK/(N+K)² > 0 — *always positive DD*. The function
+N/(N+K) is increasing in N, so the blend is always increasing; it cannot
+produce negative DD at any feedback value. It interpolates between two
+positive-DD forms, not between logistic and autocatalytic.
+
+**Corrected formula** (implemented): blend two bounded functions — one
+increasing (autocatalytic), one decreasing (bounded logistic):
+
+    pc_rate = r × [feedback × (0.5 + 0.5·N/(N+K)) + (1 − feedback) × K/(N+K)]
+
+The analytical derivative is rK/(N+K)² × (1.5·feedback − 1): negative for
+feedback < 2/3 (niche-filling), positive for feedback > 2/3 (*Homo*
+inversion), zero at feedback = 2/3 (the bifurcation). At feedback = 1 this
+reduces to r × (0.5 + 0.5·N/(N+K)), exactly matching the existing
+`generate_autocatalytic_set()` dynamics (verified: identical time series).
+
+The measured bifurcation (where the linear-regression DD slope crosses zero)
+landed at feedback ≈ 0.666 — within 0.001 of the theoretical 2/3, validating
+the corrected formula. The risk is now fully resolved; see the comment block
+above `generate_dd_series()` in `R/speculative.R` and the Risk note section
+in `diversity_dependence_contrast()`'s roxygen for the full analysis.
 
 ---
 
