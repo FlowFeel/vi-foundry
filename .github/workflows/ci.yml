@@ -17,8 +17,7 @@ jobs:
     container: rocker/tidyverse:4.5.3
     steps:
       - uses: actions/checkout@v4
-      - name: Install lintr
-        run: R -e "install.packages(c('lintr', 'styler', 'roxygen2'), repos='${{ env.R_REPOS }}')"
+      - uses: ./.github/actions/setup-r-deps
       - name: Style check
         run: |
           Rscript -e "
@@ -46,16 +45,7 @@ jobs:
     needs: lint
     steps:
       - uses: actions/checkout@v4
-      - name: Install system dependencies
-        run: |
-          apt-get update && apt-get install -y --no-install-recommends libpq-dev
-          rm -rf /var/lib/apt/lists/*
-      - name: Install R dependencies
-        run: |
-          R -e "install.packages(c(
-            'testthat','withr','covr','mockery','R6','yaml','ggplot2',
-            'roxygen2','readxl','knitr','rmarkdown','patchwork','dplyr','viridis','ape','caper','phytools','base64enc','DBI','RPostgres'
-          ), repos='${{ env.R_REPOS }}')"
+      - uses: ./.github/actions/setup-r-deps
       - name: Generate NAMESPACE
         run: Rscript -e "roxygen2::roxygenize('.', load_code=roxygen2::load_source)"
       - name: Install package
@@ -84,16 +74,7 @@ jobs:
     needs: unit
     steps:
       - uses: actions/checkout@v4
-      - name: Install system dependencies
-        run: |
-          apt-get update && apt-get install -y --no-install-recommends libpq-dev
-          rm -rf /var/lib/apt/lists/*
-      - name: Install R dependencies
-        run: |
-          R -e "install.packages(c(
-            'testthat','withr','R6','yaml','ggplot2',
-            'roxygen2','readxl','knitr','rmarkdown','patchwork','dplyr','viridis','ape','caper','phytools','base64enc','DBI','RPostgres'
-          ), repos='${{ env.R_REPOS }}')"
+      - uses: ./.github/actions/setup-r-deps
       - name: Generate NAMESPACE and install
         run: |
           Rscript -e "roxygen2::roxygenize('.', load_code=roxygen2::load_source)"
@@ -122,16 +103,7 @@ jobs:
     needs: simulacra
     steps:
       - uses: actions/checkout@v4
-      - name: Install system dependencies
-        run: |
-          apt-get update && apt-get install -y --no-install-recommends libpq-dev
-          rm -rf /var/lib/apt/lists/*
-      - name: Install R dependencies
-        run: |
-          R -e "install.packages(c(
-            'testthat','withr','R6','yaml','ggplot2',
-            'roxygen2','readxl','knitr','rmarkdown','patchwork','dplyr','viridis','ape','caper','phytools','base64enc','DBI','RPostgres'
-          ), repos='${{ env.R_REPOS }}')"
+      - uses: ./.github/actions/setup-r-deps
       - name: Generate NAMESPACE and install
         run: |
           Rscript -e "roxygen2::roxygenize('.', load_code=roxygen2::load_source)"
@@ -145,16 +117,7 @@ jobs:
     needs: integration
     steps:
       - uses: actions/checkout@v4
-      - name: Install system dependencies
-        run: |
-          apt-get update && apt-get install -y --no-install-recommends libpq-dev
-          rm -rf /var/lib/apt/lists/*
-      - name: Install R dependencies
-        run: |
-          R -e "install.packages(c(
-            'testthat','withr','R6','yaml','ggplot2',
-            'roxygen2','readxl','knitr','rmarkdown','patchwork','dplyr','viridis','ape','caper','phytools','base64enc','DBI','RPostgres'
-          ), repos='${{ env.R_REPOS }}')"
+      - uses: ./.github/actions/setup-r-deps
       - name: Generate NAMESPACE and install
         run: |
           Rscript -e "roxygen2::roxygenize('.', load_code=roxygen2::load_source)"
@@ -168,22 +131,13 @@ jobs:
     needs: regression
     steps:
       - uses: actions/checkout@v4
-      - name: Install system dependencies
-        run: |
-          apt-get update && apt-get install -y --no-install-recommends libpq-dev
-          rm -rf /var/lib/apt/lists/*
-      - name: Install R dependencies
-        run: |
-          R -e "install.packages(c(
-            'testthat','withr','R6','yaml','ggplot2',
-            'roxygen2','readxl','knitr','rmarkdown','patchwork','dplyr','viridis','ape','caper','phytools','base64enc','DBI','RPostgres'
-          ), repos='${{ env.R_REPOS }}')"
+      - uses: ./.github/actions/setup-r-deps
       - name: Generate NAMESPACE and install
         run: |
           Rscript -e "roxygen2::roxygenize('.', load_code=roxygen2::load_source)"
           R CMD INSTALL .
       - name: R CMD check
-        run: rcmdcheck::rcmdcheck(".", args = c("--no-manual", "--as-cran"), error_on = "error")
+        run: Rscript -e "rcmdcheck::rcmdcheck('.', args = c('--no-manual', '--as-cran'), error_on = 'error')"
 
   pages:
     runs-on: ubuntu-latest
