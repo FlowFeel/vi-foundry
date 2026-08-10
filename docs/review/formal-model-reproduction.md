@@ -359,35 +359,49 @@ The additive GLM in `archive/pre-foundry-scripts/run_formal_model.R` is
    (as in Model B, §5) or applying a continuity correction addresses this,
    but the primary issue is the flattening bug.
 
-### 9.2 What the foundry did instead
+### 9.2 What the foundry did instead (now corrected)
 
-The foundry replaced the GLM with:
+The foundry originally replaced the GLM with:
 
-- **A theoretical ODE** (`R/formal_model.R`) that simulates retention
-  trajectories from input parameters. It does not fit the 8×6 matrix and
-  cannot fail empirically.
+- **A theoretical ODE** (`R/formal_model.R`, `threshold_model()`) that simulates
+  retention trajectories from input parameters. It does not fit the 8×6 matrix
+  and cannot fail empirically.
 - **An `lm(loss_rank ~ dep) + Spearman` transfer test** (`R/empirical_tests.R`,
   `transfer_test()`) that uses idealized literature ranks, not the real
   retention matrix, and transfers only the slope sign (discarding magnitude).
 
-Both sidestep the 8×6 matrix. The GLM — the only model that fits the real
-data — was dropped entirely.
+Both sidestepped the 8×6 matrix. The GLM — the only model that fits the real
+  data — was dropped entirely.
 
-### 9.3 Recommendation
+**This has now been corrected.** The empirical GLM is restored as
+`empirical_formal_model()` in `R/formal_model.R`, the 8×6 retention matrix
+is bundled in `data/orobanchaceae_retention_matrix.tsv` (corrected
+flattening), and the bird morphology data is bundled in
+`data/island_bird_morphology.csv`. The function is wired into the pipeline
+(`scripts/run_pipeline.R`) and the regression gate
+(`tests/testthat/test-regression-baseline.R`), with oracle targets in
+`baseline/oracle.yml`. The ODE (`threshold_model()`) remains as the
+theoretical companion.
 
-**Restore the empirical GLM as the formal model**, with the flattening bug
-fixed (Model A). The corrected GLM:
+### 9.3 Status: implemented
 
-- Fits the real 8×6 retention matrix (the author's own data).
-- Estimates `dep` and `para` from data (not as input parameters).
-- Confirms VI predictions: `dep = +0.84` (p = 0.0008), `para` p < 0.0001.
-- Produces cross-kingdom ρ = +0.755 from the fitted model (not from
-  idealized ranks with discarded magnitude).
+The recommendation below has been **implemented**:
+
+- ✅ The 8×6 retention matrix is bundled (`data/orobanchaceae_retention_matrix.tsv`).
+- ✅ The corrected additive GLM is restored as `empirical_formal_model()`.
+- ✅ It fits the real data, estimates `dep` and `para` from data, and confirms
+  VI predictions: `dep = +0.84` (p = 0.0008), `para` p < 0.0001.
+- ✅ Cross-kingdom ρ = +0.755 from the fitted model.
+- ✅ The regression gate enforces the oracle values; the unit tests verify
+  VI predictions on both synthetic and real data.
+- ✅ The ODE (`threshold_model()`) remains as the theoretical companion — both
+  are in the pipeline as `formal_model` (ODE) and `empirical_formal_model` (GLM).
 
 The interaction GLM (Model B) is the theoretically preferred specification
 but is not needed for this dataset. The threshold-model fit (Model C) is too
 rigid (step function, R² = 0.33) and produces degenerate rankings. The
-foundry's ODE (Model D) is a useful *simulation* but not an *empirical test*.
+foundry's ODE (Model D) remains as a useful *simulation* alongside the new
+*empirical test*.
 
 The corrected additive GLM (Model A) is the right empirical model: it is the
 simplest model that fits the data, confirms VI predictions, and can fail.

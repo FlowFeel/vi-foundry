@@ -68,6 +68,17 @@ stages <- list(
       m0 = 10, alpha = 0.05, time = 100
     )$values
   },
+  empirical_formal_model = function() {
+    if (!has_bundled_data("orobanchaceae_retention_matrix.tsv")) {
+      stop("retention matrix not bundled")
+    }
+    if (!has_bundled_data("island_bird_morphology.csv")) {
+      stop("island_bird_morphology.csv not bundled (items 4-6)")
+    }
+    plant <- load_retention_matrix()
+    bird <- load_island_birds()
+    empirical_formal_model(plant$data, bird$data, seed = 42)$values
+  },
   cross_kingdom_l3 = function() {
     if (!has_bundled_data("island_bird_morphology.csv")) {
       stop("island_bird_morphology.csv not bundled (items 4-6)")

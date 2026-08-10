@@ -188,7 +188,7 @@ All data files are bundled in `data/` with provenance documented in [`data/READM
 ```
 vi-foundry/
 ├── R/                    Pure functional library (10 files, 14+ exported functions)
-├── tests/                Test suite (17 files, 201 test cases)
+├── tests/                Test suite (17 files, 211 test cases)
 ├── baseline/             Ground truth oracle (YAML — human-readable)
 ├── data/                 Bundled datasets with provenance
 ├── inst/simulacra/       Synthetic data generators (5 files)

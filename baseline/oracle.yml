@@ -113,6 +113,35 @@ formal_model:
   distinguishes_from_competitor: true
   caveat: "Deterministic ODE outputs (final_retention = [~0, ~0, ~0, 1, 1] for depths [0,1,2,3,5] with theta=2.5). Not empirical — see T3 for the empirical biphasic test."
 
+empirical_formal_model:
+  prediction: "Additive GLM (retention ~ dep + para): dep > 0 (protected), para < 0 (shed); cross-kingdom rho > 0"
+  competitor: "dep <= 0 (random loss), para ns (relaxed selection), rho <= 0 (no transfer)"
+  # These are EMPIRICAL values from the corrected additive GLM fit to the
+  # 8x6 Orobanchaceae retention matrix (Remark R7). The author's original
+  # script had a data-flattening bug (as.vector(t(retention)) is species-major;
+  # rep(dep_scores, each=8) is gene-major) that scrambled dep <-> retention
+  # and produced the wrong sign (dep = -0.83). With the corrected flattening
+  # (as.vector(retention), gene-major), the GLM confirms VI: dep = +0.84
+  # (p=0.0008), para = -1.86 (p<0.0001), pseudo-R2 = 0.55, cross-kingdom
+  # rho = +0.755. The GLM is deterministic (A2: no RNG), so these are exact.
+  # The theoretical companion is threshold_model (the ODE simulation above).
+  # See docs/review/formal-model-reproduction.md.
+  values:
+    dep_coefficient: 0.8374952425
+    dep_p_value: 0.0007557440
+    para_coefficient: -1.8643890088
+    para_p_value: 0.0000350239
+    pseudo_r_squared: 0.5515413228
+    cross_kingdom_rho: 0.7545045450
+    cross_kingdom_p: 0.0305127590
+    dep_positive: true
+    para_negative: true
+    vi_confirmed: true
+  tolerance: 0.001
+  supports_vi: true
+  distinguishes_from_competitor: true
+  caveat: "Empirical GLM fit to the 8x6 retention matrix (corrected flattening, Remark R7). The foundry's theoretical ODE (threshold_model) is the companion simulation; this is the empirical test that can fail."
+
 cross_kingdom_l3:
   prediction: "Plant-derived slope SIGN predicts bird morphological change ordering (ordering-concordance transfer; slope magnitude does not transfer)"
   competitor: "Substrates are independent — no parameter transfer"

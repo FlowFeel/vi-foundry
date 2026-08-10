@@ -128,3 +128,86 @@ test_that("phase_transition_time increases with smaller threshold fraction", {
   tight <- phase_transition_time(m0 = 10, alpha = 0.05, threshold_fraction = 0.01)
   expect_gt(tight, loose)
 })
+
+# === empirical_formal_model (corrected additive GLM, Remark R7) ===
+
+# Synthetic retention matrix where dep clearly increases retention and
+# para clearly decreases it — tests the function without bundled data.
+.synthetic_retention <- data.frame(
+  species = rep(c("A", "B", "C", "D", "E"), 4),
+  parasitism_score = rep(c(0, 1, 2, 3, 4), 4),
+  gene_category = rep(c("g0", "g1", "g2", "g3"), each = 5),
+  dependency_score = rep(c(0, 1, 2, 3), each = 5),
+  retention = c(
+    1, 0.8, 0.5, 0.3, 0.1,  # dep=0: shed fast
+    1, 0.9, 0.7, 0.5, 0.3,  # dep=1: shed slower
+    1, 0.95, 0.85, 0.7, 0.5,  # dep=2: shed slower still
+    1, 1, 0.95, 0.9, 0.8  # dep=3: barely sheds
+  ),
+  stringsAsFactors = FALSE
+)
+
+.synthetic_bird <- data.frame(
+  structure = c("t1", "t2", "t3", "t4", "t5", "t6"),
+  dependency_score = c(0, 1, 2, 3, 1, 2),
+  observed_rank = c(1, 3, 4, 6, 2, 5),
+  stringsAsFactors = FALSE
+)
+
+test_that("empirical_formal_model returns A6 proof object", {
+  result <- empirical_formal_model(.synthetic_retention, .synthetic_bird)
+  expect_true(validate_result(result))
+  expect_true("values" %in% names(result))
+  expect_true("metadata" %in% names(result))
+})
+
+test_that("empirical_formal_model recovers positive dep on synthetic data", {
+  result <- empirical_formal_model(.synthetic_retention, .synthetic_bird)
+  expect_gt(result$values$dep_coefficient, 0)  # VI predicts dep > 0
+  expect_true(result$values$dep_positive)
+})
+
+test_that("empirical_formal_model recovers negative para on synthetic data", {
+  result <- empirical_formal_model(.synthetic_retention, .synthetic_bird)
+  expect_lt(result$values$para_coefficient, 0)  # VI predicts para < 0
+  expect_true(result$values$para_negative)
+})
+
+test_that("empirical_formal_model is deterministic (A2 — no RNG)", {
+  r1 <- empirical_formal_model(.synthetic_retention, .synthetic_bird)
+  r2 <- empirical_formal_model(.synthetic_retention, .synthetic_bird)
+  expect_equal(r1$values, r2$values)
+})
+
+test_that("empirical_formal_model confirms VI on real retention matrix", {
+  skip_if_not(
+    has_bundled_data("orobanchaceae_retention_matrix.tsv"),
+    "Retention matrix not bundled"
+  )
+  skip_if_not(
+    has_bundled_data("island_bird_morphology.csv"),
+    "Bird data not bundled"
+  )
+
+  plant <- load_retention_matrix()
+  bird <- load_island_birds()
+  result <- empirical_formal_model(plant$data, bird$data)
+
+  # VI predictions (Remark R7): corrected flattening gives the right signs
+  expect_gt(result$values$dep_coefficient, 0)       # ~ +0.84
+  expect_lt(result$values$para_coefficient, 0)       # ~ -1.86
+  expect_gt(result$values$cross_kingdom_rho, 0)      # ~ +0.755
+  expect_true(result$values$vi_confirmed)
+  expect_gt(result$values$pseudo_r_squared, 0.4)     # ~ 0.55
+  expect_equal(result$metadata$n, 48)                # 8 species x 6 genes
+})
+
+test_that("empirical_formal_model errors on invalid data", {
+  bad_plant <- .synthetic_retention
+  bad_plant$retention <- NULL
+  expect_error(empirical_formal_model(bad_plant, .synthetic_bird), "missing required columns")
+
+  bad_bird <- .synthetic_bird
+  bad_bird$observed_rank <- NULL
+  expect_error(empirical_formal_model(.synthetic_retention, bad_bird), "missing required columns")
+})
