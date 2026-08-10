@@ -1,16 +1,19 @@
 # Baseline Oracle — §12 Manuscript Results
 
-## What This Page Proves
+## What Is a Baseline Oracle?
 
-The baseline oracle stores every quantitative result reported in §12 of the monograph as ground truth in `baseline/oracle.yml`. Each value includes:
+A **baseline oracle** is a configuration file (`baseline/oracle.yml`) that stores every quantitative result reported in §12 of the monograph as **ground truth** — the value the manuscript claims, with a tolerance band specifying how much deviation is acceptable. The CI pipeline runs each test against the oracle: if the pipeline's output deviates from the baseline beyond tolerance, the gate fails. This means the numbers in the monograph are not claims — they are **reproducible artifacts**. Anyone can clone the repository, run the pipeline, and verify that the code produces the same values.
 
-- The manuscript-reported number (the "baseline")
-- An absolute tolerance band
-- Whether the result supports the VI prediction (`supports_vi: true/false`)
-- Whether the result distinguishes VI from a named competitor (`distinguishes_from_competitor: true/false`)
-- A caveat field documenting confounds, limitations, or non-discriminating status
+Each oracle entry is tagged with two boolean fields:
 
-The CI pipeline runs each test against the oracle. If the pipeline's output deviates from the baseline beyond tolerance, the gate fails. This means: the numbers in the monograph are not claims — they are reproducible artifacts. Anyone can clone the repository, run the pipeline, and verify that the code produces the same values.
+- **Supports VI** — does the result support the VI prediction?
+- **Distinguishes from competitor** — does the result distinguish VI from a named competitor hypothesis?
+
+Where `distinguishes_from_competitor: false`, the **caveat** field explains why. The foundry does not hide non-discriminating results — it labels them. A result that supports VI but does not distinguish it from relaxed selection is reported as exactly that, not as evidence for VI uniquely.
+
+## Forest Plot
+
+The forest plot shows every oracle value as a point with a blue tolerance band. The band is the acceptance region — if the pipeline's output falls within the band, the gate passes. Values to the left of zero are negative (loss, shedding, depletion); values to the right are positive (retention, protection, accumulation).
 
 ## Oracle Entries
 

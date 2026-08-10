@@ -297,7 +297,7 @@ render_simulacra_plots <- function(all_marks) {
     gp4 <- tryCatch(vi.foundry::plot_recovery_rate(marks, simulacrum_id = sim_id), error = function(e) grid_text_grob(paste("Error:", e$message)))
     b64 <- tryCatch(save_4panel_png(gp1, gp2, gp3, gp4), error = function(e) NA_character_)
     if (is.na(b64)) return(paste0("<h3>", html_escape(sim_id), "</h3><p class=\"placeholder\">Render failed.</p>"))
-    paste0("<figure class=\"plot\"><h3>", html_escape(sim_id), "</h3><img src=\"data:image/png;base64,", b64, "\" alt=\"", html_escape(sim_id), "\" /><figcaption>4-panel: true-vs-recovered (TL), trajectory (TR), param space (BL), recovery rate (BR).</figcaption></figure>")
+    paste0("<figure class=\"plot\"><h3>", html_escape(sim_id), "</h3><img src=\"data:image/png;base64,", b64, "\" alt=\"", html_escape(sim_id), "\" /><figcaption><strong>Panel 1 (top-left):</strong> True vs. recovered — points on the diagonal mean the pipeline recovers the right number. <strong>Panel 2 (top-right):</strong> Recovery trajectory — recovered values should hover around the true line across all iterations; drift indicates bias. <strong>Panel 3 (bottom-left):</strong> Parameter space — the cloud of recovered pairs should center on the true combination; scatter indicates parameter interaction. <strong>Panel 4 (bottom-right):</strong> Recovery rate — the cumulative success proportion should rise to 1.0 and stay there; plateaus indicate sensitivity to initial conditions.</figcaption></figure>")
   })
   paste(blocks, collapse = "\n")
 }
