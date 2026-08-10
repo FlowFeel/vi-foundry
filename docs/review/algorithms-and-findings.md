@@ -651,18 +651,72 @@ every case where the data allows a test.
 
 ---
 
-## Part V — Synthesis: what the results indicate
+## Part V — The speculative toy realms
+
+The empirical tests are blocked on data (Items 4–6). The formal model is a
+theoretical ODE that cannot fail. Between these lies a gap the foundry fills
+without external data: a layer of **speculative simulation** — four "toy
+realms" that let a reader *explore* the consequences of the VI framework
+across parameter space and hypothetical substrates. They do not source new
+data, do not claim to corroborate VI, and do not replace the blocked empirical
+work. They make VI's predictions *explorable* — "if VI were true, what would
+we expect to see in worlds we have not measured?" — and sharpen the
+predictions for when the data arrives.
+
+The realms are implemented in `R/speculative.R` (12 exported functions), with
+56 unit tests and a 4-section vignette (`vignettes/exploring-toy-realms.Rmd`).
+The full execution plan is in
+[`toy-realms-plan.md`](toy-realms-plan.md) (all 4 phases complete).
+
+| Realm | What it explores | Key finding |
+|-------|-----------------|-------------|
+| 1. Genome-reduction | The threshold gate: how retention collapses as parasitism crosses the protection threshold θ | The gate is sharp — below θ, retention collapses to ~0; above, ~1. Fixed a latent edge-case bug in `threshold_model()` (all-protected θ ≤ min(depths) → NaN). |
+| 2. Irreversibility | The cusp catastrophe: how hysteresis loop area grows as the system crosses the bifurcation (a < 0) | Loop area is robust to `initial_state` — depends only on the system (a), not the observer's starting point. Irreversibility is quantitative (loop area), not boolean. |
+| 3. *Homo* inversion | The diversity-dependence sign flip: positive DD (autocatalytic, VI) vs negative DD (logistic, niche-filling) | The plan's proposed feedback formula was **wrong** (always positive-DD). Corrected formula bifurcates at feedback = 2/3; measured at 0.666. The *Homo* inversion is a DD sign flip, not just a growth direction. |
+| 4. Cross-kingdom transfer | Model vs sign-only transfer: when does the full GLM (dep + para) outperform the sign alone? | Issue 7 (ranking discards magnitude) is visible as a **gap between two curves**. Model outperforms at low noise, converges at high noise, dips below at extreme noise. The real bird data makes the empirical transfer sign-only by construction (no varying para). |
+
+### What the realms are not
+
+They are not empirical tests. They use synthetic data with known parameters,
+not real measurements. Each realm ends with "the experiment that would fill
+this realm" — the specific dataset that would convert it from speculative to
+empirical. None of those datasets exist yet. The realms make the data
+requirement concrete: they show exactly what data would count as the test.
+
+### What the realms add to the synthesis
+
+The realms sharpen four predictions that the blocked empirical tests cannot
+test yet:
+
+1. **The threshold is sharp, not gradual** (Realm 1). When data arrives, the
+   retention-vs-parasitism curve should show a gate, not a smooth decline.
+2. **Irreversibility is quantitative** (Realm 2). When data arrives, the
+   hysteresis loop area — not just the presence/absence of a jump — is the
+   testable quantity.
+3. **The *Homo* inversion is a DD sign flip** (Realm 3). When data arrives,
+   the per-capita-rate-vs-diversity slope — not the growth direction — is the
+   discriminator. Positive slope = VI; negative = niche-filling.
+4. **The cross-kingdom transfer is sign-only with current data** (Realm 4).
+   The real bird data has no varying parasitism, so the empirical transfer is
+   sign-only by construction. Richer target-kingdom data (with varying
+   parasitism) would let the model transfer genuinely outperform — and that
+   gap is the testable quantity.
+
+---
+
+## Part VI — Synthesis: what the results indicate
 
 ### What the foundry establishes
 
 After the calculation review, the math review, and the three-phase refactoring,
 the foundry establishes four things with confidence:
 
-1. **Mathematical correctness.** 443 tests pass across unit, simulacrum,
+1. **Mathematical correctness.** 598 tests pass across unit, simulacrum,
    integration, and regression gates. The deterministic math (PGLS, biphasic
    kinetics, threshold model, autocatalytic set, cusp detection, contracts) is
    verified exactly. The formal model's ODE is correctly integrated and its
-   docstring now matches the equation it solves.
+   docstring now matches the equation it solves. The speculative toy realms
+   (4 realms, 56 unit tests) extend the math into explorable parameter space.
 
 2. **Method validity on synthetic data.** All five simulacra recover known
    parameters and reject known nulls. Every method the foundry uses is proven
@@ -760,15 +814,16 @@ case is partially made and the path to completing it is known.**
 
 | Gate | Files | Cases | Status |
 |------|------:|------:|--------|
-| Unit | 10 | 316 | ✅ green |
+| Unit | 11 | 461 (1 skip) | ✅ green |
 | Simulacra | 5 | 109 | ✅ green |
 | Integration | 1 | 13 (1 skip) | ✅ green |
-| Regression | 1 | 5 pass / 7 skip | ⚠️ items 4–6, R6 |
-| **Full suite** | **17** | **443 pass / 0 fail / 8 skip** | ✅ no failures |
+| Regression | 1 | 15 pass / 7 skip | ⚠️ items 4–6, R6 |
+| **Full suite** | **18** | **598 pass / 0 fail / 9 skip** | ✅ no failures |
 
-The 8 skips: 1 integration (Postgres round-trip, requires Docker stack); 7
+The 9 skips: 1 integration (Postgres round-trip, requires Docker stack); 7
 regression (2 missing datasets — Items 4–5; 4 data-version drift where the
-science holds — Item 6; 1 method misspecification — T3, R6). None are failures;
+science holds — Item 6; 1 method misspecification — T3, R6); 1 unit (a
+context warning guard). None are failures;
 all report exact reasons.
 
 | Oracle entry | Distinguishes VI? | Status |

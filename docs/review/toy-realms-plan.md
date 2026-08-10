@@ -7,6 +7,12 @@ license: MIT
 
 # Toy Realms — Execution Plan
 
+> **Status: COMPLETE — all 4 realms built, tested, and documented.**
+> Phases 1–4 are implemented in `R/speculative.R` (12 exported functions),
+> with 56 unit tests in `test-unit-speculative.R` and a 4-section vignette
+> (`vignettes/exploring-toy-realms.Rmd`). Suite green (598 pass / 0 fail / 9 skip).
+> Each realm surfaced a finding or bug; see the per-phase risk sections below.
+
 > **What this is.** An execution plan for building a speculative simulation
 > capacity — four "toy realms" that let a reader *explore* the consequences
 > of the VI framework across parameter space and hypothetical substrates.
@@ -512,35 +518,41 @@ exit criteria.
 Each commit is independently shippable: the suite is green, the new functions
 have unit tests, and the vignette section renders.
 
-## Open questions for review
+## Open questions for review (all resolved by implementation)
 
 1. **Module location.** `R/speculative.R` (one module, all 4 realms) or
    `inst/toy_realms/` (separate scripts, like the simulacra generators)?
-   `R/speculative.R` is exported and testable; `inst/toy_realms/` is sourced
-   (like the simulacra). **Recommendation:** `R/speculative.R` — the realms
-   are package functions, not generators, and should be exported and
-   unit-tested like the rest of the package.
+   **Resolved:** `R/speculative.R` — the realms are package functions, not
+   generators, and are exported and unit-tested like the rest of the package.
 
 2. **Generalized autocatalytic generator.** Phase 3 needs a parameterized
    feedback generator. Should it replace `generate_autocatalytic_set()` or be
-   a new `generate_diversity_series(feedback = ...)`? **Recommendation:** new
-   function — don't change the existing generator (it's tested and works);
-   the new one adds the feedback dial.
+   a new function? **Resolved:** new internal function `generate_dd_series()`
+   — the existing generator is unchanged (tested and works); the new one adds
+   the feedback dial. At `feedback = 1` it matches the existing generator
+   exactly (verified).
 
 3. **Synthetic retention matrix.** Phase 4 needs a synthetic retention matrix
-   (species × genes) for the GLM transfer. Should it generalize
-   `generate_synthetic_population()` or be a new
-   `generate_retention_matrix()`? **Recommendation:** new function — the
-   existing generator produces a flat panel, not a matrix; a matrix generator
-   is a different shape.
+   (species × genes) for the GLM transfer. **Resolved:** new internal
+   function `generate_transfer_data()` — the existing
+   `generate_synthetic_population()` produces a flat panel, not a matrix; a
+   matrix generator is a different shape.
 
-4. **Vignette vs. inst/examples.** The literate-docs standard allows both
-   vignettes (Layer 2) and `inst/examples/` literate reports (Layer 3). The
-   toy realms are exploration, not analysis — a vignette is the right home.
-   **Recommendation:** vignette only; no `inst/examples/` report.
+4. **Vignette vs. inst/examples.** **Resolved:** vignette only — the toy
+   realms are exploration, not analysis; a vignette is the right home.
 
-5. **All four or start with one?** The original open question
-   (`modeling-sim-viz-review.md`) was: build all four, or start with realm 1
-   as a proof-of-concept? **This plan's recommendation:** build realm 1
-   first, report, then proceed to 2–4. Each phase is independently shippable,
-   so the decision can be deferred after realm 1.
+5. **All four or start with one?** **Resolved:** built all four, one phase
+   at a time. Each phase was independently shippable; the decision to
+   proceed was made after each phase passed its exit criteria.
+
+## Findings surfaced by implementation
+
+Each realm surfaced a finding or bug that sharpened the understanding of the
+VI framework's testability:
+
+| Realm | Finding |
+|-------|---------|
+| 1 (threshold gate) | Fixed a latent edge-case bug in `threshold_model()` (all-protected θ ≤ min(depths) → NaN phase2_rate). The gate is sharp: below θ, retention collapses to ~0; above, it's ~1. |
+| 2 (irreversibility) | Loop area is robust to `initial_state` — the metric depends only on the system (`a`), not the observer's starting point. Irreversibility is quantitative (loop area), not boolean. |
+| 3 (Homo inversion) | The plan's proposed feedback formula was **wrong** (always positive-DD). Corrected formula blends autocatalytic + bounded-logistic; bifurcation at feedback = 2/3, measured at 0.666. The Homo inversion is a DD sign flip, not just a growth direction. |
+| 4 (cross-kingdom transfer) | Issue 7 (ranking discards magnitude) is visible as a **gap between two curves**. The model transfer outperforms sign-only at low noise, converges at high noise, and can dip below at extreme noise (noisy para hurts). The real bird data makes the empirical transfer sign-only by construction (no varying para). |
