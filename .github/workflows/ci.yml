@@ -100,6 +100,8 @@ jobs:
           R CMD INSTALL .
       - name: Run simulacra tests
         run: Rscript run_tests.R simulacra
+      - name: Emit simulacrum marks
+        run: Rscript scripts/run_simulacra.R --n-sims 20
       - name: Generate visualizations
         run: Rscript scripts/generate_viz.R
       - name: Upload simulacra results

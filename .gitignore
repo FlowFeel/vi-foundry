@@ -21,4 +21,5 @@ test-output/
 # Results (regenerated from pipeline)
 results/*.json
 results/*.txt
+results/simulacra/
 !results/session_info.txt

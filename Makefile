@@ -11,6 +11,7 @@ unit:
 # Simulacrum parameter-recovery tests (STDD)
 simulacra:
 	Rscript run_tests.R simulacra
+	Rscript scripts/run_simulacra.R --n-sims 20
 
 # End-to-end integration tests (BDD scenarios as testthat)
 integration:
