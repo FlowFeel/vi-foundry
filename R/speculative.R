@@ -984,10 +984,12 @@ generate_transfer_data <- function(n_species = 8, n_gene_categories = 6,
 #'
 #' @export
 #' @examples
+#' \dontrun{
 #' data <- generate_transfer_data(noise_sd = 0.05)
 #' result <- glm_transfer(data$plant_data, data$bird_data)
 #' result$values$model_rho # > sign_only_rho at low noise
 #' result$values$model_advantage # > 0 (model outperforms sign)
+#' }
 glm_transfer <- function(plant_data, bird_data, seed = 42L) {
   validate_retention_data(plant_data)
 

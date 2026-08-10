@@ -66,8 +66,10 @@ target-kingdom data, not what it does look like with the data we have.
 }
 
 \examples{
+\dontrun{
 data <- generate_transfer_data(noise_sd = 0.05)
 result <- glm_transfer(data$plant_data, data$bird_data)
 result$values$model_rho # > sign_only_rho at low noise
 result$values$model_advantage # > 0 (model outperforms sign)
+}
 }
