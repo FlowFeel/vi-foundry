@@ -188,11 +188,8 @@ jobs:
   pages:
     runs-on: ubuntu-latest
     needs: [simulacra]
-    environment: github-pages
     permissions:
-      contents: read
-      pages: write
-      id-token: write
+      contents: write
     steps:
       - uses: actions/checkout@v4
       - name: Download regenerated index.html
@@ -200,14 +197,24 @@ jobs:
         with:
           name: pages-html
           path: docs/
-      - name: Build Pages artifact
-        uses: actions/configure-pages@v5
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
-        with:
-          path: docs/
-      - name: Deploy to GitHub Pages
-        uses: actions/deploy-pages@v4
+      - name: Verify pages HTML
+        run: |
+          test -f docs/index.html
+          grep -q "Toy Realms" docs/index.html
+          grep -q "Simulacra Overview" docs/index.html
+          echo "Pages HTML verified: contains simulacra + toy realms sections"
+      - name: Commit regenerated pages to main
+        if: github.ref == 'refs/heads/main' && github.event_name == 'push'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add docs/index.html
+          if git diff --cached --quiet; then
+            echo "No changes to docs/index.html"
+          else
+            git commit -m "docs(pages): auto-regenerate index.html with latest simulacra marks [skip ci]"
+            git push
+          fi
 
   summary:
     runs-on: ubuntu-latest
@@ -225,4 +232,4 @@ jobs:
           echo "| Integration | ${{ needs.integration.result }} |" >> $GITHUB_STEP_SUMMARY
           echo "| Regression | ${{ needs.regression.result }} |" >> $GITHUB_STEP_SUMMARY
           echo "| R CMD Check | ${{ needs.check.result }} |" >> $GITHUB_STEP_SUMMARY
-          echo "| Pages Deploy | ${{ needs.pages.result }} |" >> $GITHUB_STEP_SUMMARY
+          echo "| Pages | ${{ needs.pages.result }} |" >> $GITHUB_STEP_SUMMARY

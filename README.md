@@ -206,7 +206,7 @@ Seven gates, each depends on the previous:
 | 4. Integration | Full pipeline via Docker simulacrum stack + BDD features | Integration results |
 | 5. Regression | All results match baseline oracle within tolerance | — |
 | 6. R CMD check | Package validation (no errors, warnings, or notes) | Check report |
-| 7. Pages | Deploy simulacra visualizations to GitHub Pages | [https://flowfeel.github.io/vi-foundry/](https://flowfeel.github.io/vi-foundry/) |
+| 7. Pages | Verify + commit regenerated visualizations to `docs/` (served via legacy branch deployment from `main/docs`) | [https://flowfeel.github.io/vi-foundry/](https://flowfeel.github.io/vi-foundry/) |
 
 ---
 
