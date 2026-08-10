@@ -8,7 +8,7 @@ Authors@R: c(
     person("Jan", "Ritch-Frel", role = "aut",
            comment = c(GitHub = "janfrel")),
     person("Flow", "Feel", role = "aut",
-           email = "flow@ind.media", comment = c(GitHub = "FlowFeel", comment = "AI platform engineer"))
+           email = "flow@ind.media", comment = c(GitHub = "FlowFeel"))
   )
 Description: Production-grade R artifacts for testing Valence-Ingression (VI)
     framework predictions. Provides PGLS comparative methods, integration-depth

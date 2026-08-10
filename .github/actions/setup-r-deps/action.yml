@@ -34,10 +34,14 @@ runs:
         restore-keys: |
           r-deps-rocker-4.5.3-
 
-    # Comprehensive package list (union of all jobs' needs). The
-    # installed.packages() diff means a cache hit installs nothing; a cache
-    # miss (or partial restore) installs only what's missing. Ncpus = 2
-    # parallelises the install on GitHub's 2-core runners.
+    # Comprehensive package list (union of all jobs' needs). We call
+    # install.packages directly (not setdiff + install) because it checks
+    # each package against CRAN and updates if a newer version is available.
+    # This matters: the rocker container ships roxygen2 7.3.3, but CRAN has
+    # 8.x — the old workflow's install.packages updated it; a setdiff-only
+    # approach would keep the stale version and hit bugs. On a cache hit
+    # (all current), this is fast — just a metadata check, no download.
+    # Ncpus = 2 parallelises the install on GitHub's 2-core runners.
     - name: Install R packages
       shell: Rscript {0}
       run: |
@@ -48,12 +52,22 @@ runs:
           "RPostgres", "lintr", "styler", "rcmdcheck"
         )
         already <- rownames(installed.packages())
-        to_install <- setdiff(pkgs, already)
-        if (length(to_install) > 0) {
-          message("Installing ", length(to_install), " packages: ",
-                  paste(to_install, collapse = ", "))
-          install.packages(to_install, repos = Sys.getenv("R_REPOS"), Ncpus = 2)
-          message("Install complete.")
-        } else {
-          message("All ", length(pkgs), " packages already installed (cache hit).")
+        missing <- setdiff(pkgs, already)
+        if (length(missing) > 0) {
+          message("Installing missing packages: ", paste(missing, collapse = ", "))
+          install.packages(missing, repos = Sys.getenv("R_REPOS"), Ncpus = 2)
+        }
+        # Check for outdated packages and update (e.g. container's roxygen2
+        # 7.3.3 -> CRAN's 8.x). install.packages skips packages already at
+        # the latest version, so this is fast on a cache hit.
+        old <- old.packages(repos = Sys.getenv("R_REPOS"))
+        if (!is.null(old)) {
+          to_update <- intersect(pkgs, rownames(old))
+          if (length(to_update) > 0) {
+            message("Updating outdated packages: ", paste(to_update, collapse = ", "))
+            install.packages(to_update, repos = Sys.getenv("R_REPOS"), Ncpus = 2)
+          }
+        }
+        if (length(missing) == 0 && (is.null(old) || length(intersect(pkgs, rownames(old))) == 0)) {
+          message("All ", length(pkgs), " packages installed and current (cache hit).")
         }
