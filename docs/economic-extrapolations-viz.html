@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>VI Economic Extrapolations — Calculations & Visualizations</title>
+<style>
+* { box-sizing: border-box; }
+body { font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+       max-width: 1100px; margin: 0 auto; padding: 20px; color: #2c3e50;
+       line-height: 1.55; background: #fdfdfd; }
+a { color: #2980b9; text-decoration: none; }
+a:hover { text-decoration: underline; }
+.header { background: #2c3e50; color: white; padding: 28px 32px;
+          border-radius: 10px; margin-bottom: 24px;
+          box-shadow: 0 2px 8px rgba(0,0,0,0.15); }
+.header h1 { margin: 0 0 6px 0; font-size: 1.7em; letter-spacing: 0.3px; }
+.header p { margin: 4px 0; opacity: 0.9; }
+.header a { color: #9ecbf5; }
+.section { background: #fff; border: 1px solid #e3e8ee; border-radius: 8px;
+           padding: 20px 24px; margin-bottom: 24px;
+           box-shadow: 0 1px 3px rgba(0,0,0,0.05); }
+.section h2 { margin-top: 0; color: #2c3e50; border-bottom: 2px solid #2c3e50;
+              padding-bottom: 8px; }
+.section h3 { color: #34495e; margin-top: 16px; }
+.formula { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+           background: #f4f6f8; padding: 8px 12px; border-radius: 4px;
+           margin: 8px 0; font-size: 0.95em; display: block; }
+.summary { background: #f0f4f8; padding: 12px 16px; border-left: 4px solid #2c3e50;
+           border-radius: 4px; margin: 12px 0; font-size: 0.95em; }
+.params { margin: 12px 0; }
+.params td { font-size: 0.9em; }
+img { max-width: 100%; height: auto; border-radius: 6px;
+      border: 1px solid #e3e8ee; margin: 12px 0; }
+.footer { color: #7f8c8d; font-size: 0.85em; text-align: center;
+          padding: 16px; border-top: 1px solid #e3e8ee; margin-top: 8px; }
+.nav a { display: inline-block; margin-right: 12px; font-size: 0.9em; }
+</style>
+</head>
+<body>
+<div class="header">
+<h1>VI Economic Extrapolations — Calculations & Visualizations</h1>
+<p>Valence-Ingression framework — economic substrate calculations</p>
+<p>Generated: 2026-08-13&nbsp;|&nbsp;<a href="index.html">VI Foundry</a>&nbsp;|&nbsp;<a href="inferno-economic-extrapolations.html">INFERNO Evaluation</a>&nbsp;|&nbsp;<a href="https://github.com/FlowFeel/vi-foundry">GitHub</a></p>
+</div>
+
+<div class="nav">
+<a href="index.html">← VI Foundry</a>
+<a href="inferno-economic-extrapolations.html">INFERNO Scores →</a>
+<a href="economic-extrapolations-viz.html">📖 Calculations & Visualizations</a>
+</div>
+
+<div class="section">
+<div class="summary">
+<p>Each of the 8 economic extrapolations from the VI framework, computed with realistic parameter values and visualized. These are <strong>illustrative calculations</strong>, not empirical tests — they show what the equations predict when you plug in numbers, and make the structural claims visible.</p>
+</div>
+</div>
+
+<!-- 1 -->
+<div class="section">
+<h2>1. The Sunk Capacity Equation</h2>
+<div class="formula">Departure Cost = Σ_i (C_shed,i / D_i) · R_i</div>
+<table class="params">
+<tr><th>Parameter</th><th>Value</th><th>Meaning</th></tr>
+<tr><td>C_shed</td><td>10–50</td><td>Capacity shed (units of investment)</td></tr>
+<tr><td>D_i</td><td>0.2–0.95</td><td>Integration depth (how hard to rebuild)</td></tr>
+<tr><td>R_i</td><td>8–80</td><td>Replacement cost per unit</td></tr>
+</table>
+<p><strong>What this shows:</strong> Deeply integrated capacities (D > 0.7) dominate the total departure cost — you can't just count what you've invested, you have to weight by how hard each piece is to rebuild. Career change and firm exit have the highest costs because they shed the most deeply-integrated capacities.</p>
+<img src="assets/economic/01_sunk_capacity.png" alt="Sunk Capacity Equation">
+</div>
+
+<!-- 2 -->
+<div class="section">
+<h2>2. The Dual Trap Function</h2>
+<div class="formula">Lock-in(t) = S(t) × V(t)</div>
+<table class="params">
+<tr><th>Parameter</th><th>Value</th><th>Meaning</th></tr>
+<tr><td>S(t)</td><td>0–1</td><td>Structural trap — capacity already reallocated (CDI)</td></tr>
+<tr><td>V(t)</td><td>0–1</td><td>Motivational trap — reward calibration to niche</td></tr>
+</table>
+<p><strong>What this shows:</strong> The multiplicative interaction means lock-in is <em>not</em> the sum of structural and motivational traps. Either one alone is escapable. Deep lock-in requires <em>both</em> to be high — the product creates a sharp threshold, not a gradual slope.</p>
+<img src="assets/economic/02_dual_trap.png" alt="Dual Trap Function">
+</div>
+
+<!-- 3 -->
+<div class="section">
+<h2>3. The Specialization Risk Premium</h2>
+<div class="formula">r_specialist = r_generalist + λ·CDI − μ·F_c</div>
+<table class="params">
+<tr><th>Parameter</th><th>Value</th><th>Meaning</th></tr>
+<tr><td>r_generalist</td><td>0.07</td><td>Baseline return (7% market average)</td></tr>
+<tr><td>λ</td><td>0.08</td><td>Irreversibility premium coefficient</td></tr>
+<tr><td>μ</td><td>0.06</td><td>Conservation-force credit coefficient</td></tr>
+<tr><td>CDI</td><td>0–1</td><td>Commitment Depth Index</td></tr>
+<tr><td>F_c</td><td>0–1</td><td>Conservation Force (normalized)</td></tr>
+</table>
+<p><strong>What this shows:</strong> The contour plot reveals the interaction VI adds to CAPM. High CDI increases required return (specialization risk), but conservation forces (cash reserves, diversification) can offset it. The break-even line shows where the premium vanishes. CAPM only sees the horizontal axis — VI adds the vertical dimension.</p>
+<img src="assets/economic/03_specialization_risk_premium.png" alt="Specialization Risk Premium">
+</div>
+
+<!-- 4 -->
+<div class="section">
+<h2>4. Niche Saturation Dynamics</h2>
+<div class="formula">dS/dt = α·S·(1−S/K) − δ·S·E(t), where dK/dt = γ·S (cultural substrate)</div>
+<table class="params">
+<tr><th>Parameter</th><th>Value</th><th>Meaning</th></tr>
+<tr><td>α</td><td>0.3</td><td>Growth rate</td></tr>
+<tr><td>δ</td><td>0.05</td><td>Environmental pressure coefficient</td></tr>
+<tr><td>K (ecological)</td><td>100 (fixed)</td><td>Carrying capacity — finite for ecological</td></tr>
+<tr><td>γ</td><td>0.01</td><td>Capacity expansion rate — positive for cultural</td></tr>
+<tr><td>E(t)</td><td>0 → 2.0</td><td>Environmental pressure (onset at t=20)</td></tr>
+</table>
+<p><strong>What this shows:</strong> The core of VI's Prediction 3. Ecological substrates (finite K) show negative diversity-dependence — they saturate and decline under pressure. Cultural substrates (expanding K) show positive diversity-dependence — they accelerate <em>because</em> growth creates new niches. Same equation, different substrate → opposite prediction.</p>
+<img src="assets/economic/04_niche_saturation.png" alt="Niche Saturation Dynamics">
+</div>
+
+<!-- 5 -->
+<div class="section">
+<h2>5. Portfolio Entrenchment</h2>
+<div class="formula">Entrenchment = (illiquid / total) × integration depth</div>
+<table class="params">
+<tr><th>Parameter</th><th>Value</th><th>Meaning</th></tr>
+<tr><td>illiquidity</td><td>0.1–0.9</td><td>Fraction of assets that are illiquid</td></tr>
+<tr><td>integration depth</td><td>0.2–0.95</td><td>How many functions each position serves</td></tr>
+</table>
+<p><strong>What this shows:</strong> Two portfolios with identical illiquidity ratios can have very different entrenchment scores — the integration depth dimension is what standard portfolio theory misses. The isoliquidity curves (dashed) show that moving <em>up</em> the y-axis (more integrated positions) increases entrenchment without changing liquidity at all.</p>
+<img src="assets/economic/05_portfolio_entrenchment.png" alt="Portfolio Entrenchment">
+</div>
+
+<!-- 6 -->
+<div class="section">
+<h2>6. Human Capital Depreciation</h2>
+<div class="formula">H(t) = H₀·e^(−ρt) + Σ_j w_j(t)·S_j</div>
+<table class="params">
+<tr><th>Parameter</th><th>Value</th><th>Meaning</th></tr>
+<tr><td>H₀</td><td>100</td><td>Initial generalist capital</td></tr>
+<tr><td>ρ</td><td>0.05</td><td>Generalist decay rate (5%/year)</td></tr>
+<tr><td>w_j</td><td>2.0/year</td><td>Specialist accumulation rate</td></tr>
+</table>
+<p><strong>What this shows:</strong> The crossover point where specialist capital exceeds depreciated generalist capital is the <em>rational commitment threshold</em> — before it, you should maintain generalist skills; after it, you should specialize. This is missing from Becker/Mincer models, which don't include generalist decay. The crossover also explains why mid-career switching fails: you've passed the threshold and can't rebuild H₀ fast enough.</p>
+<img src="assets/economic/06_human_capital_depreciation.png" alt="Human Capital Depreciation">
+</div>
+
+<!-- 7 -->
+<div class="section">
+<h2>7. Technology Adoption Lock-In</h2>
+<div class="formula">Switching Cost(t) = C₀ + ∫₀^t Σ_i r_i(τ)·D_i dτ</div>
+<table class="params">
+<tr><th>Parameter</th><th>Value</th><th>Meaning</th></tr>
+<tr><td>C₀</td><td>10</td><td>Base switching cost (setup)</td></tr>
+<tr><td>r_i</td><td>1.5/year</td><td>Investment rate per period</td></tr>
+<tr><td>D_i</td><td>0.2 / 0.5 / 0.9</td><td>Integration depth (API / mixed / embedded)</td></tr>
+</table>
+<p><strong>What this shows:</strong> Switching cost grows <em>monotonically</em> — it never decreases. The rate of growth depends on integration depth: API-based architectures (low D) remain switchable indefinitely; embedded/proprietary architectures (high D) become intractable within ~15 years. This is why dominant technologies persist despite superior alternatives — the integral makes departure cost cumulative.</p>
+<img src="assets/economic/07_technology_lockin.png" alt="Technology Adoption Lock-In">
+</div>
+
+<!-- 8 -->
+<div class="section">
+<h2>8. Conservation Force Decay</h2>
+<div class="formula">F_c(D) = F₀·e^(−β·D)</div>
+<table class="params">
+<tr><th>Parameter</th><th>Value</th><th>Meaning</th></tr>
+<tr><td>F₀</td><td>100</td><td>Initial conservation force</td></tr>
+<tr><td>β</td><td>2.0</td><td>Decay rate with commitment depth</td></tr>
+</table>
+<p><strong>What this shows:</strong> (a) Conservation forces decay exponentially with commitment depth — cash reserves, diversified revenue, and transferable skills erode as you specialize. The "too big to fail" zone shows where <em>political</em> F_c (bailouts, grandfathering) replaces <em>structural</em> F_c — the firm is fragile but kept alive. (b) Survival depends on the <em>product</em> F_c × CDI, not either alone. High CDI with low F_c = vulnerable; high CDI with high F_c = survives.</p>
+<img src="assets/economic/08_conservation_force_decay.png" alt="Conservation Force Decay">
+</div>
+
+<div class="footer">
+<p>VI Economic Extrapolations — Calculations & Visualizations&nbsp;|&nbsp;<a href="https://github.com/FlowFeel/vi-foundry">Source</a>&nbsp;|&nbsp;<a href="inferno-economic-extrapolations.html">INFERNO Evaluation</a></p>
+</div>
+
+</body>
+</html>
