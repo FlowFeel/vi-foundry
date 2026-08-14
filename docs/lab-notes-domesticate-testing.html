@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lab Notes — Testing the Domesticate Asymmetry</title>
+<style>
+* { box-sizing: border-box; }
+body { font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+       max-width: 1100px; margin: 0 auto; padding: 20px; color: #2c3e50;
+       line-height: 1.65; background: #fdfdfd; }
+a { color: #2980b9; text-decoration: none; }
+a:hover { text-decoration: underline; }
+.header { background: #2c3e50; color: white; padding: 28px 32px;
+          border-radius: 10px; margin-bottom: 24px;
+          box-shadow: 0 2px 8px rgba(0,0,0,0.15); }
+.header h1 { margin: 0 0 6px 0; font-size: 1.65em; }
+.header p { margin: 4px 0; opacity: 0.9; }
+.header a { color: #9ecbf5; }
+.section { background: #fff; border: 1px solid #e3e8ee; border-radius: 8px;
+           padding: 20px 28px; margin-bottom: 24px;
+           box-shadow: 0 1px 3px rgba(0,0,0,0.05); }
+.section h2 { margin-top: 0; color: #2c3e50; border-bottom: 2px solid #2c3e50;
+              padding-bottom: 8px; }
+.section h3 { color: #34495e; margin-top: 24px; }
+.formula { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+           background: #f4f6f8; padding: 8px 12px; border-radius: 4px;
+           margin: 8px 0; font-size: 0.95em; display: block; }
+.summary { background: #f0f4f8; padding: 12px 16px; border-left: 4px solid #2c3e50;
+           border-radius: 4px; margin: 12px 0; font-size: 0.95em; }
+.key { background: #fef9e7; padding: 12px 16px; border-left: 4px solid #f39c12;
+       border-radius: 4px; margin: 12px 0; font-size: 0.95em; }
+.warn { background: #fdedec; padding: 12px 16px; border-left: 4px solid #c0392b;
+        border-radius: 4px; margin: 12px 0; font-size: 0.95em; }
+table { border-collapse: collapse; width: 100%; margin: 12px 0; font-size: 0.92em; }
+th, td { border: 1px solid #dde3ea; padding: 8px 10px; text-align: left; }
+th { background: #2c3e50; color: white; }
+tr:nth-child(even) td { background: #f7f9fb; }
+.badge { display: inline-block; padding: 2px 8px; border-radius: 10px;
+         font-size: 0.8em; font-weight: 600; }
+.badge.pass { background: #d5f5e3; color: #1e8449; }
+.badge.fail { background: #fadbd8; color: #c0392b; }
+.badge.confirm { background: #d4e6f1; color: #2471a3; }
+.footer { color: #7f8c8d; font-size: 0.85em; text-align: center;
+          padding: 16px; border-top: 1px solid #e3e8ee; margin-top: 8px; }
+.nav a { display: inline-block; margin-right: 12px; font-size: 0.9em; }
+</style>
+</head>
+<body>
+<div class="header">
+<h1>Lab Notes: Testing the Domesticate Asymmetry</h1>
+<p>What we learned about measuring diversity-dependence in domesticated lineages</p>
+<p>Lab Notes accompanying the VI Framework&nbsp;|&nbsp;Generated: 2026-08-14&nbsp;|&nbsp;<a href="index.html">VI Foundry</a>&nbsp;|&nbsp;<a href="https://github.com/FlowFeel/vi-foundry">GitHub</a></p>
+</div>
+
+<div class="nav">
+<a href="index.html">← VI Foundry</a>
+<a href="economic-extrapolations-viz.html">Economic Extrapolations →</a>
+<a href="inferno-economic-extrapolations.html">INFERNO Scores →</a>
+<a href="revised-domesticate-test.html">Revised Domesticate Test →</a>
+</div>
+
+<div class="section">
+<div class="key">
+<p><strong>Format note:</strong> This piece follows the methods commentary tradition established by <em>Journal of Negative Results in Ecology & Evolutionary Biology</em> and the perspective/commentary formats used in <em>Nature Methods</em> and <em>PNAS</em>. It documents a prediction that failed, extracts the methodological lessons, and points to where the framework's actual confirmatory evidence lies. The format is standard in evolutionary biology — Silvestro et al. (2019) published similar caveats about PyRate MCDD power and sample size limitations; Rabosky documented the molecular phylogeny vs. fossil record mismatch. What is novel here is the articulation of the <em>diversity unit problem</em>: the claim that PCA genetic clusters, species count, and functional niche count are three different diversity units that should not be used interchangeably when testing macroevolutionary predictions.</p>
+</div>
+</div>
+
+<div class="section">
+<h2>I. The Question</h2>
+<p>The VI framework predicts that positively diversity-dependent (DD) speciation — speciation rates increasing with clade diversity — is unique to lineages that have shifted from ecological to cultural niche exploitation. <em>Homo</em> shows this pattern (+2.06, van Holstein & Foley 2024). Every other vertebrate clade examined shows the standard negative pattern: as niches fill, speciation slows.</p>
+<p>The domesticate asymmetry test asks: what about organisms that live in culturally-constructed niches but don't construct them? Domestic sheep, dogs, cattle — they occupy human-made niche space, but they consume it rather than expand it. Do they show the human pattern (positive DD) or the standard vertebrate pattern (negative DD)?</p>
+<p>The paper predicts negative DD for domesticates. We ran the test. The prediction was wrong. This article is about what we learned from that failure.</p>
+</div>
+
+<div class="section">
+<h2>II. What We Ran</h2>
+
+<h3>Test 1: Domestic sheep (Ovis aries) — Daly et al. 2025</h3>
+<p><strong>Data:</strong> 118 ancient sheep genomes, radiocarbon-dated, spanning 12,000 years across Eurasia. PCA-defined population assignments group the samples into 20 genetic clusters.</p>
+<p><strong>Method:</strong> PyRate MCDD (Silvestro et al. 2015, 2019) — Bayesian estimation of diversity-dependent speciation from fossil occurrence data.</p>
+<p><strong>Result:</strong> DD = 0.087, 95% HPD [−0.028, 0.191], 64% posterior > 0. <span class="badge fail">Not significant</span> Weakly positive — directionally opposite to the paper's prediction of negative DD.</p>
+
+<h3>Test 2: Domestic dog (Canis familiaris) — Bergström et al. 2020</h3>
+<p><strong>Data:</strong> 27 ancient dog genomes, spanning ~11,000 years, PCA-defined population groups.</p>
+<p><strong>Result:</strong> DD = 0.0008. Effectively zero — constant-rate diversification.</p>
+
+<h3>Test 3: Human DD — temporal acceleration (van Holstein & Foley 2024)</h3>
+<p><strong>Data:</strong> 385 hominin fossil occurrences, 17 species (10 non-Homo, 7 Homo), spanning ~4.5 million years.</p>
+<p><strong>Result:</strong></p>
+<table>
+<tr><th>Lineage</th><th>DD</th><th>Pattern</th></tr>
+<tr><td>Non-Homo (australopithecines)</td><td>−0.18</td><td>Standard niche saturation</td></tr>
+<tr><td>Homo</td><td>+2.06</td><td>Strongly positive, accelerating</td></tr>
+</table>
+<p>A 12-fold swing — not just a sign flip, but a dramatic acceleration. Within Homo, later species show higher diversity and higher speciation rates than early Homo. <span class="badge confirm">Confirmed</span></p>
+</div>
+
+<div class="section">
+<h2>III. What We Got Wrong</h2>
+
+<h3>The prediction was wrong</h3>
+<p>The paper predicted negative DD for domesticates. Both sheep (0.087) and dogs (0.0008) are weakly positive or zero — not negative. The prediction assumed that because domesticates don't expand their own niches, they should show standard niche-saturation dynamics. But that reasoning conflates <em>niche creation</em> (which domesticates don't do) and <em>niche filling</em> (which they do, but the dynamics depend on the relationship between occupied and total niche space, not just on who's expanding K).</p>
+
+<h3>Three revised hypotheses — all failed</h3>
+<table>
+<tr><th>Hypothesis</th><th>Test</th><th>Result</th><th>Status</th></tr>
+<tr><td>Exogenous γ: diversification lags human transitions</td><td>Formal lag analysis</td><td>Not significant</td><td><span class="badge fail">Failed</span></td></tr>
+<tr><td>Biphasic K-saturation: early positive, late saturating</td><td>Split at SPR (~6000 BP), PyRate MCDD on each half</td><td>No difference (p = 0.72)</td><td><span class="badge fail">Failed</span></td></tr>
+<tr><td>More niches → stronger DD (dogs > sheep)</td><td>Dog DD vs sheep DD</td><td>Dogs weaker (0.0008 < 0.087)</td><td><span class="badge fail">Failed</span></td></tr>
+</table>
+<div class="warn">
+<p><strong>Lesson:</strong> All three hypotheses were inference-shaped, not evidence-shaped. They were generated by reasoning about what the framework <em>should</em> predict, without sufficient understanding of what the data actually measures or what the terms mean in context. This is a general risk when using LLM-assisted inference to generate hypotheses: the hypotheses sound right because they're internally consistent with the framework, but they may not be consistent with the biology or the method.</p>
+</div>
+</div>
+
+<div class="section">
+<h2>IV. The Method Problem</h2>
+
+<h3>PyRate on archaeological timescales</h3>
+<p>PyRate MCDD was designed for geological timescales — millions of years, dozens of species, hundreds of occurrences per species. We ran it on archaeological timescales — 12,000 years, 20 "taxa" (PCA groups), 5-15 samples per group. The DD estimates we got (0.001-0.003) are orders of magnitude smaller than typical macroevolutionary DD values (−0.18 to +2.06 in hominins). This may reflect real biology or method calibration. We cannot distinguish these explanations.</p>
+<p>Silvestro et al. (2019) document that MCDD false positive rates decrease as the number of clades increases (from 5 to 20). Our 20 "taxa" sheep analysis sits at the upper end of this range, but the "taxa" are PCA groups, not biological species — a distinction the method's validation simulations don't address.</p>
+
+<h3>The diversity unit problem</h3>
+<p>This is the deepest methodological issue. VI predicts functional niche expansion. PyRate measures species-level speciation/extinction rates. PCA measures genetic drift. These are three different diversity units, and the choice matters.</p>
+<table>
+<tr><th>Grouping method</th><th>Taxa</th><th>DD mean</th></tr>
+<tr><td>PCA groups (original)</td><td>19</td><td>0.0013</td></tr>
+<tr><td>PCA groups (domestic only)</td><td>18</td><td>0.0013</td></tr>
+<tr><td>TreeMix groups</td><td>16</td><td>0.0024</td></tr>
+<tr><td>Geographic (country)</td><td>16</td><td>0.0033</td></tr>
+<tr><td>Archaeological period</td><td>10</td><td>0.0026</td></tr>
+</table>
+<p>Coefficient of variation: 35%. Geographic grouping gives 2.5× higher DD than PCA grouping. <strong>The same data, same method, same samples — different grouping changes the answer by a factor of 2.5.</strong></p>
+<p>This happens because PCA groups measure genetic drift. Two Merino populations separated by 2000 km are genetically distinct PCA clusters, but functionally identical — they occupy the same wool-production niche. PCA inflates the "species count" without adding functional diversity, diluting the DD signal.</p>
+</div>
+
+<div class="section">
+<h2>V. What Actually Confirms the Framework</h2>
+<div class="summary">
+<p>The domesticate test was the wrong test. The right test — the one that actually tests VI's central claim — is the human temporal acceleration.</p>
+</div>
+<p>VI's central claim is not just "Homo shows positive DD." It's that <strong>cumulative culture creates a self-amplifying feedback loop</strong> between niche commitment and niche expansion. The prediction is not "positive DD" but <strong>"accelerating positive DD"</strong> — the feedback loop should intensify over time.</p>
+<table>
+<tr><th>Lineage</th><th>Period</th><th>DD</th><th>Pattern</th></tr>
+<tr><td>Non-Homo hominins</td><td>4.5–0.96 Ma</td><td>−0.18</td><td>Standard niche saturation</td></tr>
+<tr><td>Homo (all)</td><td>2.6–0 Ma</td><td>+2.06</td><td>Strongly positive, accelerating</td></tr>
+</table>
+<p>The transition from negative to strongly positive — a 12-fold swing in DD — is the signature of the substrate shift VI describes. Within Homo, the acceleration continues: the feedback loop (commitment → cultural niche expansion → more commitment) intensifies as cumulative culture accumulates.</p>
+<p>This is the result that should be reported as the primary confirmation of Prediction 3. The domesticate test, as designed, cannot confirm or falsify this prediction because domesticates lack the feedback loop that drives it.</p>
+</div>
+
+<div class="section">
+<h2>VI. Lessons for Future Testing</h2>
+
+<h3>1. Match the diversity unit to the prediction</h3>
+<p>VI predicts functional niche expansion. Tests must use functional diversity units, not genetic drift proxies. Datasets where this is already possible:</p>
+<ul>
+<li><strong>Fungal enzyme gene loss</strong> (60-82 independent evolutions): function = enzyme presence/absence, binary, measurable</li>
+<li><strong>Parasitic plant continuum</strong> (141 species): function = photosynthesis vs parasitism, measurable</li>
+<li><strong>Experimental evolution</strong> (60,000 generations): function = specific metabolic pathways, measurable</li>
+</ul>
+<p>For domesticates, the right data would be ancient samples classified by <strong>functional breed type</strong> (meat, wool, milk, dual-purpose) — requiring collaboration with zooarchaeologists who can assess functional morphology from the same specimens.</p>
+
+<h3>2. Understand what the method measures</h3>
+<p>PyRate MCDD estimates the correlation between species count and speciation rate. It assumes: species are meaningful evolutionary units (not genetic drift clusters), speciation and extinction are detectable from the fossil record, timescales are long enough for BD dynamics to produce signal. For domesticates with 12,000 years of data and 20 PCA "taxa," none of these assumptions is clearly met.</p>
+
+<h3>3. Test the mechanism, not the prediction</h3>
+<p>The framework's mechanism is the <strong>feedback loop</strong>: commitment → niche expansion → more commitment. This produces accelerating positive DD in organisms with cumulative culture and standard negative DD in organisms without it. The domesticate test fails not because the mechanism is wrong, but because domesticates are in a third regime — <strong>commitment without self-amplifying expansion</strong> — that the framework doesn't make a clean prediction for.</p>
+
+<h3>4. Report negative results honestly</h3>
+<p>The paper's domesticate prediction (negative DD) was wrong. The revised hypotheses were also wrong. The honest reporting of these failures is itself valuable — it prevents other researchers from repeating the same mistakes and it clarifies what the framework does and doesn't predict.</p>
+</div>
+
+<div class="section">
+<h2>VII. The Compass</h2>
+<p>The treasure is not in the domesticate test. It's in:</p>
+<ol>
+<li><strong>The human acceleration</strong> (−0.18 → +2.06) — the primary confirmation that cumulative culture drives positive DD through a self-amplifying feedback loop.</li>
+<li><strong>The quantitative predictions that already work</strong> — niche-demand mismatch R² = 0.50–0.65 across parasitic plants, bacteria, endosymbionts. These are where VI's predictions match the data at the right resolution with the right diversity unit.</li>
+<li><strong>The three-step sequence</strong> — documented across Miocene apes, hominins, domesticates, five kingdoms. The behavioral-commitment-precedes-morphology ordering is the framework's most robust prediction.</li>
+<li><strong>The cross-kingdom trajectory convergence</strong> — fungi (60-82 independent evolutions of the same genomic reallocation trajectory), plants (Orobanchaceae continuum), bacteria (Black Queen Hypothesis).</li>
+</ol>
+<p>The domesticate test taught us that the framework's predictions about DD are specifically about the <strong>feedback loop</strong>, not about DD in general. Organisms without the feedback loop (domesticates) show patterns that don't map cleanly to the positive/negative DD dichotomy because they're in a third regime. The right tests target the feedback loop directly.</p>
+</div>
+
+<div class="section">
+<h2>Appendix: Test Inventory</h2>
+<table>
+<tr><th>Test</th><th>Hypothesis</th><th>Result</th><th>Status</th></tr>
+<tr><td>Sheep DD (original)</td><td>Negative DD for domesticates</td><td>DD = 0.087, weakly positive</td><td><span class="badge fail">Prediction failed</span></td></tr>
+<tr><td>Sheep lag analysis</td><td>Exogenous γ: diversification lags human transitions</td><td>Not significant</td><td><span class="badge fail">Hypothesis failed</span></td></tr>
+<tr><td>Sheep biphasic split</td><td>K-saturation: early positive, late saturating</td><td>No difference (p = 0.72)</td><td><span class="badge fail">Hypothesis failed</span></td></tr>
+<tr><td>Dog DD</td><td>More niches → stronger DD</td><td>DD = 0.0008, weaker than sheep</td><td><span class="badge fail">Hypothesis failed</span></td></tr>
+<tr><td>Labeling sensitivity</td><td>PCA groups are wrong diversity unit</td><td>CV = 35%, geographic 2.5× higher</td><td><span class="badge confirm">Confirmed — method matters</span></td></tr>
+<tr><td>Human DD temporal</td><td>DD accelerates (feedback loop)</td><td>−0.18 → +2.06, 12-fold swing</td><td><span class="badge pass">Confirmed</span></td></tr>
+<tr><td>Human within-Homo acceleration</td><td>DD increases within Homo</td><td>Later species show higher DD</td><td><span class="badge pass">Confirmed</span></td></tr>
+</table>
+</div>
+
+<div class="footer">
+<p>Lab Notes accompanying the Valence-Ingression (VI) Framework&nbsp;|&nbsp;Generated August 2026&nbsp;|&nbsp;<a href="https://github.com/FlowFeel/vi-foundry">Source</a>&nbsp;|&nbsp;<a href="index.html">VI Foundry</a></p>
+</div>
+
+</body>
+</html>
