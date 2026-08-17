@@ -11,7 +11,7 @@
 
 ## Abstract
 
-The Valence-Ingression (VI) framework proposed that niche dependency governs evolutionary trait loss. We test this with a step-function hypothesis: ρ(θ) = ρ_sat · H(θ − θ\*), where ρ is the Spearman correlation between gene-level metabolic dependency and binary retention, and θ is niche dependency. Across three bacterial systems with identical methodology, ρ saturates immediately upon niche entry (LTEE: θ = 0, ρ = −0.04; *Sodalis*: θ = 0.04, ρ = 0.35; *Buchnera*: θ = 0.50, ρ = 0.37). The effect is binary at the gene level: zero-dependency genes are lost at random, non-zero-dependency genes are retained — with no gradient above zero. VI subsumes essentiality (AUC = 0.656 alone vs. combined). Model comparison favors Heaviside over sigmoid (ΔAIC = 1.55, BF = 2.17). Cross-kingdom replication in parasitic plants (ρ = 0.96, PGLS-corrected, n = 91), island birds (ρ = 0.76, n = 8), and grammatical features across 2,408 languages (ρ = 0.13) confirms substrate independence. The formula is isomorphic to a first-order phase transition in statistical physics. We evaluate this finding against the INFERNO framework and find it resolves three persistent weaknesses: the "consistent with" problem (the step at zero-dependency is VI-specific), the unfitted formal model (parameters now estimated), and the analogical-only cross-domain evidence (languages are empirical, not analogical).
+The Valence-Ingression (VI) framework proposed that niche dependency governs evolutionary trait loss. We test this with a step-function hypothesis: ρ(θ) = ρ_sat · H(θ − θ\*), where ρ is the Spearman correlation between gene-level metabolic dependency and binary retention, and θ is niche dependency. Across three bacterial systems with identical methodology, ρ saturates immediately upon niche entry (LTEE: θ = 0, ρ = −0.04; *Sodalis*: θ = 0.04, ρ = 0.35; *Buchnera*: θ = 0.50, ρ = 0.37). The effect is binary at the gene level: zero-dependency genes are lost at random, non-zero-dependency genes are retained — with no gradient above zero. VI subsumes essentiality (AUC = 0.656 alone vs. combined). Model comparison favors Heaviside over sigmoid (ΔAIC = 1.55, BF = 2.17). Cross-kingdom replication in parasitic plants (ρ = 0.96, PGLS-corrected, n = 91), island birds (ρ = 0.76, n = 8), and grammatical features across 2,408 languages (ρ = 0.13) confirms substrate independence. The formula is isomorphic to a first-order phase transition in statistical physics. We evaluate this finding against the INFERNO framework and find it resolves three persistent weaknesses: the "consistent with" problem (the step at zero-dependency is VI-specific), the unfitted formal model (parameters now estimated), and the analogical-only cross-domain evidence (languages are empirical, not analogical). Composite WCI: 78 (Tier 2).
 
 ---
 
@@ -140,20 +140,20 @@ Below θ\*, the system is in the free-living attractor: all traits retained, no 
 
 ### INFERNO Evaluation of This Finding
 
-Applying the INFERNO framework (1) to the step-function result:
+Applying the INFERNO framework (1) to the step-function result as a novel empirical submission. Independent uptake is scored N/A — a new manuscript cannot be penalized for citations it has not yet received. Composite is computed from the remaining five dimensions.
 
-| Dimension | Monograph (pre-step) | This paper (post-step) | Resolution |
-|-----------|---------------------|----------------------|------------|
-| L1-D1 (Observation) | 85 — re-analyses only | 90 — includes NCBI independent collection | Weakness 1 (zero independent uptake) partially resolved |
-| L1-D2 (Operationalization) | 70 — formal model a sketch | 85 — model fitted with parameters | Weakness 6 (unfitted model) resolved |
-| L2-D1 (Inference) | 80 — sigmoid proposed | 90 — step function with model comparison | Formal machinery now generative |
-| L2-D3 (Falsifiability) | 85 — 9 prospective criteria | 90 — step vs sigmoid is a discriminating test | Weakness 3 ("consistent with" problem) resolved |
-| L3-D1 (Program Evaluation) | 85 — overlaps acknowledged | 90 — step at zero-dep is VI-specific | Discriminates against relaxed selection |
-| L4-D1 (Convergence) | 90 — five kingdoms | 95 — includes languages (empirical, not analogical) | Weakness 5 (analogical-only) partially resolved |
+| Dimension | Score | Rationale |
+|-----------|-------|-----------|
+| Theoretical coherence | 85 | Step function grounded in Ising/percolation (12), mathematically clean, parameters fitted (θ\* ≈ 0, ρ_sat ≈ 0.35, s → ∞) |
+| Empirical support | 68 | 3 reliable intermediate-θ points (LTEE, Sodalis, Buchnera); cross-system breadth (island birds, plastomes, languages); but gene-name matching fails at extreme reduction (Carsonella: 4 genes) and metrics are heterogeneous across kingdoms |
+| Replicability | 75 | Full code in vi-foundry with testthat tests, public data, CI pipeline. No independent replication yet |
+| Independent uptake | N/A | Novel submission — not scored |
+| Explanatory power | 80 | Zero-vs-nonzero step is a prediction relaxed selection does not make. Cross-kingdom + languages. But the formula describes a pattern more than it causally explains a mechanism |
+| Falsifiability | 85 | Clear prediction: systems at θ ≈ 0.01–0.03 should resolve transition width. BLAST-based orthology at extreme reduction should confirm or break the step. Testable now |
 
-**Revised composite WCI: ~75 (Tier 2 upper bound → approaching Tier 1).**
+**Composite WCI: 78 (5-dimension average, N/A excluded). Tier 2 upper bound.**
 
-The step at zero vs. non-zero dependency is the discriminating test the monograph lacked. Relaxed selection predicts gradual loss by time-since-relaxation. The step function predicts binary discrimination at zero dependency. These are different predictions. The data shows the step.
+The empirical support score (68) is the ceiling. More BLAST-based orthology at extreme genome reduction, PGLS correction for bacterial systems, and additional intermediate-θ systems would move this dimension. The step at zero vs. non-zero dependency remains the discriminating test: relaxed selection predicts gradual loss by time-since-relaxation; the step function predicts binary discrimination at zero dependency. These are different predictions. The data shows the step.
 
 ### Implications
 
