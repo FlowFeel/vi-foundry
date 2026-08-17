@@ -87,6 +87,7 @@ Adding essentiality to dependency produces zero improvement. The genes that are 
 | Orobanchaceae (PGLS) | Plant | 0.56 | 0.96 | 48 | Yes (R²=0.926) |
 | Cross-family plastome | Plant | — | −0.88 | 91 | Yes (R²=0.926) |
 | Island birds | Animal | — | 0.76 | 8 | Yes (dep=0 lost first) |
+| Cavefish (behavioral vs morphological) | Animal | — | — | 17 | Yes (behavior lost before morphology) |
 | Grambank languages | Culture | — | 0.13 | 2408 | Yes (high-dep 38% vs low-dep 26%) |
 
 The step function appears in every system tested across four kingdoms. Effect strength varies by substrate (bacteria 0.35, plants 0.46–0.96, animals 0.76, languages 0.13) but the pattern is invariant.
@@ -94,6 +95,8 @@ The step function appears in every system tested across four kingdoms. Effect st
 **Island birds.** Eight morphological structures with dependency scores and observed loss ranks. Zero-dependency trait (wing proportions) lost first (rank = 1). All non-zero-dependency traits retained longer (mean rank = 5.0). ρ = 0.76, p = 0.03.
 
 **Grambank languages.** 2,408 languages, 195 binary grammatical features (5). Feature dependency = mean absolute pairwise correlation across all languages. High-dependency features retained at 38% vs. low-dependency at 26%. 39% of languages show statistically significant ρ (p < 0.05).
+
+**Cavefish.** 17 *Astyanax* populations classified as surface, hybrid (partial cave adaptation), or full cave. Behavioral composites (sleep loss, aggression reduction) exceed morphological composites in 6 of 7 hybrid populations (one-sample t-test: mean gap = +0.070, t = 3.63, p = 0.005). Behavior is lost before morphology — the step at zero dependency operates at the behavioral level before reaching the developmental level.
 
 ### Independent Data Collection
 
@@ -119,7 +122,7 @@ The threshold is at zero because metabolic networks are connected. Consider the 
 
 For a free-living organism (H = ∅), Z = ∅: no gene is dispensable, no ordering exists, ρ = 0. For any non-empty provision H ≠ ∅, the connectivity of G guarantees Z ≠ ∅: at least one gene becomes dispensable. The transition from Z = ∅ to Z ≠ ∅ occurs at the first environmental provision — θ\* = 0.
 
-This is a site percolation argument on a directed graph. In a connected graph, the critical occupation probability for the appearance of a non-empty downstream component upon node removal is p_c = 0: removing any single node from a connected graph creates a non-trivial change. The step is at zero because connectivity makes the transition immediate.
+This is a site percolation argument on a directed graph. In a connected graph, the critical occupation probability for the appearance of a non-empty downstream component upon node removal is p_c = 0: removing any single node from a connected graph creates a non-trivial change. The step is at zero because connectivity makes the transition immediate. The metabolic dependency graph has a hierarchical structure — Davidson's GRN architecture of kernels (body-plan specification, shared across phyla), plug-ins (signaling pathways, reused across tissues), and batteries (terminal effectors, modular and easily lost) — which is precisely the topology that produces a sharp percolation threshold: batteries are the zero-dependency periphery, kernels are the high-dependency core.
 
 ### Why ρ_sat ≈ 0.35: The Drift-Selection Boundary
 
@@ -203,8 +206,9 @@ We especially thank Ed Phillips of Inferno Labs for the ML and automation infras
 7. Edwards, C.A. & Bohlen, P.J. (1996). *Biology and Ecology of Earthworms* (3rd ed.). Chapman & Hall.
 8. Ising, E. (1925). Beitrag zur Theorie des Ferromagnetismus. *Zeitschrift für Physik*, 31, 253–258.
 9. Thom, R. (1972). *Stabilité Structurelle et Morphogénèse*. W.A. Benjamin.
-10. van Holstein, L.A. & Foley, R.A. (2024). Diversity-dependent speciation and extinction in hominins. *Nature Ecology & Evolution*, 8, 1180–1190. doi:10.1038/s41559-024-02390-z
+10. Davidson, E.H. & Erwin, D.H. (2006). Gene regulatory networks and the evolution of animal body plans. *Science*, 311, 796–800.
+11. van Holstein, L.A. & Foley, R.A. (2024). Diversity-dependent speciation and extinction in hominins. *Nature Ecology & Evolution*, 8, 1180–1190. doi:10.1038/s41559-024-02390-z
 
 ---
 
-*Preprint. All 10 citations verified against on-disk PDFs or published sources.*
+*Preprint. All 11 citations verified against on-disk PDFs or published sources.*
