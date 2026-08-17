@@ -12,6 +12,7 @@ The VI Foundry is the computational verification layer for the Valence-Ingressio
 | [Baseline Oracle](baseline-oracle.html) | The pipeline reproduces every §12 manuscript value within tolerance. Each result is tagged with whether it supports the VI prediction and whether it distinguishes VI from named competitor hypotheses. |
 | [Key Results](key-results.html) | Summary of the discriminating core: 6 of 9 tests distinguish VI from alternatives; 3 are consistent with VI but do not discriminate it, and are stated as such. |
 | [Toy Realms](toy-realms.html) | Interactive explorers for genome reduction, irreversibility, the *Homo* inversion, and cross-kingdom parameter transfer. These are speculative, not tests. |
+| [Formula Analysis](formula-analysis.html) | Three-move derivation of VI's functional form: Ohta (inductive), Fisher (decompositional), Wimsatt (triangulation). Data suggests a step-function (first-order phase transition), consistent with the monograph's cusp catastrophe. |
 
 ## How to Read This Site
 
