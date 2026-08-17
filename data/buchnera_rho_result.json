@@ -1,0 +1,12 @@
+{
+  "system": "Buchnera (aphid endosymbiont)",
+  "theta_aa": 0.5,
+  "theta_genome": 0.8573773333333333,
+  "rho": 0.37157957289414817,
+  "rho_p": 5.265563283855009e-46,
+  "n_retained": 192,
+  "n_lost": 1175,
+  "n_total": 1367,
+  "essential_retention": 0.36398467432950193,
+  "nonessential_retention": 0.06786050895381715
+}

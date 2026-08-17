@@ -1,0 +1,91 @@
+{
+  "n_data_points": 11,
+  "data_points": [
+    {
+      "system": "LTEE",
+      "theta": 0.0,
+      "rho": -0.039
+    },
+    {
+      "system": "Sodalis (FBA full)",
+      "theta": 0.0444444444444444,
+      "rho": 0.353
+    },
+    {
+      "system": "Sodalis (composite)",
+      "theta": 0.0444444444444444,
+      "rho": 0.248
+    },
+    {
+      "system": "Orobanchaceae: Pedicularis",
+      "theta": 0.25,
+      "rho": 0.6642111641550715
+    },
+    {
+      "system": "Orobanchaceae: C.exaltata",
+      "theta": 0.375,
+      "rho": 0.17149858514250885
+    },
+    {
+      "system": "Orobanchaceae (PGLS)",
+      "theta": 0.5625,
+      "rho": 0.955
+    },
+    {
+      "system": "Orobanchaceae: C.gronovii",
+      "theta": 0.625,
+      "rho": 0.4540126110367334
+    },
+    {
+      "system": "Orobanchaceae: C.campestris",
+      "theta": 0.75,
+      "rho": 0.5523003264745422
+    },
+    {
+      "system": "Orobanchaceae: Boulardia",
+      "theta": 0.75,
+      "rho": 0.8574929257125441
+    },
+    {
+      "system": "Orobanchaceae: Epifagus",
+      "theta": 0.75,
+      "rho": 0.8574929257125441
+    },
+    {
+      "system": "Orobanchaceae: Conopholis",
+      "theta": 1.0,
+      "rho": 0.6642111641550715
+    }
+  ],
+  "fits": {
+    "Power": {
+      "r_squared": 0.5870898651993606
+    },
+    "\u221a\u03b8 (mean-field)": {
+      "r_squared": 0.5407527169710157
+    },
+    "Sigmoid(3-param)": {
+      "r_squared": 0.5247192704496662
+    },
+    "Logarithmic": {
+      "r_squared": 0.5041877681421496
+    },
+    "Sigmoid(\u03c1_max=1)": {
+      "r_squared": 0.4910244004329932
+    },
+    "Linear": {
+      "r_squared": 0.48000666719399115
+    }
+  },
+  "best_fit": [
+    "Power",
+    0.5870898651993606,
+    11
+  ],
+  "sigmoid_params": {
+    "steepness": 5.483441281629725,
+    "theta_star": 0.20459984637248327,
+    "rho_max": 0.7440705128027567,
+    "r_squared": 0.5247192704496662
+  }
+}
