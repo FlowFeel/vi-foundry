@@ -205,8 +205,8 @@ We thank Ed Phil (Synthesis Lab) for the ML and automation infrastructure that e
 12. Ising, E. (1925). Beitrag zur Theorie des Ferromagnetismus. *Zeitschrift für Physik*, 31, 253–258.
 13. Thom, R. (1972). *Stabilité Structurelle et Morphogénèse*. W.A. Benjamin.
 14. Arthur, W.B. (1989). Competing technologies, increasing returns, and lock-in by historical events. *Economic Journal*, 99, 116–131.
-15. van Holstein, A. & Foley, R. (2024). [Diversity-dependent speciation in *Homo* — full bibliographic details to verify].
+15. van Holstein, L.A. & Foley, R.A. (2024). Diversity-dependent speciation and extinction in hominins. *Nature Ecology & Evolution*, 8, 1180–1190. doi:10.1038/s41559-024-02390-z
 
 ---
 
-*Preprint. Citation [15] requires full bibliographic verification before submission. All other citations checked against the monograph reference list or well-known foundational works.*
+*Preprint. All 15 citations verified against on-disk PDFs or the monograph reference list.*
