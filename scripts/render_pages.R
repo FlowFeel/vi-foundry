@@ -240,6 +240,7 @@ make_page <- function(title, body_html, timestamp, repo_url, pages_url) {
     "<a href=\"baseline-oracle.html\">Baseline Oracle</a>",
     "<a href=\"key-results.html\">Key Results</a>",
     "<a href=\"toy-realms.html\">Toy Realms</a>",
+    "<a href=\"formula-analysis.html\">Formula Analysis</a>",
     "</div>\n",
     body_html,
     "<div class=\"footer\">",
@@ -487,8 +488,20 @@ tr_html <- make_page("Toy Realms — VI Foundry", tr_body, timestamp, repo_url, 
 writeLines(tr_html, file.path(out_dir, "toy-realms.html"))
 
 # ---------------------------------------------------------------------------
+# 10b. Formula Analysis page (from markdown + plots)
+# ---------------------------------------------------------------------------
+fa_desc <- read_descriptive("formula-analysis.md")
+fa_body <- paste0(
+  "<div class=\"section\"><h2>Formula Analysis — Three-Move Derivation</h2>",
+  "<div class=\"descriptive\">", fa_desc, "</div>",
+  "</div>"
+)
+fa_html <- make_page("Formula Analysis — VI Foundry", fa_body, timestamp, repo_url, pages_url)
+writeLines(fa_html, file.path(out_dir, "formula-analysis.html"))
+
+# ---------------------------------------------------------------------------
 # 11. Status
 # ---------------------------------------------------------------------------
-message("[render_pages] Wrote 5 pages to docs/")
+message("[render_pages] Wrote 6 pages to docs/")
 message(sprintf("[render_pages] %d simulacra, %d oracle metrics",
                 length(all_marks), length(oracle_metrics)))
