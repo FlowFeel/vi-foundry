@@ -1,0 +1,89 @@
+{
+  "move1_ohta": {
+    "rho_theta_points": [
+      {
+        "system": "LTEE (E. coli)",
+        "theta": 0.0,
+        "theta_source": "free-living",
+        "rho_fba": -0.039,
+        "rho_composite": -0.006,
+        "rho_ppi": -0.028
+      },
+      {
+        "system": "Sodalis (tsetse)",
+        "theta": 0.0444444444444444,
+        "theta_alt": 0.19198312236286919,
+        "theta_source": "genome_ratio",
+        "rho_fba": 0.353,
+        "rho_composite": 0.248,
+        "rho_ppi": 0.247
+      },
+      {
+        "system": "Orobanchaceae (parasitic plants)",
+        "theta": 0.5625,
+        "theta_source": "parasitism_score",
+        "rho_fba": 0.955,
+        "rho_composite": 0.955,
+        "rho_ppi": null
+      }
+    ],
+    "linear_fit": {
+      "slope": 1.514097666497906,
+      "intercept": 0.11667561099093288,
+      "r_squared": 0.8943195429822991,
+      "p": 0.21078603759853706
+    },
+    "sigmoid_fit": {
+      "params": null,
+      "r_squared": null
+    },
+    "power_fit": {
+      "params": [
+        1.1968740731387757,
+        0.39228901163068125
+      ],
+      "r_squared": 0.9969439779696131
+    },
+    "threshold_fit": {
+      "params": [
+        1.5140976666921635,
+        -0.07705950129901676
+      ],
+      "r_squared": 0.894319542982299
+    },
+    "endosymbiont_sigmoid": {
+      "params": [
+        0.327667831986267,
+        0.10000000000003108,
+        1.499999999999639,
+        0.10000000000073705
+      ],
+      "r_squared": -0.0059875457978211255
+    }
+  },
+  "move2_fisher": {
+    "total_retention": 0.42825768667642755,
+    "vi_effect": 0.39801593438378835,
+    "selection_effect": 0.3878773125608569,
+    "quintile_retention": {
+      "mean": {
+        "Low (\u22640.01)": 0.3355325164938737,
+        "Mid (0.01-0.5)": 0.7837837837837838,
+        "High (\u22650.5)": 0.746268656716418
+      },
+      "count": {
+        "Low (\u22640.01)": 1061,
+        "Mid (0.01-0.5)": 37,
+        "High (\u22650.5)": 268
+      }
+    }
+  },
+  "move3_wimsatt": {
+    "monograph_form": "\u03b1(x) = -k_ecol + k_cult \u00b7 \u03c3((x - x*)/s)",
+    "empirical_sigmoid": {
+      "threshold_theta_star": null,
+      "steepness": null
+    },
+    "endosymbiont_threshold": 1.499999999999639
+  }
+}
