@@ -220,6 +220,7 @@ except Exception as e:
 # Power law fit
 try:
     def powerlaw(x, a, b):
+        """Power law: f(x) = a*(x + 1e-10)^b."""
         return a * np.power(x + 1e-10, b)
     popt_power, _ = curve_fit(powerlaw, thetas_arr, rhos_arr, p0=[1, 0.5], maxfev=10000)
     power_y = powerlaw(thetas_arr, *popt_power)
@@ -232,6 +233,7 @@ except Exception as e:
 # Threshold fit: ρ = 0 for θ < θ*, ρ = k·(θ-θ*) for θ ≥ θ*
 try:
     def threshold(x, k, theta_star):
+        """Threshold: f(x) = 0 for x < theta_star, k*(x-theta_star) for x >= theta_star."""
         return np.where(x < theta_star, 0, k * (x - theta_star))
     popt_thresh, _ = curve_fit(threshold, thetas_arr, rhos_arr, p0=[1, 0.05], maxfev=10000)
     thresh_y = threshold(thetas_arr, *popt_thresh)
@@ -358,7 +360,7 @@ sodalis_df = dep_scores.copy()
 
 # Add retention classification
 def classify_retention(row, intact_set, absent_set, pseudo_set):
-    # Try both gene_id (b-number) and name (gene name)
+    """Classify gene as retained (1), lost (0), or unclassified (None)."""
     gid = row['gene_id']
     gname = row.get('name', '')
     # Check gene name first (Sodalis lists use names), then b-number

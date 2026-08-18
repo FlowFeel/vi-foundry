@@ -50,9 +50,14 @@ print("BI-EXPONENTIAL VS MONO-EXPONENTIAL FIT (IMPROVED)")
 print("=" * 80)
 
 def mono_exp(t, A, k, C):
+    """Mono-exponential decay: f(t) = A*exp(-k*t) + C. Null model."""
     return A * np.exp(-k * t) + C
 
 def bi_exp(t, A1, k1, A2, k2, C):
+    """Bi-exponential decay: f(t) = A1*exp(-k1*t) + A2*exp(-k2*t) + C.
+    
+    Solution of the relaxation formula. Preferred when delta-AIC < -4.
+    """
     return A1 * np.exp(-k1 * t) + A2 * np.exp(-k2 * t) + C
 
 # Use genome size directly (not normalized)
@@ -319,6 +324,7 @@ print(f"  AIC = {model4.aic:.2f}, BIC = {model4.bic:.2f}")
 # Partial correlations
 from scipy import linalg
 def partial_corr(x, y, z):
+    """Partial Pearson correlation between x and y, controlling for z."""
     z_with_intercept = np.column_stack([np.ones_like(z), z])
     beta_x = linalg.lstsq(z_with_intercept, x)[0]
     beta_y = linalg.lstsq(z_with_intercept, y)[0]

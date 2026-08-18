@@ -165,6 +165,7 @@ print(f"\nLinear: ρ = {slope:.3f}·θ + {intercept:.3f}, R²={r_value**2:.3f}, 
 
 # Power law
 def powerlaw(x, a, b):
+    """Power law: f(x) = a*x^b. Candidate if scale-free."""
     return a * np.power(np.maximum(x, 1e-10), b)
 try:
     popt_power, _ = curve_fit(powerlaw, theta_arr, rho_arr, p0=[1, 0.5], maxfev=10000)
@@ -177,6 +178,7 @@ except Exception as e:
 
 # 3-parameter sigmoid (floor=0, max=1, variable threshold and steepness)
 def sigmoid3(x, s, theta_star, rho_max):
+    """3-param sigmoid: f(x) = rho_max / (1 + exp(-s*(x - theta_star)))."""
     return rho_max / (1 + np.exp(-s * (x - theta_star)))
 
 try:
@@ -193,6 +195,7 @@ except Exception as e:
 
 # 2-parameter sigmoid (fix rho_max=1, just threshold and steepness)
 def sigmoid2(x, s, theta_star):
+    """2-param sigmoid: f(x) = 1 / (1 + exp(-s*(x - theta_star)))."""
     return 1.0 / (1 + np.exp(-s * (x - theta_star)))
 try:
     popt_sig2, _ = curve_fit(sigmoid2, theta_arr, rho_arr, p0=[5, 0.3], maxfev=20000)
@@ -205,6 +208,7 @@ except Exception as e:
 
 # Logarithmic
 def logfunc(x, a, b):
+    """Logarithmic: f(x) = a*ln(x + b)."""
     return a * np.log(np.maximum(x, 1e-10) + b)
 try:
     popt_log, _ = curve_fit(logfunc, theta_arr, rho_arr, p0=[0.5, 0.1], maxfev=10000)
@@ -217,6 +221,7 @@ except Exception as e:
 
 # Square root (physics: diffusion/mean-field)
 def sqrtfunc(x, a):
+    """Square root: f(x) = a*sqrt(x). Diffusion/mean-field candidate."""
     return a * np.sqrt(np.maximum(x, 0))
 try:
     popt_sqrt, _ = curve_fit(sqrtfunc, theta_arr, rho_arr, p0=[1], maxfev=10000)

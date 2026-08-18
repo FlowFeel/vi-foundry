@@ -263,25 +263,34 @@ y = pop_means['keel_resid'].values
 
 # ── Linear model ──
 def linear_model(params, t):
+    """Linear: f(t) = a*t + b. Null hypothesis: constant-rate loss."""
     return params[0] * t + params[1]
 
 def linear_resid(params, t, y):
+    """Residuals for linear model."""
     return linear_model(params, t) - y
 
 # ── Mono-exponential model ──
 def monoexp_model(params, t):
+    """Mono-exponential: f(t) = A*exp(-k*t) + c. Null model."""
     a, k, c = params
     return a * np.exp(-k * t) + c
 
 def monoexp_resid(params, t, y):
+    """Residuals for mono-exponential model."""
     return monoexp_model(params, t) - y
 
 # ── Bi-exponential model ──
 def biexp_model(params, t):
+    """Bi-exponential: f(t) = A1*exp(-k1*t) + A2*exp(-k2*t) + c.
+    
+    The relaxation formula's predicted form under cross-sectional sampling.
+    """
     a1, k1, a2, k2, c = params
     return a1 * np.exp(-k1 * t) + a2 * np.exp(-k2 * t) + c
 
 def biexp_resid(params, t, y):
+    """Residuals for bi-exponential model."""
     return biexp_model(params, t) - y
 
 # Fit linear model
@@ -384,6 +393,7 @@ def twophase_model(t, breakpoint, slope1, intercept1, slope2):
     return y
 
 def twophase_resid(params, t, y):
+    """Residuals for two-phase linear (segmented) model."""
     bp, s1, i1, s2 = params
     return twophase_model(t, bp, s1, i1, s2) - y
 

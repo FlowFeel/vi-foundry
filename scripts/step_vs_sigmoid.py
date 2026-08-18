@@ -30,6 +30,7 @@ with open(WORKSPACE / "vi-foundry/data/t7-ltee/sodalis/iJO_pseudo.txt") as f:
     pseudo = set(l.strip() for l in f if l.strip())
 
 def classify(row):
+    """Classify Sodalis gene as retained (1), lost (0), or pseudo (1)."""
     gname = str(row['name']).strip()
     gid = str(row['gene_id']).strip()
     if gname in intact or gid in intact:
@@ -119,6 +120,7 @@ sigma_rho = np.array([0.03, 0.02, 0.02])  # rough SEs
 # Parameters: θ* (where the step is), ρ_sat (saturation level)
 # Likelihood: for each θ_i, predicted ρ = ρ_sat * H(θ_i - θ*)
 def step_log_likelihood(theta_star, rho_sat, theta_data, rho_data, sigma_data):
+    """Log-likelihood of step model: rho = rho_sat if theta > theta_star, else 0."""
     predicted = np.where(theta_data > theta_star, rho_sat, 0.0)
     # Allow small negative at θ=0 (LTEE was -0.039)
     predicted = np.where(theta_data < theta_star, 0.0, rho_sat)
@@ -128,6 +130,7 @@ def step_log_likelihood(theta_star, rho_sat, theta_data, rho_data, sigma_data):
 # Model 2: Sigmoid: ρ = ρ_sat / (1 + exp(-s*(θ-θ*)))
 # Parameters: θ*, s, ρ_sat (one more than step function)
 def sigmoid_log_likelihood(s, theta_star, rho_sat, theta_data, rho_data, sigma_data):
+    """Log-likelihood of sigmoid model: rho = rho_sat / (1 + exp(-s*(theta - theta_star)))."""
     predicted = rho_sat / (1 + np.exp(-s * (theta_data - theta_star)))
     ll = np.sum(stats.norm.logpdf(rho_data, loc=predicted, scale=sigma_data))
     return ll
@@ -137,6 +140,7 @@ from scipy.optimize import minimize
 
 # Step function: optimize θ* and ρ_sat
 def neg_ll_step(params):
+    """Negative log-likelihood wrapper for step-function optimization."""
     theta_star, rho_sat = params
     if theta_star < 0 or theta_star > 1 or rho_sat < 0 or rho_sat > 2:
         return 1e10
@@ -151,6 +155,7 @@ print(f"  AIC: {2*2 - 2*step_ll:.2f} (2 params)")
 
 # Sigmoid: optimize θ*, s, ρ_sat
 def neg_ll_sigmoid(params):
+    """Negative log-likelihood wrapper for sigmoid optimization."""
     s, theta_star, rho_sat = params
     if s < 0 or theta_star < 0 or theta_star > 1 or rho_sat < 0 or rho_sat > 2:
         return 1e10

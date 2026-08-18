@@ -68,6 +68,7 @@ print(f"ρ (parasitism vs plastome size): {rho_cross:.3f}, p={p_cross:.6f}")
 from scipy.optimize import curve_fit
 
 def step_func(x, x_star, y_low, y_high):
+    """Heaviside step: f(x) = y_low if x < x_star, else y_high."""
     return np.where(x < x_star, y_low, y_high)
 
 parasitism = cross['parasitism_score'].values

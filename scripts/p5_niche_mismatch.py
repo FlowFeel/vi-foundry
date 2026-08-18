@@ -104,6 +104,11 @@ niche_breadth = (high_ret * cats["high"] + med_ret * cats["med"] + low_ret * cat
 
 # 4. Partial correlation analysis
 def partial_corr(x, y, z):
+    """Partial Pearson correlation between x and y, controlling for z.
+    
+    Regresses z (with intercept) out of both x and y via OLS, then computes
+    Pearson r on the residuals. Returns (r, p_value).
+    """
     zwi = np.column_stack([np.ones_like(z), z])
     beta_x = linalg.lstsq(zwi, x)[0]
     beta_y = linalg.lstsq(zwi, y)[0]

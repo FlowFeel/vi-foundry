@@ -39,6 +39,7 @@ def linear_model(t, rate):
 
 
 def compute_aic(n_params, n_points, rss):
+    """Compute AIC: n*ln(RSS/n) + 2*(k+1). Lower is better."""
     if rss <= 0:
         rss = 1e-10
     n = n_points
@@ -328,6 +329,7 @@ def simulacrum_13():
 
 
 def clean_json(obj):
+    """Recursively convert numpy types to Python native for JSON serialization."""
     if isinstance(obj, dict):
         return {k: clean_json(v) for k, v in obj.items()}
     elif isinstance(obj, list):
@@ -342,6 +344,7 @@ def clean_json(obj):
 
 
 def main():
+    """Run all five foundry simulacra (9-13) and save results to JSON and Markdown."""
     print("=" * 60)
     print("FOUNDRY SIMULACRA 9-13")
     print("=" * 60)

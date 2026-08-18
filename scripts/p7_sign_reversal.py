@@ -153,6 +153,7 @@ for (clade in names(results)) {
 
 
 def parse_args():
+    """Parse CLI args: --treedir, --treefile, --n_trees, --n_cores."""
     parser = argparse.ArgumentParser(
         description="Test P7: Positive diversity-dependent speciation in cultural bird lineages"
     )
@@ -184,6 +185,7 @@ def parse_args():
 
 
 def main():
+    """Execute P7 sign reversal pipeline. Requires R with DDD package."""
     args = parse_args()
     
     logger.info("=" * 60)
