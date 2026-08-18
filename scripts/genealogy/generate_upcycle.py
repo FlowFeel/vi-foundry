@@ -683,6 +683,7 @@ def run_verification():
 
 class NumpyEncoder(json.JSONEncoder):
     def default(self, obj):
+        """JSON encoder for numpy types (int, float, bool, array)."""
         if isinstance(obj, (np.integer, np.bool_)):
             return bool(obj)
         if isinstance(obj, (np.integer,)):
