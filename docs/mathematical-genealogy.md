@@ -1,5 +1,8 @@
 # Mathematical Genealogy — The Formal Chain of the VI Formula
 
+> **⚠️ Updated August 2026:** The genealogy chain Ising → Landau → Cusp is formally verified (T6 simulacrum). However, the percolation (θ* = 0) and drift-selection (ρ_sat ≈ 0.35) links have been tested and do not hold. The chain describes relaxation dynamics, not a phase transition. The formula is now dρ/dt = −k₁(ρ − ρ₁) − k₂(ρ − ρ₂). See [Economics Extrapolations](economics-extrapolations.html).
+
+
 **Authors:** Jan Ritch-Frel, Ed Phillips
 
 The VI formula ρ(θ) = ρ_sat · H(θ − θ*) is not an arbitrary curve fit. It is the endpoint of a formal chain spanning five linked results, each of which constrains the form of the next. This document traces that chain from the Ising model (1925) through to the VI formula, showing at each step what the mathematics says, what it means, and how it connects to the next step.

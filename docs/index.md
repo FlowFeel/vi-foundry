@@ -12,7 +12,10 @@ The VI Foundry is the computational verification layer for the Valence-Ingressio
 | [Baseline Oracle](baseline-oracle.html) | The pipeline reproduces every §12 manuscript value within tolerance. Each result is tagged with whether it supports the VI prediction and whether it distinguishes VI from named competitor hypotheses. |
 | [Key Results](key-results.html) | Summary of the discriminating core: 6 of 9 tests distinguish VI from alternatives; 3 are consistent with VI but do not discriminate it, and are stated as such. |
 | [Toy Realms](toy-realms.html) | Interactive explorers for genome reduction, irreversibility, the *Homo* inversion, and cross-kingdom parameter transfer. These are speculative, not tests. |
+| [Economics Extrapolations](economics-extrapolations.html) | The relaxation formula applied to firm specialization, credit upcycles, tech adoption, and option value. Speculative — not tests. |
 | [Formula Analysis](formula-analysis.html) | Three-move derivation of VI's functional form: Ohta (inductive), Fisher (decompositional), Wimsatt (triangulation). Data suggests a step-function (first-order phase transition), consistent with the monograph's cusp catastrophe. |
+| [Mathematical Genealogy](mathematical-genealogy.html) | Formal chain from Ising (1925) through Thom's catastrophe theory, percolation theory, and the drift-selection boundary to the VI formula ρ(θ) = ρ_sat · H(θ − θ*). Each step's mathematical statement, connection type, and evidential status. |
+| [Implementation Audit](implementation-audit.html) | Equation-to-function mapping, test coverage audit, monograph number traceability, and identified gaps between formal claims and computational verification. |
 
 ## How to Read This Site
 
