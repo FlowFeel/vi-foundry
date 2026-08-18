@@ -56,6 +56,27 @@ is_data_result <- function(result) {
   stringsAsFactors = FALSE
 )
 
+# === Bi-exponential test fixtures ===
+# Shared between test-unit-fit-biexp.R and test-unit-relaxation-model.R
+
+.make_biexp_data <- function(n = 40, t_max = 10, c0 = 0.05, A1 = 0.03, k1 = 17.7,
+                              A2 = 0.01, k2 = 0.47, noise_sd = 0.001, seed = 42) {
+  withr::with_seed(seed, {
+    t <- seq(0, t_max, length.out = n)
+    rho <- c0 + A1 * exp(-k1 * t) + A2 * exp(-k2 * t) + rnorm(n, 0, noise_sd)
+    list(t = t, rho = rho, params = list(c0 = c0, A1 = A1, k1 = k1, A2 = A2, k2 = k2))
+  })
+}
+
+.make_monoexp_data <- function(n = 40, t_max = 10, c0 = 0.05, A = 0.04, k = 1.0,
+                                 noise_sd = 0.001, seed = 42) {
+  withr::with_seed(seed, {
+    t <- seq(0, t_max, length.out = n)
+    rho <- c0 + A * exp(-k * t) + rnorm(n, 0, noise_sd)
+    list(t = t, rho = rho, params = list(c0 = c0, A = A, k = k))
+  })
+}
+
 # fake_data_loader — returns real dataframes, not mock recordings
 fake_data_loader <- R6::R6Class(
   "fake_data_loader",

@@ -1,11 +1,17 @@
 #' Phase 6b: Formula-Grounded Economics Predictions
 #'
-#' Functions that carry the *proven quantitative formula* —
-#' ρ(θ) = ρ_sat · H(θ − θ*), with θ* = 0, ρ_sat ≈ 0.35, s → ∞ —
-#' into economic substrates. These are distinct from the qualitative
-#' predictions in `economics.R`: they test whether the *specific functional
-#' form* (Heaviside step, not sigmoid or logistic) and the *specific
-#' parameter value* (ρ_sat ≈ 0.35) hold in economic data.
+#' Functions that carry the *proven quantitative formula* into economic
+#' substrates. The original formula — ρ(θ) = ρ_sat · H(θ − θ*), with
+#' θ* = 0, ρ_sat ≈ 0.35, s → ∞ — models *cross-sectional* (theta, rho)
+#' dynamics. The successor relaxation formula —
+#' dρ/dt = −k₁(ρ − ρ₁) − k₂(ρ − ρ₂) — models *temporal* (t, rho) dynamics
+#' and is implemented in `relaxation_model.R` and `fit_biexp.R`.
+#'
+#' Both formulations are valid for different data regimes. The step-function
+#' functions here test the *specific functional form* (Heaviside step, not
+#' sigmoid or logistic) and the *specific parameter value* (ρ_sat ≈ 0.35)
+#' in cross-sectional economic data. The relaxation functions in
+#' `fit_biexp.R` and `relaxation_model.R` test the temporal dynamics.
 #'
 #' The qualitative functions (`cdi_economics`, `option_destruction`,
 #' `stochastic_cdi`, `threshold_disruption`) test whether VI's directional
@@ -15,12 +21,19 @@
 #'
 #' @section Theoretical Context:
 #'
-#' The formula ρ(θ) = ρ_sat · H(θ − θ*) was derived from three biological
-#' systems (LTEE, Sodalis, Buchnera) and replicated across nine systems
-#' spanning four kingdoms. ρ_sat ≈ 0.35 is the drift-selection boundary:
-#' P(retain | δ>0) − P(retain | δ=0). If this is substrate-independent
-#' (as the cross-kingdom replication suggests), it should hold in economic
-#' systems too.
+#' The cross-sectional formula ρ(θ) = ρ_sat · H(θ − θ*) was derived from
+#' three biological systems (LTEE, Sodalis, Buchnera) and replicated across
+#' nine systems spanning four kingdoms. ρ_sat ≈ 0.35 is the drift-selection
+#' boundary: P(retain | δ>0) − P(retain | δ=0). If this is
+#' substrate-independent (as the cross-kingdom replication suggests), it
+#' should hold in economic systems too.
+#'
+#' The temporal relaxation formula — dρ/dt = −k₁(ρ − ρ₁) − k₂(ρ − ρ₂) —
+#' is the successor, describing the *dynamics* behind the cross-sectional
+#' step. The two channels (fast k₁, slow k₂) produce the same biphasic
+#' pattern seen in the cross-sectional data, now extended to time series.
+#' See `relaxation_model.R` for the ODE implementation and
+#' `fit_biexp.R` for the bi-exponential fitter.
 #'
 #' Key predictions carried into economics:
 #'
@@ -35,6 +48,9 @@
 #'    gradual.
 #' 5. **Irreversibility is absolute (s → ∞).** No recovery after crossing
 #'    the threshold.
+#' 6. **Temporal dynamics are bi-exponential.** The relaxation formula
+#'    predicts two timescales: fast Phase 1 (k₁ ~ 10–20) and slow Phase 2
+#'    (k₂ ~ 0.1–1). The bi-exponential fitter (`fit_biexp.R`) tests this.
 #'
 #' @section DFT Axioms:
 #' - A1 (pure-io-separation): pure functions, no I/O

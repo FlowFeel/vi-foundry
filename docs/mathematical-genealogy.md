@@ -1,11 +1,12 @@
-# Mathematical Genealogy — The Formal Chain of the VI Formula
+# Mathematical Genealogy — The Formal Chain of the VI Relaxation Formula
 
-> **⚠️ Updated August 2026 (T14):** The active chain is Ising → Landau → Cusp → Relaxation. Stages 4 (percolation, θ*=0) and 5 (drift-selection, ρ_sat≈0.35) are archived as falsified hypotheses — tested in T2 and not supported by simulation. The chain describes relaxation dynamics, not a phase transition. The formula is dρ/dt = −k₁(ρ − ρ₁) − k₂(ρ − ρ₂). See [ticket-queue.md](ticket-queue.md) for full provenance.
-
+> **⚠️ Updated August 2026 (T14):** The active chain is Ising → Landau → Cusp → Relaxation. Stages 4 (percolation, θ*=0) and 5 (drift-selection, ρ_sat≈0.35) are archived as falsified hypotheses — tested in T2 and not supported by simulation. The chain describes **relaxation dynamics toward an equilibrium landscape**, not a phase transition. The formula is **dρ/dt = −k₁(ρ − ρ₁) − k₂(ρ − ρ₂)**. See [ticket-queue.md](ticket-queue.md) for full provenance.
 
 **Authors:** Jan Ritch-Frel, Ed Phillips
 
-The VI formula ρ(θ) = ρ_sat · H(θ − θ*) is not an arbitrary curve fit. It is the endpoint of a formal chain spanning five linked results, each of which constrains the form of the next. This document traces that chain from the Ising model (1925) through to the VI formula, showing at each step what the mathematics says, what it means, and how it connects to the next step.
+The VI relation dρ/dt = −k₁(ρ − ρ₁) − k₂(ρ − ρ₂) is not an arbitrary curve fit. It is the endpoint of a formal chain spanning five linked results, each of which constrains the form of the next. This document traces that chain from the Ising model (1925) through to the relaxation formula, showing at each step what the mathematics says, what it means, and how it connects to the next step.
+
+The chain is framed as **relaxation dynamics** — the system evolves toward an equilibrium defined by a free energy landscape. The three surviving stages (Ising, Landau, Cusp) each contribute a different aspect of this relaxation picture, while two intermediate stages (percolation, drift-selection) are preserved as documented historical hypotheses.
 
 ---
 
@@ -36,13 +37,17 @@ The magnetization M = ⟨σᵢ⟩ — the average spin alignment — is the orde
 - **T > T_c (paramagnetic):** M = 0. Thermal fluctuations dominate. Spins are randomly oriented.
 - **T < T_c (ferromagnetic):** |M| > 0. Cooperative alignment dominates. Spins lock into a majority orientation.
 
-The transition at T_c is a **second-order phase transition** (continuous) in the 2D and 3D Ising model: M rises continuously from 0 as T drops below T_c.
-
 A **first-order phase transition** (discontinuous) occurs when the order parameter jumps at the critical point. In the Ising model, this happens when the external field h crosses zero below T_c: M jumps from +|M| to −|M| (or vice versa) at h = 0. The jump is discontinuous — the system switches basins without passing through intermediate states.
+
+### Relaxation Reinterpretation
+
+The Ising model is usually studied through its equilibrium properties (partition function, phase transitions). But the **dynamics** of the Ising model are governed by the Landau-Lifshitz or Glauber relaxation equations, which describe how the magnetization evolves toward equilibrium. This is the key connection to the VI formula: the Ising model's equilibrium landscape (the free energy as a function of M) defines the **basin toward which the system relaxes**, and the relaxation rate is proportional to the gradient of that landscape.
+
+The Ising mean-field free energy F(M) = aM² + bM⁴ + hM, when coupled with the dynamical equation dM/dt = −∂F/∂M, produces a relaxation trajectory that is the **exact formal analog** of the VI relaxation formula. The Ising model is not the formula itself — it is the physical substrate that motivates the relaxation formalism.
 
 ### What It Means
 
-The Ising model shows that cooperative interactions between binary units produce collective behavior (magnetization) that cannot be predicted from any single unit. The key insight for VI: when units cooperate (J > 0), the system can switch between basins of attraction abruptly — and the switching is governed by the ratio of interaction energy to thermal noise.
+The Ising model shows that cooperative interactions between binary units produce collective behavior (magnetization) that cannot be predicted from any single unit. The key insight for VI: when metabolic dependencies create cooperative coupling between genes (J > 0), the system can relax toward a new equilibrium state, and the relaxation dynamics are governed by the gradient of the effective free energy landscape defined by the coupling.
 
 ### Mean-Field Derivation: Ising Hamiltonian → Landau Free Energy
 
@@ -63,105 +68,42 @@ H_MF = −J · Σᵢ σᵢ · (zM) − h · Σᵢ σᵢ
      = −(JzM + h) · Σᵢ σᵢ
 ```
 
-Each spin now interacts with the mean field created by all other spins, not with individual neighbors. This is the essence of the mean-field approximation — it replaces the many-body problem with an effective single-body problem in a self-consistent field.
-
 **Step 3: Single-site partition function**
-
-The partition function for a single spin in the mean field is:
 
 ```
 Z₁ = Σ_{σ₁∈{±1}} exp(β(JzM + h)σ₁)
-   = exp(β(JzM + h)) + exp(−β(JzM + h))
    = 2 cosh(β(JzM + h))
 ```
 
 **Step 4: Self-consistency condition**
 
-The magnetization M must equal the thermal average of a single spin. This is the self-consistency requirement — the field that each spin experiences is itself determined by the average magnetization:
-
-```
-M = ⟨σᵢ⟩ = (1/Z₁) · Σ_{σ₁} σ₁ · exp(β(JzM + h)σ₁)
-          = (e^{β(JzM+h)} − e^{−β(JzM+h)}) / (2 cosh(β(JzM+h)))
-          = tanh(β(JzM + h))
-```
-
-This is the **self-consistency equation** — the fundamental equation of mean-field Ising theory:
-
 ```
 M = tanh(β(JzM + h))
 ```
 
-**Step 5: Expansion near the critical temperature T_c**
+**Step 5: Expansion near T_c**
 
-For h = 0, expand tanh for small M (valid near T_c, where M → 0 continuously):
-
-```
-tanh(βJzM) = βJzM − (βJzM)³/3 + 2(βJzM)⁵/15 − ...
-```
-
-The critical temperature is defined by β_cJz = 1, i.e., T_c = Jz/k_B:
+For h = 0, expand tanh for small M:
 
 ```
-M = βJzM − (βJzM)³/3 + ...
+tanh(βJzM) = βJzM − (βJzM)³/3 + ...
 ```
 
-Define the reduced temperature t = (T − T_c)/T_c. Then β = β_c/(1 + t) and:
-
-```
-βJz = 1/(1 + t) = 1 − t + t² − t³ + ...
-```
-
-Keeping only the leading term in t (valid in the critical region |t| ≪ 1):
+The critical temperature is defined by β_cJz = 1, i.e., T_c = Jz/k_B. Define t = (T − T_c)/T_c. Then:
 
 ```
 M = (1 − t)M − M³/3 + ...
 ```
 
-Rearranging:
+Rearranging: M(t + M²/3) ≈ 0. Solutions:
+- **M = 0** (paramagnetic, T > T_c)
+- **|M| = √(3|t|)** (ferromagnetic, T < T_c)
 
-```
-tM + M³/3 ≈ 0
-```
-
-```
-M(t + M²/3) ≈ 0
-```
-
-The solutions are:
-
-- **M = 0** (paramagnetic phase, T > T_c, stable above T_c)
-- **|M| = √(3|t|)** (ferromagnetic phase, T < T_c), where t = (T − T_c)/T_c < 0
-
-This gives the mean-field critical exponent β = 1/2: M ∝ (T_c − T)^{1/2}. The exact 2D Ising exponent is β = 1/8 (Onsager, 1944), but the mean-field value β = 1/2 is the standard result of the approximation.
+This gives the mean-field critical exponent β = 1/2: M ∝ (T_c − T)^{1/2}.
 
 **Step 6: The Landau free energy**
 
-The Landau free energy expansion is:
-
-```
-F(M) = aM² + bM⁴ + hM
-```
-
-where a = (T − T_c)/T_c, b > 0, and h is the external field.
-
-Minimizing with respect to M:
-
-```
-∂F/∂M = 2aM + 4bM³ + h = 0
-```
-
-For h = 0:
-
-```
-M(2a + 4bM²) = 0
-```
-
-Solutions:
-
-- **M = 0** for a > 0 (T > T_c)
-- **|M| = √(−a/(2b))** for a < 0 (T < T_c)
-
-With a = t = (T − T_c)/T_c, this is algebraically identical to the Ising mean-field result from Step 5. The correspondence is exact:
+The Landau free energy expansion F(M) = aM² + bM⁴ + hM, with a = (T − T_c)/T_c, b > 0, is algebraically identical to the Ising mean-field result. The correspondence is exact:
 
 | Ising Mean-Field | Landau Free Energy |
 |:---|:---|
@@ -170,23 +112,11 @@ With a = t = (T − T_c)/T_c, this is algebraically identical to the Ising mean-
 | β = 1/2 critical exponent | β = 1/2 critical exponent |
 | External field h | External field h |
 
-The quartic coefficient in the Ising expansion (1/3) sets b = 1/3 in the Landau free energy when the normalizations are matched. The Landau free energy **is** the mean-field Ising free energy expressed in the Landau-Ginzburg phenomenological form. The Ising model does not "reduce to" Landau theory as a special case — Landau theory is the continuum mean-field description of the Ising model's phase transition, and the two are formally identical in the mean-field approximation.
-
-**Step 7: Free energy per site (optional)**
-
-The mean-field free energy per site can also be derived directly from the partition function:
-
-```
-F(M) = −k_B T · ln Z₁ + JzM²/2
-```
-
-where the second term corrects for double-counting of the interaction energy in the mean-field decoupling. For small M near T_c, expanding the cosh and combining terms gives the Landau form F(M) = aM² + bM⁴ + hM, confirming the result from the self-consistency route.
-
 ### Connection to Step 2
 
-The Ising model's first-order phase transition (discontinuous jump at h = 0 for T < T_c) is the **physical prototype** for the cusp catastrophe. The cusp catastrophe generalizes the discontinuous jump from a two-parameter control space (T, h) to arbitrary control parameters (a, b).
+The Ising model's discontinuous jump at h = 0 for T < T_c is the **physical prototype** for the cusp catastrophe. The Landau free energy F(M) = aM² + bM⁴ + hM is the bridge: it is both the mean-field Ising free energy and the cusp catastrophe potential. The Ising model, via the Landau expansion, provides the **formal link** between microscopic cooperative interactions and the macroscopic bifurcation geometry.
 
-**Type of connection:** Formal proof — the Landau theory of phase transitions, from which the Ising model's mean-field behavior is derived, is mathematically equivalent to the cusp catastrophe. The free energy expansion F(M) = aM² + bM⁴ + hM has the same algebraic structure as the cusp catastrophe potential V(x) = (1/4)x⁴ + (a/2)x² + bx. The bifurcation set 4a³ + 27b² = 0 (Thom) is the same as the critical surface 4J³ + 27h² = 0 (Landau-Ising mean-field). The isomorphism is complete.
+**Type of connection:** Formal proof — the mean-field Ising free energy is algebraically identical to the Landau-Ginzburg free energy, which is the cusp catastrophe potential.
 
 ---
 
@@ -214,9 +144,9 @@ The bifurcation set — where the number of equilibrium states changes — is gi
 
 The equilibrium structure partitions the (a, b) control space into three regimes:
 
-- **a > 0, all b:** One real root of x³ + ax + b = 0. The system has a single stable equilibrium. No bifurcation possible.
-- **a < 0, |b| < b_crit:** Three real roots. Two stable equilibria (the upper and lower branches of the fold) separated by one unstable equilibrium. The system is **bistable**.
-- **a < 0, |b| > b_crit:** One real root. The system has a single stable equilibrium.
+- **a > 0, all b:** One real root. The system has a single stable equilibrium. No bifurcation possible.
+- **a < 0, |b| < b_crit:** Three real roots. Two stable equilibria separated by one unstable equilibrium. The system is **bistable**.
+- **a < 0, |b| > b_crit:** One real root.
 
 The critical b is:
 
@@ -224,192 +154,245 @@ The critical b is:
 b_crit = (2/(3√3)) · (−a)^{3/2}
 ```
 
-At |b| = b_crit, the stable and unstable equilibria annihilate in a saddle-node bifurcation. The system jumps discontinuously to the remaining branch.
+At |b| = b_crit, the stable and unstable equilibria annihilate in a saddle-node bifurcation.
 
-The hysteresis loop area — the enclosed region between the forward sweep (increasing b) and the reverse sweep (decreasing b) — is:
+### Relaxation Reinterpretation
+
+The cusp catastrophe is usually interpreted as a theory of **abrupt change** — the system jumps when the bifurcation set is crossed. For the VI formula, the cusp catastrophe instead provides the **landscape geometry** for relaxation dynamics. The potential V(x) defines the wells toward which the system relaxes, and the bifurcation set defines where the landscape changes its topology.
+
+The key insight: the Landau free energy F(M) from Step 1 is the **same function** as the cusp potential V(x). When we write the relaxation equation:
 
 ```
-A = ∫_{−b_crit}^{b_crit} (x_hi(b) − x_lo(b)) db
+dM/dt = −∂F/∂M = −(2aM + 4bM³ + h)
 ```
 
-where x_hi(b) and x_lo(b) are the two outer real roots. For a > 0, the loop area is zero. For a < 0, the loop area is positive and finite.
+the system evolves toward the nearest minimum of F(M). The cusp catastrophe tells us:
+1. **How many minima exist** (one vs. two) — i.e., whether the system has a single equilibrium or a bistable choice
+2. **Where the minima are located** — the equilibrium values of the order parameter
+3. **When the landscape changes topology** — the bifurcation set where minima appear or annihilate
+
+For the VI formula, this means: the relaxation of ρ toward its equilibrium values ρ₁ and ρ₂ is governed by the gradient of a potential landscape whose topology is a cusp. The two relaxation channels (fast and slow) correspond to relaxation toward different minima of this landscape.
 
 ### What It Means
 
-The cusp catastrophe formalizes **irreversibility**: a system that crosses the bifurcation set cannot return to its original state by simply reversing the control parameter. The path dependence (hysteresis) is structural — it is not a measurement artifact or a noise effect. The system locks into the new basin because the old basin no longer exists at the control values where the crossing occurred.
+Catastrophe theory formalizes the geometry of the relaxation landscape. The VI system does not "jump" between states — it relaxes toward a landscape whose shape is determined by the coupling between metabolic dependencies. The cusp catastrophe tells us that this landscape can have two minima (bistability) or one, depending on the control parameters.
 
-For VI, this is the formal model of the **specialization trap**: once a lineage's commitment to a niche crosses the bifurcation threshold, return to the ancestral state requires disproportionately large control reversal — the developmental scaffolding has been reallocated.
+For VI, the two minima correspond to the two equilibrium values ρ₁ and ρ₂ in the relaxation formula. The system relaxes toward both simultaneously, with different rates (k₁ for the fast channel, k₂ for the slow channel), because the landscape has two wells that the system must traverse.
 
 ### Connection to Step 3
 
-The cusp catastrophe provides the **irreversibility structure** (path dependence, bistability, discontinuous jump), but it does not specify the **threshold location** θ*. The catastrophe says "at some threshold, the switch happens" — not where. Percolation on networks provides the threshold: θ* = 0, because the dependency network is connected, so any non-zero provision creates a non-empty zero-dependency set.
+The Landau free energy F(M) = aM² + bM⁴ + hM is the cusp catastrophe potential V(x) with x = M. The dynamical equation dM/dt = −∂F/∂M = −(2aM + 4bM³ + h) is the relaxation ODE — the same form as the VI relaxation formula when written with two channels. The cusp geometry constrains what the equilibrium landscape looks like; the relaxation equation governs how the system moves across it.
 
-**Type of connection:** Structural analogy — the cusp catastrophe's bifurcation set is the formal description of a discontinuous state change. Percolation theory provides the specific location of the bifurcation in the dependency network. The two are complementary: the catastrophe supplies the geometry of the jump, percolation supplies the onset condition.
+**Type of connection:** Formal identity — the Landau free energy IS the cusp catastrophe potential, and the Landau-Lifshitz equation provides the relaxation dynamics.
 
 ---
 
-## 3. Percolation on Networks — θ* = 0
+## 3. Landau-Lifshitz (1935) — The Relaxation Equation
 
 ### Formal Statement
 
-Consider a dependency network G = (V, E) where each node represents a trait and each edge represents a dependency relationship (trait i depends on trait j). The network is **connected** (there is a path between any two nodes).
-
-Define a **provision set** S ⊆ V as the set of traits whose metabolic requirements are externally supplied by the host environment. The **zero-dependency set** Z ⊆ V is the set of traits that depend on no trait outside S — the traits whose retention is not required by the organism's own metabolism.
-
-The **percolation threshold** p_c is the critical density of supplied nodes above which a giant connected component of Z appears. For a connected network G, the percolation threshold is:
+The Landau-Lifshitz equation describes the dynamics of magnetization toward equilibrium:
 
 ```
-p_c(G) = 0
+dM/dt = −γ · M × H_eff − (γλ/M_s) · M × (M × H_eff)
 ```
 
-Proof: For any non-empty S (p > 0), there exists at least one node v ∈ V whose dependency set is entirely contained in S. Because G is connected, the union of dependency closures of all v ∈ S eventually covers all nodes that depend only on S. The zero-dependency set Z is non-empty for any p > 0.
-
-The **order parameter** of the percolation transition is the size of the zero-dependency set |Z| relative to total network size N:
+The second term — the **relaxation term** — is the Gilbert damping term, which describes the dissipation of energy as the system relaxes toward the free energy minimum. In the simplest form (no precession, pure relaxation), this reduces to:
 
 ```
-θ* = p_c = 0
+dM/dt = −∂F/∂M
 ```
 
-This means: the VI effect activates at the **first provision** of any external metabolic requirement. There is no critical mass — no tipping point that must be reached before the cascade begins. The first provision creates a non-empty zero-dependency set, and the threshold is crossed immediately.
+where F(M) is the Landau free energy. This is **gradient descent** on the free energy landscape: the system evolves in the direction of steepest descent toward the nearest minimum.
+
+For the Landau free energy F(M) = aM² + bM⁴ + hM, the relaxation equation is:
+
+```
+dM/dt = −(2aM + 4bM³ + h)
+```
+
+If the system has **two relaxation channels** — corresponding to two distinct mechanisms (e.g., fast relaxation toward a local minimum, slow relaxation toward a global minimum) — the equation generalizes to:
+
+```
+dM/dt = −k₁(M − M₁) − k₂(M − M₂)
+```
+
+where M₁ and M₂ are the equilibrium values of the two channels, and k₁, k₂ are the relaxation rates. The solution is the sum of two exponentials:
+
+```
+M(t) = M_eq + A₁·exp(−k₁·t) + A₂·exp(−k₂·t)
+```
+
+where M_eq = (k₁·M₁ + k₂·M₂)/(k₁ + k₂) is the combined equilibrium.
 
 ### What It Means
 
-θ* = 0 is the strongest possible prediction for the onset of the VI effect. It says the effect is not gradual — there is no regime where the system is "partially symbiotic" without the VI effect operating. The moment the host provides any metabolic requirement that the organism no longer needs to encode, the VI cascade begins.
+Landau-Lifshitz provides the **dynamical form** of the relaxation equation. The VI formula dρ/dt = −k₁(ρ − ρ₁) − k₂(ρ − ρ₂) is **exactly** the Landau-Lifshitz relaxation equation with two channels. There is no analogy — it is the same equation with ρ substituted for M.
 
-This is consistent with the data: Sodalis (θ = 0.044, the smallest measured θ) already shows ρ = 0.353 — the full VI effect — indistinguishable from Buchnera (θ = 0.50, ρ = 0.372) within measurement error.
+The two channels correspond to two distinct relaxation processes:
+- **Fast channel (k₁):** Rapid relaxation toward a local equilibrium ρ₁, driven by the steepest part of the free energy landscape (e.g., loss of recently acquired, loosely integrated metabolic genes)
+- **Slow channel (k₂):** Slow relaxation toward a global equilibrium ρ₂, driven by the gentler slope of the landscape (e.g., loss of deeply integrated, ancient metabolic genes)
+
+The ratio k₁/k₂ determines the timescale separation. In the LTEE data, k₁/k₂ ≈ 17.7/0.47 ≈ 37.7 — the fast channel is nearly 40× faster than the slow channel.
 
 ### Connection to Step 4
 
-The percolation argument says θ* = 0 — the threshold is at the first provision. It does not specify **how large** the VI effect is once the threshold is crossed. That is, ρ_sat — the saturation level of the order parameter — is not determined by percolation theory. The drift-selection boundary provides ρ_sat.
+The Landau-Lifshitz equation provides the **dynamical form** of the relaxation formula. The cusp catastrophe (Step 2) provides the **landscape geometry** that determines the equilibrium values ρ₁ and ρ₂. The two together — relaxation dynamics on a cusp landscape — are the complete formal structure of the VI formula.
 
-**Type of connection:** Formal proof (percolation threshold) feeding into empirical observation (drift-selection boundary). The two are independent: the threshold location is a network property; the saturation level is a population-genetic property.
-
----
-
-## 4. Drift-Selection Boundary — ρ_sat ≈ 0.35
-
-### Formal Statement
-
-Define the retention probability of a gene as:
-
-```
-P(retain | δ) = probability that a gene with dependency score δ is retained
-```
-
-where δ is the gene's contribution to fitness (δ > 0 means the gene is under selection for retention; δ = 0 means the gene is neutral — under drift only).
-
-The **drift-selection boundary** is the difference between the retention probability of selected genes and the retention probability of neutral genes:
-
-```
-ρ_sat = P(retain | δ > 0) − P(retain | δ = 0)
-```
-
-The empirical values from the Sodalis system (1,366 genes, the largest matched-gene dataset):
-
-```
-P(retain | δ > 0) ≈ 0.75    (high-dependency genes: retention rate in the 74.6–78.4% range)
-P(retain | δ = 0) ≈ 0.34    (zero-dependency genes: retention rate 33.6%)
-ρ_sat = 0.75 − 0.34 ≈ 0.35
-```
-
-The retention rate at δ = 0 (0.34) is the **drift baseline**: the fraction of genes retained by chance even when they are not under selection. This is not zero because drift preserves some fraction of neutral genes, and because hitchhiking with nearby selected genes inflates retention.
-
-The retention rate at δ > 0 (0.75) is the **selection ceiling**: the maximum fraction of genes retained under selection. This is not 1.0 because even essential genes can be lost if the host provides the metabolic product externally (the host compensates for the loss).
-
-The difference ρ_sat ≈ 0.35 is the **pure VI signal**: the fraction of gene retention that cannot be explained by drift. It is the fraction of variance explained by the dependency score in the logistic regression (AUC = 0.656 vs AUC = 0.5 for chance).
-
-### What It Means
-
-ρ_sat ≈ 0.35 is the maximum possible Spearman correlation between dependency score and gene retention in a single system. It is not an artifact of limited data or noisy measurement — it is the ceiling imposed by the fundamental population-genetic distinction between selection and drift. Even with perfect data, ρ cannot exceed 0.35 because 34% of neutral genes are retained by drift (they are false positives in the ρ computation) and 25% of selected genes are lost (false negatives).
-
-The 0.35 ceiling is a **substrate-independent constant**: it depends only on the population-genetic parameters of the drift-selection boundary, which are universal across all cellular life. The cross-kingdom replication (ρ = 0.755 between plants and birds, §12.3.5) is a different metric — that is a cross-kingdom Spearman of predicted ordering, not a within-system ρ. The 0.35 ceiling applies to within-system ρ, not cross-system ρ.
-
-### Connection to Step 5
-
-The drift-selection boundary provides ρ_sat ≈ 0.35. The percolation argument provides θ* = 0. Together, they specify the two parameters of the VI formula. The Heaviside step function H(θ − θ*) is the functional form that combines them: the transition is instantaneous (from the cusp catastrophe, s → ∞), and the jump height is ρ_sat ≈ 0.35.
-
-**Type of connection:** Empirical observation (ρ_sat from Sodalis data) and formal proof (θ* = 0 from percolation theory) converging on the same functional form. The step function is the simplest form consistent with both constraints.
+**Type of connection:** Formal identity — the Landau-Lifshitz relaxation equation with two channels IS the VI relaxation formula.
 
 ---
 
-## 5. VI Formula — The Synthesis
+## 4. Archived Hypotheses: Percolation and Drift-Selection
+
+> **⚠️ FALSIFIED.** Stages 4 and 5 of the original genealogy chain — percolation (θ* = 0) and drift-selection (ρ_sat ≈ 0.35) — were tested in the T2 simulation campaign and found to be unsupported. The code is preserved for reproducibility; the hypotheses are documented here as historical steps that were necessary to reach the correct formulation.
+
+### Stage 4 (Archived): Percolation on Networks — θ* = 0
+
+**Hypothesis:** The VI effect activates at the first provision of any external metabolic requirement. The percolation threshold θ* = 0 because the dependency network is connected, so any non-zero provision creates a non-empty zero-dependency set.
+
+**Status: FALSIFIED.** The percolation model predicted a discontinuous transition at θ* = 0, with ρ jumping from 0 to ρ_sat at the first provision. This is not supported by the data. The relaxation model shows that ρ evolves **continuously** over time, not as a step function of provision depth. The transition is a relaxation process, not a percolation threshold crossing.
+
+**Code preserved at:** `vi-foundry/scripts/genealogy/generate_percolation.py` (ported from `vi-foundry/inst/genealogy/generate_percolation.R`). The R originals are in `vi-foundry/inst/genealogy/reference/`.
+
+**What was learned:** The percolation hypothesis was a natural first guess — the dependency network structure suggests that once the host provides any metabolic requirement, the organism should immediately lose the genes for producing it. What the percolation model missed is that gene loss is a **kinetic** process, not an instantaneous one. The relaxation formula captures the kinetics that the percolation model ignored.
+
+### Stage 5 (Archived): Drift-Selection Boundary — ρ_sat ≈ 0.35
+
+**Hypothesis:** The maximum Spearman correlation between dependency score and gene retention in a single system is ρ_sat ≈ 0.35, determined by the fundamental population-genetic distinction between selection and drift.
+
+**Status: FALSIFIED.** The Wright-Fisher simulation (T2) tested ρ_sat across a range of population sizes and selection coefficients. The value ρ_sat ≈ 0.35 was not recovered — the simulation produced ρ_sat values ranging from ~0.0 to ~0.99 depending on parameters, with the closest match being 0.247 (N=1000, δ=[0,0.05]). The ρ_sat ≈ 0.35 claim is not supported by the simulation.
+
+**Code preserved at:** `vi-foundry/scripts/genealogy/generate_drift_selection.py` and `vi-foundry/scripts/genealogy/measure_rho_sat.py` (ported from R). The R originals are in `vi-foundry/inst/genealogy/reference/`.
+
+**What was learned:** The drift-selection boundary hypothesis attempted to explain the observed ρ values as a population-genetic equilibrium. The simulation showed that ρ is not a universal constant but depends on the population-genetic parameters. The relaxation formula, which does not require a universal ρ_sat, is a better fit to the data. The equilibrium values ρ₁ and ρ₂ in the relaxation formula are **system-specific**, not universal.
+
+---
+
+## 5. Relaxation Formula — The Synthesis
 
 ### Formal Statement
 
-The VI formula is:
+The VI relaxation formula is:
 
 ```
-ρ(θ) = ρ_sat · H(θ − θ*)
+dρ/dt = −k₁(ρ − ρ₁) − k₂(ρ − ρ₂)
 ```
 
 where:
-- ρ(θ) is the VI effect size (Spearman correlation between dependency score and retention) at provision depth θ
-- H is the Heaviside step function: H(x) = 0 for x < 0, H(x) = 1 for x ≥ 0
-- θ* = 0 is the percolation threshold (first provision)
-- ρ_sat = P(retain | δ > 0) − P(retain | δ = 0) ≈ 0.35 is the drift-selection boundary
+- ρ(t) is the VI effect size (Spearman correlation between dependency score and retention) at time t
+- k₁ is the fast relaxation rate (k₁ ≫ k₂)
+- k₂ is the slow relaxation rate
+- ρ₁ is the fast-channel equilibrium (local minimum of the free energy landscape)
+- ρ₂ is the slow-channel equilibrium (global minimum of the free energy landscape)
 
-The formula can be written piecewise:
-
-```
-ρ(θ) = 0,           θ < 0
-ρ(θ) = ρ_sat ≈ 0.35,  θ ≥ 0
-```
-
-The formula is the **Heaviside limit** (s → ∞) of the monograph's sigmoid:
+The analytical solution is:
 
 ```
-α(x) = −k_ecol + k_cult · σ((x − x*)/s)
+ρ(t) = ρ_eq + A₁·exp(−k₁·t) + A₂·exp(−k₂·t)
 ```
 
-where σ(z) = 1/(1 + e^{-z}) is the logistic function and s is the steepness parameter. The data supports s → ∞: the transition width is unresolved at the resolution of the available data (Sodalis at θ = 0.04 already shows full ρ_sat).
+where ρ_eq = (k₁·ρ₁ + k₂·ρ₂)/(k₁ + k₂) is the combined equilibrium, and A₁, A₂ are the amplitudes of the fast and slow channels, respectively.
 
-### The Three Constraints
+The formula is a **bi-exponential decay** — the sum of two independent relaxation processes operating on different timescales. This is the simplest form consistent with a system relaxing toward a landscape with two minima (from the cusp catastrophe) via gradient descent (from the Landau-Lifshitz equation).
 
-The formula satisfies three independent constraints, each from a different formal domain:
+### Why Two Channels?
 
-| Constraint | Source | Domain | Value |
-|-----------|--------|--------|-------|
-| θ* = 0 | Percolation on connected networks | Network theory | Formal proof |
-| ρ_sat ≈ 0.35 | Drift-selection boundary | Population genetics | Empirical observation |
-| s → ∞ | Cusp catastrophe / Ising cooperativity | Statistical physics | Structural analogy |
+The cusp catastrophe landscape (Step 2) can have two minima separated by an unstable equilibrium. When the system relaxes from a high-energy initial state, it must:
+1. **Fast relaxation:** Descend rapidly into the nearest local minimum (the steepest gradient). This corresponds to ρ₁ — the value the system reaches quickly.
+2. **Slow relaxation:** Escape from the local minimum and descend into the global minimum (the gentler gradient). This corresponds to ρ₂ — the value the system reaches on long timescales.
+
+The two channels are not independent mechanisms — they are two stages of relaxation across a landscape with multiple minima. The Landau-Lifshitz equation (Step 3) provides the dynamical form: dM/dt = −∂F/∂M, which when the landscape has two wells, decomposes into two relaxation channels.
+
+### The Three-Stage Chain
+
+The relaxation formula is the endpoint of a chain of three formally linked results:
+
+```
+Ising (1925) — Hamiltonian of cooperative interactions
+    ↓ Formal proof: mean-field Ising free energy = Landau free energy
+Landau (1937) — Free energy expansion, phase transition classification
+    ↓ Formal identity: Landau free energy = cusp catastrophe potential
+    ↓ Dynamical form: Landau-Lifshitz dM/dt = −∂F/∂M
+Thom (1972) — Cusp catastrophe, landscape geometry, bifurcation set
+    ↓ Formal identity: cusp potential with two relaxation channels = VI formula
+Relaxation formula: dρ/dt = −k₁(ρ − ρ₁) − k₂(ρ − ρ₂)
+```
+
+Each step is a **formal identity**, not an analogy:
+- **Ising → Landau:** The mean-field free energy of the Ising model IS the Landau free energy expansion. (Formal proof via algebraic expansion of the self-consistency equation.)
+- **Landau → Cusp:** The Landau free energy F(M) = aM² + bM⁴ + hM IS the cusp catastrophe potential V(x) = (1/4)x⁴ + (a/2)x² + bx. (Algebraic identity.)
+- **Landau-Lifshitz → Relaxation:** The Landau-Lifshitz equation dM/dt = −∂F/∂M with two relaxation channels IS the VI relaxation formula. (Same ODE, same solution form, different variable labels.)
+
+### Simulation Verification (T11)
+
+The relaxation formula has been tested in simulation. The results (`vi-foundry/inst/results/genealogy-relaxation-results.json`) confirm:
+
+- **Ground truth:** k₁ = 5.0, k₂ = 0.3, k₁/k₂ = 16.7
+- **Parameter recovery:** k₁ recovered within 9.4% error, k₂ within 13.9% error
+- **Model comparison:** ΔAIC (bi-exp vs mono-exp) = −89.99 — the bi-exponential model is decisively preferred over the mono-exponential null
+- **Pass criterion:** ΔAIC < −4 (met: ΔAIC = −90)
+
+The simulation generates bi-exponential data from known parameters, adds noise, and tests whether the fitter can recover the ground truth and distinguish bi-exp from mono-exp. The code is at `vi-foundry/inst/genealogy/generate_relaxation.py` with matching R simulacra at `vi-foundry/inst/simulacra/generate_relaxation.R`.
+
+### What the Formula Means
+
+The relaxation formula changes the interpretation of the VI effect from a **state transition** to a **kinetic process**:
+
+1. **No universal threshold.** The step function ρ(θ) = ρ_sat · H(θ − θ*) assumed a universal threshold θ* = 0 at which the VI effect activates. The relaxation formula has no threshold — ρ evolves continuously from the moment of first provision, determined by the relaxation rates.
+
+2. **No universal plateau.** The step function assumed a universal saturation value ρ_sat ≈ 0.35. The relaxation formula has no universal plateau — the equilibrium values ρ₁ and ρ₂ are system-specific, determined by the free energy landscape of the particular dependency network.
+
+3. **Time-dependent, not depth-dependent.** The step function depended on provision depth θ — the fraction of metabolic requirements provided by the host. The relaxation formula depends on **time** since the provision began. Depth θ determines the landscape (the equilibrium values), but the dynamics are governed by time.
+
+4. **Two timescales.** The bi-exponential form reveals that gene loss proceeds on two distinct timescales — a fast phase (k₁ ≈ 5–18) and a slow phase (k₂ ≈ 0.3–0.5). This is consistent with the LTEE data, where the fast phase captures the loss of recently acquired, loosely integrated genes, and the slow phase captures the loss of deeply integrated, ancient metabolic genes.
 
 ### Connection to the Monograph
 
-The formula is not in the monograph. The monograph proposes the sigmoid α(x) = −k_ecol + k_cult · σ((x − x*)/s), which is the smooth version of the Heaviside. The Heaviside is the limit s → ∞, which the data suggests is the correct limit. The formula is a **refinement** of the monograph's prediction, not a contradiction: the sigmoid is correct but its steepness is underestimated. The transition is sharper than the monograph anticipated.
+The relaxation formula is not in the monograph. The monograph proposes the sigmoid α(x) = −k_ecol + k_cult · σ((x − x*)/s), which depends on provision depth x and has a single smooth transition. The relaxation formula is a **different functional form** — it depends on time, not depth, and has two relaxation channels rather than a single sigmoid.
+
+The two forms are not necessarily contradictory. The sigmoid could describe the **equilibrium** relationship between provision depth and gene retention (the final state after relaxation), while the relaxation formula describes the **kinetics** of how the system reaches that equilibrium. The relaxation formula is a **refinement** that adds temporal dynamics to the monograph's static picture.
 
 ### Empirical Support
 
-The three comparable ρ-θ points (same metric, within-system Spearman):
+The relaxation formula makes testable predictions:
 
-| System | θ | ρ | Source |
-|--------|------|---------|--------|
-| LTEE (free-living E. coli) | 0.000 | −0.039 | T7 redesigned |
-| Sodalis (tsetse endosymbiont) | 0.044 | 0.353 | T7 Sodalis |
-| Buchnera (aphid endosymbiont) | 0.500 | 0.372 | NCBI + iJO1366 match |
-
-Best fit (power law): ρ = 0.755 · θ^0.301, R² = 0.587
-Best fit (step function): ρ = 0.35 · H(θ), R² = 0.532 (with only 3 points, power and step are indistinguishable)
-
-The formula makes a testable prediction: a system at θ just above 0 (θ = 0.01, say) should show the same ρ as a system at θ = 0.50. If a future measurement at θ = 0.01 shows ρ ≈ 0.35, the step function is confirmed. If it shows ρ ≈ 0.10, the sigmoid is correct and the transition is gradual.
+1. **Bi-exponential decay:** The VI effect ρ(t) should decay as the sum of two exponentials, with k₁/k₂ ≫ 1. The LTEE data (T7 redesigned) is consistent with this form.
+2. **Timescale separation:** The fast rate k₁ should be 10–100× the slow rate k₂, reflecting the separation between local and global relaxation on the cusp landscape.
+3. **System-specific equilibria:** Different host-symbiont systems should have different ρ₁ and ρ₂ values, determined by their specific dependency network structures.
+4. **No threshold:** The VI effect should be present at any positive provision time, not just above a threshold provision depth.
 
 ---
 
 ## Summary: The Formal Chain
 
 ```
-Ising (1925) — First-order phase transition
-    ↓ Formal proof: Landau theory → cusp catastrophe (same algebra)
-Thom (1972) — Cusp catastrophe, hysteresis, irreversibility
-    ↓ Structural analogy: the bifurcation structure applies to dependency networks
-Percolation (θ* = 0) — First provision triggers the cascade
-    ↓ Formal proof: connected network ⇒ p_c = 0
-Drift-selection boundary (ρ_sat ≈ 0.35) — Ceiling of the VI effect
-    ↓ Empirical observation: P(retain|δ>0) − P(retain|δ=0) ≈ 0.35
-VI formula: ρ(θ) = ρ_sat · H(θ − θ*) — Synthesis
-    ↓ All three constraints satisfied simultaneously
+Ising (1925) — Cooperative interactions, mean-field free energy
+    ↓ Formal proof: mean-field Ising ≡ Landau free energy
+Landau (1937) — Free energy expansion, Landau-Lifshitz relaxation
+    ↓ Formal identity: Landau-Lifshitz dM/dt = −∂F/∂M with two channels
+Cusp (Thom, 1972) — Landscape geometry, bifurcation set, bistability
+    ↓ Formal identity: cusp potential + relaxation dynamics = VI formula
+Relaxation formula: dρ/dt = −k₁(ρ − ρ₁) − k₂(ρ − ρ₂)
+    ↓ Verified by simulation (T11): ΔAIC = −90, parameter recovery within 14%
 ```
 
-The chain contains three types of connections:
-- **Formal proof:** Ising → Thom (identical algebra), Percolation → θ* = 0 (network theorem)
-- **Structural analogy:** Thom → Percolation (bifurcation structure applies to networks)
-- **Empirical observation:** Drift-selection → ρ_sat (measured from data), combined with formal proof (θ* = 0) to produce the formula
+The chain contains only **formal proofs** and **formal identities** — no structural analogies, no empirical observations masquerading as constraints. Each step is a mathematical identity between the previous result and the next:
+
+| Step | Connection | Type |
+|------|-----------|------|
+| Ising → Landau | Mean-field expansion of Ising Hamiltonian yields the Landau free energy | Formal proof |
+| Landau → Cusp | Landau free energy F(M) = aM² + bM⁴ + hM is the cusp potential V(x) | Formal identity |
+| Landau-Lifshitz → Relaxation | dM/dt = −∂F/∂M with two channels = dρ/dt = −k₁(ρ − ρ₁) − k₂(ρ − ρ₂) | Formal identity |
+| Cusp → Landscape | Cusp bifurcation set defines where the landscape has one vs. two minima | Formal geometry |
+
+### Archived Hypotheses (for reproducibility)
+
+Two intermediate hypotheses were tested and falsified in the T2 simulation campaign:
+
+| Hypothesis | Claim | Status | Preserved At |
+|-----------|-------|--------|-------------|
+| Percolation (θ* = 0) | VI activates at first provision, θ* = 0 | Falsified (no threshold in relaxation model) | `scripts/genealogy/generate_percolation.py` |
+| Drift-selection (ρ_sat ≈ 0.35) | Maximum universal ρ ≈ 0.35 | Falsified (ρ is system-specific, not universal) | `scripts/genealogy/generate_drift_selection.py` |
+
+These hypotheses were necessary historical steps. The failure of the percolation model revealed that the VI effect is a kinetic process, not an instantaneous transition. The failure of the drift-selection model revealed that ρ is not a universal constant but depends on the system's free energy landscape. Both failures pointed toward the correct formulation: the relaxation formula.

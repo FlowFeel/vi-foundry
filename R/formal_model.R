@@ -9,6 +9,12 @@
 #' where C_i = retention probability of trait i, M(t) = decaying niche-demand
 #' mismatch, d_i = integration depth, θ = protection threshold, λ = shedding rate.
 #'
+#' This module implements the *cross-sectional* formal model: for a given set
+#' of integration depths, how does retention depend on the protection threshold?
+#' The *temporal* counterpart — the relaxation formula
+#' dρ/dt = −k₁(ρ − ρ₁) − k₂(ρ − ρ₂) — is implemented in `relaxation_model.R`.
+#' Both models converge on the same biphasic prediction.
+#'
 #' This module implements:
 #' - Numerical integration of the formal model (Euler method)
 #' - Analytical closed-form solution
