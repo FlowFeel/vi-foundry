@@ -1,6 +1,6 @@
 # Mathematical Genealogy — The Formal Chain of the VI Formula
 
-> **⚠️ Updated August 2026:** The genealogy chain Ising → Landau → Cusp is formally verified (T6 simulacrum). However, the percolation (θ* = 0) and drift-selection (ρ_sat ≈ 0.35) links have been tested and do not hold. The chain describes relaxation dynamics, not a phase transition. The formula is now dρ/dt = −k₁(ρ − ρ₁) − k₂(ρ − ρ₂). See [Economics Extrapolations](economics-extrapolations.html).
+> **⚠️ Updated August 2026 (T14):** The active chain is Ising → Landau → Cusp → Relaxation. Stages 4 (percolation, θ*=0) and 5 (drift-selection, ρ_sat≈0.35) are archived as falsified hypotheses — tested in T2 and not supported by simulation. The chain describes relaxation dynamics, not a phase transition. The formula is dρ/dt = −k₁(ρ − ρ₁) − k₂(ρ − ρ₂). See [ticket-queue.md](ticket-queue.md) for full provenance.
 
 
 **Authors:** Jan Ritch-Frel, Ed Phillips
