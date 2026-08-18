@@ -294,12 +294,12 @@ test_that("generate_dd_series at feedback=1 matches existing autocatalytic gener
     n_steps = 20, innovation_rate = 0.3,
     capacity = 30, seed = 42L
   )
-  new <- generate_dd_series(20, 0.3, 30, feedback = 1, seed = 42L)
+  new <- vi.foundry:::generate_dd_series(20, 0.3, 30, feedback = 1, seed = 42L)
   expect_equal(existing$values$innovation_counts, new)
 })
 
 test_that("generate_dd_series at feedback=0 gives negative DD", {
-  counts <- generate_dd_series(20, 0.3, 30, feedback = 0, seed = 42L)
+  counts <- vi.foundry:::generate_dd_series(20, 0.3, 30, feedback = 0, seed = 42L)
   dd <- diversity_dependence_sign(counts, seed = 42L)
   expect_equal(dd$values$diversity_dependence_sign, "negative")
 })
