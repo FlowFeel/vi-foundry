@@ -1,35 +1,54 @@
-# VI Foundry — Landing Page
+# VI Foundry — Index
 
-## Purpose
+## What This Is
 
-The VI Foundry is the computational verification layer for the Valence-Ingression Framework. It provides reproducible, deterministic verification of every quantitative claim made in §12 of the monograph. The foundry does not test the hypothesis against new data — it verifies that the computational pipeline reproduces the manuscript's reported values, and that the statistical methods can recover known parameters from synthetic data.
+The foundry is the testing infrastructure for the Valence-Ingression (VI) relaxation formula. It contains:
 
-## What This Site Contains
+1. **Simulacra** — synthetic data tests that verify the statistical pipeline
+2. **Empirical tests** — real data analyses testing predictions P1-P8
+3. **Data** — LTEE time series, endosymbiont genomes, Orobanchaceae plastomes
+4. **Results** — all test results in a unified format
 
-| Page | What it proves |
-|------|---------------|
-| [Simulacra](simulacra.html) | The pipeline can recover known parameters from synthetic data. If the methods cannot recover ground-truth parameters when the answer is known, they cannot be trusted on real data. |
-| [Baseline Oracle](baseline-oracle.html) | The pipeline reproduces every §12 manuscript value within tolerance. Each result is tagged with whether it supports the VI prediction and whether it distinguishes VI from named competitor hypotheses. |
-| [Key Results](key-results.html) | Summary of the discriminating core: 6 of 9 tests distinguish VI from alternatives; 3 are consistent with VI but do not discriminate it, and are stated as such. |
-| [Toy Realms](toy-realms.html) | Interactive explorers for genome reduction, irreversibility, the *Homo* inversion, and cross-kingdom parameter transfer. These are speculative, not tests. |
-| [Economics Extrapolations](economics-extrapolations.html) | The relaxation formula applied to firm specialization, credit upcycles, tech adoption, and option value. Speculative — not tests. |
-| [Formula Analysis](formula-analysis.html) | Three-move derivation of VI's functional form: Ohta (inductive), Fisher (decompositional), Wimsatt (triangulation). Data suggests a step-function (first-order phase transition), consistent with the monograph's cusp catastrophe. |
-| [Mathematical Genealogy](mathematical-genealogy.html) | Formal chain from Ising (1925) through Thom's catastrophe theory, percolation theory, and the drift-selection boundary to the VI formula ρ(θ) = ρ_sat · H(θ − θ*). Each step's mathematical statement, connection type, and evidential status. |
-| [Implementation Audit](implementation-audit.html) | Equation-to-function mapping, test coverage audit, monograph number traceability, and identified gaps between formal claims and computational verification. |
+## Key Documents
 
-## How to Read This Site
+| Document | Description |
+|----------|-------------|
+| [key-results.md](key-results.md) | Full P1-P8 scorecard with WCI assessment |
+| [prediction-search-space.md](prediction-search-space.md) | 8 testable predictions derived from the formula |
+| [inferno-testing-plan.md](inferno-testing-plan.md) | INFERNO-style testing plan with falsification criteria |
+| [dataset-survey.md](dataset-survey.md) | Survey of available datasets across 7 categories |
+| [publication-standards.md](publication-standards.md) | Acceptance criteria at top journals |
+| [design-spec.md](design-spec.md) | Foundry design specification |
+| [formula-analysis.md](formula-analysis.md) | Mathematical analysis of the formula |
+| [mathematical-genealogy.md](mathematical-genealogy.md) | Equation history |
+| [simulacra.md](simulacra.md) | Original 8 simulacra descriptions |
 
-The foundry is designed for a reader who encounters a claim in the monograph (e.g., "ρ = 0.955, p = 0.003") and wants to verify: (a) that the code produces that number from the data, (b) that the statistical method can recover known parameters when the answer is provided, and (c) whether the result distinguishes VI from its named competitors. Each page links to the R source code, the oracle configuration, and the test that gates the result.
+## Scripts
 
-The full review documentation — including the line-by-line math audit, the formal model reproduction, and the refactoring log — is available in the [review directory](review/).
+| Script | Purpose |
+|--------|---------|
+| `scripts/simulacra_9_13.py` | Foundry simulacra 9-13 (multi-system rate, cross-kingdom, substrate, null ratio, ordering) |
+| `scripts/p5_niche_mismatch.py` | P5 retest: niche-demand mismatch vs Nₑ (proper predictor) |
+| `scripts/p6_substrate.py` | P6: substrate independence (synapse pruning, fox domestication) |
+| `scripts/p7_sign_reversal.py` | P7: sign reversal on generative substrates (cultural bird lineages) |
+| `scripts/p8_irreversibility.py` | P8: irreversibility (reintroduction, Dollo's Law) |
+| `scripts/endosymbiont_pgls.py` | Endosymbiont 22-genus PGLS analysis |
+| `scripts/island_birds_pgls.py` | Island bird flightlessness analysis |
 
-## Verification Standard
+## Results
 
-All quantitative results were independently verified through computational testing by Ed Phillips. The verification pipeline uses:
+| Result | Location |
+|--------|----------|
+| Foundry simulacra 9-13 | `results/simulacra-9-13-report.md` |
+| P1-P8 testing | `results/p1-p8-testing/` |
+| LTEE analysis | `data/t7-ltee/T7_ANALYSIS_REPORT.md` |
+| Sodalis partition | `data/t7-ltee/T7_SODALIS_RESULTS.md` |
 
-- **Oracle baseline** (`baseline/oracle.yml`): every manuscript value stored as ground truth with absolute tolerance bands
-- **Regression gates**: CI fails if pipeline output deviates from oracle values beyond tolerance
-- **Parameter-recovery simulacra**: synthetic data with known ground truth, testing whether the pipeline can recover the parameters that generated it
-- **Null controls**: each simulacrum includes a null condition where no signal should be recovered — if the pipeline reports signal in the null, the test fails
+## Current State (2026-08-18)
 
-Source: [https://github.com/FlowFeel/vi-foundry](https://github.com/FlowFeel/vi-foundry)
+- **8/8 original simulacra:** PASS
+- **4/5 new simulacra (9-13):** PASS (S9 partial: k₂ accurate, k₁ hard when fast phase unresolved)
+- **6/8 predictions confirmed:** P1, P2, P3, P4, P6, P8
+- **2/8 refined:** P5 (confirmed with correct predictor), P7 (graded: attenuation → transient reversal → sustained reversal)
+
+**Composite WCI: 78** (Tier 2, approaching Tier 1 threshold of 80)
