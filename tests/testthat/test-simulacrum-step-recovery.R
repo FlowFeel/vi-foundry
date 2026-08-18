@@ -11,7 +11,10 @@ library(testthat)
 
 context("Simulacrum 6: Step function recovery")
 
-source("/home/node/.openclaw/workspace/vi-foundry/inst/simulacra/generate_step_function.R", local = FALSE)
+source_simulacrum("generate_step.R")
+source_simulacrum("generate_sigmoid.R")
+source_simulacrum("generate_null_rho.R")
+source_simulacrum("generate_percolation.R")
 
 # Inline step-fitter (same as economics_formula.R fit_step_models)
 fit_step <- function(theta, rho) {

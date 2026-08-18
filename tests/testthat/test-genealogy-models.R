@@ -16,8 +16,11 @@ library(testthat)
 context("Genealogy models — runnable precursor environments")
 
 # Source all genealogy generators
-source("/home/node/.openclaw/workspace/vi-foundry/inst/genealogy/generate_genealogy.R", local = FALSE)
-source("/home/node/.openclaw/workspace/vi-foundry/inst/simulacra/generate_step_function.R", local = FALSE)
+source_genealogy("generate_ising.R")
+source_genealogy("generate_landau.R")
+source_genealogy("generate_cusp.R")
+source_genealogy("generate_drift_selection.R")
+
 
 # ---- Stage 1: Ising Model ----
 
