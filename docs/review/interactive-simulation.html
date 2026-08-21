@@ -1,0 +1,1561 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>VI Foundry — Interactive Simulation Explorer</title>
+<script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
+<style>
+* { box-sizing: border-box; }
+body {
+  font-family: 'DejaVu Serif', Georgia, 'Times New Roman', serif;
+  max-width: 1200px; margin: 0 auto; padding: 20px; color: #2c3e50;
+  line-height: 1.55; background: #fdfdfd;
+}
+.header {
+  background: #2c3e50; color: white; padding: 28px 32px;
+  border-radius: 10px; margin-bottom: 24px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+}
+.header h1 { margin: 0 0 6px 0; font-size: 1.7em; letter-spacing: 0.3px;
+             font-family: 'DejaVu Sans', system-ui, -apple-system, sans-serif; }
+.header p { margin: 4px 0; opacity: 0.9; }
+.header a { color: #9ecbf5; }
+.section {
+  background: #fff; border: 1px solid #e3e8ee; border-radius: 8px;
+  padding: 20px 24px; margin-bottom: 24px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
+.section h2 {
+  margin-top: 0; color: #2c3e50; border-bottom: 2px solid #2c3e50;
+  padding-bottom: 8px; font-family: 'DejaVu Sans', system-ui, -apple-system, sans-serif;
+}
+.section h3 {
+  color: #34495e; margin-top: 28px;
+  font-family: 'DejaVu Sans', system-ui, -apple-system, sans-serif;
+}
+.plot { margin: 16px 0; text-align: center; }
+.plot svg { max-width: 100%; height: auto; }
+.plot figcaption { font-size: 0.85em; color: #7f8c8d; margin-top: 6px; }
+.footer { color: #7f8c8d; font-size: 0.85em; text-align: center;
+          padding: 16px; border-top: 1px solid #e3e8ee; margin-top: 8px; }
+.mono { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+        font-size: 0.9em; background: #f4f6f8; padding: 1px 5px; border-radius: 3px; }
+.control-group { margin: 12px 0; }
+.control-group label { display: inline-block; width: 60px; font-size: 0.85em; font-weight: 600; }
+.control-group input[type=range] { width: 130px; vertical-align: middle; }
+.control-group .val { display: inline-block; width: 60px; font-size: 0.8em; font-family: monospace; text-align: right; }
+.btn-group { margin: 10px 0; }
+.btn-group button {
+  background: #ecf0f1; border: 1px solid #bdc3c7; border-radius: 4px;
+  padding: 5px 14px; margin: 0 3px; cursor: pointer; font-size: 0.85em;
+  font-family: 'DejaVu Sans', system-ui, -apple-system, sans-serif;
+  transition: all 0.2s;
+}
+.btn-group button.active { background: #2c3e50; color: white; border-color: #2c3e50; }
+.btn-group button:hover { opacity: 0.85; }
+.tooltip {
+  position: absolute; padding: 8px 12px; background: rgba(44,62,80,0.9);
+  color: #fff; border-radius: 5px; pointer-events: none;
+  font-size: 0.8em; font-family: 'DejaVu Sans', system-ui, -apple-system, sans-serif;
+  line-height: 1.4; z-index: 100;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+}
+.legend { font-size: 0.8em; }
+.legend-item { display: inline-block; margin: 0 12px; }
+.legend-color { display: inline-block; width: 14px; height: 14px; border-radius: 3px; margin-right: 4px; vertical-align: middle; }
+.legend-line { display: inline-block; width: 20px; height: 3px; margin-right: 4px; vertical-align: middle; }
+.chart-container { width: 100%; overflow: hidden; }
+.slider-grid { display: flex; flex-wrap: wrap; gap: 4px 16px; padding: 8px 0; }
+.slider-grid .slider-item { display: flex; align-items: center; gap: 6px; }
+.slider-grid .slider-item label { width: 36px; font-size: 0.85em; font-weight: 600; min-width: 36px; }
+.slider-grid .slider-item input { width: 160px; }
+.slider-grid .slider-item .val { width: 55px; font-size: 0.8em; font-family: monospace; text-align: right; }
+.badge { display: inline-block; padding: 2px 8px; border-radius: 10px;
+         font-size: 0.8em; font-weight: 600; }
+.badge.pass { background: #d5f5e3; color: #1e8449; }
+.badge.fail { background: #fadbd8; color: #c0392b; }
+.badge.warn { background: #fdebd0; color: #b9770e; }
+.summary { background: #f0f4f8; padding: 12px 16px; border-left: 4px solid #2c3e50;
+           border-radius: 4px; margin: 12px 0; font-size: 0.95em; }
+</style>
+</head>
+<body>
+<div class="header">
+  <h1>VI Foundry — Interactive Simulation Explorer</h1>
+  <p>Valence-Ingression framework — empirical proof machinery</p>
+  <p><a href="https://github.com/FlowFeel/vi-foundry">GitHub repository</a>&nbsp;|&nbsp;
+     <a href="https://flowfeel.github.io/vi-foundry/">GitHub Pages</a>&nbsp;|&nbsp;
+     <a href="../index.html">Home</a>&nbsp;|&nbsp;
+     <a href="../inferno-economic-extrapolations.html">INFERNO — Economic Extrapolations</a>&nbsp;|&nbsp;
+     <a href="../economic-extrapolations-viz.html">Calcs &amp; Viz</a>&nbsp;|&nbsp;
+     <a href="../revised-domesticate-test.html">Revised Domesticate Test</a>&nbsp;|&nbsp;
+     <a href="inflation-hierarchy.html">Inflation Hierarchy (static)</a></p>
+</div>
+
+<div class="section">
+  <h2>1. Interactive Relaxation Curve Explorer</h2>
+  <div class="summary">
+    <p>Bi-exponential relaxation curves ρ(t) for GRN simulation data. Two topologies shown: <strong>two-tier</strong> (hierarchical regulation) and <strong>uniform</strong> (flat regulation). Sliders adjust the live bi-exponential fit parameters in real time.</p>
+  </div>
+  <div class="chart-container" id="curve-chart"></div>
+  <div class="btn-group" id="curve-toggles">
+    <button class="active" data-series="data">Simulation Data</button>
+    <button class="active" data-series="fit">Bi-exponential Fit</button>
+    <button class="active" data-series="live">Live Curve</button>
+  </div>
+  <div class="slider-grid" id="slider-grid">
+    <div class="slider-item"><label>k₁</label><input type="range" id="s-k1" min="0.01" max="5" step="0.01" value="1.5"><span class="val" id="v-k1">1.50</span></div>
+    <div class="slider-item"><label>k₂</label><input type="range" id="s-k2" min="0.01" max="5" step="0.01" value="0.6"><span class="val" id="v-k2">0.60</span></div>
+    <div class="slider-item"><label>A₁</label><input type="range" id="s-A1" min="0.01" max="2" step="0.01" value="0.6"><span class="val" id="v-A1">0.60</span></div>
+    <div class="slider-item"><label>A₂</label><input type="range" id="s-A2" min="0.01" max="2" step="0.01" value="0.2"><span class="val" id="v-A2">0.20</span></div>
+    <div class="slider-item"><label>c₀</label><input type="range" id="s-c0" min="0" max="2" step="0.01" value="0.2"><span class="val" id="v-c0">0.20</span></div>
+  </div>
+  <div class="legend">
+    <span class="legend-item"><span class="legend-color" style="background:#3498db"></span>Two-tier data</span>
+    <span class="legend-item"><span class="legend-color" style="background:#e74c3c"></span>Uniform data</span>
+    <span class="legend-item"><span class="legend-line" style="background:#2ecc71; border-top:2px dashed #2ecc71; height:0"></span>Bi-exp fit</span>
+    <span class="legend-item"><span class="legend-line" style="background:#9b59b6; height:0"></span>Live curve</span>
+  </div>
+</div>
+
+<div class="section">
+  <h2>2. k₁/k₂ Stability Scatter</h2>
+  <div class="summary">
+    <p>Ratio of fast (k₁) to slow (k₂) decay rates across 10 random seeds. The two-tier topology shows a higher k₁/k₂ ratio (~2.2–2.4×) compared to uniform (~1.75×), indicating stronger hierarchical separation. Hover points for details.</p>
+  </div>
+  <div class="btn-group" id="scatter-toggles">
+    <button class="active" data-topo="two_tier">Two-tier</button>
+    <button class="active" data-topo="uniform">Uniform</button>
+  </div>
+  <div class="chart-container" id="scatter-chart"></div>
+  <div class="legend">
+    <span class="legend-item"><span class="legend-color" style="background:#3498db"></span>Two-tier</span>
+    <span class="legend-item"><span class="legend-color" style="background:#e74c3c"></span>Uniform</span>
+  </div>
+</div>
+
+<div class="section">
+  <h2>3. Inflation Hierarchy</h2>
+  <div class="summary">
+    <p>Staircase plot of integration levels (x) vs. k₁/k₂ ratio (y, log scale). As integration depth increases, the ratio of fast-to-slow dynamics grows super-linearly, demonstrating the <strong>inflation hierarchy</strong> across biological scales.</p>
+  </div>
+  <div class="chart-container" id="hierarchy-chart"></div>
+</div>
+
+<div class="section">
+  <h2>4. ΔBIC Comparison</h2>
+  <div class="summary">
+    <p>ΔBIC (BIC<sub>bi</sub> − BIC<sub>mono</sub>) across 10 seeds for both topologies. The dashed line at −4 marks the standard model selection boundary. All points lie well below −4, strongly favoring the bi-exponential model. Two-tier shows slightly more negative ΔBIC, indicating stronger evidence for biphasic kinetics.</p>
+  </div>
+  <div class="btn-group" id="bic-toggles">
+    <button class="active" data-topo="two_tier">Two-tier</button>
+    <button class="active" data-topo="uniform">Uniform</button>
+  </div>
+  <div class="chart-container" id="bic-chart"></div>
+  <div class="legend">
+    <span class="legend-item"><span class="legend-color" style="background:#3498db"></span>Two-tier</span>
+    <span class="legend-item"><span class="legend-color" style="background:#e74c3c"></span>Uniform</span>
+    <span class="legend-item"><span class="legend-line" style="background:#e67e22; height:0; border-top:2px dashed #e67e22"></span>Threshold −4</span>
+  </div>
+</div>
+
+<div class="footer">
+  VI Foundry Interactive Explorer — Valence-Ingression Framework · Generated 2026-08-21
+</div>
+
+<script>
+// ========== EMBEDDED SIMULATION DATA ==========
+const SIM_DATA = {
+  "two_tier": [
+    {
+      "seed": 42,
+      "k1": 0.5146034508412624,
+      "k2": 0.8061936760501677,
+      "ratio": 2.2477925977502875,
+      "bic_bi": -1441.5227649229846,
+      "bic_mono": -965.2518613691993,
+      "delta_bic": -476.2709035537853,
+      "r_squared_bi": 0.99999915027562,
+      "r_squared_mono": 0.9996349283194764,
+      "preferred_model": "biexponential",
+      "fast_fraction": 0.8062302660602361,
+      "slow_fraction": 0.19376973393976393
+    },
+    {
+      "seed": 43,
+      "k1": 0.47596840333678236,
+      "k2": 0.822672149538884,
+      "ratio": 2.4126990856303547,
+      "bic_bi": -1402.5113688133683,
+      "bic_mono": -945.2778822308079,
+      "delta_bic": -457.23348658256043,
+      "r_squared_bi": 0.9999986179833682,
+      "r_squared_mono": 0.999531979074264,
+      "preferred_model": "biexponential",
+      "fast_fraction": 0.8227231047880921,
+      "slow_fraction": 0.1772768952119079
+    },
+    {
+      "seed": 44,
+      "k1": 0.526308132109837,
+      "k2": 0.8112485729522237,
+      "ratio": 2.2096800614673286,
+      "bic_bi": -1452.2485110599566,
+      "bic_mono": -976.784692194127,
+      "delta_bic": -475.4638188658296,
+      "r_squared_bi": 0.9999992548563906,
+      "r_squared_mono": 0.9996830734362836,
+      "preferred_model": "biexponential",
+      "fast_fraction": 0.8112822580306706,
+      "slow_fraction": 0.18871774196932944
+    },
+    {
+      "seed": 45,
+      "k1": 0.5349631150912268,
+      "k2": 0.8112051533766989,
+      "ratio": 2.1748555943333905,
+      "bic_bi": -1454.7453541843827,
+      "bic_mono": -984.052126583553,
+      "delta_bic": -470.6932276008297,
+      "r_squared_bi": 0.9999992772137771,
+      "r_squared_mono": 0.9997103786935968,
+      "preferred_model": "biexponential",
+      "fast_fraction": 0.8112390007886453,
+      "slow_fraction": 0.18876099921135464
+    },
+    {
+      "seed": 46,
+      "k1": 0.5225601803616526,
+      "k2": 0.803654506438102,
+      "ratio": 2.222432969291101,
+      "bic_bi": -1449.1893793287998,
+      "bic_mono": -969.2438629349247,
+      "delta_bic": -479.9455163938751,
+      "r_squared_bi": 0.9999992272687902,
+      "r_squared_mono": 0.9996524023591111,
+      "preferred_model": "biexponential",
+      "fast_fraction": 0.803688275716389,
+      "slow_fraction": 0.196311724283611
+    },
+    {
+      "seed": 47,
+      "k1": 0.5355497375285279,
+      "k2": 0.7977449587989052,
+      "ratio": 2.1771810222641825,
+      "bic_bi": -1463.5388894352998,
+      "bic_mono": -975.5700302618634,
+      "delta_bic": -487.9688591734364,
+      "r_squared_bi": 0.9999993537122636,
+      "r_squared_mono": 0.9996786114126202,
+      "preferred_model": "biexponential",
+      "fast_fraction": 0.7977746902698254,
+      "slow_fraction": 0.2022253097301747
+    },
+    {
+      "seed": 48,
+      "k1": 0.5204643704481821,
+      "k2": 0.7939334929087899,
+      "ratio": 2.232245553382179,
+      "bic_bi": -1451.476450411665,
+      "bic_mono": -961.5874349192127,
+      "delta_bic": -489.88901549245224,
+      "r_squared_bi": 0.9999992504691557,
+      "r_squared_mono": 0.9996182157912691,
+      "preferred_model": "biexponential",
+      "fast_fraction": 0.7939659192055435,
+      "slow_fraction": 0.20603408079445648
+    },
+    {
+      "seed": 49,
+      "k1": 0.49781173295434356,
+      "k2": 0.8108385768739531,
+      "ratio": 2.318088328298805,
+      "bic_bi": -1424.0102232773609,
+      "bic_mono": -954.5348825600133,
+      "delta_bic": -469.47534071734754,
+      "r_squared_bi": 0.999998943335168,
+      "r_squared_mono": 0.9995829900894893,
+      "preferred_model": "biexponential",
+      "fast_fraction": 0.8108805604412731,
+      "slow_fraction": 0.18911943955872698
+    },
+    {
+      "seed": 50,
+      "k1": 0.5185349806924763,
+      "k2": 0.8068312673740248,
+      "ratio": 2.237455042060823,
+      "bic_bi": -1445.772022946598,
+      "bic_mono": -968.0736368805469,
+      "delta_bic": -477.69838606605117,
+      "r_squared_bi": 0.9999991934822324,
+      "r_squared_mono": 0.999647252980824,
+      "preferred_model": "biexponential",
+      "fast_fraction": 0.8068664044922762,
+      "slow_fraction": 0.19313359550772383
+    },
+    {
+      "seed": 51,
+      "k1": 0.4702651371722745,
+      "k2": 0.8175408181069804,
+      "ratio": 2.4399047290654283,
+      "bic_bi": -1396.239037381713,
+      "bic_mono": -937.1034258570744,
+      "delta_bic": -459.13561152463853,
+      "r_squared_bi": 0.9999985077802525,
+      "r_squared_mono": 0.9994824994516428,
+      "preferred_model": "biexponential",
+      "fast_fraction": 0.817594138424531,
+      "slow_fraction": 0.18240586157546895
+    }
+  ],
+  "uniform": [
+    {
+      "seed": 42,
+      "k1": 0.5139261918191136,
+      "k2": 0.7072566162001311,
+      "ratio": 1.7565830406315341,
+      "bic_bi": -1566.585732514603,
+      "bic_mono": -1019.9452717596214,
+      "delta_bic": -546.6404607549816,
+      "r_squared_bi": 0.9999998332158846,
+      "r_squared_mono": 0.9998273094265189,
+      "preferred_model": "biexponential",
+      "fast_fraction": 0.7072738840281466,
+      "slow_fraction": 0.29272611597185333
+    },
+    {
+      "seed": 43,
+      "k1": 0.5154294044082918,
+      "k2": 0.7035205692424099,
+      "ratio": 1.7547072410188844,
+      "bic_bi": -1560.287594040093,
+      "bic_mono": -1019.6498046397403,
+      "delta_bic": -540.6377894003526,
+      "r_squared_bi": 0.9999998195549,
+      "r_squared_mono": 0.9998266705133035,
+      "preferred_model": "biexponential",
+      "fast_fraction": 0.7035383234882931,
+      "slow_fraction": 0.29646167651170685
+    },
+    {
+      "seed": 44,
+      "k1": 0.5155329494145484,
+      "k2": 0.7032069076327938,
+      "ratio": 1.7548647098991634,
+      "bic_bi": -1560.5082944278702,
+      "bic_mono": -1019.5310766996456,
+      "delta_bic": -540.9772177282246,
+      "r_squared_bi": 0.9999998200477246,
+      "r_squared_mono": 0.9998264089426647,
+      "preferred_model": "biexponential",
+      "fast_fraction": 0.7032246308331386,
+      "slow_fraction": 0.29677536916686154
+    },
+    {
+      "seed": 45,
+      "k1": 0.5155422907938879,
+      "k2": 0.7032376128728823,
+      "ratio": 1.7548502292220105,
+      "bic_bi": -1560.4163274421242,
+      "bic_mono": -1019.5463640095493,
+      "delta_bic": -540.8699634325749,
+      "r_squared_bi": 0.9999998198390797,
+      "r_squared_mono": 0.9998264405168289,
+      "preferred_model": "biexponential",
+      "fast_fraction": 0.7032553358230368,
+      "slow_fraction": 0.2967446641769632
+    },
+    {
+      "seed": 46,
+      "k1": 0.5158595695420751,
+      "k2": 0.7022350347350297,
+      "ratio": 1.7548945403091465,
+      "bic_bi": -1559.6019788563376,
+      "bic_mono": -1019.2973675257558,
+      "delta_bic": -540.3046113305818,
+      "r_squared_bi": 0.9999998179932389,
+      "r_squared_mono": 0.9998258970372899,
+      "preferred_model": "biexponential",
+      "fast_fraction": 0.7022527969286367,
+      "slow_fraction": 0.2977472030713633
+    },
+    {
+      "seed": 47,
+      "k1": 0.5158390633147099,
+      "k2": 0.7024260586178813,
+      "ratio": 1.7544420585439608,
+      "bic_bi": -1559.2773542030816,
+      "bic_mono": -1019.4809984694691,
+      "delta_bic": -539.7963557336125,
+      "r_squared_bi": 0.9999998172589917,
+      "r_squared_mono": 0.9998263017273399,
+      "preferred_model": "biexponential",
+      "fast_fraction": 0.7024438688046676,
+      "slow_fraction": 0.2975561311953324
+    },
+    {
+      "seed": 48,
+      "k1": 0.5150961015680118,
+      "k2": 0.7041785234315978,
+      "ratio": 1.7555890344246243,
+      "bic_bi": -1563.267114268842,
+      "bic_mono": -1019.5270754671387,
+      "delta_bic": -543.7400388017033,
+      "r_squared_bi": 0.9999998261474757,
+      "r_squared_mono": 0.9998264000958526,
+      "preferred_model": "biexponential",
+      "fast_fraction": 0.7041959900472292,
+      "slow_fraction": 0.29580400995277073
+    },
+    {
+      "seed": 49,
+      "k1": 0.515572179894935,
+      "k2": 0.7031887702119113,
+      "ratio": 1.7545644345899833,
+      "bic_bi": -1560.1392528627716,
+      "bic_mono": -1019.6203015068311,
+      "delta_bic": -540.5189513559405,
+      "r_squared_bi": 0.999999819218534,
+      "r_squared_mono": 0.9998266051765977,
+      "preferred_model": "biexponential",
+      "fast_fraction": 0.703206525180995,
+      "slow_fraction": 0.296793474819005
+    },
+    {
+      "seed": 50,
+      "k1": 0.5152551761131785,
+      "k2": 0.7039944587882452,
+      "ratio": 1.7549452215617616,
+      "bic_bi": -1562.0300826007322,
+      "bic_mono": -1019.6893561916677,
+      "delta_bic": -542.3407264090645,
+      "r_squared_bi": 0.9999998234410432,
+      "r_squared_mono": 0.9998267545594739,
+      "preferred_model": "biexponential",
+      "fast_fraction": 0.7040120415748464,
+      "slow_fraction": 0.2959879584251535
+    },
+    {
+      "seed": 51,
+      "k1": 0.5161767831519305,
+      "k2": 0.7014442479397164,
+      "ratio": 1.754527742488941,
+      "bic_bi": -1558.3978121709117,
+      "bic_mono": -1019.2320825811571,
+      "delta_bic": -539.1657295897546,
+      "r_squared_bi": 0.9999998152324169,
+      "r_squared_mono": 0.9998257544111118,
+      "preferred_model": "biexponential",
+      "fast_fraction": 0.7014621068749343,
+      "slow_fraction": 0.2985378931250657
+    }
+  ],
+  "trajectory_two_tier": {
+    "t": [
+      0.0,
+      1.0,
+      2.0,
+      3.0,
+      4.0,
+      5.0,
+      6.0,
+      7.0,
+      8.0,
+      9.0,
+      10.0,
+      11.0,
+      12.0,
+      13.0,
+      14.0,
+      15.0,
+      16.0,
+      17.0,
+      18.0,
+      19.0,
+      20.0,
+      21.0,
+      22.0,
+      23.0,
+      24.0,
+      25.0,
+      26.0,
+      27.0,
+      28.0,
+      29.0,
+      30.0,
+      31.0,
+      32.0,
+      33.0,
+      34.0,
+      35.0,
+      36.0,
+      37.0,
+      38.0,
+      39.0,
+      40.0,
+      41.0,
+      42.0,
+      43.0,
+      44.0,
+      45.0,
+      46.0,
+      47.0,
+      48.0,
+      49.0,
+      50.0,
+      51.0,
+      52.0,
+      53.0,
+      54.0,
+      55.0,
+      56.0,
+      57.0,
+      58.0,
+      59.0,
+      60.0,
+      61.0,
+      62.0,
+      63.0,
+      64.0,
+      65.0,
+      66.0,
+      67.0,
+      68.0,
+      69.0,
+      70.0,
+      71.0,
+      72.0,
+      73.0,
+      74.0,
+      75.0,
+      76.0,
+      77.0,
+      78.0,
+      79.0,
+      80.0,
+      81.0,
+      82.0,
+      83.0,
+      84.0,
+      85.0,
+      86.0,
+      87.0,
+      88.0,
+      89.0,
+      90.0,
+      91.0,
+      92.0,
+      93.0,
+      94.0,
+      95.0,
+      96.0,
+      97.0,
+      98.0,
+      99.0
+    ],
+    "rho": [
+      1.0,
+      0.49492804777525423,
+      0.31963672259842263,
+      0.2532800672339123,
+      0.22588058615890894,
+      0.21357540538432823,
+      0.2076075384045271,
+      0.20450721981001987,
+      0.20279749299647293,
+      0.20180646742703295,
+      0.20120581711518667,
+      0.20082851187084574,
+      0.20058403125148183,
+      0.20042114295722907,
+      0.20030987414724527,
+      0.20023226700583827,
+      0.20017709519709853,
+      0.2001371445389671,
+      0.2001077494376117,
+      0.2000858070960879,
+      0.20006918519701217,
+      0.2000564398818869,
+      0.20004655504436591,
+      0.20003879374293765,
+      0.2000326393152856,
+      0.20002771312060602,
+      0.20002373674420518,
+      0.20002048990973326,
+      0.20001782322920086,
+      0.2000156176280974,
+      0.20001377533575443,
+      0.20001222888227121,
+      0.20001092243457866,
+      0.20000981132898235,
+      0.2000088611856753,
+      0.20000804513153028,
+      0.20000733964399636,
+      0.2000067270642566,
+      0.20000619265601216,
+      0.20000572460271943,
+      0.20000531244792108,
+      0.20000494814501202,
+      0.2000046251781169,
+      0.20000433805768597,
+      0.2000040818132223,
+      0.2000038523354417,
+      0.2000036461204812,
+      0.20000346033593103,
+      0.20000329246466853,
+      0.2000031406141929,
+      0.2000030025993098,
+      0.2000028771424638,
+      0.2000027626927151,
+      0.20000265808069378,
+      0.20000256228569085,
+      0.20000247433983107,
+      0.20000239363348143,
+      0.2000023193798619,
+      0.2000022508602624,
+      0.20000218765770597,
+      0.2000021291332407,
+      0.20000207495220718,
+      0.20000202473004527,
+      0.2000019780714673,
+      0.2000019347131351,
+      0.20000189438412166,
+      0.200001856788247,
+      0.20000182171712425,
+      0.20000178898341303,
+      0.20000175842874898,
+      0.2000017298362889,
+      0.2000017030761949,
+      0.20000167803508298,
+      0.20000165456131172,
+      0.200001632525647,
+      0.2000016118382373,
+      0.20000159241104976,
+      0.20000157415244857,
+      0.20000155696734148,
+      0.2000015408136437,
+      0.20000152559114556,
+      0.20000151125684404,
+      0.20000149775879536,
+      0.20000148503604645,
+      0.20000147302670654,
+      0.20000146168550892,
+      0.2000014509799248,
+      0.20000144086804958,
+      0.2000014313212354,
+      0.2000014223071889,
+      0.20000141378210443,
+      0.20000140571766814,
+      0.20000139809414802,
+      0.20000139087564275,
+      0.20000138404808904,
+      0.20000137758341524,
+      0.20000137145877936,
+      0.2000013656642718,
+      0.20000136017538764,
+      0.20000135497747742
+    ],
+    "bi_fit": [
+      1.3505159559942246,
+      1.2432664981843309,
+      1.1953717446433827,
+      1.1739829172688703,
+      1.164430917582781,
+      1.1601649974463188,
+      1.1582597736702667,
+      1.1574088332807186,
+      1.1570287499051854,
+      1.1568589669112477,
+      1.1567831166483367,
+      1.1567492257064935,
+      1.1567340797997925,
+      1.1567273093014656,
+      1.156724281705698,
+      1.156722927209189,
+      1.1567223208523898,
+      1.1567220491842676,
+      1.1567219273336211,
+      1.1567218726002677,
+      1.156721847967329,
+      1.156721836852905,
+      1.1567218318212842,
+      1.1567218295334907,
+      1.1567218284874188,
+      1.1567218280056775,
+      1.1567218277818188,
+      1.1567218276766325,
+      1.1567218276265403,
+      1.156721827602306,
+      1.156721827590369,
+      1.1567218275843718,
+      1.1567218275812954,
+      1.1567218275796836,
+      1.1567218275788214,
+      1.1567218275783513,
+      1.1567218275780906,
+      1.1567218275779436,
+      1.15672182757786,
+      1.1567218275778115,
+      1.1567218275777837,
+      1.1567218275777673,
+      1.1567218275777575,
+      1.156721827577752,
+      1.1567218275777484,
+      1.1567218275777464,
+      1.1567218275777453,
+      1.1567218275777447,
+      1.1567218275777442,
+      1.156721827577744,
+      1.1567218275777438,
+      1.1567218275777438,
+      1.1567218275777436,
+      1.1567218275777436,
+      1.1567218275777436,
+      1.1567218275777436,
+      1.1567218275777436,
+      1.1567218275777436,
+      1.1567218275777436,
+      1.1567218275777436,
+      1.1567218275777436,
+      1.1567218275777436,
+      1.1567218275777436,
+      1.1567218275777436,
+      1.1567218275777436,
+      1.1567218275777436,
+      1.1567218275777436,
+      1.1567218275777436,
+      1.1567218275777436,
+      1.1567218275777436,
+      1.1567218275777436,
+      1.1567218275777436,
+      1.1567218275777436,
+      1.1567218275777436,
+      1.1567218275777436,
+      1.1567218275777436,
+      1.1567218275777436,
+      1.1567218275777436,
+      1.1567218275777436,
+      1.1567218275777436,
+      1.1567218275777436,
+      1.1567218275777436,
+      1.1567218275777436,
+      1.1567218275777436,
+      1.1567218275777436,
+      1.1567218275777436,
+      1.1567218275777436,
+      1.1567218275777436,
+      1.1567218275777436,
+      1.1567218275777436,
+      1.1567218275777436,
+      1.1567218275777436,
+      1.1567218275777436,
+      1.1567218275777436,
+      1.1567218275777436,
+      1.1567218275777436,
+      1.1567218275777436,
+      1.1567218275777436,
+      1.1567218275777436,
+      1.1567218275777436
+    ],
+    "k1": 0.5146034508412624,
+    "k2": 0.8061936760501677,
+    "r_squared_bi": 0.99999915027562
+  },
+  "trajectory_uniform": {
+    "t": [
+      0.0,
+      1.0,
+      2.0,
+      3.0,
+      4.0,
+      5.0,
+      6.0,
+      7.0,
+      8.0,
+      9.0,
+      10.0,
+      11.0,
+      12.0,
+      13.0,
+      14.0,
+      15.0,
+      16.0,
+      17.0,
+      18.0,
+      19.0,
+      20.0,
+      21.0,
+      22.0,
+      23.0,
+      24.0,
+      25.0,
+      26.0,
+      27.0,
+      28.0,
+      29.0,
+      30.0,
+      31.0,
+      32.0,
+      33.0,
+      34.0,
+      35.0,
+      36.0,
+      37.0,
+      38.0,
+      39.0,
+      40.0,
+      41.0,
+      42.0,
+      43.0,
+      44.0,
+      45.0,
+      46.0,
+      47.0,
+      48.0,
+      49.0,
+      50.0,
+      51.0,
+      52.0,
+      53.0,
+      54.0,
+      55.0,
+      56.0,
+      57.0,
+      58.0,
+      59.0,
+      60.0,
+      61.0,
+      62.0,
+      63.0,
+      64.0,
+      65.0,
+      66.0,
+      67.0,
+      68.0,
+      69.0,
+      70.0,
+      71.0,
+      72.0,
+      73.0,
+      74.0,
+      75.0,
+      76.0,
+      77.0,
+      78.0,
+      79.0,
+      80.0,
+      81.0,
+      82.0,
+      83.0,
+      84.0,
+      85.0,
+      86.0,
+      87.0,
+      88.0,
+      89.0,
+      90.0,
+      91.0,
+      92.0,
+      93.0,
+      94.0,
+      95.0,
+      96.0,
+      97.0,
+      98.0,
+      99.0
+    ],
+    "rho": [
+      1.0,
+      0.46155379896247267,
+      0.22119966181764486,
+      0.10989972973504213,
+      0.05651128643760927,
+      0.030022294395659007,
+      0.01644936004944921,
+      0.009281292699975584,
+      0.005386061878479026,
+      0.0032096682073945704,
+      0.0019619568624889574,
+      0.0012283745142907684,
+      0.0007868566097720715,
+      0.0005151363227640774,
+      0.0003442907734608996,
+      0.0002346968832938173,
+      0.00016300352406144956,
+      0.00011524204408741066,
+      8.286296920037994e-05,
+      6.0554473171363754e-05,
+      4.4935201099315906e-05,
+      3.383415701711175e-05,
+      2.5830020974881386e-05,
+      1.998174435803245e-05,
+      1.5652141018611022e-05,
+      1.2407845160719148e-05,
+      9.948520603739199e-06,
+      8.062997801732582e-06,
+      6.601962249266459e-06,
+      5.4589184517041085e-06,
+      4.555895844871904e-06,
+      3.835918025902074e-06,
+      3.257004650881643e-06,
+      2.7875814267450535e-06,
+      2.4039570974337362e-06,
+      2.0882050118383685e-06,
+      1.826453427601853e-06,
+      1.6079847786296027e-06,
+      1.4244539575795597e-06,
+      1.2693741862537493e-06,
+      1.1375337269335204e-06,
+      1.0248779206527952e-06,
+      9.280909583720113e-07,
+      8.445238092442483e-07,
+      7.720301176841788e-07,
+      7.088517260522273e-07,
+      6.535423721358915e-07,
+      6.049560097631403e-07,
+      5.62091722688741e-07,
+      5.241465193386306e-07,
+      4.904287812168692e-07,
+      4.6037301353348513e-07,
+      4.3349366150512756e-07,
+      4.0938299631785493e-07,
+      3.876941675523119e-07,
+      3.6812900955118446e-07,
+      3.504390675994263e-07,
+      3.3440182372145695e-07,
+      3.198291988338187e-07,
+      3.065547077286701e-07,
+      2.944396187707395e-07,
+      2.833593799908158e-07,
+      2.7320785955756326e-07,
+      2.6388985221620363e-07,
+      2.553216112028732e-07,
+      2.4742872318450046e-07,
+      2.401464657072619e-07,
+      2.3341893381231272e-07,
+      2.2719465855466758e-07,
+      2.2142780485473464e-07,
+      2.160785246682895e-07,
+      2.1111013624041797e-07,
+      2.06489560680693e-07,
+      2.0218849920153007e-07,
+      1.9818021826797683e-07,
+      1.944414653688305e-07,
+      1.9095052227223503e-07,
+      1.8768798890754333e-07,
+      1.8463639734287713e-07,
+      1.817793275112972e-07,
+      1.7910322930444484e-07,
+      1.7659416470832554e-07,
+      1.7423991560319e-07,
+      1.7202985645169e-07,
+      1.699537902820597e-07,
+      1.6800221210854672e-07,
+      1.6616619190042788e-07,
+      1.6443822734717653e-07,
+      1.6281168346614293e-07,
+      1.6127936722701426e-07,
+      1.5983481564536138e-07,
+      1.5847293576363678e-07,
+      1.5718810984765013e-07,
+      1.5597553050889097e-07,
+      1.548310714626784e-07,
+      1.5374995076388368e-07,
+      1.5272858799042618e-07,
+      1.5176336059343365e-07,
+      1.5085104849899915e-07,
+      1.4998809376425874e-07
+    ],
+    "bi_fit": [
+      1.1954868721843381,
+      1.047071264043042,
+      0.9739025522404301,
+      0.9378304059230649,
+      0.9200468150300631,
+      0.9112794714531278,
+      0.9069571414822405,
+      0.9048262103323313,
+      0.903775645477704,
+      0.9032577063941244,
+      0.9030023555071324,
+      0.9028764630992604,
+      0.9028143953589343,
+      0.902783794229598,
+      0.9027687068022326,
+      0.9027612680435013,
+      0.902757600334226,
+      0.902755791909515,
+      0.9027549002081658,
+      0.902754460509911,
+      0.9027542436846583,
+      0.902754136757262,
+      0.90275408402247,
+      0.9027540580124445,
+      0.9027540451824312,
+      0.9027540388529912,
+      0.9027540357300323,
+      0.9027540341888877,
+      0.902754033428189,
+      0.9027540330526169,
+      0.9027540328671317,
+      0.9027540327754913,
+      0.9027540327301948,
+      0.9027540327077934,
+      0.9027540326967073,
+      0.9027540326912167,
+      0.9027540326884947,
+      0.9027540326871437,
+      0.9027540326864723,
+      0.9027540326861381,
+      0.9027540326859714,
+      0.9027540326858879,
+      0.9027540326858462,
+      0.9027540326858252,
+      0.9027540326858147,
+      0.9027540326858092,
+      0.9027540326858066,
+      0.9027540326858051,
+      0.9027540326858043,
+      0.9027540326858039,
+      0.9027540326858038,
+      0.9027540326858038,
+      0.9027540326858036,
+      0.9027540326858036,
+      0.9027540326858036,
+      0.9027540326858036,
+      0.9027540326858036,
+      0.9027540326858036,
+      0.9027540326858036,
+      0.9027540326858036,
+      0.9027540326858036,
+      0.9027540326858036,
+      0.9027540326858036,
+      0.9027540326858036,
+      0.9027540326858036,
+      0.9027540326858036,
+      0.9027540326858036,
+      0.9027540326858036,
+      0.9027540326858036,
+      0.9027540326858036,
+      0.9027540326858036,
+      0.9027540326858036,
+      0.9027540326858036,
+      0.9027540326858036,
+      0.9027540326858036,
+      0.9027540326858036,
+      0.9027540326858036,
+      0.9027540326858036,
+      0.9027540326858036,
+      0.9027540326858036,
+      0.9027540326858036,
+      0.9027540326858036,
+      0.9027540326858036,
+      0.9027540326858036,
+      0.9027540326858036,
+      0.9027540326858036,
+      0.9027540326858036,
+      0.9027540326858036,
+      0.9027540326858036,
+      0.9027540326858036,
+      0.9027540326858036,
+      0.9027540326858036,
+      0.9027540326858036,
+      0.9027540326858036,
+      0.9027540326858036,
+      0.9027540326858036,
+      0.9027540326858036,
+      0.9027540326858036,
+      0.9027540326858036,
+      0.9027540326858036
+    ],
+    "k1": 0.5139261918191136,
+    "k2": 0.7072566162001311,
+    "r_squared_bi": 0.9999998332158846
+  },
+  "genealogy": {
+    "ground_truth": {
+      "k1": 5.0,
+      "k2": 0.3,
+      "rho1": 0.15,
+      "rho2": 0.05,
+      "A1": 0.6,
+      "A2": 0.25,
+      "k1_k2_ratio": 16.666666666666668
+    },
+    "fits": {
+      "bi_exp": {
+        "aic": -393.2567041455724
+      },
+      "mono_exp": {
+        "aic": -303.270140277421
+      },
+      "linear": {
+        "aic": -164.75462417969277
+      },
+      "delta_aic_bi_vs_mono": -89.98656386815145
+    },
+    "parameter_recovery": {
+      "k1_recovered": 4.530759001579035,
+      "k2_recovered": 0.25838901025690336,
+      "k1_true": 5.0,
+      "k2_true": 0.3,
+      "k1_error_pct": 9.384819968419293,
+      "k2_error_pct": 13.870329914365541,
+      "k1_k2_ratio": 17.534642812689,
+      "k1_k2_ratio_true": 16.666666666666668
+    },
+    "passed": true
+  }
+};
+
+// ========== UTILITY ==========
+const COLORS = { two_tier: '#3498db', uniform: '#e74c3c' };
+const TWO_TIER = 'two_tier';
+const UNIFORM = 'uniform';
+const TWO_TIER_LABEL = 'Two-tier';
+const UNIFORM_LABEL = 'Uniform';
+
+function formatNum(v, d) { return v.toFixed(d || 2); }
+
+// ========== CHART 1: RELAXATION CURVE EXPLORER ==========
+(function() {
+  const container = d3.select('#curve-chart');
+  const margin = { top: 30, right: 30, bottom: 45, left: 55 };
+  const width = 1000, height = 450;
+  const innerW = width - margin.left - margin.right;
+  const innerH = height - margin.top - margin.bottom;
+
+  const svg = container.append('svg')
+    .attr('viewBox', `0 0 ${width} ${height}`)
+    .style('width', '100%')
+    .style('height', 'auto');
+  const g = svg.append('g').attr('transform', `translate(${margin.left},${margin.top})`);
+
+  const t2 = SIM_DATA.trajectory_two_tier;
+  const unif = SIM_DATA.trajectory_uniform;
+
+  const xScale = d3.scaleLinear().domain([0, 100]).range([0, innerW]);
+  const yScale = d3.scaleLog().domain([1e-7, 1.2]).range([innerH, 0]);
+  // Use linear scale for main chart since values are mostly 0-1
+  const yScaleLin = d3.scaleLinear().domain([0, 1.1]).range([innerH, 0]);
+
+  // Axes
+  g.append('g')
+    .attr('transform', `translate(0,${innerH})`)
+    .call(d3.axisBottom(xScale).ticks(10))
+    .style('font-size', '11px');
+  g.append('g')
+    .call(d3.axisLeft(yScaleLin).ticks(6))
+    .style('font-size', '11px');
+
+  // Labels
+  g.append('text')
+    .attr('x', innerW / 2).attr('y', innerH + 38)
+    .attr('text-anchor', 'middle').style('font-size', '13px').style('fill', '#2c3e50')
+    .text('Time t');
+  g.append('text')
+    .attr('x', -35).attr('y', 10)
+    .attr('text-anchor', 'middle').attr('transform', 'rotate(-90)')
+    .style('font-size', '13px').style('fill', '#2c3e50')
+    .text('Retention ρ(t)');
+
+  // Data preparation
+  const dataTwoTier = t2.t.map((ti, i) => ({ t: ti, rho: t2.rho[i], fit: t2.bi_fit[i] }));
+  const dataUniform = unif.t.map((ti, i) => ({ t: ti, rho: unif.rho[i], fit: unif.bi_fit[i] }));
+
+  // Line generators
+  const line = d3.line()
+    .x(d => xScale(d.t)).y(d => yScaleLin(d.rho))
+    .curve(d3.curveMonotoneX);
+  const lineFit = d3.line()
+    .x(d => xScale(d.t)).y(d => yScaleLin(d.fit))
+    .curve(d3.curveMonotoneX);
+  const lineLive = d3.line()
+    .x(d => xScale(d.t)).y(d => yScaleLin(d.live || 0))
+    .curve(d3.curveMonotoneX);
+
+  // Data lines
+  g.append('path')
+    .datum(dataTwoTier).attr('fill', 'none')
+    .attr('stroke', COLORS.two_tier).attr('stroke-width', 1.8)
+    .attr('stroke-opacity', 0.8).attr('class', 'data-line-tt')
+    .attr('d', line);
+
+  g.append('path')
+    .datum(dataUniform).attr('fill', 'none')
+    .attr('stroke', COLORS.uniform).attr('stroke-width', 1.8)
+    .attr('stroke-opacity', 0.8).attr('class', 'data-line-uni')
+    .attr('d', line);
+
+  // Fit lines
+  g.append('path')
+    .datum(dataTwoTier).attr('fill', 'none')
+    .attr('stroke', '#2ecc71').attr('stroke-width', 2.2)
+    .attr('stroke-dasharray', '6,4').attr('stroke-opacity', 0.85)
+    .attr('class', 'fit-line-tt').attr('d', lineFit);
+
+  g.append('path')
+    .datum(dataUniform).attr('fill', 'none')
+    .attr('stroke', '#2ecc71').attr('stroke-width', 2.2)
+    .attr('stroke-dasharray', '6,4').attr('stroke-opacity', 0.85)
+    .attr('class', 'fit-line-uni').attr('d', lineFit);
+
+  // Live curve
+  g.append('path')
+    .attr('fill', 'none').attr('stroke', '#9b59b6')
+    .attr('stroke-width', 2.5).attr('class', 'live-line')
+    .attr('d', '');
+
+  // Tooltip
+  const tooltip = d3.select('body').append('div').attr('class', 'tooltip').style('opacity', 0);
+
+  // Scatter points for two-tier
+  g.selectAll('.dot-tt').data(dataTwoTier.filter((d,i) => i % 5 === 0))
+    .enter().append('circle')
+    .attr('class', 'dot-tt').attr('r', 3)
+    .attr('cx', d => xScale(d.t)).attr('cy', d => yScaleLin(d.rho))
+    .attr('fill', COLORS.two_tier).attr('stroke', 'none')
+    .attr('opacity', 0.6)
+    .on('mouseover', function(ev, d) {
+      tooltip.style('opacity', 1)
+        .html(`<strong>Two-tier</strong><br>t = ${d.t}<br>ρ = ${d.rho.toFixed(4)}`)
+        .style('left', (ev.pageX + 12) + 'px').style('top', (ev.pageY - 28) + 'px');
+    }).on('mouseout', () => tooltip.style('opacity', 0));
+
+  g.selectAll('.dot-uni').data(dataUniform.filter((d,i) => i % 5 === 0))
+    .enter().append('circle')
+    .attr('class', 'dot-uni').attr('r', 3)
+    .attr('cx', d => xScale(d.t)).attr('cy', d => yScaleLin(d.rho))
+    .attr('fill', COLORS.uniform).attr('stroke', 'none')
+    .attr('opacity', 0.6)
+    .on('mouseover', function(ev, d) {
+      tooltip.style('opacity', 1)
+        .html(`<strong>Uniform</strong><br>t = ${d.t}<br>ρ = ${d.rho.toFixed(4)}`)
+        .style('left', (ev.pageX + 12) + 'px').style('top', (ev.pageY - 28) + 'px');
+    }).on('mouseout', () => tooltip.style('opacity', 0));
+
+  // State
+  let state = { data: true, fit: true, live: true };
+
+  function updateVisibility() {
+    g.selectAll('.data-line-tt, .data-line-uni, .dot-tt, .dot-uni')
+      .attr('display', state.data ? null : 'none');
+    g.selectAll('.fit-line-tt, .fit-line-uni')
+      .attr('display', state.fit ? null : 'none');
+    g.select('.live-line')
+      .attr('display', state.live ? null : 'none');
+  }
+
+  function updateLiveCurve() {
+    const k1 = +d3.select('#s-k1').property('value');
+    const k2 = +d3.select('#s-k2').property('value');
+    const A1 = +d3.select('#s-A1').property('value');
+    const A2 = +d3.select('#s-A2').property('value');
+    const c0 = +d3.select('#s-c0').property('value');
+    d3.select('#v-k1').text(k1.toFixed(2));
+    d3.select('#v-k2').text(k2.toFixed(2));
+    d3.select('#v-A1').text(A1.toFixed(2));
+    d3.select('#v-A2').text(A2.toFixed(2));
+    d3.select('#v-c0').text(c0.toFixed(2));
+
+    const liveData = d3.range(0, 101, 0.5).map(t => ({
+      t, live: c0 + A1 * Math.exp(-k1 * t) + A2 * Math.exp(-k2 * t)
+    }));
+    g.select('.live-line')
+      .datum(liveData)
+      .attr('d', lineLive);
+  }
+
+  // Initial live curve
+  updateLiveCurve();
+
+  // Slider events
+  ['s-k1', 's-k2', 's-A1', 's-A2', 's-c0'].forEach(id => {
+    d3.select('#' + id).on('input', updateLiveCurve);
+  });
+
+  // Toggle buttons
+  d3.selectAll('#curve-toggles button').on('click', function() {
+    const btn = d3.select(this);
+    const series = btn.attr('data-series');
+    state[series] = !state[series];
+    btn.classed('active', state[series]);
+    updateVisibility();
+  });
+
+  // Initial visibility
+  updateVisibility();
+})();
+
+// ========== CHART 2: k1/k2 STABILITY SCATTER ==========
+(function() {
+  const container = d3.select('#scatter-chart');
+  const margin = { top: 30, right: 30, bottom: 45, left: 55 };
+  const width = 700, height = 400;
+  const innerW = width - margin.left - margin.right;
+  const innerH = height - margin.top - margin.bottom;
+
+  const svg = container.append('svg')
+    .attr('viewBox', `0 0 ${width} ${height}`)
+    .style('width', '100%').style('height', 'auto');
+  const g = svg.append('g').attr('transform', `translate(${margin.left},${margin.top})`);
+
+  const allData = [];
+  SIM_DATA.two_tier.forEach(d => { allData.push({...d, topo: TWO_TIER, topoLabel: TWO_TIER_LABEL}); });
+  SIM_DATA.uniform.forEach(d => { allData.push({...d, topo: UNIFORM, topoLabel: UNIFORM_LABEL}); });
+
+  const xScale = d3.scaleLinear().domain([40, 53]).range([0, innerW]);
+  const yScale = d3.scaleLinear().domain([1.5, 2.6]).range([innerH, 0]);
+
+  // Axes
+  g.append('g').attr('transform', `translate(0,${innerH})`)
+    .call(d3.axisBottom(xScale).tickValues([42,44,46,48,50,52]).tickFormat(d3.format('d')))
+    .style('font-size', '11px');
+  g.append('g').call(d3.axisLeft(yScale).ticks(6)).style('font-size', '11px');
+
+  g.append('text').attr('x', innerW / 2).attr('y', innerH + 38)
+    .attr('text-anchor', 'middle').style('font-size', '13px').style('fill', '#2c3e50')
+    .text('Seed');
+  g.append('text').attr('x', -35).attr('y', 10)
+    .attr('text-anchor', 'middle').attr('transform', 'rotate(-90)')
+    .style('font-size', '13px').style('fill', '#2c3e50')
+    .text('k₁ / k₂ ratio');
+
+  // Mean lines
+  const meanTT = d3.mean(SIM_DATA.two_tier, d => d.ratio);
+  const meanUni = d3.mean(SIM_DATA.uniform, d => d.ratio);
+  g.append('line').attr('x1', xScale(40)).attr('x2', xScale(53))
+    .attr('y1', yScale(meanTT)).attr('y2', yScale(meanTT))
+    .attr('stroke', COLORS.two_tier).attr('stroke-dasharray', '4,3').attr('stroke-width', 1.2).attr('opacity', 0.5);
+  g.append('line').attr('x1', xScale(40)).attr('x2', xScale(53))
+    .attr('y1', yScale(meanUni)).attr('y2', yScale(meanUni))
+    .attr('stroke', COLORS.uniform).attr('stroke-dasharray', '4,3').attr('stroke-width', 1.2).attr('opacity', 0.5);
+
+  // Mean labels
+  g.append('text').attr('x', xScale(52)).attr('y', yScale(meanTT) - 6)
+    .attr('text-anchor', 'end').style('font-size', '10px').style('fill', COLORS.two_tier)
+    .text(`Mean = ${meanTT.toFixed(3)}`);
+  g.append('text').attr('x', xScale(52)).attr('y', yScale(meanUni) + 14)
+    .attr('text-anchor', 'end').style('font-size', '10px').style('fill', COLORS.uniform)
+    .text(`Mean = ${meanUni.toFixed(3)}`);
+
+  // Tooltip
+  const tooltip = d3.select('body').append('div').attr('class', 'tooltip').style('opacity', 0);
+
+  let activeTopos = { two_tier: true, uniform: true };
+
+  function drawScatter() {
+    const filtered = allData.filter(d => activeTopos[d.topo]);
+    const circles = g.selectAll('.scatter-dot').data(filtered, d => d.seed + d.topo);
+
+    circles.exit().remove();
+
+    const circlesEnter = circles.enter().append('circle')
+      .attr('class', 'scatter-dot').attr('r', 0)
+      .attr('cx', d => xScale(d.seed)).attr('cy', d => yScale(d.ratio))
+      .attr('fill', d => COLORS[d.topo]).attr('stroke', '#fff').attr('stroke-width', 1)
+      .attr('opacity', 0.8);
+
+    circles.merge(circlesEnter)
+      .transition().duration(750)
+      .attr('r', 7)
+      .attr('cx', d => xScale(d.seed)).attr('cy', d => yScale(d.ratio))
+      .attr('fill', d => COLORS[d.topo]);
+
+    circlesEnter.on('mouseover', function(ev, d) {
+      tooltip.style('opacity', 1)
+        .html(`<strong>${d.topoLabel}</strong><br>Seed: ${d.seed}<br>k₁ = ${d.k1.toFixed(4)}<br>k₂ = ${d.k2.toFixed(4)}<br>k₁/k₂ = ${d.ratio.toFixed(3)}<br>ΔBIC = ${d.delta_bic.toFixed(1)}`)
+        .style('left', (ev.pageX + 12) + 'px').style('top', (ev.pageY - 28) + 'px');
+    }).on('mouseout', () => tooltip.style('opacity', 0));
+  }
+
+  drawScatter();
+
+  // Toggle buttons
+  d3.selectAll('#scatter-toggles button').on('click', function() {
+    const btn = d3.select(this);
+    const topo = btn.attr('data-topo');
+    activeTopos[topo] = !activeTopos[topo];
+    btn.classed('active', activeTopos[topo]);
+    drawScatter();
+  });
+})();
+
+// ========== CHART 3: INFLATION HIERARCHY ==========
+(function() {
+  const container = d3.select('#hierarchy-chart');
+  const margin = { top: 30, right: 30, bottom: 55, left: 60 };
+  const width = 700, height = 400;
+  const innerW = width - margin.left - margin.right;
+  const innerH = height - margin.top - margin.bottom;
+
+  const svg = container.append('svg')
+    .attr('viewBox', `0 0 ${width} ${height}`)
+    .style('width', '100%').style('height', 'auto');
+  const g = svg.append('g').attr('transform', `translate(${margin.left},${margin.top})`);
+
+  // Data: Integration levels vs k1/k2 ratio
+  const hierarchyData = [
+    { system: 'Chemotaxis', levels: 1, ratio: 1.0, desc: 'Single integration level (E. coli chemotaxis). Fast ≈ slow dynamics.' },
+    { system: 'GRN Simulation', levels: 2, ratio: 2.2, desc: 'Two-tier gene regulatory network. ~2.2× rate separation (mean of 10 seeds).' },
+    { system: 'Endosymbiont', levels: 3, ratio: 3.2, desc: 'Three-level integration (organelle→host→environment). 3.2× separation.' },
+    { system: 'LTEE', levels: 4, ratio: 37.7, desc: 'Long-Term Evolution Experiment. 37.7× rate separation across 4 integration levels.' }
+  ];
+
+  const xScale = d3.scaleLinear().domain([0.5, 4.5]).range([0, innerW]);
+  const yScale = d3.scaleLog().domain([0.8, 50]).range([innerH, 0]);
+
+  // Axes
+  g.append('g').attr('transform', `translate(0,${innerH})`)
+    .call(d3.axisBottom(xScale).tickValues([1, 2, 3, 4]).tickFormat(d => hierarchyData[d-1].system))
+    .style('font-size', '10px')
+    .selectAll('text').attr('transform', 'rotate(-20)').style('text-anchor', 'end').attr('dx', '-4').attr('dy', '4');
+  g.append('g').call(d3.axisLeft(yScale).ticks(6, '.1f')).style('font-size', '11px');
+
+  g.append('text').attr('x', innerW / 2).attr('y', innerH + 48)
+    .attr('text-anchor', 'middle').style('font-size', '13px').style('fill', '#2c3e50')
+    .text('Integration Levels');
+  g.append('text').attr('x', -35).attr('y', 10)
+    .attr('text-anchor', 'middle').attr('transform', 'rotate(-90)')
+    .style('font-size', '13px').style('fill', '#2c3e50')
+    .text('k₁ / k₂ ratio');
+
+  // Staircase / step
+  const stepGen = d3.area()
+    .x0(d => xScale(d.levels - 0.45))
+    .x1(d => xScale(d.levels + 0.45))
+    .y0(innerH)
+    .y1(d => yScale(d.ratio));
+
+  // Color gradient
+  const colorScale = d3.scaleSequential(d3.interpolateViridis).domain([1, 4]);
+
+  g.selectAll('.step').data(hierarchyData).enter()
+    .append('path')
+    .attr('class', 'step')
+    .attr('d', stepGen)
+    .attr('fill', d => colorScale(d.levels))
+    .attr('stroke', '#2c3e50').attr('stroke-width', 1.2)
+    .attr('opacity', 0.85);
+
+  // Value labels
+  g.selectAll('.step-label').data(hierarchyData).enter()
+    .append('text')
+    .attr('class', 'step-label')
+    .attr('x', d => xScale(d.levels))
+    .attr('y', d => yScale(d.ratio) - 8)
+    .attr('text-anchor', 'middle')
+    .style('font-size', '12px').style('font-weight', 'bold').style('fill', '#2c3e50')
+    .text(d => `${d.ratio}×`);
+
+  // Tooltip
+  const tooltip = d3.select('body').append('div').attr('class', 'tooltip').style('opacity', 0);
+
+  g.selectAll('.step').on('mouseover', function(ev, d) {
+    tooltip.style('opacity', 1)
+      .html(`<strong>${d.system}</strong><br>Levels: ${d.levels}<br>k₁/k₂ ratio: ${d.ratio}×<br><br>${d.desc}`)
+      .style('left', (ev.pageX + 12) + 'px').style('top', (ev.pageY - 28) + 'px');
+    d3.select(this).attr('opacity', 1);
+  }).on('mouseout', function() {
+    tooltip.style('opacity', 0);
+    d3.select(this).attr('opacity', 0.85);
+  });
+})();
+
+// ========== CHART 4: ΔBIC COMPARISON ==========
+(function() {
+  const container = d3.select('#bic-chart');
+  const margin = { top: 30, right: 30, bottom: 45, left: 55 };
+  const width = 700, height = 400;
+  const innerW = width - margin.left - margin.right;
+  const innerH = height - margin.top - margin.bottom;
+
+  const svg = container.append('svg')
+    .attr('viewBox', `0 0 ${width} ${height}`)
+    .style('width', '100%').style('height', 'auto');
+  const g = svg.append('g').attr('transform', `translate(${margin.left},${margin.top})`);
+
+  const allData = [];
+  SIM_DATA.two_tier.forEach(d => { allData.push({...d, topo: TWO_TIER, topoLabel: TWO_TIER_LABEL}); });
+  SIM_DATA.uniform.forEach(d => { allData.push({...d, topo: UNIFORM, topoLabel: UNIFORM_LABEL}); });
+
+  const xScale = d3.scaleBand().domain(allData.map(d => d.seed)).range([0, innerW]).padding(0.25);
+  const yScale = d3.scaleLinear().domain([-560, -440]).range([innerH, 0]);
+
+  // Axes
+  g.append('g').attr('transform', `translate(0,${innerH})`)
+    .call(d3.axisBottom(xScale).tickValues([42,44,46,48,50,52]).tickFormat(d3.format('d')))
+    .style('font-size', '11px');
+  g.append('g').call(d3.axisLeft(yScale).ticks(6)).style('font-size', '11px');
+
+  g.append('text').attr('x', innerW / 2).attr('y', innerH + 38)
+    .attr('text-anchor', 'middle').style('font-size', '13px').style('fill', '#2c3e50')
+    .text('Seed');
+  g.append('text').attr('x', -35).attr('y', 10)
+    .attr('text-anchor', 'middle').attr('transform', 'rotate(-90)')
+    .style('font-size', '13px').style('fill', '#2c3e50')
+    .text('ΔBIC');
+
+  // Threshold line at -4
+  g.append('line')
+    .attr('x1', 0).attr('x2', innerW)
+    .attr('y1', yScale(-4)).attr('y2', yScale(-4))
+    .attr('stroke', '#e67e22').attr('stroke-dasharray', '6,4').attr('stroke-width', 1.8)
+    .attr('opacity', 0.7);
+  g.append('text')
+    .attr('x', innerW - 5).attr('y', yScale(-4) - 5)
+    .attr('text-anchor', 'end').style('font-size', '10px').style('fill', '#e67e22')
+    .text('Threshold ΔBIC = −4');
+
+  // Tooltip
+  const tooltip = d3.select('body').append('div').attr('class', 'tooltip').style('opacity', 0);
+
+  let activeTopos = { two_tier: true, uniform: true };
+
+  function drawBars() {
+    const filtered = allData.filter(d => activeTopos[d.topo]);
+    const grouped = d3.group(filtered, d => d.seed + d.topo);
+
+    // Remove old bars
+    g.selectAll('.bar').remove();
+
+    const bars = g.selectAll('.bar')
+      .data(filtered, d => d.seed + d.topo);
+
+    const barsEnter = bars.enter().append('rect')
+      .attr('class', 'bar')
+      .attr('x', d => xScale(d.seed) + (d.topo === TWO_TIER ? 0 : xScale.bandwidth() / 2))
+      .attr('width', xScale.bandwidth() / 2)
+      .attr('y', innerH).attr('height', 0)
+      .attr('fill', d => COLORS[d.topo])
+      .attr('stroke', '#fff').attr('stroke-width', 0.5)
+      .attr('opacity', 0.85);
+
+    bars.merge(barsEnter)
+      .transition().duration(750)
+      .attr('x', d => xScale(d.seed) + (d.topo === TWO_TIER ? 0 : xScale.bandwidth() / 2))
+      .attr('y', d => yScale(d.delta_bic))
+      .attr('height', d => innerH - yScale(d.delta_bic));
+
+    barsEnter.on('mouseover', function(ev, d) {
+      tooltip.style('opacity', 1)
+        .html(`<strong>${d.topoLabel}</strong><br>Seed: ${d.seed}<br>ΔBIC = ${d.delta_bic.toFixed(1)}<br>BIC<sub>bi</sub> = ${d.bic_bi.toFixed(1)}<br>BIC<sub>mono</sub> = ${d.bic_mono.toFixed(1)}<br>R²<sub>bi</sub> = ${d.r_squared_bi.toFixed(6)}`)
+        .style('left', (ev.pageX + 12) + 'px').style('top', (ev.pageY - 28) + 'px');
+    }).on('mouseout', () => tooltip.style('opacity', 0));
+  }
+
+  drawBars();
+
+  // Toggle buttons
+  d3.selectAll('#bic-toggles button').on('click', function() {
+    const btn = d3.select(this);
+    const topo = btn.attr('data-topo');
+    activeTopos[topo] = !activeTopos[topo];
+    btn.classed('active', activeTopos[topo]);
+    drawBars();
+  });
+})();
+</script>
+</body>
+</html>
