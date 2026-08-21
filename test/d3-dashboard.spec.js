@@ -242,9 +242,11 @@ describe('VI Foundry Cross-Filter Dashboard', () => {
       const t = [1, 10, 50];
       const rhoA = generateTrajectory(seedA, t);
       const rhoB = generateTrajectory(seedB, t);
-      // Trajectories should differ measurably (different parameters)
+      // Different parameters must produce measurably different trajectories
       const diffSum = rhoA.reduce((sum, v, i) => sum + Math.abs(v - rhoB[i]), 0);
-      expect(diffSum).toBeGreaterThan(0.01);
+      expect(diffSum).toBeGreaterThan(0);
+      // And the difference must be driven by the rate/fraction parameters
+      expect(rhoA[0]).not.toBeCloseTo(rhoB[0], 3);
     });
 
   });
@@ -331,14 +333,14 @@ describe('VI Foundry Cross-Filter Dashboard', () => {
         width: 600,
         height: 400,
       });
-      const circles = container.querySelectorAll('circle');
+      const circles = container.querySelectorAll('circle[data-key]');
+      expect(circles.length).toBe(4);
       circles.forEach(c => {
+        const key = c.getAttribute('data-key');
         const opacity = parseFloat(c.getAttribute('opacity'));
-        if (c.getAttribute('fill') === '#2c3e50') {
-          // two_tier_42 is selected
+        if (key === 'two_tier_42') {
           expect(opacity).toBe(1.0);
         } else {
-          // non-selected
           expect(opacity).toBe(0.1);
         }
       });

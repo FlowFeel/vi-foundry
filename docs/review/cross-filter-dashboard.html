@@ -1,241 +1,331 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>VI Foundry — Cross-Filter Dashboard</title>
-<script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
-<style>
-* { box-sizing: border-box; }
-body {
-  font-family: 'DejaVu Serif', Georgia, serif;
-  max-width: 1200px; margin: 0 auto; padding: 20px; color: #2c3e50;
-  line-height: 1.55; background: #fdfdfd;
-}
-.header {
-  background: #2c3e50; color: white; padding: 28px 32px;
-  border-radius: 10px; margin-bottom: 24px;
-}
-.header h1 { margin: 0 0 6px 0; font-size: 1.7em;
-  font-family: 'DejaVu Sans', system-ui, sans-serif; }
-.header p { margin: 4px 0; opacity: 0.9; }
-.header a { color: #9ecbf5; }
-.nav { display: flex; gap: 12px; margin-bottom: 20px; flex-wrap: wrap;
-  font-family: 'DejaVu Sans', sans-serif; font-size: 0.9em; }
-.nav a { padding: 4px 12px; background: #ecf0f1; border-radius: 4px;
-  color: #2c3e50; text-decoration: none; }
-.nav a:hover { background: #d0d6d9; }
-.section {
-  background: #fff; border: 1px solid #e3e8ee; border-radius: 8px;
-  padding: 20px 24px; margin-bottom: 24px;
-}
-.section h2 {
-  margin-top: 0; color: #2c3e50; border-bottom: 2px solid #2c3e50;
-  padding-bottom: 6px; font-family: 'DejaVu Sans', sans-serif; font-size: 1.2em;
-}
-.dashboard {
-  display: grid; grid-template-columns: 1fr 1fr; gap: 20px;
-}
-.chart-card {
-  background: #fff; border: 1px solid #e3e8ee; border-radius: 8px;
-  padding: 16px 20px;
-}
-.chart-card h3 {
-  margin-top: 0; color: #34495e; font-family: 'DejaVu Sans', sans-serif; font-size: 1em;
-}
-.chart-card .hint {
-  font-size: 0.82em; color: #7f8c8d; margin-top: 8px;
-}
-.controls {
-  display: flex; gap: 12px; align-items: center; margin-bottom: 16px;
-}
-.btn {
-  padding: 6px 16px; background: #2c3e50; color: white; border: none;
-  border-radius: 4px; cursor: pointer; font-size: 0.9em;
-  font-family: 'DejaVu Sans', sans-serif;
-}
-.btn:hover { background: #34495e; }
-.status {
-  font-size: 0.85em; color: #7f8c8d;
-  font-family: 'DejaVu Sans', sans-serif;
-}
-.footer {
-  color: #7f8c8d; font-size: 0.82em; text-align: center;
-  padding: 12px; border-top: 1px solid #e3e8ee; margin-top: 8px;
-}
-code { font-family: 'DejaVu Sans Mono', monospace; font-size: 0.9em;
-  background: #f4f6f8; padding: 0 3px; border-radius: 2px; }
-.summary {
-  background: #f0f4f8; padding: 10px 14px; border-left: 4px solid #2c3e50;
-  border-radius: 3px; margin: 10px 0; font-size: 0.92em;
-}
-@media (max-width: 768px) {
-  .dashboard { grid-template-columns: 1fr; }
-}
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>VI Foundry — Cross-filtered D3 Dashboard</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'><text y='14' font-size='14'>🧬</text></svg>">
+
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background: #fdfdfd;
+      color: #2c3e50;
+      font-family: 'DejaVu Serif', Georgia, 'Times New Roman', serif;
+      line-height: 1.6;
+      padding: 2rem;
+      max-width: 1300px;
+      margin: 0 auto;
+    }
+
+    header {
+      border-bottom: 2px solid #e3e8ee;
+      margin-bottom: 2rem;
+      padding-bottom: 1rem;
+    }
+
+    header h1 {
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: #2c3e50;
+      letter-spacing: -0.5px;
+    }
+
+    header p {
+      color: #5a6a7a;
+      font-size: 0.95rem;
+      margin-top: 0.3rem;
+    }
+
+    header .nav-links {
+      margin-top: 0.8rem;
+      font-family: 'DejaVu Sans', sans-serif;
+      font-size: 0.85rem;
+    }
+
+    header .nav-links a {
+      color: #2980b9;
+      text-decoration: none;
+      margin-right: 1rem;
+    }
+
+    header .nav-links a:hover {
+      text-decoration: underline;
+    }
+
+    .controls {
+      margin-bottom: 1.5rem;
+      display: flex;
+      gap: 1rem;
+      align-items: center;
+    }
+
+    .controls button {
+      background: #2c3e50;
+      color: #fdfdfd;
+      border: none;
+      padding: 0.5rem 1.2rem;
+      font-family: 'DejaVu Sans', sans-serif;
+      font-size: 0.85rem;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+
+    .controls button:hover {
+      background: #1a252f;
+    }
+
+    .controls .selection-info {
+      font-family: 'DejaVu Sans', sans-serif;
+      font-size: 0.85rem;
+      color: #5a6a7a;
+    }
+
+    .dashboard {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+    }
+
+    .chart-panel {
+      background: #ffffff;
+      border: 1px solid #e3e8ee;
+      border-radius: 6px;
+      padding: 1rem;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+    }
+
+    .chart-panel.full-width {
+      grid-column: 1 / -1;
+    }
+
+    .chart-panel svg {
+      display: block;
+      margin: 0 auto;
+    }
+
+    .chart-panel .chart-title {
+      font-family: 'DejaVu Sans', sans-serif;
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      color: #7f8c8d;
+      margin-bottom: 0.5rem;
+      padding-bottom: 0.3rem;
+      border-bottom: 1px solid #e3e8ee;
+    }
+
+    .chart-panel .chart-hint {
+      font-family: 'DejaVu Sans', sans-serif;
+      font-size: 0.75rem;
+      color: #95a5a6;
+      margin-top: 0.5rem;
+    }
+
+    .status-bar {
+      margin-top: 1.5rem;
+      padding: 0.5rem 1rem;
+      background: #f8f9fa;
+      border: 1px solid #e3e8ee;
+      border-radius: 4px;
+      font-family: 'DejaVu Sans', sans-serif;
+      font-size: 0.8rem;
+      color: #5a6a7a;
+    }
+
+    .summary {
+      background: #f0f4f8;
+      padding: 0.8rem 1rem;
+      border-left: 4px solid #2c3e50;
+      border-radius: 3px;
+      margin: 1rem 0;
+      font-size: 0.9rem;
+    }
+
+    @media (max-width: 900px) {
+      .dashboard { grid-template-columns: 1fr; }
+      .chart-panel.full-width { grid-column: 1; }
+    }
+  </style>
 </head>
 <body>
 
-<div class="header">
-  <h1>Cross-Filter Dashboard</h1>
-  <p>VI Foundry — linked D3 visualizations with brush-based cross-filtering</p>
-  <p>Pattern: test-informed development (phosphene/react-d3-hotload-test-demo, 2014)</p>
-</div>
+  <!-- ─── Header ──────────────────────────────────────────────── -->
+  <header>
+    <h1>VI Foundry · Cross-filtered Simulation Dashboard</h1>
+    <p>k₁/k₂ parameter recovery · ΔBIC comparison · relaxation curves · R² fit quality</p>
+    <div class="nav-links">
+      <a href="../index.html">Index</a>
+      <a href="interactive-simulation.html">Interactive Explorer</a>
+      <a href="inflation-hierarchy.html">Inflation Hierarchy</a>
+      <a href="../../test/d3-dashboard-runner.html">Test Runner</a>
+    </div>
+    <div class="summary">
+      <strong>Test-informed:</strong> Specs written first in Jasmine BDD style
+      (<code>test/d3-dashboard.spec.js</code>), implementation in <code>docs/review/js/cross-filter.js</code>.
+      Open the <a href="../../test/d3-dashboard-runner.html">test runner</a> to verify.
+    </div>
+  </header>
 
-<div class="nav">
-  <a href="../index.html">Index</a>
-  <a href="interactive-simulation.html">Interactive Explorer</a>
-  <a href="inflation-hierarchy.html">Inflation Hierarchy</a>
-  <a href="simulation-review.html">Simulation Review</a>
-  <a href="../../test/d3-dashboard-runner.html">Test Runner</a>
-</div>
-
-<div class="section">
-  <h2>Cross-Filtered Simulation Dashboard</h2>
-  <div class="summary">
-    <p><strong>How it works:</strong> Brush on the scatter plot (Chart A) to select seeds by k₁/k₂ ratio.
-    All other charts update in real time — bars dim, trajectories highlight, R² dots react.</p>
-    <p><strong>Test-informed:</strong> Specs written first in Jasmine BDD style
-    (<code>test/d3-dashboard.spec.js</code>), implementation in <code>docs/review/js/cross-filter.js</code>.
-    Open the <a href="../../test/d3-dashboard-runner.html">test runner</a> to verify.</p>
-  </div>
+  <!-- ─── Controls ────────────────────────────────────────────── -->
   <div class="controls">
-    <button class="btn" onclick="clearSelection()">Clear Selection</button>
-    <span class="status" id="selection-status">No active selection</span>
-  </div>
-</div>
-
-<div class="dashboard">
-  <div class="chart-card">
-    <h3>Chart A — k₁/k₂ Scatter (brush to select)</h3>
-    <div id="chart-scatter"></div>
-    <div class="hint">Click and drag to brush. Selected seeds filter all other charts.</div>
+    <button id="clear-selection">Clear Selection</button>
+    <span class="selection-info" id="selection-info">No selection. Click or brush any chart to select.</span>
   </div>
 
-  <div class="chart-card">
-    <h3>Chart B — ΔBIC Comparison (click bars to select)</h3>
-    <div id="chart-bars"></div>
-    <div class="hint">Click a bar to select that seed. Threshold at ΔBIC = -4.</div>
+  <!-- ─── Dashboard Grid ──────────────────────────────────────── -->
+  <div class="dashboard">
+
+    <!-- Chart A: k₁/k₂ Scatter -->
+    <div class="chart-panel" id="panel-scatter">
+      <div class="chart-title">A · k₁ / k₂ Parameter Space</div>
+      <div id="chart-scatter"></div>
+      <div class="chart-hint">Click and drag to brush. Selected seeds filter all other charts.</div>
+    </div>
+
+    <!-- Chart B: ΔBIC Bars -->
+    <div class="chart-panel" id="panel-bars">
+      <div class="chart-title">B · ΔBIC (Bi-exp vs Mono-exp)</div>
+      <div id="chart-bars"></div>
+      <div class="chart-hint">Click a bar to select that seed. Non-selected bars dim.</div>
+    </div>
+
+    <!-- Chart C: Relaxation Curves (full width) -->
+    <div class="chart-panel full-width" id="panel-trajectories">
+      <div class="chart-title">C · Relaxation Decay Curves</div>
+      <div id="chart-trajectories"></div>
+      <div class="chart-hint">Click a trajectory to select that seed. Selected highlights; others fade.</div>
+    </div>
+
+    <!-- Chart D: R² Comparison (full width) -->
+    <div class="chart-panel full-width" id="panel-r2">
+      <div class="chart-title">D · R² Comparison · Bi-exp vs Mono-exp</div>
+      <div id="chart-r2"></div>
+      <div class="chart-hint">Bi-exp (blue) vs mono-exp (red). Selected seeds highlight.</div>
+    </div>
+
   </div>
 
-  <div class="chart-card">
-    <h3>Chart C — Relaxation Trajectories (click lines to select topology)</h3>
-    <div id="chart-traj"></div>
-    <div class="hint">Click a trajectory to filter by that topology.</div>
+  <!-- ─── Status Bar ──────────────────────────────────────────── -->
+  <div class="status-bar" id="status-bar">
+    Data: 20 seeds (10 two-tier + 10 uniform) · 20 trajectories · Cross-filter: all charts linked
   </div>
 
-  <div class="chart-card">
-    <h3>Chart D — R² Comparison (reactive)</h3>
-    <div id="chart-r2"></div>
-    <div class="hint">Bi-exp (green) vs mono-exp (purple). Selected seeds highlight.</div>
-  </div>
-</div>
-
-<div class="section">
-  <h3>Inflation Hierarchy</h3>
-  <div id="chart-inflation"></div>
-  <div class="hint">Integration depth → k₁/k₂ ratio. The prediction: more levels → larger ratio.</div>
-</div>
-
-<div class="footer">
-  <p><strong>VI Foundry</strong> — cross-filter dashboard built with D3 v7 + test-informed development</p>
-</div>
-
-<!-- Embedded data -->
-<script>
-var SIM_DATA = {"two_tier":[{"seed":42,"k1":0.5146,"k2":0.8062,"ratio":2.248,"bic_bi":-1441.5,"bic_mono":-965.3,"delta_bic":-476.3,"r_squared_bi":0.9999991,"r_squared_mono":0.99963,"preferred_model":"biexponential","fast_fraction":0.806,"slow_fraction":0.194},{"seed":43,"k1":0.4760,"k2":0.8227,"ratio":2.413,"bic_bi":-1402.5,"bic_mono":-945.3,"delta_bic":-457.2,"r_squared_bi":0.9999986,"r_squared_mono":0.99953,"preferred_model":"biexponential","fast_fraction":0.823,"slow_fraction":0.177},{"seed":44,"k1":0.5263,"k2":0.8112,"ratio":2.210,"bic_bi":-1452.2,"bic_mono":-976.8,"delta_bic":-475.5,"r_squared_bi":0.9999993,"r_squared_mono":0.99968,"preferred_model":"biexponential","fast_fraction":0.811,"slow_fraction":0.189},{"seed":45,"k1":0.5350,"k2":0.8112,"ratio":2.175,"bic_bi":-1454.7,"bic_mono":-984.1,"delta_bic":-470.7,"r_squared_bi":0.9999993,"r_squared_mono":0.99971,"preferred_model":"biexponential","fast_fraction":0.811,"slow_fraction":0.189},{"seed":46,"k1":0.5226,"k2":0.8037,"ratio":2.222,"bic_bi":-1449.2,"bic_mono":-969.2,"delta_bic":-479.9,"r_squared_bi":0.9999992,"r_squared_mono":0.99965,"preferred_model":"biexponential","fast_fraction":0.804,"slow_fraction":0.196},{"seed":47,"k1":0.5355,"k2":0.7977,"ratio":2.177,"bic_bi":-1463.5,"bic_mono":-975.6,"delta_bic":-488.0,"r_squared_bi":0.9999994,"r_squared_mono":0.99968,"preferred_model":"biexponential","fast_fraction":0.798,"slow_fraction":0.202},{"seed":48,"k1":0.5205,"k2":0.7939,"ratio":2.232,"bic_bi":-1451.5,"bic_mono":-961.6,"delta_bic":-489.9,"r_squared_bi":0.9999993,"r_squared_mono":0.99962,"preferred_model":"biexponential","fast_fraction":0.794,"slow_fraction":0.206},{"seed":49,"k1":0.4978,"k2":0.8108,"ratio":2.318,"bic_bi":-1424.0,"bic_mono":-954.5,"delta_bic":-469.5,"r_squared_bi":0.9999989,"r_squared_mono":0.99958,"preferred_model":"biexponential","fast_fraction":0.811,"slow_fraction":0.189},{"seed":50,"k1":0.5185,"k2":0.8068,"ratio":2.237,"bic_bi":-1445.8,"bic_mono":-968.1,"delta_bic":-477.7,"r_squared_bi":0.9999992,"r_squared_mono":0.99965,"preferred_model":"biexponential","fast_fraction":0.807,"slow_fraction":0.193},{"seed":51,"k1":0.4703,"k2":0.8175,"ratio":2.440,"bic_bi":-1396.2,"bic_mono":-937.1,"delta_bic":-459.1,"r_squared_bi":0.9999985,"r_squared_mono":0.99948,"preferred_model":"biexponential","fast_fraction":0.818,"slow_fraction":0.182}],"uniform":[{"seed":42,"k1":0.5139,"k2":0.7073,"ratio":1.757,"bic_bi":-1566.6,"bic_mono":-1019.9,"delta_bic":-546.6,"r_squared_bi":0.9999998,"r_squared_mono":0.99983,"preferred_model":"biexponential","fast_fraction":0.707,"slow_fraction":0.293},{"seed":43,"k1":0.5154,"k2":0.7035,"ratio":1.755,"bic_bi":-1560.3,"bic_mono":-1019.6,"delta_bic":-540.6,"r_squared_bi":0.9999998,"r_squared_mono":0.99983,"preferred_model":"biexponential","fast_fraction":0.704,"slow_fraction":0.296},{"seed":44,"k1":0.5155,"k2":0.7032,"ratio":1.755,"bic_bi":-1560.5,"bic_mono":-1019.5,"delta_bic":-541.0,"r_squared_bi":0.9999998,"r_squared_mono":0.99983,"preferred_model":"biexponential","fast_fraction":0.703,"slow_fraction":0.297},{"seed":45,"k1":0.5155,"k2":0.7032,"ratio":1.755,"bic_bi":-1560.4,"bic_mono":-1019.5,"delta_bic":-540.9,"r_squared_bi":0.9999998,"r_squared_mono":0.99983,"preferred_model":"biexponential","fast_fraction":0.703,"slow_fraction":0.297},{"seed":46,"k1":0.5159,"k2":0.7022,"ratio":1.755,"bic_bi":-1559.6,"bic_mono":-1019.3,"delta_bic":-540.3,"r_squared_bi":0.9999998,"r_squared_mono":0.99983,"preferred_model":"biexponential","fast_fraction":0.702,"slow_fraction":0.298},{"seed":47,"k1":0.5158,"k2":0.7024,"ratio":1.754,"bic_bi":-1559.3,"bic_mono":-1019.5,"delta_bic":-539.8,"r_squared_bi":0.9999998,"r_squared_mono":0.99983,"preferred_model":"biexponential","fast_fraction":0.702,"slow_fraction":0.298},{"seed":48,"k1":0.5151,"k2":0.7042,"ratio":1.756,"bic_bi":-1563.3,"bic_mono":-1019.5,"delta_bic":-543.7,"r_squared_bi":0.9999998,"r_squared_mono":0.99983,"preferred_model":"biexponential","fast_fraction":0.704,"slow_fraction":0.296},{"seed":49,"k1":0.5156,"k2":0.7032,"ratio":1.755,"bic_bi":-1560.1,"bic_mono":-1019.6,"delta_bic":-540.5,"r_squared_bi":0.9999998,"r_squared_mono":0.99983,"preferred_model":"biexponential","fast_fraction":0.703,"slow_fraction":0.297},{"seed":50,"k1":0.5153,"k2":0.7040,"ratio":1.755,"bic_bi":-1562.0,"bic_mono":-1019.7,"delta_bic":-542.3,"r_squared_bi":0.9999998,"r_squared_mono":0.99983,"preferred_model":"biexponential","fast_fraction":0.704,"slow_fraction":0.296},{"seed":51,"k1":0.5162,"k2":0.7014,"ratio":1.755,"bic_bi":-1558.4,"bic_mono":-1019.2,"delta_bic":-539.2,"r_squared_bi":0.9999998,"r_squared_mono":0.99983,"preferred_model":"biexponential","fast_fraction":0.701,"slow_fraction":0.299}],"trajectory_two_tier":{"t":[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,25,30,35,40,50,60,70,80,90,99],"rho":[1,0.495,0.320,0.253,0.226,0.214,0.208,0.205,0.203,0.202,0.201,0.201,0.201,0.200,0.200,0.200,0.200,0.200,0.200,0.200,0.200,0.200,0.200,0.200,0.200,0.200,0.200,0.200,0.200,0.200,0.200],"bi_fit":[1.351,1.243,1.195,1.174,1.164,1.160,1.158,1.157,1.157,1.157,1.157,1.157,1.157,1.157,1.157,1.157,1.157,1.157,1.157,1.157,1.157,1.157,1.157,1.157,1.157,1.157,1.157,1.157,1.157,1.157,1.157],"k1":0.5146,"k2":0.8062,"r_squared_bi":0.9999991},"trajectory_uniform":{"t":[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,25,30,35,40,50,60,70,80,90,99],"rho":[1,0.462,0.221,0.110,0.057,0.030,0.016,0.009,0.005,0.003,0.002,0.001,0.001,0.001,0.0003,0.0002,0.0002,0.0001,0.0001,0.0001,0.00004,0.00001,0.000005,0.000003,0.000002,0.000001,0.0000005,0.0000003,0.0000002,0.0000001,0.0000001],"bi_fit":[1.195,1.047,0.974,0.938,0.920,0.911,0.907,0.905,0.904,0.903,0.903,0.903,0.903,0.903,0.903,0.903,0.903,0.903,0.903,0.903,0.903,0.903,0.903,0.903,0.903,0.903,0.903,0.903,0.903,0.903,0.903],"k1":0.5139,"k2":0.7073,"r_squared_bi":0.9999998},"genealogy":{"ground_truth":{"k1":5.0,"k2":0.3,"rho1":0.15,"rho2":0.05,"A1":0.6,"A2":0.25,"k1_k2_ratio":16.667},"fits":{"bi_exp":{"aic":-393.26},"mono_exp":{"aic":-303.27},"linear":{"aic":-164.75},"delta_aic_bi_vs_mono":-89.99},"parameter_recovery":{"k1_recovered":4.531,"k2_recovered":0.258,"k1_true":5.0,"k2_true":0.3,"k1_error_pct":9.38,"k2_error_pct":13.87,"k1_k2_ratio":17.535,"k1_k2_ratio_true":16.667},"passed":true}};
+  <!-- ─── Embedded Simulation Data (JSON) ─────────────────────── -->
+  <script id="sim-data" type="application/json">{"two_tier":[{"seed":42,"k1":0.5146034508412624,"k2":0.8061936760501677,"ratio":2.2477925977502875,"bic_bi":-1441.5227649229846,"bic_mono":-965.2518613691993,"delta_bic":-476.2709035537853,"r_squared_bi":0.99999915027562,"r_squared_mono":0.9996349283194764,"preferred_model":"biexponential","fast_fraction":0.8062302660602361,"slow_fraction":0.19376973393976393},{"seed":43,"k1":0.47596840333678236,"k2":0.822672149538884,"ratio":2.4126990856303547,"bic_bi":-1402.5113688133683,"bic_mono":-945.2778822308079,"delta_bic":-457.23348658256043,"r_squared_bi":0.9999986179833682,"r_squared_mono":0.999531979074264,"preferred_model":"biexponential","fast_fraction":0.8227231047880921,"slow_fraction":0.1772768952119079},{"seed":44,"k1":0.526308132109837,"k2":0.8112485729522237,"ratio":2.2096800614673286,"bic_bi":-1452.2485110599566,"bic_mono":-976.784692194127,"delta_bic":-475.4638188658296,"r_squared_bi":0.9999992548563906,"r_squared_mono":0.9996830734362836,"preferred_model":"biexponential","fast_fraction":0.8112822580306706,"slow_fraction":0.18871774196932944},{"seed":45,"k1":0.5349631150912268,"k2":0.8112051533766989,"ratio":2.1748555943333905,"bic_bi":-1454.7453541843827,"bic_mono":-984.052126583553,"delta_bic":-470.6932276008297,"r_squared_bi":0.9999992772137771,"r_squared_mono":0.9997103786935968,"preferred_model":"biexponential","fast_fraction":0.8112390007886453,"slow_fraction":0.18876099921135464},{"seed":46,"k1":0.5225601803616526,"k2":0.803654506438102,"ratio":2.222432969291101,"bic_bi":-1449.1893793287998,"bic_mono":-969.2438629349247,"delta_bic":-479.9455163938751,"r_squared_bi":0.9999992272687902,"r_squared_mono":0.9996524023591111,"preferred_model":"biexponential","fast_fraction":0.803688275716389,"slow_fraction":0.196311724283611},{"seed":47,"k1":0.5355497375285279,"k2":0.7977449587989052,"ratio":2.1771810222641825,"bic_bi":-1463.5388894352998,"bic_mono":-975.5700302618634,"delta_bic":-487.9688591734364,"r_squared_bi":0.9999993537122636,"r_squared_mono":0.9996786114126202,"preferred_model":"biexponential","fast_fraction":0.7977746902698254,"slow_fraction":0.2022253097301747},{"seed":48,"k1":0.5204643704481821,"k2":0.7939334929087899,"ratio":2.232245553382179,"bic_bi":-1451.476450411665,"bic_mono":-961.5874349192127,"delta_bic":-489.88901549245224,"r_squared_bi":0.9999992504691557,"r_squared_mono":0.9996182157912691,"preferred_model":"biexponential","fast_fraction":0.7939659192055435,"slow_fraction":0.20603408079445648},{"seed":49,"k1":0.49781173295434356,"k2":0.8108385768739531,"ratio":2.318088328298805,"bic_bi":-1424.0102232773609,"bic_mono":-954.5348825600133,"delta_bic":-469.47534071734754,"r_squared_bi":0.999998943335168,"r_squared_mono":0.9995829900894893,"preferred_model":"biexponential","fast_fraction":0.8108805604412731,"slow_fraction":0.18911943955872698},{"seed":50,"k1":0.5185349806924763,"k2":0.8068312673740248,"ratio":2.237455042060823,"bic_bi":-1445.772022946598,"bic_mono":-968.0736368805469,"delta_bic":-477.69838606605117,"r_squared_bi":0.9999991934822324,"r_squared_mono":0.999647252980824,"preferred_model":"biexponential","fast_fraction":0.8068664044922762,"slow_fraction":0.19313359550772383},{"seed":51,"k1":0.4702651371722745,"k2":0.8175408181069804,"ratio":2.4399047290654283,"bic_bi":-1396.239037381713,"bic_mono":-937.1034258570744,"delta_bic":-459.13561152463853,"r_squared_bi":0.9999985077802525,"r_squared_mono":0.9994824994516428,"preferred_model":"biexponential","fast_fraction":0.817594138424531,"slow_fraction":0.18240586157546895}],"uniform":[{"seed":42,"k1":0.5139261918191136,"k2":0.7072566162001311,"ratio":1.7565830406315341,"bic_bi":-1566.585732514603,"bic_mono":-1019.9452717596214,"delta_bic":-546.6404607549816,"r_squared_bi":0.9999998332158846,"r_squared_mono":0.9998273094265189,"preferred_model":"biexponential","fast_fraction":0.7072738840281466,"slow_fraction":0.29272611597185333},{"seed":43,"k1":0.5154294044082918,"k2":0.7035205692424099,"ratio":1.7547072410188844,"bic_bi":-1560.287594040093,"bic_mono":-1019.6498046397403,"delta_bic":-540.6377894003526,"r_squared_bi":0.9999998195549,"r_squared_mono":0.9998266705133035,"preferred_model":"biexponential","fast_fraction":0.7035383234882931,"slow_fraction":0.29646167651170685},{"seed":44,"k1":0.5155329494145484,"k2":0.7032069076327938,"ratio":1.7548647098991634,"bic_bi":-1560.5082944278702,"bic_mono":-1019.5310766996456,"delta_bic":-540.9772177282246,"r_squared_bi":0.9999998200477246,"r_squared_mono":0.9998264089426647,"preferred_model":"biexponential","fast_fraction":0.7032246308331386,"slow_fraction":0.29677536916686154},{"seed":45,"k1":0.5155422907938879,"k2":0.7032376128728823,"ratio":1.7548502292220105,"bic_bi":-1560.4163274421242,"bic_mono":-1019.5463640095493,"delta_bic":-540.8699634325749,"r_squared_bi":0.9999998198390797,"r_squared_mono":0.9998264405168289,"preferred_model":"biexponential","fast_fraction":0.7032553358230368,"slow_fraction":0.2967446641769632},{"seed":46,"k1":0.5158595695420751,"k2":0.7022350347350297,"ratio":1.7548945403091465,"bic_bi":-1559.6019788563376,"bic_mono":-1019.2973675257558,"delta_bic":-540.3046113305818,"r_squared_bi":0.9999998179932389,"r_squared_mono":0.9998258970372899,"preferred_model":"biexponential","fast_fraction":0.7022527969286367,"slow_fraction":0.2977472030713633},{"seed":47,"k1":0.5158390633147099,"k2":0.7024260586178813,"ratio":1.7544420585439608,"bic_bi":-1559.2773542030816,"bic_mono":-1019.4809984694691,"delta_bic":-539.7963557336125,"r_squared_bi":0.9999998172589917,"r_squared_mono":0.9998263017273399,"preferred_model":"biexponential","fast_fraction":0.7024438688046676,"slow_fraction":0.2975561311953324},{"seed":48,"k1":0.5150961015680118,"k2":0.7041785234315978,"ratio":1.7555890344246243,"bic_bi":-1563.267114268842,"bic_mono":-1019.5270754671387,"delta_bic":-543.7400388017033,"r_squared_bi":0.9999998261474757,"r_squared_mono":0.9998264000958526,"preferred_model":"biexponential","fast_fraction":0.7041959900472292,"slow_fraction":0.29580400995277073},{"seed":49,"k1":0.515572179894935,"k2":0.7031887702119113,"ratio":1.7545644345899833,"bic_bi":-1560.1392528627716,"bic_mono":-1019.6203015068311,"delta_bic":-540.5189513559405,"r_squared_bi":0.999999819218534,"r_squared_mono":0.9998266051765977,"preferred_model":"biexponential","fast_fraction":0.703206525180995,"slow_fraction":0.296793474819005},{"seed":50,"k1":0.5152551761131785,"k2":0.7039944587882452,"ratio":1.7549452215617616,"bic_bi":-1562.0300826007322,"bic_mono":-1019.6893561916677,"delta_bic":-542.3407264090645,"r_squared_bi":0.9999998234410432,"r_squared_mono":0.9998267545594739,"preferred_model":"biexponential","fast_fraction":0.7040120415748464,"slow_fraction":0.2959879584251535},{"seed":51,"k1":0.5161767831519305,"k2":0.7014442479397164,"ratio":1.754527742488941,"bic_bi":-1558.3978121709117,"bic_mono":-1019.2320825811571,"delta_bic":-539.1657295897546,"r_squared_bi":0.9999998152324169,"r_squared_mono":0.9998257544111118,"preferred_model":"biexponential","fast_fraction":0.7014621068749343,"slow_fraction":0.2985378931250657}],"trajectory_two_tier":{"t":[0.0,1.0,2.0,3.0,4.0,5.0,6.0,7.0,8.0,9.0,10.0,11.0,12.0,13.0,14.0,15.0,16.0,17.0,18.0,19.0,20.0,21.0,22.0,23.0,24.0,25.0,26.0,27.0,28.0,29.0,30.0,31.0,32.0,33.0,34.0,35.0,36.0,37.0,38.0,39.0,40.0,41.0,42.0,43.0,44.0,45.0,46.0,47.0,48.0,49.0,50.0,51.0,52.0,53.0,54.0,55.0,56.0,57.0,58.0,59.0,60.0,61.0,62.0,63.0,64.0,65.0,66.0,67.0,68.0,69.0,70.0,71.0,72.0,73.0,74.0,75.0,76.0,77.0,78.0,79.0,80.0,81.0,82.0,83.0,84.0,85.0,86.0,87.0,88.0,89.0,90.0,91.0,92.0,93.0,94.0,95.0,96.0,97.0,98.0,99.0],"rho":[1.0,0.49492804777525423,0.31963672259842263,0.2532800672339123,0.22588058615890894,0.21357540538432823,0.2076075384045271,0.20450721981001987,0.20279749299647293,0.20180646742703295,0.20120581711518667,0.20082851187084574,0.20058403125148183,0.20042114295722907,0.20030987414724527,0.20023226700583827,0.20017709519709853,0.2001371445389671,0.2001077494376117,0.2000858070960879,0.20006918519701217,0.2000564398818869,0.20004655504436591,0.20003879374293765,0.2000326393152856,0.20002771312060602,0.20002373674420518,0.20002048990973326,0.20001782322920086,0.2000156176280974,0.20001377533575443,0.20001222888227121,0.20001092243457866,0.20000981132898235,0.2000088611856753,0.20000804513153028,0.20000733964399636,0.2000067270642566,0.20000619265601216,0.20000572460271943,0.20000531244792108,0.20000494814501202,0.2000046251781169,0.20000433805768597,0.2000040818132223,0.2000038523354417,0.2000036461204812,0.20000346033593103,0.20000329246466853,0.2000031406141929,0.2000030025993098,0.2000028771424638,0.2000027626927151,0.20000265808069378,0.20000256228569085,0.20000247433983107,0.20000239363348143,0.2000023193798619,0.2000022508602624,0.20000218765770597,0.2000021291332407,0.20000207495220718,0.20000202473004527,0.2000019780714673,0.2000019347131351,0.20000189438412166,0.200001856788247,0.20000182171712425,0.20000178898341303,0.20000175842874898,0.2000017298362889,0.2000017030761949,0.20000167803508298,0.20000165456131172,0.200001632525647,0.2000016118382373,0.20000159241104976,0.20000157415244857,0.20000155696734148,0.2000015408136437,0.20000152559114556,0.20000151125684404,0.20000149775879536,0.20000148503604645,0.20000147302670654,0.20000146168550892,0.2000014509799248,0.20000144086804958,0.2000014313212354,0.2000014223071889,0.20000141378210443,0.20000140571766814,0.20000139809414802,0.20000139087564275,0.20000138404808904,0.20000137758341524,0.20000137145877936,0.2000013656642718,0.20000136017538764,0.20000135497747742],"bi_fit":[1.3505159559942246,1.2432664981843309,1.1953717446433827,1.1739829172688703,1.164430917582781,1.1601649974463188,1.1582597736702667,1.1574088332807186,1.1570287499051854,1.1568589669112477,1.1567831166483367,1.1567492257064935,1.1567340797997925,1.1567273093014656,1.156724281705698,1.156722927209189,1.1567223208523898,1.1567220491842676,1.1567219273336211,1.1567218726002677,1.156721847967329,1.156721836852905,1.1567218318212842,1.1567218295334907,1.1567218284874188,1.1567218280056775,1.1567218277818188,1.1567218276766325,1.1567218276265403,1.156721827602306,1.156721827590369,1.1567218275843718,1.1567218275812954,1.1567218275796836,1.1567218275788214,1.1567218275783513,1.1567218275780906,1.1567218275779436,1.15672182757786,1.1567218275778115,1.1567218275777837,1.1567218275777673,1.1567218275777575,1.156721827577752,1.1567218275777484,1.1567218275777464,1.1567218275777453,1.1567218275777447,1.1567218275777442,1.156721827577744,1.1567218275777438,1.1567218275777438,1.1567218275777436,1.1567218275777436,1.1567218275777436,1.1567218275777436,1.1567218275777436,1.1567218275777436,1.1567218275777436,1.1567218275777436,1.1567218275777436,1.1567218275777436,1.1567218275777436,1.1567218275777436,1.1567218275777436,1.1567218275777436,1.1567218275777436,1.1567218275777436,1.1567218275777436,1.1567218275777436,1.1567218275777436,1.1567218275777436,1.1567218275777436,1.1567218275777436,1.1567218275777436,1.1567218275777436,1.1567218275777436,1.1567218275777436,1.1567218275777436,1.1567218275777436,1.1567218275777436,1.1567218275777436,1.1567218275777436,1.1567218275777436,1.1567218275777436,1.1567218275777436,1.1567218275777436,1.1567218275777436,1.1567218275777436,1.1567218275777436,1.1567218275777436,1.1567218275777436,1.1567218275777436,1.1567218275777436,1.1567218275777436,1.1567218275777436,1.1567218275777436,1.1567218275777436,1.1567218275777436,1.1567218275777436,1.1567218275777436],"k1":0.5146034508412624,"k2":0.8061936760501677,"r_squared_bi":0.99999915027562},"trajectory_uniform":{"t":[0.0,1.0,2.0,3.0,4.0,5.0,6.0,7.0,8.0,9.0,10.0,11.0,12.0,13.0,14.0,15.0,16.0,17.0,18.0,19.0,20.0,21.0,22.0,23.0,24.0,25.0,26.0,27.0,28.0,29.0,30.0,31.0,32.0,33.0,34.0,35.0,36.0,37.0,38.0,39.0,40.0,41.0,42.0,43.0,44.0,45.0,46.0,47.0,48.0,49.0,50.0,51.0,52.0,53.0,54.0,55.0,56.0,57.0,58.0,59.0,60.0,61.0,62.0,63.0,64.0,65.0,66.0,67.0,68.0,69.0,70.0,71.0,72.0,73.0,74.0,75.0,76.0,77.0,78.0,79.0,80.0,81.0,82.0,83.0,84.0,85.0,86.0,87.0,88.0,89.0,90.0,91.0,92.0,93.0,94.0,95.0,96.0,97.0,98.0,99.0],"rho":[1.0,0.46155379896247267,0.22119966181764486,0.10989972973504213,0.05651128643760927,0.030022294395659007,0.01644936004944921,0.009281292699975584,0.005386061878479026,0.0032096682073945704,0.0019619568624889574,0.0012283745142907684,0.0007868566097720715,0.0005151363227640774,0.0003442907734608996,0.0002346968832938173,0.00016300352406144956,0.00011524204408741066,8.286296920037994e-05,6.0554473171363754e-05,4.4935201099315906e-05,3.383415701711175e-05,2.5830020974881386e-05,1.998174435803245e-05,1.5652141018611022e-05,1.2407845160719148e-05,9.948520603739199e-06,8.062997801732582e-06,6.601962249266459e-06,5.4589184517041085e-06,4.555895844871904e-06,3.835918025902074e-06,3.257004650881643e-06,2.7875814267450535e-06,2.4039570974337362e-06,2.0882050118383685e-06,1.826453427601853e-06,1.6079847786296027e-06,1.4244539575795597e-06,1.2693741862537493e-06,1.1375337269335204e-06,1.0248779206527952e-06,9.280909583720113e-07,8.445238092442483e-07,7.720301176841788e-07,7.088517260522273e-07,6.535423721358915e-07,6.049560097631403e-07,5.62091722688741e-07,5.241465193386306e-07,4.904287812168692e-07,4.6037301353348513e-07,4.3349366150512756e-07,4.0938299631785493e-07,3.876941675523119e-07,3.6812900955118446e-07,3.504390675994263e-07,3.3440182372145695e-07,3.198291988338187e-07,3.065547077286701e-07,2.944396187707395e-07,2.833593799908158e-07,2.7320785955756326e-07,2.6388985221620363e-07,2.553216112028732e-07,2.4742872318450046e-07,2.401464657072619e-07,2.3341893381231272e-07,2.2719465855466758e-07,2.2142780485473464e-07,2.160785246682895e-07,2.1111013624041797e-07,2.06489560680693e-07,2.0218849920153007e-07,1.9818021826797683e-07,1.944414653688305e-07,1.9095052227223503e-07,1.8768798890754333e-07,1.8463639734287713e-07,1.817793275112972e-07,1.7910322930444484e-07,1.7659416470832554e-07,1.7423991560319e-07,1.7202985645169e-07,1.699537902820597e-07,1.6800221210854672e-07,1.6616619190042788e-07,1.6443822734717653e-07,1.6281168346614293e-07,1.6127936722701426e-07,1.5983481564536138e-07,1.5847293576363678e-07,1.5718810984765013e-07,1.5597553050889097e-07,1.548310714626784e-07,1.5374995076388368e-07,1.5272858799042618e-07,1.5176336059343365e-07,1.5085104849899915e-07,1.4998809376425874e-07],"bi_fit":[1.1954868721843381,1.047071264043042,0.9739025522404301,0.9378304059230649,0.9200468150300631,0.9112794714531278,0.9069571414822405,0.9048262103323313,0.903775645477704,0.9032577063941244,0.9030023555071324,0.9028764630992604,0.9028143953589343,0.902783794229598,0.9027687068022326,0.9027612680435013,0.902757600334226,0.902755791909515,0.9027549002081658,0.902754460509911,0.9027542436846583,0.902754136757262,0.90275408402247,0.9027540580124445,0.9027540451824312,0.9027540388529912,0.9027540357300323,0.9027540341888877,0.902754033428189,0.9027540330526169,0.9027540328671317,0.9027540327754913,0.9027540327301948,0.9027540327077934,0.9027540326967073,0.9027540326912167,0.9027540326884947,0.9027540326871437,0.9027540326864723,0.9027540326861381,0.9027540326859714,0.9027540326858879,0.9027540326858462,0.9027540326858252,0.9027540326858147,0.9027540326858092,0.9027540326858066,0.9027540326858051,0.9027540326858043,0.9027540326858039,0.9027540326858038,0.9027540326858038,0.9027540326858036,0.9027540326858036,0.9027540326858036,0.9027540326858036,0.9027540326858036,0.9027540326858036,0.9027540326858036,0.9027540326858036,0.9027540326858036,0.9027540326858036,0.9027540326858036,0.9027540326858036,0.9027540326858036,0.9027540326858036,0.9027540326858036,0.9027540326858036,0.9027540326858036,0.9027540326858036,0.9027540326858036,0.9027540326858036,0.9027540326858036,0.9027540326858036,0.9027540326858036,0.9027540326858036,0.9027540326858036,0.9027540326858036,0.9027540326858036,0.9027540326858036,0.9027540326858036,0.9027540326858036,0.9027540326858036,0.9027540326858036,0.9027540326858036,0.9027540326858036,0.9027540326858036,0.9027540326858036,0.9027540326858036,0.9027540326858036,0.9027540326858036,0.9027540326858036,0.9027540326858036,0.9027540326858036,0.9027540326858036,0.9027540326858036,0.9027540326858036,0.9027540326858036,0.9027540326858036,0.9027540326858036,0.9027540326858036],"k1":0.5139261918191136,"k2":0.7072566162001311,"r_squared_bi":0.9999998332158846},"genealogy":{"ground_truth":{"k1":5.0,"k2":0.3,"rho1":0.15,"rho2":0.05,"A1":0.6,"A2":0.25,"k1_k2_ratio":16.666666666666668},"fits":{"bi_exp":{"aic":-393.2567041455724},"mono_exp":{"aic":-303.270140277421},"linear":{"aic":-164.75462417969277},"delta_aic_bi_vs_mono":-89.98656386815145},"parameter_recovery":{"k1_recovered":4.530759001579035,"k2_recovered":0.25838901025690336,"k1_true":5.0,"k2_true":0.3,"k1_error_pct":9.384819968419293,"k2_error_pct":13.870329914365541,"k1_k2_ratio":17.534642812689,"k1_k2_ratio_true":16.666666666666668},"passed":true}}
 </script>
 
-<!-- Implementation module -->
-<script src="js/cross-filter.js"></script>
+  <!-- ─── D3 v7 from CDN ──────────────────────────────────────── -->
+  <script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
 
-<!-- Render charts -->
-<script>
-(function () {
-  CrossFilter.renderScatter("#chart-scatter", SIM_DATA);
-  CrossFilter.renderBars("#chart-bars", SIM_DATA);
-  CrossFilter.renderTrajectories("#chart-traj", SIM_DATA);
-  CrossFilter.renderR2("#chart-r2", SIM_DATA);
+  <!-- ─── Dashboard Module ────────────────────────────────────── -->
+  <script type="module">
+    import {
+      getAllDataPoints,
+      getTimePoints,
+      computeAllTrajectories,
+      renderScatter,
+      renderBars,
+      renderTrajectories,
+      renderR2,
+    } from './js/cross-filter.js';
 
-  // Inflation hierarchy (bonus chart)
-  var inflationData = CrossFilter.getInflationData(SIM_DATA);
-  var infContainer = d3.select("#chart-inflation");
-  var w = 500, h = 300;
-  var margin = { top: 20, right: 30, bottom: 50, left: 60 };
+    // ── Load Data ────────────────────────────────────────────────
 
-  var svg = infContainer.append("svg")
-    .attr("viewBox", "0 0 " + w + " " + h)
-    .attr("width", "100%");
+    const SIM_DATA = JSON.parse(document.getElementById('sim-data').textContent);
+    const t = getTimePoints();
+    const allPoints = getAllDataPoints(SIM_DATA);
+    const trajectories = computeAllTrajectories(SIM_DATA, t);
 
-  var g = svg.append("g")
-    .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+    let currentSelection = new Set();
 
-  var xScale = d3.scaleLinear().domain([0.5, 4.5]).range([0, w - margin.left - margin.right]);
-  var yScale = d3.scaleLog().domain([0.8, 50]).range([h - margin.top - margin.bottom, 0]);
+    // ── UI Elements ──────────────────────────────────────────────
 
-  g.append("g").attr("transform", "translate(0," + (h - margin.top - margin.bottom) + ")")
-    .call(d3.axisBottom(xScale).ticks(4).tickFormat(d3.format("d")));
-  g.append("g").call(d3.axisLeft(yScale).ticks(5, "~s"));
+    const clearBtn = document.getElementById('clear-selection');
+    const selectionInfo = document.getElementById('selection-info');
 
-  // Step line
-  var stepLine = d3.line()
-    .x(function (d) { return xScale(d.levels); })
-    .y(function (d) { return yScale(d.ratio); })
-    .curve(d3.curveStepAfter);
+    // ── Update All Charts ────────────────────────────────────────
 
-  g.append("path").datum(inflationData).attr("d", stepLine)
-    .attr("fill", "none").attr("stroke", "#bdc3c7").attr("stroke-width", 1.5).attr("opacity", 0.5);
+    function updateAll(selectedSet) {
+      currentSelection = selectedSet || new Set();
 
-  g.selectAll(".inf-dot").data(inflationData).enter().append("circle")
-    .attr("class", "inf-dot")
-    .attr("cx", function (d) { return xScale(d.levels); })
-    .attr("cy", function (d) { return yScale(d.ratio); })
-    .attr("r", 7)
-    .attr("fill", function (d) { return d.type === "Bi-exp" ? "#27ae60" : "#8e44ad"; })
-    .attr("opacity", 0.85)
-    .append("title")
-    .text(function (d) { return d.name + "\nLevels: " + d.levels + "\nRatio: " + d.ratio.toFixed(1) + "×"; });
+      // Update selection info
+      if (currentSelection.size === 0) {
+        selectionInfo.textContent = 'No selection. Click or brush any chart to select.';
+      } else {
+        const keys = Array.from(currentSelection).sort();
+        selectionInfo.textContent =
+          `Selected: ${currentSelection.size} seed${currentSelection.size > 1 ? 's' : ''} — ${keys.join(', ')}`;
+      }
 
-  g.selectAll(".inf-label").data(inflationData).enter().append("text")
-    .attr("class", "inf-label")
-    .attr("x", function (d) { return xScale(d.levels); })
-    .attr("y", function (d) { return yScale(d.ratio) - 12; })
-    .attr("text-anchor", "middle")
-    .style("font-size", "10px").style("font-weight", "bold").style("fill", "#2c3e50")
-    .text(function (d) { return d.ratio.toFixed(1) + "×"; });
+      // Chart A: Scatter
+      renderScatter({
+        container: '#chart-scatter',
+        data: allPoints,
+        selectedSet: currentSelection,
+        width: 600,
+        height: 400,
+        onBrush: (selectedSet) => { updateAll(selectedSet); },
+        onPointClick: (key) => {
+          const newSet = new Set([key]);
+          updateAll(newSet);
+        },
+      });
 
-  g.append("text").attr("x", (w - margin.left - margin.right) / 2)
-    .attr("y", h - margin.top - margin.bottom + 40).attr("text-anchor", "middle")
-    .style("font-size", "11px").style("fill", "#34495e").text("Integration levels");
-  g.append("text").attr("transform", "rotate(-90)")
-    .attr("x", -(h - margin.top - margin.bottom) / 2).attr("y", -45)
-    .attr("text-anchor", "middle").style("font-size", "11px").style("fill", "#34495e")
-    .text("k₁/k₂ ratio (log)");
+      // Chart B: ΔBIC Bars
+      renderBars({
+        container: '#chart-bars',
+        data: allPoints,
+        selectedSet: currentSelection,
+        width: 600,
+        height: 250,
+        onClick: (key) => {
+          const newSet = new Set([key]);
+          updateAll(newSet);
+        },
+      });
 
-  // Status updater
-  var origUpdate = CrossFilter.updateSelection;
-  CrossFilter.updateSelection = function (sel, combined) {
-    origUpdate(sel, combined);
-    var status = document.getElementById("selection-status");
-    if (!sel || sel.size === 0) {
-      status.textContent = "No active selection";
-    } else {
-      status.textContent = sel.size + " seed(s) selected: " + Array.from(sel).join(", ");
+      // Chart C: Trajectories
+      renderTrajectories({
+        container: '#chart-trajectories',
+        trajectories,
+        selectedSet: currentSelection,
+        width: 1200,
+        height: 400,
+        onClick: (key) => {
+          const newSet = new Set([key]);
+          updateAll(newSet);
+        },
+      });
+
+      // Chart D: R² Comparison
+      renderR2({
+        container: '#chart-r2',
+        data: allPoints,
+        selectedSet: currentSelection,
+        width: 1200,
+        height: 250,
+      });
     }
-  };
 
-  // Override brush handler to also update status
-  var origBrushHandler = CrossFilter.state;
-  // The brush is already wired in renderScatter; status updates happen via updateSelection
-})();
+    // ── Clear Button ─────────────────────────────────────────────
 
-function clearSelection() {
-  CrossFilter.state.selectedSeeds = null;
-  CrossFilter.updateSelection(null, CrossFilter.state.combined);
-  d3.select("#chart-scatter .brush").call(d3.brush().clear);
-  document.getElementById("selection-status").textContent = "No active selection";
-}
-</script>
+    clearBtn.addEventListener('click', () => {
+      updateAll(new Set());
+    });
+
+    // ── Initial Render ───────────────────────────────────────────
+
+    updateAll(new Set());
+
+    // Log for debugging
+    console.log('VI Foundry Dashboard initialized.');
+    console.log(`  Seeds: ${allPoints.length} (${SIM_DATA.two_tier.length} two-tier + ${SIM_DATA.uniform.length} uniform)`);
+    console.log(`  Trajectories: ${trajectories.length}`);
+    console.log('  Cross-filter active. Click/brush any chart.');
+  </script>
 
 </body>
 </html>
