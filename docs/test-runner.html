@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>VI Foundry — Cross-Filter Dashboard Tests</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jasmine-core@5.5.0/lib/jasmine-core/jasmine.css">
+  <style>
+    body { font-family: 'DejaVu Serif', Georgia, serif; background: #fdfdfd; margin: 20px; }
+    #banner {
+      font-family: 'DejaVu Sans', sans-serif; font-size: 0.85rem; color: #2c3e50;
+      background: #f0f4f8; border-left: 4px solid #2c3e50; padding: 8px 14px;
+      margin-bottom: 16px; border-radius: 3px;
+    }
+    #banner.error { background: #fadbd8; border-left-color: #c0392b; color: #c0392b; }
+  </style>
+</head>
+<body>
+
+  <div id="banner">Loading module + specs…</div>
+
+  <!-- Jasmine standalone (correct package: jasmine-core) -->
+  <script src="https://cdn.jsdelivr.net/npm/jasmine-core@5.5.0/lib/jasmine-core/jasmine.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jasmine-core@5.5.0/lib/jasmine-core/jasmine-html.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jasmine-core@5.5.0/lib/jasmine-core/boot0.js"></script>
+
+  <!-- D3 v7 for chart rendering tests -->
+  <script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
+
+  <!--
+    Load the REAL implementation module and expose its exports as globals.
+    Module scripts are deferred: they execute after HTML parsing but BEFORE
+    the window `load` event that boot1.js uses to start Jasmine. So the spec
+    suite (which runs at env.execute() during load) sees the real module —
+    no inlined copy, no race.
+  -->
+  <script type="module">
+    import * as mod from 'review/js/cross-filter.js';
+    const banner = document.getElementById('banner');
+    try {
+      for (const [key, value] of Object.entries(mod)) {
+        globalThis[key] = value;
+      }
+      banner.textContent =
+        'Loaded real module: docs/review/js/cross-filter.js — ' +
+        Object.keys(mod).length + ' exports (' +
+        Object.keys(mod).join(', ') + ')';
+    } catch (err) {
+      banner.textContent = 'MODULE LOAD FAILED: ' + err.message;
+      banner.className = 'error';
+    }
+  </script>
+
+  <!-- Spec file (defines describe/it; reads module functions from globals) -->
+  <script src="../test/d3-dashboard.spec.js"></script>
+
+  <!-- Jasmine boot1 — starts execution on window load (after module is ready) -->
+  <script src="https://cdn.jsdelivr.net/npm/jasmine-core@5.5.0/lib/jasmine-core/boot1.js"></script>
+
+</body>
+</html>
