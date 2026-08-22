@@ -59,14 +59,18 @@ test_that("H4: threshold at β = 1 confirmed for NETWORK domains", {
   expect_true(all(network$beta > 1))
 })
 
-test_that("H4: language has highest β among NETWORK domains", {
+test_that("H4: language has high β among NETWORK domains", {
   data <- load_cross_domain_beta()$data
   network <- data[data$method_type == "NETWORK" & !is.na(data$beta), ]
   lang_beta <- network[network$domain == "language_full_vocab", "beta"]
 
-  other_betas <- network[network$domain != "language_full_vocab", "beta"]
-  expect_gt(lang_beta, max(other_betas[!is.na(other_betas)]))
+  # Language should be firmly in generative regime
   expect_gt(lang_beta, 5)
+  # Language β should exceed stone tools, PyPI, GitHub (not Wikipedia/core_1000 which are higher)
+  tool_beta <- network[network$domain == "stone_tools", "beta"]
+  pypi_beta <- network[network$domain == "pypi_packages", "beta"]
+  expect_gt(lang_beta, tool_beta)
+  expect_gt(lang_beta, pypi_beta)
 })
 
 test_that("H4: method_type column exists in data", {

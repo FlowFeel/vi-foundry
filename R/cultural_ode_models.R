@@ -109,10 +109,14 @@ k_eff_topology <- function(K, C, eta = 0.487) {
 #' Mismatch equation: M(t) = ρ_eq(B(t)) - ρ(t)
 #'
 #' In the exponential cultural regime (β > 1, r_B = ε·β):
-#'   M(t) ≈ ρ_eq(B0) · (exp(r_B·t) - exp(k1·t))
+#'   M(t) = ρ_eq(B0) · (exp(r_B·t) - exp(k1·t))
 #'
-#' When r_B >> k1: M(t) ≈ ρ_eq(B(t)) → mismatch approaches full attractor
-#' When r_B << k1: M(t) ≈ 0 → organism tracks environment
+#' When r_B > k1: M(t) > 0 and growing (attractor ahead of relaxation)
+#' When r_B < k1: M(t) < 0 (relaxation has overshot — not physical, 
+#'   means mismatch is negligible, organism tracks environment)
+#' When r_B = k1: M(t) = 0 (matched)
+#'
+#' Use abs(M) for magnitude, or check sign for regime.
 #'
 #' @param t Numeric vector. Time.
 #' @param rho_eq0 Numeric. Initial attractor value.
@@ -135,19 +139,36 @@ fit_vi_ode_models <- function(t, B, seed = 42L) {
     results <- list()
 
     # 1. VI ODE (generalized logistic with decay)
+    # Try multiple starting points for robustness
     vi_fit <- tryCatch({
-      stats::optim(
-        par = c(r = 0.01, K = max(B) * 100, delta = 0.001, B0 = B[1]),
-        fn = function(p) {
-          pred <- vi_ode_solution(t, p["r"], p["K"], p["delta"], p["B0"])
-          if (any(is.na(pred)) || any(pred <= 0)) return(Inf)
-          sum((log(B) - log(pred))^2)
-        },
-        method = "L-BFGS-B",
-        lower = c(1e-10, max(B), 0, 1),
-        upper = c(10, 1e15, 1, max(B))
+      best_fit <- NULL
+      best_val <- Inf
+      starts <- list(
+        c(r = 0.01, K = max(B) * 100, delta = 0.001, B0 = B[1]),
+        c(r = 0.1, K = max(B) * 10, delta = 0.001, B0 = B[1]),
+        c(r = 0.05, K = max(B) * 50, delta = 0.0001, B0 = B[1])
       )
-    }, error = function(e) list(par = rep(NA, 4), value = Inf))
+      for (start in starts) {
+        fit <- tryCatch({
+          stats::optim(
+            par = start,
+            fn = function(p) {
+              pred <- vi_ode_solution(t, p["r"], p["K"], p["delta"], p["B0"])
+              if (any(is.na(pred)) || any(pred <= 0)) return(Inf)
+              sum((log(B) - log(pred))^2)
+            },
+            method = "L-BFGS-B",
+            lower = c(1e-10, max(B) * 1.01, 0, 1),
+            upper = c(10, 1e15, 1, max(B))
+          )
+        }, error = function(e) list(par = start, value = Inf))
+        if (fit$value < best_val) {
+          best_fit <- fit
+          best_val <- fit$value
+        }
+      }
+      best_fit
+    }, error = function(e) list(par = c(r=NA, K=NA, delta=NA, B0=NA), value = Inf))
 
     vi_pred <- if (!is.infinite(vi_fit$value)) {
       vi_ode_solution(t, vi_fit$par["r"], vi_fit$par["K"],
