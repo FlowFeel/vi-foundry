@@ -543,5 +543,47 @@ plot.vi_test_suite <- function(x, ...) {
     class = "vi_transfer_result", statistic_key = "bird_rho",
     vi_prediction = "integration-depth parameters transfer across kingdoms"
   )
+  # H2 — β mediation (Oswalt 1973 + 1976)
+  register_test(
+    name = "beta_mediation_oswalt1973", fn = beta_mediation_test,
+    data_required = "data", discriminating = TRUE,
+    expected_fields = c("r_N_beta", "p_N_beta", "r_beta_complexity",
+                        "p_beta_complexity", "mediation_type"),
+    class = "vi_test_result", statistic_key = "p_N_beta",
+    vi_prediction = "β is substrate property; N does not predict β (1973 data)"
+  )
+  register_test(
+    name = "beta_mediation_oswalt1976", fn = beta_mediation_test,
+    data_required = "data", discriminating = TRUE,
+    expected_fields = c("r_N_beta", "p_N_beta", "r_beta_complexity",
+                        "p_beta_complexity", "mediation_type"),
+    class = "vi_test_result", statistic_key = "p_N_beta",
+    vi_prediction = "β is substrate property; N does not predict β (1976 data)"
+  )
+  # H4 — cross-domain β threshold
+  register_test(
+    name = "cross_domain_beta", fn = cross_domain_beta_test,
+    data_required = "data", discriminating = TRUE,
+    expected_fields = c("n_cultural", "n_non_cultural", "threshold_confirmed"),
+    class = "vi_test_result", statistic_key = "threshold_confirmed",
+    vi_prediction = "cultural substrates have β > 1; non-cultural have β < 1"
+  )
+  # H5 — super-exponential growth
+  register_test(
+    name = "uspto_growth", fn = growth_curve_test,
+    data_required = "data", discriminating = TRUE,
+    expected_fields = c("quadratic_coefficient", "delta_aic_quad_vs_linear",
+                        "best_model"),
+    class = "vi_test_result", statistic_key = "quadratic_coefficient",
+    vi_prediction = "β > 1 produces super-exponential (t²) growth"
+  )
+  # H10 — sign reversal
+  register_test(
+    name = "sign_reversal", fn = sign_reversal_test,
+    data_required = c("homo_gl", "nonhomo_gl"), discriminating = TRUE,
+    expected_fields = c("homo_gl_mean", "nonhomo_gl_mean", "sign_reversal"),
+    class = "vi_test_result", statistic_key = "sign_reversal",
+    vi_prediction = "Homo: positive DD; non-Homo: negative DD (sign reversal)"
+  )
   invisible(TRUE)
 }
