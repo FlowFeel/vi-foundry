@@ -1,0 +1,26 @@
+# R1: Cavefish integration-depth ordering test
+# STRING network degree (independent) vs loss-timing rank (from literature)
+# loss_timing: 1=early(~10hpf), 2=mid(~24hpf), 3=late(~36hpf), 4=very late(~72hpf+)
+gene	category	loss_timing	string_degree
+pax6a	eye	3	225
+pax6b	eye	3	57
+rx1	eye	2	32
+rx2	eye	2	28
+six3	eye	2	114
+six6a	eye	2	30
+cryaa	eye	3	86
+cryba1	eye	3	42
+crybb1	eye	3	43
+mitfa	pigment	1	102
+oca2	pigment	1	107
+tyr	pigment	1	85
+mc1r	pigment	1	80
+slc24a5	pigment	1	58
+kit	pigment	1	229
+per1a	circadian	4	70
+per1b	circadian	4	58
+per2	circadian	4	65
+clocka	circadian	4	71
+bmal1	circadian	4	87
+hk1	metabolic	4	137
+pfkl	metabolic	4	141
