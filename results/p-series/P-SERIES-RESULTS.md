@@ -78,6 +78,7 @@
 | Integration (incl. P-series) | 13 pass, 0 fail | P-series proof objects valid |
 | Unit | 15 fail / 550 pass | **Pre-existing** — fit_biexp, predict_bird_ordering, relaxation_phase_analysis failures in unmodified files (git-clean). Not caused by P-series. |
 | P-series direct | 5/5 computed | P1–P5 results in `results/p-series/` (P1, P4, P5 positive; P2 wrong-system confirm; P3 continuous ordering) |
+| P-series protocols | 3 pre-registered | P6–P8 protocols in `results/p-series/` (see below) |
 
 ---
 
@@ -103,7 +104,7 @@
 
 **Question:** Does the C4 syndrome show function-converges/mechanism-diverges, coded by the C4 literature itself?
 
-**Design:** Christin & Osborne (2014, *New Phytol* 204:1146) Table 1's six-level deconstruction (Niche > Physiology > Function > Character > Characteristic > Component) — the C4 field's own integration hierarchy, not VI's. Shared/varying coding from the same text: functions “present in all C4 plants,” characters “vary among C4 lineages,” components “repeatedly co-opted.” Niche excluded (environmental context) → 5 levels.
+**Design:** Christin & Osborne (2014, *New Phytol* 204: 765–781) Table 1's six-level deconstruction (Niche > Physiology > Function > Character > Characteristic > Component) — the C4 field's own integration hierarchy, not VI's. Shared/varying coding from the same text: functions “present in all C4 plants,” characters “vary among C4 lineages,” components assembled via “repeated co-option” of components present in C3/C2 species. Niche excluded (environmental context) → 5 levels.
 
 **Results:**
 
@@ -117,8 +118,53 @@
 
 ---
 
+## P6 Protocol — Convergent Cognition Gene Centrality (PRE-REGISTERED)
+
+**Status:** PROTOCOL (pre-registered, not yet computed)
+
+**Question:** Does integration position (Component B) order cognitive convergence? Prediction: convergent cognitive genes are LESS integrated than conserved neural machinery in the same functional domain — "function converges, mechanism diverges" extended from echolocation (P4) to cognition.
+
+**Design (direct extension of P4):** Convergent set = genes implicated in cognitive convergence across birds, mammals, and cetaceans (FOXP2, CNTNAP2, MTOR, and mTOR pathway genes, SRGAP2, AUTS2, ARC, CAMK2A, CREB1, BDNF, FMR1, SHANK/NLGN/NRXN family, SYNGAP1, and the broader cognitive convergence regulon — from Emery & Clayton 2004, Roth 2015). Conserved control = conserved neural machinery genes in the same functional domain — ion channel families (SCN, KCN, CACNA), synaptic release machinery (SNARE complex, SYT family, RAB3, RIM, UNC13, MUNC18), neurotransmitter receptors (GABRA/B/G, GRIA, GRIK, GRIN, GRM). Network backbone = STRING v12.0 human network (confidence ≥ 400), same as P4. Mann-Whitney U on degree, eigenvector, closeness centrality.
+
+**Pre-registration:** Convergent set defined from comparative cognition literature (not from centrality data). Conserved control defined from functional annotation. Score file frozen at `data/a-priori-scores/p6_convergent_cognition_symbols.tsv` before any analysis. Full protocol: `results/p-series/P6-PROTOCOL.md`.
+
+**Prediction:** Convergent cognitive genes < conserved neural machinery on all three centrality metrics.
+
+---
+
+## P7 Protocol — Cognitive Hierarchy Integration Depth (PRE-REGISTERED)
+
+**Status:** PROTOCOL (pre-registered, not yet computed)
+
+**Question:** Does the VI integration-depth signature hold for cognitive functions across lineages? Prediction: most deeply integrated cognitive functions are most conserved across phyla — most modular are least conserved.
+
+**Design (direct extension of P5):** Hierarchy from Edelman & Seth (2009) and Birch et al. (2020): Nociception (1) → Preference learning (2) → Instrumental learning (3) → Episodic memory (4) → Planning/prospection (5) → Theory of mind/metacognition (6). Lineage breadth scored from comparative cognition reviews (Roth 2015, Boyle & Dicke 2017, Ginsburg & Jablonka 2010): number of phyla where each function is experimentally documented. Spearman ρ between integration_depth_rank and lineage_breadth.
+
+**Pre-registration:** Hierarchy ranks assigned a priori from Edelman & Seth (2009) framework. Lineage breadth compiled from literature — independent of the integration-depth claim. Score file frozen at `data/a-priori-scores/p7_cognitive_hierarchy.tsv` before any analysis. Full protocol: `results/p-series/P7-PROTOCOL.md`.
+
+**Caveat:** Same floor problem as P5 (6 levels → p at floor). Structural corroboration, not high-powered test.
+
+---
+
+## P8 Protocol — Sleep Architecture as Convergent Attractor (PRE-REGISTERED)
+
+**Status:** PROTOCOL (pre-registered, not yet computed)
+
+**Question:** Is two-stage sleep (NREM/REM, quiet/active) a high-integration attractor that converges in lineages with cognitive niches? Prediction: two-stage sleep evolves only in lineages with behavioral flexibility, complex learning, memory.
+
+**Design (literature-based presence/absence test):** Convergent set = lineages with documented two-stage sleep (mammals, birds, octopus, cuttlefish, bearded dragon). Control set = lineages without documented two-stage sleep (nematodes, jellyfish, simple invertebrates, fruit fly, honeybee). Fisher's exact test on 2×2 table (two-stage sleep Y/N × cognitive niche Y/N). Score file: 25 taxa with coding criteria from literature.
+
+**Pre-registration:** Taxa list and coding criteria defined from literature before analysis. Coding: two-stage sleep = documented electrophysiologically or behaviorally distinct sleep states; cognitive niche = evidence of behavioral flexibility, complex learning. Score file frozen at `data/a-priori-scores/p8_sleep_cognitive_niche.tsv` before any analysis. Full protocol: `results/p-series/P8-PROTOCOL.md`.
+
+**Caveats:** Literature-based coding is a reading; small n; phylogenetic non-independence; boundary cases (bearded dragon, honeybee) coded conservatively.
+
+---
+
 ## Next Actions
 
 1. **Downstream consequences** — draft the monograph consequence map for the two-component metric (what's replaced, added, and the full ripple).
 2. **P4 robustness** — stress-test the control set (e.g., RGC/PhyloP constraint genes) and, ideally, an ancestral-mammal network (currently human STRING).
 3. **P5 strengthening** — finer component-level decomposition per lineage for more levels.
+4. **P6 analysis** — compute STRING centralities and run Mann-Whitney U on convergent cognition genes vs conserved neural machinery.
+5. **P7 analysis** — compute Spearman ρ and Wilcoxon on cognitive hierarchy vs lineage breadth.
+6. **P8 analysis** — compute Fisher's exact test on sleep architecture × cognitive niche; run phylogenetic logistic regression if tree available.
