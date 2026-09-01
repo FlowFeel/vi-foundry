@@ -1,0 +1,275 @@
+{
+  "changepoint": {
+    "error": "The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()"
+  },
+  "surrogate": {
+    "real_ss_res": 0.04470725779335947,
+    "surrogate_mean_ss": 0.0636038977653528,
+    "surrogate_std_ss": 0.0325771715050052,
+    "p_value": 0.33069620253164556,
+    "n_surrogates": 632,
+    "interpretation": "Bi-exponential structure not distinguishable from noise"
+  },
+  "takens": {
+    "series_length": 62,
+    "optimal_delay": 11,
+    "optimal_dimension": 1,
+    "fnn_ratios": [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "rate_dimension": 1,
+    "interpretation": "Dynamics are 1-D (consistent with bi-exponential relaxation)"
+  },
+  "spectral": {
+    "m3_eigenvalues": [
+      -6.25424881e-05,
+      -9.91735537e-05
+    ],
+    "m3_trace": -0.0001617160418,
+    "m3_det": 6.202560802116962e-09,
+    "m3_dissipation_ratio": 0.5154,
+    "m3_rotational_ratio": 0.48460000000000003,
+    "ltee_k1": 17.7,
+    "ltee_k2": 0.47,
+    "ltee_k_ratio": 37.659574468085104,
+    "c4_single_k": 0.169,
+    "spectral_gap_m3": 0.6306367551292055,
+    "spectral_gap_k": 37.659574468085104,
+    "interpretation": "Two distinct timescales confirmed (spectral gap > 1). Non-dissipative component significant (48.5%)."
+  },
+  "inverse_oc": {
+    "error": "array must not contain infs or NaNs"
+  },
+  "taphonomy": {
+    "true_k1": 0.01,
+    "true_k2": 0.001,
+    "windows": {
+      "short (10 time units)": {
+        "n_points": 20,
+        "slope": -0.0033591606990866804,
+        "r_squared": 0.9998760647019578,
+        "p_value": 1.2795415541121076e-36,
+        "total_change": -0.03191869095352651,
+        "appears_stable": "False"
+      },
+      "medium (100 time units)": {
+        "n_points": 200,
+        "slope": -0.001586840303039895,
+        "r_squared": 0.9909387879415563,
+        "p_value": 3.2844222181294405e-204,
+        "total_change": -0.15973512819672453,
+        "appears_stable": "False"
+      },
+      "long (1000 time units)": {
+        "n_points": 2000,
+        "slope": -0.00018958078959379642,
+        "r_squared": 0.9827337370373154,
+        "p_value": 0.0,
+        "total_change": -0.19366630832635123,
+        "appears_stable": "False"
+      },
+      "very long (5000 time units)": {
+        "n_points": 10000,
+        "slope": -8.006777251591912e-05,
+        "r_squared": 0.6586290123032253,
+        "p_value": 0.0,
+        "total_change": -0.7966310265004573,
+        "appears_stable": "False"
+      },
+      "k\u2082 only (late window)": {
+        "n_points": 2000,
+        "slope": -4.2077974219600286e-05,
+        "r_squared": 0.9837173167114188,
+        "p_value": 0.0,
+        "total_change": -0.04275559482041749,
+        "appears_stable": "False"
+      },
+      "k\u2081 only (early window)": {
+        "n_points": 400,
+        "slope": -0.0016739466688580492,
+        "r_squared": 0.9642099595694456,
+        "p_value": 6.430951577668658e-290,
+        "total_change": -0.3496421054220491,
+        "appears_stable": "False"
+      }
+    },
+    "interpretation": "Short windows in k\u2082 phase appear as stasis. Long windows reveal erosion. The observation window determines whether you see stability or change."
+  },
+  "scale": {
+    "ltee_k_ratio": 37.659574468085104,
+    "c4_k_ratio": 1.0,
+    "ratio_of_ratios": 37.659574468085104,
+    "timescale_ratio": 666666.6666666666,
+    "systems": [
+      {
+        "name": "LTEE (E. coli)",
+        "k1": 17.7,
+        "k2": 0.47,
+        "timescale_gen": 75000,
+        "timescale_yr": 15,
+        "n": 12,
+        "substrate": "bacterial genome"
+      },
+      {
+        "name": "C4 inbound (grasses)",
+        "k1": 0.169,
+        "k2": 0.169,
+        "timescale_gen": null,
+        "timescale_yr": 10000000,
+        "n": 8,
+        "substrate": "plant photosynthesis"
+      },
+      {
+        "name": "Endosymbiont (Buchnera)",
+        "k1": null,
+        "k2": null,
+        "timescale_yr": 200000000,
+        "n": 20,
+        "substrate": "bacterial genome (symbiotic)"
+      },
+      {
+        "name": "Orobanchaceae (plants)",
+        "k1": null,
+        "k2": null,
+        "timescale_yr": 40000000,
+        "n": 8,
+        "substrate": "plant plastome"
+      },
+      {
+        "name": "Birds (Wright 2016)",
+        "k1": null,
+        "k2": null,
+        "timescale_yr": 50000000,
+        "n": 15,
+        "substrate": "bird morphology"
+      }
+    ],
+    "interpretation": "k\u2081/k\u2082 is NOT scale-invariant (LTEE=37.7, C4=1.0). The timescale separation collapses at Myr scales. This suggests the bi-exponential is a property of short timescales (experimental) and may not hold at geological timescales."
+  },
+  "sensitivity": {
+    "models": {
+      "biexp_5param": {
+        "n_params": 5,
+        "ss_res": 0.04432500351979555,
+        "aic": -439.08712542480527
+      },
+      "single_3param": {
+        "n_params": 3,
+        "ss_res": 0.08957145475304035,
+        "aic": -399.47088476936005
+      },
+      "linear_2param": {
+        "n_params": 2,
+        "ss_res": 0.8970213071920436,
+        "aic": -258.6202230016225
+      },
+      "power_3param": {
+        "n_params": 3,
+        "ss_res": 1.5330470078437655,
+        "aic": -223.39238154354337
+      },
+      "log_2param": {
+        "n_params": 2,
+        "ss_res": 1.532957147651406,
+        "aic": -225.3960158060201
+      }
+    },
+    "best_model": "biexp_5param",
+    "interpretation": "Best model: biexp_5param. Bi-exponential is load-bearing"
+  },
+  "seriation": {
+    "error": "name 'rho_spearmanman' is not defined"
+  },
+  "lesion": {
+    "n_genes": 62,
+    "spearman_dependency": -0.2538201640300081,
+    "p_value": 0.046520553270443334,
+    "interpretation": "Integration-depth ordering not confirmed with dependency score"
+  },
+  "cross_comparison": [
+    {
+      "phenomenon": "RC circuit discharge",
+      "framework": "Electrical engineering",
+      "equation": "V(t) = V\u2080\u00b7exp(-t/RC)",
+      "vi_property": "Bi-exponential outbound",
+      "comparison": "RC circuit with two stages (two time constants) gives bi-exponential. Same mathematical form. The 'valence' in VI maps to the charge. The 'resistance' maps to integration depth (high R = slow discharge = high integration). The 'capacitance' maps to capacity.",
+      "form_match": true,
+      "mechanism_match": false,
+      "notes": "RC circuits are symmetric (charge/discharge follow same form). VI is asymmetric (gain \u2260 loss). So the analogy breaks at the symmetry question."
+    },
+    {
+      "phenomenon": "Magnetic domain relaxation",
+      "framework": "Magnetism",
+      "equation": "M(t) = M\u2081\u00b7exp(-t/\u03c4\u2081) + M\u2082\u00b7exp(-t/\u03c4\u2082)",
+      "vi_property": "Bi-exponential + cross-kingdom conservation",
+      "comparison": "Magnetic domains relax to equilibrium after field change. Two domains (fast/slow) give bi-exponential. The 'valence' maps to the magnetic moment. The 'field' maps to the niche. Cross-material conservation of \u03c4 would be like saying iron and nickel have the same relaxation time \u2014 surprising and suggestive of a universal principle.",
+      "form_match": true,
+      "mechanism_match": false,
+      "notes": "Magnetic relaxation IS thermodynamic. VI is not (M3 shows non-dissipative coupling). The form matches, the identity doesn't."
+    },
+    {
+      "phenomenon": "Drug pharmacokinetics",
+      "framework": "Pharmacology",
+      "equation": "C(t) = A\u00b7exp(-\u03b1t) + B\u00b7exp(-\u03b2t)",
+      "vi_property": "Bi-exponential with integration-depth ordering",
+      "comparison": "Two-compartment pharmacokinetics: drug distributes fast (\u03b1, central compartment) and clears slow (\u03b2, peripheral). The k\u2081/k\u2082 ratio = distribution/clearance ratio. In VI, k\u2081/k\u2082 = peripheral/core integration ratio. The 'compartments' in VI are integration-depth levels.",
+      "form_match": true,
+      "mechanism_match": "partial",
+      "notes": "Pharmacokinetics is well-understood and NOT thermodynamic \u2014 it's transport + elimination. This is a strong analogy: transport (selection) + elimination (shedding). The compartments are real (integration levels), not artificial."
+    },
+    {
+      "phenomenon": "Stellar main sequence",
+      "framework": "Astrophysics",
+      "equation": "L \u221d M^3.5 (mass-luminosity relation)",
+      "vi_property": "Cross-kingdom parameter conservation",
+      "comparison": "Stars on the main sequence follow a universal relation regardless of composition. The universality comes from physics (hydrostatic equilibrium + nuclear fusion rate). VI's cross-kingdom conservation is similarly surprising \u2014 different substrates, same rate constants. The universality should come from... what? If it's physics (gradient flow), it's the fossilized urge. If it's biology (convergent form), it's independent reinvention.",
+      "form_match": false,
+      "mechanism_match": false,
+      "notes": "Different equation form, but the universality-across-substrates question is the same."
+    },
+    {
+      "phenomenon": "Allometric scaling",
+      "framework": "Biology (West-Brown-Enquist)",
+      "equation": "B \u221d M^(3/4)",
+      "vi_property": "Cross-kingdom conservation",
+      "comparison": "WBE theory predicts 3/4 scaling from network geometry. The universality comes from the fractal branching of distribution networks. VI's cross-kingdom conservation could similarly come from a universal property of biological networks \u2014 their hierarchical structure. If the k\u2081/k\u2082 ratio reflects the branching depth of regulatory networks, and all networks have similar depth, the ratio would be conserved.",
+      "form_match": false,
+      "mechanism_match": true,
+      "notes": "Different equation, but the mechanism (network geometry producing universal constants) could be the same. This is the most biologically grounded analogy."
+    },
+    {
+      "phenomenon": "Arrhenius activation energy",
+      "framework": "Chemical kinetics",
+      "equation": "k = A\u00b7exp(-Ea/RT)",
+      "vi_property": "Latent valence (four-state model)",
+      "comparison": "Below activation energy, k=0 (latent). Above, k>0 (active). The seed dormant for 200 years maps to a molecule below its activation barrier. The trigger (water, light, temperature) maps to thermal energy crossing the barrier. Same form, but the barrier is developmental (gene regulatory switch), not thermal.",
+      "form_match": true,
+      "mechanism_match": false,
+      "notes": "This is the cleanest analogy for the latent\u2192activated transition. The Arrhenius form should hold if we measure germination rate vs. environmental cue strength."
+    },
+    {
+      "phenomenon": "Glass transition / relaxation",
+      "framework": "Soft matter physics",
+      "equation": "Multiple relaxation times (stretched exponential: exp(-(t/\u03c4)^\u03b2))",
+      "vi_property": "Bi-exponential (two relaxation times)",
+      "comparison": "Glassy systems have a spectrum of relaxation times, often fit by stretched exponential. VI has exactly two times \u2014 not a spectrum. This is interesting: VI is simpler than glass, suggesting the two-timescale structure is real (not an approximation to a continuum). The integration hierarchy produces TWO levels (fast/slow), not a continuum.",
+      "form_match": "partial",
+      "mechanism_match": false,
+      "notes": "Glass has a distribution of relaxation times; VI has two. The discreteness of the two-timescale structure is a prediction: the integration hierarchy has two levels, not a continuum."
+    },
+    {
+      "phenomenon": "Critical slowing down",
+      "framework": "Complex systems / phase transitions",
+      "equation": "\u03c4 \u221d |T - Tc|^(-\u03bd)",
+      "vi_property": "k\u2082 \u2192 0 for living fossils",
+      "comparison": "Near a critical point, relaxation time diverges (system becomes slow). Living fossils at k\u2082 \u2248 0 are like systems near criticality \u2014 they're at their equilibrium and barely moving. But this is not because they're near a phase transition; it's because they're already AT equilibrium (small displacement). Different mechanism for the same phenomenon (slow relaxation).",
+      "form_match": "partial",
+      "mechanism_match": false,
+      "notes": "Critical slowing down is about approaching a phase transition. VI's slow phase is about being near equilibrium. The mathematical similarity (slow relaxation) has different physical origins."
+    }
+  ]
+}

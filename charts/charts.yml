@@ -1,0 +1,100 @@
+version: 1
+requirements: charts/requirements.txt
+external_data:
+  grambank:
+    repo: grambank/grambank
+    ref: 7ae000c
+    files:
+    - path: cldf/values.csv
+    - path: cldf/languages.csv
+    - path: cldf/parameters.csv
+    - path: cldf/codes.csv
+    - path: docs/feature_groupings/feature_grouping_for_analysis.csv
+charts:
+- id: move1_oha_rho_vs_theta
+  producer: scripts/three_move_analysis.py
+  inputs:
+  - data/orobanchaceae_retention_matrix.tsv
+  - data/endosymbiont_genome_data.tsv
+  - data/t7-ltee/gene_dependency_scores.tsv
+  - data/t7-ltee/sodalis/iJO_intact.txt
+  - data/t7-ltee/sodalis/iJO_absent.txt
+  - data/t7-ltee/sodalis/iJO_pseudo.txt
+  - data/t7-ltee/string_centrality.tsv
+  - data/t7-ltee/t7_merged_analysis.tsv
+  outputs:
+  - data/formula-analysis/move1_oha_rho_vs_theta.png
+  expected_sha256: e5c7797b5490819c89a095150825fa41a8c125193ba3313452c752bfa75df75f
+- id: move1b_endosymbiont_theta_retention
+  producer: scripts/three_move_analysis.py
+  inputs:
+  - data/endosymbiont_genome_data.tsv
+  outputs:
+  - data/formula-analysis/move1b_endosymbiont_theta_retention.png
+  expected_sha256: 841ec84313357b31dab70152187e2e947046fcccbe5dd24eb90e619c8f31281a
+- id: move2_fisher_sodalis_partition
+  producer: scripts/three_move_analysis.py
+  inputs:
+  - data/t7-ltee/gene_dependency_scores.tsv
+  - data/t7-ltee/sodalis/iJO_intact.txt
+  - data/t7-ltee/sodalis/iJO_absent.txt
+  - data/t7-ltee/sodalis/iJO_pseudo.txt
+  - data/t7-ltee/string_centrality.tsv
+  - data/t7-ltee/t7_merged_analysis.tsv
+  outputs:
+  - data/formula-analysis/move2_fisher_sodalis_partition.png
+  expected_sha256: 04699c8c4ebaa64489d4066ba5f0f1ec50a9a3c5cc9b4838d89415fca3b8bcca
+- id: three_move_summary
+  producer: scripts/three_move_analysis.py
+  inputs:
+  - data/orobanchaceae_retention_matrix.tsv
+  - data/endosymbiont_genome_data.tsv
+  - data/t7-ltee/gene_dependency_scores.tsv
+  - data/t7-ltee/sodalis/iJO_intact.txt
+  - data/t7-ltee/sodalis/iJO_absent.txt
+  - data/t7-ltee/sodalis/iJO_pseudo.txt
+  - data/t7-ltee/string_centrality.tsv
+  - data/t7-ltee/t7_merged_analysis.tsv
+  outputs:
+  - data/formula-analysis/three_move_summary.png
+  expected_sha256: f6060d3927288e3787eb71237f562a104a2b298eb417e8e06b3dd61d8ad339c9
+- id: laser_beam_all_systems
+  producer: scripts/laser_beam.py
+  inputs:
+  - data/island_bird_morphology.csv
+  - data/cross_family_plastome_data.tsv
+  - data/species_plastome_data.tsv
+  - data/dewar_pangenome_lifestyles.csv
+  - data/endosymbiont_genome_data.tsv
+  - data/orobanchaceae_retention_matrix.tsv
+  outputs:
+  - data/formula-analysis/laser_beam_all_systems.png
+  expected_sha256: 991e6ec62f538fa1e1e7302b4430da4ec760215cd578803bd7dbce0bdac5c1e0
+- id: language_laser_beam
+  producer: scripts/language_laser_beam.py
+  inputs:
+  - data/external/grambank/cldf/values.csv
+  - data/external/grambank/cldf/languages.csv
+  - data/external/grambank/cldf/parameters.csv
+  - data/external/grambank/docs/feature_groupings/feature_grouping_for_analysis.csv
+  outputs:
+  - data/formula-analysis/language_laser_beam.png
+  expected_sha256: 61e43ecfb15e548c7cd510303e9b85f3fe8ad5d80cd05af2c4bf361627985caa
+- id: step_vs_sigmoid
+  producer: scripts/step_vs_sigmoid.py
+  inputs:
+  - data/t7-ltee/gene_dependency_scores.tsv
+  - data/t7-ltee/sodalis/iJO_intact.txt
+  - data/t7-ltee/sodalis/iJO_absent.txt
+  - data/t7-ltee/sodalis/iJO_pseudo.txt
+  outputs:
+  - data/formula-analysis/step_vs_sigmoid.png
+  expected_sha256: da2c8c816aca90b3070825f6cb744f80c21b564fb8c76d8581ab9a87d8da784e
+- id: formula_deep_analysis
+  producer: scripts/formula_deep_analysis.py
+  inputs:
+  - data/orobanchaceae_retention_matrix.tsv
+  - data/endosymbiont_genome_data.tsv
+  outputs:
+  - data/formula-analysis/formula_deep_analysis.png
+  expected_sha256: c0966805e27456f8f91f9b74a69bf98e5e9c9c055868eb8b7d1112d33b7b681b

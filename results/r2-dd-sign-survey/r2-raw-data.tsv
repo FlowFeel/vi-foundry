@@ -1,0 +1,65 @@
+# R2: DD Sign Survey — Substrate Type as Diagnostic
+# Full classification table of 45 bird clades from Phillimore & Price (2008) + extension clades
+# Columns: clade, gamma, gamma_significant, n_species, clade_age_my, clade_size_2mya, substrate_type, substrate_evidence, match_prediction, notes
+# gamma_significant: *** p<0.001, ** p<0.01, * p<0.05, ns not significant
+# substrate_type: generative (beta>1 expected) | ecological (beta<1 expected) | unknown
+# match_prediction: YES (positive DD+generative OR negative DD+ecological) | NO (positive DD+ecological OR negative DD+generative) | AMBIG (gamma near zero, not clearly positive or negative DD) | NA (extension clades)
+# DD_sign: positive (gamma > 0) | negative (gamma < 0) | neutral (gamma ~ 0, -0.5 to 0.5)
+
+clade	gamma	gamma_significant	n_species	clade_age_my	clade_size_2mya	substrate_type	substrate_evidence	dd_sign	match_prediction	notes
+Wrens	-3.628	***	50	12.098	49	generative	Oscine passerine; vocal learners with complex songs, regional dialects, song repertoires	negative	YES	Strong negative DD; strong generative substrate via vocal learning
+Phylloscopus_and_Seicercus	-2.991	**	42	12.330	53	generative	Oscine passerine; leaf warblers with complex learned songs, regional dialects	negative	YES	Strong negative DD matches ecological saturation despite vocal learning
+Anthus	-2.855	**	35	12.653	36	generative	Oscine passerine; pipits with learned songs, flight songs, territorial vocalizations	negative	YES	Consistent; open-country pipits show niche saturation
+Catharus	-2.830	**	11	8.500	10	generative	Oscine passerine; thrushes with complex learned songs, individual variation	negative	YES	Small clade but strong DD signal
+Grackles_and_allies	-2.828	**	36	8.417	30	generative	Oscine passerine; Icteridae with learned vocalizations, complex social systems	negative	YES	Strong negative DD in social icterids
+Estrildidae	-2.743	**	139	17.856	101	generative	Oscine passerine; estrildid finches with learned songs, cultural transmission of song types	negative	YES	Largest clade; vocal learning well-documented
+Parus	-2.622	**	40	10.677	40	generative	Oscine passerine; tits/chickadees with learned calls/songs, complex social learning, food caching memory	negative	YES	Strong negative DD; tits show social learning of food preferences
+Tangara	-2.465	**	42	10.104	37	generative	Oscine passerine; tanagers with learned songs	negative	YES	Consistent
+Turdus_and_allies	-2.278	*	59	14.290	52	generative	Oscine passerine; thrushes with complex learned songs, regional dialects	negative	YES	Strong negative DD
+Dendroica_Parula_Seiurus_Vermivora	-2.224	*	40	9.086	30	generative	Oscine passerine; wood warblers with learned songs, complex species-specific repertoires	negative	YES	Rabosky & Lovette (2008) also found strong negative DD
+Amazona	-1.856	*	28	6.717	16	generative	Psittaciformes; parrots with advanced vocal learning, social learning, tool use potential, combinatorial signals	negative	YES	Parrots are vocal learners with complex social cognition
+Tringa	-1.850	*	12	14.797	12	ecological	Charadriiformes; sandpipers - no vocal learning, simple innate calls, no tool use evidence	negative	YES	Shorebird with typical ecological niche saturation
+Swallows	-1.776	*	29	13.457	28	generative	Oscine passerine; Hirundinidae with learned songs, aerial displays	negative	YES	Consistent
+Caciques_and_oropendolas	-1.765	*	17	7.862	15	generative	Oscine passerine; Icteridae with complex learned vocalizations, colonial nesting, social learning	negative	YES	Consistent
+Ficedula	-1.673	*	25	15.283	24	generative	Oscine passerine; Muscicapidae flycatchers with learned songs	negative	YES	Consistent (Ficedula are Oscines, not Suboscines)
+Hemispingus	-1.635	ns	10	15.688	10	generative	Oscine passerine; tanagers with learned songs	negative	YES	Not significant but direction consistent
+Acanthiza	-1.543	ns	12	9.511	13	generative	Oscine passerine; thornbills with learned songs, complex social flocks	negative	YES	Not significant but direction consistent
+Anas	-1.377	ns	41	8.345	20	ecological	Anseriformes; ducks - no vocal learning, innate calls, no tool use, simple combinatorial signals	negative	YES	Consistent; waterfowl with ecological radiation
+Toxostoma	-1.358	ns	10	9.116	9	generative	Oscine passerine; Mimidae (thrashers) with complex learned songs, mimicry	negative	YES	Mimidae are excellent vocal mimics
+Thamnophilus	-1.282	ns	24	9.552	25	ecological	Suboscine passerine; antbirds - no vocal learning, innate songs, no tool use	negative	YES	Suboscine; lacks vocal learning
+Geositta	-1.271	ns	11	15.957	11	ecological	Suboscine passerine; Furnariidae miners - no vocal learning, innate calls	negative	YES	Suboscine; lacks vocal learning
+Storks	-1.254	ns	16	11.205	14	ecological	Ciconiiformes; storks - no vocal learning, simple innate vocalizations, no tool use	negative	YES	Consistent
+Meliphaga	-1.179	ns	12	15.465	12	generative	Oscine passerine; honeyeaters with learned songs, complex vocal repertoires	negative	YES	Consistent despite vocal learning
+Trogons	-0.910	ns	29	24.875	29	ecological	Trogoniformes; trogons - no vocal learning, simple innate calls, no tool use	negative	YES	Consistent
+Sylvia	-0.741	ns	22	16.372	22	generative	Oscine passerine; typical warblers with learned songs	negative	YES	Consistent
+Alcinae	-0.705	ns	22	11.100	19	ecological	Charadriiformes; auks - no vocal learning, innate calls, colonial nesting with simple signals	negative	YES	Consistent
+Picoides_and_Veniliornis	-0.645	ns	21	8.947	18	ecological	Piciformes; woodpeckers - no vocal learning, drumming for communication, innate calls	negative	YES	Woodpeckers use drumming (non-vocal) but no vocal learning
+Empidonax	-0.642	ns	15	10.662	13	ecological	Suboscine passerine; Tyrannidae flycatchers - no vocal learning, innate songs, no tool use	negative	YES	Suboscine; lacks vocal learning
+Icterus	-0.543	ns	25	8.611	23	generative	Oscine passerine; orioles with learned songs, complex vocal repertoires	negative	YES	Consistent
+Crax	-0.540	ns	14	4.517	10	ecological	Galliformes; curassows - no vocal learning, simple innate calls, no tool use	negative	YES	Consistent
+Ramphastos	-0.483	ns	8	8.114	6	ecological	Piciformes; toucans - no vocal learning, simple innate calls, no tool use	negative	YES	Consistent
+Aegotheles	-0.434	ns	7	9.669	9	ecological	Caprimulgiformes; owlet-nightjars - no vocal learning, simple innate calls	negative	YES	Consistent
+Penguins	-0.160	ns	17	9.927	12	ecological	Sphenisciformes; penguins - no vocal learning (individual recognition calls are innate), no tool use	negative	YES	Some penguins have complex call repertoires but innate, not learned
+Pteroglossus	-0.125	ns	12	7.340	8	ecological	Piciformes; aracaris - no vocal learning, simple innate calls	negative	YES	Consistent
+Larus	0.073	ns	48	5.718	13	ecological	Charadriiformes; gulls - no vocal learning, innate calls, no tool use	neutral	AMBIG	Gamma near zero; gull calls are innate
+Grouse_turkeys_partridges_tragopans	0.126	ns	53	18.509	42	ecological	Galliformes; gamebirds - no vocal learning, innate calls, display but no combinatorial signals	neutral	AMBIG	Gamma near zero; lekking displays are innate
+Myioborus	0.165	ns	12	4.623	8	generative	Oscine passerine; Parulidae whitestarts with learned songs	neutral	AMBIG	Small clade, recent radiation; weak positive gamma
+Alectoris	0.287	ns	7	7.296	8	ecological	Galliformes; partridges - no vocal learning, simple innate calls	positive	YES	Weak positive DD; small clade
+Cinclodes	0.465	ns	12	5.016	6	ecological	Suboscine passerine; Furnariidae - no vocal learning, innate calls, no tool use	positive	YES	Positive DD consistent with ecological substrate
+Cranes	0.671	ns	15	9.865	11	ecological	Gruiformes; cranes - no vocal learning, innate bugle calls, no tool use	positive	YES	Positive DD; ecological substrate
+Albatross	0.866	ns	14	8.995	6	ecological	Procellariiformes; albatross - no vocal learning, innate calls, no tool use	positive	YES	Positive DD; ecological substrate
+Sterna	1.365	ns	34	21.656	27	ecological	Charadriiformes; terns - no vocal learning, simple innate calls, no tool use	positive	YES	Positive DD; ecological substrate
+Puffinus	1.490	ns	18	7.843	13	ecological	Procellariiformes; shearwaters - no vocal learning, innate calls	positive	YES	Positive DD; ecological substrate
+Tauraco	1.657	ns	13	21.727	9	ecological	Musophagiformes; turacos - no vocal learning, simple innate calls	positive	YES	Positive DD; ecological substrate
+Myiarchus	1.854	ns	19	9.593	13	ecological	Suboscine passerine; Tyrannidae flycatchers - no vocal learning, innate songs	positive	YES	Positive DD; ecological substrate
+
+# ====== EXTENSION CLADES (Sexual Selection / Combinatorial Signals) ======
+# These are not in the Phillimore & Price (2008) dataset; added for extension analysis
+# DD sign estimated from published literature where available
+
+clade	gamma	gamma_significant	n_species	substrate_type	substrate_evidence	dd_sign	notes
+Cichlids_African	NA	NA	~2000	generative	Combinatorial sexual signals: male colour polymorphism, elaborate courtship displays, social learning of mate preferences; sensory drive	negative	Explosive radiation followed by saturation; Lake Victoria/Malawi/Tanganyika cichlids show density-dependent slowdown (Seehausen 2006, Wagner et al. 2012)
+Paradisaeidae	NA	NA	41	generative	Birds-of-paradise: elaborate multi-component displays (plumage, dance, vocalizations) under strong sexual selection; Oscine passerines with vocal learning	negative	Irestedt et al. (2009) found moderate diversification rate; family originated ~24 Mya; more geographic isolation than sexual selection as speciation driver
+Physalaemus_pustulosus	NA	NA	1	generative	Túngara frog: combinatorial call (whine + optional chucks) under strong sexual selection; sensory exploitation hypothesis supported	NA	Species-level analysis; call complexity driven by female preference but also increases predation risk
+Ptilonorhynchidae	NA	NA	27	generative	Satin bowerbirds and allies: bower construction, decoration, female choice for bower quality; Oscine passerines with vocal learning	negative	Bowerbirds show moderate diversity; bower-building evolved in parallel in two lineages
+Trochilidae	NA	NA	~330	generative	Hummingbirds: iridescent plumage, aerial displays, vocal learning (Apodiformes), combinatorial signal space (visual + acoustic + movement)	negative	McGuire et al. (2014) documented an early burst followed by slowdown; diversity-dependent model fits well

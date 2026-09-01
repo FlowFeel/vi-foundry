@@ -1,0 +1,26 @@
+taxon	two_stage_sleep	cognitive_niche	source
+Human	Y	Y	Roth 2015; Medeiros et al. 2021
+Mouse	Y	Y	Roth 2015; Medeiros et al. 2021
+Rat	Y	Y	Roth 2015; Medeiros et al. 2021
+Cat	Y	Y	Medeiros et al. 2021
+Dog	Y	Y	Medeiros et al. 2021
+Dolphin	Y	Y	Roth 2015; Medeiros et al. 2021
+Elephant	Y	Y	Roth 2015
+Zebra_finch	Y	Y	Medeiros et al. 2021
+Pigeon	Y	Y	Medeiros et al. 2021
+Owl	Y	Y	Medeiros et al. 2021
+Octopus	Y	Y	Medeiros et al. 2021
+Cuttlefish	Y	Y	Medeiros et al. 2021
+Bearded_dragon	Y	N	Medeiros et al. 2021
+Zebrafish	Y	Y	Medeiros et al. 2021
+Fruit_fly	N	N	Medeiros et al. 2021
+C_elegans	N	N	Medeiros et al. 2021
+Honeybee	N	Y	Medeiros et al. 2021
+Jellyfish	N	N	Medeiros et al. 2021
+Sea_anemone	N	N	Medeiros et al. 2021
+Sponge	N	N	Medeiros et al. 2021
+Planarian	N	N	Medeiros et al. 2021
+Leech	N	N	Medeiros et al. 2021
+Aplysia	N	N	Medeiros et al. 2021
+Crayfish	N	N	Medeiros et al. 2021
+Lobster	N	N	Medeiros et al. 2021

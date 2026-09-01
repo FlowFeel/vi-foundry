@@ -18,8 +18,9 @@ matplotlib.use('Agg')
 import matplotlib.pyplot as plt
 from pathlib import Path
 
-WORKSPACE = Path("/home/node/.openclaw/workspace")
-OUTPUT_DIR = WORKSPACE / "vi-foundry" / "data" / "formula-analysis"
+REPO_ROOT = Path(__file__).resolve().parents[1]  # vi-foundry repo root
+WORKSPACE = REPO_ROOT  # backward-compat alias: now foundry-relative
+OUTPUT_DIR = WORKSPACE / "data" / "formula-analysis"
 OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
 
 # ============================================================
@@ -45,7 +46,7 @@ sodalis_rho_ppi = 0.247
 
 # Orobanchaceae: parasitic plants, θ high, ρ = 0.955 (from T6 PGLS analysis, phylogenetically corrected)
 # Also compute from retention matrix for comparison
-orobanch = pd.read_csv(WORKSPACE / "vi-foundry/data/orobanchaceae_retention_matrix.tsv", sep="\t")
+orobanch = pd.read_csv(WORKSPACE / "data/orobanchaceae_retention_matrix.tsv", sep="\t")
 # ρ across all gene categories within each species
 orobanch_species = orobanch['species'].unique()
 orobanch_rhos = {}
@@ -73,7 +74,7 @@ print(f"Orobanchaceae T6 PGLS (corrected): ρ={oroban_rho_all:.3f}, p={oroban_p_
 ANCESTOR_BP = 4_500_000
 
 # Endosymbiont data
-endo = pd.read_csv(WORKSPACE / "vi-foundry/data/endosymbiont_genome_data.tsv", sep="\t")
+endo = pd.read_csv(WORKSPACE / "data/endosymbiont_genome_data.tsv", sep="\t")
 # Per-genus summary
 genus_summary = endo.groupby('genus').agg(
     mean_genome_bp=('genome_bp', 'mean'),
@@ -327,7 +328,7 @@ print("MOVE 2: FISHER — Partition Sodalis retention variance")
 print("=" * 60)
 
 # Load Sodalis merged data
-sodalis_genes = pd.read_csv(WORKSPACE / "vi-foundry/data/t7-ltee/t7_merged_analysis.tsv", sep="\t")
+sodalis_genes = pd.read_csv(WORKSPACE / "data/t7-ltee/t7_merged_analysis.tsv", sep="\t")
 print(f"Sodalis merged data: {len(sodalis_genes)} genes")
 print(f"Columns: {list(sodalis_genes.columns)}")
 
@@ -335,11 +336,11 @@ print(f"Columns: {list(sodalis_genes.columns)}")
 # The t7_merged_analysis.tsv has LTEE mutation data matched to iJO1366
 # For Sodalis retention, we need the Sodalis classification
 # Let's load the Sodalis gene lists
-with open(WORKSPACE / "vi-foundry/data/t7-ltee/sodalis/iJO_intact.txt") as f:
+with open(WORKSPACE / "data/t7-ltee/sodalis/iJO_intact.txt") as f:
     intact_genes = set(line.strip() for line in f if line.strip())
-with open(WORKSPACE / "vi-foundry/data/t7-ltee/sodalis/iJO_absent.txt") as f:
+with open(WORKSPACE / "data/t7-ltee/sodalis/iJO_absent.txt") as f:
     absent_genes = set(line.strip() for line in f if line.strip())
-with open(WORKSPACE / "vi-foundry/data/t7-ltee/sodalis/iJO_pseudo.txt") as f:
+with open(WORKSPACE / "data/t7-ltee/sodalis/iJO_pseudo.txt") as f:
     pseudo_genes = set(line.strip() for line in f if line.strip())
 
 print(f"\nSodalis gene classification:")
@@ -348,11 +349,11 @@ print(f"  Absent (lost): {len(absent_genes)}")
 print(f"  Pseudogene: {len(pseudo_genes)}")
 
 # Load dependency scores
-dep_scores = pd.read_csv(WORKSPACE / "vi-foundry/data/t7-ltee/gene_dependency_scores.tsv", sep="\t")
+dep_scores = pd.read_csv(WORKSPACE / "data/t7-ltee/gene_dependency_scores.tsv", sep="\t")
 print(f"\nDependency scores: {len(dep_scores)} genes")
 
 # Load STRING centrality
-string_cent = pd.read_csv(WORKSPACE / "vi-foundry/data/t7-ltee/string_centrality.tsv", sep="\t")
+string_cent = pd.read_csv(WORKSPACE / "data/t7-ltee/string_centrality.tsv", sep="\t")
 print(f"STRING centrality: {len(string_cent)} genes")
 
 # Build Sodalis dataframe: gene_id, dependency_score, centrality, retention

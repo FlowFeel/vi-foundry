@@ -1,4 +1,6 @@
-.PHONY: test lint unit simulacra integration regression verify docker-stack all clean
+.PHONY: test lint unit simulacra integration regression verify docker-stack all clean \
+	charts charts-refresh charts-test
+
 
 # Lint (static analysis)
 lint:
@@ -33,6 +35,23 @@ docker-stack:
 verify:
 	Rscript scripts/run_pipeline.R --output test-output
 	python3 tests/compare_baseline.py --tolerance 0.001 --baseline baseline --output test-output
+
+# Chart pipeline (see charts/charts.yml)
+# Verify every committed figure reproduces byte-identical to its blessed hash.
+# Non-mutating: regenerates into a scratch dir and restores the working tree.
+charts:
+	python3 scripts/fetch_external_data.py
+	python3 scripts/render_charts.py
+	python3 -m pytest tests/test_charts.py -q
+
+# Bless intentional figure changes: regenerate in place, update expected_sha256
+# in charts/charts.yml. Commit charts.yml + the regenerated PNGs together.
+charts-refresh:
+	python3 scripts/render_charts.py --refresh
+
+# Run just the chart test suite (determinism/conformance/baseline/freshness)
+charts-test:
+	python3 -m pytest tests/test_charts.py -q
 
 # All testthat gates + lint (no Docker required)
 all: lint unit simulacra integration regression

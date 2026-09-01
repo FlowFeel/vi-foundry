@@ -23,3 +23,10 @@ results/*.json
 results/*.txt
 results/simulacra/
 !results/session_info.txt
+
+# Chart pipeline
+# external datasets fetched by scripts/fetch_external_data.py (pinned by ref)
+data/external/
+# backup dirs left by render_charts verify mode if interrupted
+*.bak
+*/.testbak

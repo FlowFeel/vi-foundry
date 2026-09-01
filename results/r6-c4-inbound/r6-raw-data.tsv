@@ -1,0 +1,18 @@
+# r6-raw-data.tsv
+# R6: C4 Inbound Bi-Exponential — Independent C4 Origins in Grasses
+# Data compiled from: Christin et al. (2007, Nature); Christin et al. (2011, 2012, Current Biology)
+# Note: Ages are approximate molecular clock estimates from published phylogenies.
+#        PEPC completeness = number of convergent amino acid changes (out of 21 known sites)
+#        identified in each lineage's PEPC sequence.
+#
+# ρ_eq (total known convergent PEPC sites) = 21
+#
+lineage	time_mya	pepc_sites	notes
+Andropogoneae	18	20	Oldest C4 lineage; includes maize, sorghum, sugarcane
+Paniceae_PCK	13	18	PCK subtype; includes Panicum, Setaria
+Paniceae_NADP_ME	10	16	NADP-ME subtype; includes Paspalum, Pennisetum
+Chloridoideae	8	15	Includes Eragrostis, Chloris, finger millet
+Aristida	6	12	Triodia-like C4; includes Aristida species
+Stipagrostis	5	10	Closely related to Aristida; includes Stipagrostis species
+Neurachne	4	8	Australian endemic; Neurachne species
+Eriachne	3	6	Australian endemic; Eriachne species

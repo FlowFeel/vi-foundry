@@ -16,17 +16,18 @@ matplotlib.use('Agg')
 import matplotlib.pyplot as plt
 from pathlib import Path
 
-WORKSPACE = Path("/home/node/.openclaw/workspace")
-OUTPUT_DIR = WORKSPACE / "vi-foundry" / "data" / "formula-analysis"
+REPO_ROOT = Path(__file__).resolve().parents[1]  # vi-foundry repo root
+WORKSPACE = REPO_ROOT  # backward-compat alias: now foundry-relative
+OUTPUT_DIR = WORKSPACE / "data" / "formula-analysis"
 OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
 
 # Load Sodalis data
-dep = pd.read_csv(WORKSPACE / "vi-foundry/data/t7-ltee/gene_dependency_scores.tsv", sep="\t")
-with open(WORKSPACE / "vi-foundry/data/t7-ltee/sodalis/iJO_intact.txt") as f:
+dep = pd.read_csv(WORKSPACE / "data/t7-ltee/gene_dependency_scores.tsv", sep="\t")
+with open(WORKSPACE / "data/t7-ltee/sodalis/iJO_intact.txt") as f:
     intact = set(l.strip() for l in f if l.strip())
-with open(WORKSPACE / "vi-foundry/data/t7-ltee/sodalis/iJO_absent.txt") as f:
+with open(WORKSPACE / "data/t7-ltee/sodalis/iJO_absent.txt") as f:
     absent = set(l.strip() for l in f if l.strip())
-with open(WORKSPACE / "vi-foundry/data/t7-ltee/sodalis/iJO_pseudo.txt") as f:
+with open(WORKSPACE / "data/t7-ltee/sodalis/iJO_pseudo.txt") as f:
     pseudo = set(l.strip() for l in f if l.strip())
 
 def classify(row):
