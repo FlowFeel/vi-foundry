@@ -1,10 +1,10 @@
 {
   "island_birds": {
-    "rho": 0.7545045450053531,
-    "p": 0.030512759033309068,
-    "n": 8,
+    "rho": 0.788126251590047,
+    "p": 0.0004828391398373026,
+    "n": 15,
     "zero_dep_mean_rank": 1.0,
-    "nonzero_dep_mean_rank": 5.0
+    "nonzero_dep_mean_rank": 8.5
   },
   "cross_family_plastome": {
     "rho": -0.8833177244344207,

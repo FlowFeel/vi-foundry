@@ -16,9 +16,10 @@ matplotlib.use('Agg')
 import matplotlib.pyplot as plt
 from pathlib import Path
 
-WORKSPACE = Path("/home/node/.openclaw/workspace")
-GB_DIR = WORKSPACE / "data/glottobank/grambank/grambank_extracted/grambank-grambank-7ae000c/cldf"
-OUTPUT_DIR = WORKSPACE / "vi-foundry/data/formula-analysis"
+REPO_ROOT = Path(__file__).resolve().parents[1]  # vi-foundry repo root
+WORKSPACE = REPO_ROOT  # backward-compat alias: now foundry-relative
+GB_DIR = WORKSPACE / "data" / "external" / "grambank" / "cldf"
+OUTPUT_DIR = WORKSPACE / "data/formula-analysis"
 OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
 
 # ============================================================
@@ -31,7 +32,7 @@ print("="*60)
 values = pd.read_csv(GB_DIR / "values.csv")
 languages = pd.read_csv(GB_DIR / "languages.csv")
 parameters = pd.read_csv(GB_DIR / "parameters.csv")
-feature_groups = pd.read_csv(WORKSPACE / "data/glottobank/grambank/grambank_extracted/grambank-grambank-7ae000c/docs/feature_groupings/feature_grouping_for_analysis.csv")
+feature_groups = pd.read_csv(WORKSPACE / "data" / "external" / "grambank" / "docs" / "feature_groupings" / "feature_grouping_for_analysis.csv")
 
 print(f"Values: {len(values)} rows")
 print(f"Languages: {len(languages)}")

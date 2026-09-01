@@ -14,8 +14,9 @@ matplotlib.use('Agg')
 import matplotlib.pyplot as plt
 from pathlib import Path
 
-WORKSPACE = Path("/home/node/.openclaw/workspace")
-OUTPUT_DIR = WORKSPACE / "vi-foundry" / "data" / "formula-analysis"
+REPO_ROOT = Path(__file__).resolve().parents[1]  # vi-foundry repo root
+WORKSPACE = REPO_ROOT  # backward-compat alias: now foundry-relative
+OUTPUT_DIR = WORKSPACE / "data" / "formula-analysis"
 OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
 
 # ============================================================
@@ -69,7 +70,7 @@ all_points.append({
 })
 
 # --- Orobanchaceae: per-species ρ values (NEW POINTS!) ---
-orobanch = pd.read_csv(WORKSPACE / "vi-foundry/data/orobanchaceae_retention_matrix.tsv", sep="\t")
+orobanch = pd.read_csv(WORKSPACE / "data/orobanchaceae_retention_matrix.tsv", sep="\t")
 for sp in orobanch['species'].unique():
     sp_data = orobanch[orobanch['species'] == sp]
     if sp_data['retention'].std() == 0:
@@ -308,7 +309,7 @@ ax.grid(True, alpha=0.3)
 
 # --- Panel C: Endosymbiont genus-level with symbiosis age as θ ---
 ax = axes[1, 0]
-endo = pd.read_csv(WORKSPACE / "vi-foundry/data/endosymbiont_genome_data.tsv", sep="\t")
+endo = pd.read_csv(WORKSPACE / "data/endosymbiont_genome_data.tsv", sep="\t")
 genus_sum = endo.groupby('genus').agg(
     mean_genome_bp=('genome_bp', 'mean'),
     mean_aa=('aa_pathways_retained', 'mean'),

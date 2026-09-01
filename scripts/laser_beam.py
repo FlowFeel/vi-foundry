@@ -11,8 +11,9 @@ matplotlib.use('Agg')
 import matplotlib.pyplot as plt
 from pathlib import Path
 
-WORKSPACE = Path("/home/node/.openclaw/workspace")
-OUTPUT_DIR = WORKSPACE / "vi-foundry" / "data" / "formula-analysis"
+REPO_ROOT = Path(__file__).resolve().parents[1]  # vi-foundry repo root
+WORKSPACE = REPO_ROOT  # backward-compat alias: now foundry-relative
+OUTPUT_DIR = WORKSPACE / "data" / "formula-analysis"
 OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
 
 results = {}
@@ -24,7 +25,7 @@ print("="*60)
 print("1. ISLAND BIRDS — Trait loss ordering")
 print("="*60)
 
-birds = pd.read_csv(WORKSPACE / "vi-foundry/data/island_bird_morphology.csv")
+birds = pd.read_csv(WORKSPACE / "data/island_bird_morphology.csv")
 print(f"Data: {len(birds)} structures")
 print(birds)
 
@@ -52,7 +53,7 @@ print("\n\n" + "="*60)
 print("2. CROSS-FAMILY PLASTOME — Size vs parasitism")
 print("="*60)
 
-cross = pd.read_csv(WORKSPACE / "vi-foundry/data/cross_family_plastome_data.tsv", sep="\t")
+cross = pd.read_csv(WORKSPACE / "data/cross_family_plastome_data.tsv", sep="\t")
 print(f"Data: {len(cross)} species")
 
 # θ = parasitism_score / max
@@ -110,7 +111,7 @@ print("\n\n" + "="*60)
 print("3. SPECIES PLASTOME — Finer parasitism gradient")
 print("="*60)
 
-species = pd.read_csv(WORKSPACE / "vi-foundry/data/species_plastome_data.tsv", sep="\t")
+species = pd.read_csv(WORKSPACE / "data/species_plastome_data.tsv", sep="\t")
 print(f"Data: {len(species)} species")
 print(f"Parasitism scores: {sorted(species['parasitism_score'].unique())}")
 
@@ -156,7 +157,7 @@ print("\n\n" + "="*60)
 print("4. DEWAR PANGENOME — Lifestyle vs pan-genome fluidity")
 print("="*60)
 
-dewar = pd.read_csv(WORKSPACE / "vi-foundry/data/dewar_pangenome_lifestyles.csv")
+dewar = pd.read_csv(WORKSPACE / "data/dewar_pangenome_lifestyles.csv")
 # fluidity = accessory / pan (openness of pan-genome)
 dewar['fluidity'] = dewar['pangenome_fluidity']
 # genome_size is in the data
@@ -200,7 +201,7 @@ print("\n\n" + "="*60)
 print("5. ENDOSYMBIONT — θ vs retention (species-level)")
 print("="*60)
 
-endo = pd.read_csv(WORKSPACE / "vi-foundry/data/endosymbiont_genome_data.tsv", sep="\t")
+endo = pd.read_csv(WORKSPACE / "data/endosymbiont_genome_data.tsv", sep="\t")
 print(f"Data: {len(endo)} species, {endo['genus'].nunique()} genera")
 
 # θ = 1 - (genome/ancestor)
@@ -248,7 +249,7 @@ print("\n\n" + "="*60)
 print("6. OROBANCHACEAE — Pooled ρ and step function")
 print("="*60)
 
-orobanch = pd.read_csv(WORKSPACE / "vi-foundry/data/orobanchaceae_retention_matrix.tsv", sep="\t")
+orobanch = pd.read_csv(WORKSPACE / "data/orobanchaceae_retention_matrix.tsv", sep="\t")
 # Pooled ρ
 rho_oro, p_oro = stats.spearmanr(orobanch['dependency_score'], orobanch['retention'])
 print(f"Pooled ρ (dependency vs retention): {rho_oro:.3f}, p={p_oro:.6f}")
