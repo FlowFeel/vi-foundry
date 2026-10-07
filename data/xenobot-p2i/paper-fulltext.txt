@@ -1,0 +1,577 @@
+=== PAGE 1 ===
+Preprint.
+TOWARDCONTROLLINGBIOLOGY WITHLANGUAGE:
+OFFLINELEARNING OFPROMPT-CONDITIONED
+INTERVENTIONS FORCELLS, ORGANOIDS,AND
+BIOBOTS
+Nam H. Le
+University of Vermont
+namlehai90@gmail.com
+Douglas Blackiston, Michael Levin
+Tufts University, Allen Discovery Center
+Josh Bongard
+University of Vermont
+ABSTRACT
+Artificial intelligence increasingly serves as a natural-language interface to com-
+plex technical systems, letting people accomplish sophisticated tasks by describ-
+ing what they want rather than specifying how to do it. Extending this interface
+to living systems is harder: unlike code or images, a biological intervention has
+no closed-form linguistic meaning, and the paired language-intervention-outcome
+data needed to learn such a mapping is expensive to collect, since each exam-
+ple requires its own wet-lab experiment. One way around this is to treat an ex-
+isting archive of interventions and their already-observed outcomes as a fixed,
+offline dataset, and use a vision-language model to judge, without any new exper-
+iments, whether an archived outcome matches a natural-language description. But
+whether that judgment is reliable enough to train a language-to-intervention map-
+ping on – without new experiments and without human validation – has remained
+unclear. Here we show that a natural-language interface for a living organism –
+a xenobot, a synthetic multicellular construct with no nervous system – can be
+learned entirely offline this way, using a vision-language model’s own judgment
+as the sole training reward: an instruction is mapped to the intervention already on
+record as producing the described behavior. This mapping generalizes to entirely
+new instructions, evaluated against archive data withheld from training (80.0%
+held-out accuracy vs. a66.7%chance baseline, matching a network trained di-
+rectly on ground-truth labels). These results indicate that offline archives, com-
+bined with automated judgment, can substitute for costly new experiments when
+learning to ground natural language in a living system’s own recorded behavior
+– an intermediate step toward directing living matter with the same ease as code,
+though whether these predicted interventions actually reproduce their intended
+behavior on live, newly-stimulated cells remains to be tested.
+1 INTRODUCTION
+Imagine a clinician or bioengineer simply describing what they want – calm this inflamed tissue,
+direct these cells to close a wound, steer this synthetic biobot toward a target – and having cells,
+organoids, or synthetic biobots (Kriegman et al., 2021; Blackiston et al., 2021a; Levin, 2021) carry
+out that intention directly, the way a modern software system already responds to a natural-language
+request. Controlling living systems this way is a long-standing goal across biology, medicine, and
+synthetic biology, yet the interface remains fundamentally low-level: practitioners specify interven-
+tions parameter by parameter, through trial and error informed by domain expertise. In other tech-
+nical domains, natural language has emerged as a high-level interface to complex systems: users
+specify a goal – generate this code (Fried et al., 2023), design this molecule (Bengio et al., 2021),
+plan this trajectory (Huang et al., 2022) – and a learned model translates intent into low-level action.
+This raises a question central to applied machine learning (ML): can a similar interface be learned
+1
+arXiv:2610.02247v1  [q-bio.QM]  30 Sep 2026
+=== PAGE 2 ===
+Preprint.
+Figure 1: Overview of the pipeline. (a) Tracked trajectory of a xenobot before stimulation (PRE),
+with a zoomed view of the construct. (b) The same trajectory, marking the moment the electrical
+stimulus is applied. (c) The trajectory continuing after stimulation (POST), showing the resulting
+change in behavior. (d) An example natural-language prompt. (e) The Prompt-to-Intervention (P2I)
+network: a frozen SBERT sentence embedding is passed through a small MLP that outputs a single
+predicted duration. (f) The predicted duration is matched to its nearest neighbor on the archive’s
+duration axis; the matched batch’s own intervention and trajectory, as in (b)–(c), are what a vision-
+language model scores against the prompt, and that score is the reward used to train P2I.
+for biological systems, mapping a natural-language description of desired behavior to the physical
+intervention that elicits it?
+Two properties make this hard. First, collecting paired (prompt, intervention, outcome) data online is
+prohibitively expensive: each datum is a wet-lab experiment, ruling out approaches that need a fresh
+experiment per prompt or per objective. Second, the objective space is inherently multi-task and
+contains opposing goals – e.g. “stop” versus “accelerate” – and a single policy trained across such
+goals is known to suffer objective interference, where the gradient for one goal actively degrades
+another (Yu et al., 2020; Chen et al., 2018), so naively pooling all objectives into one unconstrained
+shared model is not a safe default either. Together, these rule out the two most direct approaches:
+brute-forcing the mapping with enough paired data, and training one policy across all objectives
+without accounting for how they interact.
+We address both properties by treating language-to-intervention as an offline learning problem.
+Archives of intervention-outcome pairs already exist, collected for purposes other than language-
+conditioned learning; we treat such an archive as a fixed dataset over which a policy is trained
+without any new experiments. To supply a reward signal in the absence of labeled prompt-outcome
+alignment, we use a pretrained VLM as a zero-shot scorer (Rocamonde et al., 2023), judging how
+well an archived outcome matches a natural-language description, and check that judgment against
+independent, non-VLM ground truth rather than trust it by assumption. The policy uses one output
+head per behavioral category over a shared backbone.
+Contributions.This work makes three key contributions, each tested directly in Section 4 rather
+than only asserted: (1) we demonstrate an archive-based learning paradigm for language-to-
+intervention translation, using a vision-language model’s own judgment as the reward in place of
+new experimental feedback; (2) we validate this approach end-to-end, generalizing to entirely new
+instructions on archive data withheld from training at80.0%ground-truth accuracy, against a66.7%
+chance baseline; (3) we show this VLM-derived reward is not redundant even with only two be-
+haviors currently distinguished: replacing it with a single fixed duration chosen directly from real
+2
+=== PAGE 3 ===
+Preprint.
+velocity data trains to a comparable loss but collapses held-out generalization to59.1%, below
+chance, while the VLM-fit reward reaches80.0%.
+2 RELATEDWORK
+Large language models serve as general-purpose interfaces to complex domains, generating func-
+tional code (Chen et al., 2021), aiding molecular design (Jumper et al., 2021), and assisting sci-
+entific discovery (Zheng et al., 2025), typically letting users specify goals in language rather than
+low-level parameters. Biological control is harder: language has no closed-form semantics for what
+an electrical stimulus should mean, and paired (prompt, intervention, outcome) data is expensive
+to collect. Synthetic biology has produced xenobots, livingXenopus laeviscell assemblies exhibit-
+ing coordinated motion (Kriegman et al., 2021; Blackiston et al., 2021a), where targeted electrical
+or optogenetic interventions elicit reproducible behavioral change (Zajdel et al., 2020; Levin, 2021;
+Emiliani et al., 2022), but control remains manual, tuned parameter-by-parameter without a language
+interface.
+Vision-language models can serve as zero-shot reward models (Rocamonde et al., 2023; Radford
+et al., 2021; Liang et al., 2023; Wang et al., 2024), though rarely validated against ground truth in-
+dependent of the VLM itself – a gap we address directly. Learning across opposing behavioral goals
+is a multi-task problem, for which task-specific heads over a shared backbone are a standard remedy
+(Yu et al., 2020; Chen et al., 2018; Ruder, 2017; Caruana, 1997). Training from a fixed archive with
+only terminal rewards places this work in the offline, contextual-bandit regime (Levine et al., 2020;
+May et al., 2012), for which derivative-free search such as CMA-ES (Hansen & Ostermeier, 2001)
+is standard; we show the reward is in fact differentiable, so both backpropagation and gradient-free
+search apply, and use their agreement to validate the optimum found.
+Two prior studies explore the underlying idea of prompt-to-intervention learning as a proof-of-
+concept in simulated, artificial-life cells; we position this work explicitly against the specific gaps
+each left open. Le et al. (2025) introduced a P2I network mapping a prompt embedding to a spatial
+vector field steering simulated 2D cell collectives, scored by a VLM against a fixed one-word vo-
+cabulary (e.g. “clustering” vs. “scattering”); the reward was treated as non-differentiable by design,
+optimized only with(1+1)-ES and a genetic algorithm, and the paper flags gradient interference be-
+tween opposing objectives as an open problem at multi-prompt scale. Le et al. (2026) extends this,
+replacing the fixed vocabulary with a continuous, free-form VLM score in[0,1]– closer in spirit
+to the reward used here – but trained on a single prompt (“form a cluster”), again assumed non-
+differentiability, and lists gradient-trainable optimization and real-cell validation as explicit future
+work. This paper answers both directly rather than by assumption: the VLM-derived reward is fit as
+a smooth, differentiable function and trained by direct backpropagation, cross-validated against four
+independent optimizers; we train and evaluate on 33 prompts rather than one; and every experiment
+here is on a real, living, non-neural organism rather than a physics simulation.
+3 METHODS
+3.1 PROBLEM SETUP
+We are given a fixed archiveA={(d i,xi)}N
+i=1 ofNpreviously-recorded interventions on a
+xenobot:d i∈R >0 is the real electrical-stimulation duration applied in triali, andx i is that trial’s
+real, tracked PRE/POST trajectory;Ais fixed throughout training and evaluation, with no new in-
+tervention ever applied to collect it.
+A user supplies a natural-language promptp∈Pdescribing a desired change in behavior (e.g. “get
+the bot to slow down”). We seek a policyfθ :P→R >0 that maps a prompt to a predicted duration
+ˆd=f θ(p); at evaluation time, ˆdis rounded to its nearest real, archived duration (Section 3.4), and
+judged against that intervention’s actual outcome.
+Because no ground-truth(p,d)pairs exist – no human ever paired a prompt with a duration – we
+cannot supervisef θ directly. Instead a vision-language model acts as a judgeJ(p,x)∈[0,1],
+scoring how well a real trajectoryxmatches whatpdescribes;Jnever seesd, only trajectoryx i and
+prompt text, so its judgment can depend on duration only through what the trajectory itself reveals.
+ComposingJwith the archive gives a per-prompt reward over real, already-observed outcomes,
+ri(p) =J(p,x i)for each archive pointi, computed once, offline, and never queried live during
+training. The remainder of this section gives, in order: the real dataAis built from and the train/test
+archive split (Section 3.2), the architecture off θ (Section 3.3), how{r i(p)}becomes a training
+signal (Section 3.4), and the held-out evaluation protocol (Section 3.5).
+3
+=== PAGE 4 ===
+Preprint.
+Figure 2: From raw video to trajectory, real batch. (a) A raw frame, cropped, with a stimulus-
+induced bubble chain near the dish edge. (b) Optical flow magnitude, one of three detection tiers
+used despite this noise – motion concentrates at the electrodes, with the true signal (bright point
+near center) far weaker. (c, d) Per-framex/yposition across the full PRE/DURING/POST protocol:
+a noisy PRE baseline settles into a distinct POST position – the behavior change the VLM judge
+assesses from the corresponding 2D trajectory.
+3.2 DATASET AND TRAJECTORY EXTRACTION
+The archive consists of videos of individually-tracked xenobots undergoing a three-phase protocol:
+a PRE baseline period, a DURING period (an electrical stimulus of controlled durationd, the sole
+intervention parameter here), and a POST period. We refer to each such recorded trial as abatchb
+throughout (a full tracked trial, not an ML minibatch).
+From raw video to trajectory.Extracting the trajectory used throughout this paper (Figure 2) re-
+quires suppressing visual noise specific to this imaging setup – stimulus-induced air bubbles, spec-
+ular reflection, and debris – that a naive brightness- or contour-based tracker confuses with the
+xenobot itself. We track position per-frame using the Segment Anything Model (SAM) (Kirillov
+et al., 2023) across three complementary detection strategies – bounding-box re-detection, optical-
+flow-guided prompting, and grid-search prompting – each cross-checked against dish geometry and
+the tracked xenobot’s own appearance to reject false positives. This yields, for each batch, a PRE-
+phase and a POST-phase position trace, each a 2D trajectory in real pixel coordinates. This – not
+a precomputed velocity – is what the VLM judgeJreads (Section 3.4): ifJwere instead shown a
+ready-made velocity number, judging a motion prompt could reduce to comparing two numbers, and
+a plain numerical rule could do that job just as well, defeating the point of testing whether a VLM
+reading raw trajectories is useful at all. Section 4.3 makes this comparison directly, training against
+a purely numerical, velocity-only target instead ofJ’s judgment. Frames where all three detection
+tiers fail are excluded as missing data rather than treated as stillness.
+Assessment window.Classifying a batch requires a PRE baseline window and a POST assessment
+window, each a fixed number of frames – the last few PRE frames and the first few POST frames –
+which aggregate (mean or median) to a pre-window velocityv pre
+b and a post-window (assessment)
+velocityv assess
+b per batch. A window whose length instead scaled withdwould confound duration
+with the amount of time available to observe behavior, since xenobots naturally decelerate after
+4
+=== PAGE 5 ===
+Preprint.
+any stimulus, so we fix both window lengths to a constant, independent ofd. The two window
+lengths and the aggregation statistic are themselves chosen by a grid search (7 pre-window sizes×
+8 post-window sizes×2 aggregation statistics, 112 combinations), maximizing how wellv assess
+b −
+vpre
+b separates real ‘faster’- from ‘slower’-labeled batches by duration (Mann–Whitney test). We
+validate the selected configuration with a permutation test: shuffling the (batch, duration) pairing
+and rerunning the full 112-combination search 200 times against the real result. The full grid, the
+permutation protocol, and both results are in Section 4.2 and the Supplementary Material.
+After quality filtering, 101 batches remain classified (26 ‘faster’, 75 ‘slower’) out of 149 tracked;
+48 of 149 are excluded as unreliable rather than force-classified. Each of the 149 tracked batches
+corresponds to a distinct, individually stimulated xenobot construct – no construct is reused across
+batches, so batches constitute genuine biological replicates rather than repeated trials on the same
+organism. We use a 60/40 train/test split (61/40: 16/45 faster/slower train, 10/30 faster/slower test),
+stratified at the sub-class level so the rarest sub-class is represented in both splits.
+3.3 ARCHITECTURE
+We embed prompts with SentenceBERT (Reimers & Gurevych, 2019), a frozen 384-dimensional
+sentence encoder. The P2I policy network (Figure 1e) takes this embedding as input and outputs
+a predicted intervention duration, through a fully-connected backbone:384→64(ReLU, dropout
+0.2)→32(ReLU, dropout 0.2), with one sigmoid output head per behavior category (26,786param-
+eters total for 2 heads) – one head per behavioral direction, so that opposing objectives (e.g. “stop”
+vs. “accelerate”) never share an output. A single shared head is a real alternative, not ruled out by as-
+sumption: we test it directly, with a distributional(µ,σ)output and regularization tuned specifically
+for it, and it remains both worse and less stable on unseen language than 2 heads (Supplementary
+Material) – so we use 2 heads throughout.
+3.4 REWARD,BASELINES,AND OPTIMIZER COMPARISON
+Given a promptp,f θ outputs a predicted duration ˆd=f θ(p). Training requires an error signal
+computed from real data, without running any new experiment.
+For each of the|P train|= 33training prompts, every archive point is scored by the VLM judge:
+ri(p) =J(p,x i)fori= 1,...,N(N=101), giving the full reward table{r i(p)}i,p,|A|×|P train|=
+101×33 = 3,333real (archive point, prompt) pairs, computed once and reused for every subsequent
+optimization step. As an ablation,Jis also queried from a precomputed velocity-vs-time plot instead
+of raw positions, to test whether withholding that signal and forcingJto infer pace from position
+and time alone produces a more reliable judge.
+This table admits two different training signals forθ(Figure 3).
+(a) Discrete route.Following prior work in this line of research (Le et al., 2025; 2026), the predicted
+duration is snapped to its nearest archive point,
+i∗( ˆd) = arg min
+i∈{1,...,N}
+di− ˆd
+,(1)
+and its scorer i∗( ˆd)(p)is used directly as the reward, soθis optimized to maximize
+Ep∼Ptrain
+
+ri∗(fθ(p))(p)
+
+. Because thearg minin Equation 1 is piecewise-constant, this reward is
+non-differentiable with respect to ˆdalmost everywhere; we reproduce this route as an ablation,
+optimizing it with two methods that do not require a gradient through it – REINFORCE (policy
+gradient) and CMA-ES (Hansen & Ostermeier, 2001) (diagonal-covariance variant; Ros & Hansen,
+2008) (full hyperparameters in the Supplementary Material).
+(b) Differentiable route.For each promptp, we fit a logistic curve to its{(d i,ri(p))}N
+i=1 pairs,
+ˆrp(d) =σ
+
+wp ˜d+b p
+
+, ˜d= d−d min
+dmax−d min
+,(2)
+with(w p,bp)fit per prompt by logistic regression andd min,d max the archive’s own minimum and
+maximum duration. We reduceˆrp(·)to a single fixed regression targetd †(p)– the duration at the
+midpoint ofˆrp’s own achieved range, clipped into the nearest real, archive-verified interval where
+every point is correctly labeled forp’s intended behavior if it would otherwise fall outside one
+(construction detail in the Supplementary Material) – and train
+min
+θ
+Ep∼Ptrain
+h 
+fθ(p)−d †(p)
+2i
+(3)
+5
+=== PAGE 6 ===
+Preprint.
+Figure 3: The two ways to turn the precomputed VLM-score table into a training signal, for the
+same real prompt. (a) Discrete nearest-neighbor reward: a predicted duration snaps to its nearest
+real archive batch, and that batch’s raw score is read off directly as the reward – the argmin is
+discrete, so this route needs REINFORCE or CMA-ES. (b) Differentiable curve-fit target: the same
+real points, fit into one smooth curve and reduced to a single fixed target, so the error is an ordinary
+mean-squared error and the whole thing trains by backpropagation.
+by ordinary backpropagation (Adam). No VLM, archive lookup, or simulation is queried during a
+training step under this route –d†(p)is computed once, offline, directly from the already-computed
+reward table. The same table independently validates both routes’ outcomes against ground truth
+(Section 4.2).
+Agreement between all three resulting optimizers – one gradient-based (Equation 3), one policy-
+gradient, one derivative-free, all consuming the identical reward table – validates the optimum each
+finds rather than assuming one is necessary.
+3.5 EVALUATION PROTOCOL
+We verify no held-out prompt duplicates a training prompt and bound cross-split similarity (full list
+in the Supplementary Material). A held-out prompt’s output head is inferred from its embedding via
+nearest-centroid similarity to training-prompt centroids, never looked up from a known category.
+LetP=P train⊔P test andA=A train⊔A test be the disjoint prompt and archive splits (Section 3.2).
+Four evaluation cells follow from the product of prompt side×archive side:
+Train=P train×Atrain,GT3=P train×Atest,GT1=P test×Atrain,GT2=P test×Atest.(4)
+For a cellP ′×A′, a predictionf θ(p),p∈P ′, is scored byk-nearest-neighbor vote (k=3) among
+{di :i∈A ′}against each neighbor’s true, independently-tracked ‘behavior group’ label, and is
+correct if the majority vote matchesp’s intended direction. GT2 is the only cell where bothp /∈Ptrain
+and everyi∈A ′ satisfiesi /∈Atrain – generalization along both axes at once.
+Chance on this task is66.7%, not50%: prompts are drawn evenly from three buckets (mo-
+tion increase, motion reduction, stop), but ‘stop’ and ‘motion reduction’ are both scored against
+the same ‘slower’ archive direction, so two of every three prompts need ‘slower’ – a baseline that al-
+ways answers ‘slower’ is right two-thirds of the time by construction, not by tracking any real signal.
+Two further checks reuse this setup without retraining: an8×-paraphrase stress test (Section 4.1)
+and a post-hoc sub-label split of ‘slower’ into genuine stops vs. mild slowdowns (Section 4.4).
+4 RESULTS
+Each subsection below tests one of the three contributions claimed in the introduction directly, rather
+than asserting it: Section 4.1 tests contribution (2), the headline generalization number, and is itself
+the direct evidence for contribution (1) – that training works at all without any new experiment;
+Section 4.2 checks the precondition contribution (1) depends on, thatJ’s judgment and the archive
+it draws from are themselves trustworthy; Section 4.3 tests contribution (3), that this reward is not
+redundant with a simpler numerical alternative; Section 4.4 is further robustness analysis not tied
+to a specific claimed contribution; Section 4.5 shows the same reference model end to end as a live
+interface.
+6
+=== PAGE 7 ===
+Preprint.
+Table 1: Ground-truth accuracy, all four evaluation cells. 30 seeds for all three optimizers.
+Train GT3 GT1 GT2
+Backprop (reference model)89.1±1.0%88.9±0.0%81.1±5.6%80.0±0.0%
+CMA-ES66.7±0.0% 66.5±1.0% 62.4±7.1% 62.9±6.7%
+REINFORCE69.4±10.2% 69.4±10.2% 66.9±9.0% 66.9±8.7%
+Figure 4: Ground-truth accuracy across the four evaluation cells for Backprop and REINFORCE,
+against chance and additional baselines (random, constant, untrained network, nearest-neighbor-
+trained; described in full in the Supplementary Material). Backprop retains the largest margin over
+chance at every cell, including GT2, the fully held-out one.
+4.1 MAIN RESULT:GENERALIZATION TO HELD-OUT PROMPTS AND ARCHIVES
+One of the contributions we state in the introduction is that this offline paradigm generalizes to
+entirely new instructions at well above chance; this section runs that experiment directly. Table 1
+shows Backprop outperforming the two cross-validating optimizers, CMA-ES and REINFORCE,
+on every evaluation cell, each averaged over independent seeds (full analysis in the Supplementary
+Material). We use Backprop as the reference model for the rest of this paper.
+These four cells test generalization along two independent axes: unseenpromptsand unseenarchive
+data. Accuracy degrades gracefully across all three held-out cells relative to Train, and GT2 – stress-
+ing both axes at once – stays well above the66.7%chance baseline. This is neither a leakage nor a
+small-sample artifact: no held-out prompt duplicates a training prompt (max0.60Jaccard overlap),
+and stress-testing the single saved, already-trained model at8×scale (120 new paraphrases, no re-
+training) holds accuracy at85.0%, close to the original80.0%, with ‘stop’ the most reliable bucket
+(full detail in the Supplementary Material).
+Figure 4 visualizes this same result alongside additional baselines (random, constant, untrained
+network, nearest-neighbor-trained; full description in the Supplementary Material) on a different,
+oracle-probability metric – included for a broader sense of where chance-level and naively-trained
+baselines fall, not for a direct numeric comparison to Table 1. Figure 5 makes the headline number
+concrete: for three real, held-out prompts, the untrained network’s prediction lands on one archive
+trajectory and the trained network’s prediction lands on another – visibly different real trajectories,
+not just different numbers.
+4.2 VALIDATING THEVLMJUDGE AND THE ARCHIVE
+We first ask whetherJ’s judgment tracks a batch’s real, independently-tracked behavior at all. For
+batchb, define its net scores(b)as the mean ofr b(p)across motion increase prompts minus the
+mean across motion reduction/stop prompts, sos(b)>0meansJjudgedbas more consistent
+7
+=== PAGE 8 ===
+Preprint.
+Figure 5: Untrained vs. trained, same held-out prompt, real archive trajectories. Top: mo-
+tion increase (“speed up”); middle: motion reduction (“slower”); bottom: stop. Gold = PRE, col-
+ored = POST; triangle = start, square = end. Top and bottom rows show a clean wrong-vs-right
+contrast; the middle row’s untrained and trained predictions both land on the correct direction for
+this particular prompt (detail in the Supplementary Material), included for honesty rather than omit-
+ted for effect.
+with speeding up than slowing down. Figure 6 plotss(b)for every batch against that batch’s true,
+independently-tracked behavior label. The two agree atr= 0.843with97%sign agreement; every
+disagreement sits within±0.02px/s of a true zero velocity change – genuinely ambiguous cases,
+notJmisreading a clear signal. Correlatings(b)against the raw velocity delta itself, instead of the
+binary label, gives a markedly weakerr= 0.49:Jreliably separates the two behavior categories
+but does not linearly track fine-grained speed within one, consistent with how the reward is used
+throughout this paper (a per-prompt target duration, not a speed regression). QueryingJfrom a
+precomputed velocity-vs-time plot instead of the raw trajectory reaches onlyr= 0.49–0.66per
+category – withholding the precomputed answer and forcing genuine inference produces a more
+reliableJ, not merely a harder-to-game one.
+8
+=== PAGE 9 ===
+Preprint.
+Figure 6: Net VLM scores(b)per batch (jittered for visibility) against true, independently-tracked
+behavior label. Open circles: the 3 sign-disagreement batches.
+Figure 7: All 33 fitted VLM-score-vs-duration curvesˆr p(d)(sigmoid regression, one curve per
+prompt, 90 points each), grouped by behavior category.
+Figure 7 shows the reward table’s structure directly: all 33 fitted curvesˆr p(d)(Equation 2), one
+independently-fit curve per prompt. Curves within a category are visually near-indistinguishable
+– every prompt’s own independently-fit curve peaks at the same archive-supported duration – a
+category-level signal consistent withJscoring near-synonymous prompts near-identically against
+the same real batch, rather than a within-category wording sensitivity (detail in the Supplementary
+Material).
+The archive itself is equally load-bearing. The selected window configuration (30 pre-frames, 50
+post-frames, median aggregation) separates{d b}by behavior at Mann–Whitneyp= 1.57×10 −4,
+against a best-achievablep= 1.6×10 −5 elsewhere in the same 112-point grid – trading a little
+separability for more readable per-batch plots forJ. But this configuration waschosenby searching
+all 112 combinations rather than fixed in advance, so the achievedp-value alone is not trustworthy:
+searching many configurations and reporting whichever looks best is a form ofp-hacking, where a
+smallp-value can reflect the size of the search rather than a real effect. We check for exactly this
+with a permutation test: shuffle the(b,d b)pairing, rerun the full 112-way search on the shuffled
+data, and keep only its best-achievablep-value; repeating this 200 times gives a null distribution of
+what the search alone could produce by chance, with no real effect present. The real configuration’s
+p= 1.57×10 −4 is more extreme than all 200 shuffled best-case results (Figure 8), so the separation
+reflects a real effect and not an artifact of having searched over many configurations.
+4.3 VLMREWARD VS.A NUMERICAL TARGET
+The purpose of this section is to check whether the VLM-derived targetd†(p)(Equation 3) is doing
+real work, or whether a much simpler numerical target – with no VLM involved at all – would train
+9
+=== PAGE 10 ===
+Preprint.
+Figure 8: Null distribution of the bestp-value achievable by the full 112-way grid search across 200
+random duration-label shuffles, against the real result.
+Figure 9: Training loss (seed 42, log scale) for the VLM-fit targetd †(p)vs. the purely numerical,
+velocity-only target – same architecture, optimizer, and epochs. Both converge to a comparable
+near-zero loss; the numerical target is not harder to fit.
+fθ just as well. With only two archive behaviors currently distinguished, this is a real possibility
+worth ruling out directly rather than assuming.
+We replaced†(p)with a single fixed duration per behavior direction, chosen purely from real velocity
+data: the training-archive batch whose measured velocity change (v assess
+b −v pre
+b ) is strongest in that
+direction, no VLM or per-prompt differentiation involved. Every ‘faster’ prompt is given the same
+target duration, and every ‘slower’ prompt the same (different) target duration.f θ is trained against
+these fixed targets with the identical objective as Equation 3 (mean squared error, Adam, 30 seeds),
+so training loss and held-out accuracy are directly comparable to the VLM-fit target.
+Figure 9 shows both targets converge to a comparable near-zero training loss, so the numerical
+target is not simply easier or harder to fit thand †(p), and optimization difficulty cannot explain a
+generalization gap between them if one exists. Table 2 shows one does.
+Train accuracy is nearly identical (88.9%vs.89.1%), but GT2 falls to59.1±2.3%–belowthe66.7%
+chance baseline. Per-prompt inspection shows why: the single chosen ‘faster’ duration happens to
+land in a region of the held-out archive’s duration axis dominated by ‘slower’-labeled real batches,
+so every held-out ‘faster’ prompt is misclassified as ‘slower’ – not a training failure but a placement
+failure, invisible from training accuracy alone. A curve fit to the full VLM-scored distribution avoids
+this; a single extremal real data point does not. Even with only two behaviors currently defined, the
+VLM reward is not redundant.
+4.4 REVISITING‘STOP’VS. ‘SLOWER’
+This section is further robustness analysis, not a test of a claimed contribution. ‘Stop’ and ‘slower’
+prompts are merged throughout this paper into one ‘motion reduction’ class because the data cannot
+10
+=== PAGE 11 ===
+Preprint.
+Table 2: Same architecture and optimizer (Backprop), 30 seeds; only the training target differs.
+Train GT3 GT1 GT2
+VLM reward (Table 1)89.1±1.0%88.9±0.0%81.1±5.6%80.0±0.0%
+Numerical, velocity-only88.9±0.0% 66.7±0.0% 79.6±1.7% 59.1±2.3%
+support a clean 3-way split: a direct stop/mild-slower/faster classifier reaches only0.477balanced
+accuracy (barely above chance), against0.713once merged.
+Is that gap because stop and mild slowdown are genuinely indistinguishable, or simply data-starved?
+Retrospectively splitting ‘slower’ by a sub-label rule (velocity within10%of baseline at any point)
+finds a real, significant separation between genuine stops (n=48) and mild slowdowns (n=14;p=
+7.5×10 −6, non-overlapping interquartile ranges) – the distinction exists in the data. But three
+separate attempts to learn it from language all collapsed to the same majority answer regardless of
+prompt, consistent with data scarcity (only 14 mild-slower examples) rather than a model limitation
+(detail in the Supplementary Material). This does not affect the paper’s main result, which only
+relies on the coarser merge, and is left for future work.
+A downstream consequence.Checking where each held-out ‘stop’/‘motion reduction’ prediction
+actually lands (90 held-out prompts; Table 3): ‘stop’ is highly reliable (97.8%land on a true stop);
+‘motion reduction’ over-shoots to full-stop behavior in33.3%of cases, traced to the same class
+imbalance within held-out ‘slower’ data (19true-stop vs.6true-mild-slower) that motivated the
+merge in the first place.
+Table 3: Where each held-out prompt’s predicted duration lands, against the archive’s true sub-label
+(n=45each; full per-source breakdown in the Supplementary Material).
+prompt intent lands on true STOP lands on true MILD-SLOWER
+‘stop’ prompt97.8%(44/45)2.2%(1/45)
+‘motion reduction’ prompt33.3%(15/45)66.7%(30/45)
+4.5 THE SYSTEM AS A LIVE INTERFACE
+The results above are numbers; Figure 10 shows what the trained reference model actually returns
+for three real prompts, end to end: a prompt is typed in,f θ predicts a duration, and the matched
+archive batch’s real PRE/POST trajectories and measured velocities are shown back to the user
+(video demo:zapgpt sequence.mp4, Supplementary Material).
+5 DISCUSSION ANDFUTUREWORK
+In this paper, we have demonstrated that a natural-language interface for a living organism can
+be learned entirely offline, from an existing archive and a vision-language model’s own judgment,
+without any new experiments. The resulting P2I mapping generalizes to entirely new instructions
+at80.0%ground-truth accuracy against a66.7%chance baseline, holding across three independent
+optimizers sharing the same VLM reward; this reward is also not redundant with a simpler numerical
+alternative, which collapses held-out generalization to59.1%, below chance (full analysis in the
+Supplementary Material).
+This paper’s scope has real limits: one intervention parameter, a small archive (101 of 149 tracked
+batches), predefined behavior categories, and no main-text result from a new physical experi-
+ment. The system retrieves rather than generates – every prediction is the archive’s own closest
+already-observed match, with compositional recombination beyond it left untested (Supplementary
+Material). The most direct next step is prospective: does a predicted intervention, applied to a
+newly-stimulated xenobot never seen in training, actually reproduce its intended behavior? Beyond
+xenobots, the same offline, archive-plus-VLM-judgment paradigm applies wherever an intervention-
+outcome archive already exists – other synthetic living machines, cell and tissue cultures under elec-
+trical or optogenetic control, and, further out, clinical bioelectric therapy (Ebrahimkhani & Levin,
+2021; Zajdel et al., 2020; Blackiston et al., 2021b; Levin, 2021) – with this offline half a tractable
+place to start.
+11
+=== PAGE 12 ===
+Preprint.
+Figure 10: Real PRE/POST trajectories and measured velocities returned for three prompts, same
+reference model as Table 1. Top to bottom: “speed up” ( ˆd= 74.0s, PRE1.17px/s→POST
+1.81px/s); “slow down” ( ˆd= 131.0s, PRE1.09px/s→POST0.30px/s); “stop” ( ˆd= 194.0s,
+PRE2.84px/s→POST0.15px/s, POST trajectory collapses to a single point).
+AIUSE STATEMENT
+A vision-language model (Claude) is a core methodological component of this work: it supplies
+the training reward for P2I by judging real archive trajectories against natural-language prompts
+(Section 3.4), and its reliability as a judge is itself directly evaluated against independent, non-
+VLM ground truth (Section 4.2) rather than assumed. Separately, in preparing this manuscript, a
+generative AI tool (Claude) was used to assist with paraphrasing. All AI-assisted text was reviewed
+by the authors. We take responsibility for the final content of this work, including text, claims, and
+artifacts produced with the aid of generative AI.
+REFERENCES
+Emmanuel Bengio, Moksh Jain, Maksym Korablyov, Doina Precup, and Yoshua Bengio. Flow
+network based generative models for non-iterative diverse candidate generation. InAdvances in
+Neural Information Processing Systems, volume 34, 2021.
+Douglas Blackiston, Emma Lederer, Sam Kriegman, Simon Garnier, Joshua Bongard, and Michael
+Levin. A cellular platform for the development of synthetic living machines.Science Robotics, 6
+(52):eabf1571, 2021a.
+Douglas J Blackiston, Alexis K Trinh, Bianca Tran, and Michael Levin. Stimulating neuroplasticity
+to restore vision.Eneuro, 8(6), 2021b.
+Rich Caruana. Multitask learning.Machine learning, 28(1):41–75, 1997.
+12
+=== PAGE 13 ===
+Preprint.
+Mark Chen, Jerry Tworek, Heewoo Jun, Qiming Yuan, Henrique Ponde De Oliveira Pinto, Jared
+Kaplan, Harri Edwards, Yuri Burda, Nicholas Joseph, Greg Brockman, et al. Evaluating large
+language models trained on code.arXiv preprint arXiv:2107.03374, 2021.
+Zhao Chen, Vijay Badrinarayanan, Chen-Yu Lee, and Andrew Rabinovich. Gradnorm: Gradient
+normalization for adaptive loss balancing in deep multitask networks. InInternational conference
+on machine learning, pp. 794–803. PMLR, 2018.
+Mo R Ebrahimkhani and Michael Levin. Synthetic living machines: A new window on life.Iscience,
+24(5), 2021.
+Valentina Emiliani, Emilia Entcheva, Rainer Hedrich, Peter Hegemann, Kai R Konrad, Christian
+L¨uscher, Mathias Mahn, Zhuo-Hua Pan, Ruth R Sims, Johannes Vierock, et al. Optogenetics for
+light control of biological systems.Nature Reviews Methods Primers, 2(1):55, 2022.
+Daniel Fried, Armen Aghajanyan, Jessy Lin, Sida Wang, Eric Wallace, Freda Shi, Ruiqi Zhong,
+Scott Yih, Luke Zettlemoyer, and Mike Lewis. Incoder: A generative model for code infilling and
+synthesis. InInternational Conference on Learning Representations, 2023.
+Nikolaus Hansen and Andreas Ostermeier. Completely derandomized self-adaptation in evolution
+strategies.Evolutionary computation, 9(2):159–195, 2001.
+Wenlong Huang, Pieter Abbeel, Deepak Pathak, and Igor Mordatch. Language models as zero-shot
+planners: Extracting actionable knowledge for embodied agents. InInternational Conference on
+Machine Learning, pp. 9118–9147. PMLR, 2022.
+John Jumper, Richard Evans, Alexander Pritzel, Tim Green, Michael Figurnov, Olaf Ronneberger,
+Kathryn Tunyasuvunakool, Russ Bates, Augustin ˇZ´ıdek, Anna Potapenko, et al. Highly accurate
+protein structure prediction with alphafold.nature, 596(7873):583–589, 2021.
+Alexander Kirillov, Eric Mintun, Nikhila Ravi, Hanzi Mao, Chloe Rolland, Laura Gustafson, Tete
+Xiao, Spencer Whitehead, Alexander C. Berg, Wan-Yen Lo, Piotr Doll ´ar, and Ross Girshick.
+Segment anything. InInternational Conference on Computer Vision, pp. 4015–4026, 2023.
+Sam Kriegman, Douglas Blackiston, Michael Levin, and Josh Bongard. Kinematic self-replication
+requires transient breaking of symmetry and multibody coordination.Proceedings of the National
+Academy of Sciences, 118(9):e2011466118, 2021.
+Nam Le, Patrick Erickson, Yanbo Zhang, Michael Levin, and Josh Bongard. Giving simulated
+cells a voice: Evolving prompt-to-intervention models for cellular control. InProceedings of the
+Genetic and Evolutionary Computation Conference Companion, pp. 2327–2335, 2025.
+Nam H. Le, Patrick Erickson, Yanbo Zhang, Michael Levin, and Josh Bongard. Zapgpt: Free-form
+language prompting for simulated cellular control. InProceedings of the 2025 8th International
+Conference on Computational Intelligence and Intelligent Systems, CIIS ’25, pp. 119–126, New
+York, NY , USA, 2026. Association for Computing Machinery. ISBN 9798400719332. doi: 10.
+1145/3787256.3787274. URLhttps://doi.org/10.1145/3787256.3787274.
+Michael Levin. Bioelectric signaling: Reprogrammable circuits underlying embryogenesis, regen-
+eration, and cancer.Cell, 184(8):1971–1989, 2021.
+Sergey Levine, Aviral Kumar, George Tucker, and Justin Fu. Offline reinforcement learning: Tuto-
+rial, review, and perspectives on open problems.arXiv preprint arXiv:2005.01643, 2020.
+Jacky Liang, Wenlong Huang, Fei Xia, Peng Xu, Karol Hausman, Brian Ichter, Pete Florence, and
+Andy Zeng. Code as policies: Language model programs for embodied control. In2023 IEEE
+International conference on robotics and automation (ICRA), pp. 9493–9500. IEEE, 2023.
+Benedict C May, Nathan Korda, Anthony Lee, David S Leslie, and Nicolo Cesa-Bianchi. Optimistic
+bayesian sampling in contextual-bandit problems.Journal of Machine Learning Research, 13(6),
+2012.
+13
+=== PAGE 14 ===
+Preprint.
+Alec Radford, Jong Wook Kim, Chris Hallacy, Aditya Ramesh, Gabriel Goh, Sandhini Agarwal,
+Girish Sastry, Amanda Askell, Pamela Mishkin, Jack Clark, et al. Learning transferable visual
+models from natural language supervision. InInternational conference on machine learning, pp.
+8748–8763. PmLR, 2021.
+Nils Reimers and Iryna Gurevych. Sentence-bert: Sentence embeddings using siamese bert-
+networks. InProceedings of the 2019 Conference on Empirical Methods in Natural Language
+Processing. Association for Computational Linguistics, 2019.
+Juan Rocamonde, Victoriano Montesinos, Elvis Nava, Ethan Perez, and David Lindner. Vision-
+language models are zero-shot reward models for reinforcement learning.arXiv preprint
+arXiv:2310.12921, 2023.
+Raymond Ros and Nikolaus Hansen. A simple modification in cma-es achieving linear time and
+space complexity. InInternational Conference on Parallel Problem Solving from Nature, pp.
+296–305. Springer, 2008.
+Sebastian Ruder. An overview of multi-task learning in deep neural networks.arXiv preprint
+arXiv:1706.05098, 2017.
+Yufei Wang, Zhanyi Sun, Jesse Zhang, Zhou Xian, Erdem Biyik, David Held, and Zackory Erick-
+son. Rl-vlm-f: Reinforcement learning from vision language foundation model feedback.arXiv
+preprint arXiv:2402.03681, 2024.
+Tianhe Yu, Saurabh Kumar, Abhinav Gupta, Sergey Levine, Chelsea Finn, and Karol Hausman.
+Gradient surgery for multi-task learning.Advances in Neural Information Processing Systems,
+2020.
+Tom J Zajdel, Gawoon Shim, Linus Wang, Alejandro Rossello-Martinez, and Daniel J Cohen.
+Scheepdog: programming electric cues to dynamically herd large-scale cell migration.Cell sys-
+tems, 10(6):506–514, 2020.
+Yizhen Zheng, Huan Yee Koh, Jiaxin Ju, Anh TN Nguyen, Lauren T May, Geoffrey I Webb, and
+Shirui Pan. Large language models for scientific discovery in molecular property prediction.
+Nature Machine Intelligence, 7(3):437–447, 2025.
+14
+=== PAGE 15 ===
+Preprint.
+A APPENDIX
+Full methodology, prompt lists, VLM query template, held-frame investigation, generalization ma-
+trices, and additional ablations are provided in the Supplementary Material accompanying this sub-
+mission.
+15
