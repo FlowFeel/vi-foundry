@@ -1,0 +1,104 @@
+[
+  {
+    "condition": "prompt::form two groups::seed2",
+    "mean_pairwise_dist": 47.166947051857974,
+    "dispersion": 33.64256847442539,
+    "mean_speed": 1.3902555466752908
+  },
+  {
+    "condition": "prompt::assemble the cells::seed1",
+    "mean_pairwise_dist": 49.78161444904237,
+    "dispersion": 35.84232464272182,
+    "mean_speed": 1.3044136787356369
+  },
+  {
+    "condition": "prompt::assemble the cells::seed2",
+    "mean_pairwise_dist": 49.87477162139767,
+    "dispersion": 35.48482403745874,
+    "mean_speed": 1.2697721356524414
+  },
+  {
+    "condition": "prompt::assemble the cells::seed0",
+    "mean_pairwise_dist": 50.47444924574774,
+    "dispersion": 36.81736977712052,
+    "mean_speed": 1.312479968782319
+  },
+  {
+    "condition": "prompt::stop moving::seed0",
+    "mean_pairwise_dist": 51.935068940315894,
+    "dispersion": 36.46120485991752,
+    "mean_speed": 1.299422907867351
+  },
+  {
+    "condition": "prompt::spread out::seed0",
+    "mean_pairwise_dist": 52.06025848161944,
+    "dispersion": 37.21111287914804,
+    "mean_speed": 1.175051492039687
+  },
+  {
+    "condition": "prompt::spread out::seed2",
+    "mean_pairwise_dist": 52.3873530986748,
+    "dispersion": 37.081389186807954,
+    "mean_speed": 1.1472819489547856
+  },
+  {
+    "condition": "prompt::stop moving::seed2",
+    "mean_pairwise_dist": 55.268908577958975,
+    "dispersion": 38.820622778414425,
+    "mean_speed": 1.3086403608322144
+  },
+  {
+    "condition": "prompt::form two groups::seed0",
+    "mean_pairwise_dist": 55.48542552880477,
+    "dispersion": 38.167132159356356,
+    "mean_speed": 1.4027069807052612
+  },
+  {
+    "condition": "prompt::stop moving::seed1",
+    "mean_pairwise_dist": 57.14696832389061,
+    "dispersion": 40.40957468040456,
+    "mean_speed": 1.2915067191770033
+  },
+  {
+    "condition": "prompt::cluster tightly together::seed0",
+    "mean_pairwise_dist": 60.684358198208926,
+    "dispersion": 43.014232237302664,
+    "mean_speed": 1.235251191617913
+  },
+  {
+    "condition": "prompt::cluster tightly together::seed2",
+    "mean_pairwise_dist": 61.442183062883345,
+    "dispersion": 43.1437110859417,
+    "mean_speed": 1.236845058916294
+  },
+  {
+    "condition": "prompt::spread out::seed1",
+    "mean_pairwise_dist": 61.81460316621451,
+    "dispersion": 44.456562275965055,
+    "mean_speed": 1.1671658002046115
+  },
+  {
+    "condition": "prompt::form two groups::seed1",
+    "mean_pairwise_dist": 67.28822742202946,
+    "dispersion": 46.508507104976296,
+    "mean_speed": 1.3925773667012178
+  },
+  {
+    "condition": "prompt::cluster tightly together::seed1",
+    "mean_pairwise_dist": 69.2786577623369,
+    "dispersion": 49.13036823681665,
+    "mean_speed": 1.2299774786350854
+  },
+  {
+    "condition": "control::random_field",
+    "mean_pairwise_dist": 90.76207295869972,
+    "dispersion": 68.02622173704697,
+    "mean_speed": 1.0788312601838896
+  },
+  {
+    "condition": "control::zero_field",
+    "mean_pairwise_dist": 245.03761586076436,
+    "dispersion": 175.79691843991208,
+    "mean_speed": 0.0
+  }
+]
