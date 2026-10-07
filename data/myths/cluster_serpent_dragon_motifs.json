@@ -1,0 +1,1230 @@
+{
+  "cluster": "serpent_dragon",
+  "n": 204,
+  "motifs": [
+    {
+      "ref": "A12",
+      "title": "Eclipses: attacks by monsters, A737.1.",
+      "traditions": "300.0",
+      "narratives": "530.0"
+    },
+    {
+      "ref": "L15d",
+      "title": "Life is stored outside the body, E700, (ATU 302).",
+      "traditions": "207.0",
+      "narratives": "399.0"
+    },
+    {
+      "ref": "B77",
+      "title": "Low sky, A625.2; A660.",
+      "traditions": "197.0",
+      "narratives": "399.0"
+    },
+    {
+      "ref": "H28",
+      "title": "Creature turns into reptiles, A2034.",
+      "traditions": "157.0",
+      "narratives": "286.0"
+    },
+    {
+      "ref": "F34b",
+      "title": "Lover of non-human nature.",
+      "traditions": "156.0",
+      "narratives": "315.0"
+    },
+    {
+      "ref": "I41",
+      "title": "Rainbow serpent, A791.2.",
+      "traditions": "152.0",
+      "narratives": "363.0"
+    },
+    {
+      "ref": "K38f",
+      "title": "The dragon slayer, ATU 300.",
+      "traditions": "148.0",
+      "narratives": "287.0"
+    },
+    {
+      "ref": "F7",
+      "title": "Woman from the underwater world.",
+      "traditions": "145.0",
+      "narratives": "224.0"
+    },
+    {
+      "ref": "H5",
+      "title": "People and snakes.",
+      "traditions": "145.0",
+      "narratives": "181.0"
+    },
+    {
+      "ref": "F30",
+      "title": "The snake lover.",
+      "traditions": "139.0",
+      "narratives": "246.0"
+    },
+    {
+      "ref": "I13a",
+      "title": "Horned serpent, B91.3.",
+      "traditions": "124.0",
+      "narratives": "222.0"
+    },
+    {
+      "ref": "K38",
+      "title": "The hero helps the chicks, B364.4.",
+      "traditions": "119.0",
+      "narratives": "254.0"
+    },
+    {
+      "ref": "F18a",
+      "title": "Long penis.",
+      "traditions": "118.0",
+      "narratives": "170.0"
+    },
+    {
+      "ref": "L15a",
+      "title": "Vulnerable spot on the body,",
+      "traditions": "115.0",
+      "narratives": "163.0"
+    },
+    {
+      "ref": "A12a",
+      "title": "A predatory beast eclipses the luminaries.",
+      "traditions": "103.0",
+      "narratives": "136.0"
+    },
+    {
+      "ref": "K38b",
+      "title": "The serpent threatens the chicks, B364.4.",
+      "traditions": "95.0",
+      "narratives": "132.0"
+    },
+    {
+      "ref": "K38d",
+      "title": "The serpent covers the water.",
+      "traditions": "94.0",
+      "narratives": "165.0"
+    },
+    {
+      "ref": "I57",
+      "title": "Thunder pursues the enemy.",
+      "traditions": "88.0",
+      "narratives": "133.0"
+    },
+    {
+      "ref": "K79",
+      "title": "The snake shows how to recover.",
+      "traditions": "88.0",
+      "narratives": "101.0"
+    },
+    {
+      "ref": "L19b1",
+      "title": "Seven-headed monster.",
+      "traditions": "85.0",
+      "narratives": "155.0"
+    },
+    {
+      "ref": "H27",
+      "title": "Released mosquitoes.",
+      "traditions": "84.0",
+      "narratives": "120.0"
+    },
+    {
+      "ref": "L15h",
+      "title": "External soul: sequential investments.",
+      "traditions": "83.0",
+      "narratives": "127.0"
+    },
+    {
+      "ref": "K38f4",
+      "title": "Fire-breathing monster, B11.2.11, B19.1, B742.3, B742.4.",
+      "traditions": "79.0",
+      "narratives": "124.0"
+    },
+    {
+      "ref": "K113",
+      "title": "Animal princess, ATU 402.",
+      "traditions": "79.0",
+      "narratives": "114.0"
+    },
+    {
+      "ref": "L14",
+      "title": "The cultivated snake.",
+      "traditions": "79.0",
+      "narratives": "45.0"
+    },
+    {
+      "ref": "K38e",
+      "title": "Copper, silver, gold.",
+      "traditions": "77.0",
+      "narratives": "201.0"
+    },
+    {
+      "ref": "A12c",
+      "title": "Reptiles or fish eclipse the sun.",
+      "traditions": "76.0",
+      "narratives": "92.0"
+    },
+    {
+      "ref": "B12",
+      "title": "Snake rivers.",
+      "traditions": "76.0",
+      "narratives": "81.0"
+    },
+    {
+      "ref": "H55",
+      "title": "Sinners in the Other World, ATU 471, (ATU 470).",
+      "traditions": "75.0",
+      "narratives": "89.0"
+    },
+    {
+      "ref": "I7",
+      "title": "Cloud serpent.",
+      "traditions": "75.0",
+      "narratives": "136.0"
+    },
+    {
+      "ref": "M39a4a",
+      "title": "Sells a lizard a cow, ATU 1643",
+      "traditions": "72.0",
+      "narratives": "64.0"
+    },
+    {
+      "ref": "K41",
+      "title": "Thunder against the snake.",
+      "traditions": "71.0",
+      "narratives": "122.0"
+    },
+    {
+      "ref": "K76b",
+      "title": "Son-snake and husband-snake.",
+      "traditions": "69.0",
+      "narratives": "89.0"
+    },
+    {
+      "ref": "I13c",
+      "title": "The snake's crown, ATU 672, B101.7.",
+      "traditions": "68.0",
+      "narratives": "97.0"
+    },
+    {
+      "ref": "M163",
+      "title": "Dear Cat, ATU 1281, 1651.",
+      "traditions": "67.0",
+      "narratives": "64.0"
+    },
+    {
+      "ref": "L28",
+      "title": "Snake meat.",
+      "traditions": "65.0",
+      "narratives": "92.0"
+    },
+    {
+      "ref": "K38d1",
+      "title": "Girl sacrificed to the dragon.",
+      "traditions": "63.0",
+      "narratives": "90.0"
+    },
+    {
+      "ref": "H54",
+      "title": "Veki Vija, F571.1.",
+      "traditions": "62.0",
+      "narratives": "160.0"
+    },
+    {
+      "ref": "K38c",
+      "title": "A bird carries a hero.",
+      "traditions": "60.0",
+      "narratives": "72.0"
+    },
+    {
+      "ref": "M90",
+      "title": "The snake guesses the material, ATU 857",
+      "traditions": "59.0",
+      "narratives": "48.0"
+    },
+    {
+      "ref": "K38f1",
+      "title": "Severed tongues.",
+      "traditions": "57.0",
+      "narratives": "104.0"
+    },
+    {
+      "ref": "L11",
+      "title": "The turtle bench.",
+      "traditions": "57.0",
+      "narratives": "78.0"
+    },
+    {
+      "ref": "K18d",
+      "title": "At the pike's command, ATU 675.",
+      "traditions": "55.0",
+      "narratives": "47.0"
+    },
+    {
+      "ref": "K152a",
+      "title": "The Devil and His Wife in the Pit, ATU 1164.",
+      "traditions": "53.0",
+      "narratives": "53.0"
+    },
+    {
+      "ref": "B77a",
+      "title": "The giant pushed back the sky.",
+      "traditions": "52.0",
+      "narratives": "40.0"
+    },
+    {
+      "ref": "I44",
+      "title": "Chthonic serpent.",
+      "traditions": "52.0",
+      "narratives": "81.0"
+    },
+    {
+      "ref": "H54b",
+      "title": "Deadly gaze.",
+      "traditions": "50.0",
+      "narratives": "73.0"
+    },
+    {
+      "ref": "B51a",
+      "title": "The snake is the enemy of the swallow.",
+      "traditions": "49.0",
+      "narratives": "58.0"
+    },
+    {
+      "ref": "F27",
+      "title": "Girls and water spirits.",
+      "traditions": "49.0",
+      "narratives": "86.0"
+    },
+    {
+      "ref": "L43",
+      "title": "Dangerous characters devour refuse.",
+      "traditions": "49.0",
+      "narratives": "54.0"
+    },
+    {
+      "ref": "H51",
+      "title": "The Devil's Horse.",
+      "traditions": "48.0",
+      "narratives": "101.0"
+    },
+    {
+      "ref": "K100c",
+      "title": "The snake bites the girl's suitors, ATU 507 (main part, vari",
+      "traditions": "48.0",
+      "narratives": "72.0"
+    },
+    {
+      "ref": "L15a1",
+      "title": "Achilles' heel.",
+      "traditions": "46.0",
+      "narratives": "68.0"
+    },
+    {
+      "ref": "L15h1",
+      "title": "The soul of a character in an egg.",
+      "traditions": "45.0",
+      "narratives": "70.0"
+    },
+    {
+      "ref": "C3",
+      "title": "The snake plugged the hole in the ark, A1853.1, (ATU 825).",
+      "traditions": "44.0",
+      "narratives": "56.0"
+    },
+    {
+      "ref": "L15d1",
+      "title": "Imaginary container of the soul.",
+      "traditions": "43.0",
+      "narratives": "52.0"
+    },
+    {
+      "ref": "L15e",
+      "title": "The life of a hero in a sword, ATU 302B.",
+      "traditions": "43.0",
+      "narratives": "60.0"
+    },
+    {
+      "ref": "K38b3",
+      "title": "The hero cares for the chicks.",
+      "traditions": "42.0",
+      "narratives": "59.0"
+    },
+    {
+      "ref": "K161",
+      "title": "The Released Dragon, (ATU 302C*).",
+      "traditions": "42.0",
+      "narratives": "58.0"
+    },
+    {
+      "ref": "I13b",
+      "title": "Horned snake, B91.3.",
+      "traditions": "41.0",
+      "narratives": "50.0"
+    },
+    {
+      "ref": "M81e",
+      "title": "Don't herd cattle on giant land, ATU 314A, 321",
+      "traditions": "40.0",
+      "narratives": "47.0"
+    },
+    {
+      "ref": "K38a",
+      "title": "White and black rams, F67.",
+      "traditions": "39.0",
+      "narratives": "44.0"
+    },
+    {
+      "ref": "H36c",
+      "title": "The lizard betrays man.",
+      "traditions": "37.0",
+      "narratives": "31.0"
+    },
+    {
+      "ref": "I43a",
+      "title": "Cosmic serpent.",
+      "traditions": "37.0",
+      "narratives": "78.0"
+    },
+    {
+      "ref": "I43b",
+      "title": "The Milky Way \u2013 snake, fish.",
+      "traditions": "37.0",
+      "narratives": "67.0"
+    },
+    {
+      "ref": "K54",
+      "title": "Two giants.",
+      "traditions": "37.0",
+      "narratives": "49.0"
+    },
+    {
+      "ref": "L120",
+      "title": "Snakes turn into apple trees, ATU 300A.",
+      "traditions": "37.0",
+      "narratives": "57.0"
+    },
+    {
+      "ref": "F9f1",
+      "title": "Snake inside a woman.",
+      "traditions": "36.0",
+      "narratives": "59.0"
+    },
+    {
+      "ref": "I138",
+      "title": "Glass Mountain.",
+      "traditions": "36.0",
+      "narratives": "62.0"
+    },
+    {
+      "ref": "K24a",
+      "title": "A supernatural man hides a woman's clothes.",
+      "traditions": "36.0",
+      "narratives": "39.0"
+    },
+    {
+      "ref": "I76a",
+      "title": "The snake becomes a dragon.",
+      "traditions": "35.0",
+      "narratives": "50.0"
+    },
+    {
+      "ref": "K38f7",
+      "title": "Wild animals serve the hero.",
+      "traditions": "35.0",
+      "narratives": "56.0"
+    },
+    {
+      "ref": "M191b",
+      "title": "The snake will not forget its severed tail, ATU 285A.",
+      "traditions": "35.0",
+      "narratives": "22.0"
+    },
+    {
+      "ref": "H6c1",
+      "title": "Values in exchange for a child.",
+      "traditions": "34.0",
+      "narratives": "51.0"
+    },
+    {
+      "ref": "I13d",
+      "title": "Wintering with snakes, ATU 672D.",
+      "traditions": "34.0",
+      "narratives": "26.0"
+    },
+    {
+      "ref": "H26",
+      "title": "Mosquitoes had to be drowned.",
+      "traditions": "33.0",
+      "narratives": "63.0"
+    },
+    {
+      "ref": "B77b",
+      "title": "They touched the sky with a long object.",
+      "traditions": "32.0",
+      "narratives": "64.0"
+    },
+    {
+      "ref": "I24",
+      "title": "Snake bridge.",
+      "traditions": "32.0",
+      "narratives": "33.0"
+    },
+    {
+      "ref": "K38e1",
+      "title": "The Copper Forest, (ATU 511).",
+      "traditions": "32.0",
+      "narratives": "43.0"
+    },
+    {
+      "ref": "K65b",
+      "title": "People and spirits.",
+      "traditions": "32.0",
+      "narratives": "58.0"
+    },
+    {
+      "ref": "F32",
+      "title": "The snake son gathers fruit.",
+      "traditions": "31.0",
+      "narratives": "46.0"
+    },
+    {
+      "ref": "I79A",
+      "title": "Kirtimukha/Sisiutl.",
+      "traditions": "31.0",
+      "narratives": "72.0"
+    },
+    {
+      "ref": "I130",
+      "title": "Heavenly net.",
+      "traditions": "31.0",
+      "narratives": "41.0"
+    },
+    {
+      "ref": "A12d",
+      "title": "Birds eclipse the sun.",
+      "traditions": "30.0",
+      "narratives": "32.0"
+    },
+    {
+      "ref": "F9c",
+      "title": "Snake in the vagina.",
+      "traditions": "30.0",
+      "narratives": "34.0"
+    },
+    {
+      "ref": "G17",
+      "title": "The gift of the reptile.",
+      "traditions": "30.0",
+      "narratives": "48.0"
+    },
+    {
+      "ref": "H55b",
+      "title": "The Repentant Robber, ATU 756B.",
+      "traditions": "30.0",
+      "narratives": "13.0"
+    },
+    {
+      "ref": "H56",
+      "title": "The forbidden fruit: people become mortal, C621.",
+      "traditions": "30.0",
+      "narratives": "32.0"
+    },
+    {
+      "ref": "L37b1",
+      "title": "Toad under a stone.",
+      "traditions": "30.0",
+      "narratives": "42.0"
+    },
+    {
+      "ref": "B77b1",
+      "title": "The sky was struck with a pestle.",
+      "traditions": "29.0",
+      "narratives": "54.0"
+    },
+    {
+      "ref": "H52",
+      "title": "The Land of Immortality, ATU 470B.",
+      "traditions": "29.0",
+      "narratives": "31.0"
+    },
+    {
+      "ref": "F87",
+      "title": "Children transformed by a snake woman, ATU 425M.",
+      "traditions": "28.0",
+      "narratives": "50.0"
+    },
+    {
+      "ref": "L15c",
+      "title": "Who is afraid of what (hero and adversary).",
+      "traditions": "28.0",
+      "narratives": "32.0"
+    },
+    {
+      "ref": "M144",
+      "title": "The King's Drum, ATU 49A.",
+      "traditions": "28.0",
+      "narratives": "41.0"
+    },
+    {
+      "ref": "K38b3b",
+      "title": "The hero shelters the chicks.",
+      "traditions": "27.0",
+      "narratives": "47.0"
+    },
+    {
+      "ref": "K38e3",
+      "title": "The Diamond Kingdom.",
+      "traditions": "27.0",
+      "narratives": "44.0"
+    },
+    {
+      "ref": "K38e2",
+      "title": "The collapsed kingdom.",
+      "traditions": "26.0",
+      "narratives": "51.0"
+    },
+    {
+      "ref": "K38f6",
+      "title": "Fire creature.",
+      "traditions": "26.0",
+      "narratives": "30.0"
+    },
+    {
+      "ref": "K38f5",
+      "title": "Fire-breathing horse, B15.5.1.",
+      "traditions": "25.0",
+      "narratives": "35.0"
+    },
+    {
+      "ref": "L120a",
+      "title": "Dragon tongue and blacksmith's tongs.",
+      "traditions": "25.0",
+      "narratives": "34.0"
+    },
+    {
+      "ref": "B56A",
+      "title": "Crocodile without a tongue.",
+      "traditions": "24.0",
+      "narratives": "33.0"
+    },
+    {
+      "ref": "F29",
+      "title": "A girl sits on the ground.",
+      "traditions": "24.0",
+      "narratives": "39.0"
+    },
+    {
+      "ref": "L15i",
+      "title": "Life in hair.",
+      "traditions": "24.0",
+      "narratives": "25.0"
+    },
+    {
+      "ref": "A12b",
+      "title": "The frog swallows the sun.",
+      "traditions": "23.0",
+      "narratives": "34.0"
+    },
+    {
+      "ref": "F73b",
+      "title": "The bear believes that the vulva is a wound (ATU 153).",
+      "traditions": "23.0",
+      "narratives": "15.0"
+    },
+    {
+      "ref": "I131",
+      "title": "The thread of life.",
+      "traditions": "23.0",
+      "narratives": "30.0"
+    },
+    {
+      "ref": "I133",
+      "title": "Constellation across the sky.",
+      "traditions": "23.0",
+      "narratives": "32.0"
+    },
+    {
+      "ref": "B53",
+      "title": "Creatures and objects made from severed genitals.",
+      "traditions": "22.0",
+      "narratives": "23.0"
+    },
+    {
+      "ref": "K82a",
+      "title": "Pregnancy from snake eggs.",
+      "traditions": "22.0",
+      "narratives": "30.0"
+    },
+    {
+      "ref": "L15b",
+      "title": "To kill with a cane.",
+      "traditions": "22.0",
+      "narratives": "19.0"
+    },
+    {
+      "ref": "A12f",
+      "title": "The Money Lender.",
+      "traditions": "21.0",
+      "narratives": "24.0"
+    },
+    {
+      "ref": "B51",
+      "title": "The Mosquito and Thunder.",
+      "traditions": "21.0",
+      "narratives": "23.0"
+    },
+    {
+      "ref": "K38e4",
+      "title": "Palace made of gold and silver bricks, F771.1.1.2.",
+      "traditions": "21.0",
+      "narratives": "23.0"
+    },
+    {
+      "ref": "I139",
+      "title": "Throwing an axe, F531.3.2.3.",
+      "traditions": "20.0",
+      "narratives": "39.0"
+    },
+    {
+      "ref": "H27a1",
+      "title": "Diseases and reptiles from holes in the ground.",
+      "traditions": "19.0",
+      "narratives": "27.0"
+    },
+    {
+      "ref": "L15g",
+      "title": "The burnt log (death of Meleager), ATU 1187.",
+      "traditions": "19.0",
+      "narratives": "8.0"
+    },
+    {
+      "ref": "A12H",
+      "title": "Woman covers the sun.",
+      "traditions": "18.0",
+      "narratives": "31.0"
+    },
+    {
+      "ref": "F30a",
+      "title": "Child-worm.",
+      "traditions": "18.0",
+      "narratives": "27.0"
+    },
+    {
+      "ref": "I54",
+      "title": "Water creature filled with fish.",
+      "traditions": "18.0",
+      "narratives": "31.0"
+    },
+    {
+      "ref": "k56a8d",
+      "title": "Eaten by a boa constrictor.",
+      "traditions": "18.0",
+      "narratives": "27.0"
+    },
+    {
+      "ref": "E18",
+      "title": "Vessels and snakes.",
+      "traditions": "17.0",
+      "narratives": "26.0"
+    },
+    {
+      "ref": "E29",
+      "title": "The lizard makes hands for humans, A1311.1.",
+      "traditions": "17.0",
+      "narratives": "24.0"
+    },
+    {
+      "ref": "L15J",
+      "title": "Only with fire.",
+      "traditions": "17.0",
+      "narratives": "14.0"
+    },
+    {
+      "ref": "L28a",
+      "title": "Eating a snake causes a flood.",
+      "traditions": "17.0",
+      "narratives": "34.0"
+    },
+    {
+      "ref": "L31b",
+      "title": "The reptile crawls into the water.",
+      "traditions": "17.0",
+      "narratives": "3.0"
+    },
+    {
+      "ref": "H39",
+      "title": "Snakes become poisonous (spilled poison).",
+      "traditions": "16.0",
+      "narratives": "19.0"
+    },
+    {
+      "ref": "F31",
+      "title": "Snake egg.",
+      "traditions": "15.0",
+      "narratives": "19.0"
+    },
+    {
+      "ref": "H24d",
+      "title": "Still gathering what has been released.",
+      "traditions": "15.0",
+      "narratives": "26.0"
+    },
+    {
+      "ref": "I135",
+      "title": "Heavenly skin or cloth.",
+      "traditions": "15.0",
+      "narratives": "17.0"
+    },
+    {
+      "ref": "K38f2",
+      "title": "A mark made with dragon's blood.",
+      "traditions": "15.0",
+      "narratives": "20.0"
+    },
+    {
+      "ref": "L30",
+      "title": "He who eats a snake wants to drink.",
+      "traditions": "15.0",
+      "narratives": "21.0"
+    },
+    {
+      "ref": "B77b3",
+      "title": "Placing a pancake on the sky.",
+      "traditions": "14.0",
+      "narratives": "17.0"
+    },
+    {
+      "ref": "J10",
+      "title": "Wasp sting.",
+      "traditions": "14.0",
+      "narratives": "17.0"
+    },
+    {
+      "ref": "K38b3a",
+      "title": "The hero feeds the chicks.",
+      "traditions": "14.0",
+      "narratives": "15.0"
+    },
+    {
+      "ref": "K56a2b",
+      "title": "Wash lizards and beetles.",
+      "traditions": "14.0",
+      "narratives": "20.0"
+    },
+    {
+      "ref": "K90b",
+      "title": "Deer antlers in the dragon's mouth.",
+      "traditions": "14.0",
+      "narratives": "14.0"
+    },
+    {
+      "ref": "M90a2",
+      "title": "What did the tree grow from?",
+      "traditions": "14.0",
+      "narratives": "15.0"
+    },
+    {
+      "ref": "B69a",
+      "title": "Dispute about time, Chipmunk participant.",
+      "traditions": "13.0",
+      "narratives": "14.0"
+    },
+    {
+      "ref": "H50",
+      "title": "The sky god and the mistress of the dead.",
+      "traditions": "13.0",
+      "narratives": "19.0"
+    },
+    {
+      "ref": "H53",
+      "title": "The wolf \u2013 lord of the dead.",
+      "traditions": "13.0",
+      "narratives": "28.0"
+    },
+    {
+      "ref": "I7a",
+      "title": "Lightning snake.",
+      "traditions": "13.0",
+      "narratives": "10.0"
+    },
+    {
+      "ref": "I136",
+      "title": "The demonic wheel.",
+      "traditions": "13.0",
+      "narratives": "18.0"
+    },
+    {
+      "ref": "K38b4",
+      "title": "The serpent emerges from the water.",
+      "traditions": "13.0",
+      "narratives": "22.0"
+    },
+    {
+      "ref": "F29a",
+      "title": "The worm is scalded with boiling water.",
+      "traditions": "12.0",
+      "narratives": "17.0"
+    },
+    {
+      "ref": "F87a",
+      "title": "The snake wife and her children: transformation into birds.",
+      "traditions": "12.0",
+      "narratives": "26.0"
+    },
+    {
+      "ref": "F87b",
+      "title": "The snake wife and her children: transformation into trees.",
+      "traditions": "12.0",
+      "narratives": "14.0"
+    },
+    {
+      "ref": "H52b",
+      "title": "The search for immortality, ATU 470B.",
+      "traditions": "12.0",
+      "narratives": "12.0"
+    },
+    {
+      "ref": "K56ab",
+      "title": "The girl takes off her shirts, the snake takes off its skin ",
+      "traditions": "12.0",
+      "narratives": "12.0"
+    },
+    {
+      "ref": "L15c1",
+      "title": "The righteous adversary suffers damage.",
+      "traditions": "12.0",
+      "narratives": "14.0"
+    },
+    {
+      "ref": "L120b",
+      "title": "The fighting hero wakes his brothers.",
+      "traditions": "12.0",
+      "narratives": "16.0"
+    },
+    {
+      "ref": "H52a",
+      "title": "Death provokes touching the ground.",
+      "traditions": "11.0",
+      "narratives": "19.0"
+    },
+    {
+      "ref": "I24A",
+      "title": "The snake bridge to another world.",
+      "traditions": "11.0",
+      "narratives": "12.0"
+    },
+    {
+      "ref": "I111",
+      "title": "Reptilian Earth.",
+      "traditions": "11.0",
+      "narratives": "16.0"
+    },
+    {
+      "ref": "K90a",
+      "title": "Aimed at the black one, hit the white one.",
+      "traditions": "11.0",
+      "narratives": "11.0"
+    },
+    {
+      "ref": "L15f",
+      "title": "Life in a necklace, ATU 412.",
+      "traditions": "11.0",
+      "narratives": "12.0"
+    },
+    {
+      "ref": "F24",
+      "title": "Cause of menstruation: bite.",
+      "traditions": "10.0",
+      "narratives": "11.0"
+    },
+    {
+      "ref": "I13e",
+      "title": "The devoted snake.",
+      "traditions": "10.0",
+      "narratives": "7.0"
+    },
+    {
+      "ref": "M56c",
+      "title": "Try on a snake",
+      "traditions": "10.0",
+      "narratives": "11.0"
+    },
+    {
+      "ref": "B104a",
+      "title": "Meat turns into a toad, ATU 980D.",
+      "traditions": "9.0",
+      "narratives": "5.0"
+    },
+    {
+      "ref": "H54a",
+      "title": "The shaven old man.",
+      "traditions": "9.0",
+      "narratives": "7.0"
+    },
+    {
+      "ref": "I134",
+      "title": "Long neck on the Milky Way.",
+      "traditions": "9.0",
+      "narratives": "18.0"
+    },
+    {
+      "ref": "L15e2",
+      "title": "What happened when you threw the sword into the lake?",
+      "traditions": "9.0",
+      "narratives": "8.0"
+    },
+    {
+      "ref": "E41a",
+      "title": "How ticks were invented.",
+      "traditions": "8.0",
+      "narratives": "10.0"
+    },
+    {
+      "ref": "i41b2",
+      "title": "Rainbow from the mouth of an animal.",
+      "traditions": "8.0",
+      "narratives": "8.0"
+    },
+    {
+      "ref": "I133a",
+      "title": "The constellation of the great bird.",
+      "traditions": "8.0",
+      "narratives": "10.0"
+    },
+    {
+      "ref": "K38b2",
+      "title": "A bird carries away the hero, the hero kills the snake.",
+      "traditions": "8.0",
+      "narratives": "11.0"
+    },
+    {
+      "ref": "L15e1",
+      "title": "Discarded weapon.",
+      "traditions": "8.0",
+      "narratives": "7.0"
+    },
+    {
+      "ref": "L37b2",
+      "title": "Overheard conversation: a snake inside a person.",
+      "traditions": "8.0",
+      "narratives": "6.0"
+    },
+    {
+      "ref": "L125a",
+      "title": "The werewolf wife suffers from thirst.",
+      "traditions": "8.0",
+      "narratives": "8.0"
+    },
+    {
+      "ref": "M90a3",
+      "title": "The tree grew out of a snake",
+      "traditions": "8.0",
+      "narratives": "10.0"
+    },
+    {
+      "ref": "E21",
+      "title": "The victim of aquatic creatures finds revenge.",
+      "traditions": "7.0",
+      "narratives": "10.0"
+    },
+    {
+      "ref": "H55a",
+      "title": "Two under one blanket.",
+      "traditions": "7.0",
+      "narratives": "9.0"
+    },
+    {
+      "ref": "I41c",
+      "title": "Celestial object \u2013 reflection of a snake.",
+      "traditions": "7.0",
+      "narratives": "9.0"
+    },
+    {
+      "ref": "J12a",
+      "title": "Penis in a vessel.",
+      "traditions": "7.0",
+      "narratives": "2.0"
+    },
+    {
+      "ref": "L15a2",
+      "title": "Not fully hardened.",
+      "traditions": "7.0",
+      "narratives": "16.0"
+    },
+    {
+      "ref": "L91",
+      "title": "The Long Serpent.",
+      "traditions": "7.0",
+      "narratives": "1.0"
+    },
+    {
+      "ref": "B36b",
+      "title": "Birds acquire voices.",
+      "traditions": "6.0",
+      "narratives": "7.0"
+    },
+    {
+      "ref": "B77c",
+      "title": "The serpent pushed back the sky.",
+      "traditions": "6.0",
+      "narratives": "5.0"
+    },
+    {
+      "ref": "F97a",
+      "title": "The snake loses its legs.",
+      "traditions": "6.0",
+      "narratives": "6.0"
+    },
+    {
+      "ref": "I70",
+      "title": "Reptile with trees on its back.",
+      "traditions": "6.0",
+      "narratives": "9.0"
+    },
+    {
+      "ref": "I132",
+      "title": "To the sky on deer antlers.",
+      "traditions": "6.0",
+      "narratives": "12.0"
+    },
+    {
+      "ref": "I132b",
+      "title": "Metamorphosis of the Sun's bride.",
+      "traditions": "6.0",
+      "narratives": "5.0"
+    },
+    {
+      "ref": "A12e",
+      "title": "The spider \u2013 enemy of the sun and moon.",
+      "traditions": "5.0",
+      "narratives": "5.0"
+    },
+    {
+      "ref": "A12g",
+      "title": "Revenge on the moon for informing.",
+      "traditions": "5.0",
+      "narratives": "5.0"
+    },
+    {
+      "ref": "H54c",
+      "title": "Crucified eyelids.",
+      "traditions": "5.0",
+      "narratives": "7.0"
+    },
+    {
+      "ref": "I81a1",
+      "title": "Crab and snake.",
+      "traditions": "5.0",
+      "narratives": "6.0"
+    },
+    {
+      "ref": "I132a",
+      "title": "Girl on the swings of the sun.",
+      "traditions": "5.0",
+      "narratives": "5.0"
+    },
+    {
+      "ref": "K38b1",
+      "title": "A bird steals foals, a hero kills a snake.",
+      "traditions": "5.0",
+      "narratives": "4.0"
+    },
+    {
+      "ref": "B77b2",
+      "title": "The sky was touched with a broom.",
+      "traditions": "4.0",
+      "narratives": "4.0"
+    },
+    {
+      "ref": "E39a",
+      "title": "A female animal conceives from human urine.",
+      "traditions": "4.0",
+      "narratives": "5.0"
+    },
+    {
+      "ref": "I137",
+      "title": "The Lapti Constellation.",
+      "traditions": "4.0",
+      "narratives": "5.0"
+    },
+    {
+      "ref": "K180",
+      "title": "The time of the wolf and the time of the fox.",
+      "traditions": "4.0",
+      "narratives": "5.0"
+    },
+    {
+      "ref": "L15g1",
+      "title": "One family member kills another, knowing his secret.",
+      "traditions": "4.0",
+      "narratives": "5.0"
+    },
+    {
+      "ref": "M39a4d",
+      "title": "A fool sells property to a lizard",
+      "traditions": "4.0",
+      "narratives": "4.0"
+    },
+    {
+      "ref": "A47A",
+      "title": "The lizard finds the sun.",
+      "traditions": "3.0",
+      "narratives": "7.0"
+    },
+    {
+      "ref": "F9f2",
+      "title": "The cobra's hood in the wife's handbag.",
+      "traditions": "3.0",
+      "narratives": "3.0"
+    },
+    {
+      "ref": "I140",
+      "title": "Moses' rod.",
+      "traditions": "3.0",
+      "narratives": "3.0"
+    },
+    {
+      "ref": "K38b3c",
+      "title": "The hero shields the sleepers from the sun.",
+      "traditions": "3.0",
+      "narratives": "6.0"
+    },
+    {
+      "ref": "K56a8b",
+      "title": "A girl's hand in a cobra's hole.",
+      "traditions": "3.0",
+      "narratives": "4.0"
+    },
+    {
+      "ref": "L15b1",
+      "title": "Deer antlers \u2013 a weapon against evil.",
+      "traditions": "3.0",
+      "narratives": "5.0"
+    },
+    {
+      "ref": "I13F",
+      "title": "Wintering with a bear.",
+      "traditions": "2.0",
+      "narratives": "2.0"
+    },
+    {
+      "ref": "K38f3",
+      "title": "Sword strike from a pit.",
+      "traditions": "2.0",
+      "narratives": "4.0"
+    },
+    {
+      "ref": "L21A",
+      "title": "Live and dead mice.",
+      "traditions": "2.0",
+      "narratives": "2.0"
+    },
+    {
+      "ref": "F97a5",
+      "title": "Snake is deprived of its limbs",
+      "traditions": "0.0",
+      "narratives": "0.0"
+    }
+  ]
+}

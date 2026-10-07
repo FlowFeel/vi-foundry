@@ -23,3 +23,9 @@ results/*.json
 results/*.txt
 results/simulacra/
 !results/session_info.txt
+
+# Xenobot P2I audit (task 1+2)
+xenobot-sim/
+# External downloaded corpora (re-downloadable, too large to version)
+data/external/
+data/t7-ltee/LTEE-metagenomic/

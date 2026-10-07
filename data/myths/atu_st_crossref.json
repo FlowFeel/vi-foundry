@@ -1,0 +1,5370 @@
+{
+  "crossrefs": [
+    {
+      "atu_code": 1,
+      "title": "The theft of fish",
+      "st_codes": [
+        "K371.1"
+      ]
+    },
+    {
+      "atu_code": 2,
+      "title": "How the bear lost his tail",
+      "st_codes": [
+        "K1021.2",
+        "K1021",
+        "K1021.1"
+      ]
+    },
+    {
+      "atu_code": 3,
+      "title": "Sham Blood and Brains",
+      "st_codes": [
+        "K473"
+      ]
+    },
+    {
+      "atu_code": 4,
+      "title": "Carrying the Sham-Sick Trickster",
+      "st_codes": [
+        "K1241"
+      ]
+    },
+    {
+      "atu_code": 5,
+      "title": "Biting the foot",
+      "st_codes": [
+        "K543"
+      ]
+    },
+    {
+      "atu_code": 7,
+      "title": "The calling of three tree names",
+      "st_codes": [
+        "N51"
+      ]
+    },
+    {
+      "atu_code": 8,
+      "title": "\"Painting\" on the Haycock",
+      "st_codes": [
+        "K1013",
+        "K1013.2"
+      ]
+    },
+    {
+      "atu_code": 9,
+      "title": "The unjust partner",
+      "st_codes": [
+        "K471",
+        "K171.2",
+        "K1251.1"
+      ]
+    },
+    {
+      "atu_code": 15,
+      "title": "Stealing the Partner's Butter",
+      "st_codes": [
+        "K372"
+      ]
+    },
+    {
+      "atu_code": 20,
+      "title": "Animals Eat One Another Up",
+      "st_codes": [
+        "Z43.3",
+        "K1024",
+        "K2027"
+      ]
+    },
+    {
+      "atu_code": 21,
+      "title": "Eating his own Entrails",
+      "st_codes": [
+        "K1025"
+      ]
+    },
+    {
+      "atu_code": 34,
+      "title": "The Wolf Dives into the Water for Reflected Cheese",
+      "st_codes": [
+        "J1791.3",
+        "J1791.4"
+      ]
+    },
+    {
+      "atu_code": 36,
+      "title": "The Fox in Disguise Violates the She-Bear",
+      "st_codes": [
+        "K1384"
+      ]
+    },
+    {
+      "atu_code": 37,
+      "title": "The fox as shepherd",
+      "st_codes": [
+        "K931"
+      ]
+    },
+    {
+      "atu_code": 38,
+      "title": "Claw in Split Tree",
+      "st_codes": [
+        "K1111"
+      ]
+    },
+    {
+      "atu_code": 41,
+      "title": "The Wolf Overeats in the Cellar",
+      "st_codes": [
+        "K1022.1"
+      ]
+    },
+    {
+      "atu_code": 43,
+      "title": "The Bear Builds a House of Wood; the Fox, of Ice",
+      "st_codes": [
+        "J741.1"
+      ]
+    },
+    {
+      "atu_code": 44,
+      "title": "The Oath on the Iron",
+      "st_codes": [
+        "K1115"
+      ]
+    },
+    {
+      "atu_code": 49,
+      "title": "The bear and the honey",
+      "st_codes": [
+        "K1023"
+      ]
+    },
+    {
+      "atu_code": 50,
+      "title": "Curing a Sick Lion",
+      "st_codes": [
+        "W121.2.1",
+        "K961",
+        "J644.1"
+      ]
+    },
+    {
+      "atu_code": 51,
+      "title": "The Lion's share",
+      "st_codes": [
+        "J811.1"
+      ]
+    },
+    {
+      "atu_code": 52,
+      "title": "The Ass without a Heart",
+      "st_codes": [
+        "K402.3"
+      ]
+    },
+    {
+      "atu_code": 53,
+      "title": "Reynard the Fox at Court",
+      "st_codes": [
+        "J864.2"
+      ]
+    },
+    {
+      "atu_code": 55,
+      "title": "The Animals Build a Road (Dig Well)",
+      "st_codes": [
+        "A2233.1"
+      ]
+    },
+    {
+      "atu_code": 57,
+      "title": "Raven with a Cheese",
+      "st_codes": [
+        "K334.1"
+      ]
+    },
+    {
+      "atu_code": 59,
+      "title": "Fox and the Sour Grapes",
+      "st_codes": [
+        "J871"
+      ]
+    },
+    {
+      "atu_code": 60,
+      "title": "The Fox and the Crane Invites Each Other",
+      "st_codes": [
+        "J1565.1"
+      ]
+    },
+    {
+      "atu_code": 61,
+      "title": "The Fox Persuades the Cock to Crow with Closed Eyes",
+      "st_codes": [
+        "K721",
+        "K815.15"
+      ]
+    },
+    {
+      "atu_code": 62,
+      "title": "Peace Among the Animals \u2013 The Fox and the Cock",
+      "st_codes": [
+        "J1421"
+      ]
+    },
+    {
+      "atu_code": 63,
+      "title": "The Fox (or Jackal) and the Fleas",
+      "st_codes": [
+        "K921"
+      ]
+    },
+    {
+      "atu_code": 65,
+      "title": "Mrs. Fox's Suitors",
+      "st_codes": [
+        "N681"
+      ]
+    },
+    {
+      "atu_code": 68,
+      "title": "The Jackal Trapped in the Animal Hide",
+      "st_codes": [
+        "K565.2",
+        "J2131.5.7",
+        "K1022.1.1",
+        "J655.2"
+      ]
+    },
+    {
+      "atu_code": 70,
+      "title": "More cowardly than the hare",
+      "st_codes": [
+        "J881.1"
+      ]
+    },
+    {
+      "atu_code": 71,
+      "title": "Contest of Frost and the Hare",
+      "st_codes": [
+        "H1541.1"
+      ]
+    },
+    {
+      "atu_code": 72,
+      "title": "The Rabbit Rides Fox A-Courting",
+      "st_codes": [
+        "K1241",
+        "J61"
+      ]
+    },
+    {
+      "atu_code": 73,
+      "title": "Blinding the Guard",
+      "st_codes": [
+        "K621"
+      ]
+    },
+    {
+      "atu_code": 75,
+      "title": "The Help of the Weak",
+      "st_codes": [
+        "B371.1"
+      ]
+    },
+    {
+      "atu_code": 76,
+      "title": "The Wolf and the Crane",
+      "st_codes": [
+        "W154.3"
+      ]
+    },
+    {
+      "atu_code": 77,
+      "title": "The Stag Admires Himself in a Spring",
+      "st_codes": [
+        "L461"
+      ]
+    },
+    {
+      "atu_code": 78,
+      "title": "Animal Allows himself to be Tied to Another for Safety",
+      "st_codes": [
+        "K713.1.1",
+        "K713.1.2"
+      ]
+    },
+    {
+      "atu_code": 85,
+      "title": "The Mouse, the Bird, and the Sausage",
+      "st_codes": [
+        "J512.7"
+      ]
+    },
+    {
+      "atu_code": 91,
+      "title": "The Heart of a Monkey",
+      "st_codes": [
+        "K544"
+      ]
+    },
+    {
+      "atu_code": 92,
+      "title": "The Lion in the Water",
+      "st_codes": [
+        "K1715.1"
+      ]
+    },
+    {
+      "atu_code": 93,
+      "title": "The Master Taken Seriously",
+      "st_codes": [
+        "J1031"
+      ]
+    },
+    {
+      "atu_code": 100,
+      "title": "The Wolf as the Dog's Guest Sings",
+      "st_codes": [
+        "J581.1"
+      ]
+    },
+    {
+      "atu_code": 101,
+      "title": "The old dog rescues the child",
+      "st_codes": [
+        "K231.1.3"
+      ]
+    },
+    {
+      "atu_code": 102,
+      "title": "The Dog as Wolf's Shoemaker",
+      "st_codes": [
+        "K254.1"
+      ]
+    },
+    {
+      "atu_code": 103,
+      "title": "War between Wild Animals and Domestic Animals",
+      "st_codes": [
+        "B281.9.1",
+        "B262"
+      ]
+    },
+    {
+      "atu_code": 105,
+      "title": "The fox and the cat",
+      "st_codes": [
+        "J1662",
+        "K522"
+      ]
+    },
+    {
+      "atu_code": 110,
+      "title": "Belling the Cat",
+      "st_codes": [
+        "J671.1"
+      ]
+    },
+    {
+      "atu_code": 111,
+      "title": "The Cat and the Mouse Converse",
+      "st_codes": [
+        "U31",
+        "K561.1.1"
+      ]
+    },
+    {
+      "atu_code": 112,
+      "title": "Town Mouse and Country Mouse",
+      "st_codes": [
+        "J211.2"
+      ]
+    },
+    {
+      "atu_code": 113,
+      "title": "Mice Choose Cat as King",
+      "st_codes": [
+        "K815.13",
+        "B342"
+      ]
+    },
+    {
+      "atu_code": 120,
+      "title": "The First to See the Sunrise",
+      "st_codes": [
+        "K52"
+      ]
+    },
+    {
+      "atu_code": 121,
+      "title": "Wolves Climb on Top of One Another to Tree",
+      "st_codes": [
+        "J2133.6"
+      ]
+    },
+    {
+      "atu_code": 122,
+      "title": "The Wolf Loses His Prey",
+      "st_codes": [
+        "K550",
+        "K553.5",
+        "K553",
+        "K553.1",
+        "K562",
+        "K561.2",
+        "K551.8"
+      ]
+    },
+    {
+      "atu_code": 123,
+      "title": "The Wolf and the Seven Young Kids",
+      "st_codes": [
+        "K828.1",
+        "Q426",
+        "F913",
+        "K1832",
+        "K553.2"
+      ]
+    },
+    {
+      "atu_code": 124,
+      "title": "The Three Little Pigs",
+      "st_codes": [
+        "Z81"
+      ]
+    },
+    {
+      "atu_code": 125,
+      "title": "The Wolf Flees from the Wolf-head",
+      "st_codes": [
+        "K1715.3"
+      ]
+    },
+    {
+      "atu_code": 130,
+      "title": "Outcast Animals Find a New Home",
+      "st_codes": [
+        "B296",
+        "K1161",
+        "K335"
+      ]
+    },
+    {
+      "atu_code": 131,
+      "title": "Tiger as False Friend to the Cow",
+      "st_codes": [
+        "J427"
+      ]
+    },
+    {
+      "atu_code": 132,
+      "title": "Goat Admires his Horns in the Water",
+      "st_codes": [
+        "K1775"
+      ]
+    },
+    {
+      "atu_code": 136,
+      "title": "Wolf Surprises Pig in Apple Tree",
+      "st_codes": [
+        "K1043"
+      ]
+    },
+    {
+      "atu_code": 150,
+      "title": "The Bird's Three Precepts",
+      "st_codes": [
+        "K604",
+        "J21.14",
+        "J21.12",
+        "J21.13"
+      ]
+    },
+    {
+      "atu_code": 151,
+      "title": "Music lessons for wild animals",
+      "st_codes": [
+        "K1111.0.1"
+      ]
+    },
+    {
+      "atu_code": 153,
+      "title": "The Gelding of the Bear and the Fetching of Salve",
+      "st_codes": [
+        "K1012.1"
+      ]
+    },
+    {
+      "atu_code": 154,
+      "title": "The Jackal and the Farmer",
+      "st_codes": [
+        "J2351.1"
+      ]
+    },
+    {
+      "atu_code": 155,
+      "title": "Ingratitude Is the World's Reward",
+      "st_codes": [
+        "J1172.3"
+      ]
+    },
+    {
+      "atu_code": 156,
+      "title": "Androcles and the Lion",
+      "st_codes": [
+        "B301.8",
+        "B381"
+      ]
+    },
+    {
+      "atu_code": 157,
+      "title": "Learning to Fear Men",
+      "st_codes": [
+        "J22.1",
+        "J17"
+      ]
+    },
+    {
+      "atu_code": 159,
+      "title": "Captured wild animals ransom themselves",
+      "st_codes": [
+        "W185.6"
+      ]
+    },
+    {
+      "atu_code": 160,
+      "title": "Grateful Animals ; Ungrateful Man",
+      "st_codes": [
+        "W154.8"
+      ]
+    },
+    {
+      "atu_code": 161,
+      "title": "Peasant Betrays Fox by Pointing",
+      "st_codes": [
+        "K2315"
+      ]
+    },
+    {
+      "atu_code": 163,
+      "title": "The singing wolf",
+      "st_codes": [
+        "Z33.4.2"
+      ]
+    },
+    {
+      "atu_code": 170,
+      "title": "The fox eats his fellow-lodger",
+      "st_codes": [
+        "K443.7"
+      ]
+    },
+    {
+      "atu_code": 173,
+      "title": "Man and animals readjust span of life",
+      "st_codes": [
+        "A1321"
+      ]
+    },
+    {
+      "atu_code": 175,
+      "title": "The Tarbaby and the Rabbit",
+      "st_codes": [
+        "K741"
+      ]
+    },
+    {
+      "atu_code": 178,
+      "title": "The Faithful Animal Rashly Killed",
+      "st_codes": [
+        "B331.2"
+      ]
+    },
+    {
+      "atu_code": 179,
+      "title": "What the bear whispered in his ear",
+      "st_codes": [
+        "J1488"
+      ]
+    },
+    {
+      "atu_code": 200,
+      "title": "The Dog's Certificate",
+      "st_codes": [
+        "A2232.8",
+        "A2281.1",
+        "A2275.5.5",
+        "A2494.4.4"
+      ]
+    },
+    {
+      "atu_code": 201,
+      "title": "The Lean Dog Prefers Liberty to Abundant Food and a Chain",
+      "st_codes": [
+        "L451.3"
+      ]
+    },
+    {
+      "atu_code": 204,
+      "title": "Sheep, duck and cock in peril at sea",
+      "st_codes": [
+        "J1711.1"
+      ]
+    },
+    {
+      "atu_code": 206,
+      "title": "Straw Threshed a second Time",
+      "st_codes": [
+        "J2362"
+      ]
+    },
+    {
+      "atu_code": 207,
+      "title": "Rebellion of the Work Animals",
+      "st_codes": [
+        "J2413.1",
+        "K1633",
+        "B271.3"
+      ]
+    },
+    {
+      "atu_code": 210,
+      "title": "The Traveling Animals and the Wicked Man",
+      "st_codes": [
+        "K1161"
+      ]
+    },
+    {
+      "atu_code": 211,
+      "title": "The hog who was so tired of his daily food",
+      "st_codes": [
+        "J1612"
+      ]
+    },
+    {
+      "atu_code": 212,
+      "title": "The Lying Goat",
+      "st_codes": [
+        "K1151"
+      ]
+    },
+    {
+      "atu_code": 214,
+      "title": "Ass Tries to caress his Master like a Dog",
+      "st_codes": [
+        "J2413.1",
+        "J951.1",
+        "J2133.1"
+      ]
+    },
+    {
+      "atu_code": 221,
+      "title": "The Election of Bird-King",
+      "st_codes": [
+        "B236.1"
+      ]
+    },
+    {
+      "atu_code": 222,
+      "title": "The Willow-Wren and the Bear",
+      "st_codes": [
+        "B261.1",
+        "B261"
+      ]
+    },
+    {
+      "atu_code": 225,
+      "title": "The Tortoise That Wanted to Fly",
+      "st_codes": [
+        "K1041",
+        "J2357"
+      ]
+    },
+    {
+      "atu_code": 227,
+      "title": "The geese's eternal prayer",
+      "st_codes": [
+        "K551.1"
+      ]
+    },
+    {
+      "atu_code": 228,
+      "title": "The Titmouse Tries to be as Big as a Bear",
+      "st_codes": [
+        "L315.1"
+      ]
+    },
+    {
+      "atu_code": 231,
+      "title": "The Heron (Crane) Transports the Fish",
+      "st_codes": [
+        "J657.3"
+      ]
+    },
+    {
+      "atu_code": 232,
+      "title": "The Heathcock and the Birds of Passage",
+      "st_codes": [
+        "J101"
+      ]
+    },
+    {
+      "atu_code": 234,
+      "title": "The Nightingale and the Blindworm",
+      "st_codes": [
+        "A2241.5"
+      ]
+    },
+    {
+      "atu_code": 235,
+      "title": "The Jay Borrows the Cuckoo's Skin",
+      "st_codes": [
+        "A2241"
+      ]
+    },
+    {
+      "atu_code": 236,
+      "title": "Imitating bird sounds,",
+      "st_codes": [
+        "A1952",
+        "A2271.1"
+      ]
+    },
+    {
+      "atu_code": 237,
+      "title": "The Parrot That Talked Too Much",
+      "st_codes": [
+        "J2211.2"
+      ]
+    },
+    {
+      "atu_code": 242,
+      "title": "The Frog Enticed out of his Hole",
+      "st_codes": [
+        "K815"
+      ]
+    },
+    {
+      "atu_code": 244,
+      "title": "Peacock Plumes",
+      "st_codes": [
+        "J267.1",
+        "J951.2"
+      ]
+    },
+    {
+      "atu_code": 247,
+      "title": "Every Mother Thinks Her Child Is the Most Beautiful",
+      "st_codes": [
+        "T681"
+      ]
+    },
+    {
+      "atu_code": 248,
+      "title": "The Dog and the Sparrow",
+      "st_codes": [
+        "N261"
+      ]
+    },
+    {
+      "atu_code": 250,
+      "title": "Swimming Match of the Fish",
+      "st_codes": [
+        "A2231.1.2"
+      ]
+    },
+    {
+      "atu_code": 253,
+      "title": "The Fish in the Net",
+      "st_codes": [
+        "L331"
+      ]
+    },
+    {
+      "atu_code": 275,
+      "title": "The Race of the Fox and the Crayfish",
+      "st_codes": [
+        "K11.1",
+        "K11",
+        "K11.3"
+      ]
+    },
+    {
+      "atu_code": 278,
+      "title": "Rat and Frog Tie Paws Together",
+      "st_codes": [
+        "J652.1",
+        "J681.1",
+        "J752.1"
+      ]
+    },
+    {
+      "atu_code": 280,
+      "title": "The Ant Carries a Load as Large as Himself",
+      "st_codes": [
+        "J711.1",
+        "A2251.1"
+      ]
+    },
+    {
+      "atu_code": 283,
+      "title": "Spider Invites Fly to Rest on her Curtain",
+      "st_codes": [
+        "K815.2"
+      ]
+    },
+    {
+      "atu_code": 285,
+      "title": "The child and the snake",
+      "st_codes": [
+        "B784.2.1.1",
+        "J552.3",
+        "B391.1",
+        "J15"
+      ]
+    },
+    {
+      "atu_code": 289,
+      "title": "Bat, Diver, and Thornbush Shipwrecked",
+      "st_codes": [
+        "A2275.5.3"
+      ]
+    },
+    {
+      "atu_code": 291,
+      "title": "Deceptive Tug-of-war",
+      "st_codes": [
+        "K22"
+      ]
+    },
+    {
+      "atu_code": 292,
+      "title": "Ass Tries to Get a Cricket's Voice",
+      "st_codes": [
+        "J512.8"
+      ]
+    },
+    {
+      "atu_code": 293,
+      "title": "Debate of the Belly and the Members",
+      "st_codes": [
+        "J461.1"
+      ]
+    },
+    {
+      "atu_code": 295,
+      "title": "The Straw, the Coal, and the Bean",
+      "st_codes": [
+        "F1025.1"
+      ]
+    },
+    {
+      "atu_code": 298,
+      "title": "Wind and sun",
+      "st_codes": [
+        "J832",
+        "L351"
+      ]
+    },
+    {
+      "atu_code": 300,
+      "title": "The Dragon-Slayer",
+      "st_codes": [
+        "T68.1.1",
+        "B11.11.11",
+        "B11.10.10",
+        "K1932",
+        "H83",
+        "B312.2.2",
+        "H151.2.2",
+        "D1975",
+        "H105.1.1",
+        "B11.2.3.1.2.3.1",
+        "D1978.2.2"
+      ]
+    },
+    {
+      "atu_code": 301,
+      "title": "The Three Kidnapped Princesses",
+      "st_codes": [
+        "T68.1.1",
+        "B11.11.11",
+        "F601",
+        "Q262",
+        "F451.5.2.5.2",
+        "F96",
+        "K1933",
+        "K1931.2.2",
+        "R111.2.1.2.1",
+        "L161",
+        "B322.1.1",
+        "F102.1.1",
+        "H1385.1.1",
+        "B631",
+        "H80",
+        "F92",
+        "H94"
+      ]
+    },
+    {
+      "atu_code": 302,
+      "title": "The Giant Without A Heart,",
+      "st_codes": [
+        "B500",
+        "D182.2.2",
+        "E710",
+        "B571.1.1",
+        "E711.10.10",
+        "D1834",
+        "R11.1.1",
+        "D152.2.2",
+        "K975.2.2",
+        "B393",
+        "T11.2.2"
+      ]
+    },
+    {
+      "atu_code": 303,
+      "title": "The Twin Brothers,",
+      "st_codes": [
+        "N342.3.3",
+        "R155.1.1",
+        "B512",
+        "R111.1.3.1.3",
+        "T351",
+        "T511.5.1.5.1",
+        "D231",
+        "E715.1.1",
+        "T69.1.1",
+        "E761",
+        "D1081",
+        "T589.7.1.7.1",
+        "K1311.1.1"
+      ]
+    },
+    {
+      "atu_code": 304,
+      "title": "The Trained Hunter",
+      "st_codes": [
+        "N711.2.2",
+        "H81",
+        "F661.1.1",
+        "H81.1.1.1.1",
+        "K912"
+      ]
+    },
+    {
+      "atu_code": 305,
+      "title": "Dragon Blood as Cure",
+      "st_codes": [
+        "D1500.1.7.3.3.1.7.3.3"
+      ]
+    },
+    {
+      "atu_code": 306,
+      "title": "The Twelve Dancing Princesses",
+      "st_codes": [
+        "D2131",
+        "H508.2.2",
+        "L161",
+        "K625.1.1",
+        "D1980",
+        "F1015.1.1.1.1",
+        "H80"
+      ]
+    },
+    {
+      "atu_code": 307,
+      "title": "The Princess in the Shroud",
+      "st_codes": [
+        "N825.2.2",
+        "E251",
+        "D791.1.7.1.7",
+        "C758.1.1"
+      ]
+    },
+    {
+      "atu_code": 310,
+      "title": "Rapunzel",
+      "st_codes": [
+        "R41.2.2",
+        "F555",
+        "G279.2.2",
+        "G204",
+        "F848.1.1",
+        "S221.1.1",
+        "N455",
+        "D642.7.7"
+      ]
+    },
+    {
+      "atu_code": 311,
+      "title": "Rescue by the Sister",
+      "st_codes": [
+        "C611",
+        "K525",
+        "G561",
+        "R11.1.1",
+        "R157.1.1",
+        "C913"
+      ]
+    },
+    {
+      "atu_code": 312,
+      "title": "The Bluebeard",
+      "st_codes": [
+        "C611",
+        "K555",
+        "G551.1.1",
+        "T511.3.3",
+        "C920",
+        "F611.1.1"
+      ]
+    },
+    {
+      "atu_code": 313,
+      "title": "The Magic Flight",
+      "st_codes": [
+        "D671",
+        "D672",
+        "D2003",
+        "D2006.1.4.1.4",
+        "D1611",
+        "H335.0.1.0.1",
+        "D2006.1.1"
+      ]
+    },
+    {
+      "atu_code": 314,
+      "title": "The Golden-Haired",
+      "st_codes": [
+        "C495.1.1",
+        "C912",
+        "L113.1.0.1.1.0.1",
+        "T91.6.4.6.4",
+        "H56",
+        "H75.4.4",
+        "B316",
+        "T55.1.1",
+        "K1816.1.1"
+      ]
+    },
+    {
+      "atu_code": 315,
+      "title": "The Treacherous Sister",
+      "st_codes": [
+        "G346",
+        "R251",
+        "R111.1.1",
+        "F615",
+        "K2212.0.2.0.2",
+        "L161",
+        "B524.1.1.1.1"
+      ]
+    },
+    {
+      "atu_code": 316,
+      "title": "The Mermaid in the Pond",
+      "st_codes": [
+        "S240",
+        "F420.5.2.2.5.2.2",
+        "F420.1.2.1.2",
+        "R152"
+      ]
+    },
+    {
+      "atu_code": 317,
+      "title": "The Princess and the Sky-tree",
+      "st_codes": [
+        "B11.11.11",
+        "F54.1",
+        "B11.11",
+        "F54.1.1"
+      ]
+    },
+    {
+      "atu_code": 318,
+      "title": "The Batam\u00e4rchen",
+      "st_codes": [
+        "K2111"
+      ]
+    },
+    {
+      "atu_code": 321,
+      "title": "Won Back the Eyes from the Witch",
+      "st_codes": [
+        "D2161.3.1.1.3.1.1"
+      ]
+    },
+    {
+      "atu_code": 325,
+      "title": "The Magician and his Apprentice,",
+      "st_codes": [
+        "L142.2.2",
+        "D1711.0.1.0.1",
+        "H161"
+      ]
+    },
+    {
+      "atu_code": 326,
+      "title": "The Youth Who Wanted to Learn What Fear Is",
+      "st_codes": [
+        "H1376.2.2",
+        "H1411",
+        "K335.1.10.1.10",
+        "H1441"
+      ]
+    },
+    {
+      "atu_code": 327,
+      "title": "The Children and the Ogre",
+      "st_codes": [
+        "G61",
+        "G82.1.1.1.1",
+        "G526",
+        "G512.3.2.3.2",
+        "R135.1.1",
+        "R135",
+        "K1611",
+        "G82",
+        "K1832",
+        "G412.1.1",
+        "K335.1.2.1.1.2.1",
+        "S321",
+        "G512.3.2.1.3.2.1"
+      ]
+    },
+    {
+      "atu_code": 328,
+      "title": "The Treasures of the Giant",
+      "st_codes": [
+        "H1172",
+        "H1151",
+        "G84",
+        "F54.2.2",
+        "B103.2.1.2.1",
+        "D1601.18.18"
+      ]
+    },
+    {
+      "atu_code": 329,
+      "title": "Miss the Magic Mirror",
+      "st_codes": [
+        "D641",
+        "H321"
+      ]
+    },
+    {
+      "atu_code": 330,
+      "title": "The Smith Outwits the Devil",
+      "st_codes": [
+        "D1413.1.3.1.3",
+        "M211",
+        "Z111.2.2.2.2",
+        "N221",
+        "Q115",
+        "Q565",
+        "K2371.1.3.1.3",
+        "J2071",
+        "K213"
+      ]
+    },
+    {
+      "atu_code": 331,
+      "title": "The Spirit in the Bottle",
+      "st_codes": [
+        "R181",
+        "K717"
+      ]
+    },
+    {
+      "atu_code": 332,
+      "title": "Godfather Death",
+      "st_codes": [
+        "D1825.3.1.3.1",
+        "K557",
+        "J486"
+      ]
+    },
+    {
+      "atu_code": 333,
+      "title": "Little Red Riding Hood",
+      "st_codes": [
+        "Z18.1.1",
+        "Q426",
+        "K1044",
+        "K2011",
+        "F913",
+        "J21.5.5"
+      ]
+    },
+    {
+      "atu_code": 334,
+      "title": "In the Household of the Witch",
+      "st_codes": [
+        "G11.3.3"
+      ]
+    },
+    {
+      "atu_code": 335,
+      "title": "Death' Messengers",
+      "st_codes": [
+        "J1051"
+      ]
+    },
+    {
+      "atu_code": 360,
+      "title": "The Three Apprentices and the Devil",
+      "st_codes": [
+        "K217",
+        "C495.2.2"
+      ]
+    },
+    {
+      "atu_code": 361,
+      "title": "Bearskin",
+      "st_codes": [
+        "C723.1.1",
+        "L54.1.1",
+        "C721",
+        "M211"
+      ]
+    },
+    {
+      "atu_code": 363,
+      "title": "The Vampire",
+      "st_codes": [
+        "G20"
+      ]
+    },
+    {
+      "atu_code": 365,
+      "title": "Specter Bridegrooms",
+      "st_codes": [
+        "E215"
+      ]
+    },
+    {
+      "atu_code": 366,
+      "title": "The Golden Arm",
+      "st_codes": [
+        "E235.4.4"
+      ]
+    },
+    {
+      "atu_code": 400,
+      "title": "The Quest for a Lost Bride",
+      "st_codes": [
+        "D361.1",
+        "B652.1",
+        "H1385.3",
+        "D361.1.1",
+        "D758.1",
+        "N681",
+        "D721.2"
+      ]
+    },
+    {
+      "atu_code": 402,
+      "title": "The Animal Bride",
+      "st_codes": [
+        "D711",
+        "H1301.1",
+        "D735",
+        "H1210.1",
+        "H1242"
+      ]
+    },
+    {
+      "atu_code": 403,
+      "title": "The White and the Black Bride",
+      "st_codes": [
+        "K1911",
+        "D1860",
+        "D1454.2",
+        "S432",
+        "S31",
+        "H1023.3",
+        "D1870",
+        "M431.2",
+        "D161.2",
+        "Q261"
+      ]
+    },
+    {
+      "atu_code": 405,
+      "title": "Jorinde and Joringel",
+      "st_codes": [
+        "D771",
+        "D683.2"
+      ]
+    },
+    {
+      "atu_code": 407,
+      "title": "The Flower Girl",
+      "st_codes": [
+        "D212",
+        "D711.4",
+        "T100"
+      ]
+    },
+    {
+      "atu_code": 408,
+      "title": "The Three Lemons",
+      "st_codes": [
+        "K1911.2.2",
+        "K1911.3",
+        "D721.5",
+        "S375",
+        "J1791",
+        "D610"
+      ]
+    },
+    {
+      "atu_code": 409,
+      "title": "The Girl in the Form of a Wolf",
+      "st_codes": [
+        "D721",
+        "D113.1",
+        "Q261",
+        "T554"
+      ]
+    },
+    {
+      "atu_code": 410,
+      "title": "The Sleeping Beauty",
+      "st_codes": [
+        "M370",
+        "D1364.17",
+        "D1978.5",
+        "G269.4",
+        "B211.7.1",
+        "N711.2",
+        "F361.1.1",
+        "D1967.1",
+        "M341.2.13"
+      ]
+    },
+    {
+      "atu_code": 413,
+      "title": "Marriage by Stealing Clothing",
+      "st_codes": [
+        "K1335",
+        "C311",
+        "E121.5",
+        "Z211"
+      ]
+    },
+    {
+      "atu_code": 425,
+      "title": "The Search for the Lost Husband",
+      "st_codes": [
+        "C32.1",
+        "C757.1",
+        "C761.2",
+        "C611",
+        "H1232",
+        "H1385.4",
+        "H11.1.1",
+        "D2006.1.4",
+        "L221",
+        "C932",
+        "D753",
+        "Q482.1",
+        "S241",
+        "D735.1",
+        "D150"
+      ]
+    },
+    {
+      "atu_code": 426,
+      "title": "Snow White and Rose Red",
+      "st_codes": [
+        "F451.5.2.1",
+        "D763"
+      ]
+    },
+    {
+      "atu_code": 430,
+      "title": "Prince Donkey",
+      "st_codes": [
+        "D721.3",
+        "T554"
+      ]
+    },
+    {
+      "atu_code": 431,
+      "title": "The Waldhaus",
+      "st_codes": [
+        "Q2",
+        "L54",
+        "D1890",
+        "L162"
+      ]
+    },
+    {
+      "atu_code": 432,
+      "title": "The Bird Lover",
+      "st_codes": [
+        "N452",
+        "D641.1",
+        "K1837",
+        "S181",
+        "K2212.1",
+        "H1385.5",
+        "L221"
+      ]
+    },
+    {
+      "atu_code": 434,
+      "title": "The Stolen Mirror.",
+      "st_codes": [
+        "D700",
+        "H1385.5",
+        "T24.1",
+        "H1233.1"
+      ]
+    },
+    {
+      "atu_code": 440,
+      "title": "The Frog King",
+      "st_codes": [
+        "S215.1",
+        "B211.7.1",
+        "C41.2",
+        "F875",
+        "D789"
+      ]
+    },
+    {
+      "atu_code": 441,
+      "title": "In Enchanted Skin",
+      "st_codes": [
+        "D721.3",
+        "T554",
+        "S226",
+        "B641.5",
+        "C758.1"
+      ]
+    },
+    {
+      "atu_code": 442,
+      "title": "The Old Woman in the Wood",
+      "st_codes": [
+        "D431.2",
+        "D1076",
+        "L162"
+      ]
+    },
+    {
+      "atu_code": 449,
+      "title": "The Tsar's Dog \u2013 Sidi Numan",
+      "st_codes": [
+        "D700",
+        "D141",
+        "D132.1"
+      ]
+    },
+    {
+      "atu_code": 450,
+      "title": "Brother and Sister",
+      "st_codes": [
+        "N711.1",
+        "D555",
+        "D114.1.1",
+        "K1911.1.2",
+        "P253.2",
+        "D688",
+        "S31",
+        "H13",
+        "D150"
+      ]
+    },
+    {
+      "atu_code": 451,
+      "title": "The Nurse looking for her Brothers,",
+      "st_codes": [
+        "K2116.1.1",
+        "D161.1",
+        "D758",
+        "P253.2",
+        "D753.1",
+        "P253.0.5"
+      ]
+    },
+    {
+      "atu_code": 461,
+      "title": "Three Hairs of the Devil",
+      "st_codes": [
+        "H1291",
+        "G530.1",
+        "H1273.2",
+        "A1111",
+        "P413.1.1",
+        "Q521.5"
+      ]
+    },
+    {
+      "atu_code": 462,
+      "title": "The Outcast Queens and the Ogress Queen",
+      "st_codes": [
+        "G405",
+        "G264",
+        "L71",
+        "S435",
+        "S438",
+        "K511"
+      ]
+    },
+    {
+      "atu_code": 465,
+      "title": "Man persecuted for his beautiful wife",
+      "st_codes": [
+        "H1335",
+        "D721.3",
+        "H931",
+        "H1023.3",
+        "H1233.2.1",
+        "H1090",
+        "B642",
+        "H911"
+      ]
+    },
+    {
+      "atu_code": 470,
+      "title": "Friends in Life and Death",
+      "st_codes": [
+        "F171.2",
+        "F171.1",
+        "D2011",
+        "M253",
+        "F116",
+        "E238",
+        "C13"
+      ]
+    },
+    {
+      "atu_code": 471,
+      "title": "The Bridge to Another World",
+      "st_codes": [
+        "D2011.1",
+        "R155.1",
+        "F171.3",
+        "H1251",
+        "F171.0.1",
+        "H1385.6",
+        "F171.5",
+        "F171",
+        "E481.2.1"
+      ]
+    },
+    {
+      "atu_code": 475,
+      "title": "The Man as Heater of Hell's Kettle",
+      "st_codes": [
+        "D885",
+        "D861.1",
+        "M210",
+        "C325",
+        "D475.1",
+        "C721.1"
+      ]
+    },
+    {
+      "atu_code": 476,
+      "title": "Midwife (or Godparent, or Nurse) for the Elves",
+      "st_codes": [
+        "B81.6",
+        "D475.1",
+        "F372.1"
+      ]
+    },
+    {
+      "atu_code": 480,
+      "title": "The Kind and the Unkind Girls",
+      "st_codes": [
+        "Q41.2",
+        "Q2",
+        "H935",
+        "D1860",
+        "H934.3",
+        "Q41",
+        "N791",
+        "S31",
+        "L211"
+      ]
+    },
+    {
+      "atu_code": 500,
+      "title": "Rumpelstiltskin",
+      "st_codes": [
+        "H914",
+        "N475",
+        "H1021.8",
+        "S222.1",
+        "H521",
+        "D2183",
+        "C432.1"
+      ]
+    },
+    {
+      "atu_code": 501,
+      "title": "The Three Spinners",
+      "st_codes": [
+        "H914",
+        "G201.1",
+        "H1092",
+        "G244"
+      ]
+    },
+    {
+      "atu_code": 502,
+      "title": "The Wild Man",
+      "st_codes": [
+        "R222",
+        "G671"
+      ]
+    },
+    {
+      "atu_code": 503,
+      "title": "Helpful Elves",
+      "st_codes": [
+        "F344.1",
+        "F331.3",
+        "F331.1"
+      ]
+    },
+    {
+      "atu_code": 505,
+      "title": "Grateful dead",
+      "st_codes": [
+        "M241",
+        "M241.1",
+        "E341",
+        "H972"
+      ]
+    },
+    {
+      "atu_code": 507,
+      "title": "The Mistress of the Monster",
+      "st_codes": [
+        "H322.1",
+        "T172.2.1",
+        "T172.0.1",
+        "H972"
+      ]
+    },
+    {
+      "atu_code": 510,
+      "title": "Cinderella and Cap o' Rushes",
+      "st_codes": [
+        "H94.2",
+        "D1050.1",
+        "T411.1",
+        "H36.1",
+        "L55",
+        "F823.2",
+        "M255",
+        "B450",
+        "S31",
+        "T311.1",
+        "N711.6",
+        "K521.1",
+        "R255",
+        "K1911.3.3.1",
+        "N815",
+        "H151.5",
+        "C761.3"
+      ]
+    },
+    {
+      "atu_code": 511,
+      "title": "One-Eye, Two-Eyes, and Three-Eyes",
+      "st_codes": [
+        "D830.1",
+        "D1470.2.1",
+        "H31.12",
+        "B100.1",
+        "L162",
+        "F512.1",
+        "B535.0.1",
+        "S31",
+        "F512.2.1.1"
+      ]
+    },
+    {
+      "atu_code": 513,
+      "title": "The Extraordinary Companions",
+      "st_codes": [
+        "F601",
+        "F681.1",
+        "F661.5.3",
+        "H331",
+        "D2144.1.2",
+        "H1127",
+        "F632",
+        "H331.5.1",
+        "L161",
+        "F621",
+        "N825.2",
+        "F641",
+        "D1533.1.1",
+        "H1511",
+        "H1142",
+        "F601.2"
+      ]
+    },
+    {
+      "atu_code": 514,
+      "title": "The Shift of Sex",
+      "st_codes": [
+        "K1837",
+        "K2111",
+        "F954",
+        "L162",
+        "D11",
+        "K1825.1"
+      ]
+    },
+    {
+      "atu_code": 516,
+      "title": "The Petrified Friend",
+      "st_codes": [
+        "C423.4",
+        "D766.2",
+        "T11.3",
+        "T172.2",
+        "B211.3",
+        "S268",
+        "P361",
+        "N451",
+        "N342.1",
+        "C961.2",
+        "H1515",
+        "K1332"
+      ]
+    },
+    {
+      "atu_code": 517,
+      "title": "The Boy and the Bird-language",
+      "st_codes": [
+        "M373",
+        "B143.1",
+        "M312",
+        "B215.1",
+        "N682"
+      ]
+    },
+    {
+      "atu_code": 518,
+      "title": "Big Fight over Magic Things",
+      "st_codes": [
+        "D1520.19",
+        "D832",
+        "D1361.12",
+        "D1521.1"
+      ]
+    },
+    {
+      "atu_code": 519,
+      "title": "Brunhilde",
+      "st_codes": [
+        "T58",
+        "D1500.1.18",
+        "Q451.2",
+        "H345.1",
+        "K1844.1",
+        "H345",
+        "T173.1",
+        "H345.2",
+        "R169.4"
+      ]
+    },
+    {
+      "atu_code": 530,
+      "title": "The Glass Mountain",
+      "st_codes": [
+        "H331.1.1",
+        "B401",
+        "B315",
+        "H1471",
+        "H80"
+      ]
+    },
+    {
+      "atu_code": 531,
+      "title": "Faithful Ferdinand",
+      "st_codes": [
+        "H911",
+        "H1213.1",
+        "H1381.2.2.1",
+        "B211.1.3",
+        "B401",
+        "J2411.1",
+        "B313",
+        "K1934",
+        "B350",
+        "B341",
+        "E15.1"
+      ]
+    },
+    {
+      "atu_code": 532,
+      "title": "The Speaking Horsehead",
+      "st_codes": [
+        "B411.2"
+      ]
+    },
+    {
+      "atu_code": 533,
+      "title": "Repressed Bride",
+      "st_codes": [
+        "B133.3",
+        "K2252",
+        "B335",
+        "K1934",
+        "H13.2.7",
+        "K1911.1.1",
+        "K1933",
+        "K1816.5"
+      ]
+    },
+    {
+      "atu_code": 545,
+      "title": "The Cat as Helper",
+      "st_codes": [
+        "D711",
+        "K1917.3",
+        "N411.1.1",
+        "B422",
+        "B211.1.8",
+        "F771.4.1",
+        "B580",
+        "B582.1.1",
+        "G510",
+        "K1952.1.1"
+      ]
+    },
+    {
+      "atu_code": 546,
+      "title": "The Clever Parrot",
+      "st_codes": [
+        "B469.9"
+      ]
+    },
+    {
+      "atu_code": 550,
+      "title": "The Golden Bird",
+      "st_codes": [
+        "N711.3",
+        "B184.1",
+        "B435.1",
+        "K1932",
+        "B560",
+        "H1331.1",
+        "B313",
+        "L13",
+        "L161",
+        "H1242",
+        "W154.12.3"
+      ]
+    },
+    {
+      "atu_code": 551,
+      "title": "The Water of Life",
+      "st_codes": [
+        "N711.3",
+        "H1321.1",
+        "K1932",
+        "H1381.2.1",
+        "H81.1",
+        "K2211",
+        "L161",
+        "N825.2",
+        "H1210.1",
+        "H1242",
+        "T475.2",
+        "W154.12.3",
+        "H80"
+      ]
+    },
+    {
+      "atu_code": 552,
+      "title": "Animals and In-laws",
+      "st_codes": [
+        "S221.1",
+        "D621.1",
+        "B640",
+        "B501"
+      ]
+    },
+    {
+      "atu_code": 554,
+      "title": "The Grateful Animals",
+      "st_codes": [
+        "B582.2",
+        "B571",
+        "H982"
+      ]
+    },
+    {
+      "atu_code": 555,
+      "title": "The Fisherman and his Wife,",
+      "st_codes": [
+        "C773.1",
+        "B170",
+        "J514",
+        "Q338",
+        "D1761.0.1",
+        "B375.1"
+      ]
+    },
+    {
+      "atu_code": 559,
+      "title": "The Princess\u2019 Laugh",
+      "st_codes": [
+        "B582.2",
+        "F591",
+        "T68",
+        "H982",
+        "H341",
+        "L161",
+        "T171",
+        "B571"
+      ]
+    },
+    {
+      "atu_code": 560,
+      "title": "The Magic Ring",
+      "st_codes": [
+        "D812",
+        "B360",
+        "D1131.1",
+        "D882.1.1",
+        "D810",
+        "D1470.1.15",
+        "D1662.1",
+        "D861.5",
+        "D2136.2"
+      ]
+    },
+    {
+      "atu_code": 561,
+      "title": "Aladdin",
+      "st_codes": [
+        "D1470.1.16",
+        "D1131.1",
+        "D1662.2",
+        "D881",
+        "D840",
+        "D860",
+        "D1470.1.15",
+        "D1421.1.5",
+        "D2136.2"
+      ]
+    },
+    {
+      "atu_code": 562,
+      "title": "The Spirit in the Blue Light",
+      "st_codes": [
+        "D1421.1.4",
+        "D1426",
+        "D845",
+        "N813",
+        "D1391",
+        "D1470.1"
+      ]
+    },
+    {
+      "atu_code": 563,
+      "title": "Three Magic Gifts",
+      "st_codes": [
+        "D861.1",
+        "D1401.2",
+        "B103.1.1",
+        "D1472.1.7",
+        "D881.2",
+        "J2355.1"
+      ]
+    },
+    {
+      "atu_code": 564,
+      "title": "The Two Marvelous Pitchers",
+      "st_codes": [
+        "D1030.1",
+        "D1193",
+        "D861",
+        "D1401.1"
+      ]
+    },
+    {
+      "atu_code": 565,
+      "title": "The Magic Mill",
+      "st_codes": [
+        "A1115.2",
+        "C916.3",
+        "D1601.21.1",
+        "D1472.1.9",
+        "D861",
+        "D1651"
+      ]
+    },
+    {
+      "atu_code": 566,
+      "title": "Fortunatus",
+      "st_codes": [
+        "D1475.1",
+        "D812",
+        "D1451",
+        "D992.1",
+        "D895",
+        "D1520.11",
+        "D861.6"
+      ]
+    },
+    {
+      "atu_code": 567,
+      "title": "The Magic Bird Heart",
+      "st_codes": [
+        "B113.1",
+        "M312.3",
+        "N683",
+        "N311",
+        "D1561.1.1",
+        "D132.1",
+        "D965",
+        "S264.1",
+        "S322.4",
+        "K512",
+        "D861.5"
+      ]
+    },
+    {
+      "atu_code": 569,
+      "title": "The Knapsack, the Hat, and the Horn",
+      "st_codes": [
+        "D1475.4",
+        "D831",
+        "D1472.1.22",
+        "D1470",
+        "D1222",
+        "D861"
+      ]
+    },
+    {
+      "atu_code": 570,
+      "title": "Bunnies Beware of the King",
+      "st_codes": [
+        "T68",
+        "D1224",
+        "D1441.1.2",
+        "D1427.1",
+        "K1271.1.1",
+        "K1288",
+        "H1045",
+        "H1112"
+      ]
+    },
+    {
+      "atu_code": 571,
+      "title": "The Golden Goose",
+      "st_codes": [
+        "D817",
+        "F591",
+        "D2171.5",
+        "D2171.3.1",
+        "H1194",
+        "K422",
+        "H341",
+        "H1010",
+        "D1413.8",
+        "D1413",
+        "H341.1",
+        "D812.3"
+      ]
+    },
+    {
+      "atu_code": 577,
+      "title": "The Order of the King",
+      "st_codes": [
+        "D1581",
+        "H971.1",
+        "D1601.15",
+        "D1601.14",
+        "D1601.18.2",
+        "H335"
+      ]
+    },
+    {
+      "atu_code": 580,
+      "title": "Favor of Women",
+      "st_codes": [
+        "D1473",
+        "D1900",
+        "D1472.1.7",
+        "D856",
+        "T45"
+      ]
+    },
+    {
+      "atu_code": 585,
+      "title": "Spindle, Shuttle, and Needle",
+      "st_codes": [
+        "H1311.2",
+        "D1337.1.7",
+        "D1484.1",
+        "D1425.1"
+      ]
+    },
+    {
+      "atu_code": 590,
+      "title": "The Prince and the Bracelets",
+      "st_codes": [
+        "D1335.4",
+        "B512",
+        "F615",
+        "H931",
+        "D880",
+        "H1361",
+        "H1212",
+        "K975",
+        "S12.1",
+        "H1333.3.1.1",
+        "D1840",
+        "B431.2",
+        "D861"
+      ]
+    },
+    {
+      "atu_code": 592,
+      "title": "The Dance Among Thorns",
+      "st_codes": [
+        "Q42.1",
+        "N55",
+        "K551.3.1",
+        "D1653.1.7",
+        "D1415.2.5",
+        "S322.4",
+        "D1761.0.2"
+      ]
+    },
+    {
+      "atu_code": 593,
+      "title": "Fiddevav",
+      "st_codes": [
+        "D2172.1",
+        "D1413",
+        "N825.3",
+        "D1413.17"
+      ]
+    },
+    {
+      "atu_code": 610,
+      "title": "The Healing Fruit",
+      "st_codes": [
+        "Q2",
+        "H1331.1.2.1",
+        "L13",
+        "L161",
+        "T68.1",
+        "L10",
+        "H346",
+        "D1500.1.5",
+        "N825.3",
+        "H1010",
+        "D1533.1.1",
+        "H1112"
+      ]
+    },
+    {
+      "atu_code": 612,
+      "title": "The Three Snake-Leaves",
+      "st_codes": [
+        "E105",
+        "B512",
+        "M254",
+        "B491.1",
+        "P361",
+        "D1500.1.4",
+        "E165",
+        "K2213.5",
+        "S142",
+        "K2213.2"
+      ]
+    },
+    {
+      "atu_code": 613,
+      "title": "The Two Travelers: Truth and Falsehood",
+      "st_codes": [
+        "F933.2",
+        "N451.1",
+        "N2.3.3",
+        "D1505.5",
+        "N471",
+        "N92",
+        "K451.1",
+        "N61",
+        "D2064.1",
+        "H346",
+        "F1045",
+        "M225"
+      ]
+    },
+    {
+      "atu_code": 650,
+      "title": "Strong John",
+      "st_codes": [
+        "D1846.4",
+        "F615.3.1",
+        "F615",
+        "H931",
+        "F615.2.3",
+        "F615.1",
+        "F612.1",
+        "K1421",
+        "B631",
+        "F611.3.1",
+        "F611.2.1",
+        "K1411",
+        "F611.1.1"
+      ]
+    },
+    {
+      "atu_code": 652,
+      "title": "The Boy Whose Wishes Always Come True",
+      "st_codes": [
+        "T52.1",
+        "D630",
+        "D141",
+        "K2250",
+        "N856.1",
+        "R131.8.5",
+        "K2155.1",
+        "N811",
+        "Q455.1",
+        "D212.1",
+        "D1761.0.1"
+      ]
+    },
+    {
+      "atu_code": 653,
+      "title": "The Skillful Brothers",
+      "st_codes": [
+        "D1520.19",
+        "R111.7",
+        "F662.2",
+        "R166",
+        "P251.6.2",
+        "H621.2",
+        "T68.1",
+        "D1500.1.5.1",
+        "D1323.15",
+        "R111.1.3",
+        "F660.1"
+      ]
+    },
+    {
+      "atu_code": 654,
+      "title": "The Three Brothers",
+      "st_codes": [
+        "F663.1",
+        "F667.1",
+        "F665.1",
+        "F660.1"
+      ]
+    },
+    {
+      "atu_code": 655,
+      "title": "The Wise Brothers",
+      "st_codes": [
+        "F647.5.1",
+        "F647.1",
+        "J1661.1.2",
+        "J1661.1.1"
+      ]
+    },
+    {
+      "atu_code": 660,
+      "title": "The Three Doctors",
+      "st_codes": [
+        "E782.1.1",
+        "E781.3",
+        "F668.1",
+        "E787",
+        "E780.2",
+        "H504"
+      ]
+    },
+    {
+      "atu_code": 665,
+      "title": "The Man in Three Animal Forms",
+      "st_codes": [
+        "B515",
+        "D117.2",
+        "H78.2",
+        "D630",
+        "Q42.1",
+        "D170",
+        "N681",
+        "D641",
+        "D1470.1.15",
+        "D1081",
+        "D150",
+        "K1931.3"
+      ]
+    },
+    {
+      "atu_code": 670,
+      "title": "The Language of Animals",
+      "st_codes": [
+        "N456",
+        "B216",
+        "T253.1",
+        "C425",
+        "B491.1",
+        "B350",
+        "N451",
+        "T252.2"
+      ]
+    },
+    {
+      "atu_code": 671,
+      "title": "The Three Languages",
+      "st_codes": [
+        "K512.2",
+        "B215.1",
+        "B215.2",
+        "H171.2",
+        "B215.4"
+      ]
+    },
+    {
+      "atu_code": 673,
+      "title": "The White Snake",
+      "st_codes": [
+        "N451",
+        "B217.1.1"
+      ]
+    },
+    {
+      "atu_code": 675,
+      "title": "The Wish-Fish",
+      "st_codes": [
+        "L175",
+        "D1523.1",
+        "H481.1",
+        "D1131.1",
+        "S141",
+        "T513",
+        "D1601",
+        "L114.1",
+        "H486",
+        "D1761.0.1",
+        "B375.1"
+      ]
+    },
+    {
+      "atu_code": 681,
+      "title": "King in the Bath; Years of Experience",
+      "st_codes": [
+        "D2012.1"
+      ]
+    },
+    {
+      "atu_code": 700,
+      "title": "Tom Thumb",
+      "st_codes": [
+        "F535.1",
+        "F911.3.1",
+        "F535.1.1.8",
+        "F535.1.1.9",
+        "F535.1.1.11",
+        "F535.1.1.1",
+        "F913"
+      ]
+    },
+    {
+      "atu_code": 701,
+      "title": "The Giant's Toy",
+      "st_codes": [
+        "F531.5.3"
+      ]
+    },
+    {
+      "atu_code": 704,
+      "title": "The Princess and the Pea",
+      "st_codes": [
+        "H41.1"
+      ]
+    },
+    {
+      "atu_code": 705,
+      "title": "Born of a Fish",
+      "st_codes": [
+        "T511.5.1",
+        "T578",
+        "R13.3",
+        "T412",
+        "S410",
+        "T541.16",
+        "N711"
+      ]
+    },
+    {
+      "atu_code": 706,
+      "title": "The Girl Without Hands",
+      "st_codes": [
+        "S451",
+        "T327.1",
+        "Q451.1",
+        "S322.1.2",
+        "K2117",
+        "N711"
+      ]
+    },
+    {
+      "atu_code": 707,
+      "title": "The Bird of Truth",
+      "st_codes": [
+        "H1381.2.2.1",
+        "H71.3",
+        "K2115",
+        "L162",
+        "R131.2",
+        "K2110.1",
+        "S301",
+        "N201",
+        "H71.1",
+        "H71.2"
+      ]
+    },
+    {
+      "atu_code": 708,
+      "title": "The Miraculous Child",
+      "st_codes": [
+        "D1717.1",
+        "D741",
+        "S441"
+      ]
+    },
+    {
+      "atu_code": 709,
+      "title": "Snow White",
+      "st_codes": [
+        "S322.2",
+        "K512.2",
+        "Z65.1",
+        "L55",
+        "F852.1",
+        "N831.1",
+        "S111.2",
+        "D1364.16",
+        "D1364.4.1",
+        "E21.1",
+        "M312.4",
+        "D1364.9",
+        "F451.5.1.2",
+        "D1311.2",
+        "Q414.4",
+        "D1323.1",
+        "S111.4"
+      ]
+    },
+    {
+      "atu_code": 710,
+      "title": "The Black Madonna",
+      "st_codes": [
+        "S240",
+        "V271",
+        "D2025.1",
+        "C912",
+        "H215",
+        "C611",
+        "K2116.1.1",
+        "Q451.3",
+        "C911",
+        "N711.1",
+        "G261",
+        "S211",
+        "J213",
+        "C944"
+      ]
+    },
+    {
+      "atu_code": 711,
+      "title": "The Twin Sisters",
+      "st_codes": [
+        "D1860",
+        "T551.3",
+        "D732",
+        "T548.2",
+        "L145.1",
+        "C152"
+      ]
+    },
+    {
+      "atu_code": 712,
+      "title": "Crescentia",
+      "st_codes": [
+        "S451",
+        "K2116.1.1.1",
+        "K2112",
+        "K2110.1",
+        "H151.8"
+      ]
+    },
+    {
+      "atu_code": 715,
+      "title": "Demi-coq",
+      "st_codes": [
+        "D1382.8",
+        "B435.1",
+        "D915.2",
+        "B171.1",
+        "K481",
+        "F601.7"
+      ]
+    },
+    {
+      "atu_code": 720,
+      "title": "From the Juniper Tree",
+      "st_codes": [
+        "G61",
+        "S121",
+        "E610.1.1",
+        "Q412",
+        "E607.1"
+      ]
+    },
+    {
+      "atu_code": 725,
+      "title": "The Dream",
+      "st_codes": [
+        "H551",
+        "M312.0.1",
+        "L425",
+        "D1812.3.3"
+      ]
+    },
+    {
+      "atu_code": 726,
+      "title": "The Oldest on the Farm",
+      "st_codes": [
+        "F571.2"
+      ]
+    },
+    {
+      "atu_code": 729,
+      "title": "The Axe Falls into the Stream",
+      "st_codes": [
+        "Q3.1"
+      ]
+    },
+    {
+      "atu_code": 735,
+      "title": "The Rich Man's and the Poors Man's Fortune",
+      "st_codes": [
+        "N181",
+        "N112.1",
+        "N112"
+      ]
+    },
+    {
+      "atu_code": 736,
+      "title": "Luck and Wealth",
+      "st_codes": [
+        "N211.1"
+      ]
+    },
+    {
+      "atu_code": 737,
+      "title": "Who Will be her Future Husband",
+      "st_codes": [
+        "D1825.1"
+      ]
+    },
+    {
+      "atu_code": 745,
+      "title": "Hatch-penny",
+      "st_codes": [
+        "N212"
+      ]
+    },
+    {
+      "atu_code": 751,
+      "title": "The Greedy Peasant Woman",
+      "st_codes": [
+        "K1811",
+        "D153.1",
+        "D1652.1.2",
+        "Q292.1",
+        "K1811.1"
+      ]
+    },
+    {
+      "atu_code": 753,
+      "title": "Christ and the smith",
+      "st_codes": [
+        "D1886",
+        "K1811",
+        "A1861.2",
+        "J2411.1",
+        "E121.2",
+        "E782.4",
+        "F663.0.1"
+      ]
+    },
+    {
+      "atu_code": 756,
+      "title": "Forgiveness and Redemption",
+      "st_codes": [
+        "S211",
+        "Q520.2",
+        "H1273.1",
+        "Q521.2",
+        "Q561",
+        "Q521.1.1",
+        "F81.2",
+        "H1235",
+        "Q553.2",
+        "F971.1",
+        "Q211.1",
+        "Q222.1",
+        "Q172.3",
+        "Q521.1.2",
+        "Q520.1",
+        "V29.1",
+        "Q521.4",
+        "J172",
+        "L435.1",
+        "Q523.5",
+        "F771.1.9",
+        "Q545",
+        "Q521.1",
+        "N843"
+      ]
+    },
+    {
+      "atu_code": 758,
+      "title": "The various children of Eve",
+      "st_codes": [
+        "A1650.1"
+      ]
+    },
+    {
+      "atu_code": 759,
+      "title": "God's Justice Vindicated \u2013 The Angel and the Hermit",
+      "st_codes": [
+        "C491",
+        "C411.1",
+        "J225.4",
+        "J225.5",
+        "J225.0.2",
+        "U21.3",
+        "J225.0.1",
+        "J225.3"
+      ]
+    },
+    {
+      "atu_code": 760,
+      "title": "The Unquiet Grave",
+      "st_codes": [
+        "E411.1",
+        "E411.0.2",
+        "Q211.3"
+      ]
+    },
+    {
+      "atu_code": 762,
+      "title": "Woman with three hundred and sixty-five children",
+      "st_codes": [
+        "T586.1",
+        "L435.2.1",
+        "T587.1"
+      ]
+    },
+    {
+      "atu_code": 763,
+      "title": "Treasure Finders Murder One Another",
+      "st_codes": [
+        "K1685"
+      ]
+    },
+    {
+      "atu_code": 766,
+      "title": "The seven sleepers",
+      "st_codes": [
+        "D1960.1"
+      ]
+    },
+    {
+      "atu_code": 767,
+      "title": "Food for the Crucifix",
+      "st_codes": [
+        "Q172.1"
+      ]
+    },
+    {
+      "atu_code": 768,
+      "title": "St Christopher and the Christ child",
+      "st_codes": [
+        "Q25"
+      ]
+    },
+    {
+      "atu_code": 769,
+      "title": "A Child Returns from the Dead",
+      "st_codes": [
+        "E361",
+        "E324"
+      ]
+    },
+    {
+      "atu_code": 770,
+      "title": "The Nun Who Saw the World",
+      "st_codes": [
+        "V238"
+      ]
+    },
+    {
+      "atu_code": 777,
+      "title": "The wandering Jew",
+      "st_codes": [
+        "E511",
+        "E511.1.1",
+        "E511.1.3",
+        "Q502.1",
+        "E511.1.2"
+      ]
+    },
+    {
+      "atu_code": 780,
+      "title": "The Singing Bone",
+      "st_codes": [
+        "E632",
+        "N271",
+        "D1610.34"
+      ]
+    },
+    {
+      "atu_code": 782,
+      "title": "Midas",
+      "st_codes": [
+        "F511.2.2",
+        "N465",
+        "D1316.5"
+      ]
+    },
+    {
+      "atu_code": 785,
+      "title": "Who Ate the Lamb's Heart ?",
+      "st_codes": [
+        "K1811",
+        "K402",
+        "J1141.1.1"
+      ]
+    },
+    {
+      "atu_code": 791,
+      "title": "The Saviour and Peter in night-lodgings",
+      "st_codes": [
+        "K1132"
+      ]
+    },
+    {
+      "atu_code": 800,
+      "title": "The Tailor in Heaven",
+      "st_codes": [
+        "A661.0.1.2",
+        "P441.1",
+        "L435.3",
+        "F1037.1"
+      ]
+    },
+    {
+      "atu_code": 801,
+      "title": "Master Pfriem",
+      "st_codes": [
+        "F171.6.3",
+        "F171.6.4",
+        "F13",
+        "H1023.2",
+        "A661.0.1.2",
+        "Q312.1"
+      ]
+    },
+    {
+      "atu_code": 802,
+      "title": "The Peasant in Heaven",
+      "st_codes": [
+        "E758"
+      ]
+    },
+    {
+      "atu_code": 804,
+      "title": "Peter's Mother Falls from Heaven",
+      "st_codes": [
+        "A661.0.1.2",
+        "Q291.1",
+        "F51.1.3"
+      ]
+    },
+    {
+      "atu_code": 805,
+      "title": "Joseph and Mary Threatens to Leave Heaven...",
+      "st_codes": [
+        "V254.6"
+      ]
+    },
+    {
+      "atu_code": 810,
+      "title": "The devil loses a soul that was promised him",
+      "st_codes": [
+        "D1381.11",
+        "S211",
+        "K218.1",
+        "G303.9.1.6",
+        "G303.16.19.4",
+        "G303.16.19.15"
+      ]
+    },
+    {
+      "atu_code": 812,
+      "title": "The Mystery of the Devil",
+      "st_codes": [
+        "M211",
+        "H673",
+        "H672",
+        "H523",
+        "H671"
+      ]
+    },
+    {
+      "atu_code": 815,
+      "title": "The Deceased Rich Man and the Devils in the Church",
+      "st_codes": [
+        "Q45.2",
+        "K210",
+        "K218.1",
+        "D1381.11",
+        "C12.2",
+        "G303.22.11"
+      ]
+    },
+    {
+      "atu_code": 821,
+      "title": "The Devil as Advocate",
+      "st_codes": [
+        "J1191.2"
+      ]
+    },
+    {
+      "atu_code": 825,
+      "title": "The Devil in Noah's Ark",
+      "st_codes": [
+        "K2213.4.2",
+        "A1015",
+        "A1853.1",
+        "A2214.3",
+        "A2232.4",
+        "F531.5.9",
+        "C12.5.1",
+        "A2145.2",
+        "A2001",
+        "G303.14.1.1",
+        "A2031.2",
+        "A1021"
+      ]
+    },
+    {
+      "atu_code": 826,
+      "title": "Devil writes down names of men on hide in church",
+      "st_codes": [
+        "G303.24.1.3"
+      ]
+    },
+    {
+      "atu_code": 830,
+      "title": "Refusal to Ask God's Blessing",
+      "st_codes": [
+        "C454"
+      ]
+    },
+    {
+      "atu_code": 831,
+      "title": "The Dishonest Priest",
+      "st_codes": [
+        "Q551.2"
+      ]
+    },
+    {
+      "atu_code": 832,
+      "title": "The Disappointed Fisher",
+      "st_codes": [
+        "Q553.5"
+      ]
+    },
+    {
+      "atu_code": 836,
+      "title": "Pride is Punished",
+      "st_codes": [
+        "D1323.5",
+        "D1331.3.1"
+      ]
+    },
+    {
+      "atu_code": 837,
+      "title": "How the Wicked Lord was Punished",
+      "st_codes": [
+        "N332.1"
+      ]
+    },
+    {
+      "atu_code": 838,
+      "title": "The Bad Rearing",
+      "st_codes": [
+        "Q586"
+      ]
+    },
+    {
+      "atu_code": 839,
+      "title": "One Vice Carries Other With It",
+      "st_codes": [
+        "J485"
+      ]
+    },
+    {
+      "atu_code": 841,
+      "title": "One Beggar Trusts God, the Other the King",
+      "st_codes": [
+        "N351"
+      ]
+    },
+    {
+      "atu_code": 844,
+      "title": "The Luck-bringing Shirt",
+      "st_codes": [
+        "N135.3"
+      ]
+    },
+    {
+      "atu_code": 845,
+      "title": "The Old Man and Death",
+      "st_codes": [
+        "C11"
+      ]
+    },
+    {
+      "atu_code": 846,
+      "title": "Devil Always Blamed",
+      "st_codes": [
+        "N111.4.1",
+        "K1811"
+      ]
+    },
+    {
+      "atu_code": 850,
+      "title": "The Moles of the Princess",
+      "st_codes": [
+        "H315",
+        "K443.6",
+        "H525",
+        "K1358",
+        "H51.1"
+      ]
+    },
+    {
+      "atu_code": 851,
+      "title": "The Riddle of the Suitor",
+      "st_codes": [
+        "H551",
+        "H721.1",
+        "H81.2",
+        "H762",
+        "H117",
+        "H802",
+        "H565",
+        "H792",
+        "H342",
+        "H734"
+      ]
+    },
+    {
+      "atu_code": 852,
+      "title": "That is a lie!",
+      "st_codes": [
+        "X1036.1",
+        "H342.1",
+        "X1547.2",
+        "F54.2",
+        "K1271.1",
+        "X1201",
+        "X1726.2",
+        "X1739.2",
+        "X1757",
+        "X1423.1",
+        "X1237"
+      ]
+    },
+    {
+      "atu_code": 853,
+      "title": "Contest in Repartee",
+      "st_codes": [
+        "H507.1.0.1",
+        "K1331",
+        "H507.1"
+      ]
+    },
+    {
+      "atu_code": 854,
+      "title": "The golden ram",
+      "st_codes": [
+        "H322",
+        "K1341.1"
+      ]
+    },
+    {
+      "atu_code": 859,
+      "title": "The Penniless Bridegroom Pretends to Wealth",
+      "st_codes": [
+        "K1917.2",
+        "K1917.1",
+        "K1917",
+        "K1917.4"
+      ]
+    },
+    {
+      "atu_code": 870,
+      "title": "The Princess in the Underground Cave",
+      "st_codes": [
+        "K1816.0.2",
+        "T55",
+        "K1831",
+        "H13.1",
+        "H411.1",
+        "H90",
+        "K1911.3",
+        "H92",
+        "K1843.1",
+        "R45",
+        "H13.2",
+        "H15.1",
+        "R211",
+        "H151.5"
+      ]
+    },
+    {
+      "atu_code": 871,
+      "title": "Princess and Ogress",
+      "st_codes": [
+        "N681.1",
+        "D567",
+        "F93.0.2.1",
+        "C611",
+        "C325",
+        "G11.3",
+        "T11.2"
+      ]
+    },
+    {
+      "atu_code": 873,
+      "title": "The King Discovers his Unknown Son",
+      "st_codes": [
+        "T645",
+        "H1381.2.2.1.1",
+        "N731",
+        "L162",
+        "H80"
+      ]
+    },
+    {
+      "atu_code": 875,
+      "title": "The Clever Peasant girl",
+      "st_codes": [
+        "H1023.25.1",
+        "H631.3",
+        "H951",
+        "L162",
+        "J1191.1",
+        "J1536.2",
+        "H1024.1",
+        "J1185.1",
+        "H582.1.1",
+        "H1021.9",
+        "H632",
+        "H633",
+        "D1318.2.1",
+        "H583.7",
+        "J2121",
+        "H1053",
+        "H641.1",
+        "H636",
+        "J1111.4",
+        "H1010",
+        "H1024.1.1.1",
+        "H561.1.2",
+        "J1545.4",
+        "H561.1.1.1",
+        "H586",
+        "H1023.1",
+        "H561.1",
+        "H1054"
+      ]
+    },
+    {
+      "atu_code": 877,
+      "title": "The Old Woman who was Skinned",
+      "st_codes": [
+        "D1880"
+      ]
+    },
+    {
+      "atu_code": 879,
+      "title": "The Basil Maiden (The Sugar Puppet, Viola)",
+      "st_codes": [
+        "H702",
+        "K525.1",
+        "H705.3",
+        "K1837"
+      ]
+    },
+    {
+      "atu_code": 880,
+      "title": "The Man Boasts of his Wife",
+      "st_codes": [
+        "R152.1",
+        "K1837"
+      ]
+    },
+    {
+      "atu_code": 881,
+      "title": "Oft-proved Fidility",
+      "st_codes": [
+        "K2112",
+        "H21",
+        "K1837",
+        "T320.1"
+      ]
+    },
+    {
+      "atu_code": 882,
+      "title": "The wager on the wife's chastity",
+      "st_codes": [
+        "K1837",
+        "N15",
+        "K1342",
+        "K2112.1",
+        "H94"
+      ]
+    },
+    {
+      "atu_code": 884,
+      "title": "The forgotten fianc\u00e9e",
+      "st_codes": [
+        "N681.1",
+        "D2003",
+        "K1816.0.2",
+        "H1578.1",
+        "K1837",
+        "T84",
+        "T165.4"
+      ]
+    },
+    {
+      "atu_code": 887,
+      "title": "Griselda",
+      "st_codes": [
+        "H461"
+      ]
+    },
+    {
+      "atu_code": 888,
+      "title": "The Faithful Wife",
+      "st_codes": [
+        "K1837",
+        "M134",
+        "R152.1",
+        "J1545.6",
+        "R61",
+        "T320.1",
+        "H431.1",
+        "H80"
+      ]
+    },
+    {
+      "atu_code": 889,
+      "title": "The Faithful Servant",
+      "st_codes": [
+        "J751.1",
+        "N25"
+      ]
+    },
+    {
+      "atu_code": 890,
+      "title": "The Pound of Flesh",
+      "st_codes": [
+        "K1825.2",
+        "T52.3",
+        "K443.2",
+        "J1161.2"
+      ]
+    },
+    {
+      "atu_code": 891,
+      "title": "The Man Who Deserts his Wife and Sets Her the Task of Bearing Him a Child",
+      "st_codes": [
+        "K1837",
+        "K1814",
+        "M372",
+        "R41.2",
+        "H1187",
+        "T381"
+      ]
+    },
+    {
+      "atu_code": 892,
+      "title": "The children of the king",
+      "st_codes": [
+        "Q261",
+        "K2112.1"
+      ]
+    },
+    {
+      "atu_code": 893,
+      "title": "The Unreliable Friends. (The HalfFriend).",
+      "st_codes": [
+        "H1558.1",
+        "R169.6"
+      ]
+    },
+    {
+      "atu_code": 898,
+      "title": "The Daughter of the Sun",
+      "st_codes": [
+        "T521",
+        "T381",
+        "S313",
+        "R131.11.3"
+      ]
+    },
+    {
+      "atu_code": 899,
+      "title": "Alcestis",
+      "st_codes": [
+        "M341.1.1",
+        "T211.1"
+      ]
+    },
+    {
+      "atu_code": 900,
+      "title": "King Thrushbeard",
+      "st_codes": [
+        "T62",
+        "Q483",
+        "T72.2.1",
+        "H181",
+        "L431",
+        "T76",
+        "H311",
+        "L113.1.0.1",
+        "K1816.0.3",
+        "H461",
+        "H465",
+        "T45",
+        "K1361",
+        "K1817.1"
+      ]
+    },
+    {
+      "atu_code": 901,
+      "title": "Taming of the Shrew",
+      "st_codes": [
+        "L50",
+        "N12",
+        "H386",
+        "T251.2"
+      ]
+    },
+    {
+      "atu_code": 910,
+      "title": "Precepts bought or given correct",
+      "st_codes": [
+        "H588.7",
+        "J865",
+        "J21.28",
+        "J21.22",
+        "J21.46",
+        "D758",
+        "J21.1",
+        "J21.10",
+        "Q20.2",
+        "K2213.3",
+        "J21.6",
+        "N545.1",
+        "J21.24",
+        "J21.15",
+        "J571",
+        "K2155",
+        "C320",
+        "J21.2",
+        "J21.27",
+        "J21.5",
+        "J154",
+        "J1655.2",
+        "J21.3",
+        "J21.9",
+        "J21.26",
+        "J21.47.1",
+        "J163.1",
+        "J1021"
+      ]
+    },
+    {
+      "atu_code": 920,
+      "title": "The son of the king (Solomon) and of the smith",
+      "st_codes": [
+        "J412.1",
+        "L13",
+        "H486.2"
+      ]
+    },
+    {
+      "atu_code": 921,
+      "title": "The king and the peasant's son",
+      "st_codes": [
+        "H585.1",
+        "H583.4",
+        "H583",
+        "H583.2",
+        "H583.1",
+        "H583.3",
+        "H583.5",
+        "H583.6",
+        "J1252",
+        "L144.2"
+      ]
+    },
+    {
+      "atu_code": 922,
+      "title": "The king and the abbot",
+      "st_codes": [
+        "H713.1",
+        "H691.1",
+        "H797",
+        "H711.1",
+        "H705.1",
+        "H696.1",
+        "H703",
+        "H561.2",
+        "H702",
+        "H681.1",
+        "K1961",
+        "H634",
+        "Q113.4",
+        "H705.2",
+        "H541.1",
+        "H512",
+        "H701.1"
+      ]
+    },
+    {
+      "atu_code": 923,
+      "title": "Loving the Salt",
+      "st_codes": [
+        "H592.1",
+        "M21"
+      ]
+    },
+    {
+      "atu_code": 924,
+      "title": "Discussion by sign language",
+      "st_codes": [
+        "J1804",
+        "H607.1"
+      ]
+    },
+    {
+      "atu_code": 926,
+      "title": "Judgment of Solomon",
+      "st_codes": [
+        "J1141",
+        "J1141.1",
+        "J1171.1",
+        "J1172.1",
+        "J1141.1.4",
+        "J1179.6",
+        "J1154.2"
+      ]
+    },
+    {
+      "atu_code": 927,
+      "title": "Out-riddling the judge",
+      "st_codes": [
+        "H793",
+        "H806",
+        "H805",
+        "H792",
+        "H542",
+        "H804",
+        "H807"
+      ]
+    },
+    {
+      "atu_code": 930,
+      "title": "The Prediction",
+      "st_codes": [
+        "M359.2",
+        "K1355",
+        "M370",
+        "N101",
+        "M312.1.1",
+        "H51",
+        "S143",
+        "K978",
+        "S115.2",
+        "M312.1",
+        "R131",
+        "T22.2",
+        "K511"
+      ]
+    },
+    {
+      "atu_code": 931,
+      "title": "Oedipus",
+      "st_codes": [
+        "M343",
+        "M371.2",
+        "T412",
+        "N323",
+        "R131",
+        "S354"
+      ]
+    },
+    {
+      "atu_code": 935,
+      "title": "The Prodigal's Return",
+      "st_codes": [
+        "K1815",
+        "K1837",
+        "L161"
+      ]
+    },
+    {
+      "atu_code": 938,
+      "title": "Placidas",
+      "st_codes": [
+        "J214",
+        "N251"
+      ]
+    },
+    {
+      "atu_code": 945,
+      "title": "Luck and Intelligence. Which is More Powerful?",
+      "st_codes": [
+        "H343",
+        "N141",
+        "D435.1.1",
+        "F1023",
+        "Z16.1",
+        "F954.2.1",
+        "H621"
+      ]
+    },
+    {
+      "atu_code": 947,
+      "title": "The Man Followed by Bad Luck",
+      "st_codes": [
+        "N253"
+      ]
+    },
+    {
+      "atu_code": 950,
+      "title": "Rhampsinitus",
+      "st_codes": [
+        "K315.1",
+        "K730",
+        "J1142.4",
+        "H58",
+        "K425",
+        "J1143",
+        "K407.1",
+        "K332",
+        "K415"
+      ]
+    },
+    {
+      "atu_code": 952,
+      "title": "The King and the Soldier",
+      "st_codes": [
+        "D2072",
+        "N884.1",
+        "K422",
+        "K1812.1"
+      ]
+    },
+    {
+      "atu_code": 953,
+      "title": "The Old Robber Relates Three Adventures",
+      "st_codes": [
+        "K1011",
+        "R153.3.3",
+        "Q53",
+        "J1185",
+        "K527"
+      ]
+    },
+    {
+      "atu_code": 954,
+      "title": "The Forty Thieves",
+      "st_codes": [
+        "F721.4",
+        "N512",
+        "N471",
+        "N478",
+        "N455.3",
+        "D1552.2",
+        "K312"
+      ]
+    },
+    {
+      "atu_code": 955,
+      "title": "The Robber Bridegroom",
+      "st_codes": [
+        "K1916",
+        "B143.1",
+        "H57.2.1",
+        "R135"
+      ]
+    },
+    {
+      "atu_code": 956,
+      "title": "Robbers' Heads Cut Off by One as They Enter House",
+      "st_codes": [
+        "K912"
+      ]
+    },
+    {
+      "atu_code": 958,
+      "title": "The Shepherd Youth in the Robbers' Power",
+      "st_codes": [
+        "K437.2",
+        "K311.1"
+      ]
+    },
+    {
+      "atu_code": 960,
+      "title": "The Sun Brings All to Light",
+      "st_codes": [
+        "N271.3",
+        "N271.1",
+        "D1715"
+      ]
+    },
+    {
+      "atu_code": 968,
+      "title": "Miscellaneous Robber and Murder Stories",
+      "st_codes": [
+        "S121",
+        "K434.3",
+        "K434.1",
+        "K343.0.1"
+      ]
+    },
+    {
+      "atu_code": 976,
+      "title": "Which was the Noblest Act?",
+      "st_codes": [
+        "H1552.1"
+      ]
+    },
+    {
+      "atu_code": 980,
+      "title": "Old Grandfathers and Their Grandsons",
+      "st_codes": [
+        "D444.2",
+        "J121",
+        "J121.2"
+      ]
+    },
+    {
+      "atu_code": 981,
+      "title": "The Killing of Old Men",
+      "st_codes": [
+        "J151.1"
+      ]
+    },
+    {
+      "atu_code": 982,
+      "title": "Ungrateful Heirs",
+      "st_codes": [
+        "Q281.1",
+        "P236.2"
+      ]
+    },
+    {
+      "atu_code": 990,
+      "title": "Revived from Apparent Death by a Grave-Robber",
+      "st_codes": [
+        "K426"
+      ]
+    },
+    {
+      "atu_code": 992,
+      "title": "The Eaten Heart",
+      "st_codes": [
+        "Q478.1"
+      ]
+    },
+    {
+      "atu_code": 1000,
+      "title": "Bargain not to become angry",
+      "st_codes": [
+        "F613.3",
+        "K172"
+      ]
+    },
+    {
+      "atu_code": 1002,
+      "title": "Dissipation of the ogre's property",
+      "st_codes": [
+        "K1400"
+      ]
+    },
+    {
+      "atu_code": 1003,
+      "title": "Plowing",
+      "st_codes": [
+        "K1411"
+      ]
+    },
+    {
+      "atu_code": 1004,
+      "title": "Hogs in the mud; sheep in the air",
+      "st_codes": [
+        "K404.2",
+        "K404.1",
+        "K404.3"
+      ]
+    },
+    {
+      "atu_code": 1005,
+      "title": "Building a bridge . . .",
+      "st_codes": [
+        "K1441"
+      ]
+    },
+    {
+      "atu_code": 1006,
+      "title": "Casting eyes",
+      "st_codes": [
+        "K1440",
+        "K1442"
+      ]
+    },
+    {
+      "atu_code": 1008,
+      "title": "Lighting the Road",
+      "st_codes": [
+        "K1412"
+      ]
+    },
+    {
+      "atu_code": 1009,
+      "title": "Guarding the Store-room Door",
+      "st_codes": [
+        "K1413"
+      ]
+    },
+    {
+      "atu_code": 1010,
+      "title": "Repairing the House",
+      "st_codes": [
+        "K1415"
+      ]
+    },
+    {
+      "atu_code": 1011,
+      "title": "Tearing up the Orchard or Vineyard",
+      "st_codes": [
+        "K1416"
+      ]
+    },
+    {
+      "atu_code": 1012,
+      "title": "Cleaning the child",
+      "st_codes": [
+        "K1461.1"
+      ]
+    },
+    {
+      "atu_code": 1013,
+      "title": "Bathing or Warming Grandmother/ Ogre's Wife Burned in his Own Oven",
+      "st_codes": [
+        "K1462"
+      ]
+    },
+    {
+      "atu_code": 1029,
+      "title": "The woman as cuckoo in the tree",
+      "st_codes": [
+        "K1691"
+      ]
+    },
+    {
+      "atu_code": 1030,
+      "title": "Man and ogre share the harvest",
+      "st_codes": [
+        "K171.1"
+      ]
+    },
+    {
+      "atu_code": 1045,
+      "title": "Pulling the Lake Together",
+      "st_codes": [
+        "K1744"
+      ]
+    },
+    {
+      "atu_code": 1049,
+      "title": "The heavy axe",
+      "st_codes": [
+        "K1741.3",
+        "K1741.1"
+      ]
+    },
+    {
+      "atu_code": 1050,
+      "title": "Felling trees",
+      "st_codes": [
+        "K178",
+        "K44"
+      ]
+    },
+    {
+      "atu_code": 1051,
+      "title": "Springing with a Bent Tree",
+      "st_codes": [
+        "K1112"
+      ]
+    },
+    {
+      "atu_code": 1052,
+      "title": "A Contest in Carrying a Tree",
+      "st_codes": [
+        "K71"
+      ]
+    },
+    {
+      "atu_code": 1053,
+      "title": "Shooting Wild Boars",
+      "st_codes": [
+        "K1741.2"
+      ]
+    },
+    {
+      "atu_code": 1060,
+      "title": "Squeezing Water from a Stone",
+      "st_codes": [
+        "K62"
+      ]
+    },
+    {
+      "atu_code": 1061,
+      "title": "Biting the Stone",
+      "st_codes": [
+        "K63"
+      ]
+    },
+    {
+      "atu_code": 1062,
+      "title": "A Contest in Throwing Stones",
+      "st_codes": [
+        "K18.3"
+      ]
+    },
+    {
+      "atu_code": 1063,
+      "title": "Throwing contest with the golden club",
+      "st_codes": [
+        "K18.1.1",
+        "K18.2",
+        "K18.1",
+        "K18.1.2"
+      ]
+    },
+    {
+      "atu_code": 1070,
+      "title": "Wrestling Contest: Looks Where to Throw him",
+      "st_codes": [
+        "K12.1"
+      ]
+    },
+    {
+      "atu_code": 1071,
+      "title": "Wrestling Contest (with Old Grandfather)",
+      "st_codes": [
+        "K12.2"
+      ]
+    },
+    {
+      "atu_code": 1072,
+      "title": "Race with Little Son",
+      "st_codes": [
+        "K11.6"
+      ]
+    },
+    {
+      "atu_code": 1073,
+      "title": "Climbing Contest",
+      "st_codes": [
+        "K15.1"
+      ]
+    },
+    {
+      "atu_code": 1082,
+      "title": "Carrying the Horse",
+      "st_codes": [
+        "K72"
+      ]
+    },
+    {
+      "atu_code": 1085,
+      "title": "Pushing a hole into a tree",
+      "st_codes": [
+        "K61"
+      ]
+    },
+    {
+      "atu_code": 1088,
+      "title": "Eating contest",
+      "st_codes": [
+        "K82.3",
+        "K81.1",
+        "K42.1",
+        "K81"
+      ]
+    },
+    {
+      "atu_code": 1090,
+      "title": "Mowing Contest",
+      "st_codes": [
+        "K42.2"
+      ]
+    },
+    {
+      "atu_code": 1091,
+      "title": "Who Can Bring an Unheard-of Riding-Horse",
+      "st_codes": [
+        "K216.2",
+        "K31.1"
+      ]
+    },
+    {
+      "atu_code": 1096,
+      "title": "The tailor and the ogre in a sewing contest",
+      "st_codes": [
+        "K47.1"
+      ]
+    },
+    {
+      "atu_code": 1115,
+      "title": "Attempting to Kill the Hero in His Bed",
+      "st_codes": [
+        "K525.1"
+      ]
+    },
+    {
+      "atu_code": 1119,
+      "title": "Ogres Kill Their Own Children",
+      "st_codes": [
+        "K1611"
+      ]
+    },
+    {
+      "atu_code": 1122,
+      "title": "Ogre's wife killed through other tricks",
+      "st_codes": [
+        "G519.1"
+      ]
+    },
+    {
+      "atu_code": 1130,
+      "title": "Counting out Pay",
+      "st_codes": [
+        "K275"
+      ]
+    },
+    {
+      "atu_code": 1133,
+      "title": "Making the ogre strong (by castration)",
+      "st_codes": [
+        "K1012.1",
+        "K241",
+        "K1012.2"
+      ]
+    },
+    {
+      "atu_code": 1135,
+      "title": "Eye-remedy",
+      "st_codes": [
+        "K1011",
+        "K1010"
+      ]
+    },
+    {
+      "atu_code": 1137,
+      "title": "Self Did It",
+      "st_codes": [
+        "K1011",
+        "K1010",
+        "F512.1.1",
+        "F521.1",
+        "G100",
+        "K603"
+      ]
+    },
+    {
+      "atu_code": 1138,
+      "title": "Gilding the Beard",
+      "st_codes": [
+        "K1013.1"
+      ]
+    },
+    {
+      "atu_code": 1142,
+      "title": "Hot Tin under the Tail of the Ogre's Horse",
+      "st_codes": [
+        "K1181"
+      ]
+    },
+    {
+      "atu_code": 1145,
+      "title": "The Ogre Afraid of what Rustles and Rattles",
+      "st_codes": [
+        "K2345"
+      ]
+    },
+    {
+      "atu_code": 1146,
+      "title": "Millstones",
+      "st_codes": [
+        "K1718.2"
+      ]
+    },
+    {
+      "atu_code": 1151,
+      "title": "Big Shoes in Front of the Barn",
+      "st_codes": [
+        "K1717"
+      ]
+    },
+    {
+      "atu_code": 1153,
+      "title": "Wages: as much as he can carry",
+      "st_codes": [
+        "K1732"
+      ]
+    },
+    {
+      "atu_code": 1157,
+      "title": "The gun as tobacco pipe",
+      "st_codes": [
+        "J2131.4.1",
+        "K1057"
+      ]
+    },
+    {
+      "atu_code": 1159,
+      "title": "The Ogre Wants to Learn to Play",
+      "st_codes": [
+        "K1111.0.1",
+        "K1111.1",
+        "K1755"
+      ]
+    },
+    {
+      "atu_code": 1161,
+      "title": "The Bear Trainer and His Cat",
+      "st_codes": [
+        "K1728"
+      ]
+    },
+    {
+      "atu_code": 1164,
+      "title": "The evil woman thrown into the pit",
+      "st_codes": [
+        "T251.1.2.1",
+        "T251.1.2.2"
+      ]
+    },
+    {
+      "atu_code": 1165,
+      "title": "The troll and the christening",
+      "st_codes": [
+        "K1736"
+      ]
+    },
+    {
+      "atu_code": 1169,
+      "title": "Changing Heads wih the Devil",
+      "st_codes": [
+        "E34",
+        "A1371.1"
+      ]
+    },
+    {
+      "atu_code": 1170,
+      "title": "The Evil Woman in the Glass Case as Last Commodity",
+      "st_codes": [
+        "K216.1"
+      ]
+    },
+    {
+      "atu_code": 1175,
+      "title": "Straightening a Curly Hair",
+      "st_codes": [
+        "H1023.4"
+      ]
+    },
+    {
+      "atu_code": 1179,
+      "title": "The ogre on the ship",
+      "st_codes": [
+        "H1023.5"
+      ]
+    },
+    {
+      "atu_code": 1180,
+      "title": "Catching Water in a Sieve",
+      "st_codes": [
+        "H1023.2"
+      ]
+    },
+    {
+      "atu_code": 1185,
+      "title": "The First Crop",
+      "st_codes": [
+        "K221"
+      ]
+    },
+    {
+      "atu_code": 1191,
+      "title": "Devil's Bridge",
+      "st_codes": [
+        "S241.1"
+      ]
+    },
+    {
+      "atu_code": 1199,
+      "title": "The Lord's Prayer",
+      "st_codes": [
+        "K555.2",
+        "K551.1"
+      ]
+    },
+    {
+      "atu_code": 1200,
+      "title": "The Sowing of Salt",
+      "st_codes": [
+        "J1932.3",
+        "J1932.1",
+        "J1932.2",
+        "J1932.4"
+      ]
+    },
+    {
+      "atu_code": 1201,
+      "title": "The plowing",
+      "st_codes": [
+        "J2163"
+      ]
+    },
+    {
+      "atu_code": 1202,
+      "title": "The Grain Harvesting",
+      "st_codes": [
+        "J2196"
+      ]
+    },
+    {
+      "atu_code": 1213,
+      "title": "The Pent Cuckoo",
+      "st_codes": [
+        "J1904.2"
+      ]
+    },
+    {
+      "atu_code": 1214,
+      "title": "The Persuavive Auctioner",
+      "st_codes": [
+        "J2087"
+      ]
+    },
+    {
+      "atu_code": 1215,
+      "title": "The Man, the Boy, and the Donkey",
+      "st_codes": [
+        "J1041.2",
+        "J1041"
+      ]
+    },
+    {
+      "atu_code": 1218,
+      "title": "Numskull Sits on Eggs to Finish Hatching",
+      "st_codes": [
+        "J1902.1",
+        "K1253"
+      ]
+    },
+    {
+      "atu_code": 1225,
+      "title": "The man without a head in the bear's den",
+      "st_codes": [
+        "J2381"
+      ]
+    },
+    {
+      "atu_code": 1227,
+      "title": "One woman to catch the squirrel; the other to get the cooking pot",
+      "st_codes": [
+        "J2661.3"
+      ]
+    },
+    {
+      "atu_code": 1229,
+      "title": "If the Wolf's Tail Breaks",
+      "st_codes": [
+        "X1133.3.2"
+      ]
+    },
+    {
+      "atu_code": 1231,
+      "title": "The Actack on the Hare (Crayfish)",
+      "st_codes": [
+        "J2612"
+      ]
+    },
+    {
+      "atu_code": 1240,
+      "title": "Man sitting on branch of tree cuts it off",
+      "st_codes": [
+        "J2133.4"
+      ]
+    },
+    {
+      "atu_code": 1242,
+      "title": "Loading the wood",
+      "st_codes": [
+        "J2213.4",
+        "J1874.1"
+      ]
+    },
+    {
+      "atu_code": 1245,
+      "title": "Sunlight carried in a bag into the windowless house",
+      "st_codes": [
+        "J2123"
+      ]
+    },
+    {
+      "atu_code": 1250,
+      "title": "Bringing Water from the Well",
+      "st_codes": [
+        "J2133.6.1",
+        "J2133.5"
+      ]
+    },
+    {
+      "atu_code": 1255,
+      "title": "A hole to throw the earth in",
+      "st_codes": [
+        "J1934"
+      ]
+    },
+    {
+      "atu_code": 1260,
+      "title": "Jumping into the sea for fish",
+      "st_codes": [
+        "J1938"
+      ]
+    },
+    {
+      "atu_code": 1263,
+      "title": "The Porridge Eaten in Different Rooms",
+      "st_codes": [
+        "J2167"
+      ]
+    },
+    {
+      "atu_code": 1270,
+      "title": "The Drying of the Candle",
+      "st_codes": [
+        "J2122"
+      ]
+    },
+    {
+      "atu_code": 1276,
+      "title": "Rowing without going forward",
+      "st_codes": [
+        "J2164.2",
+        "J2164.1"
+      ]
+    },
+    {
+      "atu_code": 1278,
+      "title": "Marking the place on the boat",
+      "st_codes": [
+        "J1922.1",
+        "J1922.2"
+      ]
+    },
+    {
+      "atu_code": 1281,
+      "title": "Burning the Barn to Destroy an Unknown Animal",
+      "st_codes": [
+        "J2101",
+        "J1815"
+      ]
+    },
+    {
+      "atu_code": 1286,
+      "title": "Jumping into the Breeches",
+      "st_codes": [
+        "J2161.1"
+      ]
+    },
+    {
+      "atu_code": 1287,
+      "title": "Numskull unable to count their own number",
+      "st_codes": [
+        "J2031",
+        "J2031.1"
+      ]
+    },
+    {
+      "atu_code": 1288,
+      "title": "These are not my feet'",
+      "st_codes": [
+        "J2021"
+      ]
+    },
+    {
+      "atu_code": 1290,
+      "title": "Swimming in the Flax-field",
+      "st_codes": [
+        "J1821"
+      ]
+    },
+    {
+      "atu_code": 1291,
+      "title": "Sending One Cheese After Another",
+      "st_codes": [
+        "J1871",
+        "J1881.1.2",
+        "J1881.1.3"
+      ]
+    },
+    {
+      "atu_code": 1294,
+      "title": "Getting the Calf's Head out of the Pot",
+      "st_codes": [
+        "J2113"
+      ]
+    },
+    {
+      "atu_code": 1296,
+      "title": "Fool's Errand",
+      "st_codes": [
+        "J2346"
+      ]
+    },
+    {
+      "atu_code": 1310,
+      "title": "Drowning the crayfish as punishment",
+      "st_codes": [
+        "K581.1",
+        "J1762.1.2"
+      ]
+    },
+    {
+      "atu_code": 1313,
+      "title": "The Man who Thought Himself Dead",
+      "st_codes": [
+        "J2311.1",
+        "J2311.4",
+        "J2311.1.4",
+        "J2311.2"
+      ]
+    },
+    {
+      "atu_code": 1314,
+      "title": "The Buttercask Taken for a Dead Man",
+      "st_codes": [
+        "J1771.1"
+      ]
+    },
+    {
+      "atu_code": 1316,
+      "title": "Rabbit Thought to be a Cow",
+      "st_codes": [
+        "J1751",
+        "J1757",
+        "J1754",
+        "J1755"
+      ]
+    },
+    {
+      "atu_code": 1317,
+      "title": "Blind Man and Elephant",
+      "st_codes": [
+        "J1761.10"
+      ]
+    },
+    {
+      "atu_code": 1319,
+      "title": "Other mistaken identities",
+      "st_codes": [
+        "J1772.1",
+        "J1761.11",
+        "J1781.2"
+      ]
+    },
+    {
+      "atu_code": 1321,
+      "title": "Fools frightened",
+      "st_codes": [
+        "J2600",
+        "J2614.1"
+      ]
+    },
+    {
+      "atu_code": 1326,
+      "title": "Moving the church",
+      "st_codes": [
+        "J2328"
+      ]
+    },
+    {
+      "atu_code": 1327,
+      "title": "Emptying the Meal Sack",
+      "st_codes": [
+        "J2062.1"
+      ]
+    },
+    {
+      "atu_code": 1333,
+      "title": "The Shepherd who Cried \"Wolf!\" too often",
+      "st_codes": [
+        "J2172.1"
+      ]
+    },
+    {
+      "atu_code": 1334,
+      "title": "The Local Moon",
+      "st_codes": [
+        "J2271.1"
+      ]
+    },
+    {
+      "atu_code": 1335,
+      "title": "The Eaten Moon",
+      "st_codes": [
+        "J1791.2",
+        "J1806",
+        "J1791.1"
+      ]
+    },
+    {
+      "atu_code": 1336,
+      "title": "Diving for Cheese",
+      "st_codes": [
+        "J1791.7"
+      ]
+    },
+    {
+      "atu_code": 1347,
+      "title": "Living Crucifix Chosen",
+      "st_codes": [
+        "J1738.2"
+      ]
+    },
+    {
+      "atu_code": 1348,
+      "title": "The Imaginative Boy",
+      "st_codes": [
+        "W211.2"
+      ]
+    },
+    {
+      "atu_code": 1380,
+      "title": "The faithless wife",
+      "st_codes": [
+        "K1553"
+      ]
+    },
+    {
+      "atu_code": 1381,
+      "title": "The talkative wife and the discovered treasure",
+      "st_codes": [
+        "J2353",
+        "H472.1",
+        "J1151.1.1",
+        "J1151.1.3"
+      ]
+    },
+    {
+      "atu_code": 1383,
+      "title": "A Woman Does Not Know Herself",
+      "st_codes": [
+        "J2012.3",
+        "J2012.2"
+      ]
+    },
+    {
+      "atu_code": 1384,
+      "title": "The husband hunts for three persons as stupid as his wife",
+      "st_codes": [
+        "H1312.1"
+      ]
+    },
+    {
+      "atu_code": 1385,
+      "title": "A Woman Loses Her Husband's Money",
+      "st_codes": [
+        "J2086"
+      ]
+    },
+    {
+      "atu_code": 1386,
+      "title": "Meat as food for cabbage",
+      "st_codes": [
+        "J1856.1"
+      ]
+    },
+    {
+      "atu_code": 1387,
+      "title": "A Woman Draws Beer in the Cellar",
+      "st_codes": [
+        "J2176",
+        "J2176.1"
+      ]
+    },
+    {
+      "atu_code": 1405,
+      "title": "The Lazy Spinner",
+      "st_codes": [
+        "J2325",
+        "K1971.4.1"
+      ]
+    },
+    {
+      "atu_code": 1406,
+      "title": "The merry wives wager . . .",
+      "st_codes": [
+        "J2317",
+        "J2315",
+        "J2301",
+        "K1545",
+        "J2324",
+        "J2311.0.1",
+        "J2013.2",
+        "J2312",
+        "J2314",
+        "J2316"
+      ]
+    },
+    {
+      "atu_code": 1407,
+      "title": "The Miser",
+      "st_codes": [
+        "W153.2",
+        "K1155"
+      ]
+    },
+    {
+      "atu_code": 1408,
+      "title": "The man who does his wife's work",
+      "st_codes": [
+        "J2132.2",
+        "X1267.1",
+        "J1881.1.3",
+        "J1545.3",
+        "J2465.4",
+        "J2176.1",
+        "J2431"
+      ]
+    },
+    {
+      "atu_code": 1410,
+      "title": "Four Men's Mistress",
+      "st_codes": [
+        "J1545.2"
+      ]
+    },
+    {
+      "atu_code": 1415,
+      "title": "Trading Away One's Fortune",
+      "st_codes": [
+        "J2081.1"
+      ]
+    },
+    {
+      "atu_code": 1416,
+      "title": "The mouse in the silver jug. The new Eve",
+      "st_codes": [
+        "H1554.1",
+        "C324"
+      ]
+    },
+    {
+      "atu_code": 1417,
+      "title": "The Cutt-off Nose (Hair)",
+      "st_codes": [
+        "J2315.2",
+        "K1512"
+      ]
+    },
+    {
+      "atu_code": 1418,
+      "title": "The Equivocal Oath",
+      "st_codes": [
+        "K1513"
+      ]
+    },
+    {
+      "atu_code": 1422,
+      "title": "The Parrot and the Adulterous Woman",
+      "st_codes": [
+        "J1154.1"
+      ]
+    },
+    {
+      "atu_code": 1423,
+      "title": "The Enchanted Pear Tree",
+      "st_codes": [
+        "K1518"
+      ]
+    },
+    {
+      "atu_code": 1425,
+      "title": "Putting the Devil into Hell",
+      "st_codes": [
+        "K1363.1"
+      ]
+    },
+    {
+      "atu_code": 1430,
+      "title": "Air Castles",
+      "st_codes": [
+        "J2061.2",
+        "J2061",
+        "J2061.1",
+        "J2061.1.2",
+        "J2060",
+        "J2060.1"
+      ]
+    },
+    {
+      "atu_code": 1450,
+      "title": "Clever Elsie",
+      "st_codes": [
+        "J2063"
+      ]
+    },
+    {
+      "atu_code": 1451,
+      "title": "A suitor chooses the thrifty girl",
+      "st_codes": [
+        "H381.1"
+      ]
+    },
+    {
+      "atu_code": 1452,
+      "title": "Choosing a Bride by How She Cuts Cheese",
+      "st_codes": [
+        "H381.2"
+      ]
+    },
+    {
+      "atu_code": 1453,
+      "title": "Bride test: key in flax reveals laziness",
+      "st_codes": [
+        "H382.1"
+      ]
+    },
+    {
+      "atu_code": 1456,
+      "title": "The blind fianc\u00e9e",
+      "st_codes": [
+        "K1225",
+        "K1984.5"
+      ]
+    },
+    {
+      "atu_code": 1459,
+      "title": "Keeping up appearances",
+      "st_codes": [
+        "K1984"
+      ]
+    },
+    {
+      "atu_code": 1462,
+      "title": "Clean and tidy",
+      "st_codes": [
+        "K1971.6"
+      ]
+    },
+    {
+      "atu_code": 1476,
+      "title": "The Prayer for a Husband",
+      "st_codes": [
+        "K1971.9",
+        "G303.12.5"
+      ]
+    },
+    {
+      "atu_code": 1525,
+      "title": "The robber brothers",
+      "st_codes": [
+        "K311",
+        "K341.3",
+        "L142.1",
+        "K306",
+        "K301.1",
+        "K307.1",
+        "H1151.2",
+        "K341.21",
+        "K362.2",
+        "J1516",
+        "H1151",
+        "K341.7",
+        "K341.20",
+        "K332",
+        "K308",
+        "K341.6",
+        "K406.2",
+        "H1151.3",
+        "K301"
+      ]
+    },
+    {
+      "atu_code": 1526,
+      "title": "The Old Beggar and the Robbers",
+      "st_codes": [
+        "K455.1",
+        "K455.2"
+      ]
+    },
+    {
+      "atu_code": 1527,
+      "title": "The Robbers are Betrayed",
+      "st_codes": [
+        "K630",
+        "K724"
+      ]
+    },
+    {
+      "atu_code": 1528,
+      "title": "Holding Down the Hat",
+      "st_codes": [
+        "K1252"
+      ]
+    },
+    {
+      "atu_code": 1529,
+      "title": "Thief Claims to have been Transformed into a Horse",
+      "st_codes": [
+        "K403"
+      ]
+    },
+    {
+      "atu_code": 1530,
+      "title": "Holding up the Rock",
+      "st_codes": [
+        "K1251"
+      ]
+    },
+    {
+      "atu_code": 1537,
+      "title": "The corpse killed five times",
+      "st_codes": [
+        "K2151",
+        "K2152"
+      ]
+    },
+    {
+      "atu_code": 1538,
+      "title": "The youth cheated in selling oxen",
+      "st_codes": [
+        "K1825.1.3",
+        "K713.1"
+      ]
+    },
+    {
+      "atu_code": 1539,
+      "title": "Cleverness and gullibility",
+      "st_codes": [
+        "K911.1",
+        "K132",
+        "K1068.2",
+        "K131.1",
+        "K111.1",
+        "K112.1",
+        "K111.2",
+        "K113.4"
+      ]
+    },
+    {
+      "atu_code": 1540,
+      "title": "The student from Paradise (Paris)",
+      "st_codes": [
+        "K341.9.1",
+        "J2326"
+      ]
+    },
+    {
+      "atu_code": 1541,
+      "title": "For the long winter",
+      "st_codes": [
+        "J2460.1",
+        "K362.1"
+      ]
+    },
+    {
+      "atu_code": 1542,
+      "title": "The clever boy",
+      "st_codes": [
+        "K842",
+        "L161",
+        "K341.8.1",
+        "K113",
+        "K112.1",
+        "K1321.1",
+        "J2401",
+        "K1363"
+      ]
+    },
+    {
+      "atu_code": 1543,
+      "title": "The man without a member",
+      "st_codes": [
+        "J1919.8"
+      ]
+    },
+    {
+      "atu_code": 1544,
+      "title": "The man who got a night's lodging",
+      "st_codes": [
+        "K1572",
+        "K258",
+        "K942",
+        "K1981.1"
+      ]
+    },
+    {
+      "atu_code": 1545,
+      "title": "The boy with many names",
+      "st_codes": [
+        "K602",
+        "K1327"
+      ]
+    },
+    {
+      "atu_code": 1548,
+      "title": "Stone Soup",
+      "st_codes": [
+        "K112.2"
+      ]
+    },
+    {
+      "atu_code": 1551,
+      "title": "The Wager that Sheep are Hogs",
+      "st_codes": [
+        "K451.2"
+      ]
+    },
+    {
+      "atu_code": 1555,
+      "title": "Milk in the Cask",
+      "st_codes": [
+        "K233.4",
+        "K231.6.2.2"
+      ]
+    },
+    {
+      "atu_code": 1556,
+      "title": "The Double Pension (Burial Money)",
+      "st_codes": [
+        "K482.1"
+      ]
+    },
+    {
+      "atu_code": 1557,
+      "title": "Box on the Ear Returned",
+      "st_codes": [
+        "K2376"
+      ]
+    },
+    {
+      "atu_code": 1558,
+      "title": "Welcome to the Clothes",
+      "st_codes": [
+        "J1561.3"
+      ]
+    },
+    {
+      "atu_code": 1561,
+      "title": "The boy 'loses his sight'",
+      "st_codes": [
+        "W111.2.6"
+      ]
+    },
+    {
+      "atu_code": 1562,
+      "title": "\"Think Thrice before you Speak.\"",
+      "st_codes": [
+        "J1269.12",
+        "J2516.1"
+      ]
+    },
+    {
+      "atu_code": 1563,
+      "title": "Both'",
+      "st_codes": [
+        "K1354.2.1",
+        "K1354.1"
+      ]
+    },
+    {
+      "atu_code": 1565,
+      "title": "Agreement Not to Scratch",
+      "st_codes": [
+        "K263"
+      ]
+    },
+    {
+      "atu_code": 1567,
+      "title": "Hungry Servant Reproaches Stingy Master",
+      "st_codes": [
+        "J1341.1",
+        "J1341.11",
+        "J1341.6",
+        "J1341.4"
+      ]
+    },
+    {
+      "atu_code": 1574,
+      "title": "The flattering foreman",
+      "st_codes": [
+        "J1401"
+      ]
+    },
+    {
+      "atu_code": 1577,
+      "title": "Blind Men Duped into Fighting: Money to be Devided",
+      "st_codes": [
+        "N455.1"
+      ]
+    },
+    {
+      "atu_code": 1579,
+      "title": "Carrying Wolf, Goat, and Cabbage across Stream",
+      "st_codes": [
+        "H506.3"
+      ]
+    },
+    {
+      "atu_code": 1586,
+      "title": "The Man in Court for Killing a Fly",
+      "st_codes": [
+        "J1833.1",
+        "J1193.1"
+      ]
+    },
+    {
+      "atu_code": 1589,
+      "title": "The Lawyer's Dog Steals Meat",
+      "st_codes": [
+        "K488"
+      ]
+    },
+    {
+      "atu_code": 1590,
+      "title": "The Tresspasser's Defence",
+      "st_codes": [
+        "M105",
+        "K2310",
+        "K475",
+        "J1161.3",
+        "Q270"
+      ]
+    },
+    {
+      "atu_code": 1591,
+      "title": "The Three Joint Depositors",
+      "st_codes": [
+        "J1161.1"
+      ]
+    },
+    {
+      "atu_code": 1592,
+      "title": "The Iron-eating Mice",
+      "st_codes": [
+        "J1531.3",
+        "J1531.2"
+      ]
+    },
+    {
+      "atu_code": 1610,
+      "title": "To Divide Presents and Strokes",
+      "st_codes": [
+        "K187"
+      ]
+    },
+    {
+      "atu_code": 1611,
+      "title": "Contest in Climbing the Mast",
+      "st_codes": [
+        "K1762"
+      ]
+    },
+    {
+      "atu_code": 1612,
+      "title": "The Contest in Swimming",
+      "st_codes": [
+        "K1761"
+      ]
+    },
+    {
+      "atu_code": 1613,
+      "title": "\"Playing-Cards are my Calendar and Prayerbook.\"",
+      "st_codes": [
+        "H603"
+      ]
+    },
+    {
+      "atu_code": 1620,
+      "title": "The conversation of the one-eyed man and the hunchback",
+      "st_codes": [
+        "K445",
+        "J2312"
+      ]
+    },
+    {
+      "atu_code": 1626,
+      "title": "Dream Bread",
+      "st_codes": [
+        "K444"
+      ]
+    },
+    {
+      "atu_code": 1628,
+      "title": "The learned son and the forgotten language",
+      "st_codes": [
+        "J1511.11"
+      ]
+    },
+    {
+      "atu_code": 1635,
+      "title": "Eulenspiegel's tricks",
+      "st_codes": [
+        "K300"
+      ]
+    },
+    {
+      "atu_code": 1640,
+      "title": "The Valiant Little Tailor",
+      "st_codes": [
+        "K1082",
+        "K61",
+        "K71",
+        "K62",
+        "K1951.1",
+        "K1951.2",
+        "K1951.3",
+        "H38.2.1",
+        "K63",
+        "K525.1",
+        "J1115.4",
+        "K72",
+        "K1112",
+        "K771",
+        "K18.3"
+      ]
+    },
+    {
+      "atu_code": 1641,
+      "title": "Doctor Know-all",
+      "st_codes": [
+        "K1961.1.2",
+        "K1961.1.3",
+        "N611",
+        "K1956",
+        "K1956.2",
+        "N688",
+        "K1956.1"
+      ]
+    },
+    {
+      "atu_code": 1642,
+      "title": "The Good Bargain",
+      "st_codes": [
+        "J1853",
+        "J1852",
+        "J1151.2",
+        "J1851.1.1",
+        "H341",
+        "K187",
+        "J1853.1"
+      ]
+    },
+    {
+      "atu_code": 1643,
+      "title": "The Broken Image",
+      "st_codes": [
+        "J1853.1.1"
+      ]
+    },
+    {
+      "atu_code": 1645,
+      "title": "The Man Who Became Rich through a Dream",
+      "st_codes": [
+        "E721",
+        "N531.1",
+        "E730",
+        "N531.3"
+      ]
+    },
+    {
+      "atu_code": 1650,
+      "title": "The Three Lucky Brothers",
+      "st_codes": [
+        "N411.2",
+        "N411",
+        "N411.1.1",
+        "N411.2.1"
+      ]
+    },
+    {
+      "atu_code": 1675,
+      "title": "The ox (ass) as mayor",
+      "st_codes": [
+        "K491",
+        "J1882.2"
+      ]
+    },
+    {
+      "atu_code": 1678,
+      "title": "The boy who had never seen a woman",
+      "st_codes": [
+        "T371"
+      ]
+    },
+    {
+      "atu_code": 1681,
+      "title": "Foolish man builds aircastles",
+      "st_codes": [
+        "K1462",
+        "K1461"
+      ]
+    },
+    {
+      "atu_code": 1682,
+      "title": "The groom teaches his horse to live without food",
+      "st_codes": [
+        "J1914"
+      ]
+    },
+    {
+      "atu_code": 1685,
+      "title": "The Foolish Bridegroom",
+      "st_codes": [
+        "J2462.2",
+        "J2462.1",
+        "J2465.5"
+      ]
+    },
+    {
+      "atu_code": 1687,
+      "title": "The forgotten word",
+      "st_codes": [
+        "D2004.5"
+      ]
+    },
+    {
+      "atu_code": 1689,
+      "title": "Thank God They Weren't Peaches",
+      "st_codes": [
+        "J2563",
+        "J2415.1"
+      ]
+    },
+    {
+      "atu_code": 1692,
+      "title": "The Stupid Thief",
+      "st_codes": [
+        "J2461.1.7.1",
+        "J2136.5.7",
+        "J2136",
+        "J2136.5.6",
+        "J2461.1.7",
+        "J2136.5.5"
+      ]
+    },
+    {
+      "atu_code": 1693,
+      "title": "The Literal Fool - the Burning of Lanka",
+      "st_codes": [
+        "J2450"
+      ]
+    },
+    {
+      "atu_code": 1696,
+      "title": "What Should I Have Said?",
+      "st_codes": [
+        "J2461",
+        "J2461.2"
+      ]
+    },
+    {
+      "atu_code": 1697,
+      "title": "\"We Three; For Money\"",
+      "st_codes": [
+        "C495.2.2"
+      ]
+    },
+    {
+      "atu_code": 1699,
+      "title": "Misunderstanding Because of Ignorance of a Foreign Language",
+      "st_codes": [
+        "J2496.2",
+        "X111.7"
+      ]
+    },
+    {
+      "atu_code": 1700,
+      "title": "\"I don't Know.\"",
+      "st_codes": [
+        "J2496"
+      ]
+    },
+    {
+      "atu_code": 1705,
+      "title": "Talking Horse and Dog",
+      "st_codes": [
+        "B210.1"
+      ]
+    },
+    {
+      "atu_code": 1875,
+      "title": "The Boy on the Wolf's Tail",
+      "st_codes": [
+        "X1133.3"
+      ]
+    },
+    {
+      "atu_code": 1882,
+      "title": "The Man who Fell out of a Balloon",
+      "st_codes": [
+        "X1731.2.1",
+        "X1757"
+      ]
+    },
+    {
+      "atu_code": 1890,
+      "title": "The lucky shot",
+      "st_codes": [
+        "X1122.3",
+        "X1124.3",
+        "X1122.2"
+      ]
+    },
+    {
+      "atu_code": 1891,
+      "title": "The Great Rabbit-Catch",
+      "st_codes": [
+        "X1114.1"
+      ]
+    },
+    {
+      "atu_code": 1894,
+      "title": "The man shoots a ramrod full of ducks",
+      "st_codes": [
+        "X1111"
+      ]
+    },
+    {
+      "atu_code": 1895,
+      "title": "A man wading in water catching many fish in his boots",
+      "st_codes": [
+        "X1112"
+      ]
+    },
+    {
+      "atu_code": 1896,
+      "title": "Hunting the wolves with rod and line",
+      "st_codes": [
+        "X1132.1"
+      ]
+    },
+    {
+      "atu_code": 1911,
+      "title": "Cart as Legs",
+      "st_codes": [
+        "X1721.1"
+      ]
+    },
+    {
+      "atu_code": 1916,
+      "title": "The Breathing Tree",
+      "st_codes": [
+        "X1116"
+      ]
+    },
+    {
+      "atu_code": 1920,
+      "title": "Contest in lying",
+      "st_codes": [
+        "X904.2",
+        "X1215.8",
+        "X908",
+        "X905.4",
+        "X905",
+        "X904.1"
+      ]
+    },
+    {
+      "atu_code": 1927,
+      "title": "The Cold May Night",
+      "st_codes": [
+        "X1620"
+      ]
+    },
+    {
+      "atu_code": 1940,
+      "title": "The Extraordinary Names",
+      "st_codes": [
+        "X1506"
+      ]
+    },
+    {
+      "atu_code": 1950,
+      "title": "The three lazy ones",
+      "st_codes": [
+        "W111.1.1",
+        "W111.1",
+        "W111.1.2",
+        "W111.1.3"
+      ]
+    },
+    {
+      "atu_code": 1951,
+      "title": "Is Wood Split?",
+      "st_codes": [
+        "W111.5.10"
+      ]
+    },
+    {
+      "atu_code": 1965,
+      "title": "Lying tales",
+      "st_codes": [
+        "X1791"
+      ]
+    },
+    {
+      "atu_code": 2010,
+      "title": "Ehod mi yodea (One, who knows?)",
+      "st_codes": [
+        "Z22"
+      ]
+    },
+    {
+      "atu_code": 2012,
+      "title": "The Forgetful Man Counts the Days of the Week",
+      "st_codes": [
+        "Z24",
+        "Z24.1",
+        "Z24.1.1"
+      ]
+    },
+    {
+      "atu_code": 2014,
+      "title": "Chains Involving Contradictions of Extremes",
+      "st_codes": [
+        "Z51.1",
+        "Z51"
+      ]
+    },
+    {
+      "atu_code": 2015,
+      "title": "The goat that would not go home",
+      "st_codes": [
+        "Z39.1"
+      ]
+    },
+    {
+      "atu_code": 2019,
+      "title": "Fair Katrinelje and Pif-Paf-Poltrie",
+      "st_codes": [
+        "Z31.1"
+      ]
+    },
+    {
+      "atu_code": 2021,
+      "title": "The cock and the hen",
+      "st_codes": [
+        "Z32.1",
+        "Z32.1.1",
+        "Z43.2"
+      ]
+    },
+    {
+      "atu_code": 2022,
+      "title": "An Animal Mourns the Death of a Spouse",
+      "st_codes": [
+        "Z32.2",
+        "Z32.2.1"
+      ]
+    },
+    {
+      "atu_code": 2023,
+      "title": "Little Ant Finds a Penny, Buys New Clothes with it, and Sits in her Doorway",
+      "st_codes": [
+        "Z32.3"
+      ]
+    },
+    {
+      "atu_code": 2025,
+      "title": "The Fleeing Pancake",
+      "st_codes": [
+        "Z33.1"
+      ]
+    },
+    {
+      "atu_code": 2028,
+      "title": "The Troll (Wolf) who was Cut Open",
+      "st_codes": [
+        "Z33.4",
+        "Z33.2",
+        "Z33.3"
+      ]
+    }
+  ],
+  "n_total": 890,
+  "n_matched": 572,
+  "athematic": {
+    "Marriage": 152,
+    "Rescue": 150,
+    "Animals": 131,
+    "Giant/Ogre": 80,
+    "Trickster": 72,
+    "Magic": 62,
+    "Death": 52,
+    "Sky": 26,
+    "Dragon/Serpent": 22,
+    "Creation": 2
+  }
+}

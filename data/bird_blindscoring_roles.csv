@@ -1,0 +1,9 @@
+structure,author_score,observed_order,roles
+"Wing proportions",0.0,1,"none - purely flight-specific"
+"Sternal keel",1.0,2,"respiratory mechanics; flight muscle attachment"
+"Pectoral muscle",0.5,3,"wing-assisted incline running"
+"Wing bones",1.5,4,"balance; display; brooding"
+"Hindlimb",4.0,5,"locomotion; perching; prey capture; nest-building"
+"Pelvic girdle",3.0,6,"locomotion; egg-laying; visceral support; respiration"
+"Feather asymmetry",1.0,7,"display; aerodynamic function"
+"Feather structure",5.0,8,"thermoregulation; waterproofing; UV protection; display; camouflage"

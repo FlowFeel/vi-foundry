@@ -1,0 +1,44 @@
+{
+  "serpent_dragon": {
+    "st": 879,
+    "bz": 204,
+    "atu": 21,
+    "bz_trad_median": 24,
+    "bz_trad_max": 300
+  },
+  "exogamy_marriage": {
+    "st": 3008,
+    "bz": 632,
+    "atu": 178,
+    "bz_trad_median": 20,
+    "bz_trad_max": 422
+  },
+  "emergence_creation": {
+    "st": 1647,
+    "bz": 868,
+    "atu": 6,
+    "bz_trad_median": 20,
+    "bz_trad_max": 354
+  },
+  "earth_diver": {
+    "st": 21,
+    "bz": 38,
+    "atu": 1,
+    "bz_trad_median": 24,
+    "bz_trad_max": 300
+  },
+  "trickster": {
+    "st": 1280,
+    "bz": 311,
+    "atu": 94,
+    "bz_trad_median": 24,
+    "bz_trad_max": 352
+  },
+  "flood": {
+    "st": 281,
+    "bz": 102,
+    "atu": 5,
+    "bz_trad_median": 17,
+    "bz_trad_max": 294
+  }
+}

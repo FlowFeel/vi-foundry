@@ -1,0 +1,64 @@
+{
+  "results": {
+    "Full WB (17 spp) wholeclade": {
+      "n_samples": 1900,
+      "Gl_mean": -0.4746,
+      "Gl_sd": 0.5927,
+      "Gl_p025": -2.0259,
+      "Gl_p50": -0.3434,
+      "Gl_p975": 0.3141,
+      "P_Gl_gt_0": 0.18,
+      "Gm_mean": 0.1801,
+      "Gm_p025": -0.6592,
+      "Gm_p975": 1.2772,
+      "P_Gm_lt_0": 0.3532
+    },
+    "Full WB (17 spp) Homo": {
+      "n_samples": 1900,
+      "Gl_mean": 0.2743,
+      "Gl_sd": 0.6003,
+      "Gl_p025": -0.6361,
+      "Gl_p50": 0.1736,
+      "Gl_p975": 1.8335,
+      "P_Gl_gt_0": 0.6795,
+      "Gm_mean": -0.5588,
+      "Gm_p025": -3.0332,
+      "Gm_p975": 0.3675,
+      "P_Gm_lt_0": 0.7768
+    },
+    "Full WB (17 spp) non-Homo": {
+      "n_samples": 1900,
+      "Gl_mean": -0.2665,
+      "Gl_sd": 0.5871,
+      "Gl_p025": -1.7184,
+      "Gl_p50": -0.165,
+      "Gl_p975": 0.6353,
+      "P_Gl_gt_0": 0.3279,
+      "Gm_mean": -0.4455,
+      "Gm_p025": -2.4098,
+      "Gm_p975": 0.4271,
+      "P_Gm_lt_0": 0.7653
+    },
+    "Threshold (11 spp) wholeclade": {
+      "n_samples": 950,
+      "Gl_mean": -0.2123,
+      "Gl_sd": 0.2046,
+      "Gl_p025": -0.648,
+      "Gl_p50": -0.2064,
+      "Gl_p975": 0.1667,
+      "P_Gl_gt_0": 0.1389,
+      "Gm_mean": 0.1612,
+      "Gm_p025": -0.196,
+      "Gm_p975": 0.6106,
+      "P_Gm_lt_0": 0.2105
+    }
+  },
+  "species_counts": {
+    "Full WB (17 spp) wholeclade": 17,
+    "Full WB (17 spp) Homo": 7,
+    "Full WB (17 spp) non-Homo": 10,
+    "Threshold (11 spp) wholeclade": 11,
+    "Threshold (11 spp) Homo": 5,
+    "Threshold (11 spp) non-Homo": 6
+  }
+}

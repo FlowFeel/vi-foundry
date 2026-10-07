@@ -1,0 +1,47 @@
+{
+  "summary": {
+    "n_characters": 7,
+    "n_valid": 7,
+    "mean_contradiction": 0.1099316257702996,
+    "sd_contradiction": 0.1598447453123199,
+    "n_slow": 5,
+    "n_fast": 2,
+    "proportion_slow": 0.7142857142857143
+  },
+  "signal": {
+    "observed_mean_contradiction": 0.1099316257702996,
+    "random_mean_contradiction": 0.9249800885933084,
+    "random_sd_contradiction": 0.013400003254687504,
+    "p_value": 0.0,
+    "significant": true,
+    "n_random": 50
+  },
+  "n_motifs": 3494,
+  "categories": [
+    "A",
+    "B",
+    "C",
+    "D",
+    "E",
+    "F",
+    "G",
+    "H",
+    "I",
+    "J",
+    "K",
+    "L",
+    "M",
+    "N",
+    "a",
+    "b",
+    "c",
+    "e",
+    "f",
+    "h",
+    "i",
+    "j",
+    "k",
+    "l",
+    "m"
+  ]
+}

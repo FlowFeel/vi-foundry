@@ -1,0 +1,20 @@
+{
+  "summary": {
+    "n_characters": 20,
+    "n_valid": 20,
+    "mean_contradiction": 0.703172887173573,
+    "sd_contradiction": 0.09058739437031234,
+    "n_slow": 0,
+    "n_fast": 20,
+    "proportion_slow": 0.0
+  },
+  "signal": {
+    "observed_mean_contradiction": 0.703172887173573,
+    "random_mean_contradiction": 0.938336023875111,
+    "random_sd_contradiction": 0.005815112233599627,
+    "p_value": 0.0,
+    "significant": true,
+    "n_random": 50
+  },
+  "n_entries": 2000
+}

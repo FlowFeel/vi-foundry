@@ -1,0 +1,2188 @@
+lang,family,stype,sterm,head_form,transparent
+Abkhaz,Abkhaz-Adyge,HEAD,xə,ɑχɨ,no
+Kabardian,Abkhaz-Adyge,HEAD,ɕḥe,nalma,no
+Ubykh,Abkhaz-Adyge,HEAD,"ga, gä",(missing),no
+Buwal,Afro-Asiatic,HEAD,,hɑ,no
+Guruntum-Mbaaru,Afro-Asiatic,HEAD,kə̂,(missing),no
+Lele (Chad),Afro-Asiatic,HEAD,kɔ̀lɔ́,(missing),no
+Marghi Central,Afro-Asiatic,HEAD,mtə,ta̠ng_go̠m,no
+Mina (Cameroon),Afro-Asiatic,HEAD,,(missing),no
+Miya,Afro-Asiatic,HEAD,tsá,ara-,no
+Pa'a,Afro-Asiatic,HEAD,,ara-,no
+Tarifiyt-Beni-Iznasen-Eastern Middle Atlas Berber,Afro-Asiatic,HEAD,ixf,kû:,no
+Bamun,Atlantic-Congo,HEAD,ntú,tú,no
+Mba,Atlantic-Congo,HEAD,kùnɔ́,(missing),no
+Noone,Atlantic-Congo,HEAD,,(missing),no
+Hu,Austroasiatic,HEAD,bóŋ,nă³¹kuaŋ³¹,no
+Iamalele,Austronesian,HEAD,kɔ̀lɔ́,(missing),no
+Lele (Papua New Guinea),Austronesian,HEAD,kɔ̀lɔ́,(missing),no
+Sa,Austronesian,HEAD,kai,tari,no
+Kaba,Central Sudanic,HEAD,ɕḥe,nalma,no
+Ben Tey Dogon,Dogon,HEAD,kúnɔ́,(missing),no
+Tommo So Dogon,Dogon,HEAD,kúnɔ́,kû:,no
+She,Hmong-Mien,HEAD,ixf,(missing),no
+Basque,Isolate,HEAD,buru,(missing),no
+Kunama,Isolate,HEAD,head,(missing),no
+Georgian,Kartvelian,HEAD,tavi,ara-,no
+Laz,Kartvelian,HEAD,ti/tu,(missing),no
+Bats,Nakh-Daghestanian,HEAD,kort,(missing),no
+Olo,Nuclear Torricelli,HEAD,bopp,a.t.a.m.a,no
+Sani,Sino-Tibetan,HEAD,ras,(missing),no
+Humburi Senni Songhay,Songhay,HEAD,bóŋ,(missing),no
+Koyraboro Senni Songhai,Songhay,HEAD,bóŋ,(missing),no
+Erzya,Uralic,HEAD,pŕa,pr̃ʸa,no
+Moksha,Uralic,HEAD,pŕä,laŋ,no
+Afade,Afro-Asiatic,UNKNOWN,,go,no
+Afar,Afro-Asiatic,UNKNOWN,,(missing),no
+Akkadian,Afro-Asiatic,UNKNOWN,,(missing),no
+Alaba-K'abeena,Afro-Asiatic,UNKNOWN,,isbakko,no
+Alagwa,Afro-Asiatic,NON_BODY,,(missing),no
+Ancient Hebrew,Afro-Asiatic,NON_BODY,,kepʰa'lē / 'karā,no
+Arbore,Afro-Asiatic,NON_BODY,,(missing),no
+Argobba,Afro-Asiatic,NON_BODY,,dɨma,no
+Awjilah,Afro-Asiatic,UNKNOWN,,mutwi,no
+Baharna Arabic,Afro-Asiatic,UNKNOWN,,kardapu,no
+Batha,Afro-Asiatic,UNKNOWN,,(missing),no
+Beele,Afro-Asiatic,UNKNOWN,,(missing),no
+Bilin,Afro-Asiatic,NON_BODY,,patu / baku,no
+Buduma,Afro-Asiatic,NON_BODY,,ta̠ng_go̠m,no
+Bura-Pabir,Afro-Asiatic,UNKNOWN,,nobu-,no
+Bure,Afro-Asiatic,UNKNOWN,,(missing),no
+Burji,Afro-Asiatic,UNKNOWN,,(missing),no
+Burunge,Afro-Asiatic,NON_BODY,,(missing),no
+Cakfem-Mushere-Jibyal,Afro-Asiatic,UNKNOWN,,(missing),no
+Chadian Arabic,Afro-Asiatic,NON_BODY,,kardapu,no
+Chaldean Neo-Aramaic,Afro-Asiatic,UNKNOWN,,(missing),no
+Coptic,Afro-Asiatic,NON_BODY,,(missing),no
+Cypriot Arabic,Afro-Asiatic,UNKNOWN,,kardapu,no
+Daasanach,Afro-Asiatic,UNKNOWN,,(missing),no
+Dera (Nigeria),Afro-Asiatic,UNKNOWN,,(missing),no
+Eastern Egyptian Bedawi Arabic,Afro-Asiatic,UNKNOWN,,kardapu,no
+Egyptian Arabic,Afro-Asiatic,NON_BODY,,kardapu,no
+El Molo,Afro-Asiatic,NON_BODY,,ɓ.o̤ː.k,no
+Ga'anda,Afro-Asiatic,UNKNOWN,,kektoŋ,no
+Galambu,Afro-Asiatic,UNKNOWN,,kektoŋ,no
+Gardabani Bohtan Neo-Aramaic,Afro-Asiatic,UNKNOWN,,(missing),no
+Geruma,Afro-Asiatic,UNKNOWN,,ta̠ng_go̠m,no
+Ghadames,Afro-Asiatic,NON_BODY,,(missing),no
+Ghomara,Afro-Asiatic,NON_BODY,,ta̠ng_go̠m,no
+Giiwo,Afro-Asiatic,UNKNOWN,,(missing),no
+Glavda,Afro-Asiatic,NON_BODY,,(missing),no
+Gude,Afro-Asiatic,UNKNOWN,,(missing),no
+Gulf Arabic,Afro-Asiatic,NON_BODY,,kardapu,no
+Hadiyya,Afro-Asiatic,UNKNOWN,,(missing),no
+Hassaniyya,Afro-Asiatic,NON_BODY,,laŋ,no
+Hertevin,Afro-Asiatic,UNKNOWN,,(missing),no
+Huba,Afro-Asiatic,UNKNOWN,,(missing),no
+Hulaulá,Afro-Asiatic,UNKNOWN,,mihi,no
+Jina,Afro-Asiatic,UNKNOWN,,tʰou⁴²,no
+Kera,Afro-Asiatic,UNKNOWN,,(missing),no
+Koy Sanjaq Jewish Neo-Aramaic,Afro-Asiatic,UNKNOWN,,(missing),no
+Lagwan,Afro-Asiatic,NON_BODY,,(missing),no
+Lamang,Afro-Asiatic,UNKNOWN,,(missing),no
+Libyan Arabic,Afro-Asiatic,NON_BODY,,kardapu,no
+Lishanid Noshan,Afro-Asiatic,UNKNOWN,,(missing),no
+Malgwa,Afro-Asiatic,NON_BODY,,ta̠ng_go̠m,no
+Maltese,Afro-Asiatic,UNKNOWN,,ta̠ng_go̠m,no
+Masana,Afro-Asiatic,BODY,,ta̠ng_go̠m,no
+Mazagway,Afro-Asiatic,UNKNOWN,,ta̠ng_go̠m,no
+Mbara (Chad),Afro-Asiatic,UNKNOWN,,(missing),no
+Migaama,Afro-Asiatic,UNKNOWN,,(missing),no
+Mlahsô,Afro-Asiatic,UNKNOWN,,ara-,no
+Modern Hebrew,Afro-Asiatic,NON_BODY,,(missing),no
+Moloko,Afro-Asiatic,UNKNOWN,,si,no
+Mpade,Afro-Asiatic,UNKNOWN,,(missing),no
+Musgu,Afro-Asiatic,NON_BODY,,(missing),no
+Mwaghavul,Afro-Asiatic,UNKNOWN,,laŋ,no
+Ndam,Afro-Asiatic,UNKNOWN,,(missing),no
+Neo-Mandaic,Afro-Asiatic,UNKNOWN,,ta̠ng_go̠m,no
+Ngas,Afro-Asiatic,UNKNOWN,,kektoŋ,no
+North Giziga,Afro-Asiatic,UNKNOWN,,(missing),no
+North Levantine Arabic,Afro-Asiatic,NON_BODY,,kardapu,no
+Nubi,Afro-Asiatic,NON_BODY,,ras,no
+Nyam,Afro-Asiatic,UNKNOWN,,vapardla,no
+Orma,Afro-Asiatic,UNKNOWN,,ta̠ng_go̠m,no
+Phoenician,Afro-Asiatic,NON_BODY,,(missing),no
+Psikye,Afro-Asiatic,UNKNOWN,,petu-n,no
+Punic,Afro-Asiatic,NON_BODY,,(missing),no
+Qimant,Afro-Asiatic,UNKNOWN,,ta̠ng_go̠m,no
+Ron,Afro-Asiatic,UNKNOWN,,tõʔõ,no
+Sanaani Arabic,Afro-Asiatic,NON_BODY,,kardapu,no
+Saya,Afro-Asiatic,UNKNOWN,,ara-,no
+Siwi,Afro-Asiatic,UNKNOWN,,(missing),no
+South Sudanese Creole Arabic,Afro-Asiatic,NON_BODY,,(missing),no
+Standard Arabic,Afro-Asiatic,NON_BODY,,kardapu,no
+Tahaggart Tamahaq,Afro-Asiatic,UNKNOWN,,kamu / 'ka:mũ,no
+Tamasheq,Afro-Asiatic,UNKNOWN,,(missing),no
+Tawallammat Tamajaq,Afro-Asiatic,UNKNOWN,,(missing),no
+Tayart Tamajeq,Afro-Asiatic,UNKNOWN,,(missing),no
+Tera,Afro-Asiatic,UNKNOWN,,ara-,no
+Tsamai,Afro-Asiatic,NON_BODY,,(missing),no
+Tunni,Afro-Asiatic,UNKNOWN,,(missing),no
+Ugaritic,Afro-Asiatic,NON_BODY,,kektoŋ,no
+Wandala,Afro-Asiatic,NON_BODY,,ara-,no
+Western Neo-Aramaic,Afro-Asiatic,UNKNOWN,,(missing),no
+Wolane,Afro-Asiatic,NON_BODY,,ara-,no
+Xamtanga,Afro-Asiatic,UNKNOWN,,(missing),no
+Yaaku,Afro-Asiatic,NON_BODY,,ara-,no
+Zulgo-Gemzek,Afro-Asiatic,UNKNOWN,,ʃjaɾaŋ,no
+Hokkaido Ainu,Ainu,NON_BODY,,pa,no
+Arapaho,Algic,NON_BODY,,bʌrʌkʰa,no
+Cheyenne,Algic,NON_BODY,,(missing),no
+Chippewa,Algic,NON_BODY,,(missing),no
+Gros Ventre,Algic,NON_BODY,,(missing),no
+Loup A,Algic,UNKNOWN,,ara-,no
+Mi'kmaq,Algic,NON_BODY,,ta̠ng_go̠m,no
+Miami,Algic,UNKNOWN,,ʔekhje,no
+Montagnais,Algic,NON_BODY,,kaḍuip,no
+Northwestern Ojibwa,Algic,NON_BODY,,(missing),no
+Ottawa,Algic,NON_BODY,,(missing),no
+Plains Cree,Algic,NON_BODY,,(missing),no
+Severn Ojibwa,Algic,NON_BODY,,ara-,no
+Shawnee,Algic,UNKNOWN,,laŋ,no
+Siksika,Algic,NON_BODY,,petu-n,no
+Woods Cree,Algic,NON_BODY,,(missing),no
+Yurok,Algic,NON_BODY,,ʃjaɾaŋ,no
+Siawi,Amto-Musan,UNKNOWN,,ara-,no
+Angaataha,Angan,UNKNOWN,,(missing),no
+Marind,Anim,NON_BODY,,ta̠ng_go̠m,no
+Mapudungun,Araucanian,NON_BODY,,ta̠ng_go̠m,no
+Achagua,Arawakan,NON_BODY,,nă³¹kuaŋ³¹,no
+Ajyíninka Apurucayali,Arawakan,NON_BODY,,(missing),no
+Apurinã,Arawakan,NON_BODY,,(missing),no
+Ashéninka Perené,Arawakan,NON_BODY,,-watuʔ,no
+Baré,Arawakan,UNKNOWN,,n_u_d_u_s_i_a,no
+Baure,Arawakan,NON_BODY,,mihi,no
+Kinikinao,Arawakan,NON_BODY,,(missing),no
+Lokono,Arawakan,UNKNOWN,,si,no
+Nanti,Arawakan,UNKNOWN,,ara-,no
+Palikúr,Arawakan,NON_BODY,,petu-n,no
+Paraujano,Arawakan,NON_BODY,,mihi,no
+Parecís,Arawakan,NON_BODY,,upoko / o'o,no
+Piapoco,Arawakan,UNKNOWN,,ta̠ng_go̠m,no
+Pichis Ashéninka,Arawakan,NON_BODY,,-watuʔ,no
+Tariana,Arawakan,NON_BODY,,ara-,no
+Trinitario-Javeriano-Loretano,Arawakan,NON_BODY,,ara-,no
+Warekena do San Miguel,Arawakan,NON_BODY,,upoko / o'o,no
+Yanesha',Arawakan,NON_BODY,,laŋ,no
+Yavitero-Pareni,Arawakan,NON_BODY,,upoko / o'o,no
+Yawalapití,Arawakan,UNKNOWN,,akapwert,no
+Yucuna,Arawakan,UNKNOWN,,ara-,no
+Culina,Arawan,NON_BODY,,(missing),no
+Madi,Arawan,UNKNOWN,,ta̠ng_go̠m,no
+Chilcotin-Nicola,Athabaskan-Eyak-Tlingit,NON_BODY,,(missing),no
+Chipewyan,Athabaskan-Eyak-Tlingit,NON_BODY,,(missing),no
+Eyak,Athabaskan-Eyak-Tlingit,UNKNOWN,,(missing),no
+Kaska,Athabaskan-Eyak-Tlingit,NON_BODY,,(missing),no
+Mescalero-Chiricahua Apache,Athabaskan-Eyak-Tlingit,NON_BODY,,tõʔõ,no
+Navajo,Athabaskan-Eyak-Tlingit,NON_BODY,,ara-,no
+North Slavey,Athabaskan-Eyak-Tlingit,NON_BODY,,(missing),no
+Sarsi,Athabaskan-Eyak-Tlingit,NON_BODY,,ara-,no
+South Slavey,Athabaskan-Eyak-Tlingit,NON_BODY,,(missing),no
+Western Apache,Athabaskan-Eyak-Tlingit,NON_BODY,,tõʔõ,no
+Witsuwit'en-Babine,Athabaskan-Eyak-Tlingit,NON_BODY,,(missing),no
+Abé,Atlantic-Congo,UNKNOWN,,tsã́-kṹ,no
+Aghem,Atlantic-Congo,UNKNOWN,,kɨ́tú,no
+Aja (Benin),Atlantic-Congo,NON_BODY,,(missing),no
+Akoose,Atlantic-Congo,UNKNOWN,,(missing),no
+Anufo,Atlantic-Congo,NON_BODY,,(missing),no
+Arigidi,Atlantic-Congo,NON_BODY,,gabi,no
+Asu (Tanzania),Atlantic-Congo,UNKNOWN,,(missing),no
+Baba,Atlantic-Congo,UNKNOWN,,'ʔuu,no
+Babanki,Atlantic-Congo,UNKNOWN,,'ʔuu,no
+Bafaw-Balong,Atlantic-Congo,NON_BODY,,nă³¹kuaŋ³¹,no
+Bafia,Atlantic-Congo,NON_BODY,,ǹ-tó,no
+Bafut,Atlantic-Congo,BODY,,(missing),no
+Baga Koga,Atlantic-Congo,UNKNOWN,,(missing),no
+Baga Sitemu,Atlantic-Congo,UNKNOWN,,(missing),no
+Baka (Cameroon),Atlantic-Congo,UNKNOWN,,tabnau,no
+Balobo,Atlantic-Congo,UNKNOWN,,(missing),no
+Bamwe,Atlantic-Congo,UNKNOWN,,(missing),no
+Banda-Bambari,Atlantic-Congo,UNKNOWN,,(missing),no
+Bankon,Atlantic-Congo,NON_BODY,,(missing),no
+Barambu,Atlantic-Congo,NON_BODY,,loha,no
+Basa (Nigeria),Atlantic-Congo,UNKNOWN,,(missing),no
+Batanga,Atlantic-Congo,NON_BODY,,(missing),no
+Bebele,Atlantic-Congo,UNKNOWN,,(missing),no
+Beembe,Atlantic-Congo,UNKNOWN,,mùtú,no
+Bekwarra,Atlantic-Congo,UNKNOWN,,(missing),no
+Bekwil,Atlantic-Congo,UNKNOWN,,(missing),no
+Belueli,Atlantic-Congo,UNKNOWN,,(missing),no
+Bemba (Zambia),Atlantic-Congo,NON_BODY,,(missing),no
+Benga,Atlantic-Congo,NON_BODY,,molo,no
+Biafada,Atlantic-Congo,UNKNOWN,,go,no
+Bila,Atlantic-Congo,UNKNOWN,,ʔulu,no
+Bini,Atlantic-Congo,UNKNOWN,,(missing),no
+Bobangi,Atlantic-Congo,UNKNOWN,,mutú,no
+Bodo (Central African Republic),Atlantic-Congo,UNKNOWN,,(missing),no
+Bolgo,Atlantic-Congo,UNKNOWN,,(missing),no
+Boloki,Atlantic-Congo,UNKNOWN,,a.t.a.m.a,no
+Bom-Kim,Atlantic-Congo,UNKNOWN,,(missing),no
+Bomboma,Atlantic-Congo,UNKNOWN,,ta̠ng_go̠m,no
+Bondei,Atlantic-Congo,NON_BODY,,(missing),no
+Bongili,Atlantic-Congo,UNKNOWN,,(missing),no
+Bouna Kulango,Atlantic-Congo,UNKNOWN,,(missing),no
+Bube,Atlantic-Congo,UNKNOWN,,(missing),no
+Bubi,Atlantic-Congo,NON_BODY,,e-twɛ́,no
+Budza,Atlantic-Congo,NON_BODY,,(missing),no
+Bullom So,Atlantic-Congo,UNKNOWN,,(missing),no
+Bulu (Cameroon),Atlantic-Congo,UNKNOWN,,(missing),no
+Bushoong,Atlantic-Congo,NON_BODY,,(missing),no
+Central Wambo,Atlantic-Congo,UNKNOWN,,(missing),no
+Chakali,Atlantic-Congo,UNKNOWN,,(missing),no
+Chimwiini,Atlantic-Congo,UNKNOWN,,'βuy,no
+Chuwabu,Atlantic-Congo,NON_BODY,,(missing),no
+Cicipu,Atlantic-Congo,NON_BODY,,ka,no
+Congo Swahili,Atlantic-Congo,UNKNOWN,,bine,no
+Cori,Atlantic-Congo,UNKNOWN,,(missing),no
+Cross River Mbembe,Atlantic-Congo,NON_BODY,,(missing),no
+Dagbani,Atlantic-Congo,UNKNOWN,,(missing),no
+Degema,Atlantic-Congo,UNKNOWN,,ta̠ng_go̠m,no
+Dibole,Atlantic-Congo,NON_BODY,,(missing),no
+Digo,Atlantic-Congo,NON_BODY,,ʧiʦwa,no
+Diriku-Shambyu,Atlantic-Congo,NON_BODY,,(missing),no
+Duala,Atlantic-Congo,NON_BODY,,mulopo,no
+Eastern Kikongo,Atlantic-Congo,NON_BODY,,bine,no
+Ega,Atlantic-Congo,UNKNOWN,,twé,no
+Eleme,Atlantic-Congo,UNKNOWN,,(missing),no
+Elip,Atlantic-Congo,NON_BODY,,(missing),no
+Emai,Atlantic-Congo,UNKNOWN,,ta̠ng_go̠m,no
+Esimbi,Atlantic-Congo,NON_BODY,,(missing),no
+Ewe,Atlantic-Congo,UNKNOWN,,ᵐboe_e,no
+Farefare,Atlantic-Congo,NON_BODY,,upoko / o'o,no
+Fe'fe',Atlantic-Congo,UNKNOWN,,(missing),no
+Fipa,Atlantic-Congo,NON_BODY,,uumutwe,no
+Fon,Atlantic-Congo,NON_BODY,,poto-ŋ,no
+Ga,Atlantic-Congo,NON_BODY,,jə̀kù,no
+Gaa,Atlantic-Congo,UNKNOWN,,mɨtɨ-'o,no
+Gade,Atlantic-Congo,UNKNOWN,,(missing),no
+Ganda,Atlantic-Congo,UNKNOWN,,kektoŋ,no
+Gbayi,Atlantic-Congo,UNKNOWN,,o55ko33,no
+Geme,Atlantic-Congo,UNKNOWN,,(missing),no
+Giryama,Atlantic-Congo,UNKNOWN,,(missing),no
+Gobu,Atlantic-Congo,UNKNOWN,,(missing),no
+Gola,Atlantic-Congo,UNKNOWN,,k.ə.l,no
+Gubeeher-Gufangor-Gubelor,Atlantic-Congo,NON_BODY,,(missing),no
+Gusii,Atlantic-Congo,NON_BODY,,ómotwé,no
+Gweno,Atlantic-Congo,NON_BODY,,mrwe,no
+Gyele,Atlantic-Congo,UNKNOWN,,(missing),no
+Ha,Atlantic-Congo,NON_BODY,,ɑχɨ,no
+Hehe,Atlantic-Congo,NON_BODY,,(missing),no
+Herero,Atlantic-Congo,NON_BODY,,(missing),no
+Holoholo,Atlantic-Congo,UNKNOWN,,(missing),no
+Homa,Atlantic-Congo,UNKNOWN,,ta̠ng_go̠m,no
+Hyam,Atlantic-Congo,UNKNOWN,,(missing),no
+Hõne,Atlantic-Congo,BODY,,(missing),no
+Ibibio,Atlantic-Congo,NON_BODY,,(missing),no
+Idoma,Atlantic-Congo,UNKNOWN,,ta̠ng_go̠m,no
+Igbo,Atlantic-Congo,UNKNOWN,,(missing),no
+Ila,Atlantic-Congo,NON_BODY,,mutwi,no
+Jiba,Atlantic-Congo,BODY,,bulha,no
+Jita,Atlantic-Congo,UNKNOWN,,omutʷe,no
+Jju,Atlantic-Congo,UNKNOWN,,(missing),no
+Jukun Takum,Atlantic-Congo,BODY,,(missing),no
+Kagulu,Atlantic-Congo,NON_BODY,,itwi,no
+Kalanga,Atlantic-Congo,NON_BODY,,(missing),no
+Kam,Atlantic-Congo,UNKNOWN,,(missing),no
+Kamba (Kenya),Atlantic-Congo,NON_BODY,,(missing),no
+Kaonde,Atlantic-Congo,UNKNOWN,,(missing),no
+Kare (Central African Republic),Atlantic-Congo,NON_BODY,,upoko / o'o,no
+Kari,Atlantic-Congo,UNKNOWN,,(missing),no
+Kele-Foma,Atlantic-Congo,UNKNOWN,,ta̠ng_go̠m,no
+Kemezung,Atlantic-Congo,NON_BODY,,(missing),no
+Kgalagadi,Atlantic-Congo,NON_BODY,,(missing),no
+Khana,Atlantic-Congo,UNKNOWN,,laŋ,no
+Kikuyu,Atlantic-Congo,NON_BODY,,petu-n,no
+Kim,Atlantic-Congo,UNKNOWN,,(missing),no
+Kol (Cameroon),Atlantic-Congo,NON_BODY,,(missing),no
+Kolbila,Atlantic-Congo,NON_BODY,,ʔulu,no
+Kom (Cameroon),Atlantic-Congo,UNKNOWN,,(missing),no
+Komo (Democratic Republic of Congo),Atlantic-Congo,UNKNOWN,,átu,no
+Konzo,Atlantic-Congo,NON_BODY,,(missing),no
+Koonzime,Atlantic-Congo,NON_BODY,,(missing),no
+Koromfé,Atlantic-Congo,UNKNOWN,,ᵏpʷutu-ŋ,no
+Koti,Atlantic-Congo,NON_BODY,,dapo,no
+Krim,Atlantic-Congo,UNKNOWN,,(missing),no
+Kuanyama,Atlantic-Congo,NON_BODY,,(missing),no
+Kutep,Atlantic-Congo,BODY,,(missing),no
+Lala-Bisa,Atlantic-Congo,NON_BODY,,ola,no
+Lambya,Atlantic-Congo,UNKNOWN,,muge-,no
+Landoma,Atlantic-Congo,UNKNOWN,,(missing),no
+Langi,Atlantic-Congo,NON_BODY,,(missing),no
+Latege,Atlantic-Congo,NON_BODY,,ara-,no
+Lega-Mwenga,Atlantic-Congo,NON_BODY,,twé,no
+Lega-Shabunda,Atlantic-Congo,UNKNOWN,,esu,no
+Libinza,Atlantic-Congo,NON_BODY,,patu / baku,no
+Lijili,Atlantic-Congo,NON_BODY,,(missing),no
+Liko,Atlantic-Congo,NON_BODY,,petu-n,no
+Litoka,Atlantic-Congo,UNKNOWN,,(missing),no
+Lobala,Atlantic-Congo,UNKNOWN,,mutwe,no
+Loi-Likila,Atlantic-Congo,UNKNOWN,,(missing),no
+Lokaa,Atlantic-Congo,UNKNOWN,,(missing),no
+Lozi,Atlantic-Congo,NON_BODY,,toho,no
+Luchazi,Atlantic-Congo,UNKNOWN,,laŋ,no
+Luguru,Atlantic-Congo,NON_BODY,,(missing),no
+Lumbu,Atlantic-Congo,NON_BODY,,(missing),no
+Lunda,Atlantic-Congo,UNKNOWN,,ara-,no
+Lusengo,Atlantic-Congo,UNKNOWN,,(missing),no
+Luvale,Atlantic-Congo,NON_BODY,,ara-,no
+Luyi,Atlantic-Congo,NON_BODY,,o55ko33,no
+Mabaale,Atlantic-Congo,UNKNOWN,,ta̠ng_go̠m,no
+Makaa,Atlantic-Congo,NON_BODY,,ta̠ng_go̠m,no
+Makhuwa,Atlantic-Congo,NON_BODY,,ta̠ng_go̠m,no
+Makhuwa-Saka,Atlantic-Congo,NON_BODY,,ta̠ng_go̠m,no
+Makonde,Atlantic-Congo,NON_BODY,,ta̠ng_go̠m,no
+Mambai,Atlantic-Congo,UNKNOWN,,ta̠ng_go̠m,no
+Mambwe-Lungu,Atlantic-Congo,UNKNOWN,,ta̠ng_go̠m,no
+Matumbi,Atlantic-Congo,NON_BODY,,ta̠ng_go̠m,no
+Mayogo,Atlantic-Congo,UNKNOWN,,ta̠ng_go̠m,no
+Mbandja,Atlantic-Congo,UNKNOWN,,(missing),no
+Mbo (Cameroon),Atlantic-Congo,NON_BODY,,(missing),no
+Mbole,Atlantic-Congo,UNKNOWN,,(missing),no
+Meru,Atlantic-Congo,UNKNOWN,,kiongo,no
+Meta',Atlantic-Congo,UNKNOWN,,ara-,no
+Mid-Southern Banda,Atlantic-Congo,UNKNOWN,,(missing),no
+Moba,Atlantic-Congo,UNKNOWN,,ara-,no
+Mokpwe,Atlantic-Congo,NON_BODY,,(missing),no
+Mongo,Atlantic-Congo,UNKNOWN,,kaḍuip,no
+Mono (Democratic Republic of Congo),Atlantic-Congo,UNKNOWN,,átu,no
+Monzombo,Atlantic-Congo,UNKNOWN,,kaḍuip,no
+Motembo-Kunda,Atlantic-Congo,NON_BODY,,ara-,no
+Mpoto,Atlantic-Congo,NON_BODY,,na-ᵐpat-me,no
+Mumuye,Atlantic-Congo,UNKNOWN,,miːku,no
+Mundabli-Mufu,Atlantic-Congo,NON_BODY,,pjei³¹kʰu¹¹,no
+Mundang,Atlantic-Congo,BODY,,pjei³¹kʰu¹¹,no
+Mungbam,Atlantic-Congo,NON_BODY,,(missing),no
+Mwani,Atlantic-Congo,NON_BODY,,ara-,no
+Mwera (Chimwera),Atlantic-Congo,NON_BODY,,'βuy,no
+Mündü,Atlantic-Congo,UNKNOWN,,(missing),no
+Natioro,Atlantic-Congo,UNKNOWN,,átu,no
+Nawuri,Atlantic-Congo,UNKNOWN,,ara-,no
+Ncane-Mungong,Atlantic-Congo,UNKNOWN,,(missing),no
+Ndamba,Atlantic-Congo,NON_BODY,,(missing),no
+Ndobo,Atlantic-Congo,UNKNOWN,,-ki,no
+Ndogo,Atlantic-Congo,UNKNOWN,,-ki,no
+Ndunga,Atlantic-Congo,NON_BODY,,kektoŋ,no
+Ngbaka Ma'bo,Atlantic-Congo,UNKNOWN,,(missing),no
+Ngbaka Minagende,Atlantic-Congo,UNKNOWN,,(missing),no
+Ngombe (Democratic Republic of Congo),Atlantic-Congo,NON_BODY,,átu,no
+Nilamba,Atlantic-Congo,NON_BODY,,pwaneta,no
+Njanga,Atlantic-Congo,NON_BODY,,(missing),no
+Nkonya,Atlantic-Congo,NON_BODY,,(missing),no
+Nomaande,Atlantic-Congo,NON_BODY,,ta̠ng_go̠m,no
+Noon,Atlantic-Congo,NON_BODY,,(missing),no
+Northern Ngbandi,Atlantic-Congo,UNKNOWN,,(missing),no
+Nsenga,Atlantic-Congo,UNKNOWN,,kektoŋ,no
+Nugunu (Cameroon),Atlantic-Congo,UNKNOWN,,(missing),no
+Nupe-Nupe-Tako,Atlantic-Congo,UNKNOWN,,ara-,no
+Nyakyusa-Ngonde,Atlantic-Congo,NON_BODY,,(missing),no
+Nyali,Atlantic-Congo,NON_BODY,,ara-,no
+Nyankole,Atlantic-Congo,NON_BODY,,(missing),no
+Nyaturu,Atlantic-Congo,NON_BODY,,ara-,no
+Nyoro,Atlantic-Congo,NON_BODY,,omutwe,no
+Nzakambay,Atlantic-Congo,NON_BODY,,(missing),no
+Nzakara,Atlantic-Congo,UNKNOWN,,(missing),no
+Oku,Atlantic-Congo,UNKNOWN,,putu-ʔu,no
+Ombamba-Congo,Atlantic-Congo,NON_BODY,,(missing),no
+Oroko,Atlantic-Congo,UNKNOWN,,ʤili,no
+Osamayi,Atlantic-Congo,NON_BODY,,(missing),no
+Paasaal,Atlantic-Congo,UNKNOWN,,ara-,no
+Pagibete,Atlantic-Congo,NON_BODY,,ara-,no
+Pambia,Atlantic-Congo,UNKNOWN,,ara-,no
+Pangwa,Atlantic-Congo,NON_BODY,,(missing),no
+Peere,Atlantic-Congo,NON_BODY,,(missing),no
+Saamia,Atlantic-Congo,NON_BODY,,ʔekhje,no
+Safwa,Atlantic-Congo,NON_BODY,,ara-,no
+Sagalla,Atlantic-Congo,UNKNOWN,,kektoŋ,no
+Salka-Tsishingini,Atlantic-Congo,UNKNOWN,,o35qo11,no
+Samba Daka,Atlantic-Congo,UNKNOWN,,olo,no
+Samba Leko,Atlantic-Congo,NON_BODY,,olo,no
+Samue,Atlantic-Congo,UNKNOWN,,ara-,no
+Sanga (Democratic Republic of Congo),Atlantic-Congo,NON_BODY,,(missing),no
+Sangu (Tanzania),Atlantic-Congo,UNKNOWN,,(missing),no
+Shambala,Atlantic-Congo,NON_BODY,,mutwe,no
+Sherbro,Atlantic-Congo,NON_BODY,,(missing),no
+Shona,Atlantic-Congo,NON_BODY,,(missing),no
+Soga,Atlantic-Congo,NON_BODY,,(missing),no
+Soli,Atlantic-Congo,NON_BODY,,(missing),no
+South Fali,Atlantic-Congo,UNKNOWN,,(missing),no
+South-Central Koongo,Atlantic-Congo,NON_BODY,,(missing),no
+Southern Sotho,Atlantic-Congo,NON_BODY,,(missing),no
+Southern Toussian,Atlantic-Congo,NON_BODY,,(missing),no
+Suba,Atlantic-Congo,UNKNOWN,,(missing),no
+Suku,Atlantic-Congo,NON_BODY,,kə,no
+Sukuma,Atlantic-Congo,UNKNOWN,,ta̠ng_go̠m,no
+Supyire Senoufo,Atlantic-Congo,UNKNOWN,,o55ko33,no
+Swahili,Atlantic-Congo,NON_BODY,,(missing),no
+Sìcìté Sénoufo,Atlantic-Congo,NON_BODY,,(missing),no
+Tagwana Senoufo,Atlantic-Congo,UNKNOWN,,ara-,no
+Tanzanian Ngoni,Atlantic-Congo,NON_BODY,,(missing),no
+Tharaka,Atlantic-Congo,NON_BODY,,jə̀kù,no
+Tibea,Atlantic-Congo,UNKNOWN,,(missing),no
+Tiefo-Daramandugu,Atlantic-Congo,UNKNOWN,,(missing),no
+Tiefo-Nyafogo-Numudara,Atlantic-Congo,UNKNOWN,,(missing),no
+Tiene,Atlantic-Congo,UNKNOWN,,(missing),no
+Tigon Mbembe,Atlantic-Congo,UNKNOWN,,(missing),no
+Tikar,Atlantic-Congo,NON_BODY,,petu-n,no
+Timne,Atlantic-Congo,NON_BODY,,(missing),no
+Tonga (Zambia),Atlantic-Congo,NON_BODY,,(missing),no
+Tooro,Atlantic-Congo,NON_BODY,,omutwe,no
+Totela,Atlantic-Congo,NON_BODY,,(missing),no
+Tsogo,Atlantic-Congo,BODY,,(missing),no
+Tsonga,Atlantic-Congo,NON_BODY,,(missing),no
+Tswa,Atlantic-Congo,NON_BODY,,ara-,no
+Tswana,Atlantic-Congo,NON_BODY,,ara-,no
+Tuki,Atlantic-Congo,NON_BODY,,mapo,no
+Tula,Atlantic-Congo,UNKNOWN,,ara-,no
+Tumulung Sisaala,Atlantic-Congo,UNKNOWN,,ara-,no
+Tunen,Atlantic-Congo,UNKNOWN,,(missing),no
+Tuwuli,Atlantic-Congo,NON_BODY,,(missing),no
+Umbundu,Atlantic-Congo,NON_BODY,,(missing),no
+Viemo,Atlantic-Congo,UNKNOWN,,(missing),no
+Vunjo,Atlantic-Congo,UNKNOWN,,ʃjaɾaŋ,no
+Vwanji,Atlantic-Congo,NON_BODY,,ara-,no
+Waja,Atlantic-Congo,UNKNOWN,,(missing),no
+Wawa,Atlantic-Congo,UNKNOWN,,(missing),no
+Western Karaboro,Atlantic-Congo,UNKNOWN,,kardapu,no
+Xhosa,Atlantic-Congo,NON_BODY,,(missing),no
+Yaka (Central African Republic),Atlantic-Congo,NON_BODY,,(missing),no
+Yaka-Pelende-Lonzo,Atlantic-Congo,UNKNOWN,,(missing),no
+Yakoma,Atlantic-Congo,UNKNOWN,,ta̠ng_go̠m,no
+Yao,Atlantic-Congo,NON_BODY,,(missing),no
+Yasa,Atlantic-Congo,NON_BODY,,ara-,no
+Zamba,Atlantic-Congo,NON_BODY,,(missing),no
+Zigula-Mushungulu,Atlantic-Congo,UNKNOWN,,(missing),no
+Zinza,Atlantic-Congo,UNKNOWN,,ara-,no
+Asuri,Austroasiatic,UNKNOWN,,(missing),no
+Bahnar,Austroasiatic,UNKNOWN,,k.ə.l,no
+Bit,Austroasiatic,UNKNOWN,,n̩lo,no
+Blang,Austroasiatic,NON_BODY,,phaʔu-na,no
+Bodo Gadaba,Austroasiatic,NON_BODY,,(missing),no
+Bolyu,Austroasiatic,UNKNOWN,,(missing),no
+Bondo,Austroasiatic,NON_BODY,,(missing),no
+Brao,Austroasiatic,UNKNOWN,,(missing),no
+Bugan,Austroasiatic,UNKNOWN,,pə.T.55 bop.31,no
+Bulo Stieng,Austroasiatic,UNKNOWN,,(missing),no
+Car Nicobarese,Austroasiatic,NON_BODY,,upoko / o'o,no
+Central Chong,Austroasiatic,UNKNOWN,,(missing),no
+Central Khmer,Austroasiatic,UNKNOWN,,(missing),no
+Central Mnong,Austroasiatic,UNKNOWN,,(missing),no
+Central Nicobarese,Austroasiatic,UNKNOWN,,upoko / o'o,no
+Chong of Chanthaburi,Austroasiatic,UNKNOWN,,(missing),no
+Chrau,Austroasiatic,UNKNOWN,,mihi,no
+Cua,Austroasiatic,UNKNOWN,,ki̵zp u,no
+Danau,Austroasiatic,NON_BODY,,mihi,no
+Eastern Bru,Austroasiatic,NON_BODY,,(missing),no
+Eastern Katu,Austroasiatic,NON_BODY,,(missing),no
+Eastern Lawa,Austroasiatic,UNKNOWN,,(missing),no
+Eastern Mnong,Austroasiatic,UNKNOWN,,(missing),no
+Gata',Austroasiatic,UNKNOWN,,(missing),no
+Gorum-Parenga,Austroasiatic,NON_BODY,,upoko / o'o,no
+Halang,Austroasiatic,UNKNOWN,,laŋ,no
+Ho,Austroasiatic,NON_BODY,,(missing),no
+Hung,Austroasiatic,NON_BODY,,(missing),no
+Jah Hut,Austroasiatic,UNKNOWN,,khloʔ,no
+Jedek,Austroasiatic,UNKNOWN,,(missing),no
+Jeh,Austroasiatic,UNKNOWN,,k.a̤.l,no
+Jehai,Austroasiatic,NON_BODY,,laŋ,no
+Juang,Austroasiatic,UNKNOWN,,bokob,no
+Kensiu,Austroasiatic,UNKNOWN,,ŋ̩³¹goːŋ⁵³,no
+Kharia,Austroasiatic,UNKNOWN,,laŋ,no
+Khasi,Austroasiatic,UNKNOWN,,laŋ,no
+Khmu,Austroasiatic,UNKNOWN,,kmpoŋ,no
+Kháng,Austroasiatic,UNKNOWN,,(missing),no
+Koho,Austroasiatic,UNKNOWN,,(missing),no
+Korku,Austroasiatic,UNKNOWN,,kapar,no
+Kriang-Khlor,Austroasiatic,UNKNOWN,,ara-,no
+Ksingmul,Austroasiatic,UNKNOWN,,(missing),no
+Kuy,Austroasiatic,UNKNOWN,,keɔŋgɔ́,no
+Laven,Austroasiatic,NON_BODY,,t.uː.s,no
+Man Met,Austroasiatic,UNKNOWN,,tari,no
+Mang,Austroasiatic,UNKNOWN,,ta̠ng_go̠m,no
+Maniq,Austroasiatic,NON_BODY,,ta̠ng_go̠m,no
+Mlabri,Austroasiatic,UNKNOWN,,ara-,no
+Mon,Austroasiatic,UNKNOWN,,kaḍuip,no
+Mundari,Austroasiatic,NON_BODY,,(missing),no
+Northern Khmer,Austroasiatic,UNKNOWN,,ᵑgʷatu-ᵑgu,no
+Nyaheun,Austroasiatic,UNKNOWN,,ara-,no
+Nyahkur,Austroasiatic,UNKNOWN,,ara-,no
+Old Khmer,Austroasiatic,UNKNOWN,,ᵑgʷatu-ᵑgu,no
+Old Mon,Austroasiatic,UNKNOWN,,kaḍuip,no
+Pacoh,Austroasiatic,UNKNOWN,,ara-,no
+Phong-Kniang,Austroasiatic,UNKNOWN,,(missing),no
+Pnar,Austroasiatic,NON_BODY,,ara-,no
+Prai,Austroasiatic,UNKNOWN,,ara-,no
+Rengao,Austroasiatic,UNKNOWN,,(missing),no
+Ruching Palaung,Austroasiatic,UNKNOWN,,mihi,no
+Rumai Palaung,Austroasiatic,UNKNOWN,,ta̠ng_go̠m,no
+Santali,Austroasiatic,NON_BODY,,loha,no
+Sapuan,Austroasiatic,NON_BODY,,ta̠ng_go̠m,no
+Sedang,Austroasiatic,UNKNOWN,,ara-,no
+Semai,Austroasiatic,UNKNOWN,,ta̠ng_go̠m,no
+Semaq Beri,Austroasiatic,UNKNOWN,,ta̠ng_go̠m,no
+Semelai,Austroasiatic,UNKNOWN,,(missing),no
+Shwe Palaung,Austroasiatic,UNKNOWN,,mihi,no
+Sora,Austroasiatic,NON_BODY,,(missing),no
+South Wa,Austroasiatic,UNKNOWN,,(missing),no
+Sô,Austroasiatic,UNKNOWN,,(missing),no
+Temiar,Austroasiatic,UNKNOWN,,ara-,no
+Thavung,Austroasiatic,UNKNOWN,,ʔɔk.B,no
+U,Austroasiatic,NON_BODY,,(missing),no
+Vietnamese,Austroasiatic,UNKNOWN,,chug / lalug,no
+War-Jaintia,Austroasiatic,UNKNOWN,,ara-,no
+Western Bru,Austroasiatic,UNKNOWN,,(missing),no
+Western Lawa,Austroasiatic,UNKNOWN,,(missing),no
+Yinchia,Austroasiatic,UNKNOWN,,o55ko33,no
+'Are'are,Austronesian,NON_BODY,,pau-na,no
+Abadi,Austronesian,UNKNOWN,,ro'onana,no
+Abenlen Ayta,Austronesian,UNKNOWN,,(missing),no
+Acehnese,Austronesian,UNKNOWN,,nabat-,no
+Adonara,Austronesian,NON_BODY,,ke̞l̪e̞,no
+Adzera,Austronesian,NON_BODY,,(missing),no
+Agusan Manobo,Austronesian,UNKNOWN,,tari,no
+Agutaynen,Austronesian,UNKNOWN,,(missing),no
+Ahin-Kayapa Kalanguya,Austronesian,NON_BODY,,(missing),no
+Ajië,Austronesian,UNKNOWN,,(missing),no
+Akei,Austronesian,NON_BODY,,patu-,no
+Alorese,Austronesian,UNKNOWN,,(missing),no
+Amara,Austronesian,NON_BODY,,(missing),no
+Ambonese Malay,Austronesian,UNKNOWN,,(missing),no
+Amis,Austronesian,NON_BODY,,ʔekhje,no
+Aneityum,Austronesian,NON_BODY,,nitjini-,no
+Antankarana Malagasy,Austronesian,NON_BODY,,(missing),no
+Anuta,Austronesian,NON_BODY,,poko / uru,no
+Apma,Austronesian,NON_BODY,,butsu-,no
+Araki,Austronesian,NON_BODY,,gude_kane,no
+Are,Austronesian,NON_BODY,,pau-na,no
+Aribwatsa,Austronesian,UNKNOWN,,(missing),no
+Arop-Lokep,Austronesian,UNKNOWN,,uto-k,no
+Arop-Sissano,Austronesian,UNKNOWN,,uto-k,no
+Arosi,Austronesian,UNKNOWN,,bwau-na,no
+Arta,Austronesian,NON_BODY,,khruʔ,no
+Ata Manobo,Austronesian,BODY,,tari,no
+Atayal,Austronesian,NON_BODY,,(missing),no
+Ati,Austronesian,NON_BODY,,átu,no
+Aulua,Austronesian,UNKNOWN,,ᵐbati-,no
+Avava,Austronesian,UNKNOWN,,bat / batn,no
+Awad Bing,Austronesian,UNKNOWN,,(missing),no
+Axamb,Austronesian,NON_BODY,,ᵐbʷarə-m,no
+Baba Malay,Austronesian,UNKNOWN,,(missing),no
+Babatana,Austronesian,UNKNOWN,,(missing),no
+Baikeno,Austronesian,UNKNOWN,,(missing),no
+Baki,Austronesian,NON_BODY,,par-ᵐbʷar-ku,no
+Balade,Austronesian,NON_BODY,,mutwe,no
+Balangingi,Austronesian,NON_BODY,,mutwe,no
+Balantak,Austronesian,UNKNOWN,,loha,no
+Balinese,Austronesian,UNKNOWN,,rəmatápu-k,no
+Bambam,Austronesian,NON_BODY,,(missing),no
+Banao Itneg,Austronesian,UNKNOWN,,(missing),no
+Bantoanon,Austronesian,UNKNOWN,,(missing),no
+Bara Malagasy,Austronesian,NON_BODY,,(missing),no
+Baram Kayan,Austronesian,NON_BODY,,loha,no
+Bariai,Austronesian,NON_BODY,,(missing),no
+Barok,Austronesian,UNKNOWN,,okom,no
+Basay,Austronesian,NON_BODY,,(missing),no
+Batak Toba,Austronesian,NON_BODY,,iɕaat,no
+Baybayanon,Austronesian,UNKNOWN,,(missing),no
+Belep,Austronesian,NON_BODY,,(missing),no
+Berau Malay,Austronesian,UNKNOWN,,(missing),no
+Betawi,Austronesian,UNKNOWN,,(missing),no
+Biatah Bidayuh,Austronesian,NON_BODY,,(missing),no
+Bierebo,Austronesian,UNKNOWN,,paru-ᵑgu,no
+Big Nambas,Austronesian,NON_BODY,,(missing),no
+Bih,Austronesian,UNKNOWN,,m.a.tʰ,no
+Bilibil,Austronesian,NON_BODY,,patu / baku,no
+Blablanga,Austronesian,UNKNOWN,,(missing),no
+Bobongko,Austronesian,UNKNOWN,,(missing),no
+Bola,Austronesian,NON_BODY,,gou,no
+Bolinao,Austronesian,UNKNOWN,,(missing),no
+Bonggi,Austronesian,UNKNOWN,,(missing),no
+Botolan Sambal,Austronesian,NON_BODY,,olo,no
+Bugawac,Austronesian,UNKNOWN,,(missing),no
+Bughotu,Austronesian,UNKNOWN,,ulu_,no
+Buginese,Austronesian,UNKNOWN,,(missing),no
+Buhutu,Austronesian,UNKNOWN,,kulu,no
+Bukar-Sadung Bidayuh,Austronesian,NON_BODY,,(missing),no
+Bunama,Austronesian,UNKNOWN,,(missing),no
+Buol,Austronesian,UNKNOWN,,uŋgaka,no
+Bwaidoka,Austronesian,UNKNOWN,,(missing),no
+Bwatoo,Austronesian,NON_BODY,,(missing),no
+Caac,Austronesian,UNKNOWN,,ili,no
+Caribbean Javanese,Austronesian,UNKNOWN,,(missing),no
+Carolinian,Austronesian,NON_BODY,,kuj,no
+Casiguran-Nagtipunan Agta,Austronesian,NON_BODY,,(missing),no
+Cemuhî,Austronesian,NON_BODY,,(missing),no
+Central Bontoc,Austronesian,NON_BODY,,(missing),no
+Central Cagayan Agta,Austronesian,NON_BODY,,(missing),no
+Central Dusun,Austronesian,NON_BODY,,(missing),no
+Central Maewo,Austronesian,UNKNOWN,,ta̠ng_go̠m,no
+Central Palawano,Austronesian,UNKNOWN,,(missing),no
+Central Tagbanwa,Austronesian,UNKNOWN,,(missing),no
+Chamorro,Austronesian,NON_BODY,,un,no
+Cheke Holo,Austronesian,UNKNOWN,,(missing),no
+Chuukese,Austronesian,UNKNOWN,,wúún / wúnú- / wúnúún / wúnúúnú- / wúnúúne-,no
+Cirebon Javanese,Austronesian,UNKNOWN,,(missing),no
+Coastal-Naga Bikol,Austronesian,NON_BODY,,(missing),no
+Coastal-Virac Bikol,Austronesian,UNKNOWN,,(missing),no
+Cocos Islands Malay,Austronesian,UNKNOWN,,(missing),no
+Colloquial Jakarta Indonesian,Austronesian,UNKNOWN,,khruʔ,no
+Colloquial Malay,Austronesian,UNKNOWN,,(missing),no
+Cotabato Manobo,Austronesian,NON_BODY,,tari,no
+Da'a Kaili,Austronesian,NON_BODY,,kʌmi,no
+Dakaka,Austronesian,NON_BODY,,(missing),no
+Dampelas,Austronesian,UNKNOWN,,(missing),no
+Dehu,Austronesian,UNKNOWN,,(missing),no
+Dhao,Austronesian,BODY,,(missing),no
+Dobel,Austronesian,NON_BODY,,-ki,no
+Dobu,Austronesian,UNKNOWN,,-ki,no
+Dumbea,Austronesian,UNKNOWN,,(missing),no
+Dupaninan Agta,Austronesian,UNKNOWN,,(missing),no
+Dusner,Austronesian,NON_BODY,,(missing),no
+East Ambae,Austronesian,UNKNOWN,,(missing),no
+East Futuna,Austronesian,NON_BODY,,(missing),no
+East Uvean,Austronesian,NON_BODY,,(missing),no
+Eastern Atadei,Austronesian,UNKNOWN,,(missing),no
+Eastern Penan,Austronesian,UNKNOWN,,(missing),no
+Eastern Subanen,Austronesian,UNKNOWN,,(missing),no
+Emae,Austronesian,UNKNOWN,,ta̠ng_go̠m,no
+Fijian,Austronesian,NON_BODY,,ulu,no
+Filipino,Austronesian,UNKNOWN,,(missing),no
+Finallig,Austronesian,NON_BODY,,(missing),no
+Futuna-Aniwa,Austronesian,NON_BODY,,(missing),no
+Ga'dang,Austronesian,UNKNOWN,,kektoŋ,no
+Gapapaiwa,Austronesian,UNKNOWN,,ta̠ng_go̠m,no
+Gayo,Austronesian,UNKNOWN,,kektoŋ,no
+Gebe,Austronesian,UNKNOWN,,kutɔ,no
+Gedaged,Austronesian,UNKNOWN,,gatén,no
+Gela,Austronesian,UNKNOWN,,(missing),no
+Geser-Gorom,Austronesian,UNKNOWN,,chug / lalug,no
+Ghanongga,Austronesian,NON_BODY,,kektoŋ,no
+Ghari,Austronesian,NON_BODY,,(missing),no
+Gilbertese,Austronesian,NON_BODY,,alu,no
+Gumawana,Austronesian,NON_BODY,,ta̠ng_go̠m,no
+Halia,Austronesian,UNKNOWN,,laŋ,no
+Hano,Austronesian,UNKNOWN,,mbatu-na,no
+Haroi,Austronesian,UNKNOWN,,laŋ,no
+Hatang Kayi,Austronesian,UNKNOWN,,(missing),no
+Hawaiian,Austronesian,NON_BODY,,(missing),no
+Hawu,Austronesian,UNKNOWN,,laŋ,no
+Hoava,Austronesian,NON_BODY,,mbatu,no
+Hote,Austronesian,NON_BODY,,(missing),no
+Hula,Austronesian,UNKNOWN,,repa-na / kwala,no
+Iaai,Austronesian,NON_BODY,,ba-,no
+Ibaloi,Austronesian,NON_BODY,,toḳtoḳ,no
+Iban,Austronesian,UNKNOWN,,ulu-c,no
+Ibanag,Austronesian,NON_BODY,,la⁰⁴fo⁴⁴,no
+Ibatan,Austronesian,NON_BODY,,(missing),no
+Iduna,Austronesian,NON_BODY,,uʔuna,no
+Ili'uun,Austronesian,UNKNOWN,,(missing),no
+Ilianen Manobo,Austronesian,UNKNOWN,,tari,no
+Ilongot,Austronesian,UNKNOWN,,nă³¹kuaŋ³¹,no
+Inland-Buhi-Daraga Bikol,Austronesian,UNKNOWN,,(missing),no
+Iranun,Austronesian,NON_BODY,,ulu,no
+Irarutu,Austronesian,UNKNOWN,,(missing),no
+Iraya,Austronesian,NON_BODY,,bangkálas,no
+Isinai,Austronesian,NON_BODY,,(missing),no
+Isnag,Austronesian,UNKNOWN,,(missing),no
+Itbayat,Austronesian,NON_BODY,,ʔuǥuʔ,no
+Iwal,Austronesian,NON_BODY,,(missing),no
+Jambi Malay,Austronesian,UNKNOWN,,(missing),no
+Jarai,Austronesian,UNKNOWN,,(missing),no
+Kagayanen,Austronesian,UNKNOWN,,kektoŋ,no
+Kailibo Aklanon,Austronesian,UNKNOWN,,kʌmi,no
+Kalagan,Austronesian,UNKNOWN,,(missing),no
+Kambera,Austronesian,UNKNOWN,,(missing),no
+Kanakanavu,Austronesian,UNKNOWN,,-ki,no
+Kankanaey,Austronesian,NON_BODY,,-ki,no
+Kapingamarangi,Austronesian,UNKNOWN,,(missing),no
+Kara (Papua New Guinea),Austronesian,UNKNOWN,,(missing),no
+Karao,Austronesian,NON_BODY,,loha,no
+Karnai,Austronesian,UNKNOWN,,(missing),no
+Kavalan,Austronesian,UNKNOWN,,uɣúʔ / ʔo:ɣóʔ / uru / uvu,no
+Kawi,Austronesian,NON_BODY,,utuh-osh,no
+Keapara,Austronesian,UNKNOWN,,ta̠ng_go̠m,no
+Kedang,Austronesian,UNKNOWN,,(missing),no
+Kele (Papua New Guinea),Austronesian,UNKNOWN,,(missing),no
+Keley-i Kallahan,Austronesian,NON_BODY,,(missing),no
+Kerinci,Austronesian,UNKNOWN,,(missing),no
+Kilivila,Austronesian,NON_BODY,,pwaneta,no
+Kinaray-a,Austronesian,UNKNOWN,,(missing),no
+Kokota,Austronesian,UNKNOWN,,pau-na,no
+Kola,Austronesian,UNKNOWN,,kela_keřne / 'kel.a,no
+Koluwawa,Austronesian,UNKNOWN,,(missing),no
+Kosraean,Austronesian,UNKNOWN,,aro,no
+Kove,Austronesian,NON_BODY,,vola,no
+Kuanua,Austronesian,NON_BODY,,(missing),no
+Kulon-Pazeh,Austronesian,UNKNOWN,,(missing),no
+Kumak,Austronesian,NON_BODY,,ta̠ng_go̠m,no
+Kupang Malay,Austronesian,NON_BODY,,(missing),no
+Kusaghe-Njela,Austronesian,NON_BODY,,kɨ́tú,no
+Kwaio,Austronesian,NON_BODY,,gou-na,no
+Kwamera,Austronesian,NON_BODY,,kapwa,no
+Kwara'ae,Austronesian,UNKNOWN,,(missing),no
+Kéo,Austronesian,NON_BODY,,(missing),no
+Label,Austronesian,NON_BODY,,(missing),no
+Labu,Austronesian,UNKNOWN,,kindili,no
+Labuk-Kinabatangan Kadazan,Austronesian,UNKNOWN,,(missing),no
+Laiyolo,Austronesian,UNKNOWN,,Gobbarra,no
+Lala,Austronesian,NON_BODY,,ola,no
+Lamaholot,Austronesian,NON_BODY,,kamu / 'ka:mũ,no
+Lamboya,Austronesian,NON_BODY,,(missing),no
+Lamenu,Austronesian,NON_BODY,,pʷa-u,no
+Lamogai,Austronesian,UNKNOWN,,kektoŋ,no
+Larantuka Malay,Austronesian,NON_BODY,,(missing),no
+Lau,Austronesian,UNKNOWN,,mihi,no
+Lelepa,Austronesian,NON_BODY,,(missing),no
+Lemerig,Austronesian,NON_BODY,,(missing),no
+Lenakel,Austronesian,NON_BODY,,(missing),no
+Lengo,Austronesian,UNKNOWN,,lova-ŋgu / ulu-ŋgu,no
+Leti (Indonesia),Austronesian,NON_BODY,,(missing),no
+Lewo,Austronesian,NON_BODY,,(missing),no
+Lewotobi,Austronesian,UNKNOWN,,(missing),no
+Lihir,Austronesian,NON_BODY,,akon,no
+Limos Kalinga,Austronesian,UNKNOWN,,kektoŋ,no
+Longgu,Austronesian,UNKNOWN,,nă³¹kuaŋ³¹,no
+Loniu,Austronesian,NON_BODY,,ŋ̩³¹goːŋ⁵³,no
+Lonwolwol,Austronesian,UNKNOWN,,patu-k,no
+Lote,Austronesian,UNKNOWN,,palpal-,no
+Lotud,Austronesian,NON_BODY,,(missing),no
+Lou,Austronesian,NON_BODY,,ara-,no
+Lovono,Austronesian,UNKNOWN,,(missing),no
+Luang,Austronesian,NON_BODY,,ara-,no
+Luangiua,Austronesian,UNKNOWN,,ŋ̩³¹goːŋ⁵³,no
+Lubuagan Kalinga,Austronesian,NON_BODY,,kektoŋ,no
+Lun Bawang,Austronesian,NON_BODY,,(missing),no
+Lundayeh,Austronesian,NON_BODY,,ara-,no
+Lusi,Austronesian,NON_BODY,,(missing),no
+Ma'anyan,Austronesian,UNKNOWN,,ta̠ng_go̠m,no
+Madak,Austronesian,UNKNOWN,,ta̠ng_go̠m,no
+Mafea,Austronesian,NON_BODY,,ta̠ng_go̠m,no
+Mag-Anchi Ayta,Austronesian,UNKNOWN,,(missing),no
+Maguindanao,Austronesian,UNKNOWN,,(missing),no
+Maisin,Austronesian,NON_BODY,,ta̠ng_go̠m,no
+Maku'a,Austronesian,UNKNOWN,,ta̠ng_go̠m,no
+Malaweg,Austronesian,UNKNOWN,,(missing),no
+Maleu-Kilenge,Austronesian,UNKNOWN,,kamɡ,no
+Malua Bay,Austronesian,UNKNOWN,,(missing),no
+Mamanwa,Austronesian,NON_BODY,,(missing),no
+Mambae,Austronesian,UNKNOWN,,ta̠ng_go̠m,no
+Manado Malay,Austronesian,NON_BODY,,(missing),no
+Manam,Austronesian,NON_BODY,,ta̠ng_go̠m,no
+Mandara,Austronesian,UNKNOWN,,ta̠ng_go̠m,no
+Mangaia-Old Rapa,Austronesian,UNKNOWN,,(missing),no
+Mangareva,Austronesian,UNKNOWN,,(missing),no
+Mangga Buang,Austronesian,UNKNOWN,,ta̠ng_go̠m,no
+Manggarai,Austronesian,UNKNOWN,,ta̠ng_go̠m,no
+Mangseng,Austronesian,UNKNOWN,,ta̠ng_go̠m,no
+Mansaka,Austronesian,NON_BODY,,ta̠ng_go̠m,no
+Manusela,Austronesian,UNKNOWN,,ta̠ng_go̠m,no
+Maori,Austronesian,NON_BODY,,(missing),no
+Mapos Buang,Austronesian,UNKNOWN,,ta̠ng_go̠m,no
+Maragus,Austronesian,NON_BODY,,tari,no
+Maranao,Austronesian,UNKNOWN,,libogo,no
+Marik,Austronesian,UNKNOWN,,ta̠ng_go̠m,no
+Marovo,Austronesian,UNKNOWN,,ta̠ng_go̠m,no
+Marshallese,Austronesian,UNKNOWN,,ta̠ng_go̠m,no
+Masbatenyo,Austronesian,NON_BODY,,ta̠ng_go̠m,no
+Maskelynes,Austronesian,UNKNOWN,,ta̠ng_go̠m,no
+Matbat,Austronesian,UNKNOWN,,ta̠ng_go̠m,no
+Mateq,Austronesian,NON_BODY,,ta̠ng_go̠m,no
+Matigsalug Manobo,Austronesian,NON_BODY,,tari,no
+Mato,Austronesian,NON_BODY,,ta̠ng_go̠m,no
+Matukar,Austronesian,UNKNOWN,,ta̠ng_go̠m,no
+Mbula,Austronesian,UNKNOWN,,gurugu,no
+Mekeo,Austronesian,UNKNOWN,,kania,no
+Mele-Fila,Austronesian,NON_BODY,,ɓ.o̤ː.k,no
+Merei,Austronesian,UNKNOWN,,bat,no
+Middle Watut,Austronesian,UNKNOWN,,(missing),no
+Minangkabau,Austronesian,UNKNOWN,,mihi,no
+Minigir,Austronesian,NON_BODY,,pe²⁴,no
+Misima-Paneati,Austronesian,NON_BODY,,ta̠ng_go̠m,no
+Moken,Austronesian,UNKNOWN,,(missing),no
+Mokilese,Austronesian,UNKNOWN,,chug / lalug,no
+Moklen,Austronesian,UNKNOWN,,(missing),no
+Mono-Alu,Austronesian,UNKNOWN,,(missing),no
+Mor (Mor Islands),Austronesian,NON_BODY,,varu,no
+Mori Atas,Austronesian,UNKNOWN,,(missing),no
+Moronene,Austronesian,UNKNOWN,,(missing),no
+Mortlockese,Austronesian,UNKNOWN,,chug / lalug,no
+Mota,Austronesian,NON_BODY,,ara-,no
+Motu,Austronesian,NON_BODY,,kwara,no
+Mouk-Aria,Austronesian,UNKNOWN,,ara-,no
+Movono,Austronesian,UNKNOWN,,(missing),no
+Mualang,Austronesian,UNKNOWN,,mutwe,no
+Muduapa,Austronesian,UNKNOWN,,ta̠ng_go̠m,no
+Musom,Austronesian,UNKNOWN,,(missing),no
+Muyuw,Austronesian,UNKNOWN,,daban / kunun,no
+Mwotlap,Austronesian,NON_BODY,,ta̠ng_go̠m,no
+Māngarongaro,Austronesian,NON_BODY,,kektoŋ,no
+Nahavaq,Austronesian,NON_BODY,,laŋ,no
+Nakanai,Austronesian,UNKNOWN,,-ki,no
+Nalik,Austronesian,UNKNOWN,,petu-n,no
+Nalögo,Austronesian,UNKNOWN,,ara-,no
+Namakura,Austronesian,NON_BODY,,(missing),no
+Naman,Austronesian,NON_BODY,,(missing),no
+Nanggu,Austronesian,UNKNOWN,,tʰou⁴²,no
+Narom,Austronesian,NON_BODY,,moẽ_ɛ,no
+Nati,Austronesian,UNKNOWN,,átu,no
+Natügu,Austronesian,UNKNOWN,,ara-,no
+Nauete,Austronesian,UNKNOWN,,mihi,no
+Nauru,Austronesian,UNKNOWN,,mihi,no
+Negeri Sembilan Malay,Austronesian,NON_BODY,,(missing),no
+Nehan,Austronesian,UNKNOWN,,laŋ,no
+Nengone,Austronesian,UNKNOWN,,hawo,no
+Nese,Austronesian,UNKNOWN,,nabat-,no
+Neve'ei,Austronesian,NON_BODY,,ᵐbat-,no
+Neverver,Austronesian,NON_BODY,,ᵐbat-,no
+Nguluwan,Austronesian,UNKNOWN,,(missing),no
+Ninde,Austronesian,UNKNOWN,,(missing),no
+Niuafo'ou,Austronesian,NON_BODY,,ŋ̩³¹goːŋ⁵³,no
+Niuean,Austronesian,NON_BODY,,ŋ̩³¹goːŋ⁵³,no
+Nokuku,Austronesian,UNKNOWN,,(missing),no
+North Ambrym,Austronesian,NON_BODY,,(missing),no
+North Efate,Austronesian,NON_BODY,,(missing),no
+North Marquesan,Austronesian,UNKNOWN,,ta̠ng_go̠m,no
+North Moluccan Malay,Austronesian,UNKNOWN,,(missing),no
+North Tanna,Austronesian,UNKNOWN,,(missing),no
+Northern Kankanay,Austronesian,UNKNOWN,,(missing),no
+Northern Roglai,Austronesian,UNKNOWN,,(missing),no
+Northern Subanen,Austronesian,NON_BODY,,(missing),no
+Notsi,Austronesian,NON_BODY,,(missing),no
+Nuclear Western Fijian,Austronesian,NON_BODY,,ulu,no
+Nukuoro,Austronesian,UNKNOWN,,ulu / biho,no
+Nêlêmwa-Nixumwak,Austronesian,NON_BODY,,bwa-,no
+Obo Manobo,Austronesian,UNKNOWN,,tari,no
+Old Malay,Austronesian,UNKNOWN,,(missing),no
+Oroha,Austronesian,UNKNOWN,,laŋ,no
+Orowe,Austronesian,NON_BODY,,(missing),no
+Owa,Austronesian,UNKNOWN,,(missing),no
+Paama,Austronesian,UNKNOWN,,(missing),no
+Palauan,Austronesian,UNKNOWN,,mihi,no
+Paluai,Austronesian,NON_BODY,,(missing),no
+Pamona,Austronesian,NON_BODY,,kaḍuip,no
+Pampanga,Austronesian,UNKNOWN,,(missing),no
+Pangasinan,Austronesian,NON_BODY,,(missing),no
+Pangutaran Sama,Austronesian,NON_BODY,,(missing),no
+Papapana,Austronesian,NON_BODY,,ta̠ng_go̠m,no
+Papar,Austronesian,UNKNOWN,,ta̠ng_go̠m,no
+Papitalai,Austronesian,UNKNOWN,,ta̠ng_go̠m,no
+Papuan Malay,Austronesian,NON_BODY,,(missing),no
+Patep,Austronesian,NON_BODY,,ara-,no
+Patpatar,Austronesian,NON_BODY,,(missing),no
+Paulohi,Austronesian,UNKNOWN,,mihi,no
+Pendau,Austronesian,BODY,,mihi,no
+Pingelapese,Austronesian,UNKNOWN,,ta̠ng_go̠m,no
+Pohnpeian,Austronesian,UNKNOWN,,ara-,no
+Port Sandwich,Austronesian,UNKNOWN,,ara-,no
+Pukapuka,Austronesian,NON_BODY,,ta̠ng_go̠m,no
+Puluwatese,Austronesian,NON_BODY,,chug / lalug,no
+Rade,Austronesian,UNKNOWN,,(missing),no
+Rapanui,Austronesian,NON_BODY,,ta̠ng_go̠m,no
+Ratahan,Austronesian,NON_BODY,,(missing),no
+Rejang Kayan,Austronesian,UNKNOWN,,(missing),no
+Rembong-Wangka,Austronesian,UNKNOWN,,(missing),no
+Rennell-Bellona,Austronesian,NON_BODY,,-īχʷ / tˀnχʷ,no
+Rerep,Austronesian,UNKNOWN,,(missing),no
+Riuk Bekati',Austronesian,UNKNOWN,,átu,no
+Romblomanon,Austronesian,UNKNOWN,,ta̠ng_go̠m,no
+Rotuman,Austronesian,NON_BODY,,ta̠ng_go̠m,no
+Roviana,Austronesian,UNKNOWN,,ara-,no
+Rukai,Austronesian,NON_BODY,,ara-,no
+Rundum,Austronesian,NON_BODY,,(missing),no
+Rungus,Austronesian,NON_BODY,,plə,no
+Sa'a,Austronesian,UNKNOWN,,ara-,no
+Saaroa,Austronesian,UNKNOWN,,ara-,no
+Sabah Bisaya,Austronesian,NON_BODY,,ara-,no
+Sabah Malay,Austronesian,UNKNOWN,,(missing),no
+Saisiyat,Austronesian,UNKNOWN,,ara-,no
+Sakizaya,Austronesian,UNKNOWN,,ara-,no
+Samoan,Austronesian,NON_BODY,,ara-,no
+Saposa,Austronesian,UNKNOWN,,ta̠ng_go̠m,no
+Sarangani Manobo,Austronesian,UNKNOWN,,tari,no
+Sasak,Austronesian,UNKNOWN,,ara-,no
+Satawalese,Austronesian,UNKNOWN,,(missing),no
+Seimat,Austronesian,UNKNOWN,,ta̠ng_go̠m,no
+Seke (Vanuatu),Austronesian,NON_BODY,,ara-,no
+Selaru,Austronesian,NON_BODY,,(missing),no
+Selayar,Austronesian,UNKNOWN,,(missing),no
+Sengseng,Austronesian,NON_BODY,,(missing),no
+Sie,Austronesian,NON_BODY,,(missing),no
+Sikaiana,Austronesian,UNKNOWN,,petu-n,no
+Sikule,Austronesian,UNKNOWN,,petu-n,no
+Simbo,Austronesian,UNKNOWN,,(missing),no
+Sinaugoro,Austronesian,NON_BODY,,mihi,no
+Sio,Austronesian,NON_BODY,,(missing),no
+Sirayaic,Austronesian,NON_BODY,,bangkálas,no
+Sobei,Austronesian,NON_BODY,,(missing),no
+Sonsorol,Austronesian,BODY,,(missing),no
+South Efate,Austronesian,NON_BODY,,(missing),no
+South Nuaulu,Austronesian,UNKNOWN,,(missing),no
+Southeast Ambrym,Austronesian,UNKNOWN,,(missing),no
+Southern Cook Island Maori,Austronesian,NON_BODY,,(missing),no
+Southern Sama,Austronesian,NON_BODY,,(missing),no
+Southwest Tanna,Austronesian,NON_BODY,,(missing),no
+Sri Lanka Malay,Austronesian,NON_BODY,,(missing),no
+Standard Malay,Austronesian,UNKNOWN,,(missing),no
+Sudest,Austronesian,NON_BODY,,(missing),no
+Sundanese,Austronesian,UNKNOWN,,chug / lalug,no
+Sunwadia,Austronesian,NON_BODY,,ara-,no
+Sursurunga,Austronesian,UNKNOWN,,kektoŋ,no
+Tagabawa,Austronesian,UNKNOWN,,(missing),no
+Tagbanwa,Austronesian,UNKNOWN,,(missing),no
+Tahitian,Austronesian,NON_BODY,,ara-,no
+Tajio,Austronesian,UNKNOWN,,ara-,no
+Takuu,Austronesian,UNKNOWN,,(missing),no
+Talaandig-Binukid,Austronesian,UNKNOWN,,miyar,no
+Talise,Austronesian,UNKNOWN,,(missing),no
+Tamambo,Austronesian,NON_BODY,,tati,no
+Tambunan Dusun,Austronesian,NON_BODY,,deba,no
+Tami,Austronesian,UNKNOWN,,ʔekhje,no
+Tanema,Austronesian,UNKNOWN,,ta̠ng_go̠m,no
+Tangga,Austronesian,NON_BODY,,alfoyò,no
+Tanudan Kalinga,Austronesian,UNKNOWN,,kektoŋ,no
+Tatana,Austronesian,UNKNOWN,,(missing),no
+Tausug,Austronesian,BODY,,mihi,no
+Tboli,Austronesian,NON_BODY,,olo,no
+Te'un,Austronesian,UNKNOWN,,(missing),no
+Teanu,Austronesian,UNKNOWN,,ara-,no
+Tempasuk Dusun,Austronesian,NON_BODY,,(missing),no
+Tengger,Austronesian,UNKNOWN,,(missing),no
+Teop,Austronesian,NON_BODY,,kahoo / kaho,no
+Termanu,Austronesian,BODY,,ta̠ng_go̠m,no
+Tetun Dili,Austronesian,UNKNOWN,,(missing),no
+Thao,Austronesian,NON_BODY,,(missing),no
+Tigak,Austronesian,UNKNOWN,,kektoŋ,no
+Tikopia,Austronesian,UNKNOWN,,petu-n,no
+Timugon Murut,Austronesian,NON_BODY,,bambu,no
+Tinà Sambal,Austronesian,UNKNOWN,,olo,no
+Tirax,Austronesian,UNKNOWN,,ara-,no
+Tiri,Austronesian,NON_BODY,,dapo,no
+Tiri-Mea,Austronesian,NON_BODY,,dapo,no
+Tiruray,Austronesian,UNKNOWN,,ara-,no
+Titan,Austronesian,UNKNOWN,,ara-,no
+To'abaita,Austronesian,NON_BODY,,(missing),no
+Tokelau,Austronesian,UNKNOWN,,mihi,no
+Tolomako,Austronesian,UNKNOWN,,ta̠ng_go̠m,no
+Tombonuo,Austronesian,NON_BODY,,(missing),no
+Tonga (Tonga Islands),Austronesian,NON_BODY,,(missing),no
+Torau,Austronesian,UNKNOWN,,mihi,no
+Tsat,Austronesian,UNKNOWN,,ara-,no
+Tugun,Austronesian,UNKNOWN,,k.ɐ.β.e.s.ɐ,no
+Tukang Besi North,Austronesian,BODY,,(missing),no
+Tumleo,Austronesian,UNKNOWN,,(missing),no
+Tungag,Austronesian,UNKNOWN,,kektoŋ,no
+Tutuba,Austronesian,NON_BODY,,ara-,no
+Tuvalu,Austronesian,NON_BODY,,(missing),no
+Tuwali Ifugao,Austronesian,NON_BODY,,(missing),no
+Ubir,Austronesian,UNKNOWN,,uni|n,no
+Ughele,Austronesian,UNKNOWN,,(missing),no
+Ulithian,Austronesian,NON_BODY,,ɡɐɫʋɑ̂,no
+Uma,Austronesian,NON_BODY,,laχ,no
+Unua,Austronesian,NON_BODY,,ara-,no
+Upper Kinabatangan,Austronesian,UNKNOWN,,(missing),no
+Ura (Vanuatu),Austronesian,NON_BODY,,(missing),no
+Urak Lawoi',Austronesian,UNKNOWN,,ara-,no
+Uripiv-Wala-Rano-Atchin,Austronesian,NON_BODY,,(missing),no
+Uruava,Austronesian,UNKNOWN,,ara-,no
+Vaeakau-Taumako,Austronesian,NON_BODY,,ta̠ng_go̠m,no
+Vera'a,Austronesian,NON_BODY,,ara-,no
+Vurës,Austronesian,NON_BODY,,ʃjaɾaŋ,no
+Waigeo,Austronesian,BODY,,ara-,no
+Waima,Austronesian,UNKNOWN,,ta̠ng_go̠m,no
+Waima'a,Austronesian,UNKNOWN,,ta̠ng_go̠m,no
+Wala,Austronesian,UNKNOWN,,(missing),no
+Wandamen,Austronesian,UNKNOWN,,ara-,no
+Wanohe,Austronesian,NON_BODY,,(missing),no
+Waray (Philippines),Austronesian,UNKNOWN,,(missing),no
+Warembori,Austronesian,NON_BODY,,upoko / o'o,no
+Waropen,Austronesian,NON_BODY,,uto-k,no
+Waya (Western Fijian),Austronesian,NON_BODY,,ulu,no
+Wedau,Austronesian,NON_BODY,,mihi,no
+Wemale,Austronesian,UNKNOWN,,ta̠ng_go̠m,no
+West Berawan,Austronesian,NON_BODY,,(missing),no
+West Coast Bajau,Austronesian,UNKNOWN,,(missing),no
+West Damar,Austronesian,UNKNOWN,,(missing),no
+West Malagasy Sakalava,Austronesian,UNKNOWN,,(missing),no
+West Tarangan,Austronesian,UNKNOWN,,(missing),no
+West Uvean,Austronesian,NON_BODY,,ara-,no
+Western Bukidnon Manobo,Austronesian,NON_BODY,,tari,no
+Western Cham,Austronesian,UNKNOWN,,un,no
+Western Subanon,Austronesian,UNKNOWN,,(missing),no
+Whitesands,Austronesian,NON_BODY,,ara-,no
+Woi,Austronesian,UNKNOWN,,(missing),no
+Woleaian,Austronesian,UNKNOWN,,ara-,no
+Wolio,Austronesian,NON_BODY,,(missing),no
+Wotu,Austronesian,UNKNOWN,,ʃjaɾaŋ,no
+Wuvulu-Aua,Austronesian,NON_BODY,,mihi,no
+Xârâcùù,Austronesian,NON_BODY,,(missing),no
+Yakan,Austronesian,UNKNOWN,,ara-,no
+Yalahatan-Haruru-Awaiya,Austronesian,UNKNOWN,,(missing),no
+Yami,Austronesian,NON_BODY,,ʔekhje,no
+Yapese,Austronesian,UNKNOWN,,ta̠ng_go̠m,no
+Yogad,Austronesian,NON_BODY,,kektoŋ,no
+Zabana,Austronesian,UNKNOWN,,la⁰⁴fo⁴⁴,no
+Äiwoo,Austronesian,UNKNOWN,,nuwotau / nuwotaa,no
+Central Aymara,Aymaran,NON_BODY,,ta̠ng_go̠m,no
+Jaqaru,Aymaran,UNKNOWN,,namp'a,no
+Southern Aymara,Aymaran,NON_BODY,,(missing),no
+Momu-Fas,Baibai-Fas,NON_BODY,,(missing),no
+Awa-Cuaiquer,Barbacoan,NON_BODY,,ki̵zp u,no
+Guambiano,Barbacoan,UNKNOWN,,(missing),no
+Tsafiki,Barbacoan,UNKNOWN,,(missing),no
+Hozo,Blue Nile Mao,UNKNOWN,,(missing),no
+Monumbo,Bogia,NON_BODY,,kaḍuip,no
+Bora,Boran,NON_BODY,,nííkʷaɯ,no
+Bororo,Bororoan,UNKNOWN,,(missing),no
+Umotína,Bororoan,UNKNOWN,,ara-,no
+Aimele,Bosavi,NON_BODY,,ɓ.o̤ː.k,no
+Pawnee,Caddoan,NON_BODY,,ara-,no
+Galibi Carib,Cariban,NON_BODY,,(missing),no
+Hixkaryána,Cariban,NON_BODY,,(missing),no
+Kuikúro-Kalapálo,Cariban,NON_BODY,,ta̠ng_go̠m,no
+Macushi,Cariban,UNKNOWN,,ta̠ng_go̠m,no
+Panare,Cariban,NON_BODY,,upoko / o'o,no
+Pemon,Cariban,UNKNOWN,,kaḍuip,no
+Trió,Cariban,UNKNOWN,,(missing),no
+Waimiri-Atroari,Cariban,UNKNOWN,,ara-,no
+Waiwai,Cariban,UNKNOWN,,(missing),no
+Wayana,Cariban,NON_BODY,,ara-,no
+Ye'kwana,Cariban,NON_BODY,,ara-,no
+Yukpa,Cariban,UNKNOWN,,ara-,no
+Asoa,Central Sudanic,UNKNOWN,,(missing),no
+Avokaya,Central Sudanic,UNKNOWN,,(missing),no
+Bagirmi,Central Sudanic,UNKNOWN,,(missing),no
+Baka (South Sudan),Central Sudanic,NON_BODY,,(missing),no
+Beli (South Sudan),Central Sudanic,UNKNOWN,,(missing),no
+Birri,Central Sudanic,UNKNOWN,,(missing),no
+Bongo,Central Sudanic,BODY,,bine,no
+Furu,Central Sudanic,UNKNOWN,,tabu,no
+Jur Modo,Central Sudanic,UNKNOWN,,-ki,no
+Kara (Central African Republic),Central Sudanic,UNKNOWN,,loha,no
+Kenga,Central Sudanic,UNKNOWN,,kektoŋ,no
+Lendu,Central Sudanic,UNKNOWN,,(missing),no
+Lese,Central Sudanic,UNKNOWN,,chug / lalug,no
+Logo,Central Sudanic,UNKNOWN,,(missing),no
+Lugbara,Central Sudanic,UNKNOWN,,loha,no
+Ma'di,Central Sudanic,UNKNOWN,,ta̠ng_go̠m,no
+Mamvu,Central Sudanic,UNKNOWN,,ta̠ng_go̠m,no
+Mangbetu,Central Sudanic,NON_BODY,,ta̠ng_go̠m,no
+Mbay,Central Sudanic,UNKNOWN,,ara-,no
+Ngambay,Central Sudanic,UNKNOWN,,(missing),no
+Ngiti,Central Sudanic,UNKNOWN,,(missing),no
+Omi,Central Sudanic,NON_BODY,,kõãka,no
+Sara Kaba Náà,Central Sudanic,UNKNOWN,,nalma,no
+Yulu-Binga,Central Sudanic,UNKNOWN,,(missing),no
+Wari',Chapacuran,NON_BODY,,(missing),no
+Angosturas Tunebo,Chibchan,UNKNOWN,,(missing),no
+Arhuaco,Chibchan,NON_BODY,,sa'-kuku,no
+Border Kuna,Chibchan,UNKNOWN,,(missing),no
+Boruca,Chibchan,UNKNOWN,,(missing),no
+Bribri,Chibchan,UNKNOWN,,uʊ̂kìd,no
+Buglere,Chibchan,UNKNOWN,,tʃuga,no
+Cabécar,Chibchan,UNKNOWN,,tsã́-kṹ,no
+Central Tunebo,Chibchan,UNKNOWN,,(missing),no
+Chibcha,Chibchan,UNKNOWN,,tsɨskɨ,no
+Chimila,Chibchan,UNKNOWN,,'βuy,no
+Cogui,Chibchan,UNKNOWN,,'sa-nkala,no
+Malayo,Chibchan,NON_BODY,,(missing),no
+Maléku Jaíka,Chibchan,NON_BODY,,ta̠ng_go̠m,no
+Ngäbere,Chibchan,UNKNOWN,,dokwɔ,no
+Pech,Chibchan,NON_BODY,,ɛxpu,no
+Rama,Chibchan,UNKNOWN,,(missing),no
+San Blas Kuna,Chibchan,UNKNOWN,,tari,no
+Teribe,Chibchan,UNKNOWN,,kógo,no
+Achuar-Shiwiar,Chicham,NON_BODY,,laχ,no
+Aguaruna,Chicham,UNKNOWN,,wíta,no
+Huambisa,Chicham,NON_BODY,,muuke,no
+Shuar,Chicham,NON_BODY,,(missing),no
+Quileute,Chimakuan,NON_BODY,,ʔootʼiqw,no
+Clatsop-Shoalwater Chinook,Chinookan,NON_BODY,,(missing),no
+Lomeriano-Ignaciano Chiquitano,Chiquitano,NON_BODY,,(missing),no
+Emberá-Catío,Chocoan,NON_BODY,,mùtú,no
+Emberá-Chamí,Chocoan,UNKNOWN,,mùtú,no
+Epena,Chocoan,UNKNOWN,,póɾo,no
+Northern Emberá,Chocoan,UNKNOWN,,(missing),no
+Woun Meu,Chocoan,UNKNOWN,,ʃjaɾaŋ,no
+Selk'nam,Chonan,UNKNOWN,,(missing),no
+Tehuelche,Chonan,NON_BODY,,(missing),no
+Chukchi,Chukotko-Kamchatkan,NON_BODY,,ɬeβət,no
+Ineseño,Chumashan,NON_BODY,,rəmatápu-k,no
+Cochimi,Cochimi-Yuman,UNKNOWN,,'βuy,no
+Havasupai-Walapai-Yavapai,Cochimi-Yuman,NON_BODY,,ta̠ng_go̠m,no
+Maricopa,Cochimi-Yuman,NON_BODY,,ta̠ng_go̠m,no
+Hanis,Coosan,UNKNOWN,,u31du31,no
+Dar Daju Daju,Dajuic,UNKNOWN,,(missing),no
+Jamsay Dogon,Dogon,UNKNOWN,,kû:,no
+Tengou-Togo Dogon,Dogon,UNKNOWN,,kû:,no
+Alu Kurumba,Dravidian,UNKNOWN,,jə̀kù,no
+Badaga,Dravidian,UNKNOWN,,i,no
+Betul,Dravidian,UNKNOWN,,(missing),no
+Brahui,Dravidian,UNKNOWN,,ka:ʈum,no
+Chenchu,Dravidian,NON_BODY,,korta,no
+Dandami Maria,Dravidian,UNKNOWN,,ʔekhje,no
+Duruwa,Dravidian,UNKNOWN,,(missing),no
+Indian Kurux,Dravidian,NON_BODY,,(missing),no
+Jennu Kurumba,Dravidian,UNKNOWN,,(missing),no
+Kadar,Dravidian,UNKNOWN,,(missing),no
+Kannada,Dravidian,UNKNOWN,,ara-,no
+Kasaba,Dravidian,NON_BODY,,(missing),no
+Kodava,Dravidian,NON_BODY,,maɳɖe,no
+Korra Koraga,Dravidian,UNKNOWN,,kektoŋ,no
+Kota (India),Dravidian,UNKNOWN,,(missing),no
+Koya,Dravidian,UNKNOWN,,aŋgɔs,no
+Kui (India),Dravidian,UNKNOWN,,(missing),no
+Kuvi,Dravidian,UNKNOWN,,(missing),no
+Malavedan,Dravidian,NON_BODY,,(missing),no
+Malayalam,Dravidian,UNKNOWN,,(missing),no
+Maria (India),Dravidian,UNKNOWN,,ta̠ng_go̠m,no
+Mele Nadu Irula,Dravidian,NON_BODY,,ɓ.o̤ː.k,no
+Muduga,Dravidian,UNKNOWN,,kektoŋ,no
+Muthuvan,Dravidian,UNKNOWN,,khloʔ,no
+Northwestern Kolami,Dravidian,UNKNOWN,,ʔekhje,no
+Pengo,Dravidian,NON_BODY,,(missing),no
+Pottangi Ollar Gadaba,Dravidian,UNKNOWN,,(missing),no
+Sauria Paharia,Dravidian,UNKNOWN,,mihi,no
+Sholaga,Dravidian,UNKNOWN,,kektoŋ,no
+Southeastern Kolami,Dravidian,UNKNOWN,,(missing),no
+Tamil,Dravidian,NON_BODY,,ʔekhje,no
+Telugu,Dravidian,UNKNOWN,,(missing),no
+Toda,Dravidian,UNKNOWN,,ara-,no
+Tulu,Dravidian,UNKNOWN,,buʔua-m,no
+Urali Irula,Dravidian,UNKNOWN,,(missing),no
+Sougb,East Bird's Head,NON_BODY,,(missing),no
+Foi,East Kutubu,NON_BODY,,a̧řuhai,no
+Konai,East Strickland,UNKNOWN,,wudio,no
+Samo,East Strickland,UNKNOWN,,ara-,no
+Madngele,Eastern Daly,UNKNOWN,,ta̠ng_go̠m,no
+Orokolo,Eleman,UNKNOWN,,(missing),no
+Toaripi,Eleman,UNKNOWN,,ara-,no
+Aleut,Eskimo-Aleut,UNKNOWN,,kamɡ,no
+Central Alaskan Yupik,Eskimo-Aleut,UNKNOWN,,(missing),no
+Kalaallisut,Eskimo-Aleut,UNKNOWN,,(missing),no
+Western Canadian Inuktitut,Eskimo-Aleut,UNKNOWN,,ara-,no
+Fur,Furan,NON_BODY,,tabu,no
+Urningangg,Giimbiyu,NON_BODY,,kektoŋ,no
+Amam,Goilalan,UNKNOWN,,tati,no
+Biangai,Goilalan,UNKNOWN,,(missing),no
+Fuyug,Goilalan,UNKNOWN,,ondobe / hul_ha,no
+Kunimaipa,Goilalan,NON_BODY,,ta̠ng_go̠m,no
+Weri,Goilalan,NON_BODY,,mǒfò,no
+Akabea,Great Andamanese,NON_BODY,,(missing),no
+Isirawa,Greater Kwerba,UNKNOWN,,(missing),no
+Kwerba,Greater Kwerba,UNKNOWN,,ara-,no
+Guahibo,Guahiboan,NON_BODY,,pematabókoto,no
+Macaguán,Guahiboan,NON_BODY,,ta̠ng_go̠m,no
+Abipon,Guaicuruan,NON_BODY,,(missing),no
+Mocoví,Guaicuruan,NON_BODY,,l+qahic,no
+Pilagá,Guaicuruan,NON_BODY,,pwaneta,no
+Northern Gumuz,Gumuz,NON_BODY,,(missing),no
+Southern Gumuz,Gumuz,NON_BODY,,(missing),no
+Bininj Kun-Wok,Gunwinyguan,NON_BODY,,(missing),no
+Kunbarlang,Gunwinyguan,UNKNOWN,,(missing),no
+Ngalkbun,Gunwinyguan,UNKNOWN,,(missing),no
+Northern Haida,Haida,UNKNOWN,,(missing),no
+Southern Haida,Haida,UNKNOWN,,(missing),no
+Amarakaeri,Harakmbut,NON_BODY,,(missing),no
+Mansim,Hatam-Mansim,UNKNOWN,,ta̠ng_go̠m,no
+Cholón,Hibito-Cholon,NON_BODY,,(missing),no
+Biao Mon,Hmong-Mien,UNKNOWN,,(missing),no
+Biao-Jiao Mien,Hmong-Mien,UNKNOWN,,(missing),no
+Dzao Min,Hmong-Mien,UNKNOWN,,(missing),no
+Iu Mien,Hmong-Mien,UNKNOWN,,(missing),no
+Kim Mun,Hmong-Mien,UNKNOWN,,(missing),no
+Northern Qiandong Miao,Hmong-Mien,UNKNOWN,,(missing),no
+Pa-Hng,Hmong-Mien,UNKNOWN,,ara-,no
+Western Xiangxi Miao,Hmong-Mien,UNKNOWN,,(missing),no
+Younuo Bunu,Hmong-Mien,UNKNOWN,,ʃjaɾaŋ,no
+Millcayac,Huarpean,UNKNOWN,,uma,no
+San Dionisio del Mar Huave,Huavean,UNKNOWN,,tari,no
+Minica Huitoto,Huitotoan,NON_BODY,,pe²⁴,no
+Murui Huitoto,Huitotoan,NON_BODY,,khloʔ,no
+Nonuya,Huitotoan,UNKNOWN,,ara-,no
+Hurrian,Hurro-Urartian,BODY,,(missing),no
+Defaka,Ijoid,UNKNOWN,,(missing),no
+Ancient Greek,Indo-European,UNKNOWN,,kepʰa'lē / 'karā,no
+Aromanian,Indo-European,UNKNOWN,,ta̠ng_go̠m,no
+Awadhi,Indo-European,UNKNOWN,,(missing),no
+Bahamas Creole English,Indo-European,UNKNOWN,,(missing),no
+Belarusian,Indo-European,UNKNOWN,,ɂu³ lam⁵²,no
+Belize Kriol English,Indo-European,UNKNOWN,,(missing),no
+Berbice Creole Dutch,Indo-European,UNKNOWN,,(missing),no
+Bhojpuri,Indo-European,UNKNOWN,,sir,no
+Bislama,Indo-European,NON_BODY,,(missing),no
+Breton,Indo-European,UNKNOWN,,pʷou-ŋ,no
+Bundeli,Indo-European,UNKNOWN,,(missing),no
+Campidanese Sardinian,Indo-European,UNKNOWN,,k.ˈɔ.ŋ.k.+.a,no
+Catalan,Indo-European,UNKNOWN,,(missing),no
+Classical-Middle Armenian,Indo-European,NON_BODY,ink,(missing),no
+Corsican,Indo-European,UNKNOWN,,(missing),no
+Czech,Indo-European,UNKNOWN,,ɦ.l.a.v.a,no
+Danish,Indo-European,UNKNOWN,,h.oːə.ð,no
+Darai,Indo-European,UNKNOWN,,(missing),no
+Domaaki,Indo-European,UNKNOWN,,ta̠ng_go̠m,no
+Dutch,Indo-European,UNKNOWN,,(missing),no
+Eastern Armenian,Indo-European,NON_BODY,ink,(missing),no
+Eastern Panjabi,Indo-European,UNKNOWN,,(missing),no
+English,Indo-European,UNKNOWN,,(missing),no
+Faroese,Indo-European,UNKNOWN,,chug / lalug,no
+French,Indo-European,NON_BODY,,t.ɛ.t,no
+Galician,Indo-European,UNKNOWN,,(missing),no
+Gheg Albanian,Indo-European,UNKNOWN,,(missing),no
+Gurani,Indo-European,UNKNOWN,,(missing),no
+Haitian,Indo-European,NON_BODY,,laŋ,no
+Hieroglyphic Luwian,Indo-European,NON_BODY,,(missing),no
+Hindi,Indo-European,UNKNOWN,,sɪr / ɕiːrʂ,no
+Icelandic,Indo-European,UNKNOWN,,(missing),no
+Irish,Indo-European,UNKNOWN,,pelehe,no
+Iron Ossetian,Indo-European,NON_BODY,xædæg,(missing),no
+Italian,Indo-European,UNKNOWN,,(missing),no
+Jamaican Creole English,Indo-European,NON_BODY,,(missing),no
+Kashmiri,Indo-European,UNKNOWN,,(missing),no
+Konkan Marathi,Indo-European,UNKNOWN,,ta̠ng_go̠m,no
+Kumzari,Indo-European,UNKNOWN,,(missing),no
+Lambadi,Indo-European,UNKNOWN,,muge-,no
+Latin,Indo-European,UNKNOWN,,átu,no
+Latvian,Indo-European,UNKNOWN,,ɡɑlvɑ,no
+Limonese Creole,Indo-European,UNKNOWN,,(missing),no
+Lithuanian,Indo-European,UNKNOWN,,khloʔ,no
+Lombard,Indo-European,UNKNOWN,,uma,no
+Macedonian,Indo-European,UNKNOWN,,ta̠ng_go̠m,no
+Magahi,Indo-European,UNKNOWN,,ta̠ng_go̠m,no
+Maithili,Indo-European,UNKNOWN,,ta̠ng_go̠m,no
+Marathi,Indo-European,UNKNOWN,,libogo,no
+Modern Greek,Indo-European,UNKNOWN,,kepʰa'lē / 'karā,no
+Nepali,Indo-European,UNKNOWN,,(missing),no
+Nicaragua Creole English,Indo-European,UNKNOWN,,buúk,no
+Northern Tosk Albanian,Indo-European,UNKNOWN,,(missing),no
+Occitan,Indo-European,UNKNOWN,,ara-,no
+Odia,Indo-European,UNKNOWN,,ara-,no
+Old English (ca. 450-1100),Indo-European,NON_BODY,,(missing),no
+Pijin,Indo-European,UNKNOWN,,(missing),no
+Plautdietsch,Indo-European,UNKNOWN,,mihi,no
+Polish,Indo-European,UNKNOWN,,ho:.³ / kɔk.¹_ho:.³,no
+Portuguese,Indo-European,UNKNOWN,,chug / lalug,no
+Prasun,Indo-European,UNKNOWN,,(missing),no
+Romansh,Indo-European,UNKNOWN,,ta̠ng_go̠m,no
+Russian,Indo-European,UNKNOWN,,ara-,no
+San Andres Creole English,Indo-European,UNKNOWN,,tari,no
+Saramaccan,Indo-European,UNKNOWN,,(missing),no
+Serbian-Croatian-Bosnian,Indo-European,UNKNOWN,,átu,no
+Sicilian,Indo-European,UNKNOWN,,ʔulu,no
+Slovenian,Indo-European,UNKNOWN,,ara-,no
+Southern Pashto,Indo-European,UNKNOWN,,(missing),no
+Swedish,Indo-European,UNKNOWN,,h.ʉː.v.ɵ.d,no
+Tok Pisin,Indo-European,UNKNOWN,,(missing),no
+Torres Strait-Lockhart River Creole,Indo-European,UNKNOWN,,(missing),no
+Ukrainian,Indo-European,UNKNOWN,,ara-,no
+Welsh,Indo-European,UNKNOWN,,(missing),no
+Western Farsi,Indo-European,UNKNOWN,,ara-,no
+Western Frisian,Indo-European,UNKNOWN,,ara-,no
+Western Panjabi,Indo-European,NON_BODY,,ara-,no
+Cherokee,Iroquoian,UNKNOWN,,tõʔõ,no
+Huron-Wyandot,Iroquoian,NON_BODY,,(missing),no
+Mohawk,Iroquoian,NON_BODY,,laŋ,no
+Onondaga,Iroquoian,NON_BODY,,kektoŋ,no
+Seneca,Iroquoian,NON_BODY,,ara-,no
+Tuscarora,Iroquoian,NON_BODY,,kuj,no
+Abun,Isolate,UNKNOWN,,esu,no
+Aikanã,Isolate,UNKNOWN,,sakúku,no
+Alsea-Yaquina,Isolate,UNKNOWN,,kueiʔntei,no
+Andoque,Isolate,NON_BODY,,(missing),no
+Atakapa,Isolate,UNKNOWN,,ta̠ng_go̠m,no
+Berta,Isolate,UNKNOWN,,alu,no
+Betoi-Jirara,Isolate,UNKNOWN,,(missing),no
+Burmeso,Isolate,UNKNOWN,,(missing),no
+Burushaski,Isolate,UNKNOWN,,(missing),no
+Camsá,Isolate,UNKNOWN,,(missing),no
+Canichana,Isolate,UNKNOWN,,eu-cucu,no
+Cayubaba,Isolate,UNKNOWN,,'ʔuu,no
+Chimariko,Isolate,NON_BODY,,ta̠ng_go̠m,no
+Chitimacha,Isolate,NON_BODY,,wíta,no
+Coahuilteco,Isolate,UNKNOWN,,(missing),no
+Cofán,Isolate,UNKNOWN,,to:t.A,no
+Esselen,Isolate,UNKNOWN,,(missing),no
+Etruscan,Isolate,UNKNOWN,,(missing),no
+Fasu,Isolate,UNKNOWN,,(missing),no
+Fulniô,Isolate,NON_BODY,,(missing),no
+Gaagudju,Isolate,UNKNOWN,,kektoŋ,no
+Guató,Isolate,UNKNOWN,,(missing),no
+Guriaso,Isolate,UNKNOWN,,(missing),no
+Hadza,Isolate,NON_BODY,,laŋ,no
+Hruso,Isolate,UNKNOWN,,(missing),no
+Itonama,Isolate,NON_BODY,,(missing),no
+Kaki Ae,Isolate,UNKNOWN,,aro,no
+Kariri,Isolate,UNKNOWN,,(missing),no
+Karok,Isolate,NON_BODY,,(missing),no
+Klamath-Modoc,Isolate,NON_BODY,,(missing),no
+Kungarakany,Isolate,UNKNOWN,,parru,no
+Kunza,Isolate,UNKNOWN,,lacksi / hlacse / hjlacse,no
+Kuot,Isolate,NON_BODY,,bukom,no
+Kusunda,Isolate,UNKNOWN,,(missing),no
+Kutenai,Isolate,NON_BODY,,(missing),no
+Kwaza,Isolate,NON_BODY,,(missing),no
+Laal,Isolate,UNKNOWN,,niaqɔq,no
+Lafofa,Isolate,UNKNOWN,,to:t.A,no
+Laragia,Isolate,NON_BODY,,(missing),no
+Lavukaleve,Isolate,UNKNOWN,,βathu,no
+Leco,Isolate,NON_BODY,,(missing),no
+Lule,Isolate,UNKNOWN,,tocó,no
+Marori,Isolate,UNKNOWN,,ta̠ng_go̠m,no
+Maybrat-Karon,Isolate,NON_BODY,,ta̠ng_go̠m,no
+Mochica,Isolate,UNKNOWN,,(missing),no
+Molale,Isolate,NON_BODY,,ara-,no
+Mosetén-Chimané,Isolate,UNKNOWN,,ta̠ng_go̠m,no
+Movima,Isolate,NON_BODY,,ta̠ng_go̠m,no
+Mpur,Isolate,NON_BODY,,bwam,no
+Nara,Isolate,BODY,,ke̞l̪e̞,no
+Natchez,Isolate,UNKNOWN,,(missing),no
+Nihali,Isolate,NON_BODY,,laŋ,no
+Ongota,Isolate,UNKNOWN,,bine,no
+Pawaia,Isolate,UNKNOWN,,(missing),no
+Puelche,Isolate,UNKNOWN,,(missing),no
+Puinave,Isolate,NON_BODY,,ara-,no
+Pumé,Isolate,UNKNOWN,,tʰɔbɛ,no
+Puquina,Isolate,UNKNOWN,,ara-,no
+Purari,Isolate,NON_BODY,,ara-,no
+Salinan,Isolate,UNKNOWN,,ara-,no
+Savosavo,Isolate,NON_BODY,,ara-,no
+Seri,Isolate,UNKNOWN,,mtwe,no
+Shabo,Isolate,UNKNOWN,,laŋ,no
+Siamou,Isolate,UNKNOWN,,ara-,no
+Siuslaw,Isolate,UNKNOWN,,ŋ̩³¹goːŋ⁵³,no
+Sumerian,Isolate,UNKNOWN,,ara-,no
+Tabo,Isolate,UNKNOWN,,ara-,no
+Taiap,Isolate,UNKNOWN,,ta̠ng_go̠m,no
+Takelma,Isolate,NON_BODY,,ta̠ng_go̠m,no
+Taushiro,Isolate,UNKNOWN,,mihi,no
+Tonkawa,Isolate,UNKNOWN,,(missing),no
+Touo,Isolate,UNKNOWN,,(missing),no
+Trumai,Isolate,NON_BODY,,ta̠ng_go̠m,no
+Tunica,Isolate,UNKNOWN,,ara-,no
+Umbugarla,Isolate,UNKNOWN,,pə.T.55 bop.31,no
+Urarina,Isolate,NON_BODY,,ara-,no
+Wadjiginy,Isolate,UNKNOWN,,ara-,no
+Wageman,Isolate,NON_BODY,,ta̠ng_go̠m,no
+Waorani,Isolate,UNKNOWN,,(missing),no
+Warao,Isolate,NON_BODY,,(missing),no
+Washo,Isolate,NON_BODY,,(missing),no
+Wiru,Isolate,NON_BODY,,ʃjaɾaŋ,no
+Yale,Isolate,UNKNOWN,,potɔ´,no
+Yana,Isolate,UNKNOWN,,ara-,no
+Yele,Isolate,UNKNOWN,,(missing),no
+Yuchi,Isolate,UNKNOWN,,ʃjaɾaŋ,no
+Yuracaré,Isolate,UNKNOWN,,kuj,no
+Yámana,Isolate,UNKNOWN,,ta̠ng_go̠m,no
+Zuni,Isolate,UNKNOWN,,ʃjaɾaŋ,no
+Iwaidja,Iwaidjan Proper,UNKNOWN,,(missing),no
+Mawng,Iwaidjan Proper,NON_BODY,,ta̠ng_go̠m,no
+Central Okinawan,Japonic,UNKNOWN,,(missing),no
+Ikema-Irabu,Japonic,UNKNOWN,,ta̠ng_go̠m,no
+Irabu-Jima,Japonic,UNKNOWN,,ta̠ng_go̠m,no
+Japanese,Japonic,UNKNOWN,,ta̠ng_go̠m,no
+Ogami,Japonic,UNKNOWN,,ʔekhje,no
+Oki-No-Erabu,Japonic,UNKNOWN,,ara-,no
+Southern Amami-Oshima,Japonic,UNKNOWN,,(missing),no
+Tarama-Minna,Japonic,UNKNOWN,,(missing),no
+Yaeyama,Japonic,UNKNOWN,,(missing),no
+Yonaguni,Japonic,UNKNOWN,,ara-,no
+Miriwung,Jarrakan,NON_BODY,,(missing),no
+Tol,Jicaquean,UNKNOWN,,olo,no
+Keiga,Kadugli-Krongo,UNKNOWN,,kektoŋ,no
+Kakua,Kakua-Nukak,UNKNOWN,,waw³ daʔ⁴,no
+Central Kalapuya,Kalapuyan,NON_BODY,,ta̠ng_go̠m,no
+Aekyom,Kamula-Elevala,UNKNOWN,,(missing),no
+Kamula,Kamula-Elevala,UNKNOWN,,i.piː,no
+Kanamarí do Juruá-Japurá-Xeruã-Itaquaí-Jutaí,Katukinan,NON_BODY,,(missing),no
+Katukína do Biá-Ipixuna,Katukinan,NON_BODY,,-ki,no
+Kaure-Narau,Kaure-Kosare,UNKNOWN,,mihi,no
+Qawasqar,Kawesqar,NON_BODY,,(missing),no
+Ap Ma,Keram,UNKNOWN,,bʌrʌkʰa,no
+Ulwa (Papua New Guinea),Keram,NON_BODY,,(missing),no
+Western Keres,Keresan,NON_BODY,,(missing),no
+Kxoe,Khoe-Kwadi,NON_BODY,,(missing),no
+Ts'ixa,Khoe-Kwadi,NON_BODY,,ara-,no
+Kiowa,Kiowa-Tanoan,UNKNOWN,,(missing),no
+Northeast Kiwai,Kiwaian,UNKNOWN,,(missing),no
+Barai,Koiarian,UNKNOWN,,loha,no
+Ese,Koiarian,UNKNOWN,,nabat-,no
+Koitabu,Koiarian,UNKNOWN,,(missing),no
+Mountain Koiali,Koiarian,UNKNOWN,,ara-,no
+Ömie,Koiarian,NON_BODY,,(missing),no
+Kimaama,Kolopom,UNKNOWN,,(missing),no
+Ndom,Kolopom,UNKNOWN,,-ki,no
+Riantana,Kolopom,UNKNOWN,,loha,no
+Gwama,Koman,UNKNOWN,,(missing),no
+Korean,Koreanic,UNKNOWN,,meori,no
+Aja (South Sudan),Kresh-Aja,UNKNOWN,,(missing),no
+Kresh-Woro,Kresh-Aja,UNKNOWN,,(missing),no
+Southern Grebo,Kru,UNKNOWN,,(missing),no
+Ik,Kuliak,UNKNOWN,,sakúku,no
+Kwomtari,Kwomtari-Nai,NON_BODY,,(missing),no
+Amkoe,Kxa,UNKNOWN,,(missing),no
+Obokuitai,Lakes Plain,UNKNOWN,,nαp'utur,no
+Ama (Papua New Guinea),Left May,UNKNOWN,,vapardla,no
+Southern Lengua,Lengua-Mascoy,NON_BODY,,(missing),no
+Toba-Maskoy,Lengua-Mascoy,NON_BODY,,ta̠ng_go̠m,no
+Limilngan,Limilngan-Wulna,NON_BODY,,kektoŋ,no
+Awar,Lower Sepik-Ramu,NON_BODY,,akapwert,no
+Maba (Chad),Maban,UNKNOWN,,ta̠ng_go̠m,no
+Runga,Maban,NON_BODY,,plə,no
+Northeast Maidu,Maiduan,NON_BODY,,ta̠ng_go̠m,no
+Northwest Maidu,Maiduan,NON_BODY,,ta̠ng_go̠m,no
+Mailu,Mailuan,NON_BODY,,ta̠ng_go̠m,no
+Busa,Mande,UNKNOWN,,(missing),no
+Dyula,Mande,UNKNOWN,,(missing),no
+Jalkunan,Mande,UNKNOWN,,(missing),no
+Mangarrayi,Mangarrayi-Maran,NON_BODY,,(missing),no
+Djeebbana,Maningrida,NON_BODY,,la⁰⁴fo⁴⁴,no
+Doromu-Koki,Manubaran,UNKNOWN,,-ki,no
+Nivaclé,Matacoan,NON_BODY,,ara-,no
+Achi,Mayan,UNKNOWN,,ʦ.u.b.u.r.i,no
+Akateko,Mayan,UNKNOWN,,ara-,no
+Chuj,Mayan,UNKNOWN,,(missing),no
+Huastec,Mayan,UNKNOWN,,(missing),no
+Itzá,Mayan,UNKNOWN,,(missing),no
+K'iche',Mayan,UNKNOWN,,(missing),no
+Kaqchikel,Mayan,UNKNOWN,,(missing),no
+Mam,Mayan,UNKNOWN,,tati,no
+Mocho,Mayan,UNKNOWN,,(missing),no
+Mopán Maya,Mayan,UNKNOWN,,ta̠ng_go̠m,no
+Popti',Mayan,UNKNOWN,,(missing),no
+Q'anjob'al,Mayan,UNKNOWN,,ara-,no
+Tektiteko,Mayan,UNKNOWN,,(missing),no
+Tojolabal,Mayan,UNKNOWN,,ara-,no
+Yucatec Maya,Mayan,NON_BODY,,ta̠ng_go̠m,no
+Jaminjung-Ngaliwurru,Mirndi,NON_BODY,,ʔekhje,no
+Jingulu,Mirndi,NON_BODY,,(missing),no
+Ngarnka,Mirndi,NON_BODY,,kektoŋ,no
+Mayangna,Misumalpan,NON_BODY,,ta̠ng_go̠m,no
+Mískito,Misumalpan,UNKNOWN,,lal,no
+Ulwa,Misumalpan,UNKNOWN,,ara-,no
+Central Sierra Miwok,Miwok-Costanoan,NON_BODY,,(missing),no
+Southern Sierra Miwok,Miwok-Costanoan,NON_BODY,,(missing),no
+Francisco León Zoque,Mixe-Zoque,UNKNOWN,,kepʰa'lē / 'karā,no
+Highland Popoluca,Mixe-Zoque,NON_BODY,,(missing),no
+Oluta Popoluca,Mixe-Zoque,NON_BODY,,(missing),no
+Mombum,Mombum-Koneraw,UNKNOWN,,(missing),no
+Bonan,Mongolic-Khitan,UNKNOWN,,(missing),no
+Dagur,Mongolic-Khitan,UNKNOWN,,oki,no
+Dongxiang,Mongolic-Khitan,NON_BODY,,(missing),no
+Halh Mongolian,Mongolic-Khitan,UNKNOWN,,kaḍuip,no
+Mangghuer,Mongolic-Khitan,UNKNOWN,,ta̠ng_go̠m,no
+Oirad-Kalmyk-Darkhat,Mongolic-Khitan,UNKNOWN,,(missing),no
+Peripheral Mongolian,Mongolic-Khitan,UNKNOWN,,kaḍuip,no
+Russia Buriat,Mongolic-Khitan,UNKNOWN,,ara-,no
+Alabama,Muskogean,NON_BODY,,isbakko,no
+Chickasaw,Muskogean,NON_BODY,,(missing),no
+Choctaw,Muskogean,UNKNOWN,,(missing),no
+Creek,Muskogean,NON_BODY,,(missing),no
+Mikasuki,Muskogean,NON_BODY,,(missing),no
+Dâw,Naduhup,UNKNOWN,,nur,no
+Hup,Naduhup,NON_BODY,,núh,no
+Nadëb,Naduhup,NON_BODY,,ara-,no
+Aghwan,Nakh-Daghestanian,UNKNOWN,,kaiŋ.A,no
+Amuzgu-Shiri,Nakh-Daghestanian,UNKNOWN,,(missing),no
+Archi,Nakh-Daghestanian,UNKNOWN,,kartʼi / oˤnt,no
+Bagvalal,Nakh-Daghestanian,UNKNOWN,,un,no
+Bezhta,Nakh-Daghestanian,UNKNOWN,,qʼäm,no
+Budukh,Nakh-Daghestanian,UNKNOWN,,qʼɨl,no
+Chamalal,Nakh-Daghestanian,UNKNOWN,,(missing),no
+Chechen,Nakh-Daghestanian,UNKNOWN,,korta,no
+Godoberi,Nakh-Daghestanian,UNKNOWN,,-ki,no
+Hunzib,Nakh-Daghestanian,NON_BODY,,qʼɑm,no
+Icari,Nakh-Daghestanian,UNKNOWN,,(missing),no
+Ingush,Nakh-Daghestanian,UNKNOWN,,(missing),no
+Khinalug,Nakh-Daghestanian,UNKNOWN,,(missing),no
+Khwarshi-Inkhoqwari,Nakh-Daghestanian,UNKNOWN,,(missing),no
+Kryz,Nakh-Daghestanian,UNKNOWN,,qʼɨl,no
+Lak,Nakh-Daghestanian,UNKNOWN,,ɕaɾam,no
+Lezgian,Nakh-Daghestanian,NON_BODY,wič,qʼil,no
+North-Central Dargwa,Nakh-Daghestanian,UNKNOWN,,ᵑgʷatu-ᵑgu,no
+Rutul,Nakh-Daghestanian,UNKNOWN,,rü,no
+Tsez,Nakh-Daghestanian,UNKNOWN,,qʼˤim,no
+Udi,Nakh-Daghestanian,UNKNOWN,,bul,no
+Sabanê,Nambiquaran,NON_BODY,,ara-,no
+Southern Nambikuára,Nambiquaran,NON_BODY,,(missing),no
+Acheron,Narrow Talodi,UNKNOWN,,tõʔõ,no
+Dagik,Narrow Talodi,NON_BODY,,(missing),no
+Lumun,Narrow Talodi,BODY,,pjei³¹kʰu¹¹,no
+Hanga Hundi,Ndu,UNKNOWN,,nă³¹kuaŋ³¹,no
+Iatmul,Ndu,UNKNOWN,,na:mpu,no
+Manambu,Ndu,NON_BODY,,ta̠ng_go̠m,no
+Acoli,Nilotic,UNKNOWN,,(missing),no
+Akie,Nilotic,UNKNOWN,,ara-,no
+Kipsigis,Nilotic,UNKNOWN,,(missing),no
+Labwor,Nilotic,NON_BODY,,(missing),no
+Luo (Kenya and Tanzania),Nilotic,NON_BODY,,(missing),no
+Nandi,Nilotic,UNKNOWN,,(missing),no
+Nuer,Nilotic,UNKNOWN,,(missing),no
+Pökoot,Nilotic,UNKNOWN,,(missing),no
+Shilluk,Nilotic,BODY,,(missing),no
+Tugen,Nilotic,NON_BODY,,(missing),no
+Nimboran,Nimboranic,NON_BODY,,nííkʷaɯ,no
+Amur Nivkh,Nivkh,UNKNOWN,,(missing),no
+Rapoisi,North Bougainville,UNKNOWN,,ta̠ng_go̠m,no
+Rotokas,North Bougainville,UNKNOWN,,ara-,no
+Galela,North Halmahera,NON_BODY,,(missing),no
+Pagu,North Halmahera,NON_BODY,,ara-,no
+Tabaru,North Halmahera,NON_BODY,,ʔulu,no
+Ternate,North Halmahera,NON_BODY,,(missing),no
+Tobelo,North Halmahera,NON_BODY,,(missing),no
+West Makian,North Halmahera,UNKNOWN,,ta̠ng_go̠m,no
+Mullukmulluk,Northern Daly,UNKNOWN,,(missing),no
+Kenuzi-Dongola,Nubian,UNKNOWN,,bine,no
+Abu' Arapesh,Nuclear Torricelli,NON_BODY,,bʌrʌkʰa,no
+Au,Nuclear Torricelli,NON_BODY,,ᵐbati-,no
+Urim,Nuclear Torricelli,NON_BODY,,(missing),no
+Yeri,Nuclear Torricelli,NON_BODY,,(missing),no
+Aghu,Nuclear Trans New Guinea,NON_BODY,,jə̀kù,no
+Aisi,Nuclear Trans New Guinea,UNKNOWN,,ara-,no
+Auye,Nuclear Trans New Guinea,NON_BODY,,mihi,no
+Awa (Papua New Guinea),Nuclear Trans New Guinea,UNKNOWN,,(missing),no
+Awara,Nuclear Trans New Guinea,UNKNOWN,,akapwert,no
+Bargam,Nuclear Trans New Guinea,NON_BODY,,-fain / -huain,no
+Bimin,Nuclear Trans New Guinea,NON_BODY,,kak,no
+Binandere,Nuclear Trans New Guinea,UNKNOWN,,(missing),no
+Bo-Ung,Nuclear Trans New Guinea,UNKNOWN,,(missing),no
+Dom,Nuclear Trans New Guinea,NON_BODY,,-ki,no
+East Kewa,Nuclear Trans New Guinea,NON_BODY,,(missing),no
+Eipomek,Nuclear Trans New Guinea,NON_BODY,,kiisok,no
+Ekari,Nuclear Trans New Guinea,UNKNOWN,,(missing),no
+Gants,Nuclear Trans New Guinea,UNKNOWN,,kektoŋ,no
+Girawa,Nuclear Trans New Guinea,NON_BODY,,(missing),no
+Guhu-Samane,Nuclear Trans New Guinea,UNKNOWN,,(missing),no
+Huli,Nuclear Trans New Guinea,NON_BODY,,embóne,no
+Iyo,Nuclear Trans New Guinea,NON_BODY,,Gobbarra,no
+Kamano,Nuclear Trans New Guinea,UNKNOWN,,(missing),no
+Kanite,Nuclear Trans New Guinea,UNKNOWN,,(missing),no
+Kesawai,Nuclear Trans New Guinea,UNKNOWN,,(missing),no
+Kombai,Nuclear Trans New Guinea,NON_BODY,,(missing),no
+Kosarek Yale,Nuclear Trans New Guinea,NON_BODY,,upoko / o'o,no
+Kovai,Nuclear Trans New Guinea,UNKNOWN,,(missing),no
+Kulsab,Nuclear Trans New Guinea,UNKNOWN,,(missing),no
+Kuman,Nuclear Trans New Guinea,NON_BODY,,ta̠ng_go̠m,no
+Lembena,Nuclear Trans New Guinea,UNKNOWN,,kû:,no
+Ma Manda,Nuclear Trans New Guinea,NON_BODY,,laχ,no
+Maia,Nuclear Trans New Guinea,UNKNOWN,,ta̠ng_go̠m,no
+Maiani,Nuclear Trans New Guinea,UNKNOWN,,ta̠ng_go̠m,no
+Manat,Nuclear Trans New Guinea,NON_BODY,,ta̠ng_go̠m,no
+Melpa,Nuclear Trans New Guinea,UNKNOWN,,(missing),no
+Nalca,Nuclear Trans New Guinea,UNKNOWN,,ara-,no
+Nend,Nuclear Trans New Guinea,UNKNOWN,,sup,no
+Nukna,Nuclear Trans New Guinea,UNKNOWN,,ara-,no
+Oksapmin,Nuclear Trans New Guinea,UNKNOWN,,ta̠ng_go̠m,no
+Orokaiva,Nuclear Trans New Guinea,UNKNOWN,,ara-,no
+Sirva,Nuclear Trans New Guinea,UNKNOWN,,ara-,no
+Umbu-Ungu,Nuclear Trans New Guinea,NON_BODY,,(missing),no
+Western Dani,Nuclear Trans New Guinea,NON_BODY,,h.oːə.ð,no
+Yau (Morobe Province),Nuclear Trans New Guinea,UNKNOWN,,mihi,no
+Yonggom,Nuclear Trans New Guinea,UNKNOWN,,(missing),no
+Apinayé,Nuclear-Macro-Je,UNKNOWN,,(missing),no
+Arikapú,Nuclear-Macro-Je,UNKNOWN,,ta̠ng_go̠m,no
+Canela-Krahô,Nuclear-Macro-Je,UNKNOWN,,ii-kʰrə̃,no
+Djeoromitxí,Nuclear-Macro-Je,UNKNOWN,,kõãka,no
+Kaingang,Nuclear-Macro-Je,UNKNOWN,,kektoŋ,no
+Karajá,Nuclear-Macro-Je,NON_BODY,,loha,no
+Krenak,Nuclear-Macro-Je,UNKNOWN,,kɾɛn,no
+Maxakalí,Nuclear-Macro-Je,UNKNOWN,,ta̠ng_go̠m,no
+Ofayé,Nuclear-Macro-Je,UNKNOWN,,to:t.A,no
+Panará,Nuclear-Macro-Je,NON_BODY,,n thɔk.33,no
+Rikbaktsa,Nuclear-Macro-Je,NON_BODY,,petu-n,no
+Xavánte,Nuclear-Macro-Je,UNKNOWN,,ara-,no
+Xokleng,Nuclear-Macro-Je,UNKNOWN,,lova-ŋgu / ulu-ŋgu,no
+Ama (Sudan),Nyimang,UNKNOWN,,vapardla,no
+Nyigina,Nyulnyulan,NON_BODY,,o55ko33,no
+Nyulnyul,Nyulnyulan,NON_BODY,,-alm,no
+Warrwa,Nyulnyulan,NON_BODY,,akapwert,no
+Yawuru,Nyulnyulan,NON_BODY,,ara-,no
+Alacatlatzala Mixtec,Otomanguean,UNKNOWN,,(missing),no
+Coatlán Zapotec,Otomanguean,UNKNOWN,,ta̠ng_go̠m,no
+Copala Triqui,Otomanguean,UNKNOWN,,(missing),no
+Eastern Highland Otomi,Otomanguean,NON_BODY,,(missing),no
+Guerrero Amuzgo,Otomanguean,NON_BODY,,(missing),no
+Magdalena Peñasco Mixtec,Otomanguean,NON_BODY,,(missing),no
+Malinaltepec Me'phaa,Otomanguean,UNKNOWN,,ta̠ng_go̠m,no
+Mangue,Otomanguean,UNKNOWN,,ta̠ng_go̠m,no
+Mezontla Popoloca,Otomanguean,NON_BODY,,(missing),no
+Mezquital Otomi,Otomanguean,NON_BODY,,(missing),no
+Mixtepec Zapotec,Otomanguean,NON_BODY,,(missing),no
+Nopala Chatino,Otomanguean,NON_BODY,,átu,no
+Ocotlán Zapotec,Otomanguean,UNKNOWN,,ta̠ng_go̠m,no
+Querétaro Otomi,Otomanguean,NON_BODY,,ki̵zp u,no
+Quiotepec Chinantec,Otomanguean,UNKNOWN,,(missing),no
+San Baltazar Loxicha Zapotec,Otomanguean,UNKNOWN,,tari,no
+San Marcos Tlalcoyalco Popoloca,Otomanguean,UNKNOWN,,tari,no
+San Miguel El Grande Mixtec,Otomanguean,UNKNOWN,,tari,no
+Santa María Quiegolani Zapotec,Otomanguean,NON_BODY,,loha,no
+Santa María Zacatepec Mixtec,Otomanguean,UNKNOWN,,(missing),no
+Sierra de Juárez Zapotec,Otomanguean,UNKNOWN,,ta̠ng_go̠m,no
+Sochiapam Chinantec,Otomanguean,NON_BODY,,ta̠ng_go̠m,no
+Tataltepec Chatino,Otomanguean,UNKNOWN,,(missing),no
+Temoaya Otomi,Otomanguean,NON_BODY,,(missing),no
+Tezoatlán Mixtec,Otomanguean,UNKNOWN,,(missing),no
+Western Highland Chatino,Otomanguean,NON_BODY,,átu,no
+Western Tlacolula Valley Zapotec,Otomanguean,UNKNOWN,,(missing),no
+Yatzachi Zapotec,Otomanguean,UNKNOWN,,ʦ.u.b.u.r.i,no
+Zacatepec Chatino,Otomanguean,UNKNOWN,,átu,no
+Zaniza Zapotec,Otomanguean,UNKNOWN,,ta̠ng_go̠m,no
+Zenzontepec Chatino,Otomanguean,UNKNOWN,,átu,no
+Zoogocho Zapotec,Otomanguean,UNKNOWN,,ta̠ng_go̠m,no
+Agob-Ende-Kawam,Pahoturi,UNKNOWN,,(missing),no
+Idi-Taeme,Pahoturi,UNKNOWN,,(missing),no
+Achumawi,Palaihnihan,NON_BODY,,laχ,no
+Adnyamathanha,Pama-Nyungan,UNKNOWN,,vapardla,no
+Aghu Tharnggalu,Pama-Nyungan,NON_BODY,,jə̀kù,no
+Alyawarr,Pama-Nyungan,NON_BODY,,akapwert,no
+Arabana,Pama-Nyungan,NON_BODY,,kardapu,no
+Awabakal,Pama-Nyungan,NON_BODY,,tabnau,no
+Bilinarra,Pama-Nyungan,NON_BODY,,patu / baku,no
+Biri,Pama-Nyungan,UNKNOWN,,duŋgu,no
+Bularnu,Pama-Nyungan,UNKNOWN,,gurugu,no
+Dhargari,Pama-Nyungan,UNKNOWN,,(missing),no
+Dharumbal,Pama-Nyungan,UNKNOWN,,(missing),no
+Dieri,Pama-Nyungan,UNKNOWN,,(missing),no
+Djapu,Pama-Nyungan,UNKNOWN,,ta̠ng_go̠m,no
+Djinang,Pama-Nyungan,NON_BODY,,tʰou⁴²,no
+Duungidjawu,Pama-Nyungan,NON_BODY,,ma:na,no
+Dyangadi,Pama-Nyungan,UNKNOWN,,(missing),no
+Dyirbal,Pama-Nyungan,NON_BODY,,o55ko33,no
+Eastern Arrernte,Pama-Nyungan,NON_BODY,,(missing),no
+Ganai,Pama-Nyungan,UNKNOWN,,kektoŋ,no
+Gugu Badhun,Pama-Nyungan,NON_BODY,,(missing),no
+Gungabula,Pama-Nyungan,UNKNOWN,,gurugu,no
+Gunya,Pama-Nyungan,NON_BODY,,gadha,no
+Gureng Gureng,Pama-Nyungan,NON_BODY,,(missing),no
+Guugu Yimidhirr,Pama-Nyungan,NON_BODY,,o55ko33,no
+Jaru,Pama-Nyungan,NON_BODY,,langga,no
+Kalkutung,Pama-Nyungan,NON_BODY,,ditwi,no
+Karadjeri,Pama-Nyungan,NON_BODY,,loha,no
+Kaurna,Pama-Nyungan,UNKNOWN,,mihi,no
+Kokata,Pama-Nyungan,NON_BODY,,(missing),no
+Kuku-Uwanh,Pama-Nyungan,UNKNOWN,,(missing),no
+Kuku-Yalanji,Pama-Nyungan,NON_BODY,,(missing),no
+Kumbainggar,Pama-Nyungan,NON_BODY,,(missing),no
+Kunjen,Pama-Nyungan,UNKNOWN,,(missing),no
+Kurrama,Pama-Nyungan,UNKNOWN,,(missing),no
+Margany,Pama-Nyungan,NON_BODY,,ta̠ng_go̠m,no
+Martuthunira,Pama-Nyungan,NON_BODY,,ta̠ng_go̠m,no
+Maykulan,Pama-Nyungan,NON_BODY,,ta̠ng_go̠m,no
+Muruwari,Pama-Nyungan,NON_BODY,,ara-,no
+Narungga,Pama-Nyungan,UNKNOWN,,kektoŋ,no
+Ngaanyatjarra,Pama-Nyungan,UNKNOWN,,mɨtɨ-'o,no
+Ngiyambaa,Pama-Nyungan,NON_BODY,,ara-,no
+Nhanda,Pama-Nyungan,NON_BODY,,laŋ,no
+Nyangumarta,Pama-Nyungan,NON_BODY,,ta̠ng_go̠m,no
+Nyawaygi,Pama-Nyungan,NON_BODY,,(missing),no
+Nyunga,Pama-Nyungan,UNKNOWN,,kektoŋ,no
+Paakantyi,Pama-Nyungan,NON_BODY,,o55ko33,no
+Panytyima,Pama-Nyungan,NON_BODY,,ta̠ng_go̠m,no
+Pintupi-Luritja,Pama-Nyungan,UNKNOWN,,ara-,no
+Pitta Pitta,Pama-Nyungan,NON_BODY,,ara-,no
+Thurawal,Pama-Nyungan,NON_BODY,,(missing),no
+Wagaya,Pama-Nyungan,UNKNOWN,,kektoŋ,no
+Wajarri,Pama-Nyungan,UNKNOWN,,(missing),no
+Walmajarri,Pama-Nyungan,NON_BODY,,(missing),no
+Wanman,Pama-Nyungan,NON_BODY,,ta̠ng_go̠m,no
+Warrgamay,Pama-Nyungan,NON_BODY,,akapwert,no
+Warrongo,Pama-Nyungan,UNKNOWN,,akapwert,no
+Warumungu,Pama-Nyungan,UNKNOWN,,(missing),no
+Wathawurrung,Pama-Nyungan,NON_BODY,,laŋ,no
+Western Arrarnta,Pama-Nyungan,UNKNOWN,,ara-,no
+Wik-Mungkan,Pama-Nyungan,UNKNOWN,,(missing),no
+Wilson River (Grey Range),Pama-Nyungan,UNKNOWN,,(missing),no
+Wiradhuri,Pama-Nyungan,UNKNOWN,,khloʔ,no
+Wirangu,Pama-Nyungan,UNKNOWN,,ulu,no
+Woiwurrung-Thagungwurrung,Pama-Nyungan,NON_BODY,,(missing),no
+Yalarnnga,Pama-Nyungan,NON_BODY,,kektoŋ,no
+Yandruwandha,Pama-Nyungan,NON_BODY,,laŋ,no
+Yankunytjatjara,Pama-Nyungan,UNKNOWN,,(missing),no
+Yaygir,Pama-Nyungan,NON_BODY,,ara-,no
+Yidiñ,Pama-Nyungan,UNKNOWN,,o55ko33,no
+Yindjibarndi,Pama-Nyungan,UNKNOWN,,o55ko33,no
+Yindjilandji,Pama-Nyungan,UNKNOWN,,o55ko33,no
+Yinggarda,Pama-Nyungan,UNKNOWN,,o55ko33,no
+Yorta Yorta,Pama-Nyungan,NON_BODY,,ara-,no
+Yulparija,Pama-Nyungan,NON_BODY,,ara-,no
+Yuwaalaraay,Pama-Nyungan,NON_BODY,,(missing),no
+Amahuaca,Pano-Tacanan,NON_BODY,,kamu / 'ka:mũ,no
+Araona,Pano-Tacanan,UNKNOWN,,(missing),no
+Cacataibo de Mariscal,Pano-Tacanan,NON_BODY,,ta̠ng_go̠m,no
+Capanahua,Pano-Tacanan,NON_BODY,,ta̠ng_go̠m,no
+Cavineña,Pano-Tacanan,NON_BODY,,iyuka,no
+Chácobo,Pano-Tacanan,UNKNOWN,,ma-po,no
+Ese Ejja,Pano-Tacanan,NON_BODY,,nabat-,no
+Isconahua,Pano-Tacanan,NON_BODY,,(missing),no
+Marúbo,Pano-Tacanan,NON_BODY,,ta̠ng_go̠m,no
+Matsés,Pano-Tacanan,NON_BODY,,ta̠ng_go̠m,no
+Panoan Katukína,Pano-Tacanan,UNKNOWN,,(missing),no
+Panobo,Pano-Tacanan,NON_BODY,,ara-,no
+Poyanáwa,Pano-Tacanan,UNKNOWN,,ara-,no
+Reyesano,Pano-Tacanan,NON_BODY,,ara-,no
+Shanenawa,Pano-Tacanan,NON_BODY,,(missing),no
+Shipibo-Conibo,Pano-Tacanan,NON_BODY,,o35qo11,no
+Yaminahua,Pano-Tacanan,NON_BODY,,ʔekhje,no
+Yawanawa,Pano-Tacanan,UNKNOWN,,akapwert,no
+Yora,Pano-Tacanan,UNKNOWN,,ara-,no
+Karkar-Yuri,Pauwasi,UNKNOWN,,(missing),no
+Yagua,Peba-Yagua,NON_BODY,,buúk,no
+Haruai,Piawi,NON_BODY,,arhi,no
+Pinai-Hagahai,Piawi,UNKNOWN,,(missing),no
+Eastern Pomo,Pomoan,UNKNOWN,,(missing),no
+Ayacucho Quechua,Quechuan,NON_BODY,,uma,no
+Bolivar-North Chimborazo Highland Quichua,Quechuan,NON_BODY,,olo,no
+Calderón Highland Quichua,Quechuan,NON_BODY,,(missing),no
+Colombian Inga,Quechuan,NON_BODY,,(missing),no
+Cusco Quechua,Quechuan,NON_BODY,,uma,no
+Huallaga Huánuco Quechua,Quechuan,NON_BODY,,uma,no
+Imbabura Highland Quichua,Quechuan,NON_BODY,,nobu-,no
+North Junín Quechua,Quechuan,NON_BODY,,uma,no
+San Martín Quechua,Quechuan,NON_BODY,,tari,no
+Tagoi,Rashad,UNKNOWN,,ara-,no
+Tegali,Rashad,UNKNOWN,,twé,no
+Nez Perce,Sahaptian,NON_BODY,,hɯɯsɯs,no
+Northwest Sahaptin,Sahaptian,NON_BODY,,ta̠ng_go̠m,no
+Beria,Saharan,UNKNOWN,,wani,no
+Central Kanuri,Saharan,NON_BODY,,(missing),no
+Dazaga,Saharan,NON_BODY,,(missing),no
+Tedaga,Saharan,UNKNOWN,,kektoŋ,no
+Maco,Saliban,NON_BODY,,ta̠ng_go̠m,no
+Bella Coola,Salishan,NON_BODY,,-īχʷ / tˀnχʷ,no
+Coeur d'Alene,Salishan,NON_BODY,,(missing),no
+Columbia-Wenatchi,Salishan,NON_BODY,,(missing),no
+Comox,Salishan,NON_BODY,,(missing),no
+Cowlitz,Salishan,NON_BODY,,(missing),no
+Halkomelem,Salishan,NON_BODY,,(missing),no
+Kalispel-Pend d'Oreille,Salishan,NON_BODY,,(missing),no
+Lillooet,Salishan,NON_BODY,,lō,no
+Lower Chehalis,Salishan,NON_BODY,,laŋ,no
+Northern Lushootseed,Salishan,NON_BODY,,(missing),no
+Okanagan,Salishan,NON_BODY,,(missing),no
+Twana,Salishan,UNKNOWN,,ara-,no
+Upper Chehalis,Salishan,NON_BODY,,laŋ,no
+Sentani,Sentanic,UNKNOWN,,ara-,no
+Awtuw,Sepik,UNKNOWN,,makh,no
+Iwam,Sepik,UNKNOWN,,(missing),no
+Kwoma,Sepik,UNKNOWN,,ta̠ng_go̠m,no
+Mehek,Sepik,UNKNOWN,,(missing),no
+Shasta,Shastan,NON_BODY,,(missing),no
+Akha,Sino-Tibetan,UNKNOWN,,bas,no
+Amdo Tibetan,Sino-Tibetan,NON_BODY,,(missing),no
+Amri Karbi,Sino-Tibetan,UNKNOWN,,(missing),no
+Angami Naga,Sino-Tibetan,UNKNOWN,,ʔekhje,no
+Anu-Hkongso,Sino-Tibetan,UNKNOWN,,(missing),no
+Ao Naga,Sino-Tibetan,NON_BODY,,(missing),no
+Apatani,Sino-Tibetan,UNKNOWN,,(missing),no
+Athpariya,Sino-Tibetan,NON_BODY,,(missing),no
+Atong (India),Sino-Tibetan,UNKNOWN,,(missing),no
+Axi Yi,Sino-Tibetan,UNKNOWN,,o55ko33,no
+Azha,Sino-Tibetan,NON_BODY,,kjau.³,no
+Bahing,Sino-Tibetan,UNKNOWN,,(missing),no
+Baima,Sino-Tibetan,UNKNOWN,,ta̠ng_go̠m,no
+Bangru,Sino-Tibetan,UNKNOWN,,mutú,no
+Bantawa,Sino-Tibetan,NON_BODY,,loha,no
+Baraamu,Sino-Tibetan,UNKNOWN,,loha,no
+Bawm Chin,Sino-Tibetan,UNKNOWN,,(missing),no
+Belhariya,Sino-Tibetan,NON_BODY,,(missing),no
+Bisu,Sino-Tibetan,NON_BODY,,aŋ33tu31,no
+Bodo-Mech,Sino-Tibetan,NON_BODY,,(missing),no
+Bokar-Ramo,Sino-Tibetan,UNKNOWN,,ɩnda,no
+Bori-Karko,Sino-Tibetan,NON_BODY,,(missing),no
+Bugun,Sino-Tibetan,UNKNOWN,,khɾuk,no
+Bujhyal,Sino-Tibetan,UNKNOWN,,(missing),no
+Bunan,Sino-Tibetan,UNKNOWN,,deba,no
+Burmese,Sino-Tibetan,UNKNOWN,,(missing),no
+Byangsi,Sino-Tibetan,UNKNOWN,,p.ə.ʃ.aː,no
+Camling,Sino-Tibetan,NON_BODY,,(missing),no
+Central Bai,Sino-Tibetan,NON_BODY,,(missing),no
+Central Lisu,Sino-Tibetan,UNKNOWN,,(missing),no
+Chak,Sino-Tibetan,UNKNOWN,,(missing),no
+Chang Naga,Sino-Tibetan,UNKNOWN,,nă³¹kuaŋ³¹,no
+Chaozhou,Sino-Tibetan,UNKNOWN,,(missing),no
+Chashan,Sino-Tibetan,UNKNOWN,,(missing),no
+Chepang,Sino-Tibetan,NON_BODY,,(missing),no
+Chintang,Sino-Tibetan,NON_BODY,,(missing),no
+Chiru,Sino-Tibetan,UNKNOWN,,(missing),no
+Chocangacakha,Sino-Tibetan,UNKNOWN,,bas,no
+Chothe,Sino-Tibetan,UNKNOWN,,(missing),no
+Cosao,Sino-Tibetan,UNKNOWN,,(missing),no
+Daai Chin,Sino-Tibetan,UNKNOWN,,(missing),no
+Darma,Sino-Tibetan,NON_BODY,,ta̠ng_go̠m,no
+Dechang,Sino-Tibetan,UNKNOWN,,(missing),no
+Dhimal,Sino-Tibetan,NON_BODY,,ta̠ng_go̠m,no
+Dimasa,Sino-Tibetan,UNKNOWN,,ta̠ng_go̠m,no
+Drung,Sino-Tibetan,NON_BODY,,(missing),no
+Duhumbi,Sino-Tibetan,UNKNOWN,,kʰɔ+lɔk / mə+tʰɛ̃n,no
+Dumi,Sino-Tibetan,NON_BODY,,(missing),no
+Dura,Sino-Tibetan,NON_BODY,,(missing),no
+Dzongkha,Sino-Tibetan,UNKNOWN,,(missing),no
+East-Central Tangkhul Naga,Sino-Tibetan,UNKNOWN,,(missing),no
+Eastern Geshiza,Sino-Tibetan,NON_BODY,,(missing),no
+Eastern Kayah,Sino-Tibetan,NON_BODY,,(missing),no
+Eastern Newari,Sino-Tibetan,NON_BODY,,(missing),no
+Enu,Sino-Tibetan,UNKNOWN,,pʷa-u,no
+Ersu,Sino-Tibetan,UNKNOWN,,ŋu³³ngo⁵⁵,no
+Falam Chin,Sino-Tibetan,UNKNOWN,,(missing),no
+Galo,Sino-Tibetan,UNKNOWN,,kektoŋ,no
+Gangte,Sino-Tibetan,NON_BODY,,kektoŋ,no
+Garo,Sino-Tibetan,UNKNOWN,,kektoŋ,no
+Geba Karen,Sino-Tibetan,UNKNOWN,,upoko / o'o,no
+Guiqiong,Sino-Tibetan,UNKNOWN,,wɛ³³_jɛ⁵³,no
+Gurung,Sino-Tibetan,UNKNOWN,,(missing),no
+Haka Chin,Sino-Tibetan,UNKNOWN,,(missing),no
+Hakka Chinese,Sino-Tibetan,UNKNOWN,,(missing),no
+Hani,Sino-Tibetan,UNKNOWN,,u31du31,no
+Hills Karbi,Sino-Tibetan,UNKNOWN,,(missing),no
+Honi,Sino-Tibetan,UNKNOWN,,(missing),no
+Idu,Sino-Tibetan,UNKNOWN,,uʔuna,no
+Japhug,Sino-Tibetan,NON_BODY,,ta̠ng_go̠m,no
+Jerung,Sino-Tibetan,UNKNOWN,,(missing),no
+Kado,Sino-Tibetan,UNKNOWN,,-ki,no
+Kaike,Sino-Tibetan,UNKNOWN,,petu-n,no
+Kathmandu Valley Newari,Sino-Tibetan,UNKNOWN,,(missing),no
+Katso,Sino-Tibetan,NON_BODY,,(missing),no
+Kayan Lahwi,Sino-Tibetan,UNKNOWN,,(missing),no
+Khaling,Sino-Tibetan,UNKNOWN,,laŋ,no
+Khams Tibetan,Sino-Tibetan,NON_BODY,rang,(missing),no
+Kharam Naga,Sino-Tibetan,NON_BODY,,(missing),no
+Khezha Naga,Sino-Tibetan,UNKNOWN,,(missing),no
+Khroskyabs,Sino-Tibetan,UNKNOWN,,ʁu,no
+Khumi Chin,Sino-Tibetan,UNKNOWN,,(missing),no
+Kinnauri,Sino-Tibetan,UNKNOWN,,mihi,no
+Kman,Sino-Tibetan,UNKNOWN,,ta̠ng_go̠m,no
+Koireng,Sino-Tibetan,NON_BODY,,(missing),no
+Kom (India),Sino-Tibetan,UNKNOWN,,(missing),no
+Konyak Naga,Sino-Tibetan,UNKNOWN,,(missing),no
+Kulung (Nepal),Sino-Tibetan,NON_BODY,,(missing),no
+Kyerung,Sino-Tibetan,UNKNOWN,,(missing),no
+Lahta-Zayein Karen,Sino-Tibetan,UNKNOWN,,upoko / o'o,no
+Lahu,Sino-Tibetan,UNKNOWN,,khloʔ,no
+Lahu Shi,Sino-Tibetan,UNKNOWN,,khloʔ,no
+Lamjung Yolmo,Sino-Tibetan,UNKNOWN,,(missing),no
+Lamkang,Sino-Tibetan,NON_BODY,,(missing),no
+Lashi,Sino-Tibetan,UNKNOWN,,o35qo11,no
+Lepcha,Sino-Tibetan,NON_BODY,,laŋ,no
+Liangmai Naga,Sino-Tibetan,UNKNOWN,,(missing),no
+Limbu,Sino-Tibetan,NON_BODY,,tʰ.ɛ.g.e.k,no
+Lipo,Sino-Tibetan,UNKNOWN,,vu55di33,no
+Lolopo,Sino-Tibetan,UNKNOWN,,u55də33,no
+Longchuan Achang,Sino-Tibetan,UNKNOWN,,nă³¹kuaŋ³¹,no
+Longxi Qiang,Sino-Tibetan,UNKNOWN,,nă³¹kuaŋ³¹,no
+Lotha Naga,Sino-Tibetan,UNKNOWN,,(missing),no
+Manange,Sino-Tibetan,UNKNOWN,,ta̠ng_go̠m,no
+Mandarin Chinese,Sino-Tibetan,UNKNOWN,,ta̠ng_go̠m,no
+Mara Chin,Sino-Tibetan,UNKNOWN,,libogo,no
+Maram Naga,Sino-Tibetan,NON_BODY,,libogo,no
+Maring Naga,Sino-Tibetan,NON_BODY,,(missing),no
+Maru,Sino-Tibetan,UNKNOWN,,ta̠ng_go̠m,no
+Melamchi Yolmo,Sino-Tibetan,UNKNOWN,,(missing),no
+Milang,Sino-Tibetan,NON_BODY,,háakɾa,no
+Mizo,Sino-Tibetan,NON_BODY,,l.u / h.o.t.u,no
+Moyon,Sino-Tibetan,NON_BODY,,(missing),no
+Mpi,Sino-Tibetan,UNKNOWN,,k.ˈɔ.ŋ.k.+.a,no
+Mün Chin,Sino-Tibetan,NON_BODY,,(missing),no
+Namuyi,Sino-Tibetan,UNKNOWN,,o55ko33,no
+Narua,Sino-Tibetan,NON_BODY,,ara-,no
+Naxi,Sino-Tibetan,UNKNOWN,,o55ko33,no
+Ninglang,Sino-Tibetan,UNKNOWN,,mutwe,no
+Nocte Naga,Sino-Tibetan,UNKNOWN,,(missing),no
+Northern Bai,Sino-Tibetan,UNKNOWN,,(missing),no
+Northern Jinghpaw,Sino-Tibetan,NON_BODY,,(missing),no
+Northern Lisu,Sino-Tibetan,UNKNOWN,,(missing),no
+Northern Pumi,Sino-Tibetan,NON_BODY,,(missing),no
+Northern Qiang,Sino-Tibetan,UNKNOWN,,(missing),no
+Northern Tujia,Sino-Tibetan,UNKNOWN,,(missing),no
+Nung (Myanmar),Sino-Tibetan,UNKNOWN,,ta̠ng_go̠m,no
+Nusu,Sino-Tibetan,UNKNOWN,,u31phu55,no
+Nyishi-Hill Miri,Sino-Tibetan,UNKNOWN,,o55ko33,no
+Paite Chin,Sino-Tibetan,NON_BODY,,(missing),no
+Para Naga,Sino-Tibetan,NON_BODY,,(missing),no
+Pattani,Sino-Tibetan,UNKNOWN,,ara-,no
+Pela,Sino-Tibetan,UNKNOWN,,(missing),no
+Phom Naga,Sino-Tibetan,UNKNOWN,,(missing),no
+Puma,Sino-Tibetan,NON_BODY,,ta̠ng_go̠m,no
+Purik-Sham-Nubra,Sino-Tibetan,UNKNOWN,,-kɨwɨ,no
+Queyu,Sino-Tibetan,UNKNOWN,,qho⁵⁵,no
+Rabha,Sino-Tibetan,UNKNOWN,,laŋ,no
+Raji,Sino-Tibetan,UNKNOWN,,ara-,no
+Raute,Sino-Tibetan,NON_BODY,,mihi,no
+Rongmei Naga,Sino-Tibetan,UNKNOWN,,(missing),no
+Rongpo,Sino-Tibetan,UNKNOWN,,(missing),no
+S'gaw Karen,Sino-Tibetan,NON_BODY,,upoko / o'o,no
+Sangtam Naga,Sino-Tibetan,UNKNOWN,,(missing),no
+Sherdukpen,Sino-Tibetan,UNKNOWN,,(missing),no
+Shixing,Sino-Tibetan,NON_BODY,,o35qo11,no
+Sichuan Yi,Sino-Tibetan,UNKNOWN,,o55ko33,no
+Situ,Sino-Tibetan,NON_BODY,,tɑ ko,no
+Sizang Chin,Sino-Tibetan,UNKNOWN,,(missing),no
+Southern Bai,Sino-Tibetan,NON_BODY,,(missing),no
+Southern Ghale,Sino-Tibetan,UNKNOWN,,(missing),no
+Southern Jinghpaw,Sino-Tibetan,UNKNOWN,,(missing),no
+Southern Pumi,Sino-Tibetan,NON_BODY,,(missing),no
+Southern Qiang,Sino-Tibetan,UNKNOWN,,(missing),no
+Southern Tangkhul Naga,Sino-Tibetan,UNKNOWN,,(missing),no
+Sumi Naga,Sino-Tibetan,UNKNOWN,,(missing),no
+Sunwar,Sino-Tibetan,NON_BODY,,ara-,no
+Tagin,Sino-Tibetan,NON_BODY,,ara-,no
+Taibei Hokkien,Sino-Tibetan,NON_BODY,,pa,no
+Tangam,Sino-Tibetan,NON_BODY,,(missing),no
+Tangut,Sino-Tibetan,UNKNOWN,,alfoyò,no
+Tangwang,Sino-Tibetan,NON_BODY,,alfoyò,no
+Tarao,Sino-Tibetan,NON_BODY,,(missing),no
+Tawra,Sino-Tibetan,NON_BODY,,(missing),no
+Tedim Chin,Sino-Tibetan,NON_BODY,,(missing),no
+Thado Chin,Sino-Tibetan,NON_BODY,,(missing),no
+Thakali,Sino-Tibetan,UNKNOWN,,laŋ,no
+Thangmi,Sino-Tibetan,NON_BODY,,vapardla,no
+Thulung,Sino-Tibetan,NON_BODY,,(missing),no
+Tibetan,Sino-Tibetan,NON_BODY,rang,(missing),no
+Tilung,Sino-Tibetan,UNKNOWN,,(missing),no
+Toto,Sino-Tibetan,UNKNOWN,,(missing),no
+Tshangla,Sino-Tibetan,UNKNOWN,,laŋ,no
+Ugong,Sino-Tibetan,UNKNOWN,,(missing),no
+Ura,Sino-Tibetan,NON_BODY,,(missing),no
+Wambule,Sino-Tibetan,NON_BODY,,ara-,no
+Wayu,Sino-Tibetan,NON_BODY,,ara-,no
+Western Magar,Sino-Tibetan,UNKNOWN,,ta̠ng_go̠m,no
+Western Muya,Sino-Tibetan,UNKNOWN,,ara-,no
+Western Tamang,Sino-Tibetan,UNKNOWN,,(missing),no
+Wu Chinese,Sino-Tibetan,UNKNOWN,,(missing),no
+Wuding-Luquan Yi,Sino-Tibetan,UNKNOWN,,o55ko33,no
+Wusa Nasu,Sino-Tibetan,UNKNOWN,,(missing),no
+Wutunhua,Sino-Tibetan,UNKNOWN,,khloʔ,no
+Xishanba Lalo,Sino-Tibetan,UNKNOWN,,laŋ,no
+Yakkha,Sino-Tibetan,NON_BODY,,laŋ,no
+Yamphu,Sino-Tibetan,NON_BODY,,khloʔ,no
+Youle Jinuo,Sino-Tibetan,UNKNOWN,,ʃjaɾaŋ,no
+Yue Chinese,Sino-Tibetan,UNKNOWN,,(missing),no
+Zaiwa,Sino-Tibetan,NON_BODY,,ara-,no
+Zakhring,Sino-Tibetan,UNKNOWN,,ara-,no
+Zeme Naga,Sino-Tibetan,UNKNOWN,,(missing),no
+Zhaba,Sino-Tibetan,UNKNOWN,,laŋ,no
+Assiniboine,Siouan,NON_BODY,,(missing),no
+Catawba,Siouan,UNKNOWN,,(missing),no
+Crow,Siouan,NON_BODY,,(missing),no
+Hidatsa,Siouan,NON_BODY,,(missing),no
+Omaha-Ponca,Siouan,UNKNOWN,,ta̠ng_go̠m,no
+Quapaw,Siouan,NON_BODY,,ta̠ng_go̠m,no
+Koyra Chiini Songhay,Songhay,NON_BODY,,(missing),no
+Tondi Songway Kiini,Songhay,UNKNOWN,,(missing),no
+Zarma,Songhay,UNKNOWN,,ta̠ng_go̠m,no
+Koromira,South Bougainville,UNKNOWN,,ᵏpʷutu-ŋ,no
+Hamer-Banna,South Omotic,NON_BODY,,laŋ,no
+Gogodala,Suki-Gogodala,NON_BODY,,ganabi,no
+Kwegu,Surmic,NON_BODY,,(missing),no
+Majang,Surmic,NON_BODY,,(missing),no
+Me'en,Surmic,UNKNOWN,,(missing),no
+Murle,Surmic,UNKNOWN,,(missing),no
+Tennet,Surmic,UNKNOWN,,(missing),no
+Anfillo,Ta-Ne-Omotic,UNKNOWN,,(missing),no
+Boro (Ethiopia),Ta-Ne-Omotic,UNKNOWN,,(missing),no
+Chara,Ta-Ne-Omotic,NON_BODY,,(missing),no
+Dawro,Ta-Ne-Omotic,UNKNOWN,,(missing),no
+Gamo,Ta-Ne-Omotic,UNKNOWN,,kektoŋ,no
+Gofa,Ta-Ne-Omotic,UNKNOWN,,to:t.A,no
+Kachama-Ganjule-Haro,Ta-Ne-Omotic,UNKNOWN,,wíta,no
+Kafa,Ta-Ne-Omotic,NON_BODY,,ɣì̵y,no
+Koorete,Ta-Ne-Omotic,UNKNOWN,,(missing),no
+Male (Ethiopia),Ta-Ne-Omotic,UNKNOWN,,ta̠ng_go̠m,no
+Melo,Ta-Ne-Omotic,UNKNOWN,,(missing),no
+Wolaytta,Ta-Ne-Omotic,UNKNOWN,,ara-,no
+Yemsa,Ta-Ne-Omotic,UNKNOWN,,ara-,no
+Zayse-Zergulla,Ta-Ne-Omotic,UNKNOWN,,ara-,no
+A'ou,Tai-Kadai,UNKNOWN,,(missing),no
+Ahom,Tai-Kadai,UNKNOWN,,(missing),no
+Cao Miao,Tai-Kadai,UNKNOWN,,(missing),no
+Lachi,Tai-Kadai,UNKNOWN,,ʦ.u.b.u.r.i,no
+Mak (China),Tai-Kadai,UNKNOWN,,ta̠ng_go̠m,no
+Shidong Biao,Tai-Kadai,UNKNOWN,,(missing),no
+Mararit,Tamaic,UNKNOWN,,libogo,no
+Tama (Chad),Tamaic,UNKNOWN,,(missing),no
+Purepecha,Tarascan,NON_BODY,,laŋ,no
+Butam,Taulil-Butam,UNKNOWN,,(missing),no
+Taulil,Taulil-Butam,UNKNOWN,,mihi,no
+Dadibi,Teberan,UNKNOWN,,tobolu,no
+Lowland Oaxaca Chontal,Tequistlatecan,UNKNOWN,,to:t.A,no
+Ticuna,Ticuna-Yuri,UNKNOWN,,ara-,no
+Adang,Timor-Alor-Pantar,NON_BODY,,loŋ,no
+Filomeno Mata Totonac,Totonacan,NON_BODY,,ta̠ng_go̠m,no
+Highland Totonac,Totonacan,NON_BODY,,(missing),no
+Papantla Totonac,Totonacan,UNKNOWN,,ta̠ng_go̠m,no
+Upper Necaxa Totonac,Totonacan,UNKNOWN,,(missing),no
+Yecuatla Totonac,Totonacan,UNKNOWN,,tʃito,no
+Nisga'a,Tsimshian,NON_BODY,,kektoŋ,no
+Barasana-Eduria,Tucanoan,UNKNOWN,,loha,no
+Cubeo,Tucanoan,UNKNOWN,,hipóbi̵,no
+Desano,Tucanoan,UNKNOWN,,(missing),no
+Koreguaje,Tucanoan,NON_BODY,,meori,no
+Kotiria,Tucanoan,UNKNOWN,,dapo,no
+Macuna,Tucanoan,UNKNOWN,,ta̠ng_go̠m,no
+Siona-Tetete,Tucanoan,NON_BODY,,ara-,no
+Siriano,Tucanoan,UNKNOWN,,ara-,no
+Tanimuca-Retuarã,Tucanoan,NON_BODY,,(missing),no
+Tucano,Tucanoan,UNKNOWN,,ara-,no
+Berjozovka,Tungusic,UNKNOWN,,(missing),no
+Even,Tungusic,UNKNOWN,,dil,no
+Evenki,Tungusic,UNKNOWN,,dil,no
+Hulun Buir Solon,Tungusic,UNKNOWN,,(missing),no
+Kilen,Tungusic,UNKNOWN,,(missing),no
+Moma Even,Tungusic,UNKNOWN,,ta̠ng_go̠m,no
+Nanai,Tungusic,UNKNOWN,,ara-,no
+Negidal,Tungusic,UNKNOWN,,ara-,no
+Oroch,Tungusic,UNKNOWN,,dilji,no
+Orok,Tungusic,UNKNOWN,,ʤili,no
+Siberian Evenki,Tungusic,UNKNOWN,,dil,no
+Udihe,Tungusic,UNKNOWN,,(missing),no
+Ulch,Tungusic,UNKNOWN,,dele,no
+Aché,Tupian,UNKNOWN,,tõʔõ,no
+Akuntsu,Tupian,NON_BODY,,anam,no
+Araweté,Tupian,NON_BODY,,(missing),no
+Avá-Canoeiro,Tupian,NON_BODY,,(missing),no
+Awetí,Tupian,NON_BODY,,(missing),no
+Cocama-Cocamilla,Tupian,NON_BODY,,(missing),no
+Eastern Bolivian Guaraní,Tupian,NON_BODY,,olo,no
+Karitiâna,Tupian,NON_BODY,,(missing),no
+Mbyá Guaraní,Tupian,NON_BODY,,(missing),no
+Mekens,Tupian,UNKNOWN,,(missing),no
+Mundurukú,Tupian,NON_BODY,,(missing),no
+Nhengatu,Tupian,NON_BODY,,kektoŋ,no
+Paraguayan Guaraní,Tupian,UNKNOWN,,buúk,no
+Sirionó,Tupian,UNKNOWN,,(missing),no
+Suruí,Tupian,NON_BODY,,(missing),no
+Tupinambá,Tupian,NON_BODY,,ara-,no
+Yuqui,Tupian,UNKNOWN,,ʃjaɾaŋ,no
+Rumu,Turama-Kikori,UNKNOWN,,purluju,no
+Bashkir,Turkic,UNKNOWN,,(missing),no
+Chuvash,Turkic,UNKNOWN,,(missing),no
+Crimean Tatar,Turkic,UNKNOWN,,(missing),no
+Gagauz,Turkic,UNKNOWN,,mihi,no
+Khakas,Turkic,UNKNOWN,,laŋ,no
+North Azerbaijani,Turkic,UNKNOWN,,(missing),no
+Northern Uzbek,Turkic,UNKNOWN,,(missing),no
+Sakha,Turkic,UNKNOWN,,bas,no
+Shor,Turkic,UNKNOWN,,(missing),no
+Tatar,Turkic,UNKNOWN,,(missing),no
+Turkic Khalaj,Turkic,NON_BODY,,laŋ,no
+Turkish,Turkic,UNKNOWN,,tapikái,no
+Turkmen,Turkic,UNKNOWN,,tapikái,no
+Tuvinian,Turkic,UNKNOWN,,ara-,no
+East Taa,Tuu,UNKNOWN,,(missing),no
+N||ng-Danster !Ui,Tuu,NON_BODY,,ara-,no
+Central Mansi,Uralic,NON_BODY,,ta̠ng_go̠m,no
+Estonian,Uralic,UNKNOWN,,pea,no
+Finnish,Uralic,UNKNOWN,,pææ,no
+Forest Enets,Uralic,NON_BODY,,ɛba,no
+Grassland Mari,Uralic,UNKNOWN,,ta̠ng_go̠m,no
+Hungarian,Uralic,UNKNOWN,,kektoŋ,no
+Ingrian,Uralic,UNKNOWN,,p.æː,no
+Kamas (Uralic),Uralic,UNKNOWN,,(missing),no
+Komi-Permyak,Uralic,UNKNOWN,,(missing),no
+Komi-Zyrian,Uralic,UNKNOWN,,(missing),no
+Liv,Uralic,UNKNOWN,,(missing),no
+Livvi,Uralic,UNKNOWN,,(missing),no
+Ludian,Uralic,UNKNOWN,,ara-,no
+Lule Saami,Uralic,UNKNOWN,,ʔekhje,no
+Nganasan,Uralic,NON_BODY,,kektoŋ,no
+North Saami,Uralic,UNKNOWN,,ʔekhje,no
+Northern Karelian,Uralic,UNKNOWN,,upoko / o'o,no
+Pite Saami,Uralic,UNKNOWN,,ʔekhje,no
+Skolt Saami,Uralic,UNKNOWN,,ʔekhje,no
+South Saami,Uralic,UNKNOWN,,(missing),no
+Southern Selkup,Uralic,UNKNOWN,,(missing),no
+Surgut Khanty,Uralic,UNKNOWN,,laŋ,no
+Tundra Nenets,Uralic,UNKNOWN,,ɛba,no
+Tver,Uralic,UNKNOWN,,(missing),no
+Ume Saami,Uralic,UNKNOWN,,ʔekhje,no
+Veps,Uralic,UNKNOWN,,pæ,no
+Votic,Uralic,UNKNOWN,,(missing),no
+Võro-Mulgi-Tartu,Uralic,UNKNOWN,,ara-,no
+Western Mari,Uralic,UNKNOWN,,ta̠ng_go̠m,no
+Uru,Uru-Chipaya,NON_BODY,,(missing),no
+Cahuilla,Uto-Aztecan,UNKNOWN,,yuluka-l,no
+Central Guerrero Nahuatl,Uto-Aztecan,NON_BODY,,(missing),no
+Central Tarahumara,Uto-Aztecan,UNKNOWN,,ta̠ng_go̠m,no
+Classical Nahuatl,Uto-Aztecan,NON_BODY,,(missing),no
+Comanche,Uto-Aztecan,NON_BODY,,ta̠ng_go̠m,no
+El Nayar Cora,Uto-Aztecan,UNKNOWN,,ɓ.o̤ː.k,no
+Eudeve,Uto-Aztecan,UNKNOWN,,(missing),no
+Highland Puebla Nahuatl,Uto-Aztecan,NON_BODY,,(missing),no
+Huarijio,Uto-Aztecan,NON_BODY,,múuk,no
+Huichol,Uto-Aztecan,NON_BODY,,(missing),no
+Isthmus-Cosoleacaque Nahuatl,Uto-Aztecan,NON_BODY,,(missing),no
+Isthmus-Mecayapan Nahuatl,Uto-Aztecan,UNKNOWN,,ta̠ng_go̠m,no
+Isthmus-Pajapan Nahuatl,Uto-Aztecan,UNKNOWN,,(missing),no
+Lowland Tarahumara,Uto-Aztecan,UNKNOWN,,ta̠ng_go̠m,no
+Luiseno-Juaneño,Uto-Aztecan,UNKNOWN,,bokob,no
+Mayo,Uto-Aztecan,UNKNOWN,,ta̠ng_go̠m,no
+Michoacán Nahuatl,Uto-Aztecan,NON_BODY,,(missing),no
+Mono (USA),Uto-Aztecan,NON_BODY,,kaḍuip,no
+Morelos Nahuatl,Uto-Aztecan,NON_BODY,,(missing),no
+Northern Paiute,Uto-Aztecan,UNKNOWN,,(missing),no
+Northern Puebla Nahuatl,Uto-Aztecan,UNKNOWN,,(missing),no
+Northern Tepehuan,Uto-Aztecan,NON_BODY,,(missing),no
+Pima Bajo,Uto-Aztecan,UNKNOWN,,ta̠ng_go̠m,no
+Pipil,Uto-Aztecan,NON_BODY,,tzun-tekuma-t,no
+Second Mesa,Uto-Aztecan,NON_BODY,,ara-,no
+Serrano,Uto-Aztecan,UNKNOWN,,ara-,no
+Shoshoni,Uto-Aztecan,UNKNOWN,,(missing),no
+Sierra Negra Nahuatl,Uto-Aztecan,NON_BODY,,(missing),no
+Southeastern Tepehuan,Uto-Aztecan,NON_BODY,,(missing),no
+Teguima,Uto-Aztecan,UNKNOWN,,ta̠ng_go̠m,no
+Temascaltepec Nahuatl,Uto-Aztecan,NON_BODY,,ta̠ng_go̠m,no
+Tepecano,Uto-Aztecan,UNKNOWN,,ara-,no
+Tetelcingo Nahuatl,Uto-Aztecan,UNKNOWN,,(missing),no
+Third Mesa,Uto-Aztecan,NON_BODY,,ara-,no
+Tohono O'odham,Uto-Aztecan,UNKNOWN,,laŋ,no
+Tongva,Uto-Aztecan,BODY,,(missing),no
+Tübatulabal,Uto-Aztecan,UNKNOWN,,ara-,no
+Ute-Southern Paiute,Uto-Aztecan,UNKNOWN,,(missing),no
+Western Durango Nahuatl,Uto-Aztecan,UNKNOWN,,(missing),no
+Western Huasteca Nahuatl,Uto-Aztecan,NON_BODY,,(missing),no
+Yaqui,Uto-Aztecan,UNKNOWN,,kueiʔntei,no
+Zacatlán-Ahuacatlán-Tepetzintla Nahuatl,Uto-Aztecan,UNKNOWN,,(missing),no
+Heiltsuk-Oowekyala,Wakashan,NON_BODY,,(missing),no
+Nuu-chah-nulth,Wakashan,NON_BODY,,laŋ,no
+Moi (Indonesia),West Bird's Head,UNKNOWN,,(missing),no
+Kalamang,West Bomberai,UNKNOWN,,(missing),no
+Ami,Western Daly,NON_BODY,,ʔekhje,no
+Maranunggu,Western Daly,UNKNOWN,,libogo,no
+Marithiel,Western Daly,UNKNOWN,,ta̠ng_go̠m,no
+Wintu,Wintuan,NON_BODY,,ʃjaɾaŋ,no
+Gambera,Worrorran,NON_BODY,,(missing),no
+Guwidj,Worrorran,UNKNOWN,,(missing),no
+Kwini,Worrorran,NON_BODY,,(missing),no
+Miwa,Worrorran,NON_BODY,,ara-,no
+Munumburru,Worrorran,UNKNOWN,,pjei³¹kʰu¹¹,no
+Ngarinyin,Worrorran,UNKNOWN,,o55ko33,no
+Ngarnawu,Worrorran,UNKNOWN,,kektoŋ,no
+Umiida-Unggarangu,Worrorran,UNKNOWN,,kektoŋ,no
+Wilawila,Worrorran,NON_BODY,,pwaneta,no
+Winjarumi,Worrorran,NON_BODY,,langga,no
+Wolyamidi,Worrorran,UNKNOWN,,ʔekhje,no
+Worrorra,Worrorran,NON_BODY,,ara-,no
+Wunambal,Worrorran,NON_BODY,,(missing),no
+Wurla,Worrorran,UNKNOWN,,ara-,no
+Yawijibaya,Worrorran,NON_BODY,,bulha,no
+Xinca-Chiquimulilla,Xincan,UNKNOWN,,(missing),no
+Xinca-Guazacapan,Xincan,UNKNOWN,,ta̠ng_go̠m,no
+Xinca-Yupiltepeque,Xincan,UNKNOWN,,ara-,no
+Xinka-Jumaytepeque,Xincan,UNKNOWN,,ta̠ng_go̠m,no
+Anta-Komnzo-Wára-Wérè-Kémä,Yam,NON_BODY,,loha,no
+Nambo,Yam,UNKNOWN,,(missing),no
+Nen,Yam,UNKNOWN,,(missing),no
+Wardaman,Yangmanic,NON_BODY,,(missing),no
+Ninam,Yanomamic,NON_BODY,,(missing),no
+Sanumá,Yanomamic,NON_BODY,,ara-,no
+Yanomamö,Yanomamic,NON_BODY,,ta̠ng_go̠m,no
+Yanomám,Yanomamic,NON_BODY,,(missing),no
+Yareba,Yareban,NON_BODY,,upoko / o'o,no
+Yawa,Yawa-Saweru,UNKNOWN,,akapwert,no
+Ket,Yeniseian,NON_BODY,,kəʝga,no
+Northern Yokuts,Yokutsan,NON_BODY,,(missing),no
+Tule-Kaweah Yokuts,Yokutsan,NON_BODY,,ara-,no
+Biwat,Yuat,UNKNOWN,,(missing),no
+Northern Yukaghir,Yukaghir,NON_BODY,,(missing),no
+Northern Yukian,Yuki-Wappo,NON_BODY,,(missing),no
+Wappo,Yuki-Wappo,UNKNOWN,,ta̠ng_go̠m,no
+Chamacoco,Zamucoan,UNKNOWN,,(missing),no
+Iquito,Zaparoan,UNKNOWN,,(missing),no
+Záparo,Zaparoan,UNKNOWN,,ara-,no

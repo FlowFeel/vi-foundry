@@ -1,0 +1,51 @@
+# Conventional Signs Baseline Oracle
+#
+# Reference: Bentz & Dutkiewicz (2026) PNAS 123(9), e2520385123
+# DOI: 10.1073/pnas.2520385123
+#
+# Numerical values from the paper for regression gate testing.
+# Tolerance: ±0.001 for regression coefficients, ±0.01 for R².
+
+convsigns:
+  regression:
+    n_sequences: 213
+    r_squared: 0.25
+    f_statistic: 8.5
+    f_df1: 10
+    f_df2: 196
+    volume_beta: 0.003
+    volume_t: 1.7
+    volume_p: 0.08
+    date_beta: -0.00002
+    date_t: -1.3
+    date_p: 0.19
+    figurine_zoomorph_beta: 0.23
+    figurine_zoomorph_t: 2.4
+    figurine_zoomorph_p: 0.02
+    figurine_anthropomorph_beta: 0.29
+    figurine_anthropomorph_t: 1.95
+    figurine_anthropomorph_p: 0.05
+    tube_flute_beta: -0.22
+    tube_flute_t: -2.5
+    tube_flute_p: 0.012
+    personal_ornament_beta: -0.32
+    personal_ornament_t: -2.8
+    personal_ornament_p: 0.01
+    fragmented_preservation_beta: -0.2
+    fragmented_preservation_t: -2.4
+    fragmented_preservation_p: 0.02
+    semipartial_r2_object_type: 0.13
+    semipartial_r2_ci_lower: 0.07
+    semipartial_r2_ci_upper: 1
+  features:
+    ttr_aurignacian_example: 0.19
+    repetition_rate_aurignacian_example: 0.73
+    unigram_entropy_basque_example: 3.29
+  classification:
+    aurignacian_vs_teddí_accuracy: 1.0
+    aurignacian_vs_urukv_baseline_equivalence: true
+  pca:
+    aurignacian_urukv_ellipse_overlap: full
+  interrater:
+    cohens_kappa_lower: 0.29
+    cohens_kappa_upper: 0.44

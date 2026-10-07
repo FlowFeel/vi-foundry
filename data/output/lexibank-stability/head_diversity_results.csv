@@ -1,0 +1,37 @@
+family,n_langs,unique_forms,ratio,bpdr
+Quechuan,4,1,0.25,bpdr-
+Chicham,4,3,0.75,bpdr-
+Turkic,7,6,0.8571428571428571,bpdr-
+Atlantic-Congo,101,94,0.9306930693069307,bpdr+
+Pama-Nyungan,34,33,0.9705882352941176,bpdr-
+Austroasiatic,35,34,0.9714285714285714,bpdr+
+Nakh-Daghestanian,17,17,1.0,bpdr+
+Hmong-Mien,6,6,1.0,bpdr+
+Tungusic,8,8,1.0,bpdr-
+Dravidian,14,14,1.0,bpdr-
+Tucanoan,9,9,1.0,bpdr-
+Uto-Aztecan,11,11,1.0,bpdr+
+Dogon,3,3,1.0,bpdr+
+Ta-Ne-Omotic,3,3,1.0,bpdr-
+Chibchan,10,10,1.0,bpdr-
+Huitotoan,3,3,1.0,bpdr-
+Cariban,5,5,1.0,bpdr-
+Yanomamic,4,4,1.0,bpdr-
+Nyulnyulan,3,3,1.0,bpdr-
+Uralic,11,11,1.0,bpdr+
+Japonic,4,4,1.0,bpdr-
+Austronesian,217,223,1.0276497695852536,bpdr+
+Indo-European,34,36,1.0588235294117647,bpdr+
+Isolate,43,46,1.069767441860465,bpdr+
+Afro-Asiatic,28,30,1.0714285714285714,bpdr+
+Sino-Tibetan,67,74,1.1044776119402986,bpdr+
+Pano-Tacanan,7,8,1.1428571428571428,bpdr+
+Tupian,7,8,1.1428571428571428,bpdr-
+Nuclear-Macro-Je,7,8,1.1428571428571428,bpdr-
+Nuclear Trans New Guinea,16,19,1.1875,bpdr+
+Arawakan,15,18,1.2,bpdr+
+Goilalan,4,5,1.25,bpdr-
+Otomanguean,4,5,1.25,bpdr-
+Salishan,4,5,1.25,bpdr-
+Worrorran,3,4,1.3333333333333333,bpdr-
+Central Sudanic,3,5,1.6666666666666667,bpdr+

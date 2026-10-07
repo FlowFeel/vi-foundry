@@ -1,0 +1,31 @@
+EQ REPLACEMENT TEST — PGLS RESULTS
+====================================
+Date: 2026-10-04
+Source: Foundry (vi.foundry), Tsuboi et al. (2018) EQ data
+Tree: 14-clade mammal+bird (corrected Newick)
+
+TEST 1: CULTURE → DD (original)
+  PGLS slope=+0.0818  p=0.0004  R²=0.6605  λ=0.0000
+  OLS  slope=+0.0835  p=0.0003
+
+TEST 2: EQ → DD (replacement)
+  PGLS slope=+0.0437  p=0.0004  R²=0.6624  λ=0.6713
+  OLS  slope=+0.0377  p=0.0010
+
+PAIRWISE CORRELATIONS (n=14)
+  Culture~DD: Spearman ρ=0.7055  Pearson r=0.8243
+  EQ~DD:      Spearman ρ=0.3242  Pearson r=0.7813
+  Culture~EQ: Spearman ρ=0.8187  Pearson r=0.8885
+  Culture OLS R²=0.6795
+  EQ OLS  R²=0.6105
+
+LEAVE-ONE-OUT (EQ→DD)
+  R² range: [0.0165, 0.8627]  mean=0.6274
+  p range:  [0.0000, 0.6761]
+  All p<0.05: NO — 1/14 > 0.05 (Homo)
+
+FALSIFICATION CHECK:
+  F1 (p>0.05):     PASS
+  F2 (slope sign): PASS (same direction)
+  F3 (LOO mean):   PASS (mean R²=0.6274)
+  F4 (Cult~EQ ρ):  PASS

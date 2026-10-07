@@ -1,0 +1,618 @@
+{
+  "cluster": "flood",
+  "n": 102,
+  "motifs": [
+    {
+      "ref": "D4a",
+      "title": "Theft of fire, A1415.",
+      "traditions": "294.0",
+      "narratives": "627.0"
+    },
+    {
+      "ref": "J46",
+      "title": "The enemy drowns.",
+      "traditions": "184.0",
+      "narratives": "226.0"
+    },
+    {
+      "ref": "M91c2",
+      "title": "Seated in a bag",
+      "traditions": "170.0",
+      "narratives": "236.0"
+    },
+    {
+      "ref": "K33",
+      "title": "The Living Drowned Woman, Th D688, E323.1; ATU 450.",
+      "traditions": "167.0",
+      "narratives": "283.0"
+    },
+    {
+      "ref": "C2",
+      "title": "Flood and fire.",
+      "traditions": "163.0",
+      "narratives": "319.0"
+    },
+    {
+      "ref": "D13",
+      "title": "Laughter.",
+      "traditions": "141.0",
+      "narratives": "214.0"
+    },
+    {
+      "ref": "M23",
+      "title": "Feigned fear of imaginary danger, ATU 1310\u20131310C; K581.",
+      "traditions": "100.0",
+      "narratives": "154.0"
+    },
+    {
+      "ref": "D1b",
+      "title": "Man-fire.",
+      "traditions": "94.0",
+      "narratives": "132.0"
+    },
+    {
+      "ref": "K38d",
+      "title": "The serpent covers the water.",
+      "traditions": "94.0",
+      "narratives": "165.0"
+    },
+    {
+      "ref": "B50",
+      "title": "Whose blood is sweeter?",
+      "traditions": "83.0",
+      "narratives": "126.0"
+    },
+    {
+      "ref": "D1",
+      "title": "Woman-fire.",
+      "traditions": "77.0",
+      "narratives": "119.0"
+    },
+    {
+      "ref": "D3",
+      "title": "The invention of fire.",
+      "traditions": "74.0",
+      "narratives": "92.0"
+    },
+    {
+      "ref": "B14A",
+      "title": "Tears turn into water.",
+      "traditions": "68.0",
+      "narratives": "82.0"
+    },
+    {
+      "ref": "K67a",
+      "title": "The Drowned Wife, ATU 1120.",
+      "traditions": "67.0",
+      "narratives": "71.0"
+    },
+    {
+      "ref": "C34",
+      "title": "The Flood: the wounded creature.",
+      "traditions": "65.0",
+      "narratives": "91.0"
+    },
+    {
+      "ref": "M1",
+      "title": "Dangerous crossing.",
+      "traditions": "65.0",
+      "narratives": "126.0"
+    },
+    {
+      "ref": "K38d1",
+      "title": "Girl sacrificed to the dragon.",
+      "traditions": "63.0",
+      "narratives": "90.0"
+    },
+    {
+      "ref": "C9",
+      "title": "Warning of the flood.",
+      "traditions": "62.0",
+      "narratives": "112.0"
+    },
+    {
+      "ref": "D4l",
+      "title": "Fire from the sky.",
+      "traditions": "62.0",
+      "narratives": "71.0"
+    },
+    {
+      "ref": "D12",
+      "title": "Food was heated in the sun.",
+      "traditions": "61.0",
+      "narratives": "105.0"
+    },
+    {
+      "ref": "M22",
+      "title": "The crane as saviour.",
+      "traditions": "56.0",
+      "narratives": "50.0"
+    },
+    {
+      "ref": "F27",
+      "title": "Girls and water spirits.",
+      "traditions": "49.0",
+      "narratives": "86.0"
+    },
+    {
+      "ref": "C14",
+      "title": "Monsters destroy people.",
+      "traditions": "48.0",
+      "narratives": "62.0"
+    },
+    {
+      "ref": "K32M",
+      "title": "The heroine is transformed into an animal (not drowned).",
+      "traditions": "44.0",
+      "narratives": "73.0"
+    },
+    {
+      "ref": "D4e",
+      "title": "Coyote or fox obtains fire.",
+      "traditions": "43.0",
+      "narratives": "48.0"
+    },
+    {
+      "ref": "c4a",
+      "title": "The Flood: Salvation on a Tree.",
+      "traditions": "41.0",
+      "narratives": "71.0"
+    },
+    {
+      "ref": "C4",
+      "title": "The Flood: Falling Fruit.",
+      "traditions": "40.0",
+      "narratives": "65.0"
+    },
+    {
+      "ref": "B7b",
+      "title": "Water from a vessel.",
+      "traditions": "39.0",
+      "narratives": "39.0"
+    },
+    {
+      "ref": "C13",
+      "title": "Rebellion of things.",
+      "traditions": "36.0",
+      "narratives": "50.0"
+    },
+    {
+      "ref": "C7",
+      "title": "The Flood: The Destroyed Barrier.",
+      "traditions": "34.0",
+      "narratives": "51.0"
+    },
+    {
+      "ref": "H26",
+      "title": "Mosquitoes had to be drowned.",
+      "traditions": "33.0",
+      "narratives": "63.0"
+    },
+    {
+      "ref": "D4o",
+      "title": "Dry by the fire.",
+      "traditions": "31.0",
+      "narratives": "60.0"
+    },
+    {
+      "ref": "B52",
+      "title": "Before the flood, there were no mountains.",
+      "traditions": "29.0",
+      "narratives": "34.0"
+    },
+    {
+      "ref": "C10",
+      "title": "The Flood: Wet Tails, A2211.1.",
+      "traditions": "28.0",
+      "narratives": "42.0"
+    },
+    {
+      "ref": "D4j",
+      "title": "The rabbit obtains fire.",
+      "traditions": "28.0",
+      "narratives": "11.0"
+    },
+    {
+      "ref": "D4e1",
+      "title": "Dog and fire.",
+      "traditions": "26.0",
+      "narratives": "22.0"
+    },
+    {
+      "ref": "D4c",
+      "title": "Obtaining summer.",
+      "traditions": "24.0",
+      "narratives": "36.0"
+    },
+    {
+      "ref": "D13A",
+      "title": "Obscene dance for the Sun.",
+      "traditions": "23.0",
+      "narratives": "28.0"
+    },
+    {
+      "ref": "F5",
+      "title": "Brides for the first humans.",
+      "traditions": "23.0",
+      "narratives": "21.0"
+    },
+    {
+      "ref": "K52c",
+      "title": "Flooding in the home.",
+      "traditions": "23.0",
+      "narratives": "31.0"
+    },
+    {
+      "ref": "c8e",
+      "title": "Salvation in a pumpkin during the flood.",
+      "traditions": "21.0",
+      "narratives": "47.0"
+    },
+    {
+      "ref": "M5b",
+      "title": "An Ungrateful Rat",
+      "traditions": "21.0",
+      "narratives": "23.0"
+    },
+    {
+      "ref": "k34a",
+      "title": "A rival lures a woman onto a swing.",
+      "traditions": "20.0",
+      "narratives": "22.0"
+    },
+    {
+      "ref": "D4a1",
+      "title": "Luring fire.",
+      "traditions": "19.0",
+      "narratives": "22.0"
+    },
+    {
+      "ref": "D4g",
+      "title": "The hummingbird obtains fire.",
+      "traditions": "19.0",
+      "narratives": "8.0"
+    },
+    {
+      "ref": "B52a",
+      "title": "The vulture creates dry land.",
+      "traditions": "18.0",
+      "narratives": "17.0"
+    },
+    {
+      "ref": "D11",
+      "title": "Food was heated on the body.",
+      "traditions": "18.0",
+      "narratives": "32.0"
+    },
+    {
+      "ref": "D13d",
+      "title": "Making the hidden one laugh.",
+      "traditions": "18.0",
+      "narratives": "22.0"
+    },
+    {
+      "ref": "M91d",
+      "title": "The drowned shaman",
+      "traditions": "18.0",
+      "narratives": "20.0"
+    },
+    {
+      "ref": "D13f",
+      "title": "Laughter and fire.",
+      "traditions": "17.0",
+      "narratives": "41.0"
+    },
+    {
+      "ref": "D13i",
+      "title": "Broken tooth.",
+      "traditions": "17.0",
+      "narratives": "27.0"
+    },
+    {
+      "ref": "L28a",
+      "title": "Eating a snake causes a flood.",
+      "traditions": "17.0",
+      "narratives": "34.0"
+    },
+    {
+      "ref": "M147b",
+      "title": "The fox gets rid of fleas, ATU 63.",
+      "traditions": "17.0",
+      "narratives": "9.0"
+    },
+    {
+      "ref": "D4aa",
+      "title": "The butterfly tries to steal fire.",
+      "traditions": "16.0",
+      "narratives": "12.0"
+    },
+    {
+      "ref": "M91E",
+      "title": "The Tsar orders himself to be burned",
+      "traditions": "16.0",
+      "narratives": "11.0"
+    },
+    {
+      "ref": "B3c",
+      "title": "Attempt to drown God.",
+      "traditions": "15.0",
+      "narratives": "17.0"
+    },
+    {
+      "ref": "C10a",
+      "title": "Birds clinging to the sky, A2211.1.",
+      "traditions": "15.0",
+      "narratives": "19.0"
+    },
+    {
+      "ref": "D4n",
+      "title": "The weeping one demands summer.",
+      "traditions": "15.0",
+      "narratives": "7.0"
+    },
+    {
+      "ref": "D13g",
+      "title": "Meat on the teeth.",
+      "traditions": "14.0",
+      "narratives": "21.0"
+    },
+    {
+      "ref": "I81a",
+      "title": "Chthonic crab.",
+      "traditions": "14.0",
+      "narratives": "22.0"
+    },
+    {
+      "ref": "D1a4",
+      "title": "Conversation between two fires.",
+      "traditions": "13.0",
+      "narratives": "12.0"
+    },
+    {
+      "ref": "D4i",
+      "title": "The beaver obtains fire.",
+      "traditions": "13.0",
+      "narratives": "4.0"
+    },
+    {
+      "ref": "J47b",
+      "title": "Two ropes.",
+      "traditions": "13.0",
+      "narratives": "27.0"
+    },
+    {
+      "ref": "C6f",
+      "title": "Retrieving a drowned person.",
+      "traditions": "12.0",
+      "narratives": "13.0"
+    },
+    {
+      "ref": "G9B",
+      "title": "Stop working \u2013 there will be a flood.",
+      "traditions": "12.0",
+      "narratives": "27.0"
+    },
+    {
+      "ref": "D2",
+      "title": "Birth of the sun/fire.",
+      "traditions": "11.0",
+      "narratives": "17.0"
+    },
+    {
+      "ref": "D4d",
+      "title": "The opossum obtains fire.",
+      "traditions": "11.0",
+      "narratives": "14.0"
+    },
+    {
+      "ref": "D4h",
+      "title": "The swallow obtains fire.",
+      "traditions": "11.0",
+      "narratives": "12.0"
+    },
+    {
+      "ref": "D10",
+      "title": "The fire drill is a pair of people.",
+      "traditions": "11.0",
+      "narratives": "12.0"
+    },
+    {
+      "ref": "D1a2",
+      "title": "A borrowed object does not burn.",
+      "traditions": "10.0",
+      "narratives": "9.0"
+    },
+    {
+      "ref": "D4q",
+      "title": "The fly obtains fire.",
+      "traditions": "10.0",
+      "narratives": "23.0"
+    },
+    {
+      "ref": "D13h",
+      "title": "He who goes to the dead must not laugh.",
+      "traditions": "10.0",
+      "narratives": "12.0"
+    },
+    {
+      "ref": "B11B",
+      "title": "The drowned mammoth.",
+      "traditions": "9.0",
+      "narratives": "10.0"
+    },
+    {
+      "ref": "D4c1",
+      "title": "A floating elk distracts attention.",
+      "traditions": "9.0",
+      "narratives": "13.0"
+    },
+    {
+      "ref": "M152c",
+      "title": "The lion and the donkey at the ford.",
+      "traditions": "9.0",
+      "narratives": "10.0"
+    },
+    {
+      "ref": "C9a",
+      "title": "The Flood: people turn into aquatic animals.",
+      "traditions": "8.0",
+      "narratives": "16.0"
+    },
+    {
+      "ref": "D1a1",
+      "title": "The old woman-fire takes the child away.",
+      "traditions": "8.0",
+      "narratives": "11.0"
+    },
+    {
+      "ref": "C12a",
+      "title": "The Flood and the Dog.",
+      "traditions": "7.0",
+      "narratives": "10.0"
+    },
+    {
+      "ref": "D4b",
+      "title": "Retribution for fire.",
+      "traditions": "7.0",
+      "narratives": "15.0"
+    },
+    {
+      "ref": "D4q1",
+      "title": "The bat and fire.",
+      "traditions": "7.0",
+      "narratives": "8.0"
+    },
+    {
+      "ref": "D13c",
+      "title": "The trickster makes his brother's wife laugh.",
+      "traditions": "7.0",
+      "narratives": "8.0"
+    },
+    {
+      "ref": "D13hh",
+      "title": "Those who visit another world should not laugh.",
+      "traditions": "7.0",
+      "narratives": "9.0"
+    },
+    {
+      "ref": "C8D",
+      "title": "Having had smallpox, they did not recognise each other.",
+      "traditions": "6.0",
+      "narratives": "9.0"
+    },
+    {
+      "ref": "c8f",
+      "title": "Salvation in a drum during the flood.",
+      "traditions": "6.0",
+      "narratives": "11.0"
+    },
+    {
+      "ref": "C34a",
+      "title": "Buried in the sand.",
+      "traditions": "6.0",
+      "narratives": "7.0"
+    },
+    {
+      "ref": "D2a",
+      "title": "Mother dies giving birth to fire or the sun.",
+      "traditions": "6.0",
+      "narratives": "13.0"
+    },
+    {
+      "ref": "D4h1",
+      "title": "The robin obtains fire.",
+      "traditions": "6.0",
+      "narratives": "12.0"
+    },
+    {
+      "ref": "E6a",
+      "title": "The path through water.",
+      "traditions": "6.0",
+      "narratives": "12.0"
+    },
+    {
+      "ref": "B7d",
+      "title": "Water pours from a bone.",
+      "traditions": "5.0",
+      "narratives": "5.0"
+    },
+    {
+      "ref": "D1a",
+      "title": "Mother-in-law-fire.",
+      "traditions": "4.0",
+      "narratives": "6.0"
+    },
+    {
+      "ref": "D1a3",
+      "title": "The fire wife.",
+      "traditions": "4.0",
+      "narratives": "4.0"
+    },
+    {
+      "ref": "D4p",
+      "title": "The parrot obtains fire.",
+      "traditions": "4.0",
+      "narratives": "4.0"
+    },
+    {
+      "ref": "D12a",
+      "title": "At sunrise, the sun's heat is sufficient to cook food.",
+      "traditions": "4.0",
+      "narratives": "6.0"
+    },
+    {
+      "ref": "D4f",
+      "title": "Beavers or fish allow themselves to be roasted.",
+      "traditions": "3.0",
+      "narratives": "6.0"
+    },
+    {
+      "ref": "D4k",
+      "title": "The deer obtains fire.",
+      "traditions": "3.0",
+      "narratives": "2.0"
+    },
+    {
+      "ref": "D13B",
+      "title": "Menstruation passes to women.",
+      "traditions": "3.0",
+      "narratives": "3.0"
+    },
+    {
+      "ref": "D13e",
+      "title": "Hunters laugh at the carcass of an animal.",
+      "traditions": "3.0",
+      "narratives": "3.0"
+    },
+    {
+      "ref": "D13i1",
+      "title": "The one who showed his teeth was exposed.",
+      "traditions": "3.0",
+      "narratives": "5.0"
+    },
+    {
+      "ref": "M109d",
+      "title": "Seized by the tail by a sea creature.",
+      "traditions": "3.0",
+      "narratives": "3.0"
+    },
+    {
+      "ref": "N40",
+      "title": "The liver drowned and the lungs swam away",
+      "traditions": "3.0",
+      "narratives": "5.0"
+    },
+    {
+      "ref": "C8a2",
+      "title": "Stone lion.",
+      "traditions": "2.0",
+      "narratives": "4.0"
+    },
+    {
+      "ref": "D4m",
+      "title": "The owners of fire dance.",
+      "traditions": "0.0",
+      "narratives": "0.0"
+    }
+  ]
+}

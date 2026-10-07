@@ -109,3 +109,132 @@ stages:
     function: transfer_test
     params:
       seed: 42
+
+  # === Body-Grammar Substrate (P4 HEAD→SELF) ===
+  - name: bg_load_reflexives
+    inputs: []
+    outputs: [data/raw/p4_reflexives]
+    function: load_reflexive_sources
+    params: {}
+
+  - name: bg_load_gb305
+    inputs: []
+    outputs: [data/raw/p4_gb305]
+    function: load_grambank_gb305
+    params: {}
+
+  - name: bg_load_chg
+    inputs: []
+    outputs: [data/raw/p4_chg]
+    function: load_chg_admixture
+    params: {}
+
+  - name: bg_build_dataframe
+    inputs: [data/raw/p4_reflexives, data/raw/p4_gb305]
+    outputs: [data/raw/p4_analysis_df]
+    function: build_p4_analysis_dataframe
+    params:
+      remove_contaminated: true
+
+  - name: bg_ancestral_reconstruction
+    inputs: [data/raw/p4_reflexives]
+    outputs: [results/bg_p4_ancestral]
+    function: p4_ancestral_reconstruction
+    params:
+      min_tips: 3
+      model: ER
+      seed: 42
+
+  - name: bg_robustness_jackknife
+    inputs: [data/raw/p4_analysis_df]
+    outputs: [results/bg_p4_robustness]
+    function: p4_robustness_jackknife
+    params:
+      seed: 42
+
+  - name: bg_adna_correlation
+    inputs: [data/raw/p4_chg]
+    outputs: [results/bg_p4_adna]
+    function: p4_adna_correlation
+    params:
+      seed: 42
+
+  - name: bg_spatiophylogenetic
+    inputs: [data/raw/p4_analysis_df]
+    outputs: [results/bg_p4_spatiophylo]
+    function: p4_spatiophylogenetic
+    params:
+      spatial_cutoff_km: 2000
+      seed: 42
+      iter: 2000
+      warmup: 1000
+
+  # === Findings 2 & 3: Oscillatory DD + Hysteresis (p8) ===
+  - name: p8a_oscillatory_dd
+    inputs:
+      - data/cross_clade_dd.csv
+      - data/van-holstein/Data_Code_Final/PyRate/Outputs/*/homo_diversity_*.log
+      - data/van-holstein/Data_Code_Final/PyRate/Outputs/*/nonhomo_diversity_*.log
+    outputs: [results/oscillatory-dd-test/results.json]
+    function: p8a_oscillatory_dd
+    params:
+      script: scripts/run_p8_dd_tests.py
+      interpreter: /home/node/.openclaw/workspace/tools/PyRate-source/.venv/bin/python3
+
+  - name: p8b_hysteresis
+    inputs:
+      - data/cross_clade_dd.csv
+      - data/van-holstein/Data_Code_Final/PyRate/Outputs/*/homo_diversity_*.log
+      - data/van-holstein/Data_Code_Final/PyRate/Outputs/*/nonhomo_diversity_*.log
+      - results/canid-dd-analysis/pyrate_mcmc_logs/Canis_pbdb_data_1_Grj_sp_rates.log
+      - results/canid-dd-analysis/pyrate_mcmc_logs/Canis_pbdb_data_1_Grj_ex_rates.log
+    outputs: [results/hysteresis-test/results.json]
+    function: p8b_hysteresis
+    params:
+      script: scripts/run_p8_dd_tests.py
+      interpreter: /home/node/.openclaw/workspace/tools/PyRate-source/.venv/bin/python3
+
+  # === Phylomythology (myth phylogenetics) ===
+  - name: myth_simulacra
+    inputs: []
+    outputs: [results/myths/simulacra]
+    function: run_stage_myth_simulacra
+    params:
+      seed: 42
+
+  - name: myth_load_data
+    inputs: []
+    outputs: [data/myths/loaded]
+    function: run_stage_load_myths
+    params: {}
+
+  - name: myth_cosmic_hunt
+    inputs: [data/myths/cosmic_hunt_matrix.csv]
+    outputs: [results/myths/cosmic_hunt]
+    function: run_myth_pipeline
+    params:
+      dataset_name: cosmic_hunt
+      seed: 42
+
+  - name: myth_exogamy
+    inputs: [data/myths/exogamy_matrix.csv]
+    outputs: [results/myths/exogamy]
+    function: run_myth_pipeline
+    params:
+      dataset_name: exogamy
+      seed: 42
+
+  - name: myth_serpent
+    inputs: [data/myths/serpent_motifs_matrix.csv]
+    outputs: [results/myths/serpent]
+    function: run_myth_pipeline
+    params:
+      dataset_name: serpent
+      seed: 42
+
+  - name: myth_full_analysis
+    inputs: []
+    outputs: [results/myths/full_report]
+    function: run_myth_analysis
+    params:
+      seed: 42

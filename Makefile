@@ -1,4 +1,4 @@
-.PHONY: test lint unit simulacra integration regression verify docker-stack all clean
+.PHONY: test lint unit simulacra integration regression convsigns verify docker-stack all clean
 
 # Lint (static analysis)
 lint:
@@ -26,6 +26,18 @@ regression:
 # verifier confirms. Requires Docker.
 docker-stack:
 	docker compose -f compose/docker-compose.test.yml up --abort-on-container-exit --exit-code-from verifier
+
+# Lexibank stability gate: coverage, transparency, HEAD-form diversity analysis
+# for the Body-Grammar Substrate Hypothesis. No Docker required.
+lexibank-stability:
+	python3 scripts/run_lexibank_stability.py
+	@echo "Output: data/output/lexibank-stability/"
+
+# Conventional signs gate: Bentz & Dutkiewicz (2026) Aurignacian sign sequence
+# statistical analysis. Pure R, no Docker, no Python required.
+convsigns:
+	Rscript run_tests.R convsigns
+	@echo "All conventional signs tests passed"
 
 # Strict baseline comparison via the independent Python verifier. Produces
 # test-output/results.yml and compares to baseline/oracle.yml. Reports

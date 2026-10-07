@@ -71,7 +71,7 @@ substrate-independence (ρ ≈ 0 or negative).
 plant <- load_retention_matrix()
 bird <- load_island_birds()
 result <- empirical_formal_model(plant$data, bird$data)
-result$values$dep_coefficient  # ~ +0.84 (VI predicts > 0)
-result$values$cross_kingdom_rho  # ~ +0.755
+result$values$dep_coefficient # ~ +0.84 (VI predicts > 0)
+result$values$cross_kingdom_rho # ~ +0.755
 }
 }

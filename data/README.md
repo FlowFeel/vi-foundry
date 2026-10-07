@@ -56,3 +56,21 @@ dewar_panX_tree.nex:
   source: "Dewar et al. (2024) supplementary"
   version: "2026-07-19"
   description: "NEXUS phylogeny for pan-genome analysis"
+
+convsigns/signBase_randomized.csv:
+  source: "SignBase v2.0 — Dutkiewicz, Russo, Lee & Bentz (2020) Sci Data 7, 364"
+  version: "2025-03-06"
+  description: "Sign sequences from Swabian Aurignacian mobile artifacts (260 objects, 213 usable sequences). Columns: object_id, object_type, material, preservation, dimensions, dates, original and cleaned sign codings."
+  doi: 10.5281/zenodo.18401937
+  derived_from: "PaleoSigns repository — github.com/christianbentz/PaleoSigns"
+
+convsigns/Sb2Artifact-2025-03-06.csv:
+  source: "SignBase v2.0 — Dutkiewicz et al. (2020)"
+  version: "2025-03-06"
+  description: "Artifact-level metadata for SignBase objects: dimensions, preservation state, site, dating."
+  columns: [object_id, site, material, object_type, length_mm, width_mm, depth_mm, preservation, dating]
+
+convsigns/Sign-2025-03-06.csv:
+  source: "SignBase v2.0 — Dutkiewicz et al. (2020)"
+  version: "2025-03-06"
+  description: "Sign type definitions for SignBase: UTF-8 encodings, Unicode classifications, visual references."

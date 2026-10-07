@@ -1,0 +1,234 @@
+{
+  "cluster": "earth_diver",
+  "n": 38,
+  "motifs": [
+    {
+      "ref": "B3a",
+      "title": "Primary waters, A810.",
+      "traditions": "300.0",
+      "narratives": "674.0"
+    },
+    {
+      "ref": "I22",
+      "title": "Moving objects, D931.3, D1553.",
+      "traditions": "195.0",
+      "narratives": "352.0"
+    },
+    {
+      "ref": "C6",
+      "title": "Obtaining valuables from the underworld.",
+      "traditions": "188.0",
+      "narratives": "439.0"
+    },
+    {
+      "ref": "F7",
+      "title": "Woman from the underwater world.",
+      "traditions": "145.0",
+      "narratives": "224.0"
+    },
+    {
+      "ref": "I22g",
+      "title": "Colliding rocks.",
+      "traditions": "116.0",
+      "narratives": "188.0"
+    },
+    {
+      "ref": "C6d",
+      "title": "Obtaining land from the underworld.",
+      "traditions": "109.0",
+      "narratives": "233.0"
+    },
+    {
+      "ref": "C6c",
+      "title": "The Diver \u2013 Bird.",
+      "traditions": "68.0",
+      "narratives": "149.0"
+    },
+    {
+      "ref": "C6c4",
+      "title": "Duck \u2013 a successful diver.",
+      "traditions": "57.0",
+      "narratives": "103.0"
+    },
+    {
+      "ref": "K27x9",
+      "title": "Retrieving an object from the bottom of the sea.",
+      "traditions": "47.0",
+      "narratives": "68.0"
+    },
+    {
+      "ref": "C6j1",
+      "title": "The earth is brought by the antagonist of the deity.",
+      "traditions": "45.0",
+      "narratives": "84.0"
+    },
+    {
+      "ref": "C6b",
+      "title": "Diver \u2013 muskrat (beaver, otter).",
+      "traditions": "44.0",
+      "narratives": "92.0"
+    },
+    {
+      "ref": "G32",
+      "title": "Food from the underworld.",
+      "traditions": "41.0",
+      "narratives": "47.0"
+    },
+    {
+      "ref": "I22f",
+      "title": "Talking trees.",
+      "traditions": "41.0",
+      "narratives": "60.0"
+    },
+    {
+      "ref": "C6a",
+      "title": "Diver \u2013 turtle/frog.",
+      "traditions": "38.0",
+      "narratives": "45.0"
+    },
+    {
+      "ref": "E13a",
+      "title": "Knowledge from the underwater world.",
+      "traditions": "38.0",
+      "narratives": "76.0"
+    },
+    {
+      "ref": "F18c",
+      "title": "Girls across the river, K1391.",
+      "traditions": "28.0",
+      "narratives": "26.0"
+    },
+    {
+      "ref": "F87",
+      "title": "Children transformed by a snake woman, ATU 425M.",
+      "traditions": "28.0",
+      "narratives": "50.0"
+    },
+    {
+      "ref": "K27k",
+      "title": "Dive long or deep.",
+      "traditions": "26.0",
+      "narratives": "15.0"
+    },
+    {
+      "ref": "J38",
+      "title": "Stuck claws.",
+      "traditions": "24.0",
+      "narratives": "27.0"
+    },
+    {
+      "ref": "C6c3",
+      "title": "The loon \u2013 a successful diver.",
+      "traditions": "23.0",
+      "narratives": "40.0"
+    },
+    {
+      "ref": "C6j",
+      "title": "Obtaining land in connection with the creation of man.",
+      "traditions": "22.0",
+      "narratives": "26.0"
+    },
+    {
+      "ref": "C6c1",
+      "title": "Birds: successful and unsuccessful divers.",
+      "traditions": "19.0",
+      "narratives": "34.0"
+    },
+    {
+      "ref": "J27b",
+      "title": "Water Father.",
+      "traditions": "16.0",
+      "narratives": "14.0"
+    },
+    {
+      "ref": "C6e",
+      "title": "Diver \u2013 crab, shrimp.",
+      "traditions": "14.0",
+      "narratives": "18.0"
+    },
+    {
+      "ref": "H50",
+      "title": "The sky god and the mistress of the dead.",
+      "traditions": "13.0",
+      "narratives": "19.0"
+    },
+    {
+      "ref": "C6f",
+      "title": "Retrieving a drowned person.",
+      "traditions": "12.0",
+      "narratives": "13.0"
+    },
+    {
+      "ref": "F87a",
+      "title": "The snake wife and her children: transformation into birds.",
+      "traditions": "12.0",
+      "narratives": "26.0"
+    },
+    {
+      "ref": "F87b",
+      "title": "The snake wife and her children: transformation into trees.",
+      "traditions": "12.0",
+      "narratives": "14.0"
+    },
+    {
+      "ref": "K35c2",
+      "title": "The hero in the underwater kingdom, (ATU 677).",
+      "traditions": "12.0",
+      "narratives": "14.0"
+    },
+    {
+      "ref": "C6c2",
+      "title": "The punished loon.",
+      "traditions": "9.0",
+      "narratives": "10.0"
+    },
+    {
+      "ref": "E26",
+      "title": "Those who have become fish are turned back into humans.",
+      "traditions": "9.0",
+      "narratives": "12.0"
+    },
+    {
+      "ref": "I22h",
+      "title": "Pulsating Abyss.",
+      "traditions": "9.0",
+      "narratives": "10.0"
+    },
+    {
+      "ref": "C6i",
+      "title": "Stuck mud turns into earth.",
+      "traditions": "8.0",
+      "narratives": "12.0"
+    },
+    {
+      "ref": "K25a4a",
+      "title": "Rescue from the underwater world (broken chain).",
+      "traditions": "8.0",
+      "narratives": "14.0"
+    },
+    {
+      "ref": "C6h",
+      "title": "An insect brings soil.",
+      "traditions": "6.0",
+      "narratives": "10.0"
+    },
+    {
+      "ref": "G14",
+      "title": "The swallowed one brings plants.",
+      "traditions": "5.0",
+      "narratives": "5.0"
+    },
+    {
+      "ref": "C6g",
+      "title": "The diver \u2013 the boar.",
+      "traditions": "4.0",
+      "narratives": "7.0"
+    },
+    {
+      "ref": "C6i1",
+      "title": "A mound of earth rises above the water.",
+      "traditions": "3.0",
+      "narratives": "3.0"
+    }
+  ]
+}

@@ -1,0 +1,1872 @@
+{
+  "cluster": "trickster",
+  "n": 311,
+  "motifs": [
+    {
+      "ref": "M29b",
+      "title": "Trickster - Fox, Jackal, Coyote",
+      "traditions": "352.0",
+      "narratives": "447.0"
+    },
+    {
+      "ref": "K32",
+      "title": "The Substituted Woman, K1911; ATU 403, 404.",
+      "traditions": "274.0",
+      "narratives": "652.0"
+    },
+    {
+      "ref": "K1A",
+      "title": "Trap: a young man or man is abandoned.",
+      "traditions": "262.0",
+      "narratives": "490.0"
+    },
+    {
+      "ref": "K8a",
+      "title": "Jonah: swallowed by an aquatic or chthonic creature.",
+      "traditions": "234.0",
+      "narratives": "402.0"
+    },
+    {
+      "ref": "M30",
+      "title": "The trickster falls, (ATU 225, 225A)",
+      "traditions": "226.0",
+      "narratives": "343.0"
+    },
+    {
+      "ref": "M29b2",
+      "title": "The bear is a loser and a loser",
+      "traditions": "183.0",
+      "narratives": "131.0"
+    },
+    {
+      "ref": "M29g",
+      "title": "Trickster - Hare, Rabbit",
+      "traditions": "176.0",
+      "narratives": "199.0"
+    },
+    {
+      "ref": "M29k",
+      "title": "The turtle (toad, frog) is a cunning winner",
+      "traditions": "172.0",
+      "narratives": "83.0"
+    },
+    {
+      "ref": "M91c2",
+      "title": "Seated in a bag",
+      "traditions": "170.0",
+      "narratives": "236.0"
+    },
+    {
+      "ref": "L93a",
+      "title": "The fox as helper.",
+      "traditions": "162.0",
+      "narratives": "324.0"
+    },
+    {
+      "ref": "M29b1",
+      "title": "The wolf is a loser and a loser",
+      "traditions": "162.0",
+      "narratives": "168.0"
+    },
+    {
+      "ref": "M91c1",
+      "title": "The herd from the bottom",
+      "traditions": "150.0",
+      "narratives": "236.0"
+    },
+    {
+      "ref": "L108",
+      "title": "The Wolf and the Kids, ATU 123.",
+      "traditions": "142.0",
+      "narratives": "228.0"
+    },
+    {
+      "ref": "K8c",
+      "title": "Jonah: swallowed by a land animal.",
+      "traditions": "137.0",
+      "narratives": "193.0"
+    },
+    {
+      "ref": "M91",
+      "title": "Dead twice, ATU 1537",
+      "traditions": "137.0",
+      "narratives": "192.0"
+    },
+    {
+      "ref": "M171",
+      "title": "Mena: from a pea to a horse, ATU 170, 1655, 2034F.",
+      "traditions": "131.0",
+      "narratives": "165.0"
+    },
+    {
+      "ref": "M29b3",
+      "title": "The fox (jackal, coyote) is a loser and a loser",
+      "traditions": "125.0",
+      "narratives": "60.0"
+    },
+    {
+      "ref": "F65",
+      "title": "The imaginary dead man.",
+      "traditions": "119.0",
+      "narratives": "26.0"
+    },
+    {
+      "ref": "K88",
+      "title": "Two Travellers (Truth and Falsehood), ATU 613.",
+      "traditions": "117.0",
+      "narratives": "141.0"
+    },
+    {
+      "ref": "M29w3",
+      "title": "Leo is a loser and a loser",
+      "traditions": "115.0",
+      "narratives": "75.0"
+    },
+    {
+      "ref": "K83",
+      "title": "Sick Father, ATU 550, 551.",
+      "traditions": "111.0",
+      "narratives": "146.0"
+    },
+    {
+      "ref": "M29g1",
+      "title": "Trickster - Hare, Rabbit (main trickster)",
+      "traditions": "110.0",
+      "narratives": "146.0"
+    },
+    {
+      "ref": "M39",
+      "title": "Misunderstood instructions",
+      "traditions": "109.0",
+      "narratives": "136.0"
+    },
+    {
+      "ref": "K80",
+      "title": "The indestructible woman.",
+      "traditions": "106.0",
+      "narratives": "174.0"
+    },
+    {
+      "ref": "K81",
+      "title": "Bezruchka, ATU 706.",
+      "traditions": "103.0",
+      "narratives": "126.0"
+    },
+    {
+      "ref": "M78",
+      "title": "Tiny boy, ATU 700",
+      "traditions": "101.0",
+      "narratives": "121.0"
+    },
+    {
+      "ref": "K36",
+      "title": "Turned into an animal, (ATU 449).",
+      "traditions": "100.0",
+      "narratives": "150.0"
+    },
+    {
+      "ref": "M23",
+      "title": "Feigned fear of imaginary danger, ATU 1310\u20131310C; K581.",
+      "traditions": "100.0",
+      "narratives": "154.0"
+    },
+    {
+      "ref": "L100d",
+      "title": "Deceived admirers, ATU 1358C, 1730.",
+      "traditions": "98.0",
+      "narratives": "114.0"
+    },
+    {
+      "ref": "M152",
+      "title": "Why only one wolf? ATU 1149.",
+      "traditions": "96.0",
+      "narratives": "155.0"
+    },
+    {
+      "ref": "M29z4",
+      "title": "Anthropomorphic trickster (miscellaneous)",
+      "traditions": "89.0",
+      "narratives": "85.0"
+    },
+    {
+      "ref": "M85",
+      "title": "Fox is bluffing, ATU 56A",
+      "traditions": "88.0",
+      "narratives": "159.0"
+    },
+    {
+      "ref": "M140",
+      "title": "The fox on the sled, ATU 1.",
+      "traditions": "88.0",
+      "narratives": "108.0"
+    },
+    {
+      "ref": "K80a",
+      "title": "A bird or object tells of a crime, ATU 720, 780, 780B.",
+      "traditions": "87.0",
+      "narratives": "194.0"
+    },
+    {
+      "ref": "M74a",
+      "title": "Strange newborn names, ATU 15",
+      "traditions": "87.0",
+      "narratives": "91.0"
+    },
+    {
+      "ref": "F70b",
+      "title": "Revenge of the rejected.",
+      "traditions": "86.0",
+      "narratives": "107.0"
+    },
+    {
+      "ref": "M131",
+      "title": "It's not a tail, it's a root, ATU 5, ThR5.",
+      "traditions": "86.0",
+      "narratives": "99.0"
+    },
+    {
+      "ref": "L57a",
+      "title": "The hero's companion returns his organ.",
+      "traditions": "83.0",
+      "narratives": "114.0"
+    },
+    {
+      "ref": "M106f",
+      "title": "Guest from the Other World, ATU 1540.",
+      "traditions": "83.0",
+      "narratives": "83.0"
+    },
+    {
+      "ref": "M29a",
+      "title": "Trickster - Raven (a)",
+      "traditions": "80.0",
+      "narratives": "65.0"
+    },
+    {
+      "ref": "K84",
+      "title": "Sisters married to animals, ATU 552.1.",
+      "traditions": "79.0",
+      "narratives": "121.0"
+    },
+    {
+      "ref": "M151A",
+      "title": "Supports a rock, ATU 1530, J2273.1.",
+      "traditions": "77.0",
+      "narratives": "81.0"
+    },
+    {
+      "ref": "M29w2",
+      "title": "The tiger is a loser and a loser",
+      "traditions": "74.0",
+      "narratives": "84.0"
+    },
+    {
+      "ref": "M127a",
+      "title": "The bird tricks the fox, ATU 223.",
+      "traditions": "74.0",
+      "narratives": "82.0"
+    },
+    {
+      "ref": "K35",
+      "title": "The replaced man.",
+      "traditions": "71.0",
+      "narratives": "94.0"
+    },
+    {
+      "ref": "K86",
+      "title": "The Crying Child.",
+      "traditions": "71.0",
+      "narratives": "83.0"
+    },
+    {
+      "ref": "M74aa",
+      "title": "An imaginary visit",
+      "traditions": "71.0",
+      "narratives": "44.0"
+    },
+    {
+      "ref": "L114b",
+      "title": "Task: to bring the property of the cannibal, ATU 328.",
+      "traditions": "70.0",
+      "narratives": "77.0"
+    },
+    {
+      "ref": "M170",
+      "title": "Animals at repentance, ATU 20D*, 61A.",
+      "traditions": "69.0",
+      "narratives": "78.0"
+    },
+    {
+      "ref": "M185",
+      "title": "On the tail of the fastest (animals), ATU 275B.",
+      "traditions": "69.0",
+      "narratives": "112.0"
+    },
+    {
+      "ref": "K82",
+      "title": "The evil sister-in-law.",
+      "traditions": "68.0",
+      "narratives": "97.0"
+    },
+    {
+      "ref": "K8d",
+      "title": "Jonah: swallowed by an anthropomorphic creature.",
+      "traditions": "67.0",
+      "narratives": "97.0"
+    },
+    {
+      "ref": "M29x",
+      "title": "The hyena is a loser and a loser",
+      "traditions": "66.0",
+      "narratives": "68.0"
+    },
+    {
+      "ref": "M90a",
+      "title": "Marry a guesser",
+      "traditions": "65.0",
+      "narratives": "65.0"
+    },
+    {
+      "ref": "F63",
+      "title": "Man marries, K1321.1, ATU 1538*.",
+      "traditions": "64.0",
+      "narratives": "74.0"
+    },
+    {
+      "ref": "K88b",
+      "title": "Food in exchange for eyes.",
+      "traditions": "64.0",
+      "narratives": "81.0"
+    },
+    {
+      "ref": "M143",
+      "title": "The fox in the well, ATU 31, 32.",
+      "traditions": "64.0",
+      "narratives": "46.0"
+    },
+    {
+      "ref": "M29k1",
+      "title": "Turtle, Toad, Frog are a loser trickster",
+      "traditions": "63.0",
+      "narratives": "15.0"
+    },
+    {
+      "ref": "M159",
+      "title": "The Lion's Share, ATU 51.",
+      "traditions": "61.0",
+      "narratives": "64.0"
+    },
+    {
+      "ref": "M180",
+      "title": "The Fox and the Crane, ATU 60.",
+      "traditions": "60.0",
+      "narratives": "75.0"
+    },
+    {
+      "ref": "F58",
+      "title": "The trickster and women.",
+      "traditions": "59.0",
+      "narratives": "63.0"
+    },
+    {
+      "ref": "F65a",
+      "title": "The Imaginary Dead Man: Meeting with a Lover, ATU 885A.",
+      "traditions": "59.0",
+      "narratives": "68.0"
+    },
+    {
+      "ref": "K80b",
+      "title": "Mother killed, father ate, ATU 720.",
+      "traditions": "59.0",
+      "narratives": "67.0"
+    },
+    {
+      "ref": "F64a",
+      "title": "Describes the future spouse.",
+      "traditions": "58.0",
+      "narratives": "10.0"
+    },
+    {
+      "ref": "J13",
+      "title": "Two sisters.",
+      "traditions": "58.0",
+      "narratives": "55.0"
+    },
+    {
+      "ref": "J17",
+      "title": "Frogs in the hair.",
+      "traditions": "58.0",
+      "narratives": "73.0"
+    },
+    {
+      "ref": "M39h",
+      "title": "Husband pretended to be blind, ATU 1380",
+      "traditions": "58.0",
+      "narratives": "41.0"
+    },
+    {
+      "ref": "M51",
+      "title": "The meat is on the tree",
+      "traditions": "58.0",
+      "narratives": "85.0"
+    },
+    {
+      "ref": "K38f1",
+      "title": "Severed tongues.",
+      "traditions": "57.0",
+      "narratives": "104.0"
+    },
+    {
+      "ref": "M29w1",
+      "title": "The leopard is a loser and a loser",
+      "traditions": "57.0",
+      "narratives": "46.0"
+    },
+    {
+      "ref": "K80c4",
+      "title": "Silent witnesses to crime, ATU 960, 960A.",
+      "traditions": "56.0",
+      "narratives": "57.0"
+    },
+    {
+      "ref": "K62",
+      "title": "War of animals, Th B260-B263.",
+      "traditions": "55.0",
+      "narratives": "69.0"
+    },
+    {
+      "ref": "K8e",
+      "title": "Penetrates inside through the anus.",
+      "traditions": "54.0",
+      "narratives": "48.0"
+    },
+    {
+      "ref": "K80a2",
+      "title": "The pipe tells of a crime, ATU 780.",
+      "traditions": "54.0",
+      "narratives": "127.0"
+    },
+    {
+      "ref": "L45",
+      "title": "The fooled watchman.",
+      "traditions": "54.0",
+      "narratives": "53.0"
+    },
+    {
+      "ref": "M39a2c",
+      "title": "Salt is sown ATU 1200, J1932.3.",
+      "traditions": "54.0",
+      "narratives": "38.0"
+    },
+    {
+      "ref": "K80c2",
+      "title": "Those who find treasure kill each other, ATU 763.",
+      "traditions": "53.0",
+      "narratives": "33.0"
+    },
+    {
+      "ref": "M29o",
+      "title": "Trickster - Monkey",
+      "traditions": "53.0",
+      "narratives": "34.0"
+    },
+    {
+      "ref": "M29w",
+      "title": "Jaguar (ocelot, puma) is a loser and a loser",
+      "traditions": "53.0",
+      "narratives": "38.0"
+    },
+    {
+      "ref": "K80d",
+      "title": "The stuck pin.",
+      "traditions": "52.0",
+      "narratives": "91.0"
+    },
+    {
+      "ref": "M45a",
+      "title": "The old man and the beasts",
+      "traditions": "50.0",
+      "narratives": "73.0"
+    },
+    {
+      "ref": "K80c",
+      "title": "Ivico's cranes, ATU 960, 960A.",
+      "traditions": "49.0",
+      "narratives": "45.0"
+    },
+    {
+      "ref": "M60b",
+      "title": "Imaginary doctor: finishing off the victim",
+      "traditions": "48.0",
+      "narratives": "92.0"
+    },
+    {
+      "ref": "K87",
+      "title": "Marriage to an animal ends badly.",
+      "traditions": "47.0",
+      "narratives": "78.0"
+    },
+    {
+      "ref": "F70e",
+      "title": "Girl turns into a man, ATU 514.",
+      "traditions": "45.0",
+      "narratives": "35.0"
+    },
+    {
+      "ref": "K80a1",
+      "title": "The bird tells of the crime.",
+      "traditions": "45.0",
+      "narratives": "55.0"
+    },
+    {
+      "ref": "K122",
+      "title": "The queen of the other world finds the hero (ATU 551).",
+      "traditions": "45.0",
+      "narratives": "72.0"
+    },
+    {
+      "ref": "M114d",
+      "title": "Boiled eggs: eaten a year ago, ATU 821B.",
+      "traditions": "45.0",
+      "narratives": "30.0"
+    },
+    {
+      "ref": "M162",
+      "title": "Eats his own entrails, ATU 21.",
+      "traditions": "45.0",
+      "narratives": "49.0"
+    },
+    {
+      "ref": "K32d",
+      "title": "The replaced one grazes cattle.",
+      "traditions": "44.0",
+      "narratives": "62.0"
+    },
+    {
+      "ref": "M39e1",
+      "title": "Iron eaten and boy kidnapped, ATU 1592, 1592A",
+      "traditions": "44.0",
+      "narratives": "36.0"
+    },
+    {
+      "ref": "M135b",
+      "title": "The wolf regrets his own stupidity.",
+      "traditions": "44.0",
+      "narratives": "49.0"
+    },
+    {
+      "ref": "M199c",
+      "title": "Whoever throws the club higher, ATU 1063.",
+      "traditions": "44.0",
+      "narratives": "65.0"
+    },
+    {
+      "ref": "D4e",
+      "title": "Coyote or fox obtains fire.",
+      "traditions": "43.0",
+      "narratives": "48.0"
+    },
+    {
+      "ref": "M29gg",
+      "title": "The hedgehog is a cunning winner",
+      "traditions": "43.0",
+      "narratives": "79.0"
+    },
+    {
+      "ref": "K88a",
+      "title": "Blinded heroine, ATU 404.",
+      "traditions": "42.0",
+      "narratives": "48.0"
+    },
+    {
+      "ref": "M45",
+      "title": "The predator pretends to be dead",
+      "traditions": "42.0",
+      "narratives": "57.0"
+    },
+    {
+      "ref": "M154a",
+      "title": "The ox, the donkey and work, ATU 207A.",
+      "traditions": "42.0",
+      "narratives": "36.0"
+    },
+    {
+      "ref": "K8c4",
+      "title": "The elk dies after swallowing a mouse.",
+      "traditions": "41.0",
+      "narratives": "60.0"
+    },
+    {
+      "ref": "L100e",
+      "title": "The lover, the master and the guest, ATU 1358A, (ATU 1360B).",
+      "traditions": "41.0",
+      "narratives": "51.0"
+    },
+    {
+      "ref": "M29X2",
+      "title": "Trickster _x0096_ other creatures",
+      "traditions": "41.0",
+      "narratives": "28.0"
+    },
+    {
+      "ref": "M199k",
+      "title": "Digging a well, ATU 1049.",
+      "traditions": "40.0",
+      "narratives": "50.0"
+    },
+    {
+      "ref": "M29o1",
+      "title": "A monkey is a loser and a loser",
+      "traditions": "39.0",
+      "narratives": "25.0"
+    },
+    {
+      "ref": "M191",
+      "title": "Cat and wild animals, ATU 103A, 103A*.",
+      "traditions": "39.0",
+      "narratives": "38.0"
+    },
+    {
+      "ref": "F70e1",
+      "title": "Daughter in the role of son, AT 884B.",
+      "traditions": "38.0",
+      "narratives": "42.0"
+    },
+    {
+      "ref": "M60",
+      "title": "Imaginary physician: finished off enemy, K824, K1955",
+      "traditions": "38.0",
+      "narratives": "64.0"
+    },
+    {
+      "ref": "M173a",
+      "title": "Returning for the second boot (ATU 1525D).",
+      "traditions": "38.0",
+      "narratives": "39.0"
+    },
+    {
+      "ref": "H36gg",
+      "title": "The coyote betrays man.",
+      "traditions": "37.0",
+      "narratives": "64.0"
+    },
+    {
+      "ref": "K14d",
+      "title": "Imaginary crime, (ATU 910A).",
+      "traditions": "37.0",
+      "narratives": "34.0"
+    },
+    {
+      "ref": "M29a1",
+      "title": "Raven(s) - main trickster",
+      "traditions": "37.0",
+      "narratives": "39.0"
+    },
+    {
+      "ref": "K97",
+      "title": "Tested fear, ATU 537.",
+      "traditions": "36.0",
+      "narratives": "38.0"
+    },
+    {
+      "ref": "F82",
+      "title": "Incest with mother-in-law, T417.",
+      "traditions": "35.0",
+      "narratives": "36.0"
+    },
+    {
+      "ref": "G31",
+      "title": "Trees tied with rope.",
+      "traditions": "35.0",
+      "narratives": "40.0"
+    },
+    {
+      "ref": "K44",
+      "title": "The false mother is rejected.",
+      "traditions": "35.0",
+      "narratives": "67.0"
+    },
+    {
+      "ref": "M29v",
+      "title": "The dwarf deer is a cunning winner",
+      "traditions": "35.0",
+      "narratives": "35.0"
+    },
+    {
+      "ref": "K51",
+      "title": "The deceived wife.",
+      "traditions": "34.0",
+      "narratives": "49.0"
+    },
+    {
+      "ref": "M17",
+      "title": "A woman lies, pretending that a man has missed his target.",
+      "traditions": "34.0",
+      "narratives": "20.0"
+    },
+    {
+      "ref": "M106h",
+      "title": "Bird under a cap, ATU 1528.",
+      "traditions": "34.0",
+      "narratives": "17.0"
+    },
+    {
+      "ref": "A32c1",
+      "title": "Predatory beast on the moon.",
+      "traditions": "33.0",
+      "narratives": "34.0"
+    },
+    {
+      "ref": "K8c5",
+      "title": "The bear dies after swallowing a mouse.",
+      "traditions": "33.0",
+      "narratives": "40.0"
+    },
+    {
+      "ref": "K85e",
+      "title": "Sea horses.",
+      "traditions": "33.0",
+      "narratives": "43.0"
+    },
+    {
+      "ref": "K89d",
+      "title": "Hides, turning into a needle.",
+      "traditions": "33.0",
+      "narratives": "38.0"
+    },
+    {
+      "ref": "M30c",
+      "title": "He falls, breaking the ban",
+      "traditions": "33.0",
+      "narratives": "47.0"
+    },
+    {
+      "ref": "F74",
+      "title": "The naked man pretends to be dead.",
+      "traditions": "32.0",
+      "narratives": "30.0"
+    },
+    {
+      "ref": "K35a3",
+      "title": "The master becomes a servant.",
+      "traditions": "32.0",
+      "narratives": "44.0"
+    },
+    {
+      "ref": "M29z1",
+      "title": "Anthropomorphic trickster (miscellaneous).",
+      "traditions": "32.0",
+      "narratives": "35.0"
+    },
+    {
+      "ref": "D4o",
+      "title": "Dry by the fire.",
+      "traditions": "31.0",
+      "narratives": "60.0"
+    },
+    {
+      "ref": "K24b",
+      "title": "Dancing in magical clothes.",
+      "traditions": "31.0",
+      "narratives": "37.0"
+    },
+    {
+      "ref": "M29z",
+      "title": "Beardless (Aldarkose)",
+      "traditions": "31.0",
+      "narratives": "32.0"
+    },
+    {
+      "ref": "M94a1",
+      "title": "Mountain riding: trickster animals",
+      "traditions": "31.0",
+      "narratives": "53.0"
+    },
+    {
+      "ref": "M151",
+      "title": "Hello, house! ATU 66A, 66B",
+      "traditions": "31.0",
+      "narratives": "51.0"
+    },
+    {
+      "ref": "M29f",
+      "title": "Wolverine is a loser and a loser",
+      "traditions": "30.0",
+      "narratives": "24.0"
+    },
+    {
+      "ref": "M29g2",
+      "title": "Cancer is a cunning winner",
+      "traditions": "30.0",
+      "narratives": "45.0"
+    },
+    {
+      "ref": "M30b",
+      "title": "Birds take the feathers they have given",
+      "traditions": "30.0",
+      "narratives": "39.0"
+    },
+    {
+      "ref": "M91c7",
+      "title": "Tell them I'm dead",
+      "traditions": "30.0",
+      "narratives": "30.0"
+    },
+    {
+      "ref": "M199g1",
+      "title": "Hold on to the handle, ATU 1052.",
+      "traditions": "30.0",
+      "narratives": "24.0"
+    },
+    {
+      "ref": "K85",
+      "title": "Horse brothers.",
+      "traditions": "29.0",
+      "narratives": "51.0"
+    },
+    {
+      "ref": "M17b",
+      "title": "Wife deceives blind man.",
+      "traditions": "29.0",
+      "narratives": "36.0"
+    },
+    {
+      "ref": "M65",
+      "title": "The trickster was pinched and the meat was eaten",
+      "traditions": "29.0",
+      "narratives": "50.0"
+    },
+    {
+      "ref": "M199f",
+      "title": "Threat to wrinkle the lake with a rope, ATU 1045(1).",
+      "traditions": "29.0",
+      "narratives": "41.0"
+    },
+    {
+      "ref": "K8c1",
+      "title": "Swallowed by a herbivore, then by a wolf.",
+      "traditions": "28.0",
+      "narratives": "36.0"
+    },
+    {
+      "ref": "M181",
+      "title": "Two people are going to a festival.",
+      "traditions": "28.0",
+      "narratives": "34.0"
+    },
+    {
+      "ref": "M193a",
+      "title": "Kolobok, ATU 2025.",
+      "traditions": "28.0",
+      "narratives": "18.0"
+    },
+    {
+      "ref": "K119b",
+      "title": "Animals as gifts to the king.",
+      "traditions": "27.0",
+      "narratives": "35.0"
+    },
+    {
+      "ref": "M30d",
+      "title": "Holds to a stick carried by birds, ATU 225A",
+      "traditions": "27.0",
+      "narratives": "33.0"
+    },
+    {
+      "ref": "J52b",
+      "title": "Heroes \u2013 female hares or baby hares.",
+      "traditions": "26.0",
+      "narratives": "50.0"
+    },
+    {
+      "ref": "F61",
+      "title": "A woman carries a trickster.",
+      "traditions": "25.0",
+      "narratives": "28.0"
+    },
+    {
+      "ref": "K8c3",
+      "title": "Not through the mouth, but through the side.",
+      "traditions": "25.0",
+      "narratives": "35.0"
+    },
+    {
+      "ref": "L33a",
+      "title": "The boulder pursues the thief.",
+      "traditions": "25.0",
+      "narratives": "4.0"
+    },
+    {
+      "ref": "M29l",
+      "title": "Trickster - Possum",
+      "traditions": "25.0",
+      "narratives": "7.0"
+    },
+    {
+      "ref": "M29p",
+      "title": "Trickster vs Spider",
+      "traditions": "25.0",
+      "narratives": "37.0"
+    },
+    {
+      "ref": "M29z3",
+      "title": "Gypsy - opponent and loser",
+      "traditions": "25.0",
+      "narratives": "22.0"
+    },
+    {
+      "ref": "K80c1",
+      "title": "Melon and severed head, ATU 780C.",
+      "traditions": "24.0",
+      "narratives": "19.0"
+    },
+    {
+      "ref": "L15i",
+      "title": "Life in hair.",
+      "traditions": "24.0",
+      "narratives": "25.0"
+    },
+    {
+      "ref": "M123",
+      "title": "The raven marries the goose.",
+      "traditions": "24.0",
+      "narratives": "33.0"
+    },
+    {
+      "ref": "M130a",
+      "title": "Bird saves deer, ATU 239.",
+      "traditions": "24.0",
+      "narratives": "23.0"
+    },
+    {
+      "ref": "F60",
+      "title": "The trickster heals the girl.",
+      "traditions": "23.0",
+      "narratives": "26.0"
+    },
+    {
+      "ref": "M112a",
+      "title": "The turtle catches the thief.",
+      "traditions": "23.0",
+      "narratives": "14.0"
+    },
+    {
+      "ref": "A28",
+      "title": "The Sun and the Moon: smart and dumb.",
+      "traditions": "22.0",
+      "narratives": "43.0"
+    },
+    {
+      "ref": "A34",
+      "title": "The fox and the moon.",
+      "traditions": "22.0",
+      "narratives": "30.0"
+    },
+    {
+      "ref": "F59",
+      "title": "Man in woman: modelling the figure.",
+      "traditions": "22.0",
+      "narratives": "26.0"
+    },
+    {
+      "ref": "F65c",
+      "title": "The imaginary dead man: the boy reveals the deception.",
+      "traditions": "22.0",
+      "narratives": "12.0"
+    },
+    {
+      "ref": "K14e",
+      "title": "Sons think their father is rich, ATU 982.",
+      "traditions": "22.0",
+      "narratives": "15.0"
+    },
+    {
+      "ref": "K82a",
+      "title": "Pregnancy from snake eggs.",
+      "traditions": "22.0",
+      "narratives": "30.0"
+    },
+    {
+      "ref": "M29m",
+      "title": "The Trickster is the Rat",
+      "traditions": "22.0",
+      "narratives": "8.0"
+    },
+    {
+      "ref": "K85b",
+      "title": "Three-legged horse.",
+      "traditions": "21.0",
+      "narratives": "31.0"
+    },
+    {
+      "ref": "M168a",
+      "title": "The master is taken seriously, ATU 93.",
+      "traditions": "21.0",
+      "narratives": "8.0"
+    },
+    {
+      "ref": "M179a",
+      "title": "The master is driven out of the house.",
+      "traditions": "21.0",
+      "narratives": "24.0"
+    },
+    {
+      "ref": "M199h",
+      "title": "The giant's torn belly, (ATU 1088).",
+      "traditions": "21.0",
+      "narratives": "27.0"
+    },
+    {
+      "ref": "E9j",
+      "title": "The magical wife \u2013 monkey.",
+      "traditions": "20.0",
+      "narratives": "24.0"
+    },
+    {
+      "ref": "K80a4",
+      "title": "Hair turns into grass, (ATU 780A).",
+      "traditions": "20.0",
+      "narratives": "23.0"
+    },
+    {
+      "ref": "K89",
+      "title": "The girl and the witch: gifts from relatives.",
+      "traditions": "20.0",
+      "narratives": "31.0"
+    },
+    {
+      "ref": "K81a",
+      "title": "Bezrucha in the prince's garden.",
+      "traditions": "19.0",
+      "narratives": "22.0"
+    },
+    {
+      "ref": "K85d",
+      "title": "A horse whose skin cannot be bitten through.",
+      "traditions": "19.0",
+      "narratives": "28.0"
+    },
+    {
+      "ref": "L71",
+      "title": "The end of a thin branch.",
+      "traditions": "19.0",
+      "narratives": "7.0"
+    },
+    {
+      "ref": "M53d",
+      "title": "Imaginary enemies",
+      "traditions": "19.0",
+      "narratives": "23.0"
+    },
+    {
+      "ref": "L33b",
+      "title": "The trickster provokes a stone.",
+      "traditions": "18.0",
+      "narratives": "22.0"
+    },
+    {
+      "ref": "M29r",
+      "title": "Trickster - Porcupine",
+      "traditions": "18.0",
+      "narratives": "8.0"
+    },
+    {
+      "ref": "M91d",
+      "title": "The drowned shaman",
+      "traditions": "18.0",
+      "narratives": "20.0"
+    },
+    {
+      "ref": "D13i",
+      "title": "Broken tooth.",
+      "traditions": "17.0",
+      "narratives": "27.0"
+    },
+    {
+      "ref": "E29",
+      "title": "The lizard makes hands for humans, A1311.1.",
+      "traditions": "17.0",
+      "narratives": "24.0"
+    },
+    {
+      "ref": "F9a1",
+      "title": "The pike's mouth, ATU 1686A*.",
+      "traditions": "17.0",
+      "narratives": "19.0"
+    },
+    {
+      "ref": "K35a4",
+      "title": "Thrown into the sea.",
+      "traditions": "17.0",
+      "narratives": "20.0"
+    },
+    {
+      "ref": "L96c",
+      "title": "He hasn't learned anything!",
+      "traditions": "17.0",
+      "narratives": "21.0"
+    },
+    {
+      "ref": "M29E",
+      "title": "Trickster - Skunk",
+      "traditions": "17.0",
+      "narratives": "7.0"
+    },
+    {
+      "ref": "M29h",
+      "title": "Trickster - Owl",
+      "traditions": "17.0",
+      "narratives": "11.0"
+    },
+    {
+      "ref": "M53c",
+      "title": "Reddened eyes",
+      "traditions": "17.0",
+      "narratives": "30.0"
+    },
+    {
+      "ref": "M64",
+      "title": "He pretends to own valuables",
+      "traditions": "17.0",
+      "narratives": "27.0"
+    },
+    {
+      "ref": "M74ab",
+      "title": "The fox is in the boat",
+      "traditions": "17.0",
+      "narratives": "23.0"
+    },
+    {
+      "ref": "M108a",
+      "title": "Trickster-adopted child.",
+      "traditions": "17.0",
+      "narratives": "18.0"
+    },
+    {
+      "ref": "M147b",
+      "title": "The fox gets rid of fleas, ATU 63.",
+      "traditions": "17.0",
+      "narratives": "9.0"
+    },
+    {
+      "ref": "M188",
+      "title": "Jackal in the dyeing workshop.",
+      "traditions": "17.0",
+      "narratives": "21.0"
+    },
+    {
+      "ref": "M199c1",
+      "title": "Whoever throws a stone farther, ATU 1063A.",
+      "traditions": "17.0",
+      "narratives": "12.0"
+    },
+    {
+      "ref": "H7c1",
+      "title": "The trickster enters paradise.",
+      "traditions": "16.0",
+      "narratives": "19.0"
+    },
+    {
+      "ref": "M108",
+      "title": "The trickster takes away property.",
+      "traditions": "16.0",
+      "narratives": "18.0"
+    },
+    {
+      "ref": "M125",
+      "title": "Eats one's own eyes.",
+      "traditions": "16.0",
+      "narratives": "27.0"
+    },
+    {
+      "ref": "M171b",
+      "title": "A shoulder blade without meat.",
+      "traditions": "16.0",
+      "narratives": "20.0"
+    },
+    {
+      "ref": "K38f2",
+      "title": "A mark made with dragon's blood.",
+      "traditions": "15.0",
+      "narratives": "20.0"
+    },
+    {
+      "ref": "K83a",
+      "title": "Where the father did not go.",
+      "traditions": "15.0",
+      "narratives": "19.0"
+    },
+    {
+      "ref": "K87a",
+      "title": "The stolen boy.",
+      "traditions": "15.0",
+      "narratives": "10.0"
+    },
+    {
+      "ref": "L33e",
+      "title": "The gifted cloak.",
+      "traditions": "15.0",
+      "narratives": "24.0"
+    },
+    {
+      "ref": "L108e",
+      "title": "Children of the fox, ATU 123A.",
+      "traditions": "15.0",
+      "narratives": "8.0"
+    },
+    {
+      "ref": "M7b",
+      "title": "The fox asks for help from people passing by",
+      "traditions": "15.0",
+      "narratives": "16.0"
+    },
+    {
+      "ref": "M120a",
+      "title": "Weeping corpse eater, ATU 37, Th. K931.",
+      "traditions": "15.0",
+      "narratives": "31.0"
+    },
+    {
+      "ref": "F64b",
+      "title": "Incestuous woman.",
+      "traditions": "14.0",
+      "narratives": "20.0"
+    },
+    {
+      "ref": "F70d",
+      "title": "The disgraced informer.",
+      "traditions": "14.0",
+      "narratives": "14.0"
+    },
+    {
+      "ref": "K8c2",
+      "title": "The swallowed mouse.",
+      "traditions": "14.0",
+      "narratives": "20.0"
+    },
+    {
+      "ref": "K89b",
+      "title": "The brother left on the tree.",
+      "traditions": "14.0",
+      "narratives": "24.0"
+    },
+    {
+      "ref": "L33c",
+      "title": "The boulder crushes the trickster.",
+      "traditions": "14.0",
+      "narratives": "7.0"
+    },
+    {
+      "ref": "M29j",
+      "title": "A trickster is a waterfowl or marsh bird",
+      "traditions": "14.0",
+      "narratives": "9.0"
+    },
+    {
+      "ref": "M29z2",
+      "title": "Gypsy - a cunning winner",
+      "traditions": "14.0",
+      "narratives": "12.0"
+    },
+    {
+      "ref": "B1c",
+      "title": "One creator deceives another.",
+      "traditions": "13.0",
+      "narratives": "13.0"
+    },
+    {
+      "ref": "F66",
+      "title": "False house.",
+      "traditions": "13.0",
+      "narratives": "13.0"
+    },
+    {
+      "ref": "K71",
+      "title": "Coyote betrays and saves his brother.",
+      "traditions": "13.0",
+      "narratives": "23.0"
+    },
+    {
+      "ref": "K87a1",
+      "title": "The child is handed over.",
+      "traditions": "13.0",
+      "narratives": "10.0"
+    },
+    {
+      "ref": "M17a",
+      "title": "Mother or grandmother deceives a blind man.",
+      "traditions": "13.0",
+      "narratives": "19.0"
+    },
+    {
+      "ref": "M29i",
+      "title": "Trickster - Hawk",
+      "traditions": "13.0",
+      "narratives": "5.0"
+    },
+    {
+      "ref": "M29n",
+      "title": "Trickster - Mouse",
+      "traditions": "13.0",
+      "narratives": "8.0"
+    },
+    {
+      "ref": "M48",
+      "title": "The trickster turns into a bison",
+      "traditions": "13.0",
+      "narratives": "20.0"
+    },
+    {
+      "ref": "M67",
+      "title": "The trickster was blown away by the wind",
+      "traditions": "13.0",
+      "narratives": "6.0"
+    },
+    {
+      "ref": "M117",
+      "title": "Head under the wing, ATU 56D.",
+      "traditions": "13.0",
+      "narratives": "10.0"
+    },
+    {
+      "ref": "M130",
+      "title": "The fox and the bird in one burrow.",
+      "traditions": "13.0",
+      "narratives": "11.0"
+    },
+    {
+      "ref": "M162a",
+      "title": "Cuts off his genitals.",
+      "traditions": "13.0",
+      "narratives": "8.0"
+    },
+    {
+      "ref": "C28",
+      "title": "Rash promise.",
+      "traditions": "12.0",
+      "narratives": "14.0"
+    },
+    {
+      "ref": "K55",
+      "title": "Rewarded chastity.",
+      "traditions": "12.0",
+      "narratives": "15.0"
+    },
+    {
+      "ref": "K80a3",
+      "title": "To the forest for berries.",
+      "traditions": "12.0",
+      "narratives": "43.0"
+    },
+    {
+      "ref": "K85a",
+      "title": "The horse-thought and the horse-wind.",
+      "traditions": "12.0",
+      "narratives": "14.0"
+    },
+    {
+      "ref": "K85c",
+      "title": "Four legs are faster than three.",
+      "traditions": "12.0",
+      "narratives": "11.0"
+    },
+    {
+      "ref": "K87b",
+      "title": "A woman steps in bear droppings.",
+      "traditions": "12.0",
+      "narratives": "15.0"
+    },
+    {
+      "ref": "K88c",
+      "title": "The blood of a dog will cure the princess.",
+      "traditions": "12.0",
+      "narratives": "15.0"
+    },
+    {
+      "ref": "K89a",
+      "title": "Where to leave the sister?",
+      "traditions": "12.0",
+      "narratives": "14.0"
+    },
+    {
+      "ref": "K119c",
+      "title": "Tsar-Thunder and Tsarina-Lightning.",
+      "traditions": "12.0",
+      "narratives": "16.0"
+    },
+    {
+      "ref": "K167",
+      "title": "The Child King.",
+      "traditions": "12.0",
+      "narratives": "8.0"
+    },
+    {
+      "ref": "M29d",
+      "title": "Trickster - Mink",
+      "traditions": "12.0",
+      "narratives": "8.0"
+    },
+    {
+      "ref": "M96",
+      "title": "Imaginary guests",
+      "traditions": "12.0",
+      "narratives": "12.0"
+    },
+    {
+      "ref": "M171c1",
+      "title": "In exchange for a bast shoe.",
+      "traditions": "12.0",
+      "narratives": "14.0"
+    },
+    {
+      "ref": "B44f",
+      "title": "The fox wants daylight.",
+      "traditions": "11.0",
+      "narratives": "10.0"
+    },
+    {
+      "ref": "F67",
+      "title": "An old woman pretends to be a man.",
+      "traditions": "11.0",
+      "narratives": "12.0"
+    },
+    {
+      "ref": "K48a",
+      "title": "Birds on a cap.",
+      "traditions": "11.0",
+      "narratives": "1.0"
+    },
+    {
+      "ref": "k73a9",
+      "title": "The talking bed.",
+      "traditions": "11.0",
+      "narratives": "10.0"
+    },
+    {
+      "ref": "K156",
+      "title": "Will the flowers under the pillow wilt?",
+      "traditions": "11.0",
+      "narratives": "10.0"
+    },
+    {
+      "ref": "M29q",
+      "title": "Trickster - Raccoon",
+      "traditions": "11.0",
+      "narratives": "7.0"
+    },
+    {
+      "ref": "M101",
+      "title": "Who is afraid of what (the fox and the bear).",
+      "traditions": "11.0",
+      "narratives": "23.0"
+    },
+    {
+      "ref": "M108b",
+      "title": "The woodpecker helper.",
+      "traditions": "11.0",
+      "narratives": "7.0"
+    },
+    {
+      "ref": "F65d",
+      "title": "The fake dead man: the wife doesn't believe it.",
+      "traditions": "10.0",
+      "narratives": "25.0"
+    },
+    {
+      "ref": "I47a",
+      "title": "Rainbow \u2013 fox wedding.",
+      "traditions": "10.0",
+      "narratives": "16.0"
+    },
+    {
+      "ref": "J12l",
+      "title": "The hypocritical murderer.",
+      "traditions": "10.0",
+      "narratives": "6.0"
+    },
+    {
+      "ref": "M29c",
+      "title": "Trickster - Jay",
+      "traditions": "10.0",
+      "narratives": "9.0"
+    },
+    {
+      "ref": "M29qq",
+      "title": "Trickster - Anteater",
+      "traditions": "10.0",
+      "narratives": "5.0"
+    },
+    {
+      "ref": "M29y",
+      "title": "Trickster - Wren",
+      "traditions": "10.0",
+      "narratives": "9.0"
+    },
+    {
+      "ref": "M38d7",
+      "title": "Sausage makes soup, (ATU 85)",
+      "traditions": "10.0",
+      "narratives": "12.0"
+    },
+    {
+      "ref": "M60b2",
+      "title": "To make the bear beautiful, ATU 8",
+      "traditions": "10.0",
+      "narratives": "14.0"
+    },
+    {
+      "ref": "C31a",
+      "title": "Lights or fire promised to the devil.",
+      "traditions": "9.0",
+      "narratives": "11.0"
+    },
+    {
+      "ref": "K27y1",
+      "title": "Coal arrowheads.",
+      "traditions": "9.0",
+      "narratives": "10.0"
+    },
+    {
+      "ref": "K80c3",
+      "title": "A name helps solve a murder.",
+      "traditions": "9.0",
+      "narratives": "9.0"
+    },
+    {
+      "ref": "K89c",
+      "title": "Brother-helper is married to a bear.",
+      "traditions": "9.0",
+      "narratives": "10.0"
+    },
+    {
+      "ref": "M29x1",
+      "title": "Trickster - Badger",
+      "traditions": "9.0",
+      "narratives": "7.0"
+    },
+    {
+      "ref": "M30a",
+      "title": "They relieve the need for a fallen person",
+      "traditions": "9.0",
+      "narratives": "7.0"
+    },
+    {
+      "ref": "M120c",
+      "title": "Shared children.",
+      "traditions": "9.0",
+      "narratives": "10.0"
+    },
+    {
+      "ref": "M140b",
+      "title": "The wolf adorns the bird.",
+      "traditions": "9.0",
+      "narratives": "6.0"
+    },
+    {
+      "ref": "M152c",
+      "title": "The lion and the donkey at the ford.",
+      "traditions": "9.0",
+      "narratives": "10.0"
+    },
+    {
+      "ref": "M188a",
+      "title": "Jackal on the throne.",
+      "traditions": "9.0",
+      "narratives": "10.0"
+    },
+    {
+      "ref": "G12c",
+      "title": "The fox brings plants from the sky.",
+      "traditions": "8.0",
+      "narratives": "11.0"
+    },
+    {
+      "ref": "K8aa",
+      "title": "Jonah: swallowed by a bird.",
+      "traditions": "8.0",
+      "narratives": "8.0"
+    },
+    {
+      "ref": "K8b",
+      "title": "Woman \u2013 the soul of the whale.",
+      "traditions": "8.0",
+      "narratives": "9.0"
+    },
+    {
+      "ref": "K80a5",
+      "title": "The boar and the fratricides.",
+      "traditions": "8.0",
+      "narratives": "20.0"
+    },
+    {
+      "ref": "L65b5",
+      "title": "The hero's dogs at the princess's wedding.",
+      "traditions": "8.0",
+      "narratives": "10.0"
+    },
+    {
+      "ref": "M29nn",
+      "title": "Trickster - Earth Squirrel (Xerus inauris)",
+      "traditions": "8.0",
+      "narratives": "10.0"
+    },
+    {
+      "ref": "M53e",
+      "title": "Allegedly inedible whale",
+      "traditions": "8.0",
+      "narratives": "12.0"
+    },
+    {
+      "ref": "M62d",
+      "title": "A hare in rotten skin",
+      "traditions": "8.0",
+      "narratives": "7.0"
+    },
+    {
+      "ref": "M106d",
+      "title": "My name is \"Son-in-law\".",
+      "traditions": "8.0",
+      "narratives": "9.0"
+    },
+    {
+      "ref": "M140a",
+      "title": "The fox ties up its companion.",
+      "traditions": "8.0",
+      "narratives": "13.0"
+    },
+    {
+      "ref": "M155",
+      "title": "Covered nakedness of the father.",
+      "traditions": "8.0",
+      "narratives": "8.0"
+    },
+    {
+      "ref": "M181b",
+      "title": "How the spider came to live under the roof.",
+      "traditions": "8.0",
+      "narratives": "12.0"
+    },
+    {
+      "ref": "D13c",
+      "title": "The trickster makes his brother's wife laugh.",
+      "traditions": "7.0",
+      "narratives": "8.0"
+    },
+    {
+      "ref": "M21b",
+      "title": "Every deception is the beginning of the next.",
+      "traditions": "7.0",
+      "narratives": "10.0"
+    },
+    {
+      "ref": "M66a",
+      "title": "A mountain of excrement",
+      "traditions": "7.0",
+      "narratives": "11.0"
+    },
+    {
+      "ref": "M123b",
+      "title": "A girl ties her kidnapper to a boat.",
+      "traditions": "7.0",
+      "narratives": "8.0"
+    },
+    {
+      "ref": "M139",
+      "title": "Released birds.",
+      "traditions": "7.0",
+      "narratives": "11.0"
+    },
+    {
+      "ref": "B16b",
+      "title": "The wolverine makes the sea salty.",
+      "traditions": "6.0",
+      "narratives": "8.0"
+    },
+    {
+      "ref": "L33g",
+      "title": "Stone with a beard.",
+      "traditions": "6.0",
+      "narratives": "7.0"
+    },
+    {
+      "ref": "M53a",
+      "title": "Crows and seals",
+      "traditions": "6.0",
+      "narratives": "6.0"
+    },
+    {
+      "ref": "M123a",
+      "title": "Three-toed paw.",
+      "traditions": "6.0",
+      "narratives": "9.0"
+    },
+    {
+      "ref": "M147",
+      "title": "The fox runs ahead of the tiger.",
+      "traditions": "6.0",
+      "narratives": "6.0"
+    },
+    {
+      "ref": "M162b",
+      "title": "Cranberry juice in the bear's eyes.",
+      "traditions": "6.0",
+      "narratives": "7.0"
+    },
+    {
+      "ref": "M173",
+      "title": "Pretends to be dead several times.",
+      "traditions": "6.0",
+      "narratives": "6.0"
+    },
+    {
+      "ref": "B95A",
+      "title": "The trickster punishes his own backside.",
+      "traditions": "5.0",
+      "narratives": "4.0"
+    },
+    {
+      "ref": "H38",
+      "title": "The owner of the valuables comes to retrieve them.",
+      "traditions": "5.0",
+      "narratives": "5.0"
+    },
+    {
+      "ref": "K61f",
+      "title": "The Living Doll, ATU 459.",
+      "traditions": "5.0",
+      "narratives": "5.0"
+    },
+    {
+      "ref": "K67g",
+      "title": "Smiling sheep.",
+      "traditions": "5.0",
+      "narratives": "5.0"
+    },
+    {
+      "ref": "K182",
+      "title": "The deceived protector.",
+      "traditions": "5.0",
+      "narratives": "13.0"
+    },
+    {
+      "ref": "l118a1",
+      "title": "Man deceives monkey.",
+      "traditions": "5.0",
+      "narratives": "5.0"
+    },
+    {
+      "ref": "M55",
+      "title": "Dangerous overnight stay",
+      "traditions": "5.0",
+      "narratives": "12.0"
+    },
+    {
+      "ref": "M173B",
+      "title": "Running ahead.",
+      "traditions": "5.0",
+      "narratives": "4.0"
+    },
+    {
+      "ref": "B63",
+      "title": "The transformation of lazy children.",
+      "traditions": "4.0",
+      "narratives": "8.0"
+    },
+    {
+      "ref": "B98c",
+      "title": "The bat is deceived by a deity.",
+      "traditions": "4.0",
+      "narratives": "4.0"
+    },
+    {
+      "ref": "E9aa",
+      "title": "The fox wife in the burrow of all animals.",
+      "traditions": "4.0",
+      "narratives": "6.0"
+    },
+    {
+      "ref": "F68",
+      "title": "The supposed dead woman dresses up as a man.",
+      "traditions": "4.0",
+      "narratives": "5.0"
+    },
+    {
+      "ref": "K44a",
+      "title": "The frog pretends to be a mother.",
+      "traditions": "4.0",
+      "narratives": "5.0"
+    },
+    {
+      "ref": "M29T",
+      "title": "Trickster - Armadillo",
+      "traditions": "4.0",
+      "narratives": "2.0"
+    },
+    {
+      "ref": "M74c",
+      "title": "Handsome as a woodpecker",
+      "traditions": "4.0",
+      "narratives": "5.0"
+    },
+    {
+      "ref": "K16a",
+      "title": "Slipping, he drops the stuffed animal.",
+      "traditions": "3.0",
+      "narratives": "6.0"
+    },
+    {
+      "ref": "M29S",
+      "title": "Trickster - Crane",
+      "traditions": "3.0",
+      "narratives": "3.0"
+    },
+    {
+      "ref": "M199g2",
+      "title": "The thorny pole.",
+      "traditions": "3.0",
+      "narratives": "4.0"
+    },
+    {
+      "ref": "K32c",
+      "title": "The real wife becomes an owl.",
+      "traditions": "2.0",
+      "narratives": "2.0"
+    },
+    {
+      "ref": "M53f",
+      "title": "Pretending to be a monster, it eats supplies",
+      "traditions": "2.0",
+      "narratives": "5.0"
+    },
+    {
+      "ref": "M162C",
+      "title": "The removed skin is eaten.",
+      "traditions": "2.0",
+      "narratives": "3.0"
+    },
+    {
+      "ref": "J12k",
+      "title": "The groom and the deceiver live in the same house.",
+      "traditions": "1.0",
+      "narratives": "1.0"
+    },
+    {
+      "ref": "K8f",
+      "title": "Deer in the belly of a monster.",
+      "traditions": "0.0",
+      "narratives": "0.0"
+    },
+    {
+      "ref": "M29",
+      "title": "Trickster: identification with birds and animals",
+      "traditions": "0.0",
+      "narratives": "0.0"
+    },
+    {
+      "ref": "M53b",
+      "title": "A bag with songs",
+      "traditions": "0.0",
+      "narratives": "0.0"
+    }
+  ]
+}

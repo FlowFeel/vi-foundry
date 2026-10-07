@@ -1,0 +1,5 @@
+Lexibank Stability Analysis
+Coverage: BPDR+=90.4% vs BPDR-=86.8%
+Transparency: 0/33 HEAD-sourced transparent
+Diversity: BPDR+=1.089 vs BPDR-=1.010
+Conclusion: No evidence bpdr+ families are lexically more conservative.

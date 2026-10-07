@@ -1,0 +1,5214 @@
+{
+  "cluster": "emergence_creation",
+  "n": 868,
+  "motifs": [
+    {
+      "ref": "A3",
+      "title": "The Sun-Man and the Moon-Woman, A716.1.",
+      "traditions": "354.0",
+      "narratives": "669.0"
+    },
+    {
+      "ref": "A5",
+      "title": "The Sun and the Moon are male, A711.1, A736.3.",
+      "traditions": "353.0",
+      "narratives": "637.0"
+    },
+    {
+      "ref": "A12",
+      "title": "Eclipses: attacks by monsters, A737.1.",
+      "traditions": "300.0",
+      "narratives": "530.0"
+    },
+    {
+      "ref": "B3a",
+      "title": "Primary waters, A810.",
+      "traditions": "300.0",
+      "narratives": "674.0"
+    },
+    {
+      "ref": "D4a",
+      "title": "Theft of fire, A1415.",
+      "traditions": "294.0",
+      "narratives": "627.0"
+    },
+    {
+      "ref": "B2a",
+      "title": "The earth is a female being, A401.",
+      "traditions": "272.0",
+      "narratives": "484.0"
+    },
+    {
+      "ref": "A32d",
+      "title": "Man on the moon, A751.",
+      "traditions": "265.0",
+      "narratives": "658.0"
+    },
+    {
+      "ref": "L72",
+      "title": "Magical flight, D672, D673.",
+      "traditions": "252.0",
+      "narratives": "551.0"
+    },
+    {
+      "ref": "K24",
+      "title": "Hidden clothes of a supernatural woman, F202.4.2.",
+      "traditions": "238.0",
+      "narratives": "560.0"
+    },
+    {
+      "ref": "B3b",
+      "title": "The grown earth.",
+      "traditions": "234.0",
+      "narratives": "277.0"
+    },
+    {
+      "ref": "K8a",
+      "title": "Jonah: swallowed by an aquatic or chthonic creature.",
+      "traditions": "234.0",
+      "narratives": "402.0"
+    },
+    {
+      "ref": "K27n1",
+      "title": "The one who gives tasks \u2013 a king or a chief.",
+      "traditions": "229.0",
+      "narratives": "211.0"
+    },
+    {
+      "ref": "E9",
+      "title": "The Unknown Mistress, N831.1.",
+      "traditions": "227.0",
+      "narratives": "453.0"
+    },
+    {
+      "ref": "K27n2",
+      "title": "The task giver \u2013 a mythical character.",
+      "traditions": "226.0",
+      "narratives": "172.0"
+    },
+    {
+      "ref": "A35",
+      "title": "Spots on the lunar disc, A751.5.",
+      "traditions": "212.0",
+      "narratives": "289.0"
+    },
+    {
+      "ref": "J26",
+      "title": "Infants from the river.",
+      "traditions": "208.0",
+      "narratives": "291.0"
+    },
+    {
+      "ref": "H24",
+      "title": "A vessel opened too early.",
+      "traditions": "202.0",
+      "narratives": "343.0"
+    },
+    {
+      "ref": "B77",
+      "title": "Low sky, A625.2; A660.",
+      "traditions": "197.0",
+      "narratives": "399.0"
+    },
+    {
+      "ref": "C19",
+      "title": "Finding the sun.",
+      "traditions": "197.0",
+      "narratives": "336.0"
+    },
+    {
+      "ref": "L19b",
+      "title": "Creature with an odd number of heads.",
+      "traditions": "197.0",
+      "narratives": "325.0"
+    },
+    {
+      "ref": "E11",
+      "title": "Burnt skin.",
+      "traditions": "194.0",
+      "narratives": "315.0"
+    },
+    {
+      "ref": "C6",
+      "title": "Obtaining valuables from the underworld.",
+      "traditions": "188.0",
+      "narratives": "439.0"
+    },
+    {
+      "ref": "I1",
+      "title": "Thunderbirds, A284.2.",
+      "traditions": "183.0",
+      "narratives": "303.0"
+    },
+    {
+      "ref": "B82",
+      "title": "White Raven, A2411.1.1.6.",
+      "traditions": "175.0",
+      "narratives": "244.0"
+    },
+    {
+      "ref": "E1",
+      "title": "The creation of man.",
+      "traditions": "164.0",
+      "narratives": "311.0"
+    },
+    {
+      "ref": "C2",
+      "title": "Flood and fire.",
+      "traditions": "163.0",
+      "narratives": "319.0"
+    },
+    {
+      "ref": "H28",
+      "title": "Creature turns into reptiles, A2034.",
+      "traditions": "157.0",
+      "narratives": "286.0"
+    },
+    {
+      "ref": "F34b",
+      "title": "Lover of non-human nature.",
+      "traditions": "156.0",
+      "narratives": "315.0"
+    },
+    {
+      "ref": "A32e",
+      "title": "Character with an object in their hands.",
+      "traditions": "154.0",
+      "narratives": "256.0"
+    },
+    {
+      "ref": "B42",
+      "title": "Cosmic hunting, F59.2.",
+      "traditions": "153.0",
+      "narratives": "299.0"
+    },
+    {
+      "ref": "L5",
+      "title": "Rolling head.",
+      "traditions": "153.0",
+      "narratives": "254.0"
+    },
+    {
+      "ref": "G6",
+      "title": "The first tree.",
+      "traditions": "148.0",
+      "narratives": "279.0"
+    },
+    {
+      "ref": "E5a",
+      "title": "People from the underworld, A1234.",
+      "traditions": "144.0",
+      "narratives": "323.0"
+    },
+    {
+      "ref": "L104",
+      "title": "The fugitive and the pursuer change their appearance (ATU 32",
+      "traditions": "135.0",
+      "narratives": "174.0"
+    },
+    {
+      "ref": "G23",
+      "title": "Multiple objects from a single creature.",
+      "traditions": "134.0",
+      "narratives": "219.0"
+    },
+    {
+      "ref": "E31a",
+      "title": "Creators and saviours of girls, ATU 653, 653A, 653B.",
+      "traditions": "133.0",
+      "narratives": "175.0"
+    },
+    {
+      "ref": "L53",
+      "title": "Stones in the mouth, K951.",
+      "traditions": "133.0",
+      "narratives": "183.0"
+    },
+    {
+      "ref": "C5a",
+      "title": "Scout birds.",
+      "traditions": "132.0",
+      "narratives": "209.0"
+    },
+    {
+      "ref": "H18",
+      "title": "Released animals, A1421.",
+      "traditions": "130.0",
+      "narratives": "168.0"
+    },
+    {
+      "ref": "L103",
+      "title": "Magical flight: Atalanta, R231.",
+      "traditions": "128.0",
+      "narratives": "167.0"
+    },
+    {
+      "ref": "E5c",
+      "title": "People from the sky.",
+      "traditions": "124.0",
+      "narratives": "207.0"
+    },
+    {
+      "ref": "I13a",
+      "title": "Horned serpent, B91.3.",
+      "traditions": "124.0",
+      "narratives": "222.0"
+    },
+    {
+      "ref": "L85",
+      "title": "Half-creatures, F525.",
+      "traditions": "124.0",
+      "narratives": "243.0"
+    },
+    {
+      "ref": "K38",
+      "title": "The hero helps the chicks, B364.4.",
+      "traditions": "119.0",
+      "narratives": "254.0"
+    },
+    {
+      "ref": "J42",
+      "title": "Parting waters.",
+      "traditions": "117.0",
+      "narratives": "170.0"
+    },
+    {
+      "ref": "B125",
+      "title": "Animals exchange characteristics.",
+      "traditions": "116.0",
+      "narratives": "163.0"
+    },
+    {
+      "ref": "L72a",
+      "title": "Comb-thicket.",
+      "traditions": "116.0",
+      "narratives": "261.0"
+    },
+    {
+      "ref": "B2d",
+      "title": "Marriage of heaven and earth, A625.",
+      "traditions": "111.0",
+      "narratives": "167.0"
+    },
+    {
+      "ref": "F2",
+      "title": "Birth from the leg T541; V52.",
+      "traditions": "111.0",
+      "narratives": "171.0"
+    },
+    {
+      "ref": "I25",
+      "title": "Bribed guards, B325.1, B567.1.",
+      "traditions": "110.0",
+      "narratives": "174.0"
+    },
+    {
+      "ref": "I62",
+      "title": "Milky Way - river, A778.3.",
+      "traditions": "110.0",
+      "narratives": "181.0"
+    },
+    {
+      "ref": "A2a",
+      "title": "The sun emits destructive heat.",
+      "traditions": "109.0",
+      "narratives": "238.0"
+    },
+    {
+      "ref": "C6d",
+      "title": "Obtaining land from the underworld.",
+      "traditions": "109.0",
+      "narratives": "233.0"
+    },
+    {
+      "ref": "A31",
+      "title": "The Moon in Love.",
+      "traditions": "107.0",
+      "narratives": "172.0"
+    },
+    {
+      "ref": "K39",
+      "title": "Feeding the Simurgh bird, B322.1.",
+      "traditions": "107.0",
+      "narratives": "142.0"
+    },
+    {
+      "ref": "K80",
+      "title": "The indestructible woman.",
+      "traditions": "106.0",
+      "narratives": "174.0"
+    },
+    {
+      "ref": "L19a",
+      "title": "Creature with an even number of heads.",
+      "traditions": "105.0",
+      "narratives": "147.0"
+    },
+    {
+      "ref": "B46c",
+      "title": "The Great Bear \u2013 seven characters.",
+      "traditions": "103.0",
+      "narratives": "184.0"
+    },
+    {
+      "ref": "C8",
+      "title": "Blood relatives give birth to people.",
+      "traditions": "103.0",
+      "narratives": "266.0"
+    },
+    {
+      "ref": "J62",
+      "title": "Petrified people.",
+      "traditions": "102.0",
+      "narratives": "187.0"
+    },
+    {
+      "ref": "I14",
+      "title": "Creatures without an anus, F529.2.",
+      "traditions": "101.0",
+      "narratives": "145.0"
+    },
+    {
+      "ref": "M23",
+      "title": "Feigned fear of imaginary danger, ATU 1310\u20131310C; K581.",
+      "traditions": "100.0",
+      "narratives": "154.0"
+    },
+    {
+      "ref": "B87",
+      "title": "Alcor.",
+      "traditions": "99.0",
+      "narratives": "156.0"
+    },
+    {
+      "ref": "K47a",
+      "title": "Woman and dog: the origin of humans.",
+      "traditions": "98.0",
+      "narratives": "165.0"
+    },
+    {
+      "ref": "C25",
+      "title": "Eschatological expectations.",
+      "traditions": "97.0",
+      "narratives": "151.0"
+    },
+    {
+      "ref": "I8B",
+      "title": "Pillars of the world: zoomorphic creatures.",
+      "traditions": "96.0",
+      "narratives": "127.0"
+    },
+    {
+      "ref": "A21",
+      "title": "Luminaries thrown into the sky, A700.I, A714, A741.",
+      "traditions": "95.0",
+      "narratives": "175.0"
+    },
+    {
+      "ref": "K30",
+      "title": "The flying enemy carries off the woman.",
+      "traditions": "95.0",
+      "narratives": "142.0"
+    },
+    {
+      "ref": "K38b",
+      "title": "The serpent threatens the chicks, B364.4.",
+      "traditions": "95.0",
+      "narratives": "132.0"
+    },
+    {
+      "ref": "I52",
+      "title": "Fish \u2013 the support of the earth.",
+      "traditions": "93.0",
+      "narratives": "152.0"
+    },
+    {
+      "ref": "M182",
+      "title": "Smolyan doll, ATU 175, Th K741.",
+      "traditions": "93.0",
+      "narratives": "148.0"
+    },
+    {
+      "ref": "L100",
+      "title": "The Unrecognised Fugitive, D671.",
+      "traditions": "91.0",
+      "narratives": "173.0"
+    },
+    {
+      "ref": "B1",
+      "title": "Two creators, A50.",
+      "traditions": "90.0",
+      "narratives": "166.0"
+    },
+    {
+      "ref": "B44",
+      "title": "Dispute about time, A1150, A1172.",
+      "traditions": "90.0",
+      "narratives": "153.0"
+    },
+    {
+      "ref": "E32",
+      "title": "Progenitor plants.",
+      "traditions": "90.0",
+      "narratives": "155.0"
+    },
+    {
+      "ref": "A32f",
+      "title": "Moon water carrier.",
+      "traditions": "87.0",
+      "narratives": "182.0"
+    },
+    {
+      "ref": "B86",
+      "title": "The Tower of Babel.",
+      "traditions": "87.0",
+      "narratives": "121.0"
+    },
+    {
+      "ref": "K80a",
+      "title": "A bird or object tells of a crime, ATU 720, 780, 780B.",
+      "traditions": "87.0",
+      "narratives": "194.0"
+    },
+    {
+      "ref": "J15",
+      "title": "The road to the home of dangerous creatures.",
+      "traditions": "86.0",
+      "narratives": "136.0"
+    },
+    {
+      "ref": "M131",
+      "title": "It's not a tail, it's a root, ATU 5, ThR5.",
+      "traditions": "86.0",
+      "narratives": "99.0"
+    },
+    {
+      "ref": "I17",
+      "title": "Physical abnormalities of inhabitants of the other world.",
+      "traditions": "85.0",
+      "narratives": "95.0"
+    },
+    {
+      "ref": "L6",
+      "title": "The clingy demon.",
+      "traditions": "85.0",
+      "narratives": "113.0"
+    },
+    {
+      "ref": "A2b",
+      "title": "The extra suns are extinguished.",
+      "traditions": "84.0",
+      "narratives": "65.0"
+    },
+    {
+      "ref": "B50",
+      "title": "Whose blood is sweeter?",
+      "traditions": "83.0",
+      "narratives": "126.0"
+    },
+    {
+      "ref": "k32n",
+      "title": "The false wife - a supernatural character.",
+      "traditions": "82.0",
+      "narratives": "58.0"
+    },
+    {
+      "ref": "A32h",
+      "title": "Moon tree, A751.6.",
+      "traditions": "81.0",
+      "narratives": "112.0"
+    },
+    {
+      "ref": "B3e",
+      "title": "The earth fell into the waters.",
+      "traditions": "81.0",
+      "narratives": "112.0"
+    },
+    {
+      "ref": "B38",
+      "title": "Unsuccessful colouring.",
+      "traditions": "81.0",
+      "narratives": "121.0"
+    },
+    {
+      "ref": "B46",
+      "title": "Seven Star Brothers.",
+      "traditions": "80.0",
+      "narratives": "159.0"
+    },
+    {
+      "ref": "K27q",
+      "title": "Milk of a wild animal.",
+      "traditions": "80.0",
+      "narratives": "108.0"
+    },
+    {
+      "ref": "A36",
+      "title": "The moon and immortality.",
+      "traditions": "79.0",
+      "narratives": "147.0"
+    },
+    {
+      "ref": "A38",
+      "title": "The Sun in a Trap, A728.",
+      "traditions": "79.0",
+      "narratives": "112.0"
+    },
+    {
+      "ref": "H36a",
+      "title": "False news: the origin of death, A1335.1.",
+      "traditions": "79.0",
+      "narratives": "156.0"
+    },
+    {
+      "ref": "K84",
+      "title": "Sisters married to animals, ATU 552.1.",
+      "traditions": "79.0",
+      "narratives": "121.0"
+    },
+    {
+      "ref": "L14",
+      "title": "The cultivated snake.",
+      "traditions": "79.0",
+      "narratives": "45.0"
+    },
+    {
+      "ref": "A37",
+      "title": "The sun is subjected to armed attack.",
+      "traditions": "77.0",
+      "narratives": "154.0"
+    },
+    {
+      "ref": "M151A",
+      "title": "Supports a rock, ATU 1530, J2273.1.",
+      "traditions": "77.0",
+      "narratives": "81.0"
+    },
+    {
+      "ref": "A12c",
+      "title": "Reptiles or fish eclipse the sun.",
+      "traditions": "76.0",
+      "narratives": "92.0"
+    },
+    {
+      "ref": "B12",
+      "title": "Snake rivers.",
+      "traditions": "76.0",
+      "narratives": "81.0"
+    },
+    {
+      "ref": "K17",
+      "title": "Ornithomorphic groom.",
+      "traditions": "76.0",
+      "narratives": "68.0"
+    },
+    {
+      "ref": "E9h",
+      "title": "The magical wife - the dove.",
+      "traditions": "74.0",
+      "narratives": "104.0"
+    },
+    {
+      "ref": "B98",
+      "title": "The bat between beasts and birds, ATU 222A.",
+      "traditions": "73.0",
+      "narratives": "74.0"
+    },
+    {
+      "ref": "E5b",
+      "title": "First ancestors from the underworld.",
+      "traditions": "73.0",
+      "narratives": "114.0"
+    },
+    {
+      "ref": "K25e",
+      "title": "The magical wife \u2013 ancestor of humans.",
+      "traditions": "73.0",
+      "narratives": "117.0"
+    },
+    {
+      "ref": "M90a1",
+      "title": "Lice skin, H522.I.I,ATU857.",
+      "traditions": "72.0",
+      "narratives": "63.0"
+    },
+    {
+      "ref": "K41",
+      "title": "Thunder against the snake.",
+      "traditions": "71.0",
+      "narratives": "122.0"
+    },
+    {
+      "ref": "B98a",
+      "title": "The bat becomes an outcast, ATU 222A.",
+      "traditions": "70.0",
+      "narratives": "73.0"
+    },
+    {
+      "ref": "H42",
+      "title": "The creator leaves.",
+      "traditions": "70.0",
+      "narratives": "76.0"
+    },
+    {
+      "ref": "B28",
+      "title": "The travelling transformer.",
+      "traditions": "69.0",
+      "narratives": "127.0"
+    },
+    {
+      "ref": "M157b",
+      "title": "Take the most precious thing (ATU 875).",
+      "traditions": "69.0",
+      "narratives": "72.0"
+    },
+    {
+      "ref": "B14A",
+      "title": "Tears turn into water.",
+      "traditions": "68.0",
+      "narratives": "82.0"
+    },
+    {
+      "ref": "C6c",
+      "title": "The Diver \u2013 Bird.",
+      "traditions": "68.0",
+      "narratives": "149.0"
+    },
+    {
+      "ref": "D5",
+      "title": "Woman controls fire.",
+      "traditions": "68.0",
+      "narratives": "119.0"
+    },
+    {
+      "ref": "F33",
+      "title": "Connection with a water creature.",
+      "traditions": "68.0",
+      "narratives": "102.0"
+    },
+    {
+      "ref": "A2",
+      "title": "Several suns.",
+      "traditions": "67.0",
+      "narratives": "142.0"
+    },
+    {
+      "ref": "K8d",
+      "title": "Jonah: swallowed by an anthropomorphic creature.",
+      "traditions": "67.0",
+      "narratives": "97.0"
+    },
+    {
+      "ref": "A32a",
+      "title": "Moon Rabbit, A751.2.",
+      "traditions": "66.0",
+      "narratives": "107.0"
+    },
+    {
+      "ref": "B116",
+      "title": "The eaten book.",
+      "traditions": "66.0",
+      "narratives": "128.0"
+    },
+    {
+      "ref": "E8",
+      "title": "Wooden people.",
+      "traditions": "66.0",
+      "narratives": "84.0"
+    },
+    {
+      "ref": "E31c",
+      "title": "Rescuers of the Abducted Maiden, ATU 513A, ATU 653.",
+      "traditions": "66.0",
+      "narratives": "65.0"
+    },
+    {
+      "ref": "L13",
+      "title": "The raised monster.",
+      "traditions": "66.0",
+      "narratives": "97.0"
+    },
+    {
+      "ref": "C34",
+      "title": "The Flood: the wounded creature.",
+      "traditions": "65.0",
+      "narratives": "91.0"
+    },
+    {
+      "ref": "L17b",
+      "title": "Mouth on the back of the head.",
+      "traditions": "65.0",
+      "narratives": "105.0"
+    },
+    {
+      "ref": "M46",
+      "title": "An imaginary baby",
+      "traditions": "65.0",
+      "narratives": "126.0"
+    },
+    {
+      "ref": "M90a",
+      "title": "Marry a guesser",
+      "traditions": "65.0",
+      "narratives": "65.0"
+    },
+    {
+      "ref": "B45A",
+      "title": "Winter versus summer.",
+      "traditions": "64.0",
+      "narratives": "77.0"
+    },
+    {
+      "ref": "C16",
+      "title": "Products of labour become animals, E161, E168.",
+      "traditions": "64.0",
+      "narratives": "83.0"
+    },
+    {
+      "ref": "K132",
+      "title": "The Invincible Rooster, ATU 715, 715A.",
+      "traditions": "64.0",
+      "narratives": "86.0"
+    },
+    {
+      "ref": "B41",
+      "title": "The talking dog.",
+      "traditions": "62.0",
+      "narratives": "61.0"
+    },
+    {
+      "ref": "C9",
+      "title": "Warning of the flood.",
+      "traditions": "62.0",
+      "narratives": "112.0"
+    },
+    {
+      "ref": "C20",
+      "title": "The drunken cannibal.",
+      "traditions": "62.0",
+      "narratives": "75.0"
+    },
+    {
+      "ref": "K100a",
+      "title": "Tobiah, (ATU 505).",
+      "traditions": "62.0",
+      "narratives": "94.0"
+    },
+    {
+      "ref": "B42t",
+      "title": "The seven stars of the Big Dipper \u2013 animal.",
+      "traditions": "61.0",
+      "narratives": "69.0"
+    },
+    {
+      "ref": "E1b",
+      "title": "Man made of unsuitable material.",
+      "traditions": "61.0",
+      "narratives": "81.0"
+    },
+    {
+      "ref": "G20",
+      "title": "A woman turns into plants.",
+      "traditions": "61.0",
+      "narratives": "84.0"
+    },
+    {
+      "ref": "L90",
+      "title": "Mouth to the sky.",
+      "traditions": "61.0",
+      "narratives": "103.0"
+    },
+    {
+      "ref": "B42n",
+      "title": "Orion \u2013 one person.",
+      "traditions": "60.0",
+      "narratives": "98.0"
+    },
+    {
+      "ref": "C30",
+      "title": "Impossible condition.",
+      "traditions": "60.0",
+      "narratives": "68.0"
+    },
+    {
+      "ref": "H40",
+      "title": "The dog guards the man.",
+      "traditions": "60.0",
+      "narratives": "113.0"
+    },
+    {
+      "ref": "I41b",
+      "title": "The rainbow drinks water.",
+      "traditions": "60.0",
+      "narratives": "90.0"
+    },
+    {
+      "ref": "B36a",
+      "title": "Two adorn each other.",
+      "traditions": "59.0",
+      "narratives": "89.0"
+    },
+    {
+      "ref": "M90",
+      "title": "The snake guesses the material, ATU 857",
+      "traditions": "59.0",
+      "narratives": "48.0"
+    },
+    {
+      "ref": "B29",
+      "title": "Eschatological festival.",
+      "traditions": "58.0",
+      "narratives": "77.0"
+    },
+    {
+      "ref": "E9i1",
+      "title": "The magical wife \u2013 the swan.",
+      "traditions": "58.0",
+      "narratives": "117.0"
+    },
+    {
+      "ref": "J13",
+      "title": "Two sisters.",
+      "traditions": "58.0",
+      "narratives": "55.0"
+    },
+    {
+      "ref": "J17",
+      "title": "Frogs in the hair.",
+      "traditions": "58.0",
+      "narratives": "73.0"
+    },
+    {
+      "ref": "K22b",
+      "title": "Man helps the inhabitants of another world.",
+      "traditions": "58.0",
+      "narratives": "50.0"
+    },
+    {
+      "ref": "B2e",
+      "title": "Earth-man.",
+      "traditions": "57.0",
+      "narratives": "71.0"
+    },
+    {
+      "ref": "B42q",
+      "title": "Ursa Major \u2013 cart.",
+      "traditions": "57.0",
+      "narratives": "136.0"
+    },
+    {
+      "ref": "B44a",
+      "title": "Units of time.",
+      "traditions": "57.0",
+      "narratives": "14.0"
+    },
+    {
+      "ref": "C6c4",
+      "title": "Duck \u2013 a successful diver.",
+      "traditions": "57.0",
+      "narratives": "103.0"
+    },
+    {
+      "ref": "I19",
+      "title": "They feed on the smell of food.",
+      "traditions": "57.0",
+      "narratives": "56.0"
+    },
+    {
+      "ref": "A20",
+      "title": "Childhood and youth of the Sun and Moon.",
+      "traditions": "56.0",
+      "narratives": "79.0"
+    },
+    {
+      "ref": "B26",
+      "title": "Gone to the animals.",
+      "traditions": "56.0",
+      "narratives": "74.0"
+    },
+    {
+      "ref": "B37",
+      "title": "Living beings are given their appearance.",
+      "traditions": "56.0",
+      "narratives": "93.0"
+    },
+    {
+      "ref": "F9e1",
+      "title": "Dangerous animal in the vagina.",
+      "traditions": "56.0",
+      "narratives": "81.0"
+    },
+    {
+      "ref": "I37A",
+      "title": "Mushrooms - an inferior object.",
+      "traditions": "56.0",
+      "narratives": "44.0"
+    },
+    {
+      "ref": "B109",
+      "title": "Man became a bear.",
+      "traditions": "55.0",
+      "narratives": "96.0"
+    },
+    {
+      "ref": "K18d",
+      "title": "At the pike's command, ATU 675.",
+      "traditions": "55.0",
+      "narratives": "47.0"
+    },
+    {
+      "ref": "A39a",
+      "title": "Twelve months, ATU 294.",
+      "traditions": "54.0",
+      "narratives": "92.0"
+    },
+    {
+      "ref": "B116c",
+      "title": "The Lost Book.",
+      "traditions": "54.0",
+      "narratives": "98.0"
+    },
+    {
+      "ref": "C25b",
+      "title": "The Moon Spinner.",
+      "traditions": "54.0",
+      "narratives": "66.0"
+    },
+    {
+      "ref": "I38",
+      "title": "Dog-headed creatures.",
+      "traditions": "54.0",
+      "narratives": "83.0"
+    },
+    {
+      "ref": "K8e",
+      "title": "Penetrates inside through the anus.",
+      "traditions": "54.0",
+      "narratives": "48.0"
+    },
+    {
+      "ref": "L105",
+      "title": "The invisible hook, B5482.3.",
+      "traditions": "54.0",
+      "narratives": "63.0"
+    },
+    {
+      "ref": "B48",
+      "title": "Predators become herbivores.",
+      "traditions": "53.0",
+      "narratives": "64.0"
+    },
+    {
+      "ref": "J54",
+      "title": "The last female escapes.",
+      "traditions": "53.0",
+      "narratives": "69.0"
+    },
+    {
+      "ref": "K27w",
+      "title": "The monster kills the person giving the tasks.",
+      "traditions": "53.0",
+      "narratives": "49.0"
+    },
+    {
+      "ref": "M60a",
+      "title": "The hunter comes to the one he wounded",
+      "traditions": "53.0",
+      "narratives": "53.0"
+    },
+    {
+      "ref": "B17",
+      "title": "Night in a vessel.",
+      "traditions": "52.0",
+      "narratives": "76.0"
+    },
+    {
+      "ref": "B40a",
+      "title": "The one who lost his horns.",
+      "traditions": "52.0",
+      "narratives": "65.0"
+    },
+    {
+      "ref": "B42hh",
+      "title": "Cosmic hunting and Orion.",
+      "traditions": "52.0",
+      "narratives": "76.0"
+    },
+    {
+      "ref": "B77a",
+      "title": "The giant pushed back the sky.",
+      "traditions": "52.0",
+      "narratives": "40.0"
+    },
+    {
+      "ref": "E31a1",
+      "title": "Who will be the husband of the created girl? ATU 653C.",
+      "traditions": "52.0",
+      "narratives": "46.0"
+    },
+    {
+      "ref": "B69",
+      "title": "Striped chipmunk, A2217.2.",
+      "traditions": "51.0",
+      "narratives": "69.0"
+    },
+    {
+      "ref": "M8a",
+      "title": "Birds are hammering the rock: release from the trap",
+      "traditions": "51.0",
+      "narratives": "80.0"
+    },
+    {
+      "ref": "M149",
+      "title": "Say that I am a stump, ATU 154.",
+      "traditions": "50.0",
+      "narratives": "68.0"
+    },
+    {
+      "ref": "B42f",
+      "title": "Ursa Major \u2013 hoofed animal.",
+      "traditions": "49.0",
+      "narratives": "60.0"
+    },
+    {
+      "ref": "B51a",
+      "title": "The snake is the enemy of the swallow.",
+      "traditions": "49.0",
+      "narratives": "58.0"
+    },
+    {
+      "ref": "F27",
+      "title": "Girls and water spirits.",
+      "traditions": "49.0",
+      "narratives": "86.0"
+    },
+    {
+      "ref": "L9a",
+      "title": "Ostronog, G341.1.",
+      "traditions": "49.0",
+      "narratives": "67.0"
+    },
+    {
+      "ref": "A23a",
+      "title": "Who will be the first to see the sun? ATU 120,",
+      "traditions": "48.0",
+      "narratives": "60.0"
+    },
+    {
+      "ref": "A27",
+      "title": "Crowns of the sun and moon.",
+      "traditions": "48.0",
+      "narratives": "57.0"
+    },
+    {
+      "ref": "B9",
+      "title": "Water in a tree.",
+      "traditions": "48.0",
+      "narratives": "79.0"
+    },
+    {
+      "ref": "B33",
+      "title": "Woman-wind.",
+      "traditions": "48.0",
+      "narratives": "74.0"
+    },
+    {
+      "ref": "B36",
+      "title": "Living beings acquire their appearance.",
+      "traditions": "48.0",
+      "narratives": "94.0"
+    },
+    {
+      "ref": "B42h",
+      "title": "Orion's Belt \u2013 game, hunter \u2013 another star.",
+      "traditions": "48.0",
+      "narratives": "67.0"
+    },
+    {
+      "ref": "C14",
+      "title": "Monsters destroy people.",
+      "traditions": "48.0",
+      "narratives": "62.0"
+    },
+    {
+      "ref": "K27n3c",
+      "title": "The one who gives tasks \u2013 a zoomorphic creature.",
+      "traditions": "48.0",
+      "narratives": "22.0"
+    },
+    {
+      "ref": "L19b2",
+      "title": "Nine-headed monster.",
+      "traditions": "48.0",
+      "narratives": "71.0"
+    },
+    {
+      "ref": "B18",
+      "title": "Light in a vessel, A1411.1.",
+      "traditions": "47.0",
+      "narratives": "50.0"
+    },
+    {
+      "ref": "B42b",
+      "title": "Hunting hoofed animals.",
+      "traditions": "47.0",
+      "narratives": "58.0"
+    },
+    {
+      "ref": "H11",
+      "title": "The call of God.",
+      "traditions": "47.0",
+      "narratives": "74.0"
+    },
+    {
+      "ref": "H49",
+      "title": "The slain dog sought to save the child, Th B524.1.4.1; B221.",
+      "traditions": "47.0",
+      "narratives": "40.0"
+    },
+    {
+      "ref": "K65c",
+      "title": "Eve's Unwashed Children, ATU 758.",
+      "traditions": "47.0",
+      "narratives": "75.0"
+    },
+    {
+      "ref": "K87",
+      "title": "Marriage to an animal ends badly.",
+      "traditions": "47.0",
+      "narratives": "78.0"
+    },
+    {
+      "ref": "M49a",
+      "title": "A substituted shaman",
+      "traditions": "47.0",
+      "narratives": "84.0"
+    },
+    {
+      "ref": "B16c",
+      "title": "The mill grinds salt, ATU 565.",
+      "traditions": "46.0",
+      "narratives": "32.0"
+    },
+    {
+      "ref": "B43",
+      "title": "Purusha, D287.5.",
+      "traditions": "46.0",
+      "narratives": "75.0"
+    },
+    {
+      "ref": "B54",
+      "title": "Splinters turn into fish. D441.10+.",
+      "traditions": "46.0",
+      "narratives": "59.0"
+    },
+    {
+      "ref": "C30a",
+      "title": "A pound of flesh, ATU 890.",
+      "traditions": "46.0",
+      "narratives": "30.0"
+    },
+    {
+      "ref": "A32b",
+      "title": "Moon toad, A751.3.",
+      "traditions": "45.0",
+      "narratives": "56.0"
+    },
+    {
+      "ref": "B10",
+      "title": "Drunk water, A1013.",
+      "traditions": "45.0",
+      "narratives": "58.0"
+    },
+    {
+      "ref": "C6j1",
+      "title": "The earth is brought by the antagonist of the deity.",
+      "traditions": "45.0",
+      "narratives": "84.0"
+    },
+    {
+      "ref": "K100f1",
+      "title": "The Wild Man, ATU 502.",
+      "traditions": "45.0",
+      "narratives": "41.0"
+    },
+    {
+      "ref": "B40",
+      "title": "The rabbit as a substitute for the deer.",
+      "traditions": "44.0",
+      "narratives": "48.0"
+    },
+    {
+      "ref": "B42g",
+      "title": "The Great Bear \u2013 a hunted animal.",
+      "traditions": "44.0",
+      "narratives": "94.0"
+    },
+    {
+      "ref": "C3",
+      "title": "The snake plugged the hole in the ark, A1853.1, (ATU 825).",
+      "traditions": "44.0",
+      "narratives": "56.0"
+    },
+    {
+      "ref": "C6b",
+      "title": "Diver \u2013 muskrat (beaver, otter).",
+      "traditions": "44.0",
+      "narratives": "92.0"
+    },
+    {
+      "ref": "I15",
+      "title": "Creatures without mouths.",
+      "traditions": "44.0",
+      "narratives": "50.0"
+    },
+    {
+      "ref": "B71",
+      "title": "Dancing flashes.",
+      "traditions": "43.0",
+      "narratives": "50.0"
+    },
+    {
+      "ref": "B75a",
+      "title": "Sounds of the Age of Creation: The Human Voice.",
+      "traditions": "43.0",
+      "narratives": "35.0"
+    },
+    {
+      "ref": "E36",
+      "title": "Hard covering of the body.",
+      "traditions": "43.0",
+      "narratives": "57.0"
+    },
+    {
+      "ref": "I87a",
+      "title": "One creature is larger than another.",
+      "traditions": "43.0",
+      "narratives": "63.0"
+    },
+    {
+      "ref": "L15e",
+      "title": "The life of a hero in a sword, ATU 302B.",
+      "traditions": "43.0",
+      "narratives": "60.0"
+    },
+    {
+      "ref": "B31",
+      "title": "Women turn into aquatic mammals.",
+      "traditions": "42.0",
+      "narratives": "55.0"
+    },
+    {
+      "ref": "E35",
+      "title": "Webbing between the fingers.",
+      "traditions": "42.0",
+      "narratives": "52.0"
+    },
+    {
+      "ref": "H43aa",
+      "title": "Spat-upon figures.",
+      "traditions": "42.0",
+      "narratives": "60.0"
+    },
+    {
+      "ref": "K38b3",
+      "title": "The hero cares for the chicks.",
+      "traditions": "42.0",
+      "narratives": "59.0"
+    },
+    {
+      "ref": "K161",
+      "title": "The Released Dragon, (ATU 302C*).",
+      "traditions": "42.0",
+      "narratives": "58.0"
+    },
+    {
+      "ref": "M46a",
+      "title": "A picked up baby",
+      "traditions": "42.0",
+      "narratives": "53.0"
+    },
+    {
+      "ref": "M89",
+      "title": "Melted wax",
+      "traditions": "42.0",
+      "narratives": "45.0"
+    },
+    {
+      "ref": "B33h",
+      "title": "Mother of the Sun.",
+      "traditions": "41.0",
+      "narratives": "51.0"
+    },
+    {
+      "ref": "D7",
+      "title": "Toad and fire.",
+      "traditions": "41.0",
+      "narratives": "74.0"
+    },
+    {
+      "ref": "F1",
+      "title": "Transformed man.",
+      "traditions": "41.0",
+      "narratives": "60.0"
+    },
+    {
+      "ref": "J40",
+      "title": "Enemy from the sky.",
+      "traditions": "41.0",
+      "narratives": "65.0"
+    },
+    {
+      "ref": "K101a",
+      "title": "The girl rising from the coffin, ATU 307.",
+      "traditions": "41.0",
+      "narratives": "38.0"
+    },
+    {
+      "ref": "M29X2",
+      "title": "Trickster _x0096_ other creatures",
+      "traditions": "41.0",
+      "narratives": "28.0"
+    },
+    {
+      "ref": "M114b1",
+      "title": "What is the fattest, sweetest, fastest?",
+      "traditions": "41.0",
+      "narratives": "42.0"
+    },
+    {
+      "ref": "B33a",
+      "title": "Frozen in spring.",
+      "traditions": "40.0",
+      "narratives": "80.0"
+    },
+    {
+      "ref": "C4",
+      "title": "The Flood: Falling Fruit.",
+      "traditions": "40.0",
+      "narratives": "65.0"
+    },
+    {
+      "ref": "C32c",
+      "title": "Nails must be preserved.",
+      "traditions": "40.0",
+      "narratives": "61.0"
+    },
+    {
+      "ref": "E9d",
+      "title": "The magical wife \u2013 the dog.",
+      "traditions": "40.0",
+      "narratives": "70.0"
+    },
+    {
+      "ref": "I42",
+      "title": "Rainbow \u2013 a pair of creatures.",
+      "traditions": "40.0",
+      "narratives": "60.0"
+    },
+    {
+      "ref": "J37",
+      "title": "A bird carries away the antagonist.",
+      "traditions": "40.0",
+      "narratives": "65.0"
+    },
+    {
+      "ref": "K65",
+      "title": "Spirits of loci.",
+      "traditions": "40.0",
+      "narratives": "61.0"
+    },
+    {
+      "ref": "K65e",
+      "title": "Midwife in the demonic world, ATU 476**, (ATU 156B*).",
+      "traditions": "40.0",
+      "narratives": "63.0"
+    },
+    {
+      "ref": "K103d",
+      "title": "Enter the horse's ear and take it out of the cow's ear.",
+      "traditions": "40.0",
+      "narratives": "68.0"
+    },
+    {
+      "ref": "M46b",
+      "title": "A born infant",
+      "traditions": "40.0",
+      "narratives": "45.0"
+    },
+    {
+      "ref": "A23c",
+      "title": "Who will fly higher? ATU 221A",
+      "traditions": "39.0",
+      "narratives": "54.0"
+    },
+    {
+      "ref": "B5b",
+      "title": "Universal mother.",
+      "traditions": "39.0",
+      "narratives": "52.0"
+    },
+    {
+      "ref": "B7b",
+      "title": "Water from a vessel.",
+      "traditions": "39.0",
+      "narratives": "39.0"
+    },
+    {
+      "ref": "B27",
+      "title": "Variants of metamorphosis.",
+      "traditions": "39.0",
+      "narratives": "57.0"
+    },
+    {
+      "ref": "B57",
+      "title": "Bloody sunset.",
+      "traditions": "39.0",
+      "narratives": "53.0"
+    },
+    {
+      "ref": "L85F",
+      "title": "One-legged.",
+      "traditions": "39.0",
+      "narratives": "43.0"
+    },
+    {
+      "ref": "A23",
+      "title": "Who will become the sun?",
+      "traditions": "38.0",
+      "narratives": "64.0"
+    },
+    {
+      "ref": "A24",
+      "title": "First sunrise.",
+      "traditions": "38.0",
+      "narratives": "56.0"
+    },
+    {
+      "ref": "B11",
+      "title": "The appearance of rivers.",
+      "traditions": "38.0",
+      "narratives": "37.0"
+    },
+    {
+      "ref": "B38a",
+      "title": "Two birds adorn each other.",
+      "traditions": "38.0",
+      "narratives": "28.0"
+    },
+    {
+      "ref": "B42p",
+      "title": "Ursa Major \u2013 bear.",
+      "traditions": "38.0",
+      "narratives": "45.0"
+    },
+    {
+      "ref": "C6a",
+      "title": "Diver \u2013 turtle/frog.",
+      "traditions": "38.0",
+      "narratives": "45.0"
+    },
+    {
+      "ref": "E9o",
+      "title": "The magical wife \u2013 a frog or a toad.",
+      "traditions": "38.0",
+      "narratives": "48.0"
+    },
+    {
+      "ref": "E13a",
+      "title": "Knowledge from the underwater world.",
+      "traditions": "38.0",
+      "narratives": "76.0"
+    },
+    {
+      "ref": "I2",
+      "title": "Lightning from the eyes or mouth.",
+      "traditions": "37.0",
+      "narratives": "34.0"
+    },
+    {
+      "ref": "J22a",
+      "title": "Two of one.",
+      "traditions": "37.0",
+      "narratives": "43.0"
+    },
+    {
+      "ref": "K91",
+      "title": "The invisible battle.",
+      "traditions": "37.0",
+      "narratives": "34.0"
+    },
+    {
+      "ref": "B1f",
+      "title": "Two brothers: the winner and the loser.",
+      "traditions": "36.0",
+      "narratives": "82.0"
+    },
+    {
+      "ref": "B42k",
+      "title": "Cosmic hunting \u2013 Pleiades.",
+      "traditions": "36.0",
+      "narratives": "37.0"
+    },
+    {
+      "ref": "B45",
+      "title": "The Wedding of Winter and Summer, A1153.",
+      "traditions": "36.0",
+      "narratives": "48.0"
+    },
+    {
+      "ref": "C13",
+      "title": "Rebellion of things.",
+      "traditions": "36.0",
+      "narratives": "50.0"
+    },
+    {
+      "ref": "C18a",
+      "title": "The sun lures out the rooster.",
+      "traditions": "36.0",
+      "narratives": "54.0"
+    },
+    {
+      "ref": "E1c",
+      "title": "Man made of excrement.",
+      "traditions": "36.0",
+      "narratives": "31.0"
+    },
+    {
+      "ref": "E4",
+      "title": "Creation from mud on the skin, A1263.3.",
+      "traditions": "36.0",
+      "narratives": "62.0"
+    },
+    {
+      "ref": "K33b",
+      "title": "Friends abandon a beautiful woman.",
+      "traditions": "36.0",
+      "narratives": "56.0"
+    },
+    {
+      "ref": "K65a",
+      "title": "Spirits fall from the sky.",
+      "traditions": "36.0",
+      "narratives": "54.0"
+    },
+    {
+      "ref": "L135",
+      "title": "The Wanderer.",
+      "traditions": "36.0",
+      "narratives": "47.0"
+    },
+    {
+      "ref": "M142",
+      "title": "The Punished Tail, ATU 154.",
+      "traditions": "36.0",
+      "narratives": "46.0"
+    },
+    {
+      "ref": "A23b",
+      "title": "First rays on mountains and trees, (ATU 120).",
+      "traditions": "35.0",
+      "narratives": "38.0"
+    },
+    {
+      "ref": "B33d",
+      "title": "The Old Woman of Winter.",
+      "traditions": "35.0",
+      "narratives": "53.0"
+    },
+    {
+      "ref": "B48a",
+      "title": "Pieces of foreign flesh.",
+      "traditions": "35.0",
+      "narratives": "43.0"
+    },
+    {
+      "ref": "B68b",
+      "title": "Attempted to frighten God.",
+      "traditions": "35.0",
+      "narratives": "50.0"
+    },
+    {
+      "ref": "C5b",
+      "title": "Animals sent on reconnaissance.",
+      "traditions": "35.0",
+      "narratives": "47.0"
+    },
+    {
+      "ref": "I76a",
+      "title": "The snake becomes a dragon.",
+      "traditions": "35.0",
+      "narratives": "50.0"
+    },
+    {
+      "ref": "K11a",
+      "title": "Feathers turn into birds and people.",
+      "traditions": "35.0",
+      "narratives": "41.0"
+    },
+    {
+      "ref": "K47b",
+      "title": "The dog becomes handsome.",
+      "traditions": "35.0",
+      "narratives": "43.0"
+    },
+    {
+      "ref": "L73c",
+      "title": "The scarf opens and closes the way.",
+      "traditions": "35.0",
+      "narratives": "62.0"
+    },
+    {
+      "ref": "L95b",
+      "title": "Together with the demon against the child.",
+      "traditions": "35.0",
+      "narratives": "43.0"
+    },
+    {
+      "ref": "A22",
+      "title": "Into the sky from the bonfire.",
+      "traditions": "34.0",
+      "narratives": "64.0"
+    },
+    {
+      "ref": "B16",
+      "title": "Salt water: bodily secretions, A1115.",
+      "traditions": "34.0",
+      "narratives": "40.0"
+    },
+    {
+      "ref": "C7",
+      "title": "The Flood: The Destroyed Barrier.",
+      "traditions": "34.0",
+      "narratives": "51.0"
+    },
+    {
+      "ref": "K51",
+      "title": "The deceived wife.",
+      "traditions": "34.0",
+      "narratives": "49.0"
+    },
+    {
+      "ref": "L8",
+      "title": "Left behind feet and heads.",
+      "traditions": "34.0",
+      "narratives": "48.0"
+    },
+    {
+      "ref": "L38a",
+      "title": "Sticky trap \u2013 resin stump.",
+      "traditions": "34.0",
+      "narratives": "55.0"
+    },
+    {
+      "ref": "A16",
+      "title": "Dangers on the path of the sun.",
+      "traditions": "33.0",
+      "narratives": "37.0"
+    },
+    {
+      "ref": "A32c1",
+      "title": "Predatory beast on the moon.",
+      "traditions": "33.0",
+      "narratives": "34.0"
+    },
+    {
+      "ref": "A35a",
+      "title": "Mud thrown in the face.",
+      "traditions": "33.0",
+      "narratives": "54.0"
+    },
+    {
+      "ref": "B38e",
+      "title": "The gull's rump.",
+      "traditions": "33.0",
+      "narratives": "47.0"
+    },
+    {
+      "ref": "L17a",
+      "title": "Eyes on the back of the head.",
+      "traditions": "33.0",
+      "narratives": "34.0"
+    },
+    {
+      "ref": "M3a",
+      "title": "Count the inhabitants of the waters",
+      "traditions": "33.0",
+      "narratives": "51.0"
+    },
+    {
+      "ref": "M75b1a",
+      "title": "Intended wife, ATU 930A",
+      "traditions": "33.0",
+      "narratives": "39.0"
+    },
+    {
+      "ref": "M119",
+      "title": "Shown repeatedly, ATU 37.",
+      "traditions": "33.0",
+      "narratives": "39.0"
+    },
+    {
+      "ref": "M122",
+      "title": "Advisors inside.",
+      "traditions": "33.0",
+      "narratives": "39.0"
+    },
+    {
+      "ref": "A19",
+      "title": "Heliophores.",
+      "traditions": "32.0",
+      "narratives": "39.0"
+    },
+    {
+      "ref": "B13a",
+      "title": "Water rushes after a person.",
+      "traditions": "32.0",
+      "narratives": "43.0"
+    },
+    {
+      "ref": "B43a",
+      "title": "Created from many objects.",
+      "traditions": "32.0",
+      "narratives": "22.0"
+    },
+    {
+      "ref": "B60",
+      "title": "Offended children leave their parents.",
+      "traditions": "32.0",
+      "narratives": "48.0"
+    },
+    {
+      "ref": "B77b",
+      "title": "They touched the sky with a long object.",
+      "traditions": "32.0",
+      "narratives": "64.0"
+    },
+    {
+      "ref": "B79",
+      "title": "Cosmic egg.",
+      "traditions": "32.0",
+      "narratives": "43.0"
+    },
+    {
+      "ref": "B90",
+      "title": "Master of wolves.",
+      "traditions": "32.0",
+      "narratives": "47.0"
+    },
+    {
+      "ref": "E9i3",
+      "title": "The magical wife \u2013 the goose.",
+      "traditions": "32.0",
+      "narratives": "24.0"
+    },
+    {
+      "ref": "H43",
+      "title": "One creates the body, and another the soul.",
+      "traditions": "32.0",
+      "narratives": "59.0"
+    },
+    {
+      "ref": "K100f",
+      "title": "The young man releases the fish.",
+      "traditions": "32.0",
+      "narratives": "41.0"
+    },
+    {
+      "ref": "L19b3",
+      "title": "Twelve-headed monster.",
+      "traditions": "32.0",
+      "narratives": "59.0"
+    },
+    {
+      "ref": "C26",
+      "title": "Guardian at the edge of a foreign world.",
+      "traditions": "31.0",
+      "narratives": "28.0"
+    },
+    {
+      "ref": "E2",
+      "title": "People on trial.",
+      "traditions": "31.0",
+      "narratives": "47.0"
+    },
+    {
+      "ref": "E9c",
+      "title": "The magical wife \u2013 a hoofed animal.",
+      "traditions": "31.0",
+      "narratives": "49.0"
+    },
+    {
+      "ref": "E10",
+      "title": "Young animals turn into children.",
+      "traditions": "31.0",
+      "narratives": "39.0"
+    },
+    {
+      "ref": "F32",
+      "title": "The snake son gathers fruit.",
+      "traditions": "31.0",
+      "narratives": "46.0"
+    },
+    {
+      "ref": "I51b",
+      "title": "Earth \u2013 animal.",
+      "traditions": "31.0",
+      "narratives": "41.0"
+    },
+    {
+      "ref": "I75",
+      "title": "Previous worlds.",
+      "traditions": "31.0",
+      "narratives": "68.0"
+    },
+    {
+      "ref": "I79A",
+      "title": "Kirtimukha/Sisiutl.",
+      "traditions": "31.0",
+      "narratives": "72.0"
+    },
+    {
+      "ref": "M91c4",
+      "title": "The pot cooks by itself",
+      "traditions": "31.0",
+      "narratives": "45.0"
+    },
+    {
+      "ref": "B4",
+      "title": "The elongated land.",
+      "traditions": "30.0",
+      "narratives": "59.0"
+    },
+    {
+      "ref": "B42c",
+      "title": "Bear hunting.",
+      "traditions": "30.0",
+      "narratives": "2.0"
+    },
+    {
+      "ref": "B52c",
+      "title": "The earth is larger than the sky.",
+      "traditions": "30.0",
+      "narratives": "47.0"
+    },
+    {
+      "ref": "B85b",
+      "title": "Wind in a bag.",
+      "traditions": "30.0",
+      "narratives": "38.0"
+    },
+    {
+      "ref": "B117",
+      "title": "Dog rights, ATU 200.",
+      "traditions": "30.0",
+      "narratives": "29.0"
+    },
+    {
+      "ref": "G17",
+      "title": "The gift of the reptile.",
+      "traditions": "30.0",
+      "narratives": "48.0"
+    },
+    {
+      "ref": "A32",
+      "title": "Figure on the surface of the Moon, A751.",
+      "traditions": "29.0",
+      "narratives": "35.0"
+    },
+    {
+      "ref": "B33c",
+      "title": "Borrowed days.",
+      "traditions": "29.0",
+      "narratives": "61.0"
+    },
+    {
+      "ref": "B42U",
+      "title": "The stars of the ladle handle \u2013 three people.",
+      "traditions": "29.0",
+      "narratives": "45.0"
+    },
+    {
+      "ref": "B44b",
+      "title": "Fingers, claws, hair, feathers.",
+      "traditions": "29.0",
+      "narratives": "8.0"
+    },
+    {
+      "ref": "B52",
+      "title": "Before the flood, there were no mountains.",
+      "traditions": "29.0",
+      "narratives": "34.0"
+    },
+    {
+      "ref": "B70",
+      "title": "Hare ears.",
+      "traditions": "29.0",
+      "narratives": "38.0"
+    },
+    {
+      "ref": "B73b",
+      "title": "In search of a family member.",
+      "traditions": "29.0",
+      "narratives": "45.0"
+    },
+    {
+      "ref": "B77b1",
+      "title": "The sky was struck with a pestle.",
+      "traditions": "29.0",
+      "narratives": "54.0"
+    },
+    {
+      "ref": "C12b",
+      "title": "People \u2013 descendants of dogs.",
+      "traditions": "29.0",
+      "narratives": "56.0"
+    },
+    {
+      "ref": "C29",
+      "title": "Overheard secret.",
+      "traditions": "29.0",
+      "narratives": "43.0"
+    },
+    {
+      "ref": "K22a",
+      "title": "Dwarves are attacked.",
+      "traditions": "29.0",
+      "narratives": "5.0"
+    },
+    {
+      "ref": "A2a1",
+      "title": "The moon shone like the sun.",
+      "traditions": "28.0",
+      "narratives": "40.0"
+    },
+    {
+      "ref": "A2c",
+      "title": "Extra suns \u2013 children of the chief, A736.1.4.1.",
+      "traditions": "28.0",
+      "narratives": "45.0"
+    },
+    {
+      "ref": "B85",
+      "title": "Calming the Wind.",
+      "traditions": "28.0",
+      "narratives": "30.0"
+    },
+    {
+      "ref": "B89",
+      "title": "The eagle owl \u2013 king of birds.",
+      "traditions": "28.0",
+      "narratives": "26.0"
+    },
+    {
+      "ref": "B97",
+      "title": "The character rewards the bird.",
+      "traditions": "28.0",
+      "narratives": "27.0"
+    },
+    {
+      "ref": "C1",
+      "title": "Falling sky.",
+      "traditions": "28.0",
+      "narratives": "41.0"
+    },
+    {
+      "ref": "C10",
+      "title": "The Flood: Wet Tails, A2211.1.",
+      "traditions": "28.0",
+      "narratives": "42.0"
+    },
+    {
+      "ref": "C31b",
+      "title": "The wise owl.",
+      "traditions": "28.0",
+      "narratives": "31.0"
+    },
+    {
+      "ref": "E25",
+      "title": "Arachne (spider weaver).",
+      "traditions": "28.0",
+      "narratives": "29.0"
+    },
+    {
+      "ref": "K27x1",
+      "title": "The invisible servant (\"Bring me that, I don't know what\"), ",
+      "traditions": "28.0",
+      "narratives": "39.0"
+    },
+    {
+      "ref": "A32g",
+      "title": "Holding on to a bush.",
+      "traditions": "27.0",
+      "narratives": "32.0"
+    },
+    {
+      "ref": "B33a1",
+      "title": "Insulted March.",
+      "traditions": "27.0",
+      "narratives": "48.0"
+    },
+    {
+      "ref": "B42h1",
+      "title": "The arrow pierced the animal.",
+      "traditions": "27.0",
+      "narratives": "35.0"
+    },
+    {
+      "ref": "B64",
+      "title": "Bony fish.",
+      "traditions": "27.0",
+      "narratives": "37.0"
+    },
+    {
+      "ref": "B72",
+      "title": "The cuckoo was not given water.",
+      "traditions": "27.0",
+      "narratives": "43.0"
+    },
+    {
+      "ref": "B92",
+      "title": "Flint turns into flints.",
+      "traditions": "27.0",
+      "narratives": "35.0"
+    },
+    {
+      "ref": "C33a",
+      "title": "The restored chain.",
+      "traditions": "27.0",
+      "narratives": "41.0"
+    },
+    {
+      "ref": "E6",
+      "title": "Because of a woman, the connection between worlds is broken.",
+      "traditions": "27.0",
+      "narratives": "43.0"
+    },
+    {
+      "ref": "H29",
+      "title": "Progenitor of foreign tribes.",
+      "traditions": "27.0",
+      "narratives": "42.0"
+    },
+    {
+      "ref": "K38b3b",
+      "title": "The hero shelters the chicks.",
+      "traditions": "27.0",
+      "narratives": "47.0"
+    },
+    {
+      "ref": "A46a",
+      "title": "The sun and moon \u2013 the eyes of the deity.",
+      "traditions": "26.0",
+      "narratives": "38.0"
+    },
+    {
+      "ref": "B52b",
+      "title": "Concealing the earth.",
+      "traditions": "26.0",
+      "narratives": "32.0"
+    },
+    {
+      "ref": "F83b",
+      "title": "Rape of a woman in distress, ATU 36.",
+      "traditions": "26.0",
+      "narratives": "31.0"
+    },
+    {
+      "ref": "H7b1",
+      "title": "Get into the bag.",
+      "traditions": "26.0",
+      "narratives": "33.0"
+    },
+    {
+      "ref": "I11a",
+      "title": "The earth is supported on the back of a turtle (frog).",
+      "traditions": "26.0",
+      "narratives": "47.0"
+    },
+    {
+      "ref": "K25a4",
+      "title": "Escape from the siren, ATU 316.",
+      "traditions": "26.0",
+      "narratives": "30.0"
+    },
+    {
+      "ref": "K38f6",
+      "title": "Fire creature.",
+      "traditions": "26.0",
+      "narratives": "30.0"
+    },
+    {
+      "ref": "C18",
+      "title": "Luring the sun.",
+      "traditions": "25.0",
+      "narratives": "40.0"
+    },
+    {
+      "ref": "E12",
+      "title": "The living drawing.",
+      "traditions": "25.0",
+      "narratives": "30.0"
+    },
+    {
+      "ref": "E30",
+      "title": "Wooden substitute spouse.",
+      "traditions": "25.0",
+      "narratives": "36.0"
+    },
+    {
+      "ref": "M57d2",
+      "title": "The tree makes wishes come true",
+      "traditions": "25.0",
+      "narratives": "32.0"
+    },
+    {
+      "ref": "A2b1",
+      "title": "The Last Sun.",
+      "traditions": "24.0",
+      "narratives": "43.0"
+    },
+    {
+      "ref": "A32dd",
+      "title": "Man with brushwood on the moon.",
+      "traditions": "24.0",
+      "narratives": "76.0"
+    },
+    {
+      "ref": "B47",
+      "title": "The Pleiades and cold.",
+      "traditions": "24.0",
+      "narratives": "33.0"
+    },
+    {
+      "ref": "B49",
+      "title": "The animals did not understand the instructions.",
+      "traditions": "24.0",
+      "narratives": "20.0"
+    },
+    {
+      "ref": "B56A",
+      "title": "Crocodile without a tongue.",
+      "traditions": "24.0",
+      "narratives": "33.0"
+    },
+    {
+      "ref": "B87a",
+      "title": "Alcor \u2013 dog.",
+      "traditions": "24.0",
+      "narratives": "29.0"
+    },
+    {
+      "ref": "D4c",
+      "title": "Obtaining summer.",
+      "traditions": "24.0",
+      "narratives": "36.0"
+    },
+    {
+      "ref": "E9e",
+      "title": "A puppy received as a reward.",
+      "traditions": "24.0",
+      "narratives": "34.0"
+    },
+    {
+      "ref": "F90",
+      "title": "Tragic incest.",
+      "traditions": "24.0",
+      "narratives": "33.0"
+    },
+    {
+      "ref": "G23b",
+      "title": "Ethnic groups from body parts.",
+      "traditions": "24.0",
+      "narratives": "39.0"
+    },
+    {
+      "ref": "H46a",
+      "title": "The dog and the ear of corn.",
+      "traditions": "24.0",
+      "narratives": "38.0"
+    },
+    {
+      "ref": "I25C",
+      "title": "Calling blood wine.",
+      "traditions": "24.0",
+      "narratives": "33.0"
+    },
+    {
+      "ref": "J38",
+      "title": "Stuck claws.",
+      "traditions": "24.0",
+      "narratives": "27.0"
+    },
+    {
+      "ref": "A32c",
+      "title": "Dog and man on the moon.",
+      "traditions": "23.0",
+      "narratives": "29.0"
+    },
+    {
+      "ref": "B42l",
+      "title": "Ladle \u2013 beast, handle \u2013 hunters.",
+      "traditions": "23.0",
+      "narratives": "12.0"
+    },
+    {
+      "ref": "B68",
+      "title": "Giant hazel grouse.",
+      "traditions": "23.0",
+      "narratives": "42.0"
+    },
+    {
+      "ref": "B97a",
+      "title": "Bird or animal necklace.",
+      "traditions": "23.0",
+      "narratives": "27.0"
+    },
+    {
+      "ref": "B110",
+      "title": "Where the back is \u2013 swamps, where the head is \u2013 red poppies.",
+      "traditions": "23.0",
+      "narratives": "31.0"
+    },
+    {
+      "ref": "C6c3",
+      "title": "The loon \u2013 a successful diver.",
+      "traditions": "23.0",
+      "narratives": "40.0"
+    },
+    {
+      "ref": "C19a",
+      "title": "The child is playing with the sun",
+      "traditions": "23.0",
+      "narratives": "69.0"
+    },
+    {
+      "ref": "C31",
+      "title": "The wise hedgehog (cosmology).",
+      "traditions": "23.0",
+      "narratives": "40.0"
+    },
+    {
+      "ref": "E7",
+      "title": "Stuck in a hole in the sky.",
+      "traditions": "23.0",
+      "narratives": "23.0"
+    },
+    {
+      "ref": "E38a",
+      "title": "People made of pieces.",
+      "traditions": "23.0",
+      "narratives": "50.0"
+    },
+    {
+      "ref": "F23",
+      "title": "Cause of menstruation: sexual intercourse.",
+      "traditions": "23.0",
+      "narratives": "27.0"
+    },
+    {
+      "ref": "K29d",
+      "title": "Drunken elephants.",
+      "traditions": "23.0",
+      "narratives": "33.0"
+    },
+    {
+      "ref": "L131",
+      "title": "Your children are burning (all versions).",
+      "traditions": "23.0",
+      "narratives": "47.0"
+    },
+    {
+      "ref": "M167a",
+      "title": "The tiger frightened by Twilight.",
+      "traditions": "23.0",
+      "narratives": "34.0"
+    },
+    {
+      "ref": "A28",
+      "title": "The Sun and the Moon: smart and dumb.",
+      "traditions": "22.0",
+      "narratives": "43.0"
+    },
+    {
+      "ref": "A34",
+      "title": "The fox and the moon.",
+      "traditions": "22.0",
+      "narratives": "30.0"
+    },
+    {
+      "ref": "A38b",
+      "title": "A mouse gnaws through a snare.",
+      "traditions": "22.0",
+      "narratives": "33.0"
+    },
+    {
+      "ref": "B44c",
+      "title": "To be warm and light.",
+      "traditions": "22.0",
+      "narratives": "23.0"
+    },
+    {
+      "ref": "B44f1",
+      "title": "The bear wants night.",
+      "traditions": "22.0",
+      "narratives": "30.0"
+    },
+    {
+      "ref": "B46a",
+      "title": "Separated star of the Pleiades.",
+      "traditions": "22.0",
+      "narratives": "32.0"
+    },
+    {
+      "ref": "B53",
+      "title": "Creatures and objects made from severed genitals.",
+      "traditions": "22.0",
+      "narratives": "23.0"
+    },
+    {
+      "ref": "B64d",
+      "title": "Arrow bones.",
+      "traditions": "22.0",
+      "narratives": "27.0"
+    },
+    {
+      "ref": "C6j",
+      "title": "Obtaining land in connection with the creation of man.",
+      "traditions": "22.0",
+      "narratives": "26.0"
+    },
+    {
+      "ref": "E38b",
+      "title": "People from a pumpkin.",
+      "traditions": "22.0",
+      "narratives": "53.0"
+    },
+    {
+      "ref": "F47",
+      "title": "People made of pieces of flesh.",
+      "traditions": "22.0",
+      "narratives": "54.0"
+    },
+    {
+      "ref": "I35b",
+      "title": "Copper sky.",
+      "traditions": "22.0",
+      "narratives": "38.0"
+    },
+    {
+      "ref": "I53",
+      "title": "An insect annoys the support of the earth.",
+      "traditions": "22.0",
+      "narratives": "24.0"
+    },
+    {
+      "ref": "K133",
+      "title": "The exhausted horse.",
+      "traditions": "22.0",
+      "narratives": "31.0"
+    },
+    {
+      "ref": "l73a1",
+      "title": "The fugitive creates fog.",
+      "traditions": "22.0",
+      "narratives": "21.0"
+    },
+    {
+      "ref": "A32d1",
+      "title": "Cain and Abel on the moon.",
+      "traditions": "21.0",
+      "narratives": "45.0"
+    },
+    {
+      "ref": "A46",
+      "title": "The sun and moon arise from the eyes of a creature.",
+      "traditions": "21.0",
+      "narratives": "34.0"
+    },
+    {
+      "ref": "B3",
+      "title": "Primary swamp.",
+      "traditions": "21.0",
+      "narratives": "26.0"
+    },
+    {
+      "ref": "B28d",
+      "title": "Unrecognised transformer.",
+      "traditions": "21.0",
+      "narratives": "32.0"
+    },
+    {
+      "ref": "B33f",
+      "title": "The old woman-night unravels the yarn.",
+      "traditions": "21.0",
+      "narratives": "21.0"
+    },
+    {
+      "ref": "B36c",
+      "title": "Fat animals.",
+      "traditions": "21.0",
+      "narratives": "23.0"
+    },
+    {
+      "ref": "B38b",
+      "title": "Two animals adorn each other.",
+      "traditions": "21.0",
+      "narratives": "30.0"
+    },
+    {
+      "ref": "B51",
+      "title": "The Mosquito and Thunder.",
+      "traditions": "21.0",
+      "narratives": "23.0"
+    },
+    {
+      "ref": "B79a",
+      "title": "A bird laid an egg.",
+      "traditions": "21.0",
+      "narratives": "26.0"
+    },
+    {
+      "ref": "C23",
+      "title": "The tree blocks the sun.",
+      "traditions": "21.0",
+      "narratives": "29.0"
+    },
+    {
+      "ref": "C27",
+      "title": "Monster under the ice.",
+      "traditions": "21.0",
+      "narratives": "20.0"
+    },
+    {
+      "ref": "E5d",
+      "title": "The predator watches over those who leave.",
+      "traditions": "21.0",
+      "narratives": "24.0"
+    },
+    {
+      "ref": "E15",
+      "title": "Ducks and boats.",
+      "traditions": "21.0",
+      "narratives": "34.0"
+    },
+    {
+      "ref": "E17",
+      "title": "The origin of ornamentation.",
+      "traditions": "21.0",
+      "narratives": "32.0"
+    },
+    {
+      "ref": "H27a",
+      "title": "A hole in the ground where a stake was driven.",
+      "traditions": "21.0",
+      "narratives": "29.0"
+    },
+    {
+      "ref": "H43a",
+      "title": "Broken figures.",
+      "traditions": "21.0",
+      "narratives": "29.0"
+    },
+    {
+      "ref": "K6",
+      "title": "Rope made from bodily secretions.",
+      "traditions": "21.0",
+      "narratives": "30.0"
+    },
+    {
+      "ref": "L17",
+      "title": "Face on the chest.",
+      "traditions": "21.0",
+      "narratives": "20.0"
+    },
+    {
+      "ref": "A32k",
+      "title": "First to the sun, then to the moon.",
+      "traditions": "20.0",
+      "narratives": "31.0"
+    },
+    {
+      "ref": "B13",
+      "title": "The crossed riverbed.",
+      "traditions": "20.0",
+      "narratives": "16.0"
+    },
+    {
+      "ref": "B38c",
+      "title": "The raven and the loon adorn each other.",
+      "traditions": "20.0",
+      "narratives": "28.0"
+    },
+    {
+      "ref": "B62",
+      "title": "Man and vulture.",
+      "traditions": "20.0",
+      "narratives": "30.0"
+    },
+    {
+      "ref": "B72b",
+      "title": "An offended child becomes a bird.",
+      "traditions": "20.0",
+      "narratives": "17.0"
+    },
+    {
+      "ref": "B79a1",
+      "title": "The bird dropped the firmament onto the waters.",
+      "traditions": "20.0",
+      "narratives": "22.0"
+    },
+    {
+      "ref": "B81",
+      "title": "Dog with a gun.",
+      "traditions": "20.0",
+      "narratives": "22.0"
+    },
+    {
+      "ref": "B115",
+      "title": "Evergreen trees.",
+      "traditions": "20.0",
+      "narratives": "31.0"
+    },
+    {
+      "ref": "E5aa",
+      "title": "People grew like grass.",
+      "traditions": "20.0",
+      "narratives": "24.0"
+    },
+    {
+      "ref": "E9g",
+      "title": "The magical wife - the vulture.",
+      "traditions": "20.0",
+      "narratives": "34.0"
+    },
+    {
+      "ref": "E9i2",
+      "title": "The magical wife \u2013 the duck.",
+      "traditions": "20.0",
+      "narratives": "26.0"
+    },
+    {
+      "ref": "E9j",
+      "title": "The magical wife \u2013 monkey.",
+      "traditions": "20.0",
+      "narratives": "24.0"
+    },
+    {
+      "ref": "G13b",
+      "title": "Mushrooms as inferior food.",
+      "traditions": "20.0",
+      "narratives": "24.0"
+    },
+    {
+      "ref": "K61b",
+      "title": "Learning names.",
+      "traditions": "20.0",
+      "narratives": "21.0"
+    },
+    {
+      "ref": "K76c",
+      "title": "Pumpkin child.",
+      "traditions": "20.0",
+      "narratives": "22.0"
+    },
+    {
+      "ref": "K116b",
+      "title": "A dog instead of a beauty in the chest.",
+      "traditions": "20.0",
+      "narratives": "24.0"
+    },
+    {
+      "ref": "K164",
+      "title": "A wife is not a best friend, ATU 921B.",
+      "traditions": "20.0",
+      "narratives": "17.0"
+    },
+    {
+      "ref": "M38b1",
+      "title": "The young woman is waiting for her husband to guess",
+      "traditions": "20.0",
+      "narratives": "15.0"
+    },
+    {
+      "ref": "A22c",
+      "title": "Sacrifice to the Sun.",
+      "traditions": "19.0",
+      "narratives": "33.0"
+    },
+    {
+      "ref": "B41a",
+      "title": "Animals tell about the lives of their owners.",
+      "traditions": "19.0",
+      "narratives": "21.0"
+    },
+    {
+      "ref": "B103",
+      "title": "Cornelian cherry.",
+      "traditions": "19.0",
+      "narratives": "25.0"
+    },
+    {
+      "ref": "B125b",
+      "title": "A person going to a festival borrows someone else's organ.",
+      "traditions": "19.0",
+      "narratives": "20.0"
+    },
+    {
+      "ref": "C6c1",
+      "title": "Birds: successful and unsuccessful divers.",
+      "traditions": "19.0",
+      "narratives": "34.0"
+    },
+    {
+      "ref": "C25c",
+      "title": "The Big Dipper and the end of the world.",
+      "traditions": "19.0",
+      "narratives": "24.0"
+    },
+    {
+      "ref": "C38",
+      "title": "People will appear soon.",
+      "traditions": "19.0",
+      "narratives": "23.0"
+    },
+    {
+      "ref": "D6a",
+      "title": "Crocodile and fire.",
+      "traditions": "19.0",
+      "narratives": "40.0"
+    },
+    {
+      "ref": "E30a",
+      "title": "The ersatz spouse is replaced by the real one.",
+      "traditions": "19.0",
+      "narratives": "27.0"
+    },
+    {
+      "ref": "E39",
+      "title": "Pig ancestor.",
+      "traditions": "19.0",
+      "narratives": "21.0"
+    },
+    {
+      "ref": "F9d",
+      "title": "Scorpions in the genitals.",
+      "traditions": "19.0",
+      "narratives": "21.0"
+    },
+    {
+      "ref": "I87a1",
+      "title": "Small or large \u2013 dialogue.",
+      "traditions": "19.0",
+      "narratives": "27.0"
+    },
+    {
+      "ref": "k33c7",
+      "title": "One fruit and a girl inside it.",
+      "traditions": "19.0",
+      "narratives": "23.0"
+    },
+    {
+      "ref": "L16b",
+      "title": "Eyes on the knees.",
+      "traditions": "19.0",
+      "narratives": "24.0"
+    },
+    {
+      "ref": "L57b",
+      "title": "The demon comes for a part of his body, ATU 161A.",
+      "traditions": "19.0",
+      "narratives": "24.0"
+    },
+    {
+      "ref": "L103b",
+      "title": "Animals carry away from the demon, (ATU 314A*).",
+      "traditions": "19.0",
+      "narratives": "39.0"
+    },
+    {
+      "ref": "A29",
+      "title": "The sun and the demon compete for the hero.",
+      "traditions": "18.0",
+      "narratives": "34.0"
+    },
+    {
+      "ref": "B2c",
+      "title": "The earth as an anthropomorphic body.",
+      "traditions": "18.0",
+      "narratives": "24.0"
+    },
+    {
+      "ref": "B3d",
+      "title": "Worm excrement.",
+      "traditions": "18.0",
+      "narratives": "40.0"
+    },
+    {
+      "ref": "B42mn",
+      "title": "A hunter chases the Big Dipper.",
+      "traditions": "18.0",
+      "narratives": "42.0"
+    },
+    {
+      "ref": "B48c",
+      "title": "Artefacts in the pike's head.",
+      "traditions": "18.0",
+      "narratives": "14.0"
+    },
+    {
+      "ref": "B52a",
+      "title": "The vulture creates dry land.",
+      "traditions": "18.0",
+      "narratives": "17.0"
+    },
+    {
+      "ref": "B74",
+      "title": "Red-eyed capercaillie.",
+      "traditions": "18.0",
+      "narratives": "31.0"
+    },
+    {
+      "ref": "B83",
+      "title": "Unliftable weight.",
+      "traditions": "18.0",
+      "narratives": "17.0"
+    },
+    {
+      "ref": "B116b",
+      "title": "The wet book.",
+      "traditions": "18.0",
+      "narratives": "20.0"
+    },
+    {
+      "ref": "C35",
+      "title": "The cosmic marriage will not take place.",
+      "traditions": "18.0",
+      "narratives": "32.0"
+    },
+    {
+      "ref": "E9f",
+      "title": "The magical wife \u2013 the parrot.",
+      "traditions": "18.0",
+      "narratives": "50.0"
+    },
+    {
+      "ref": "F14A",
+      "title": "Birth from stone.",
+      "traditions": "18.0",
+      "narratives": "40.0"
+    },
+    {
+      "ref": "I54",
+      "title": "Water creature filled with fish.",
+      "traditions": "18.0",
+      "narratives": "31.0"
+    },
+    {
+      "ref": "K19c",
+      "title": "Mistress in a handbag.",
+      "traditions": "18.0",
+      "narratives": "35.0"
+    },
+    {
+      "ref": "M78c",
+      "title": "The boy is a severed finger",
+      "traditions": "18.0",
+      "narratives": "19.0"
+    },
+    {
+      "ref": "A36a",
+      "title": "Sun and immortality.",
+      "traditions": "17.0",
+      "narratives": "24.0"
+    },
+    {
+      "ref": "A38d",
+      "title": "The sun damages the cloak.",
+      "traditions": "17.0",
+      "narratives": "15.0"
+    },
+    {
+      "ref": "A47",
+      "title": "The sun is born from an egg.",
+      "traditions": "17.0",
+      "narratives": "23.0"
+    },
+    {
+      "ref": "B6",
+      "title": "Walking towards each other, they get married.",
+      "traditions": "17.0",
+      "narratives": "24.0"
+    },
+    {
+      "ref": "B86A",
+      "title": "Reaching for the moon in the sky.",
+      "traditions": "17.0",
+      "narratives": "19.0"
+    },
+    {
+      "ref": "B102a",
+      "title": "Clouds \u2013 cows.",
+      "traditions": "17.0",
+      "narratives": "21.0"
+    },
+    {
+      "ref": "B116a",
+      "title": "Knowledge is stored in the stomach.",
+      "traditions": "17.0",
+      "narratives": "23.0"
+    },
+    {
+      "ref": "B116d",
+      "title": "The \"book\" as part of the stomach.",
+      "traditions": "17.0",
+      "narratives": "22.0"
+    },
+    {
+      "ref": "E18",
+      "title": "Vessels and snakes.",
+      "traditions": "17.0",
+      "narratives": "26.0"
+    },
+    {
+      "ref": "E20",
+      "title": "The origin of fish poison.",
+      "traditions": "17.0",
+      "narratives": "27.0"
+    },
+    {
+      "ref": "E29",
+      "title": "The lizard makes hands for humans, A1311.1.",
+      "traditions": "17.0",
+      "narratives": "24.0"
+    },
+    {
+      "ref": "F86a",
+      "title": "The pet is eaten.",
+      "traditions": "17.0",
+      "narratives": "18.0"
+    },
+    {
+      "ref": "I125",
+      "title": "Hyades \u2013 animal jaw.",
+      "traditions": "17.0",
+      "narratives": "29.0"
+    },
+    {
+      "ref": "J22e",
+      "title": "Man from the afterbirth, T541.12.",
+      "traditions": "17.0",
+      "narratives": "15.0"
+    },
+    {
+      "ref": "K52",
+      "title": "In pursuit of the kidnapped to the bottom of the sea.",
+      "traditions": "17.0",
+      "narratives": "23.0"
+    },
+    {
+      "ref": "L7a",
+      "title": "Sticky: first to humans, then to animals.",
+      "traditions": "17.0",
+      "narratives": "24.0"
+    },
+    {
+      "ref": "L72e",
+      "title": "The pursuer returns for the axe.",
+      "traditions": "17.0",
+      "narratives": "29.0"
+    },
+    {
+      "ref": "B2b",
+      "title": "The earth devours the dead.",
+      "traditions": "16.0",
+      "narratives": "22.0"
+    },
+    {
+      "ref": "B7a",
+      "title": "Spit-out water.",
+      "traditions": "16.0",
+      "narratives": "23.0"
+    },
+    {
+      "ref": "B14",
+      "title": "The character creates river rapids.",
+      "traditions": "16.0",
+      "narratives": "18.0"
+    },
+    {
+      "ref": "B28b",
+      "title": "Taming of things.",
+      "traditions": "16.0",
+      "narratives": "32.0"
+    },
+    {
+      "ref": "B42r",
+      "title": "Orion's Belt: running after each other.",
+      "traditions": "16.0",
+      "narratives": "17.0"
+    },
+    {
+      "ref": "B91a",
+      "title": "Eyes: took and did not return.",
+      "traditions": "16.0",
+      "narratives": "27.0"
+    },
+    {
+      "ref": "B100",
+      "title": "Obtaining sleep.",
+      "traditions": "16.0",
+      "narratives": "16.0"
+    },
+    {
+      "ref": "C8a",
+      "title": "Millstones fall on each other.",
+      "traditions": "16.0",
+      "narratives": "44.0"
+    },
+    {
+      "ref": "C33",
+      "title": "Prometheus (the chained strongman).",
+      "traditions": "16.0",
+      "narratives": "42.0"
+    },
+    {
+      "ref": "E9m",
+      "title": "The magical wife \u2013 the bear.",
+      "traditions": "16.0",
+      "narratives": "29.0"
+    },
+    {
+      "ref": "E14",
+      "title": "Knowledge from the dead.",
+      "traditions": "16.0",
+      "narratives": "19.0"
+    },
+    {
+      "ref": "E33",
+      "title": "People from grains.",
+      "traditions": "16.0",
+      "narratives": "32.0"
+    },
+    {
+      "ref": "E37",
+      "title": "People made of sticks.",
+      "traditions": "16.0",
+      "narratives": "26.0"
+    },
+    {
+      "ref": "H39",
+      "title": "Snakes become poisonous (spilled poison).",
+      "traditions": "16.0",
+      "narratives": "19.0"
+    },
+    {
+      "ref": "K27v",
+      "title": "Shooting a bird.",
+      "traditions": "16.0",
+      "narratives": "17.0"
+    },
+    {
+      "ref": "K107a4",
+      "title": "The daughter asks for a magical groom to be brought to her.",
+      "traditions": "16.0",
+      "narratives": "24.0"
+    },
+    {
+      "ref": "K183",
+      "title": "Which fish swallowed it?",
+      "traditions": "16.0",
+      "narratives": "15.0"
+    },
+    {
+      "ref": "L80",
+      "title": "Drop of blood.",
+      "traditions": "16.0",
+      "narratives": "22.0"
+    },
+    {
+      "ref": "L82",
+      "title": "Burns his leg in a fire.",
+      "traditions": "16.0",
+      "narratives": "24.0"
+    },
+    {
+      "ref": "A2d",
+      "title": "Suns of different worlds.",
+      "traditions": "15.0",
+      "narratives": "20.0"
+    },
+    {
+      "ref": "A23d",
+      "title": "Who is first in the calendar?",
+      "traditions": "15.0",
+      "narratives": "21.0"
+    },
+    {
+      "ref": "A35c",
+      "title": "Scratches and wounds on the face of the moon.",
+      "traditions": "15.0",
+      "narratives": "19.0"
+    },
+    {
+      "ref": "B3c",
+      "title": "Attempt to drown God.",
+      "traditions": "15.0",
+      "narratives": "17.0"
+    },
+    {
+      "ref": "B8",
+      "title": "The frog hides the water.",
+      "traditions": "15.0",
+      "narratives": "30.0"
+    },
+    {
+      "ref": "B11a",
+      "title": "The mammoth \u2013 creator of the landscape.",
+      "traditions": "15.0",
+      "narratives": "13.0"
+    },
+    {
+      "ref": "B33f1",
+      "title": "Mistress of night and day.",
+      "traditions": "15.0",
+      "narratives": "14.0"
+    },
+    {
+      "ref": "B42i",
+      "title": "Cassiopeia \u2013 deer.",
+      "traditions": "15.0",
+      "narratives": "12.0"
+    },
+    {
+      "ref": "B42m2",
+      "title": "The boastful and hasty.",
+      "traditions": "15.0",
+      "narratives": "14.0"
+    },
+    {
+      "ref": "B46a1",
+      "title": "The Big Dipper \u2013 robbers.",
+      "traditions": "15.0",
+      "narratives": "26.0"
+    },
+    {
+      "ref": "B46b",
+      "title": "Seven Star Sisters.",
+      "traditions": "15.0",
+      "narratives": "14.0"
+    },
+    {
+      "ref": "B55",
+      "title": "Leaf fish.",
+      "traditions": "15.0",
+      "narratives": "19.0"
+    },
+    {
+      "ref": "B56",
+      "title": "The crocodile's fiery tongue.",
+      "traditions": "15.0",
+      "narratives": "17.0"
+    },
+    {
+      "ref": "B59",
+      "title": "Dancers turn into the Pleiades, A773.",
+      "traditions": "15.0",
+      "narratives": "20.0"
+    },
+    {
+      "ref": "B64a",
+      "title": "Small bones: the war between fish and birds.",
+      "traditions": "15.0",
+      "narratives": "18.0"
+    },
+    {
+      "ref": "B84",
+      "title": "Mushrooms and growths (transformation of a cannibal).",
+      "traditions": "15.0",
+      "narratives": "24.0"
+    },
+    {
+      "ref": "B94",
+      "title": "Trees lose the gift of speech.",
+      "traditions": "15.0",
+      "narratives": "25.0"
+    },
+    {
+      "ref": "B102",
+      "title": "Clouds \u2013 smoke.",
+      "traditions": "15.0",
+      "narratives": "14.0"
+    },
+    {
+      "ref": "C8b",
+      "title": "Brother and sister did not recognise each other.",
+      "traditions": "15.0",
+      "narratives": "41.0"
+    },
+    {
+      "ref": "C8c",
+      "title": "Son and mother give birth to people.",
+      "traditions": "15.0",
+      "narratives": "21.0"
+    },
+    {
+      "ref": "C10a",
+      "title": "Birds clinging to the sky, A2211.1.",
+      "traditions": "15.0",
+      "narratives": "19.0"
+    },
+    {
+      "ref": "E9n",
+      "title": "The magical wife \u2013 an aquatic mammal.",
+      "traditions": "15.0",
+      "narratives": "18.0"
+    },
+    {
+      "ref": "I112",
+      "title": "Monster boat.",
+      "traditions": "15.0",
+      "narratives": "20.0"
+    },
+    {
+      "ref": "k102c1",
+      "title": "A splinter turns into a duck.",
+      "traditions": "15.0",
+      "narratives": "16.0"
+    },
+    {
+      "ref": "L42i",
+      "title": "Sister sets out to rescue her brother (geese-swans), ATU 480",
+      "traditions": "15.0",
+      "narratives": "22.0"
+    },
+    {
+      "ref": "A22a",
+      "title": "The Hot Sun and its Companion.",
+      "traditions": "14.0",
+      "narratives": "2.0"
+    },
+    {
+      "ref": "A32d2",
+      "title": "Man with a pitchfork on the moon.",
+      "traditions": "14.0",
+      "narratives": "32.0"
+    },
+    {
+      "ref": "A32i",
+      "title": "Shepherd on the moon.",
+      "traditions": "14.0",
+      "narratives": "19.0"
+    },
+    {
+      "ref": "A37a",
+      "title": "The hidden archer.",
+      "traditions": "14.0",
+      "narratives": "19.0"
+    },
+    {
+      "ref": "A38c",
+      "title": "The Sun's Cloak.",
+      "traditions": "14.0",
+      "narratives": "17.0"
+    },
+    {
+      "ref": "B5a",
+      "title": "The pair of creators: dialogue.",
+      "traditions": "14.0",
+      "narratives": "18.0"
+    },
+    {
+      "ref": "B16a",
+      "title": "Sea of urine.",
+      "traditions": "14.0",
+      "narratives": "12.0"
+    },
+    {
+      "ref": "B28e",
+      "title": "The Moon as the Creator of the World.",
+      "traditions": "14.0",
+      "narratives": "21.0"
+    },
+    {
+      "ref": "B33d1",
+      "title": "Days of the week \u2013 (demonic) characters.",
+      "traditions": "14.0",
+      "narratives": "30.0"
+    },
+    {
+      "ref": "B39",
+      "title": "The narrow waist of an insect.",
+      "traditions": "14.0",
+      "narratives": "19.0"
+    },
+    {
+      "ref": "B42s",
+      "title": "Wounded by a spear.",
+      "traditions": "14.0",
+      "narratives": "14.0"
+    },
+    {
+      "ref": "B77b3",
+      "title": "Placing a pancake on the sky.",
+      "traditions": "14.0",
+      "narratives": "17.0"
+    },
+    {
+      "ref": "B87c",
+      "title": "Rider.",
+      "traditions": "14.0",
+      "narratives": "26.0"
+    },
+    {
+      "ref": "B99",
+      "title": "Termite nest.",
+      "traditions": "14.0",
+      "narratives": "20.0"
+    },
+    {
+      "ref": "B120",
+      "title": "Winter hibernation of snotty creatures.",
+      "traditions": "14.0",
+      "narratives": "11.0"
+    },
+    {
+      "ref": "C6e",
+      "title": "Diver \u2013 crab, shrimp.",
+      "traditions": "14.0",
+      "narratives": "18.0"
+    },
+    {
+      "ref": "E3",
+      "title": "New people from the bones of the old.",
+      "traditions": "14.0",
+      "narratives": "14.0"
+    },
+    {
+      "ref": "E9l",
+      "title": "The magical wife \u2013 mouse.",
+      "traditions": "14.0",
+      "narratives": "13.0"
+    },
+    {
+      "ref": "E31",
+      "title": "Imaginary Pygmalion.",
+      "traditions": "14.0",
+      "narratives": "19.0"
+    },
+    {
+      "ref": "E31a2",
+      "title": "One is her father, another is her brother, and this one is h",
+      "traditions": "14.0",
+      "narratives": "14.0"
+    },
+    {
+      "ref": "H22",
+      "title": "Sense of smell in animals.",
+      "traditions": "14.0",
+      "narratives": "22.0"
+    },
+    {
+      "ref": "I81b",
+      "title": "Charybdis (ebb and flow).",
+      "traditions": "14.0",
+      "narratives": "15.0"
+    },
+    {
+      "ref": "K65e1",
+      "title": "Midwife to a toad.",
+      "traditions": "14.0",
+      "narratives": "15.0"
+    },
+    {
+      "ref": "K182a",
+      "title": "The sleeping defender.",
+      "traditions": "14.0",
+      "narratives": "20.0"
+    },
+    {
+      "ref": "N1",
+      "title": "Origins: when Altai was the size of a bump",
+      "traditions": "14.0",
+      "narratives": "39.0"
+    },
+    {
+      "ref": "N2",
+      "title": "Origins: when the goat was a commander",
+      "traditions": "14.0",
+      "narratives": "46.0"
+    },
+    {
+      "ref": "A2c2",
+      "title": "Extra moons.",
+      "traditions": "13.0",
+      "narratives": "21.0"
+    },
+    {
+      "ref": "A32b1",
+      "title": "Jumps on the face of the Moon.",
+      "traditions": "13.0",
+      "narratives": "14.0"
+    },
+    {
+      "ref": "A33",
+      "title": "Sun Ram.",
+      "traditions": "13.0",
+      "narratives": "16.0"
+    },
+    {
+      "ref": "B1c",
+      "title": "One creator deceives another.",
+      "traditions": "13.0",
+      "narratives": "13.0"
+    },
+    {
+      "ref": "B2f",
+      "title": "Difficult funerals.",
+      "traditions": "13.0",
+      "narratives": "23.0"
+    },
+    {
+      "ref": "B23",
+      "title": "Fire and smoke in defiance of the ban.",
+      "traditions": "13.0",
+      "narratives": "22.0"
+    },
+    {
+      "ref": "B27b",
+      "title": "Transformation into stars.",
+      "traditions": "13.0",
+      "narratives": "23.0"
+    },
+    {
+      "ref": "B57a",
+      "title": "Red sunset \u2013 an indication of what has happened.",
+      "traditions": "13.0",
+      "narratives": "4.0"
+    },
+    {
+      "ref": "B69a",
+      "title": "Dispute about time, Chipmunk participant.",
+      "traditions": "13.0",
+      "narratives": "14.0"
+    },
+    {
+      "ref": "B78",
+      "title": "Shaking off, produces a blizzard.",
+      "traditions": "13.0",
+      "narratives": "12.0"
+    },
+    {
+      "ref": "B80",
+      "title": "Measurement of the world.",
+      "traditions": "13.0",
+      "narratives": "15.0"
+    },
+    {
+      "ref": "B85a",
+      "title": "Regulating the wind.",
+      "traditions": "13.0",
+      "narratives": "10.0"
+    },
+    {
+      "ref": "B96",
+      "title": "The enemy turns into a sturgeon.",
+      "traditions": "13.0",
+      "narratives": "10.0"
+    },
+    {
+      "ref": "C11",
+      "title": "Revenge of the insulted father.",
+      "traditions": "13.0",
+      "narratives": "16.0"
+    },
+    {
+      "ref": "C30c",
+      "title": "Drinking the sea.",
+      "traditions": "13.0",
+      "narratives": "13.0"
+    },
+    {
+      "ref": "E1a",
+      "title": "The first humans made of fragile materials.",
+      "traditions": "13.0",
+      "narratives": "19.0"
+    },
+    {
+      "ref": "E9a",
+      "title": "The magical wife - the fox.",
+      "traditions": "13.0",
+      "narratives": "17.0"
+    },
+    {
+      "ref": "H23",
+      "title": "Fatty horns.",
+      "traditions": "13.0",
+      "narratives": "14.0"
+    },
+    {
+      "ref": "H53",
+      "title": "The wolf \u2013 lord of the dead.",
+      "traditions": "13.0",
+      "narratives": "28.0"
+    },
+    {
+      "ref": "I17a",
+      "title": "Dwarfs without bodily orifices.",
+      "traditions": "13.0",
+      "narratives": "16.0"
+    },
+    {
+      "ref": "I88",
+      "title": "The multi-tailed beast.",
+      "traditions": "13.0",
+      "narratives": "16.0"
+    },
+    {
+      "ref": "I136",
+      "title": "The demonic wheel.",
+      "traditions": "13.0",
+      "narratives": "18.0"
+    },
+    {
+      "ref": "K27d",
+      "title": "House with dangerous creatures.",
+      "traditions": "13.0",
+      "narratives": "11.0"
+    },
+    {
+      "ref": "K30b",
+      "title": "Went out for a walk and disappeared.",
+      "traditions": "13.0",
+      "narratives": "17.0"
+    },
+    {
+      "ref": "K38b4",
+      "title": "The serpent emerges from the water.",
+      "traditions": "13.0",
+      "narratives": "22.0"
+    },
+    {
+      "ref": "K61a1",
+      "title": "Two heads in a sack.",
+      "traditions": "13.0",
+      "narratives": "13.0"
+    },
+    {
+      "ref": "M48",
+      "title": "The trickster turns into a bison",
+      "traditions": "13.0",
+      "narratives": "20.0"
+    },
+    {
+      "ref": "M78a",
+      "title": "The tail boy",
+      "traditions": "13.0",
+      "narratives": "17.0"
+    },
+    {
+      "ref": "A29b",
+      "title": "The Broken Moon.",
+      "traditions": "12.0",
+      "narratives": "22.0"
+    },
+    {
+      "ref": "B19",
+      "title": "Night and married life.",
+      "traditions": "12.0",
+      "narratives": "19.0"
+    },
+    {
+      "ref": "B21",
+      "title": "Destruction of the world tree.",
+      "traditions": "12.0",
+      "narratives": "17.0"
+    },
+    {
+      "ref": "B22",
+      "title": "The offended person knocks down the tree.",
+      "traditions": "12.0",
+      "narratives": "26.0"
+    },
+    {
+      "ref": "B28d1",
+      "title": "Knives turn into deer antlers.",
+      "traditions": "12.0",
+      "narratives": "18.0"
+    },
+    {
+      "ref": "B35a",
+      "title": "The tree turns into a bear.",
+      "traditions": "12.0",
+      "narratives": "14.0"
+    },
+    {
+      "ref": "B46d",
+      "title": "Star brothers with different properties.",
+      "traditions": "12.0",
+      "narratives": "21.0"
+    },
+    {
+      "ref": "B106",
+      "title": "The heavenly rooster.",
+      "traditions": "12.0",
+      "narratives": "11.0"
+    },
+    {
+      "ref": "C6f",
+      "title": "Retrieving a drowned person.",
+      "traditions": "12.0",
+      "narratives": "13.0"
+    },
+    {
+      "ref": "C24",
+      "title": "The world is in danger of falling.",
+      "traditions": "12.0",
+      "narratives": "17.0"
+    },
+    {
+      "ref": "C28",
+      "title": "Rash promise.",
+      "traditions": "12.0",
+      "narratives": "14.0"
+    },
+    {
+      "ref": "C31c",
+      "title": "The wise bat.",
+      "traditions": "12.0",
+      "narratives": "15.0"
+    },
+    {
+      "ref": "E1b1",
+      "title": "Prohibited work for a daughter-in-law.",
+      "traditions": "12.0",
+      "narratives": "12.0"
+    },
+    {
+      "ref": "E27",
+      "title": "People from drops of blood.",
+      "traditions": "12.0",
+      "narratives": "19.0"
+    },
+    {
+      "ref": "E30b",
+      "title": "Pygmalion.",
+      "traditions": "12.0",
+      "narratives": "8.0"
+    },
+    {
+      "ref": "I119a",
+      "title": "Earthquake \u2013 are there any survivors?",
+      "traditions": "12.0",
+      "narratives": "11.0"
+    },
+    {
+      "ref": "K27z2d",
+      "title": "The sparrow's quarrel with her husband.",
+      "traditions": "12.0",
+      "narratives": "12.0"
+    },
+    {
+      "ref": "K171",
+      "title": "The weaver creates an army.",
+      "traditions": "12.0",
+      "narratives": "13.0"
+    },
+    {
+      "ref": "L72e1",
+      "title": "The pursuer hides the axe.",
+      "traditions": "12.0",
+      "narratives": "16.0"
+    },
+    {
+      "ref": "A2c1",
+      "title": "The Sun refuses to marry.",
+      "traditions": "11.0",
+      "narratives": "19.0"
+    },
+    {
+      "ref": "A2e",
+      "title": "The sun and moon \u2013 severed heads.",
+      "traditions": "11.0",
+      "narratives": "11.0"
+    },
+    {
+      "ref": "A30",
+      "title": "The corpse-eating moon.",
+      "traditions": "11.0",
+      "narratives": "19.0"
+    },
+    {
+      "ref": "A31a",
+      "title": "Severed breast.",
+      "traditions": "11.0",
+      "narratives": "15.0"
+    },
+    {
+      "ref": "A35b",
+      "title": "Covering the moon with resin.",
+      "traditions": "11.0",
+      "narratives": "14.0"
+    },
+    {
+      "ref": "A38a",
+      "title": "Loop made of pubic hair.",
+      "traditions": "11.0",
+      "narratives": "16.0"
+    },
+    {
+      "ref": "B2f1",
+      "title": "Buried in the head.",
+      "traditions": "11.0",
+      "narratives": "19.0"
+    },
+    {
+      "ref": "B15",
+      "title": "River from a woman's body.",
+      "traditions": "11.0",
+      "narratives": "13.0"
+    },
+    {
+      "ref": "B30b",
+      "title": "The slain turn into animals.",
+      "traditions": "11.0",
+      "narratives": "13.0"
+    },
+    {
+      "ref": "B33e1",
+      "title": "Freezing in the womb.",
+      "traditions": "11.0",
+      "narratives": "10.0"
+    },
+    {
+      "ref": "B33f2",
+      "title": "Following the fire, the hero ties up an old woman.",
+      "traditions": "11.0",
+      "narratives": "10.0"
+    },
+    {
+      "ref": "B44e",
+      "title": "Dialogue of the first ancestors.",
+      "traditions": "11.0",
+      "narratives": "12.0"
+    },
+    {
+      "ref": "B44f",
+      "title": "The fox wants daylight.",
+      "traditions": "11.0",
+      "narratives": "10.0"
+    },
+    {
+      "ref": "B64b",
+      "title": "Small bones: war between different fish.",
+      "traditions": "11.0",
+      "narratives": "11.0"
+    },
+    {
+      "ref": "B72a",
+      "title": "Mother, child and swans.",
+      "traditions": "11.0",
+      "narratives": "8.0"
+    },
+    {
+      "ref": "B73",
+      "title": "The cuckoo has different legs.",
+      "traditions": "11.0",
+      "narratives": "21.0"
+    },
+    {
+      "ref": "B93",
+      "title": "Meeting in the sky once a year.",
+      "traditions": "11.0",
+      "narratives": "16.0"
+    },
+    {
+      "ref": "B98b",
+      "title": "The Bat and funerals.",
+      "traditions": "11.0",
+      "narratives": "11.0"
+    },
+    {
+      "ref": "B101",
+      "title": "Stripes on a birch tree.",
+      "traditions": "11.0",
+      "narratives": "15.0"
+    },
+    {
+      "ref": "B112",
+      "title": "The one who returned the stolen goods decorated.",
+      "traditions": "11.0",
+      "narratives": "5.0"
+    },
+    {
+      "ref": "C17",
+      "title": "Fire pit for people.",
+      "traditions": "11.0",
+      "narratives": "18.0"
+    },
+    {
+      "ref": "C32B",
+      "title": "Nails \u2013 material for the devil.",
+      "traditions": "11.0",
+      "narratives": "12.0"
+    },
+    {
+      "ref": "E8a",
+      "title": "People in fruits.",
+      "traditions": "11.0",
+      "narratives": "17.0"
+    },
+    {
+      "ref": "I38a",
+      "title": "Dogs \u2013 husbands of women.",
+      "traditions": "11.0",
+      "narratives": "17.0"
+    },
+    {
+      "ref": "J22d",
+      "title": "Animals cut in half.",
+      "traditions": "11.0",
+      "narratives": "15.0"
+    },
+    {
+      "ref": "L1c2",
+      "title": "Hiding under the hearth.",
+      "traditions": "11.0",
+      "narratives": "11.0"
+    },
+    {
+      "ref": "L65a2",
+      "title": "Shot finger.",
+      "traditions": "11.0",
+      "narratives": "14.0"
+    },
+    {
+      "ref": "A29a",
+      "title": "Torn apart by two women.",
+      "traditions": "10.0",
+      "narratives": "7.0"
+    },
+    {
+      "ref": "A32de",
+      "title": "Headless man on the moon.",
+      "traditions": "10.0",
+      "narratives": "6.0"
+    },
+    {
+      "ref": "A32l",
+      "title": "Silhouette in the sun.",
+      "traditions": "10.0",
+      "narratives": "10.0"
+    },
+    {
+      "ref": "B27a",
+      "title": "Transformation into thunder and lightning.",
+      "traditions": "10.0",
+      "narratives": "8.0"
+    },
+    {
+      "ref": "B40b",
+      "title": "The horse changes with the cow.",
+      "traditions": "10.0",
+      "narratives": "10.0"
+    },
+    {
+      "ref": "B42m",
+      "title": "The second hunter's pot.",
+      "traditions": "10.0",
+      "narratives": "16.0"
+    },
+    {
+      "ref": "B48b",
+      "title": "Piece of human flesh.",
+      "traditions": "10.0",
+      "narratives": "11.0"
+    },
+    {
+      "ref": "B72d",
+      "title": "Wings from a cutting board.",
+      "traditions": "10.0",
+      "narratives": "22.0"
+    },
+    {
+      "ref": "B73a",
+      "title": "In search of a horse.",
+      "traditions": "10.0",
+      "narratives": "17.0"
+    },
+    {
+      "ref": "B87b",
+      "title": "Harnessed wolf.",
+      "traditions": "10.0",
+      "narratives": "14.0"
+    },
+    {
+      "ref": "B104",
+      "title": "The chicken turns into a turtle.",
+      "traditions": "10.0",
+      "narratives": "10.0"
+    },
+    {
+      "ref": "B114",
+      "title": "Old men-anteaters.",
+      "traditions": "10.0",
+      "narratives": "18.0"
+    },
+    {
+      "ref": "C36",
+      "title": "The Last Battle.",
+      "traditions": "10.0",
+      "narratives": "10.0"
+    },
+    {
+      "ref": "D7a",
+      "title": "Spider and fire.",
+      "traditions": "10.0",
+      "narratives": "11.0"
+    },
+    {
+      "ref": "E5e",
+      "title": "The two-headed creature does not come out onto the ground.",
+      "traditions": "10.0",
+      "narratives": "7.0"
+    },
+    {
+      "ref": "E9i4",
+      "title": "The magical wife \u2013 the crane.",
+      "traditions": "10.0",
+      "narratives": "11.0"
+    },
+    {
+      "ref": "E9k",
+      "title": "Husband-honey (bee).",
+      "traditions": "10.0",
+      "narratives": "15.0"
+    },
+    {
+      "ref": "F28a1",
+      "title": "Jumping penis.",
+      "traditions": "10.0",
+      "narratives": "11.0"
+    },
+    {
+      "ref": "H43ab",
+      "title": "The spat upon is mortal.",
+      "traditions": "10.0",
+      "narratives": "5.0"
+    },
+    {
+      "ref": "k33f1",
+      "title": "Source of oil according to a vow.",
+      "traditions": "10.0",
+      "narratives": "16.0"
+    },
+    {
+      "ref": "K76h",
+      "title": "The magical groom threatens disaster.",
+      "traditions": "10.0",
+      "narratives": "13.0"
+    },
+    {
+      "ref": "A25",
+      "title": "Getting used to light.",
+      "traditions": "9.0",
+      "narratives": "26.0"
+    },
+    {
+      "ref": "A37b",
+      "title": "The archer's severed finger.",
+      "traditions": "9.0",
+      "narratives": "18.0"
+    },
+    {
+      "ref": "A39",
+      "title": "Every day a new sun.",
+      "traditions": "9.0",
+      "narratives": "9.0"
+    },
+    {
+      "ref": "B11B",
+      "title": "The drowned mammoth.",
+      "traditions": "9.0",
+      "narratives": "10.0"
+    },
+    {
+      "ref": "B33b",
+      "title": "March bird.",
+      "traditions": "9.0",
+      "narratives": "14.0"
+    },
+    {
+      "ref": "B34",
+      "title": "Caught by the first night.",
+      "traditions": "9.0",
+      "narratives": "16.0"
+    },
+    {
+      "ref": "B42m1",
+      "title": "Ket, Selkup and Evenk.",
+      "traditions": "9.0",
+      "narratives": "13.0"
+    },
+    {
+      "ref": "B58",
+      "title": "The red neck of the turkey.",
+      "traditions": "9.0",
+      "narratives": "11.0"
+    },
+    {
+      "ref": "B65",
+      "title": "Intestines turn into vines.",
+      "traditions": "9.0",
+      "narratives": "10.0"
+    },
+    {
+      "ref": "B67",
+      "title": "The tree turns into stones.",
+      "traditions": "9.0",
+      "narratives": "4.0"
+    },
+    {
+      "ref": "B72c",
+      "title": "The blood of those who run stains objects.",
+      "traditions": "9.0",
+      "narratives": "13.0"
+    },
+    {
+      "ref": "B74a",
+      "title": "Red cloths over the eyes.",
+      "traditions": "9.0",
+      "narratives": "10.0"
+    },
+    {
+      "ref": "B76",
+      "title": "Frozen waves.",
+      "traditions": "9.0",
+      "narratives": "10.0"
+    },
+    {
+      "ref": "B91",
+      "title": "The sharp-eyed snail.",
+      "traditions": "9.0",
+      "narratives": "14.0"
+    },
+    {
+      "ref": "B104a",
+      "title": "Meat turns into a toad, ATU 980D.",
+      "traditions": "9.0",
+      "narratives": "5.0"
+    },
+    {
+      "ref": "B105",
+      "title": "The transformation of a shy daughter-in-law.",
+      "traditions": "9.0",
+      "narratives": "13.0"
+    },
+    {
+      "ref": "B113",
+      "title": "Women's backsides and men's knees.",
+      "traditions": "9.0",
+      "narratives": "9.0"
+    },
+    {
+      "ref": "B124",
+      "title": "Indentation on the foot.",
+      "traditions": "9.0",
+      "narratives": "8.0"
+    },
+    {
+      "ref": "C6c2",
+      "title": "The punished loon.",
+      "traditions": "9.0",
+      "narratives": "10.0"
+    },
+    {
+      "ref": "C16a",
+      "title": "The offended mistress of animals.",
+      "traditions": "9.0",
+      "narratives": "1.0"
+    },
+    {
+      "ref": "C31a",
+      "title": "Lights or fire promised to the devil.",
+      "traditions": "9.0",
+      "narratives": "11.0"
+    },
+    {
+      "ref": "C32A",
+      "title": "Nails (hair) will be needed by the soul in the afterlife.",
+      "traditions": "9.0",
+      "narratives": "15.0"
+    },
+    {
+      "ref": "E1d",
+      "title": "Clay boats.",
+      "traditions": "9.0",
+      "narratives": "15.0"
+    },
+    {
+      "ref": "E5",
+      "title": "The half-finished man tries to stand up.",
+      "traditions": "9.0",
+      "narratives": "5.0"
+    },
+    {
+      "ref": "E13B",
+      "title": "Knowledge from the sky.",
+      "traditions": "9.0",
+      "narratives": "7.0"
+    },
+    {
+      "ref": "E22",
+      "title": "The swallowed gains knowledge.",
+      "traditions": "9.0",
+      "narratives": "12.0"
+    },
+    {
+      "ref": "E23",
+      "title": "Revival by fleas.",
+      "traditions": "9.0",
+      "narratives": "9.0"
+    },
+    {
+      "ref": "E26",
+      "title": "Those who have become fish are turned back into humans.",
+      "traditions": "9.0",
+      "narratives": "12.0"
+    },
+    {
+      "ref": "E31b",
+      "title": "Female saviours of men.",
+      "traditions": "9.0",
+      "narratives": "11.0"
+    },
+    {
+      "ref": "F47b",
+      "title": "New people in the same place.",
+      "traditions": "9.0",
+      "narratives": "10.0"
+    },
+    {
+      "ref": "I134",
+      "title": "Long neck on the Milky Way.",
+      "traditions": "9.0",
+      "narratives": "18.0"
+    },
+    {
+      "ref": "L1e",
+      "title": "The character creates monstrous birds.",
+      "traditions": "9.0",
+      "narratives": "9.0"
+    },
+    {
+      "ref": "L51",
+      "title": "The victim is thrown to aquatic animals.",
+      "traditions": "9.0",
+      "narratives": "14.0"
+    },
+    {
+      "ref": "M149b",
+      "title": "Dogs in the stomach.",
+      "traditions": "9.0",
+      "narratives": "12.0"
+    },
+    {
+      "ref": "A5a",
+      "title": "The Sun from the swaddling clothes of the infant Moon.",
+      "traditions": "8.0",
+      "narratives": "1.0"
+    },
+    {
+      "ref": "A24a",
+      "title": "First day or night: transformation into spirits.",
+      "traditions": "8.0",
+      "narratives": "6.0"
+    },
+    {
+      "ref": "A32m",
+      "title": "Gypsy sun.",
+      "traditions": "8.0",
+      "narratives": "9.0"
+    },
+    {
+      "ref": "B1a",
+      "title": "Three worlds: division of the universe.",
+      "traditions": "8.0",
+      "narratives": "11.0"
+    },
+    {
+      "ref": "B1d",
+      "title": "Two workers.",
+      "traditions": "8.0",
+      "narratives": "8.0"
+    },
+    {
+      "ref": "B1g",
+      "title": "Four brothers-transformers.",
+      "traditions": "8.0",
+      "narratives": "15.0"
+    },
+    {
+      "ref": "B7c",
+      "title": "Sprinkled water.",
+      "traditions": "8.0",
+      "narratives": "9.0"
+    },
+    {
+      "ref": "B20",
+      "title": "Expedition to the upper world.",
+      "traditions": "8.0",
+      "narratives": "13.0"
+    },
+    {
+      "ref": "B22a",
+      "title": "Boys and the tapir.",
+      "traditions": "8.0",
+      "narratives": "11.0"
+    },
+    {
+      "ref": "B24",
+      "title": "Transformation into wild boars.",
+      "traditions": "8.0",
+      "narratives": "8.0"
+    },
+    {
+      "ref": "B33g",
+      "title": "Three horsemen (sun, moon, night).",
+      "traditions": "8.0",
+      "narratives": "12.0"
+    },
+    {
+      "ref": "B35",
+      "title": "The club-footed bear.",
+      "traditions": "8.0",
+      "narratives": "8.0"
+    },
+    {
+      "ref": "B38d",
+      "title": "Raven and owl.",
+      "traditions": "8.0",
+      "narratives": "11.0"
+    },
+    {
+      "ref": "B42h2",
+      "title": "Reddish star \u2013 arrow.",
+      "traditions": "8.0",
+      "narratives": "13.0"
+    },
+    {
+      "ref": "B45b",
+      "title": "The bull of cold.",
+      "traditions": "8.0",
+      "narratives": "15.0"
+    },
+    {
+      "ref": "B115a",
+      "title": "Knots in wood, ATU 774H.",
+      "traditions": "8.0",
+      "narratives": "9.0"
+    },
+    {
+      "ref": "B123",
+      "title": "A fly instead of a nail, ATU 772*.",
+      "traditions": "8.0",
+      "narratives": "11.0"
+    },
+    {
+      "ref": "C2b",
+      "title": "The Burnt Moon.",
+      "traditions": "8.0",
+      "narratives": "10.0"
+    },
+    {
+      "ref": "C6i",
+      "title": "Stuck mud turns into earth.",
+      "traditions": "8.0",
+      "narratives": "12.0"
+    },
+    {
+      "ref": "C9a",
+      "title": "The Flood: people turn into aquatic animals.",
+      "traditions": "8.0",
+      "narratives": "16.0"
+    },
+    {
+      "ref": "C15",
+      "title": "The walled-up jaguar.",
+      "traditions": "8.0",
+      "narratives": "15.0"
+    },
+    {
+      "ref": "C35a",
+      "title": "The good advisor is punished.",
+      "traditions": "8.0",
+      "narratives": "9.0"
+    },
+    {
+      "ref": "C35b",
+      "title": "Frogs \u2013 enemies of the sun.",
+      "traditions": "8.0",
+      "narratives": "11.0"
+    },
+    {
+      "ref": "C37",
+      "title": "The sloth's catastrophe.",
+      "traditions": "8.0",
+      "narratives": "8.0"
+    },
+    {
+      "ref": "E16",
+      "title": "Oars with edges.",
+      "traditions": "8.0",
+      "narratives": "9.0"
+    },
+    {
+      "ref": "E41a",
+      "title": "How ticks were invented.",
+      "traditions": "8.0",
+      "narratives": "10.0"
+    },
+    {
+      "ref": "H40A",
+      "title": "A dog appears in times of danger.",
+      "traditions": "8.0",
+      "narratives": "5.0"
+    },
+    {
+      "ref": "H43ac",
+      "title": "The antagonist brings people to life instead of the creator.",
+      "traditions": "8.0",
+      "narratives": "11.0"
+    },
+    {
+      "ref": "i41b2",
+      "title": "Rainbow from the mouth of an animal.",
+      "traditions": "8.0",
+      "narratives": "8.0"
+    },
+    {
+      "ref": "K25a4a",
+      "title": "Rescue from the underwater world (broken chain).",
+      "traditions": "8.0",
+      "narratives": "14.0"
+    },
+    {
+      "ref": "L39a",
+      "title": "Demon from the underworld.",
+      "traditions": "8.0",
+      "narratives": "9.0"
+    },
+    {
+      "ref": "L125a",
+      "title": "The werewolf wife suffers from thirst.",
+      "traditions": "8.0",
+      "narratives": "8.0"
+    },
+    {
+      "ref": "M56d",
+      "title": "Fill the vessel with flies",
+      "traditions": "8.0",
+      "narratives": "9.0"
+    },
+    {
+      "ref": "B25",
+      "title": "Pigs fall from trees.",
+      "traditions": "7.0",
+      "narratives": "16.0"
+    },
+    {
+      "ref": "B28a",
+      "title": "Nailed to the ground.",
+      "traditions": "7.0",
+      "narratives": "18.0"
+    },
+    {
+      "ref": "B33e",
+      "title": "If February were like January.",
+      "traditions": "7.0",
+      "narratives": "6.0"
+    },
+    {
+      "ref": "B42e",
+      "title": "Hunting the rhea.",
+      "traditions": "7.0",
+      "narratives": "3.0"
+    },
+    {
+      "ref": "B42o",
+      "title": "The Hunchback Constellation.",
+      "traditions": "7.0",
+      "narratives": "7.0"
+    },
+    {
+      "ref": "B42o1",
+      "title": "The Great Bear \u2013 the fisher.",
+      "traditions": "7.0",
+      "narratives": "5.0"
+    },
+    {
+      "ref": "B47a",
+      "title": "The cow's split hoof. 33.34.",
+      "traditions": "7.0",
+      "narratives": "11.0"
+    },
+    {
+      "ref": "B61",
+      "title": "The mole's paw.",
+      "traditions": "7.0",
+      "narratives": "10.0"
+    },
+    {
+      "ref": "B75b1",
+      "title": "Sounds of the era of creation: the voice of a wife or mother",
+      "traditions": "7.0",
+      "narratives": "9.0"
+    },
+    {
+      "ref": "B75d",
+      "title": "Sounds of the creation era: the rustling of leaves.",
+      "traditions": "7.0",
+      "narratives": "7.0"
+    },
+    {
+      "ref": "B104b",
+      "title": "A woman turns into a woodpecker.",
+      "traditions": "7.0",
+      "narratives": "8.0"
+    },
+    {
+      "ref": "B111",
+      "title": "Bees from the body of an animal.",
+      "traditions": "7.0",
+      "narratives": "8.0"
+    },
+    {
+      "ref": "B115B",
+      "title": "The slain person turns into a viburnum.",
+      "traditions": "7.0",
+      "narratives": "12.0"
+    },
+    {
+      "ref": "C2a",
+      "title": "The Woodpecker's Fire.",
+      "traditions": "7.0",
+      "narratives": "12.0"
+    },
+    {
+      "ref": "C12a",
+      "title": "The Flood and the Dog.",
+      "traditions": "7.0",
+      "narratives": "10.0"
+    },
+    {
+      "ref": "C25a",
+      "title": "Cooking soup on the moon.",
+      "traditions": "7.0",
+      "narratives": "7.0"
+    },
+    {
+      "ref": "E9b",
+      "title": "The magical wife \u2013 the elephant.",
+      "traditions": "7.0",
+      "narratives": "8.0"
+    },
+    {
+      "ref": "E21",
+      "title": "The victim of aquatic creatures finds revenge.",
+      "traditions": "7.0",
+      "narratives": "10.0"
+    },
+    {
+      "ref": "E41",
+      "title": "The blacksmith kneads iron with his hands.",
+      "traditions": "7.0",
+      "narratives": "9.0"
+    },
+    {
+      "ref": "H36h",
+      "title": "Unsuccessful jump (frog and death).",
+      "traditions": "7.0",
+      "narratives": "9.0"
+    },
+    {
+      "ref": "H44a",
+      "title": "Heaven and Earth divide children.",
+      "traditions": "7.0",
+      "narratives": "23.0"
+    },
+    {
+      "ref": "K1g",
+      "title": "The deer gores its enemy.",
+      "traditions": "7.0",
+      "narratives": "6.0"
+    },
+    {
+      "ref": "L16A",
+      "title": "Eyes on the feet.",
+      "traditions": "7.0",
+      "narratives": "9.0"
+    },
+    {
+      "ref": "L73b",
+      "title": "A line drawn.",
+      "traditions": "7.0",
+      "narratives": "11.0"
+    },
+    {
+      "ref": "L91",
+      "title": "The Long Serpent.",
+      "traditions": "7.0",
+      "narratives": "1.0"
+    },
+    {
+      "ref": "M13B",
+      "title": "Sausage sticks to the nose.",
+      "traditions": "7.0",
+      "narratives": "9.0"
+    },
+    {
+      "ref": "M121",
+      "title": "Insects as spies.",
+      "traditions": "7.0",
+      "narratives": "8.0"
+    },
+    {
+      "ref": "A21a",
+      "title": "The released moon.",
+      "traditions": "6.0",
+      "narratives": "10.0"
+    },
+    {
+      "ref": "A22b",
+      "title": "Hot fire and cold embers.",
+      "traditions": "6.0",
+      "narratives": "1.0"
+    },
+    {
+      "ref": "B1b",
+      "title": "Two creators.",
+      "traditions": "6.0",
+      "narratives": "7.0"
+    },
+    {
+      "ref": "B1e",
+      "title": "The hero and his ten brothers.",
+      "traditions": "6.0",
+      "narratives": "13.0"
+    },
+    {
+      "ref": "B5c",
+      "title": "Mother and daughter at the beginning of time.",
+      "traditions": "6.0",
+      "narratives": "15.0"
+    },
+    {
+      "ref": "B16b",
+      "title": "The wolverine makes the sea salty.",
+      "traditions": "6.0",
+      "narratives": "8.0"
+    },
+    {
+      "ref": "B30a",
+      "title": "The slain person turns into a fish.",
+      "traditions": "6.0",
+      "narratives": "16.0"
+    },
+    {
+      "ref": "B32",
+      "title": "Women turn into fish.",
+      "traditions": "6.0",
+      "narratives": "10.0"
+    },
+    {
+      "ref": "B36b",
+      "title": "Birds acquire voices.",
+      "traditions": "6.0",
+      "narratives": "7.0"
+    },
+    {
+      "ref": "B42a",
+      "title": "Blood or fat sprinkled on the ground.",
+      "traditions": "6.0",
+      "narratives": "4.0"
+    },
+    {
+      "ref": "B49a",
+      "title": "How many offspring per year.",
+      "traditions": "6.0",
+      "narratives": "7.0"
+    },
+    {
+      "ref": "B66",
+      "title": "The rope turns into vines.",
+      "traditions": "6.0",
+      "narratives": "6.0"
+    },
+    {
+      "ref": "B68a",
+      "title": "The bird is punished: let it carry another.",
+      "traditions": "6.0",
+      "narratives": "9.0"
+    },
+    {
+      "ref": "B75b",
+      "title": "Sounds of the era of creation: the creaking of trees.",
+      "traditions": "6.0",
+      "narratives": "9.0"
+    },
+    {
+      "ref": "B77c",
+      "title": "The serpent pushed back the sky.",
+      "traditions": "6.0",
+      "narratives": "5.0"
+    },
+    {
+      "ref": "B88",
+      "title": "Job.",
+      "traditions": "6.0",
+      "narratives": "7.0"
+    },
+    {
+      "ref": "C6h",
+      "title": "An insect brings soil.",
+      "traditions": "6.0",
+      "narratives": "10.0"
+    },
+    {
+      "ref": "C8a1",
+      "title": "Let the thread enter the eye.",
+      "traditions": "6.0",
+      "narratives": "11.0"
+    },
+    {
+      "ref": "C8c1",
+      "title": "Father and daughter give birth to humans.",
+      "traditions": "6.0",
+      "narratives": "6.0"
+    },
+    {
+      "ref": "C8D",
+      "title": "Having had smallpox, they did not recognise each other.",
+      "traditions": "6.0",
+      "narratives": "9.0"
+    },
+    {
+      "ref": "C21",
+      "title": "Drought.",
+      "traditions": "6.0",
+      "narratives": "6.0"
+    },
+    {
+      "ref": "C34a",
+      "title": "Buried in the sand.",
+      "traditions": "6.0",
+      "narratives": "7.0"
+    },
+    {
+      "ref": "E6a",
+      "title": "The path through water.",
+      "traditions": "6.0",
+      "narratives": "12.0"
+    },
+    {
+      "ref": "E14a",
+      "title": "Masks reproduce slain demons.",
+      "traditions": "6.0",
+      "narratives": "6.0"
+    },
+    {
+      "ref": "E15a",
+      "title": "The boat as a bird's breastbone.",
+      "traditions": "6.0",
+      "narratives": "10.0"
+    },
+    {
+      "ref": "E19",
+      "title": "The origin of drugs.",
+      "traditions": "6.0",
+      "narratives": "10.0"
+    },
+    {
+      "ref": "E24",
+      "title": "Knees and elbows.",
+      "traditions": "6.0",
+      "narratives": "10.0"
+    },
+    {
+      "ref": "G8g",
+      "title": "The Great Oak and Its Inhabitants.",
+      "traditions": "6.0",
+      "narratives": "7.0"
+    },
+    {
+      "ref": "K11D",
+      "title": "A disintegrated monster turns into ordinary animals.",
+      "traditions": "6.0",
+      "narratives": "4.0"
+    },
+    {
+      "ref": "K52b",
+      "title": "Broken axe.",
+      "traditions": "6.0",
+      "narratives": "3.0"
+    },
+    {
+      "ref": "L12",
+      "title": "Vultures and incomplete bodies.",
+      "traditions": "6.0",
+      "narratives": "11.0"
+    },
+    {
+      "ref": "L33g",
+      "title": "Stone with a beard.",
+      "traditions": "6.0",
+      "narratives": "7.0"
+    },
+    {
+      "ref": "L90b",
+      "title": "Fangs reaching the sky and the earth.",
+      "traditions": "6.0",
+      "narratives": "14.0"
+    },
+    {
+      "ref": "L127",
+      "title": "Dancing ears.",
+      "traditions": "6.0",
+      "narratives": "6.0"
+    },
+    {
+      "ref": "A2F",
+      "title": "Suns \u2013 fruits.",
+      "traditions": "5.0",
+      "narratives": "9.0"
+    },
+    {
+      "ref": "A32j",
+      "title": "Shaman on the moon.",
+      "traditions": "5.0",
+      "narratives": "18.0"
+    },
+    {
+      "ref": "A37c",
+      "title": "The arrow hits the barrier.",
+      "traditions": "5.0",
+      "narratives": "8.0"
+    },
+    {
+      "ref": "B2f2",
+      "title": "Carries an unburied corpse.",
+      "traditions": "5.0",
+      "narratives": "6.0"
+    },
+    {
+      "ref": "B2g",
+      "title": "The chameleon walks on soft ground.",
+      "traditions": "5.0",
+      "narratives": "8.0"
+    },
+    {
+      "ref": "B7d",
+      "title": "Water pours from a bone.",
+      "traditions": "5.0",
+      "narratives": "5.0"
+    },
+    {
+      "ref": "B24a",
+      "title": "Transformation into wild pigs: a circle of feathers.",
+      "traditions": "5.0",
+      "narratives": "5.0"
+    },
+    {
+      "ref": "B49b",
+      "title": "Cow teats.",
+      "traditions": "5.0",
+      "narratives": "6.0"
+    },
+    {
+      "ref": "B74b",
+      "title": "The wedding of the owl and the moon.",
+      "traditions": "5.0",
+      "narratives": "6.0"
+    },
+    {
+      "ref": "B93a",
+      "title": "Bird bridge over the heavenly river.",
+      "traditions": "5.0",
+      "narratives": "9.0"
+    },
+    {
+      "ref": "B95",
+      "title": "Burnt sphincter.",
+      "traditions": "5.0",
+      "narratives": "4.0"
+    },
+    {
+      "ref": "B95A",
+      "title": "The trickster punishes his own backside.",
+      "traditions": "5.0",
+      "narratives": "4.0"
+    },
+    {
+      "ref": "B122",
+      "title": "Infants and birds.",
+      "traditions": "5.0",
+      "narratives": "12.0"
+    },
+    {
+      "ref": "E15b",
+      "title": "Birds sew a boat.",
+      "traditions": "5.0",
+      "narratives": "5.0"
+    },
+    {
+      "ref": "E38c",
+      "title": "The first humans are mute.",
+      "traditions": "5.0",
+      "narratives": "5.0"
+    },
+    {
+      "ref": "F75",
+      "title": "Siren and tapir.",
+      "traditions": "5.0",
+      "narratives": "8.0"
+    },
+    {
+      "ref": "I15a",
+      "title": "Vertical incision of the mouth.",
+      "traditions": "5.0",
+      "narratives": "5.0"
+    },
+    {
+      "ref": "j4c",
+      "title": "The young man from the egg.",
+      "traditions": "5.0",
+      "narratives": "6.0"
+    },
+    {
+      "ref": "K27v2",
+      "title": "To hit a copper object with an arrow.",
+      "traditions": "5.0",
+      "narratives": "5.0"
+    },
+    {
+      "ref": "K56b2",
+      "title": "Clenched jaws.",
+      "traditions": "5.0",
+      "narratives": "6.0"
+    },
+    {
+      "ref": "M44a",
+      "title": "Food thieves are the first humans",
+      "traditions": "5.0",
+      "narratives": "14.0"
+    },
+    {
+      "ref": "A2c3",
+      "title": "Octagonal moon.",
+      "traditions": "4.0",
+      "narratives": "3.0"
+    },
+    {
+      "ref": "A22d",
+      "title": "The burned person turns into a constellation.",
+      "traditions": "4.0",
+      "narratives": "4.0"
+    },
+    {
+      "ref": "B1H",
+      "title": "The hero and his ten brothers",
+      "traditions": "4.0",
+      "narratives": "11.0"
+    },
+    {
+      "ref": "B3F",
+      "title": "An object dropped from the sky.",
+      "traditions": "4.0",
+      "narratives": "3.0"
+    },
+    {
+      "ref": "B4a",
+      "title": "Fish break off islands.",
+      "traditions": "4.0",
+      "narratives": "3.0"
+    },
+    {
+      "ref": "B6a",
+      "title": "Discarded egg.",
+      "traditions": "4.0",
+      "narratives": "4.0"
+    },
+    {
+      "ref": "B42d",
+      "title": "Hunting the tapir.",
+      "traditions": "4.0",
+      "narratives": "1.0"
+    },
+    {
+      "ref": "B63",
+      "title": "The transformation of lazy children.",
+      "traditions": "4.0",
+      "narratives": "8.0"
+    },
+    {
+      "ref": "B63A",
+      "title": "Brothers of the elements.",
+      "traditions": "4.0",
+      "narratives": "8.0"
+    },
+    {
+      "ref": "B64c",
+      "title": "Small bones: fish fall from the sky.",
+      "traditions": "4.0",
+      "narratives": "10.0"
+    },
+    {
+      "ref": "B75c",
+      "title": "Sounds of the era of creation: the sound of water.",
+      "traditions": "4.0",
+      "narratives": "4.0"
+    },
+    {
+      "ref": "B77b2",
+      "title": "The sky was touched with a broom.",
+      "traditions": "4.0",
+      "narratives": "4.0"
+    },
+    {
+      "ref": "B98c",
+      "title": "The bat is deceived by a deity.",
+      "traditions": "4.0",
+      "narratives": "4.0"
+    },
+    {
+      "ref": "B110a",
+      "title": "The falling one turns into snow and wind.",
+      "traditions": "4.0",
+      "narratives": "6.0"
+    },
+    {
+      "ref": "B118",
+      "title": "Those who remain on earth become owls.",
+      "traditions": "4.0",
+      "narratives": "6.0"
+    },
+    {
+      "ref": "B125a",
+      "title": "The nightingale and the copperhead.",
+      "traditions": "4.0",
+      "narratives": "5.0"
+    },
+    {
+      "ref": "C6g",
+      "title": "The diver \u2013 the boar.",
+      "traditions": "4.0",
+      "narratives": "7.0"
+    },
+    {
+      "ref": "C22",
+      "title": "The Toad in Search of Thunder.",
+      "traditions": "4.0",
+      "narratives": "3.0"
+    },
+    {
+      "ref": "C30b",
+      "title": "Remove traces from the field.",
+      "traditions": "4.0",
+      "narratives": "4.0"
+    },
+    {
+      "ref": "C30d",
+      "title": "Not to spill a drop of urine.",
+      "traditions": "4.0",
+      "narratives": "4.0"
+    },
+    {
+      "ref": "C33a1",
+      "title": "Bird pecking at the liver.",
+      "traditions": "4.0",
+      "narratives": "16.0"
+    },
+    {
+      "ref": "C39",
+      "title": "Repairing the sky.",
+      "traditions": "4.0",
+      "narratives": "13.0"
+    },
+    {
+      "ref": "D4p",
+      "title": "The parrot obtains fire.",
+      "traditions": "4.0",
+      "narratives": "4.0"
+    },
+    {
+      "ref": "E9aa",
+      "title": "The fox wife in the burrow of all animals.",
+      "traditions": "4.0",
+      "narratives": "6.0"
+    },
+    {
+      "ref": "E28",
+      "title": "The blood of the Moon pours onto the earth.",
+      "traditions": "4.0",
+      "narratives": "9.0"
+    },
+    {
+      "ref": "E34",
+      "title": "Sacred flutes made from the ashes of a cannibal.",
+      "traditions": "4.0",
+      "narratives": "4.0"
+    },
+    {
+      "ref": "E39a",
+      "title": "A female animal conceives from human urine.",
+      "traditions": "4.0",
+      "narratives": "5.0"
+    },
+    {
+      "ref": "E40",
+      "title": "Nostrils facing upwards.",
+      "traditions": "4.0",
+      "narratives": "6.0"
+    },
+    {
+      "ref": "K170",
+      "title": "Water without frogs, land without flies.",
+      "traditions": "4.0",
+      "narratives": "6.0"
+    },
+    {
+      "ref": "A23E",
+      "title": "The first to rise has the best voice.",
+      "traditions": "3.0",
+      "narratives": "2.0"
+    },
+    {
+      "ref": "A26",
+      "title": "The sun bird.",
+      "traditions": "3.0",
+      "narratives": "18.0"
+    },
+    {
+      "ref": "B28c",
+      "title": "Lice drag a person into the water.",
+      "traditions": "3.0",
+      "narratives": "2.0"
+    },
+    {
+      "ref": "B44d",
+      "title": "Black and white beast - night and day.",
+      "traditions": "3.0",
+      "narratives": "3.0"
+    },
+    {
+      "ref": "B48d",
+      "title": "Pike swallows people.",
+      "traditions": "3.0",
+      "narratives": "4.0"
+    },
+    {
+      "ref": "B86B",
+      "title": "Remove the bottom brick.",
+      "traditions": "3.0",
+      "narratives": "7.0"
+    },
+    {
+      "ref": "B108",
+      "title": "The remains of the deceased turn into snow.",
+      "traditions": "3.0",
+      "narratives": "6.0"
+    },
+    {
+      "ref": "B109a",
+      "title": "Bear from the sky.",
+      "traditions": "3.0",
+      "narratives": "7.0"
+    },
+    {
+      "ref": "B119",
+      "title": "The husband of a magical wife turns into a rooster.",
+      "traditions": "3.0",
+      "narratives": "4.0"
+    },
+    {
+      "ref": "C6i1",
+      "title": "A mound of earth rises above the water.",
+      "traditions": "3.0",
+      "narratives": "3.0"
+    },
+    {
+      "ref": "C32",
+      "title": "A ship made of nails.",
+      "traditions": "3.0",
+      "narratives": "3.0"
+    },
+    {
+      "ref": "C33b",
+      "title": "Ancient windlessness.",
+      "traditions": "3.0",
+      "narratives": "8.0"
+    },
+    {
+      "ref": "C40",
+      "title": "Stones fall from the sky.",
+      "traditions": "3.0",
+      "narratives": "4.0"
+    },
+    {
+      "ref": "D4f",
+      "title": "Beavers or fish allow themselves to be roasted.",
+      "traditions": "3.0",
+      "narratives": "6.0"
+    },
+    {
+      "ref": "E1a1",
+      "title": "Soaked by rain (why there are cripples).",
+      "traditions": "3.0",
+      "narratives": "9.0"
+    },
+    {
+      "ref": "H28c",
+      "title": "Mosquitoes bring back wives.",
+      "traditions": "3.0",
+      "narratives": "4.0"
+    },
+    {
+      "ref": "j23f",
+      "title": "Temporarily incarnated in a human being.",
+      "traditions": "3.0",
+      "narratives": "3.0"
+    },
+    {
+      "ref": "K47c",
+      "title": "The origin of dogs.",
+      "traditions": "3.0",
+      "narratives": "6.0"
+    },
+    {
+      "ref": "L15b1",
+      "title": "Deer antlers \u2013 a weapon against evil.",
+      "traditions": "3.0",
+      "narratives": "5.0"
+    },
+    {
+      "ref": "M109d",
+      "title": "Seized by the tail by a sea creature.",
+      "traditions": "3.0",
+      "narratives": "3.0"
+    },
+    {
+      "ref": "A2G",
+      "title": "Several suns in one day.",
+      "traditions": "2.0",
+      "narratives": "2.0"
+    },
+    {
+      "ref": "A39B",
+      "title": "Full moon and crescent moon.",
+      "traditions": "2.0",
+      "narratives": "2.0"
+    },
+    {
+      "ref": "B32a",
+      "title": "Pursuers turn into aquatic mammals.",
+      "traditions": "2.0",
+      "narratives": "3.0"
+    },
+    {
+      "ref": "B69b",
+      "title": "Striped frog.",
+      "traditions": "2.0",
+      "narratives": "2.0"
+    },
+    {
+      "ref": "B107",
+      "title": "Black oyster.",
+      "traditions": "2.0",
+      "narratives": "3.0"
+    },
+    {
+      "ref": "B121",
+      "title": "A little bird wants to fill the sea with stones.",
+      "traditions": "2.0",
+      "narratives": "5.0"
+    },
+    {
+      "ref": "B124a",
+      "title": "Dent on the back.",
+      "traditions": "2.0",
+      "narratives": "2.0"
+    },
+    {
+      "ref": "C8a2",
+      "title": "Stone lion.",
+      "traditions": "2.0",
+      "narratives": "4.0"
+    },
+    {
+      "ref": "C41",
+      "title": "Why the sky is blue.",
+      "traditions": "2.0",
+      "narratives": "6.0"
+    },
+    {
+      "ref": "E1e",
+      "title": "Son-stalk.",
+      "traditions": "2.0",
+      "narratives": "3.0"
+    },
+    {
+      "ref": "E13",
+      "title": "Tambourine \u2013 lake.",
+      "traditions": "2.0",
+      "narratives": "4.0"
+    },
+    {
+      "ref": "E36a",
+      "title": "Growing nails.",
+      "traditions": "2.0",
+      "narratives": "3.0"
+    },
+    {
+      "ref": "E42",
+      "title": "The appearance of female breasts.",
+      "traditions": "2.0",
+      "narratives": "3.0"
+    },
+    {
+      "ref": "I93A",
+      "title": "The Milky Way \u2013 the heavenly tail.",
+      "traditions": "2.0",
+      "narratives": "2.0"
+    },
+    {
+      "ref": "J43",
+      "title": "Bait for enemies.",
+      "traditions": "2.0",
+      "narratives": "4.0"
+    },
+    {
+      "ref": "C39a",
+      "title": "The sky was patched up with ice.",
+      "traditions": "1.0",
+      "narratives": "8.0"
+    },
+    {
+      "ref": "K27p",
+      "title": "The antagonist mourns his assistants.",
+      "traditions": "0.0",
+      "narratives": "0.0"
+    },
+    {
+      "ref": "K561",
+      "title": "The wise carving of the fowl",
+      "traditions": "0.0",
+      "narratives": "0.0"
+    },
+    {
+      "ref": "M38b3b",
+      "title": "Hero warms and covers the nestlings",
+      "traditions": "0.0",
+      "narratives": "0.0"
+    }
+  ]
+}

@@ -32,7 +32,8 @@ filter_map <- list(
   unit = "unit",
   simulacra = "simulacrum",
   integration = "integration",
-  regression = "regression"
+  regression = "regression",
+  convsigns = "convsign"
 )
 
 if (is.null(arg)) {

@@ -1,0 +1,3798 @@
+{
+  "cluster": "exogamy_marriage",
+  "n": 632,
+  "motifs": [
+    {
+      "ref": "K25",
+      "title": "The magical wife.",
+      "traditions": "422.0",
+      "narratives": "1196.0"
+    },
+    {
+      "ref": "K27n",
+      "title": "Tasks of relatives, H310, H331.",
+      "traditions": "373.0",
+      "narratives": "325.0"
+    },
+    {
+      "ref": "K176",
+      "title": "Man in search of a woman, ATU 400.",
+      "traditions": "322.0",
+      "narratives": "613.0"
+    },
+    {
+      "ref": "K32",
+      "title": "The Substituted Woman, K1911; ATU 403, 404.",
+      "traditions": "274.0",
+      "narratives": "652.0"
+    },
+    {
+      "ref": "K75",
+      "title": "The younger daughter agrees, ATU 433B.",
+      "traditions": "250.0",
+      "narratives": "432.0"
+    },
+    {
+      "ref": "I72",
+      "title": "Stars \u2013 people.",
+      "traditions": "239.0",
+      "narratives": "278.0"
+    },
+    {
+      "ref": "K24",
+      "title": "Hidden clothes of a supernatural woman, F202.4.2.",
+      "traditions": "238.0",
+      "narratives": "560.0"
+    },
+    {
+      "ref": "K177",
+      "title": "The wandering heroine.",
+      "traditions": "236.0",
+      "narratives": "398.0"
+    },
+    {
+      "ref": "K27n1",
+      "title": "The one who gives tasks \u2013 a king or a chief.",
+      "traditions": "229.0",
+      "narratives": "211.0"
+    },
+    {
+      "ref": "K73",
+      "title": "Children of the younger wife, ATU 707.",
+      "traditions": "188.0",
+      "narratives": "395.0"
+    },
+    {
+      "ref": "F35a",
+      "title": "Feeding meat from a relative.",
+      "traditions": "182.0",
+      "narratives": "295.0"
+    },
+    {
+      "ref": "K1f",
+      "title": "Conflict over a woman.",
+      "traditions": "172.0",
+      "narratives": "93.0"
+    },
+    {
+      "ref": "M91c2",
+      "title": "Seated in a bag",
+      "traditions": "170.0",
+      "narratives": "236.0"
+    },
+    {
+      "ref": "K76",
+      "title": "The Strange Son, ATU 425A, 441.",
+      "traditions": "163.0",
+      "narratives": "284.0"
+    },
+    {
+      "ref": "K73a",
+      "title": "Child substitution.",
+      "traditions": "162.0",
+      "narratives": "318.0"
+    },
+    {
+      "ref": "F34b",
+      "title": "Lover of non-human nature.",
+      "traditions": "156.0",
+      "narratives": "315.0"
+    },
+    {
+      "ref": "F45",
+      "title": "Amazons.",
+      "traditions": "156.0",
+      "narratives": "256.0"
+    },
+    {
+      "ref": "F7",
+      "title": "Woman from the underwater world.",
+      "traditions": "145.0",
+      "narratives": "224.0"
+    },
+    {
+      "ref": "K37",
+      "title": "Recognising one's own among similar ones, H62.1, H161, H324.",
+      "traditions": "141.0",
+      "narratives": "324.0"
+    },
+    {
+      "ref": "F30",
+      "title": "The snake lover.",
+      "traditions": "139.0",
+      "narratives": "246.0"
+    },
+    {
+      "ref": "K73a4",
+      "title": "The child is replaced by a puppy.",
+      "traditions": "131.0",
+      "narratives": "237.0"
+    },
+    {
+      "ref": "F86",
+      "title": "Conditional signal.",
+      "traditions": "127.0",
+      "narratives": "191.0"
+    },
+    {
+      "ref": "K102",
+      "title": "The hero's woman helps his enemy, ATU 315 (sister), 590 (mot",
+      "traditions": "124.0",
+      "narratives": "202.0"
+    },
+    {
+      "ref": "K72",
+      "title": "Three maidens.",
+      "traditions": "121.0",
+      "narratives": "198.0"
+    },
+    {
+      "ref": "K119",
+      "title": "Animal marries a princess, ATU 545B.",
+      "traditions": "120.0",
+      "narratives": "152.0"
+    },
+    {
+      "ref": "F65",
+      "title": "The imaginary dead man.",
+      "traditions": "119.0",
+      "narratives": "26.0"
+    },
+    {
+      "ref": "F18a",
+      "title": "Long penis.",
+      "traditions": "118.0",
+      "narratives": "170.0"
+    },
+    {
+      "ref": "J12",
+      "title": "Girls in search of a husband.",
+      "traditions": "117.0",
+      "narratives": "205.0"
+    },
+    {
+      "ref": "K57",
+      "title": "Cinderella, ATU 510A.",
+      "traditions": "116.0",
+      "narratives": "230.0"
+    },
+    {
+      "ref": "F9a",
+      "title": "Toothy womb.",
+      "traditions": "114.0",
+      "narratives": "204.0"
+    },
+    {
+      "ref": "K27x3",
+      "title": "The king and the hero's wife, ATU 465.",
+      "traditions": "113.0",
+      "narratives": "152.0"
+    },
+    {
+      "ref": "F51",
+      "title": "Secret lover, H58.",
+      "traditions": "112.0",
+      "narratives": "80.0"
+    },
+    {
+      "ref": "F62",
+      "title": "Incognito at a festival.",
+      "traditions": "112.0",
+      "narratives": "198.0"
+    },
+    {
+      "ref": "K107",
+      "title": "The Returned Husband, ATU 425A, 425B, 425D, 425E, 432.",
+      "traditions": "112.0",
+      "narratives": "217.0"
+    },
+    {
+      "ref": "B2d",
+      "title": "Marriage of heaven and earth, A625.",
+      "traditions": "111.0",
+      "narratives": "167.0"
+    },
+    {
+      "ref": "F2",
+      "title": "Birth from the leg T541; V52.",
+      "traditions": "111.0",
+      "narratives": "171.0"
+    },
+    {
+      "ref": "M154",
+      "title": "The language of animals and the stubborn wife, ATU 670.",
+      "traditions": "111.0",
+      "narratives": "124.0"
+    },
+    {
+      "ref": "K25a1",
+      "title": "Found clothing.",
+      "traditions": "106.0",
+      "narratives": "212.0"
+    },
+    {
+      "ref": "F70",
+      "title": "Potiphar's Wife, K2111, T418, ATU 318.",
+      "traditions": "105.0",
+      "narratives": "139.0"
+    },
+    {
+      "ref": "C8",
+      "title": "Blood relatives give birth to people.",
+      "traditions": "103.0",
+      "narratives": "266.0"
+    },
+    {
+      "ref": "M40",
+      "title": "Distorted instructions",
+      "traditions": "103.0",
+      "narratives": "113.0"
+    },
+    {
+      "ref": "F35",
+      "title": "Feeding meat from a lover.",
+      "traditions": "99.0",
+      "narratives": "139.0"
+    },
+    {
+      "ref": "L100d",
+      "title": "Deceived admirers, ATU 1358C, 1730.",
+      "traditions": "98.0",
+      "narratives": "114.0"
+    },
+    {
+      "ref": "K32g",
+      "title": "Torn apart by horses.",
+      "traditions": "96.0",
+      "narratives": "242.0"
+    },
+    {
+      "ref": "M152",
+      "title": "Why only one wolf? ATU 1149.",
+      "traditions": "96.0",
+      "narratives": "155.0"
+    },
+    {
+      "ref": "K30",
+      "title": "The flying enemy carries off the woman.",
+      "traditions": "95.0",
+      "narratives": "142.0"
+    },
+    {
+      "ref": "c8aa",
+      "title": "Brother and sister give birth to humans.",
+      "traditions": "93.0",
+      "narratives": "237.0"
+    },
+    {
+      "ref": "F34",
+      "title": "Connection with terrestrial quadrupeds.",
+      "traditions": "90.0",
+      "narratives": "143.0"
+    },
+    {
+      "ref": "L4",
+      "title": "The Unmasked Murderer, ATU 311, 312.",
+      "traditions": "88.0",
+      "narratives": "128.0"
+    },
+    {
+      "ref": "F70b",
+      "title": "Revenge of the rejected.",
+      "traditions": "86.0",
+      "narratives": "107.0"
+    },
+    {
+      "ref": "J15",
+      "title": "The road to the home of dangerous creatures.",
+      "traditions": "86.0",
+      "narratives": "136.0"
+    },
+    {
+      "ref": "M39a5a",
+      "title": "Pancakes on trees, ATU 1381, 1381B",
+      "traditions": "84.0",
+      "narratives": "97.0"
+    },
+    {
+      "ref": "M106f",
+      "title": "Guest from the Other World, ATU 1540.",
+      "traditions": "83.0",
+      "narratives": "83.0"
+    },
+    {
+      "ref": "k32n",
+      "title": "The false wife - a supernatural character.",
+      "traditions": "82.0",
+      "narratives": "58.0"
+    },
+    {
+      "ref": "K66c",
+      "title": "Bear marriage.",
+      "traditions": "82.0",
+      "narratives": "115.0"
+    },
+    {
+      "ref": "M11c",
+      "title": "Removes fat from the body.",
+      "traditions": "82.0",
+      "narratives": "126.0"
+    },
+    {
+      "ref": "F64",
+      "title": "Incestuous parent, T411.1.1.",
+      "traditions": "81.0",
+      "narratives": "121.0"
+    },
+    {
+      "ref": "K84",
+      "title": "Sisters married to animals, ATU 552.1.",
+      "traditions": "79.0",
+      "narratives": "121.0"
+    },
+    {
+      "ref": "K113",
+      "title": "Animal princess, ATU 402.",
+      "traditions": "79.0",
+      "narratives": "114.0"
+    },
+    {
+      "ref": "L42g",
+      "title": "Hansel and Gretel, ATU 327A.",
+      "traditions": "79.0",
+      "narratives": "84.0"
+    },
+    {
+      "ref": "D1",
+      "title": "Woman-fire.",
+      "traditions": "77.0",
+      "narratives": "119.0"
+    },
+    {
+      "ref": "F49",
+      "title": "Caesarean section, T584.",
+      "traditions": "76.0",
+      "narratives": "106.0"
+    },
+    {
+      "ref": "H12c",
+      "title": "Orpheus: bringing back his dead wife.",
+      "traditions": "75.0",
+      "narratives": "124.0"
+    },
+    {
+      "ref": "E9h",
+      "title": "The magical wife - the dove.",
+      "traditions": "74.0",
+      "narratives": "104.0"
+    },
+    {
+      "ref": "K25e",
+      "title": "The magical wife \u2013 ancestor of humans.",
+      "traditions": "73.0",
+      "narratives": "117.0"
+    },
+    {
+      "ref": "K96",
+      "title": "Fifty Sons, ATU 303A.",
+      "traditions": "73.0",
+      "narratives": "99.0"
+    },
+    {
+      "ref": "F71",
+      "title": "Susanna and the Elders, ATU 883A.",
+      "traditions": "72.0",
+      "narratives": "70.0"
+    },
+    {
+      "ref": "K20",
+      "title": "Mortal desires a star, C15.1, C15.1.1.",
+      "traditions": "72.0",
+      "narratives": "10.0"
+    },
+    {
+      "ref": "K160a",
+      "title": "The demon's answers to his wife's questions, ATU 461.",
+      "traditions": "72.0",
+      "narratives": "93.0"
+    },
+    {
+      "ref": "K129",
+      "title": "Enchanted and brought to life, ATU 709, 709A.",
+      "traditions": "71.0",
+      "narratives": "95.0"
+    },
+    {
+      "ref": "K76b",
+      "title": "Son-snake and husband-snake.",
+      "traditions": "69.0",
+      "narratives": "89.0"
+    },
+    {
+      "ref": "K151",
+      "title": "The Golden Fish, ATU 555.",
+      "traditions": "69.0",
+      "narratives": "77.0"
+    },
+    {
+      "ref": "M157b",
+      "title": "Take the most precious thing (ATU 875).",
+      "traditions": "69.0",
+      "narratives": "72.0"
+    },
+    {
+      "ref": "F33",
+      "title": "Connection with a water creature.",
+      "traditions": "68.0",
+      "narratives": "102.0"
+    },
+    {
+      "ref": "K75a",
+      "title": "Throwing an apple at a suitor, H316.",
+      "traditions": "68.0",
+      "narratives": "107.0"
+    },
+    {
+      "ref": "K82",
+      "title": "The evil sister-in-law.",
+      "traditions": "68.0",
+      "narratives": "97.0"
+    },
+    {
+      "ref": "K67a",
+      "title": "The Drowned Wife, ATU 1120.",
+      "traditions": "67.0",
+      "narratives": "71.0"
+    },
+    {
+      "ref": "L113",
+      "title": "Married to a werewolf (ATU 363).",
+      "traditions": "67.0",
+      "narratives": "93.0"
+    },
+    {
+      "ref": "E8",
+      "title": "Wooden people.",
+      "traditions": "66.0",
+      "narratives": "84.0"
+    },
+    {
+      "ref": "E31c",
+      "title": "Rescuers of the Abducted Maiden, ATU 513A, ATU 653.",
+      "traditions": "66.0",
+      "narratives": "65.0"
+    },
+    {
+      "ref": "J32d",
+      "title": "The Princess in the Tower, ATU 530.",
+      "traditions": "66.0",
+      "narratives": "101.0"
+    },
+    {
+      "ref": "F38",
+      "title": "Women and secret knowledge.",
+      "traditions": "65.0",
+      "narratives": "135.0"
+    },
+    {
+      "ref": "M90a",
+      "title": "Marry a guesser",
+      "traditions": "65.0",
+      "narratives": "65.0"
+    },
+    {
+      "ref": "F63",
+      "title": "Man marries, K1321.1, ATU 1538*.",
+      "traditions": "64.0",
+      "narratives": "74.0"
+    },
+    {
+      "ref": "H41",
+      "title": "The dog betrays man.",
+      "traditions": "64.0",
+      "narratives": "101.0"
+    },
+    {
+      "ref": "K120",
+      "title": "Prevented incest (daughter and father), (ATU 510B, 510B*), 7",
+      "traditions": "64.0",
+      "narratives": "98.0"
+    },
+    {
+      "ref": "I82c",
+      "title": "Wife of the Moon.",
+      "traditions": "63.0",
+      "narratives": "78.0"
+    },
+    {
+      "ref": "j4b",
+      "title": "Revenge within the family.",
+      "traditions": "63.0",
+      "narratives": "109.0"
+    },
+    {
+      "ref": "M196",
+      "title": "Who will speak first? ATU 1351.",
+      "traditions": "63.0",
+      "narratives": "64.0"
+    },
+    {
+      "ref": "F9",
+      "title": "Dangerous woman.",
+      "traditions": "62.0",
+      "narratives": "66.0"
+    },
+    {
+      "ref": "F40b",
+      "title": "A man in a village of women.",
+      "traditions": "62.0",
+      "narratives": "78.0"
+    },
+    {
+      "ref": "K108",
+      "title": "The revived wife cheats on her husband, ATU 612.",
+      "traditions": "62.0",
+      "narratives": "47.0"
+    },
+    {
+      "ref": "K120a",
+      "title": "Prevented incest (sister and brother), (ATU 313E).",
+      "traditions": "62.0",
+      "narratives": "67.0"
+    },
+    {
+      "ref": "K14c",
+      "title": "Son mistaken for lover, ATU 910B.",
+      "traditions": "61.0",
+      "narratives": "64.0"
+    },
+    {
+      "ref": "F9g",
+      "title": "Br\u00fcnnhilde, ATU 519.",
+      "traditions": "60.0",
+      "narratives": "46.0"
+    },
+    {
+      "ref": "F16",
+      "title": "Men and women: exchange of characteristics.",
+      "traditions": "59.0",
+      "narratives": "83.0"
+    },
+    {
+      "ref": "F58",
+      "title": "The trickster and women.",
+      "traditions": "59.0",
+      "narratives": "63.0"
+    },
+    {
+      "ref": "F65a",
+      "title": "The Imaginary Dead Man: Meeting with a Lover, ATU 885A.",
+      "traditions": "59.0",
+      "narratives": "68.0"
+    },
+    {
+      "ref": "F73",
+      "title": "Imaginary wound.",
+      "traditions": "59.0",
+      "narratives": "59.0"
+    },
+    {
+      "ref": "K80b",
+      "title": "Mother killed, father ate, ATU 720.",
+      "traditions": "59.0",
+      "narratives": "67.0"
+    },
+    {
+      "ref": "M90",
+      "title": "The snake guesses the material, ATU 857",
+      "traditions": "59.0",
+      "narratives": "48.0"
+    },
+    {
+      "ref": "E9i1",
+      "title": "The magical wife \u2013 the swan.",
+      "traditions": "58.0",
+      "narratives": "117.0"
+    },
+    {
+      "ref": "F64a",
+      "title": "Describes the future spouse.",
+      "traditions": "58.0",
+      "narratives": "10.0"
+    },
+    {
+      "ref": "F70a",
+      "title": "Scratches his body.",
+      "traditions": "58.0",
+      "narratives": "42.0"
+    },
+    {
+      "ref": "J13",
+      "title": "Two sisters.",
+      "traditions": "58.0",
+      "narratives": "55.0"
+    },
+    {
+      "ref": "K92a",
+      "title": "A woman builds a house, ATU 923B.",
+      "traditions": "58.0",
+      "narratives": "78.0"
+    },
+    {
+      "ref": "M39h",
+      "title": "Husband pretended to be blind, ATU 1380",
+      "traditions": "58.0",
+      "narratives": "41.0"
+    },
+    {
+      "ref": "F39",
+      "title": "Women's time.",
+      "traditions": "57.0",
+      "narratives": "61.0"
+    },
+    {
+      "ref": "K19b",
+      "title": "Star-man.",
+      "traditions": "57.0",
+      "narratives": "102.0"
+    },
+    {
+      "ref": "N14",
+      "title": "A storyteller at a wedding",
+      "traditions": "57.0",
+      "narratives": "170.0"
+    },
+    {
+      "ref": "F9e1",
+      "title": "Dangerous animal in the vagina.",
+      "traditions": "56.0",
+      "narratives": "81.0"
+    },
+    {
+      "ref": "K37a",
+      "title": "Recognising a man.",
+      "traditions": "56.0",
+      "narratives": "70.0"
+    },
+    {
+      "ref": "M154b",
+      "title": "Husband performs his wife's work, ATU 1408.",
+      "traditions": "56.0",
+      "narratives": "40.0"
+    },
+    {
+      "ref": "F54",
+      "title": "Oedipus, ATU 931, 933.",
+      "traditions": "54.0",
+      "narratives": "39.0"
+    },
+    {
+      "ref": "K32a",
+      "title": "A man leaves on a journey.",
+      "traditions": "54.0",
+      "narratives": "71.0"
+    },
+    {
+      "ref": "K67d",
+      "title": "Escape from the worker, ATU 1132.",
+      "traditions": "54.0",
+      "narratives": "49.0"
+    },
+    {
+      "ref": "K173",
+      "title": "It is better to suffer when young (Placidas), ATU 938.",
+      "traditions": "54.0",
+      "narratives": "36.0"
+    },
+    {
+      "ref": "L3",
+      "title": "A husband turns into a demon.",
+      "traditions": "54.0",
+      "narratives": "79.0"
+    },
+    {
+      "ref": "M106g",
+      "title": "Dragging a cow onto the roof, ATU 1210.",
+      "traditions": "54.0",
+      "narratives": "38.0"
+    },
+    {
+      "ref": "K128b",
+      "title": "The Hare Shepherd, ATU 570.",
+      "traditions": "53.0",
+      "narratives": "46.0"
+    },
+    {
+      "ref": "K152a",
+      "title": "The Devil and His Wife in the Pit, ATU 1164.",
+      "traditions": "53.0",
+      "narratives": "53.0"
+    },
+    {
+      "ref": "M116a",
+      "title": "I also rested here, ATU 980.",
+      "traditions": "53.0",
+      "narratives": "67.0"
+    },
+    {
+      "ref": "E31a1",
+      "title": "Who will be the husband of the created girl? ATU 653C.",
+      "traditions": "52.0",
+      "narratives": "46.0"
+    },
+    {
+      "ref": "K93a",
+      "title": "Sword on the marriage bed, T351.",
+      "traditions": "52.0",
+      "narratives": "69.0"
+    },
+    {
+      "ref": "K27p1",
+      "title": "The enemy father-in-law takes the form of an animal.",
+      "traditions": "51.0",
+      "narratives": "71.0"
+    },
+    {
+      "ref": "K32h3",
+      "title": "The antagonist is burned.",
+      "traditions": "51.0",
+      "narratives": "122.0"
+    },
+    {
+      "ref": "K117",
+      "title": "Nesmeyana (bride, young man), ATU 559, (571).",
+      "traditions": "51.0",
+      "narratives": "69.0"
+    },
+    {
+      "ref": "K123",
+      "title": "The old woman's curse.",
+      "traditions": "51.0",
+      "narratives": "94.0"
+    },
+    {
+      "ref": "L1a",
+      "title": "The woman became a bear.",
+      "traditions": "51.0",
+      "narratives": "71.0"
+    },
+    {
+      "ref": "L100b",
+      "title": "The forgotten bride.",
+      "traditions": "51.0",
+      "narratives": "106.0"
+    },
+    {
+      "ref": "M39f",
+      "title": "There was a hat, a head - I don't remember, ATU 1225",
+      "traditions": "51.0",
+      "narratives": "34.0"
+    },
+    {
+      "ref": "K19a",
+      "title": "Star Wife, T111.2.1.",
+      "traditions": "50.0",
+      "narratives": "109.0"
+    },
+    {
+      "ref": "F22",
+      "title": "Studying the partner's body.",
+      "traditions": "49.0",
+      "narratives": "58.0"
+    },
+    {
+      "ref": "F27",
+      "title": "Girls and water spirits.",
+      "traditions": "49.0",
+      "narratives": "86.0"
+    },
+    {
+      "ref": "K14a",
+      "title": "Thrown into the furnace, ATU 910K.",
+      "traditions": "49.0",
+      "narratives": "58.0"
+    },
+    {
+      "ref": "L125",
+      "title": "The Werewolf Wife, ATU 411.",
+      "traditions": "49.0",
+      "narratives": "83.0"
+    },
+    {
+      "ref": "K100c",
+      "title": "The snake bites the girl's suitors, ATU 507 (main part, vari",
+      "traditions": "48.0",
+      "narratives": "72.0"
+    },
+    {
+      "ref": "K136a",
+      "title": "The girl's floating hair.",
+      "traditions": "48.0",
+      "narratives": "61.0"
+    },
+    {
+      "ref": "M16",
+      "title": "The healed cripple.",
+      "traditions": "48.0",
+      "narratives": "80.0"
+    },
+    {
+      "ref": "M91c3",
+      "title": "The postman hare",
+      "traditions": "48.0",
+      "narratives": "55.0"
+    },
+    {
+      "ref": "I59a",
+      "title": "Thief in the sky.",
+      "traditions": "47.0",
+      "narratives": "107.0"
+    },
+    {
+      "ref": "K33e",
+      "title": "Chosen and returned children (Griselda), ATU 887.",
+      "traditions": "47.0",
+      "narratives": "60.0"
+    },
+    {
+      "ref": "K87",
+      "title": "Marriage to an animal ends badly.",
+      "traditions": "47.0",
+      "narratives": "78.0"
+    },
+    {
+      "ref": "K113a",
+      "title": "The bride where the arrow fell.",
+      "traditions": "47.0",
+      "narratives": "61.0"
+    },
+    {
+      "ref": "B54",
+      "title": "Splinters turn into fish. D441.10+.",
+      "traditions": "46.0",
+      "narratives": "59.0"
+    },
+    {
+      "ref": "F44",
+      "title": "Quarrel between men and women.",
+      "traditions": "46.0",
+      "narratives": "73.0"
+    },
+    {
+      "ref": "J7",
+      "title": "Substituted signs.",
+      "traditions": "46.0",
+      "narratives": "50.0"
+    },
+    {
+      "ref": "F54e",
+      "title": "Unintentional killing of a father.",
+      "traditions": "45.0",
+      "narratives": "28.0"
+    },
+    {
+      "ref": "F70e",
+      "title": "Girl turns into a man, ATU 514.",
+      "traditions": "45.0",
+      "narratives": "35.0"
+    },
+    {
+      "ref": "L100f1",
+      "title": "Lover fleeing from her husband, ATU 1725.",
+      "traditions": "45.0",
+      "narratives": "22.0"
+    },
+    {
+      "ref": "M106e",
+      "title": "For a long winter, ATU 1541.",
+      "traditions": "45.0",
+      "narratives": "35.0"
+    },
+    {
+      "ref": "J28b",
+      "title": "Hot flatbread.",
+      "traditions": "44.0",
+      "narratives": "69.0"
+    },
+    {
+      "ref": "K32d",
+      "title": "The replaced one grazes cattle.",
+      "traditions": "44.0",
+      "narratives": "62.0"
+    },
+    {
+      "ref": "K32M",
+      "title": "The heroine is transformed into an animal (not drowned).",
+      "traditions": "44.0",
+      "narratives": "73.0"
+    },
+    {
+      "ref": "K117a",
+      "title": "Making the silent speak.",
+      "traditions": "44.0",
+      "narratives": "45.0"
+    },
+    {
+      "ref": "M12",
+      "title": "The unlucky hunter.",
+      "traditions": "44.0",
+      "narratives": "48.0"
+    },
+    {
+      "ref": "E36",
+      "title": "Hard covering of the body.",
+      "traditions": "43.0",
+      "narratives": "57.0"
+    },
+    {
+      "ref": "K157a",
+      "title": "The tavern where they feed for free, ATU 425D, (ATU 304).",
+      "traditions": "43.0",
+      "narratives": "44.0"
+    },
+    {
+      "ref": "k27z2a2",
+      "title": "The unrecognised wife visits her husband, ATU 891.",
+      "traditions": "42.0",
+      "narratives": "39.0"
+    },
+    {
+      "ref": "K75a1",
+      "title": "The younger brother-in-law's place is in the barn.",
+      "traditions": "42.0",
+      "narratives": "44.0"
+    },
+    {
+      "ref": "L42g1",
+      "title": "A knock is heard, the father has left.",
+      "traditions": "42.0",
+      "narratives": "59.0"
+    },
+    {
+      "ref": "M198b2",
+      "title": "A fortune teller named Grasshopper.",
+      "traditions": "42.0",
+      "narratives": "47.0"
+    },
+    {
+      "ref": "F1",
+      "title": "Transformed man.",
+      "traditions": "41.0",
+      "narratives": "60.0"
+    },
+    {
+      "ref": "F36",
+      "title": "Children against the lover.",
+      "traditions": "41.0",
+      "narratives": "35.0"
+    },
+    {
+      "ref": "F97",
+      "title": "Forbidden fruit: people become sexually mature, C621.",
+      "traditions": "41.0",
+      "narratives": "39.0"
+    },
+    {
+      "ref": "K27z2b",
+      "title": "The Murdered Doll, ATU 879.",
+      "traditions": "41.0",
+      "narratives": "34.0"
+    },
+    {
+      "ref": "K32i",
+      "title": "Two nurses beside a sleeping man, ATU 894.",
+      "traditions": "41.0",
+      "narratives": "43.0"
+    },
+    {
+      "ref": "K61d",
+      "title": "From work became a beetle, ATU 501.",
+      "traditions": "41.0",
+      "narratives": "36.0"
+    },
+    {
+      "ref": "L100e",
+      "title": "The lover, the master and the guest, ATU 1358A, (ATU 1360B).",
+      "traditions": "41.0",
+      "narratives": "51.0"
+    },
+    {
+      "ref": "E9d",
+      "title": "The magical wife \u2013 the dog.",
+      "traditions": "40.0",
+      "narratives": "70.0"
+    },
+    {
+      "ref": "F20",
+      "title": "Lovers stuck together.",
+      "traditions": "40.0",
+      "narratives": "40.0"
+    },
+    {
+      "ref": "F40a",
+      "title": "The common husband of the first women.",
+      "traditions": "40.0",
+      "narratives": "54.0"
+    },
+    {
+      "ref": "K65e",
+      "title": "Midwife in the demonic world, ATU 476**, (ATU 156B*).",
+      "traditions": "40.0",
+      "narratives": "63.0"
+    },
+    {
+      "ref": "K66a",
+      "title": "The flying ship as a condition of marriage, ATU 513B.",
+      "traditions": "40.0",
+      "narratives": "39.0"
+    },
+    {
+      "ref": "K117d",
+      "title": "Two in bed with the princess, ATU 850.",
+      "traditions": "40.0",
+      "narratives": "22.0"
+    },
+    {
+      "ref": "F17",
+      "title": "Genitals out of place, A1313.3.",
+      "traditions": "39.0",
+      "narratives": "51.0"
+    },
+    {
+      "ref": "I36",
+      "title": "Thunder and lightning \u2013 relatives or in-laws.",
+      "traditions": "39.0",
+      "narratives": "52.0"
+    },
+    {
+      "ref": "K75a2",
+      "title": "Gardener.",
+      "traditions": "39.0",
+      "narratives": "52.0"
+    },
+    {
+      "ref": "M14",
+      "title": "Brutal murder of wife or son.",
+      "traditions": "39.0",
+      "narratives": "62.0"
+    },
+    {
+      "ref": "E9o",
+      "title": "The magical wife \u2013 a frog or a toad.",
+      "traditions": "38.0",
+      "narratives": "48.0"
+    },
+    {
+      "ref": "F9f",
+      "title": "Asmodeus.",
+      "traditions": "38.0",
+      "narratives": "44.0"
+    },
+    {
+      "ref": "F70e1",
+      "title": "Daughter in the role of son, AT 884B.",
+      "traditions": "38.0",
+      "narratives": "42.0"
+    },
+    {
+      "ref": "L27",
+      "title": "The eaten maiden.",
+      "traditions": "38.0",
+      "narratives": "59.0"
+    },
+    {
+      "ref": "K14d",
+      "title": "Imaginary crime, (ATU 910A).",
+      "traditions": "37.0",
+      "narratives": "34.0"
+    },
+    {
+      "ref": "K27r2",
+      "title": "Dancing apples.",
+      "traditions": "37.0",
+      "narratives": "61.0"
+    },
+    {
+      "ref": "K73a5",
+      "title": "The child is replaced by a kitten.",
+      "traditions": "37.0",
+      "narratives": "59.0"
+    },
+    {
+      "ref": "B45",
+      "title": "The Wedding of Winter and Summer, A1153.",
+      "traditions": "36.0",
+      "narratives": "48.0"
+    },
+    {
+      "ref": "F9f1",
+      "title": "Snake inside a woman.",
+      "traditions": "36.0",
+      "narratives": "59.0"
+    },
+    {
+      "ref": "K24a",
+      "title": "A supernatural man hides a woman's clothes.",
+      "traditions": "36.0",
+      "narratives": "39.0"
+    },
+    {
+      "ref": "K27z6",
+      "title": "The Stone of Patience, ATU 894.",
+      "traditions": "36.0",
+      "narratives": "38.0"
+    },
+    {
+      "ref": "K33b",
+      "title": "Friends abandon a beautiful woman.",
+      "traditions": "36.0",
+      "narratives": "56.0"
+    },
+    {
+      "ref": "F8",
+      "title": "Meeting of men and women.",
+      "traditions": "35.0",
+      "narratives": "69.0"
+    },
+    {
+      "ref": "F82",
+      "title": "Incest with mother-in-law, T417.",
+      "traditions": "35.0",
+      "narratives": "36.0"
+    },
+    {
+      "ref": "K33h1",
+      "title": "Replace the old ring with a new one.",
+      "traditions": "35.0",
+      "narratives": "30.0"
+    },
+    {
+      "ref": "K120a1",
+      "title": "Three dresses, (ATU 510B).",
+      "traditions": "35.0",
+      "narratives": "60.0"
+    },
+    {
+      "ref": "L5f",
+      "title": "The good skull.",
+      "traditions": "35.0",
+      "narratives": "40.0"
+    },
+    {
+      "ref": "M38b",
+      "title": "Silly wives imitate a sorceress, ATU 898",
+      "traditions": "35.0",
+      "narratives": "32.0"
+    },
+    {
+      "ref": "F65b",
+      "title": "The imaginary dead man: eats alone, K1867.",
+      "traditions": "34.0",
+      "narratives": "57.0"
+    },
+    {
+      "ref": "K33a8",
+      "title": "The heroine is transformed into a dove.",
+      "traditions": "34.0",
+      "narratives": "47.0"
+    },
+    {
+      "ref": "K51",
+      "title": "The deceived wife.",
+      "traditions": "34.0",
+      "narratives": "49.0"
+    },
+    {
+      "ref": "K160",
+      "title": "Getting Satan's Hair, ATU 461.",
+      "traditions": "34.0",
+      "narratives": "43.0"
+    },
+    {
+      "ref": "L8",
+      "title": "Left behind feet and heads.",
+      "traditions": "34.0",
+      "narratives": "48.0"
+    },
+    {
+      "ref": "M17",
+      "title": "A woman lies, pretending that a man has missed his target.",
+      "traditions": "34.0",
+      "narratives": "20.0"
+    },
+    {
+      "ref": "F50",
+      "title": "Children born multiple times.",
+      "traditions": "33.0",
+      "narratives": "51.0"
+    },
+    {
+      "ref": "F80a",
+      "title": "Removable genitals.",
+      "traditions": "33.0",
+      "narratives": "33.0"
+    },
+    {
+      "ref": "M75b1a",
+      "title": "Intended wife, ATU 930A",
+      "traditions": "33.0",
+      "narratives": "39.0"
+    },
+    {
+      "ref": "E9i3",
+      "title": "The magical wife \u2013 the goose.",
+      "traditions": "32.0",
+      "narratives": "24.0"
+    },
+    {
+      "ref": "F18b",
+      "title": "Long penis after forbidden sex.",
+      "traditions": "32.0",
+      "narratives": "39.0"
+    },
+    {
+      "ref": "F74",
+      "title": "The naked man pretends to be dead.",
+      "traditions": "32.0",
+      "narratives": "30.0"
+    },
+    {
+      "ref": "H32a",
+      "title": "Lost abundance: the wronged wife.",
+      "traditions": "32.0",
+      "narratives": "39.0"
+    },
+    {
+      "ref": "I87b",
+      "title": "The braggart meets the strongest, ATU 650B.",
+      "traditions": "32.0",
+      "narratives": "50.0"
+    },
+    {
+      "ref": "J12d",
+      "title": "Kills a rival.",
+      "traditions": "32.0",
+      "narratives": "27.0"
+    },
+    {
+      "ref": "K75c",
+      "title": "The Unwashed Woman, ATU 361.",
+      "traditions": "32.0",
+      "narratives": "16.0"
+    },
+    {
+      "ref": "E9c",
+      "title": "The magical wife \u2013 a hoofed animal.",
+      "traditions": "31.0",
+      "narratives": "49.0"
+    },
+    {
+      "ref": "F32",
+      "title": "The snake son gathers fruit.",
+      "traditions": "31.0",
+      "narratives": "46.0"
+    },
+    {
+      "ref": "K24b",
+      "title": "Dancing in magical clothes.",
+      "traditions": "31.0",
+      "narratives": "37.0"
+    },
+    {
+      "ref": "K25d",
+      "title": "The forbidden tuber in the heavens.",
+      "traditions": "31.0",
+      "narratives": "38.0"
+    },
+    {
+      "ref": "K35c1",
+      "title": "Better the one you love (ATU 677).",
+      "traditions": "31.0",
+      "narratives": "38.0"
+    },
+    {
+      "ref": "M43",
+      "title": "Bait figure",
+      "traditions": "31.0",
+      "narratives": "39.0"
+    },
+    {
+      "ref": "F9c",
+      "title": "Snake in the vagina.",
+      "traditions": "30.0",
+      "narratives": "34.0"
+    },
+    {
+      "ref": "G13c",
+      "title": "What to eat before the advent of agriculture.",
+      "traditions": "30.0",
+      "narratives": "54.0"
+    },
+    {
+      "ref": "B73b",
+      "title": "In search of a family member.",
+      "traditions": "29.0",
+      "narratives": "45.0"
+    },
+    {
+      "ref": "F56",
+      "title": "Temptation and incest.",
+      "traditions": "29.0",
+      "narratives": "37.0"
+    },
+    {
+      "ref": "M17b",
+      "title": "Wife deceives blind man.",
+      "traditions": "29.0",
+      "narratives": "36.0"
+    },
+    {
+      "ref": "F18c",
+      "title": "Girls across the river, K1391.",
+      "traditions": "28.0",
+      "narratives": "26.0"
+    },
+    {
+      "ref": "F25",
+      "title": "The reason for menstruation: someone else's blood.",
+      "traditions": "28.0",
+      "narratives": "38.0"
+    },
+    {
+      "ref": "F43",
+      "title": "Disappearance of women.",
+      "traditions": "28.0",
+      "narratives": "46.0"
+    },
+    {
+      "ref": "F83",
+      "title": "News precedes the hero.",
+      "traditions": "28.0",
+      "narratives": "34.0"
+    },
+    {
+      "ref": "F87",
+      "title": "Children transformed by a snake woman, ATU 425M.",
+      "traditions": "28.0",
+      "narratives": "50.0"
+    },
+    {
+      "ref": "K12b",
+      "title": "The sorceress's husband breaks the ban, ATU 400(1).",
+      "traditions": "28.0",
+      "narratives": "33.0"
+    },
+    {
+      "ref": "K27zz",
+      "title": "The Cannibal and the Blinded Wives, ATU 462.",
+      "traditions": "28.0",
+      "narratives": "34.0"
+    },
+    {
+      "ref": "F45b",
+      "title": "Conception by the sun.",
+      "traditions": "27.0",
+      "narratives": "30.0"
+    },
+    {
+      "ref": "F49C",
+      "title": "The first humans do not know how to give birth.",
+      "traditions": "27.0",
+      "narratives": "7.0"
+    },
+    {
+      "ref": "K27x6",
+      "title": "The stars and the wind guide the hero.",
+      "traditions": "27.0",
+      "narratives": "55.0"
+    },
+    {
+      "ref": "K32g1",
+      "title": "Forty horses or forty knives?",
+      "traditions": "27.0",
+      "narratives": "38.0"
+    },
+    {
+      "ref": "K75a3",
+      "title": "Groom.",
+      "traditions": "27.0",
+      "narratives": "33.0"
+    },
+    {
+      "ref": "M39a5b",
+      "title": "Fish in the furrow, ATU 1381A",
+      "traditions": "27.0",
+      "narratives": "21.0"
+    },
+    {
+      "ref": "F5b",
+      "title": "Artificial bride.",
+      "traditions": "26.0",
+      "narratives": "40.0"
+    },
+    {
+      "ref": "F53",
+      "title": "The ugly husband.",
+      "traditions": "26.0",
+      "narratives": "32.0"
+    },
+    {
+      "ref": "F76",
+      "title": "Animals teach love.",
+      "traditions": "26.0",
+      "narratives": "36.0"
+    },
+    {
+      "ref": "F83b",
+      "title": "Rape of a woman in distress, ATU 36.",
+      "traditions": "26.0",
+      "narratives": "31.0"
+    },
+    {
+      "ref": "J19",
+      "title": "The sinister guest: the death of a woman.",
+      "traditions": "26.0",
+      "narratives": "36.0"
+    },
+    {
+      "ref": "K12a",
+      "title": "The stretched bow.",
+      "traditions": "26.0",
+      "narratives": "27.0"
+    },
+    {
+      "ref": "K25a4",
+      "title": "Escape from the siren, ATU 316.",
+      "traditions": "26.0",
+      "narratives": "30.0"
+    },
+    {
+      "ref": "K27z5",
+      "title": "Agreement to marry children, (926C*).",
+      "traditions": "26.0",
+      "narratives": "31.0"
+    },
+    {
+      "ref": "K73a1",
+      "title": "The child is replaced by an inanimate object.",
+      "traditions": "26.0",
+      "narratives": "39.0"
+    },
+    {
+      "ref": "K75b",
+      "title": "Three melons from three daughters.",
+      "traditions": "26.0",
+      "narratives": "31.0"
+    },
+    {
+      "ref": "K107d1",
+      "title": "The magical wife cannot wake the young man.",
+      "traditions": "26.0",
+      "narratives": "36.0"
+    },
+    {
+      "ref": "M38a1",
+      "title": "Imitates relatives or wives, ATU 552B, J2411.3.",
+      "traditions": "26.0",
+      "narratives": "36.0"
+    },
+    {
+      "ref": "M39a6c",
+      "title": "The Tsar Craftsman",
+      "traditions": "26.0",
+      "narratives": "29.0"
+    },
+    {
+      "ref": "E30",
+      "title": "Wooden substitute spouse.",
+      "traditions": "25.0",
+      "narratives": "36.0"
+    },
+    {
+      "ref": "F3",
+      "title": "The husband gives birth after eating what was intended for h",
+      "traditions": "25.0",
+      "narratives": "22.0"
+    },
+    {
+      "ref": "F61",
+      "title": "A woman carries a trickster.",
+      "traditions": "25.0",
+      "narratives": "28.0"
+    },
+    {
+      "ref": "F80",
+      "title": "First humans without genitals.",
+      "traditions": "25.0",
+      "narratives": "24.0"
+    },
+    {
+      "ref": "K76a",
+      "title": "The frog son and the frog husband.",
+      "traditions": "25.0",
+      "narratives": "34.0"
+    },
+    {
+      "ref": "L37a1",
+      "title": "Let the wolf eat the fool, ATU 461A.",
+      "traditions": "25.0",
+      "narratives": "23.0"
+    },
+    {
+      "ref": "A32dd",
+      "title": "Man with brushwood on the moon.",
+      "traditions": "24.0",
+      "narratives": "76.0"
+    },
+    {
+      "ref": "F29",
+      "title": "A girl sits on the ground.",
+      "traditions": "24.0",
+      "narratives": "39.0"
+    },
+    {
+      "ref": "F90",
+      "title": "Tragic incest.",
+      "traditions": "24.0",
+      "narratives": "33.0"
+    },
+    {
+      "ref": "H7d",
+      "title": "Death and a bundle of firewood, ATU 845.",
+      "traditions": "24.0",
+      "narratives": "21.0"
+    },
+    {
+      "ref": "K27x3a",
+      "title": "Recognise by the scarf.",
+      "traditions": "24.0",
+      "narratives": "27.0"
+    },
+    {
+      "ref": "K33a7",
+      "title": "The widower, his daughter (son) and the teacher.",
+      "traditions": "24.0",
+      "narratives": "30.0"
+    },
+    {
+      "ref": "K92C",
+      "title": "The wife weaves, the husband sells.",
+      "traditions": "24.0",
+      "narratives": "24.0"
+    },
+    {
+      "ref": "K154a",
+      "title": "Men in the harem.",
+      "traditions": "24.0",
+      "narratives": "32.0"
+    },
+    {
+      "ref": "L1b",
+      "title": "The Bear and Her Sister.",
+      "traditions": "24.0",
+      "narratives": "27.0"
+    },
+    {
+      "ref": "M39a6a",
+      "title": "Clever daughter-in-law and captive khan",
+      "traditions": "24.0",
+      "narratives": "38.0"
+    },
+    {
+      "ref": "M39a6f",
+      "title": "Sell and return the sheep",
+      "traditions": "24.0",
+      "narratives": "24.0"
+    },
+    {
+      "ref": "M123",
+      "title": "The raven marries the goose.",
+      "traditions": "24.0",
+      "narratives": "33.0"
+    },
+    {
+      "ref": "B97a",
+      "title": "Bird or animal necklace.",
+      "traditions": "23.0",
+      "narratives": "27.0"
+    },
+    {
+      "ref": "F4",
+      "title": "Child in a vessel, T561.",
+      "traditions": "23.0",
+      "narratives": "34.0"
+    },
+    {
+      "ref": "F5",
+      "title": "Brides for the first humans.",
+      "traditions": "23.0",
+      "narratives": "21.0"
+    },
+    {
+      "ref": "F5a",
+      "title": "Woman from a tail, ATU 798.",
+      "traditions": "23.0",
+      "narratives": "24.0"
+    },
+    {
+      "ref": "F6",
+      "title": "Hollowed-out vagina.",
+      "traditions": "23.0",
+      "narratives": "32.0"
+    },
+    {
+      "ref": "F23",
+      "title": "Cause of menstruation: sexual intercourse.",
+      "traditions": "23.0",
+      "narratives": "27.0"
+    },
+    {
+      "ref": "F46",
+      "title": "One for all.",
+      "traditions": "23.0",
+      "narratives": "30.0"
+    },
+    {
+      "ref": "F51b",
+      "title": "Finds by the thread.",
+      "traditions": "23.0",
+      "narratives": "32.0"
+    },
+    {
+      "ref": "F60",
+      "title": "The trickster heals the girl.",
+      "traditions": "23.0",
+      "narratives": "26.0"
+    },
+    {
+      "ref": "F73b",
+      "title": "The bear believes that the vulva is a wound (ATU 153).",
+      "traditions": "23.0",
+      "narratives": "15.0"
+    },
+    {
+      "ref": "K25a6",
+      "title": "The magical wife does not forgive infidelity.",
+      "traditions": "23.0",
+      "narratives": "26.0"
+    },
+    {
+      "ref": "K32h",
+      "title": "Buried alive.",
+      "traditions": "23.0",
+      "narratives": "33.0"
+    },
+    {
+      "ref": "K50",
+      "title": "An imaginary wife cuts off the head of an enemy.",
+      "traditions": "23.0",
+      "narratives": "25.0"
+    },
+    {
+      "ref": "K70",
+      "title": "Two daughters-in-law: a girl and a frog.",
+      "traditions": "23.0",
+      "narratives": "25.0"
+    },
+    {
+      "ref": "K120a2",
+      "title": "Not by her mother, but by her mother-in-law.",
+      "traditions": "23.0",
+      "narratives": "22.0"
+    },
+    {
+      "ref": "K128a",
+      "title": "The best apples for the princess, ATU 610.",
+      "traditions": "23.0",
+      "narratives": "21.0"
+    },
+    {
+      "ref": "A40",
+      "title": "The Sun or Moon is married to a Toad/Frog.",
+      "traditions": "22.0",
+      "narratives": "26.0"
+    },
+    {
+      "ref": "F47",
+      "title": "People made of pieces of flesh.",
+      "traditions": "22.0",
+      "narratives": "54.0"
+    },
+    {
+      "ref": "F53a",
+      "title": "The Bat or Owl hides its face.",
+      "traditions": "22.0",
+      "narratives": "23.0"
+    },
+    {
+      "ref": "F55",
+      "title": "What do you want?",
+      "traditions": "22.0",
+      "narratives": "25.0"
+    },
+    {
+      "ref": "F59",
+      "title": "Man in woman: modelling the figure.",
+      "traditions": "22.0",
+      "narratives": "26.0"
+    },
+    {
+      "ref": "F65c",
+      "title": "The imaginary dead man: the boy reveals the deception.",
+      "traditions": "22.0",
+      "narratives": "12.0"
+    },
+    {
+      "ref": "G13",
+      "title": "People ate rotten wood.",
+      "traditions": "22.0",
+      "narratives": "29.0"
+    },
+    {
+      "ref": "I18",
+      "title": "Wife or husband without a mouth or anus.",
+      "traditions": "22.0",
+      "narratives": "15.0"
+    },
+    {
+      "ref": "K27z4b",
+      "title": "Dressed as a man, the wife rescues her husband.",
+      "traditions": "22.0",
+      "narratives": "20.0"
+    },
+    {
+      "ref": "K32j",
+      "title": "The brother of the changeling is accused of deception (ATU 4",
+      "traditions": "22.0",
+      "narratives": "38.0"
+    },
+    {
+      "ref": "K119d",
+      "title": "Puss in Boots.",
+      "traditions": "22.0",
+      "narratives": "24.0"
+    },
+    {
+      "ref": "M182b",
+      "title": "Animals in a sleigh, ATU 158.",
+      "traditions": "22.0",
+      "narratives": "30.0"
+    },
+    {
+      "ref": "F11",
+      "title": "Biting penis.",
+      "traditions": "21.0",
+      "narratives": "22.0"
+    },
+    {
+      "ref": "F83a",
+      "title": "Insult conveyed through children, ATU 36.",
+      "traditions": "21.0",
+      "narratives": "23.0"
+    },
+    {
+      "ref": "F88",
+      "title": "The scent of women.",
+      "traditions": "21.0",
+      "narratives": "24.0"
+    },
+    {
+      "ref": "G8a",
+      "title": "Cutting down a tree to make a boat.",
+      "traditions": "21.0",
+      "narratives": "32.0"
+    },
+    {
+      "ref": "J8",
+      "title": "Feathers at the crossroads.",
+      "traditions": "21.0",
+      "narratives": "14.0"
+    },
+    {
+      "ref": "K60c",
+      "title": "Stropiva with the king, patient with the groom.",
+      "traditions": "21.0",
+      "narratives": "25.0"
+    },
+    {
+      "ref": "L78",
+      "title": "Toad-jaguar.",
+      "traditions": "21.0",
+      "narratives": "22.0"
+    },
+    {
+      "ref": "B62",
+      "title": "Man and vulture.",
+      "traditions": "20.0",
+      "narratives": "30.0"
+    },
+    {
+      "ref": "E9g",
+      "title": "The magical wife - the vulture.",
+      "traditions": "20.0",
+      "narratives": "34.0"
+    },
+    {
+      "ref": "E9i2",
+      "title": "The magical wife \u2013 the duck.",
+      "traditions": "20.0",
+      "narratives": "26.0"
+    },
+    {
+      "ref": "E9j",
+      "title": "The magical wife \u2013 monkey.",
+      "traditions": "20.0",
+      "narratives": "24.0"
+    },
+    {
+      "ref": "F42",
+      "title": "Men leave.",
+      "traditions": "20.0",
+      "narratives": "32.0"
+    },
+    {
+      "ref": "K24c",
+      "title": "An old man helps to obtain a bird wife, ATU 413.",
+      "traditions": "20.0",
+      "narratives": "19.0"
+    },
+    {
+      "ref": "K66b",
+      "title": "Princesses given to companions.",
+      "traditions": "20.0",
+      "narratives": "28.0"
+    },
+    {
+      "ref": "K102a",
+      "title": "Father knew what he was doing.",
+      "traditions": "20.0",
+      "narratives": "24.0"
+    },
+    {
+      "ref": "K116a",
+      "title": "Nesmeyana (the disguised tsar perishes).",
+      "traditions": "20.0",
+      "narratives": "24.0"
+    },
+    {
+      "ref": "K132a",
+      "title": "The husband's rooster and the wife's hen, ATU 219E*, 715A.",
+      "traditions": "20.0",
+      "narratives": "15.0"
+    },
+    {
+      "ref": "K164",
+      "title": "A wife is not a best friend, ATU 921B.",
+      "traditions": "20.0",
+      "narratives": "17.0"
+    },
+    {
+      "ref": "L99",
+      "title": "Bring the skewer!",
+      "traditions": "20.0",
+      "narratives": "19.0"
+    },
+    {
+      "ref": "M38b1",
+      "title": "The young woman is waiting for her husband to guess",
+      "traditions": "20.0",
+      "narratives": "15.0"
+    },
+    {
+      "ref": "M120b",
+      "title": "A nurse with a pleasant voice.",
+      "traditions": "20.0",
+      "narratives": "31.0"
+    },
+    {
+      "ref": "E30a",
+      "title": "The ersatz spouse is replaced by the real one.",
+      "traditions": "19.0",
+      "narratives": "27.0"
+    },
+    {
+      "ref": "F9d",
+      "title": "Scorpions in the genitals.",
+      "traditions": "19.0",
+      "narratives": "21.0"
+    },
+    {
+      "ref": "F43a",
+      "title": "Women kill men.",
+      "traditions": "19.0",
+      "narratives": "28.0"
+    },
+    {
+      "ref": "F45a",
+      "title": "Intentional conception by the wind.",
+      "traditions": "19.0",
+      "narratives": "41.0"
+    },
+    {
+      "ref": "F81",
+      "title": "The bride in the river.",
+      "traditions": "19.0",
+      "narratives": "23.0"
+    },
+    {
+      "ref": "G11",
+      "title": "The squirrel-woodcutter.",
+      "traditions": "19.0",
+      "narratives": "1.0"
+    },
+    {
+      "ref": "K21a",
+      "title": "Woman returns from heaven.",
+      "traditions": "19.0",
+      "narratives": "27.0"
+    },
+    {
+      "ref": "K27x",
+      "title": "The former husband of a magical wife.",
+      "traditions": "19.0",
+      "narratives": "9.0"
+    },
+    {
+      "ref": "K31",
+      "title": "Wooden seal.",
+      "traditions": "19.0",
+      "narratives": "25.0"
+    },
+    {
+      "ref": "K81a",
+      "title": "Bezrucha in the prince's garden.",
+      "traditions": "19.0",
+      "narratives": "22.0"
+    },
+    {
+      "ref": "K145",
+      "title": "Predicted death by a wolf, ATU 934B*.",
+      "traditions": "19.0",
+      "narratives": "16.0"
+    },
+    {
+      "ref": "K158",
+      "title": "Recognising the woman in the portrait, (ATU 881A).",
+      "traditions": "19.0",
+      "narratives": "20.0"
+    },
+    {
+      "ref": "N38",
+      "title": "Which key is better",
+      "traditions": "19.0",
+      "narratives": "28.0"
+    },
+    {
+      "ref": "C35",
+      "title": "The cosmic marriage will not take place.",
+      "traditions": "18.0",
+      "narratives": "32.0"
+    },
+    {
+      "ref": "E9f",
+      "title": "The magical wife \u2013 the parrot.",
+      "traditions": "18.0",
+      "narratives": "50.0"
+    },
+    {
+      "ref": "F14A",
+      "title": "Birth from stone.",
+      "traditions": "18.0",
+      "narratives": "40.0"
+    },
+    {
+      "ref": "F28",
+      "title": "Monstrous penis.",
+      "traditions": "18.0",
+      "narratives": "25.0"
+    },
+    {
+      "ref": "F30a",
+      "title": "Child-worm.",
+      "traditions": "18.0",
+      "narratives": "27.0"
+    },
+    {
+      "ref": "F34a",
+      "title": "The common husband of the first women.",
+      "traditions": "18.0",
+      "narratives": "33.0"
+    },
+    {
+      "ref": "F92",
+      "title": "A pair of pederasts.",
+      "traditions": "18.0",
+      "narratives": "23.0"
+    },
+    {
+      "ref": "I86",
+      "title": "Down in birds, scales in fish.",
+      "traditions": "18.0",
+      "narratives": "16.0"
+    },
+    {
+      "ref": "J12j",
+      "title": "The false suitor turns out to be a jester.",
+      "traditions": "18.0",
+      "narratives": "1.0"
+    },
+    {
+      "ref": "J15a",
+      "title": "Woman among the Jaguars.",
+      "traditions": "18.0",
+      "narratives": "16.0"
+    },
+    {
+      "ref": "K19c",
+      "title": "Mistress in a handbag.",
+      "traditions": "18.0",
+      "narratives": "35.0"
+    },
+    {
+      "ref": "K27g5",
+      "title": "Wooden axe.",
+      "traditions": "18.0",
+      "narratives": "29.0"
+    },
+    {
+      "ref": "K33a4",
+      "title": "Heroine transformed into a forest animal (ATU 409).",
+      "traditions": "18.0",
+      "narratives": "25.0"
+    },
+    {
+      "ref": "k56a8d",
+      "title": "Eaten by a boa constrictor.",
+      "traditions": "18.0",
+      "narratives": "27.0"
+    },
+    {
+      "ref": "K102a1",
+      "title": "Imaginary grave.",
+      "traditions": "18.0",
+      "narratives": "19.0"
+    },
+    {
+      "ref": "K179",
+      "title": "As much gold as the bride weighs.",
+      "traditions": "18.0",
+      "narratives": "25.0"
+    },
+    {
+      "ref": "L102",
+      "title": "Escape from an animal husband.",
+      "traditions": "18.0",
+      "narratives": "22.0"
+    },
+    {
+      "ref": "L121",
+      "title": "The hunter and his werewolf wife.",
+      "traditions": "18.0",
+      "narratives": "37.0"
+    },
+    {
+      "ref": "M198a4",
+      "title": "Who is nobler? ATU 976.",
+      "traditions": "18.0",
+      "narratives": "22.0"
+    },
+    {
+      "ref": "F3a",
+      "title": "Pregnant man.",
+      "traditions": "17.0",
+      "narratives": "17.0"
+    },
+    {
+      "ref": "F9a1",
+      "title": "The pike's mouth, ATU 1686A*.",
+      "traditions": "17.0",
+      "narratives": "19.0"
+    },
+    {
+      "ref": "F9b",
+      "title": "Piranha in the vagina.",
+      "traditions": "17.0",
+      "narratives": "27.0"
+    },
+    {
+      "ref": "F28d",
+      "title": "Children are born from a wooden penis.",
+      "traditions": "17.0",
+      "narratives": "18.0"
+    },
+    {
+      "ref": "F70e2",
+      "title": "Father tests his daughters or sons.",
+      "traditions": "17.0",
+      "narratives": "20.0"
+    },
+    {
+      "ref": "F86a",
+      "title": "The pet is eaten.",
+      "traditions": "17.0",
+      "narratives": "18.0"
+    },
+    {
+      "ref": "F96",
+      "title": "Becoming handsome.",
+      "traditions": "17.0",
+      "narratives": "27.0"
+    },
+    {
+      "ref": "K9",
+      "title": "The wife of a deity is thrown down from heaven.",
+      "traditions": "17.0",
+      "narratives": "25.0"
+    },
+    {
+      "ref": "K32b1",
+      "title": "Mother replaces daughter.",
+      "traditions": "17.0",
+      "narratives": "11.0"
+    },
+    {
+      "ref": "k32g2",
+      "title": "The daughter's meat is sent to her mother.",
+      "traditions": "17.0",
+      "narratives": "18.0"
+    },
+    {
+      "ref": "K178",
+      "title": "The enchanted husband drives away and finds his wife again, ",
+      "traditions": "17.0",
+      "narratives": "14.0"
+    },
+    {
+      "ref": "L125b",
+      "title": "Eats carrion.",
+      "traditions": "17.0",
+      "narratives": "16.0"
+    },
+    {
+      "ref": "M39a5a3",
+      "title": "The master's devils were beaten",
+      "traditions": "17.0",
+      "narratives": "18.0"
+    },
+    {
+      "ref": "M71",
+      "title": "Selected piece of wood",
+      "traditions": "17.0",
+      "narratives": "23.0"
+    },
+    {
+      "ref": "M75b2",
+      "title": "Predetermined marriage: a bird tries to prevent",
+      "traditions": "17.0",
+      "narratives": "16.0"
+    },
+    {
+      "ref": "M114c",
+      "title": "Shielding from the rain with one's body.",
+      "traditions": "17.0",
+      "narratives": "27.0"
+    },
+    {
+      "ref": "C8a",
+      "title": "Millstones fall on each other.",
+      "traditions": "16.0",
+      "narratives": "44.0"
+    },
+    {
+      "ref": "E9m",
+      "title": "The magical wife \u2013 the bear.",
+      "traditions": "16.0",
+      "narratives": "29.0"
+    },
+    {
+      "ref": "F10",
+      "title": "Teeth knocked out.",
+      "traditions": "16.0",
+      "narratives": "10.0"
+    },
+    {
+      "ref": "F40c",
+      "title": "The patriarch kills the boys.",
+      "traditions": "16.0",
+      "narratives": "23.0"
+    },
+    {
+      "ref": "F54a",
+      "title": "The invisible scar (the husband turns out to be the son).",
+      "traditions": "16.0",
+      "narratives": "18.0"
+    },
+    {
+      "ref": "F70c",
+      "title": "The castrated becomes a man (ATU 318).",
+      "traditions": "16.0",
+      "narratives": "15.0"
+    },
+    {
+      "ref": "J63",
+      "title": "The son saves, the daughter betrays.",
+      "traditions": "16.0",
+      "narratives": "19.0"
+    },
+    {
+      "ref": "K27xy",
+      "title": "Characters with different properties in the enemy camp.",
+      "traditions": "16.0",
+      "narratives": "21.0"
+    },
+    {
+      "ref": "K137",
+      "title": "Sister brings women to revive her brother.",
+      "traditions": "16.0",
+      "narratives": "15.0"
+    },
+    {
+      "ref": "K162",
+      "title": "The villain enters the bedroom (ATU 956B).",
+      "traditions": "16.0",
+      "narratives": "20.0"
+    },
+    {
+      "ref": "L79",
+      "title": "Two wives: a girl and a monster.",
+      "traditions": "16.0",
+      "narratives": "22.0"
+    },
+    {
+      "ref": "L110c",
+      "title": "Clay child.",
+      "traditions": "16.0",
+      "narratives": "21.0"
+    },
+    {
+      "ref": "L115",
+      "title": "The Perfect Gentleman.",
+      "traditions": "16.0",
+      "narratives": "25.0"
+    },
+    {
+      "ref": "M38b2",
+      "title": "Three daughters-in-law at the king's feast",
+      "traditions": "16.0",
+      "narratives": "23.0"
+    },
+    {
+      "ref": "C8b",
+      "title": "Brother and sister did not recognise each other.",
+      "traditions": "15.0",
+      "narratives": "41.0"
+    },
+    {
+      "ref": "E9n",
+      "title": "The magical wife \u2013 an aquatic mammal.",
+      "traditions": "15.0",
+      "narratives": "18.0"
+    },
+    {
+      "ref": "F31",
+      "title": "Snake egg.",
+      "traditions": "15.0",
+      "narratives": "19.0"
+    },
+    {
+      "ref": "J12G",
+      "title": "Waterfowl or marsh bird.",
+      "traditions": "15.0",
+      "narratives": "9.0"
+    },
+    {
+      "ref": "K25a2",
+      "title": "Discarded feathers.",
+      "traditions": "15.0",
+      "narratives": "21.0"
+    },
+    {
+      "ref": "K25a7",
+      "title": "Two brothers and a winged maiden.",
+      "traditions": "15.0",
+      "narratives": "23.0"
+    },
+    {
+      "ref": "K32h1",
+      "title": "Placed in a barrel with nails.",
+      "traditions": "15.0",
+      "narratives": "21.0"
+    },
+    {
+      "ref": "K42",
+      "title": "Bird woman kills men.",
+      "traditions": "15.0",
+      "narratives": "32.0"
+    },
+    {
+      "ref": "k136a1",
+      "title": "The young man's hair carried away by the water.",
+      "traditions": "15.0",
+      "narratives": "17.0"
+    },
+    {
+      "ref": "L23c",
+      "title": "Breaking an object in half.",
+      "traditions": "15.0",
+      "narratives": "26.0"
+    },
+    {
+      "ref": "M193",
+      "title": "Rolling home.",
+      "traditions": "15.0",
+      "narratives": "20.0"
+    },
+    {
+      "ref": "M196a",
+      "title": "Talking dead people.",
+      "traditions": "15.0",
+      "narratives": "19.0"
+    },
+    {
+      "ref": "E9l",
+      "title": "The magical wife \u2013 mouse.",
+      "traditions": "14.0",
+      "narratives": "13.0"
+    },
+    {
+      "ref": "E31",
+      "title": "Imaginary Pygmalion.",
+      "traditions": "14.0",
+      "narratives": "19.0"
+    },
+    {
+      "ref": "E31a2",
+      "title": "One is her father, another is her brother, and this one is h",
+      "traditions": "14.0",
+      "narratives": "14.0"
+    },
+    {
+      "ref": "F15",
+      "title": "Character sticks his penis out of the ground, K1315.2.1.",
+      "traditions": "14.0",
+      "narratives": "16.0"
+    },
+    {
+      "ref": "F18d",
+      "title": "Long clitoris.",
+      "traditions": "14.0",
+      "narratives": "15.0"
+    },
+    {
+      "ref": "F28a3",
+      "title": "Pleasant for girls, dangerous for others.",
+      "traditions": "14.0",
+      "narratives": "14.0"
+    },
+    {
+      "ref": "F28b",
+      "title": "Penis made of wax.",
+      "traditions": "14.0",
+      "narratives": "18.0"
+    },
+    {
+      "ref": "F28c",
+      "title": "Bear penis in the hands of an old woman.",
+      "traditions": "14.0",
+      "narratives": "18.0"
+    },
+    {
+      "ref": "F37",
+      "title": "Calabash on the water.",
+      "traditions": "14.0",
+      "narratives": "22.0"
+    },
+    {
+      "ref": "F41",
+      "title": "Husbands kill wives.",
+      "traditions": "14.0",
+      "narratives": "24.0"
+    },
+    {
+      "ref": "F64b",
+      "title": "Incestuous woman.",
+      "traditions": "14.0",
+      "narratives": "20.0"
+    },
+    {
+      "ref": "F70d",
+      "title": "The disgraced informer.",
+      "traditions": "14.0",
+      "narratives": "14.0"
+    },
+    {
+      "ref": "F79",
+      "title": "Animal wives, B600.1.",
+      "traditions": "14.0",
+      "narratives": "20.0"
+    },
+    {
+      "ref": "H34h",
+      "title": "Firewood came home.",
+      "traditions": "14.0",
+      "narratives": "15.0"
+    },
+    {
+      "ref": "J20",
+      "title": "The sinister guest: the broken taboo.",
+      "traditions": "14.0",
+      "narratives": "1.0"
+    },
+    {
+      "ref": "K27p2",
+      "title": "The enemy father-in-law takes the form of a bear.",
+      "traditions": "14.0",
+      "narratives": "15.0"
+    },
+    {
+      "ref": "K47d",
+      "title": "The dog fulfils the condition of marriage.",
+      "traditions": "14.0",
+      "narratives": "7.0"
+    },
+    {
+      "ref": "K58",
+      "title": "Canal builder.",
+      "traditions": "14.0",
+      "narratives": "36.0"
+    },
+    {
+      "ref": "K65e1",
+      "title": "Midwife to a toad.",
+      "traditions": "14.0",
+      "narratives": "15.0"
+    },
+    {
+      "ref": "K89b",
+      "title": "The brother left on the tree.",
+      "traditions": "14.0",
+      "narratives": "24.0"
+    },
+    {
+      "ref": "L1f",
+      "title": "Sister avenges her lover.",
+      "traditions": "14.0",
+      "narratives": "14.0"
+    },
+    {
+      "ref": "L117",
+      "title": "Imposed companions.",
+      "traditions": "14.0",
+      "narratives": "16.0"
+    },
+    {
+      "ref": "B78",
+      "title": "Shaking off, produces a blizzard.",
+      "traditions": "13.0",
+      "narratives": "12.0"
+    },
+    {
+      "ref": "E9a",
+      "title": "The magical wife - the fox.",
+      "traditions": "13.0",
+      "narratives": "17.0"
+    },
+    {
+      "ref": "F14",
+      "title": "Son of a man and a stone.",
+      "traditions": "13.0",
+      "narratives": "33.0"
+    },
+    {
+      "ref": "F28a",
+      "title": "A monstrous penis grows out of the ground.",
+      "traditions": "13.0",
+      "narratives": "21.0"
+    },
+    {
+      "ref": "F52",
+      "title": "Bird's crest made of pubic hair.",
+      "traditions": "13.0",
+      "narratives": "17.0"
+    },
+    {
+      "ref": "F66",
+      "title": "False house.",
+      "traditions": "13.0",
+      "narratives": "13.0"
+    },
+    {
+      "ref": "G8f",
+      "title": "Burnt wood chips.",
+      "traditions": "13.0",
+      "narratives": "15.0"
+    },
+    {
+      "ref": "K19g",
+      "title": "Stars differ in brightness and colour.",
+      "traditions": "13.0",
+      "narratives": "1.0"
+    },
+    {
+      "ref": "K32e",
+      "title": "Gold, silver, wood.",
+      "traditions": "13.0",
+      "narratives": "14.0"
+    },
+    {
+      "ref": "K44b",
+      "title": "Upon returning, throws food.",
+      "traditions": "13.0",
+      "narratives": "20.0"
+    },
+    {
+      "ref": "M39a5a1",
+      "title": "Chicken Army",
+      "traditions": "13.0",
+      "narratives": "15.0"
+    },
+    {
+      "ref": "M78b",
+      "title": "Too many kids",
+      "traditions": "13.0",
+      "narratives": "15.0"
+    },
+    {
+      "ref": "M197e1",
+      "title": "The demon claims the harvest.",
+      "traditions": "13.0",
+      "narratives": "16.0"
+    },
+    {
+      "ref": "E30b",
+      "title": "Pygmalion.",
+      "traditions": "12.0",
+      "narratives": "8.0"
+    },
+    {
+      "ref": "F29a",
+      "title": "The worm is scalded with boiling water.",
+      "traditions": "12.0",
+      "narratives": "17.0"
+    },
+    {
+      "ref": "F49a",
+      "title": "An animal teaches how to give birth.",
+      "traditions": "12.0",
+      "narratives": "8.0"
+    },
+    {
+      "ref": "F87a",
+      "title": "The snake wife and her children: transformation into birds.",
+      "traditions": "12.0",
+      "narratives": "26.0"
+    },
+    {
+      "ref": "F87b",
+      "title": "The snake wife and her children: transformation into trees.",
+      "traditions": "12.0",
+      "narratives": "14.0"
+    },
+    {
+      "ref": "J2",
+      "title": "Tree husband.",
+      "traditions": "12.0",
+      "narratives": "17.0"
+    },
+    {
+      "ref": "J12I",
+      "title": "Spitting beads.",
+      "traditions": "12.0",
+      "narratives": "2.0"
+    },
+    {
+      "ref": "K25a5",
+      "title": "Two brothers and bird maidens.",
+      "traditions": "12.0",
+      "narratives": "18.0"
+    },
+    {
+      "ref": "K27z2d",
+      "title": "The sparrow's quarrel with her husband.",
+      "traditions": "12.0",
+      "narratives": "12.0"
+    },
+    {
+      "ref": "K32l",
+      "title": "Horses are given for fattening.",
+      "traditions": "12.0",
+      "narratives": "14.0"
+    },
+    {
+      "ref": "K33a3",
+      "title": "The heroine is turned into a turtle.",
+      "traditions": "12.0",
+      "narratives": "15.0"
+    },
+    {
+      "ref": "K55",
+      "title": "Rewarded chastity.",
+      "traditions": "12.0",
+      "narratives": "15.0"
+    },
+    {
+      "ref": "K56ab",
+      "title": "The girl takes off her shirts, the snake takes off its skin ",
+      "traditions": "12.0",
+      "narratives": "12.0"
+    },
+    {
+      "ref": "K73b6",
+      "title": "The hero flies to his mother's enemies to eavesdrop on their",
+      "traditions": "12.0",
+      "narratives": "21.0"
+    },
+    {
+      "ref": "K119c",
+      "title": "Tsar-Thunder and Tsarina-Lightning.",
+      "traditions": "12.0",
+      "narratives": "16.0"
+    },
+    {
+      "ref": "L36",
+      "title": "A woman attacks when a man is in a tree.",
+      "traditions": "12.0",
+      "narratives": "13.0"
+    },
+    {
+      "ref": "M36",
+      "title": "Disassembled into pieces fits into the hole",
+      "traditions": "12.0",
+      "narratives": "16.0"
+    },
+    {
+      "ref": "A2c1",
+      "title": "The Sun refuses to marry.",
+      "traditions": "11.0",
+      "narratives": "19.0"
+    },
+    {
+      "ref": "A31a",
+      "title": "Severed breast.",
+      "traditions": "11.0",
+      "narratives": "15.0"
+    },
+    {
+      "ref": "B112",
+      "title": "The one who returned the stolen goods decorated.",
+      "traditions": "11.0",
+      "narratives": "5.0"
+    },
+    {
+      "ref": "F19",
+      "title": "Dangerous relationship with a frog.",
+      "traditions": "11.0",
+      "narratives": "16.0"
+    },
+    {
+      "ref": "F67",
+      "title": "An old woman pretends to be a man.",
+      "traditions": "11.0",
+      "narratives": "12.0"
+    },
+    {
+      "ref": "F70f",
+      "title": "Accidental change of gender.",
+      "traditions": "11.0",
+      "narratives": "16.0"
+    },
+    {
+      "ref": "F98",
+      "title": "God and the cow.",
+      "traditions": "11.0",
+      "narratives": "24.0"
+    },
+    {
+      "ref": "I38a",
+      "title": "Dogs \u2013 husbands of women.",
+      "traditions": "11.0",
+      "narratives": "17.0"
+    },
+    {
+      "ref": "I114",
+      "title": "The Golden Fleece.",
+      "traditions": "11.0",
+      "narratives": "17.0"
+    },
+    {
+      "ref": "K27n3c1",
+      "title": "The hero's adversaries \u2013 polar bears.",
+      "traditions": "11.0",
+      "narratives": "16.0"
+    },
+    {
+      "ref": "K27z4a",
+      "title": "The cripple demands the return of his leg, ATU 978.",
+      "traditions": "11.0",
+      "narratives": "9.0"
+    },
+    {
+      "ref": "K27zz4",
+      "title": "The wife who cannot be beaten (ATU 888A).",
+      "traditions": "11.0",
+      "narratives": "9.0"
+    },
+    {
+      "ref": "K65c3",
+      "title": "Eve is ashamed of her large family.",
+      "traditions": "11.0",
+      "narratives": "13.0"
+    },
+    {
+      "ref": "k73a9",
+      "title": "The talking bed.",
+      "traditions": "11.0",
+      "narratives": "10.0"
+    },
+    {
+      "ref": "K137a",
+      "title": "A girl disguised as a young man finds a wife for her brother",
+      "traditions": "11.0",
+      "narratives": "12.0"
+    },
+    {
+      "ref": "M14a",
+      "title": "Roasted alive.",
+      "traditions": "11.0",
+      "narratives": "28.0"
+    },
+    {
+      "ref": "M108b",
+      "title": "The woodpecker helper.",
+      "traditions": "11.0",
+      "narratives": "7.0"
+    },
+    {
+      "ref": "M154a1",
+      "title": "Pregnant wife on a pregnant mare.",
+      "traditions": "11.0",
+      "narratives": "11.0"
+    },
+    {
+      "ref": "E9i4",
+      "title": "The magical wife \u2013 the crane.",
+      "traditions": "10.0",
+      "narratives": "11.0"
+    },
+    {
+      "ref": "E9k",
+      "title": "Husband-honey (bee).",
+      "traditions": "10.0",
+      "narratives": "15.0"
+    },
+    {
+      "ref": "F9g1",
+      "title": "The heavy hand of the bride.",
+      "traditions": "10.0",
+      "narratives": "10.0"
+    },
+    {
+      "ref": "F24",
+      "title": "Cause of menstruation: bite.",
+      "traditions": "10.0",
+      "narratives": "11.0"
+    },
+    {
+      "ref": "F28a1",
+      "title": "Jumping penis.",
+      "traditions": "10.0",
+      "narratives": "11.0"
+    },
+    {
+      "ref": "F46a",
+      "title": "Woman in a tree.",
+      "traditions": "10.0",
+      "narratives": "14.0"
+    },
+    {
+      "ref": "F65d",
+      "title": "The fake dead man: the wife doesn't believe it.",
+      "traditions": "10.0",
+      "narratives": "25.0"
+    },
+    {
+      "ref": "F91",
+      "title": "The worm grower.",
+      "traditions": "10.0",
+      "narratives": "19.0"
+    },
+    {
+      "ref": "F94",
+      "title": "Betrayal in the sky.",
+      "traditions": "10.0",
+      "narratives": "10.0"
+    },
+    {
+      "ref": "F95",
+      "title": "The wife of one of the brothers.",
+      "traditions": "10.0",
+      "narratives": "12.0"
+    },
+    {
+      "ref": "I47a",
+      "title": "Rainbow \u2013 fox wedding.",
+      "traditions": "10.0",
+      "narratives": "16.0"
+    },
+    {
+      "ref": "J49",
+      "title": "The Moon's wife falls down.",
+      "traditions": "10.0",
+      "narratives": "14.0"
+    },
+    {
+      "ref": "K25c",
+      "title": "The boy under the onion.",
+      "traditions": "10.0",
+      "narratives": "13.0"
+    },
+    {
+      "ref": "K33a5",
+      "title": "The heroine is turned into a duck.",
+      "traditions": "10.0",
+      "narratives": "19.0"
+    },
+    {
+      "ref": "K76h",
+      "title": "The magical groom threatens disaster.",
+      "traditions": "10.0",
+      "narratives": "13.0"
+    },
+    {
+      "ref": "K107e",
+      "title": "Delayed childbirth.",
+      "traditions": "10.0",
+      "narratives": "10.0"
+    },
+    {
+      "ref": "L100d1",
+      "title": "Mullah in the cradle.",
+      "traditions": "10.0",
+      "narratives": "12.0"
+    },
+    {
+      "ref": "E26",
+      "title": "Those who have become fish are turned back into humans.",
+      "traditions": "9.0",
+      "narratives": "12.0"
+    },
+    {
+      "ref": "F9e",
+      "title": "Mice in the vagina.",
+      "traditions": "9.0",
+      "narratives": "14.0"
+    },
+    {
+      "ref": "F42a",
+      "title": "Men turn into birds.",
+      "traditions": "9.0",
+      "narratives": "21.0"
+    },
+    {
+      "ref": "F47b",
+      "title": "New people in the same place.",
+      "traditions": "9.0",
+      "narratives": "10.0"
+    },
+    {
+      "ref": "F51c",
+      "title": "Provocative behaviour after incest.",
+      "traditions": "9.0",
+      "narratives": "12.0"
+    },
+    {
+      "ref": "F69",
+      "title": "Indecent invitation.",
+      "traditions": "9.0",
+      "narratives": "8.0"
+    },
+    {
+      "ref": "F89",
+      "title": "The sister's cunning.",
+      "traditions": "9.0",
+      "narratives": "14.0"
+    },
+    {
+      "ref": "K15",
+      "title": "No one but this beggar.",
+      "traditions": "9.0",
+      "narratives": "9.0"
+    },
+    {
+      "ref": "K30a",
+      "title": "The chief's wife and the vultures.",
+      "traditions": "9.0",
+      "narratives": "7.0"
+    },
+    {
+      "ref": "K80c3",
+      "title": "A name helps solve a murder.",
+      "traditions": "9.0",
+      "narratives": "9.0"
+    },
+    {
+      "ref": "K89c",
+      "title": "Brother-helper is married to a bear.",
+      "traditions": "9.0",
+      "narratives": "10.0"
+    },
+    {
+      "ref": "K102a6",
+      "title": "The enemy and a woman blind the hero.",
+      "traditions": "9.0",
+      "narratives": "8.0"
+    },
+    {
+      "ref": "K145b",
+      "title": "The newlywed eats her groom.",
+      "traditions": "9.0",
+      "narratives": "9.0"
+    },
+    {
+      "ref": "B115a",
+      "title": "Knots in wood, ATU 774H.",
+      "traditions": "8.0",
+      "narratives": "9.0"
+    },
+    {
+      "ref": "F13",
+      "title": "The red penis of primates.",
+      "traditions": "8.0",
+      "narratives": "15.0"
+    },
+    {
+      "ref": "F22A",
+      "title": "Names of body parts.",
+      "traditions": "8.0",
+      "narratives": "11.0"
+    },
+    {
+      "ref": "F28A5",
+      "title": "The penis and vulva as separate beings.",
+      "traditions": "8.0",
+      "narratives": "6.0"
+    },
+    {
+      "ref": "F43c",
+      "title": "Husbands of women - animals.",
+      "traditions": "8.0",
+      "narratives": "12.0"
+    },
+    {
+      "ref": "F55a",
+      "title": "Placing on the naked body (demon and woman).",
+      "traditions": "8.0",
+      "narratives": "15.0"
+    },
+    {
+      "ref": "F56a",
+      "title": "Shavings in the fire.",
+      "traditions": "8.0",
+      "narratives": "8.0"
+    },
+    {
+      "ref": "F57",
+      "title": "Persephone picks a flower.",
+      "traditions": "8.0",
+      "narratives": "13.0"
+    },
+    {
+      "ref": "F77a",
+      "title": "Penis bridge.",
+      "traditions": "8.0",
+      "narratives": "9.0"
+    },
+    {
+      "ref": "F93",
+      "title": "Talking penis, D1610.6.2.",
+      "traditions": "8.0",
+      "narratives": "4.0"
+    },
+    {
+      "ref": "F99",
+      "title": "An infant copulates with its mother.",
+      "traditions": "8.0",
+      "narratives": "10.0"
+    },
+    {
+      "ref": "H37a",
+      "title": "Jumping over firewood, lighting a fire.",
+      "traditions": "8.0",
+      "narratives": "6.0"
+    },
+    {
+      "ref": "K1d",
+      "title": "The hero's wife's brothers abandon him.",
+      "traditions": "8.0",
+      "narratives": "14.0"
+    },
+    {
+      "ref": "K7",
+      "title": "\"Like your wife's pubic area.\"",
+      "traditions": "8.0",
+      "narratives": "8.0"
+    },
+    {
+      "ref": "K25a4a",
+      "title": "Rescue from the underwater world (broken chain).",
+      "traditions": "8.0",
+      "narratives": "14.0"
+    },
+    {
+      "ref": "K27h",
+      "title": "Depict a head that is not shown.",
+      "traditions": "8.0",
+      "narratives": "17.0"
+    },
+    {
+      "ref": "K73a2",
+      "title": "The child is replaced with a broom.",
+      "traditions": "8.0",
+      "narratives": "12.0"
+    },
+    {
+      "ref": "K80a5",
+      "title": "The boar and the fratricides.",
+      "traditions": "8.0",
+      "narratives": "20.0"
+    },
+    {
+      "ref": "K111",
+      "title": "Animal suitors rejected, Sun accepted.",
+      "traditions": "8.0",
+      "narratives": "10.0"
+    },
+    {
+      "ref": "L5e",
+      "title": "A decapitated wife pursues her husband.",
+      "traditions": "8.0",
+      "narratives": "5.0"
+    },
+    {
+      "ref": "L65b5",
+      "title": "The hero's dogs at the princess's wedding.",
+      "traditions": "8.0",
+      "narratives": "10.0"
+    },
+    {
+      "ref": "L125a",
+      "title": "The werewolf wife suffers from thirst.",
+      "traditions": "8.0",
+      "narratives": "8.0"
+    },
+    {
+      "ref": "M106d",
+      "title": "My name is \"Son-in-law\".",
+      "traditions": "8.0",
+      "narratives": "9.0"
+    },
+    {
+      "ref": "B75b1",
+      "title": "Sounds of the era of creation: the voice of a wife or mother",
+      "traditions": "7.0",
+      "narratives": "9.0"
+    },
+    {
+      "ref": "B104b",
+      "title": "A woman turns into a woodpecker.",
+      "traditions": "7.0",
+      "narratives": "8.0"
+    },
+    {
+      "ref": "C2a",
+      "title": "The Woodpecker's Fire.",
+      "traditions": "7.0",
+      "narratives": "12.0"
+    },
+    {
+      "ref": "D13c",
+      "title": "The trickster makes his brother's wife laugh.",
+      "traditions": "7.0",
+      "narratives": "8.0"
+    },
+    {
+      "ref": "E9b",
+      "title": "The magical wife \u2013 the elephant.",
+      "traditions": "7.0",
+      "narratives": "8.0"
+    },
+    {
+      "ref": "F28a4",
+      "title": "Penises on plants.",
+      "traditions": "7.0",
+      "narratives": "7.0"
+    },
+    {
+      "ref": "F45a1",
+      "title": "Accidental conception by the wind.",
+      "traditions": "7.0",
+      "narratives": "9.0"
+    },
+    {
+      "ref": "F47a",
+      "title": "Parts of the female body.",
+      "traditions": "7.0",
+      "narratives": "9.0"
+    },
+    {
+      "ref": "F78",
+      "title": "Toothy anus.",
+      "traditions": "7.0",
+      "narratives": "7.0"
+    },
+    {
+      "ref": "H55a",
+      "title": "Two under one blanket.",
+      "traditions": "7.0",
+      "narratives": "9.0"
+    },
+    {
+      "ref": "J12a",
+      "title": "Penis in a vessel.",
+      "traditions": "7.0",
+      "narratives": "2.0"
+    },
+    {
+      "ref": "K25b",
+      "title": "A woman follows a porcupine.",
+      "traditions": "7.0",
+      "narratives": "14.0"
+    },
+    {
+      "ref": "K27z2e",
+      "title": "Lost objects and meeting at the end, ATU 434.",
+      "traditions": "7.0",
+      "narratives": "7.0"
+    },
+    {
+      "ref": "K27z7a",
+      "title": "He who learns the family secret will die.",
+      "traditions": "7.0",
+      "narratives": "7.0"
+    },
+    {
+      "ref": "K32k",
+      "title": "False wife \u2013 beetle or larva.",
+      "traditions": "7.0",
+      "narratives": "6.0"
+    },
+    {
+      "ref": "K46",
+      "title": "A woman throws herself into the sea.",
+      "traditions": "7.0",
+      "narratives": "8.0"
+    },
+    {
+      "ref": "K56aa",
+      "title": "The dog-groom tests the bride.",
+      "traditions": "7.0",
+      "narratives": "7.0"
+    },
+    {
+      "ref": "K65d",
+      "title": "Incorrect marriage rites and the birth of spirits.",
+      "traditions": "7.0",
+      "narratives": "16.0"
+    },
+    {
+      "ref": "K73a3",
+      "title": "The child is replaced with a doll.",
+      "traditions": "7.0",
+      "narratives": "9.0"
+    },
+    {
+      "ref": "K105",
+      "title": "The wonderful son and the rat children.",
+      "traditions": "7.0",
+      "narratives": "7.0"
+    },
+    {
+      "ref": "K176a",
+      "title": "The wind dries the laundry.",
+      "traditions": "7.0",
+      "narratives": "8.0"
+    },
+    {
+      "ref": "L121a",
+      "title": "The hunter's secret.",
+      "traditions": "7.0",
+      "narratives": "15.0"
+    },
+    {
+      "ref": "M39a6e",
+      "title": "Basket Maker, ATU 888A*",
+      "traditions": "7.0",
+      "narratives": "7.0"
+    },
+    {
+      "ref": "M90c",
+      "title": "Stepladder instead of wife",
+      "traditions": "7.0",
+      "narratives": "7.0"
+    },
+    {
+      "ref": "M123b",
+      "title": "A girl ties her kidnapper to a boat.",
+      "traditions": "7.0",
+      "narratives": "8.0"
+    },
+    {
+      "ref": "B32",
+      "title": "Women turn into fish.",
+      "traditions": "6.0",
+      "narratives": "10.0"
+    },
+    {
+      "ref": "C8a1",
+      "title": "Let the thread enter the eye.",
+      "traditions": "6.0",
+      "narratives": "11.0"
+    },
+    {
+      "ref": "C8c1",
+      "title": "Father and daughter give birth to humans.",
+      "traditions": "6.0",
+      "narratives": "6.0"
+    },
+    {
+      "ref": "F26",
+      "title": "Cause of menstruation: loss of sacred objects.",
+      "traditions": "6.0",
+      "narratives": "10.0"
+    },
+    {
+      "ref": "F51a",
+      "title": "Aggressive sister.",
+      "traditions": "6.0",
+      "narratives": "6.0"
+    },
+    {
+      "ref": "F51d",
+      "title": "Ginseng child.",
+      "traditions": "6.0",
+      "narratives": "8.0"
+    },
+    {
+      "ref": "F73a",
+      "title": "The vulva as a wound (first humans).",
+      "traditions": "6.0",
+      "narratives": "6.0"
+    },
+    {
+      "ref": "F85",
+      "title": "The Moon: women against men.",
+      "traditions": "6.0",
+      "narratives": "5.0"
+    },
+    {
+      "ref": "F93a",
+      "title": "The talking penis and the mother-in-law.",
+      "traditions": "6.0",
+      "narratives": "3.0"
+    },
+    {
+      "ref": "F97a",
+      "title": "The snake loses its legs.",
+      "traditions": "6.0",
+      "narratives": "6.0"
+    },
+    {
+      "ref": "F100",
+      "title": "Test of chastity (queen and maid).",
+      "traditions": "6.0",
+      "narratives": "6.0"
+    },
+    {
+      "ref": "G8g",
+      "title": "The Great Oak and Its Inhabitants.",
+      "traditions": "6.0",
+      "narratives": "7.0"
+    },
+    {
+      "ref": "I132b",
+      "title": "Metamorphosis of the Sun's bride.",
+      "traditions": "6.0",
+      "narratives": "5.0"
+    },
+    {
+      "ref": "J65",
+      "title": "The children of the Sun destroy their enemies.",
+      "traditions": "6.0",
+      "narratives": "7.0"
+    },
+    {
+      "ref": "k14c1",
+      "title": "Treasures in a pomegranate.",
+      "traditions": "6.0",
+      "narratives": "6.0"
+    },
+    {
+      "ref": "K19d",
+      "title": "A man freezes in the sky.",
+      "traditions": "6.0",
+      "narratives": "20.0"
+    },
+    {
+      "ref": "K25a3",
+      "title": "Collected feathers.",
+      "traditions": "6.0",
+      "narratives": "6.0"
+    },
+    {
+      "ref": "K27z2a",
+      "title": "Meeting for one night.",
+      "traditions": "6.0",
+      "narratives": "7.0"
+    },
+    {
+      "ref": "K27z2c",
+      "title": "Marries to lock up his wife.",
+      "traditions": "6.0",
+      "narratives": "6.0"
+    },
+    {
+      "ref": "K32f",
+      "title": "The bird son saves his mother.",
+      "traditions": "6.0",
+      "narratives": "7.0"
+    },
+    {
+      "ref": "K73a2a",
+      "title": "The child is replaced with a log.",
+      "traditions": "6.0",
+      "narratives": "6.0"
+    },
+    {
+      "ref": "K101c",
+      "title": "By day in the palace, by night in the sky.",
+      "traditions": "6.0",
+      "narratives": "7.0"
+    },
+    {
+      "ref": "K107e1",
+      "title": "Blood on the shirt.",
+      "traditions": "6.0",
+      "narratives": "5.0"
+    },
+    {
+      "ref": "K109",
+      "title": "Wife \u2013 puppy or object.",
+      "traditions": "6.0",
+      "narratives": "7.0"
+    },
+    {
+      "ref": "K169",
+      "title": "Pregnant doe.",
+      "traditions": "6.0",
+      "narratives": "5.0"
+    },
+    {
+      "ref": "L102a",
+      "title": "Escape from the seagull husband.",
+      "traditions": "6.0",
+      "narratives": "5.0"
+    },
+    {
+      "ref": "M39a5a2",
+      "title": "The screaming judge",
+      "traditions": "6.0",
+      "narratives": "6.0"
+    },
+    {
+      "ref": "M105",
+      "title": "The supposedly murdered mother.",
+      "traditions": "6.0",
+      "narratives": "6.0"
+    },
+    {
+      "ref": "M123a",
+      "title": "Three-toed paw.",
+      "traditions": "6.0",
+      "narratives": "9.0"
+    },
+    {
+      "ref": "A9",
+      "title": "The Moon as protector of humans.",
+      "traditions": "5.0",
+      "narratives": "6.0"
+    },
+    {
+      "ref": "B74b",
+      "title": "The wedding of the owl and the moon.",
+      "traditions": "5.0",
+      "narratives": "6.0"
+    },
+    {
+      "ref": "F20a",
+      "title": "People and dogs.",
+      "traditions": "5.0",
+      "narratives": "7.0"
+    },
+    {
+      "ref": "F21",
+      "title": "Penis stuck in a tree.",
+      "traditions": "5.0",
+      "narratives": "5.0"
+    },
+    {
+      "ref": "F28a2",
+      "title": "Penises grow in the field.",
+      "traditions": "5.0",
+      "narratives": "5.0"
+    },
+    {
+      "ref": "F43b",
+      "title": "Women hide underground.",
+      "traditions": "5.0",
+      "narratives": "11.0"
+    },
+    {
+      "ref": "F49B",
+      "title": "In a distant land, they do not know how to give birth.",
+      "traditions": "5.0",
+      "narratives": "3.0"
+    },
+    {
+      "ref": "F75",
+      "title": "Siren and tapir.",
+      "traditions": "5.0",
+      "narratives": "8.0"
+    },
+    {
+      "ref": "H12a",
+      "title": "Dead wife haunts her husband.",
+      "traditions": "5.0",
+      "narratives": "9.0"
+    },
+    {
+      "ref": "H28b",
+      "title": "Mosquitoes made from animal wool.",
+      "traditions": "5.0",
+      "narratives": "6.0"
+    },
+    {
+      "ref": "K14F",
+      "title": "Material evidence of the father's righteousness.",
+      "traditions": "5.0",
+      "narratives": "5.0"
+    },
+    {
+      "ref": "K27z2a1",
+      "title": "An innocent woman is accused of promiscuity.",
+      "traditions": "5.0",
+      "narratives": "6.0"
+    },
+    {
+      "ref": "K32b",
+      "title": "Mother-in-law replaces daughter-in-law.",
+      "traditions": "5.0",
+      "narratives": "6.0"
+    },
+    {
+      "ref": "K61f",
+      "title": "The Living Doll, ATU 459.",
+      "traditions": "5.0",
+      "narratives": "5.0"
+    },
+    {
+      "ref": "K113b",
+      "title": "The Frog Princess \u2013 Mistress of the Storm.",
+      "traditions": "5.0",
+      "narratives": "3.0"
+    },
+    {
+      "ref": "K172",
+      "title": "The deaf bride without arms and legs.",
+      "traditions": "5.0",
+      "narratives": "5.0"
+    },
+    {
+      "ref": "D1a3",
+      "title": "The fire wife.",
+      "traditions": "4.0",
+      "narratives": "4.0"
+    },
+    {
+      "ref": "E9aa",
+      "title": "The fox wife in the burrow of all animals.",
+      "traditions": "4.0",
+      "narratives": "6.0"
+    },
+    {
+      "ref": "e9i5",
+      "title": "The magical wife - the snail.",
+      "traditions": "4.0",
+      "narratives": "8.0"
+    },
+    {
+      "ref": "F12",
+      "title": "A husband kills his wife with his lover's penis.",
+      "traditions": "4.0",
+      "narratives": "5.0"
+    },
+    {
+      "ref": "F48",
+      "title": "Why women are different.",
+      "traditions": "4.0",
+      "narratives": "5.0"
+    },
+    {
+      "ref": "F54d",
+      "title": "Conceives after drinking urine.",
+      "traditions": "4.0",
+      "narratives": "5.0"
+    },
+    {
+      "ref": "F68",
+      "title": "The supposed dead woman dresses up as a man.",
+      "traditions": "4.0",
+      "narratives": "5.0"
+    },
+    {
+      "ref": "F77B",
+      "title": "Hanging on the penis.",
+      "traditions": "4.0",
+      "narratives": "2.0"
+    },
+    {
+      "ref": "F80B",
+      "title": "Left unattended.",
+      "traditions": "4.0",
+      "narratives": "4.0"
+    },
+    {
+      "ref": "F82a",
+      "title": "What the owl cries about.",
+      "traditions": "4.0",
+      "narratives": "4.0"
+    },
+    {
+      "ref": "F84",
+      "title": "Imitation of chastity.",
+      "traditions": "4.0",
+      "narratives": "5.0"
+    },
+    {
+      "ref": "F100a",
+      "title": "A chaste woman revives a man.",
+      "traditions": "4.0",
+      "narratives": "4.0"
+    },
+    {
+      "ref": "F101",
+      "title": "Rival prevents childbirth.",
+      "traditions": "4.0",
+      "narratives": "4.0"
+    },
+    {
+      "ref": "J33a",
+      "title": "An old woman beats a scarecrow.",
+      "traditions": "4.0",
+      "narratives": "4.0"
+    },
+    {
+      "ref": "L15g1",
+      "title": "One family member kills another, knowing his secret.",
+      "traditions": "4.0",
+      "narratives": "5.0"
+    },
+    {
+      "ref": "L42f",
+      "title": "The prey escaped, the wife was killed.",
+      "traditions": "4.0",
+      "narratives": "11.0"
+    },
+    {
+      "ref": "M74c",
+      "title": "Handsome as a woodpecker",
+      "traditions": "4.0",
+      "narratives": "5.0"
+    },
+    {
+      "ref": "B119",
+      "title": "The husband of a magical wife turns into a rooster.",
+      "traditions": "3.0",
+      "narratives": "4.0"
+    },
+    {
+      "ref": "F9f2",
+      "title": "The cobra's hood in the wife's handbag.",
+      "traditions": "3.0",
+      "narratives": "3.0"
+    },
+    {
+      "ref": "F45C",
+      "title": "Men without wives.",
+      "traditions": "3.0",
+      "narratives": "4.0"
+    },
+    {
+      "ref": "F54b",
+      "title": "Stuck feathers.",
+      "traditions": "3.0",
+      "narratives": "3.0"
+    },
+    {
+      "ref": "F54c",
+      "title": "Recognised by nail marks.",
+      "traditions": "3.0",
+      "narratives": "3.0"
+    },
+    {
+      "ref": "F77C",
+      "title": "Penis-rope.",
+      "traditions": "3.0",
+      "narratives": "3.0"
+    },
+    {
+      "ref": "F100b",
+      "title": "A minor transgression by a chaste woman.",
+      "traditions": "3.0",
+      "narratives": "3.0"
+    },
+    {
+      "ref": "I82j",
+      "title": "Venus \u2013 husband of the Moon.",
+      "traditions": "3.0",
+      "narratives": "3.0"
+    },
+    {
+      "ref": "I100c",
+      "title": "The Pleiades and the Cuckoo.",
+      "traditions": "3.0",
+      "narratives": "4.0"
+    },
+    {
+      "ref": "K32h2",
+      "title": "Left to be eaten by ants.",
+      "traditions": "3.0",
+      "narratives": "4.0"
+    },
+    {
+      "ref": "K47c",
+      "title": "The origin of dogs.",
+      "traditions": "3.0",
+      "narratives": "6.0"
+    },
+    {
+      "ref": "k73a5a",
+      "title": "A baby is replaced by a monkey.",
+      "traditions": "3.0",
+      "narratives": "4.0"
+    },
+    {
+      "ref": "K73b7",
+      "title": "The hero kills the enemy of his enchanted wife.",
+      "traditions": "3.0",
+      "narratives": "3.0"
+    },
+    {
+      "ref": "K108a",
+      "title": "He who kills his wife loses everything.",
+      "traditions": "3.0",
+      "narratives": "4.0"
+    },
+    {
+      "ref": "M105B",
+      "title": "Carries his mother on his back.",
+      "traditions": "3.0",
+      "narratives": "4.0"
+    },
+    {
+      "ref": "M136e",
+      "title": "Should the bride be shortened?",
+      "traditions": "3.0",
+      "narratives": "3.0"
+    },
+    {
+      "ref": "F72",
+      "title": "Imitation of rape.",
+      "traditions": "2.0",
+      "narratives": "3.0"
+    },
+    {
+      "ref": "F80C",
+      "title": "The dead with genitals in their hands.",
+      "traditions": "2.0",
+      "narratives": "1.0"
+    },
+    {
+      "ref": "F80D",
+      "title": "Genitals flew like geese.",
+      "traditions": "2.0",
+      "narratives": "2.0"
+    },
+    {
+      "ref": "H49A",
+      "title": "Husband, wife and innocently killed dog.",
+      "traditions": "2.0",
+      "narratives": "2.0"
+    },
+    {
+      "ref": "K27n3a1",
+      "title": "The hero in battle with the elements.",
+      "traditions": "2.0",
+      "narratives": "5.0"
+    },
+    {
+      "ref": "K32c",
+      "title": "The real wife becomes an owl.",
+      "traditions": "2.0",
+      "narratives": "2.0"
+    },
+    {
+      "ref": "K131c",
+      "title": "The kidnapped woman runs away while the archers compete.",
+      "traditions": "2.0",
+      "narratives": "2.0"
+    },
+    {
+      "ref": "H32C",
+      "title": "Lost abundance: the wronged spouse.",
+      "traditions": "1.0",
+      "narratives": "1.0"
+    },
+    {
+      "ref": "J12k",
+      "title": "The groom and the deceiver live in the same house.",
+      "traditions": "1.0",
+      "narratives": "1.0"
+    },
+    {
+      "ref": "F97a5",
+      "title": "Snake is deprived of its limbs",
+      "traditions": "0.0",
+      "narratives": "0.0"
+    },
+    {
+      "ref": "J12E",
+      "title": "Skunk.",
+      "traditions": "0.0",
+      "narratives": "0.0"
+    },
+    {
+      "ref": "K13c",
+      "title": "The cannibal's daughter avenges her mother on her husband.",
+      "traditions": "0.0",
+      "narratives": "0.0"
+    },
+    {
+      "ref": "K19",
+      "title": "Marriage to a star.",
+      "traditions": "0.0",
+      "narratives": "0.0"
+    },
+    {
+      "ref": "L67",
+      "title": "Gnawed wool.",
+      "traditions": "0.0",
+      "narratives": "0.0"
+    },
+    {
+      "ref": "L100b1",
+      "title": "Dialogue between the male and the female pigeons",
+      "traditions": "0.0",
+      "narratives": "0.0"
+    }
+  ]
+}
