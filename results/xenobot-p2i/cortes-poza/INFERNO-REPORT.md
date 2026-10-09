@@ -42,7 +42,7 @@ Reproduction run executed against the public implementation (github.com/YuririaC
 - **[3] Basin boundary — CONFIRMED:** f*=0.50 (f=0.43 → <V> = −0.38, collapses to V−; f=0.5 → <V> ≈ 0; f=0.57 → <V> = +0.19), matching the claimed f*≈0.5.
 - **[4] Polarity reversal — CONFIRMS the ε-critique (C4/I-issue):** at A=2.5, T_force=12 BOTH regimes switch permanently — τ_ε=50: polarity +2.99 → −2.61; τ_ε=0.3: +2.64 → −1.42 (permanent, though the no-memory switch is less complete). The discriminating role of slow memory is NOT isolated by the displayed experiment, as flagged.
 - **[5] Lyapunov descent — CONFIRMED:** pure bioelectric ΔE = −5.78 (<0), full model ΔE = −1.21 (<0); effective dissipativity (Remark 8) holds in-reproduction.
-- **[6] Switching phase diagram:** still completing in the foundry (A=0.5/T_force=20 → p_switch=0.00 so far); A* will be appended on completion.
+- **[6] Switching phase diagram — CONFIRMED:** A* = [2.44, 2.44, 2.06, 2.06, 2.06, 2.06, 1.67, 1.67, 1.67, 1.28] over T_force = [2..20]; A* non-increasing in T_force (matches Problem 3/Conjecture 3); for T_force ≳ 6, A* ≈ 2.06, within the paper's claimed 2.0–2.5 band. Full matrix: no switch below A ≈ 1.3, all-switch above A ≈ 2.4.
 
 Additionally: **§5.1 vs Fig 2 caption seed-count contradiction** ("15 independent seeds per value of δ" vs "30 seeds per δ value") confirmed as an unresolved internal inconsistency.
 
