@@ -32,12 +32,19 @@ Caveat on this evaluation: the paper is self-declared as an architecture proposa
 | **L3 Program evaluation** — evaluates its own program? | 60 PASS — positions vs Pietak-Levin 2016, Turing/Gierer-Meinhardt, Davidson GRN; identifies novelty (adaptive topology, slow memory, unprescribed target); but no quantitative head-to-head with any alternative on the same tasks | 65 PARTIAL — ablations exist (R_i knockout, fixed-G, memory knockout) but are qualitative; the memory ablation's central contrast is not cleanly shown (both regimes switch at the tested amplitude) | 65 PARTIAL — explicit about open problems; relations to experimental program (Beane 2011, Oviedo 2010, Reddien) well chosen |
 | **L4 Convergence** — multiple traditions? | N/A | 65 PARTIAL — genuine multi-tradition integration (dynamical systems, statistical physics, graph algorithms, PDE free-boundary, associative memory); the paper's real strength | 60 PARTIAL/PASS — links attractor theory (Waddington/Kauffman) to bioelectric experimental program |
 
-## 3. Foundry reproduction of the numerical claims (see run_reproduction_cortes.py + results/xenobot-p2i/cortes-poza/)
+## 3. Foundry reproduction of the numerical claims (see run_reproduction_cortes.py + results/xenobot-p2i/cortes-poza/repro.log)
 
-Reproduction run executed against the public implementation with the paper's stated parameters (nucleation, regeneration, basin mapping, polarity reversal, Lyapunov, phase diagram). Findings to be appended to this report once the run completes; the energy-barrier formula check has already resolved:
+Reproduction run executed against the public implementation (github.com/YuririaCP/bioelectricity) with the paper's stated parameters. **CONFIRMED RESULTS (log preserved):**
 
-- **§5.1 formula error confirmed analytically and numerically:** the printed expression √(2·(a/4)(V0−V−)²(V+−V−)²) evaluates to **3.49** for the paper's own parameters (a=1.2, V±=±1.5), not the claimed 1.74. The claimed number matches the correct ΔU=81a/64 (§7.1); the §5.1 expression is wrong by a factor of 4 in ΔU. (Also independently confirmed in the intake.)
-- **§5.1 vs Fig 2 caption seed-count contradiction:** "15 independent seeds per value of δ" (§5.1) vs "30 seeds per δ value" (Fig 2 caption).
+- **[0] §5.1 energy-barrier formula error — CONFIRMED:** correct ΔU = 81a/64 = 1.5188 → δ* = 1.743; the paper's printed formula (a/4)(V0−V−)²(V+−V−)² = 6.0750 → δ* = 3.486. Factor-4 mismatch, reproduced in code.
+- **[1] Nucleation threshold — CONFIRMED:** ppat = 0.000 for δ ≤ 0.7 (paper: "essentially zero for δ≲0.7"); δ=1.9 → ppat = 0.533 (paper claims ≈0.53 at δ*≈1.9–2.0 — reproduces almost exactly); δ=2.1 → 0.800; rise steep but noisy at 15 seeds (δ=1.5 → 0.133, δ=1.7 → 0.400, δ=2.3 → 0.400). Energy-barrier prediction 1.74 sits inside the rising region.
+- **[2] Regeneration robustness — CONFIRMED, cleaner than claimed:** lesion {0.1, 0.3, 0.5, 0.7} → p_success = 1.00, fidelity = 1.00 across all (paper: fidelity ≥ 0.95).
+- **[3] Basin boundary — CONFIRMED:** f*=0.50 (f=0.43 → <V> = −0.38, collapses to V−; f=0.5 → <V> ≈ 0; f=0.57 → <V> = +0.19), matching the claimed f*≈0.5.
+- **[4] Polarity reversal — CONFIRMS the ε-critique (C4/I-issue):** at A=2.5, T_force=12 BOTH regimes switch permanently — τ_ε=50: polarity +2.99 → −2.61; τ_ε=0.3: +2.64 → −1.42 (permanent, though the no-memory switch is less complete). The discriminating role of slow memory is NOT isolated by the displayed experiment, as flagged.
+- **[5] Lyapunov descent — CONFIRMED:** pure bioelectric ΔE = −5.78 (<0), full model ΔE = −1.21 (<0); effective dissipativity (Remark 8) holds in-reproduction.
+- **[6] Switching phase diagram:** still completing in the foundry (A=0.5/T_force=20 → p_switch=0.00 so far); A* will be appended on completion.
+
+Additionally: **§5.1 vs Fig 2 caption seed-count contradiction** ("15 independent seeds per value of δ" vs "30 seeds per δ value") confirmed as an unresolved internal inconsistency.
 
 ## 4. PQS — Prediction Quality Score (modeling-paper weights)
 

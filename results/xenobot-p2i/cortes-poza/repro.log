@@ -1,0 +1,98 @@
+======================================================================
+REPRODUCTION RUN — Cortés-Poza 2026, JMB 93:43
+======================================================================
+
+[0] Energy-barrier formula check
+    Correct ΔU (=81a/64)  = 1.5188  -> δ* = √(2ΔU) = 1.743
+    Paper §5.1 formula (a/4)(V0−V−)²(V+−V−)² = 6.0750 -> √(2·formula) = 3.486
+    Paper claims δ* ≈ 1.74. Formula evaluates to 3.486 — MISMATCH factor 4 in ΔU
+
+[1] Nucleation threshold — paper params: N=20, T=60, δ∈[0.3,2.5], 15 seeds
+  [C1] Nucleation threshold ...
+    delta=0.300: p_pattern=0.00, frac_plus=0.00, t_domain=nan
+    delta=0.500: p_pattern=0.00, frac_plus=0.00, t_domain=nan
+    delta=0.700: p_pattern=0.00, frac_plus=0.00, t_domain=nan
+    delta=0.900: p_pattern=0.07, frac_plus=0.15, t_domain=2.0
+    delta=1.100: p_pattern=0.07, frac_plus=0.25, t_domain=2.0
+    delta=1.300: p_pattern=0.27, frac_plus=0.23, t_domain=1.0
+    delta=1.500: p_pattern=0.13, frac_plus=0.17, t_domain=1.0
+/home/node/.openclaw/workspace/vi-foundry/xenobot-p2i/cortes-poza/bioelectricity/bioelectric_model.py:307: RuntimeWarning: overflow encountered in multiply
+  return p.a_bist * (V - p.V_minus) * (V - p.V_0) * (V - p.V_plus)
+/home/node/.openclaw/workspace/vi-foundry/xenobot-p2i/cortes-poza/bioelectricity/bioelectric_model.py:335: RuntimeWarning: invalid value encountered in matmul
+  GJ = G @ V - G.sum(axis=1) * V
+    delta=1.700: p_pattern=0.40, frac_plus=0.22, t_domain=11.0
+    delta=1.900: p_pattern=0.53, frac_plus=0.28, t_domain=0.8
+    delta=2.100: p_pattern=0.80, frac_plus=0.24, t_domain=0.3
+    delta=2.300: p_pattern=0.40, frac_plus=0.33, t_domain=0.0
+    delta=2.500: p_pattern=0.73, frac_plus=0.28, t_domain=0.0
+  Saved: /home/node/.openclaw/workspace/vi-foundry/results/xenobot-p2i/cortes-poza/figures/repro_nucleation.png
+    δ= 0.30  ppat= 0.000  frac_plus=0.000
+    δ= 0.50  ppat= 0.000  frac_plus=0.000
+    δ= 0.70  ppat= 0.000  frac_plus=0.000
+    δ= 0.90  ppat= 0.067  frac_plus=0.150
+    δ= 1.10  ppat= 0.067  frac_plus=0.250
+    δ= 1.30  ppat= 0.267  frac_plus=0.225
+    δ= 1.50  ppat= 0.133  frac_plus=0.175
+    δ= 1.70  ppat= 0.400  frac_plus=0.225
+    δ= 1.90  ppat= 0.533  frac_plus=0.281 <-- δ* claimed 1.9-2.0, ppat≈0.53
+    δ= 2.10  ppat= 0.800  frac_plus=0.242 <-- δ* claimed 1.9-2.0, ppat≈0.53
+    δ= 2.30  ppat= 0.400  frac_plus=0.333
+    δ= 2.50  ppat= 0.733  frac_plus=0.277
+
+[2] Regeneration — paper params: lesion ∈ {0.1,0.3,0.5,0.7}, G_init=0.5, Teq=35, Tregen=60
+  [C2/C3/C4] Regen vs lesion (Full model (paper params)) ...
+    lesion=0.10: p_ok=1.00, t_regen=35.0, fidelity=1.00
+    lesion=0.30: p_ok=1.00, t_regen=35.0, fidelity=1.00
+    lesion=0.50: p_ok=1.00, t_regen=35.0, fidelity=1.00
+    lesion=0.70: p_ok=1.00, t_regen=35.0, fidelity=1.00
+  Saved: /home/node/.openclaw/workspace/vi-foundry/results/xenobot-p2i/cortes-poza/figures/repro_regen.png
+    result dict keys: ['lesion_fracs', 'p_success', 'mean_time', 'mean_fid', 'label']
+    lesion_fracs = [0.1 0.3 0.5 0.7]
+    p_success = [1. 1. 1. 1.]
+    mean_time = [35. 35. 35. 35.]
+    mean_fid = [1. 1. 1. 1.]
+    label = Full model (paper params)
+
+[3] Basin mapping — N=16, G=0.3, a=1.2, 15 fractions, 3 seeds
+  Basin of attraction mapping...
+  Saved: /home/node/.openclaw/workspace/vi-foundry/results/xenobot-p2i/cortes-poza/figures/repro_basin.png
+    frac -> final mean V (per seed)
+    f= 0.00  <V>=[-1.529 -1.529 -1.529]  pol=0.0±0.0
+    f= 0.07  <V>=[-1.34 -1.34 -1.34]  pol=0.379±0.0
+    f= 0.14  <V>=[-1.146 -1.146 -1.146]  pol=0.768±0.0
+    f= 0.21  <V>=[-0.954 -0.954 -0.954]  pol=1.151±0.0
+    f= 0.29  <V>=[-0.763 -0.763 -0.763]  pol=1.534±0.0
+    f= 0.36  <V>=[-0.572 -0.572 -0.572]  pol=1.916±0.0
+    f= 0.43  <V>=[-0.381 -0.381 -0.381]  pol=2.299±0.0
+    f= 0.50  <V>=[0.001 0.001 0.001]  pol=2.982±0.0
+    f= 0.57  <V>=[0.192 0.192 0.192]  pol=2.654±0.0
+    f= 0.64  <V>=[0.384 0.384 0.384]  pol=2.285±0.0
+    f= 0.71  <V>=[0.575 0.575 0.575]  pol=1.906±0.0
+    f= 0.79  <V>=[0.766 0.766 0.766]  pol=1.525±0.0
+    f= 0.86  <V>=[0.957 0.957 0.957]  pol=1.142±0.0
+    f= 0.93  <V>=[1.148 1.148 1.148]  pol=0.76±0.0
+    f= 1.00  <V>=[1.528 1.528 1.528]  pol=-0.0±0.0
+
+[4] Polarity reversal — N=16, A=2.5, T_force=12, with(50)/without(0.3) memory
+  Polarity reversal experiment...
+    tau_eps=50.0: equilibrating...
+    tau_eps=50.0: applying forcing (A=2.5)...
+    tau_eps=50.0: post-forcing relaxation...
+    tau_eps=0.3: equilibrating...
+    tau_eps=0.3: applying forcing (A=2.5)...
+    tau_eps=0.3: post-forcing relaxation...
+    tau_eps=50.0: polarity before=+2.988, after=-2.612  (PERMANENT SWITCH)
+    tau_eps=0.3: polarity before=+2.643, after=-1.423  (PERMANENT SWITCH)
+  Saved: /home/node/.openclaw/workspace/vi-foundry/results/xenobot-p2i/cortes-poza/figures/repro_polarity.png and /home/node/.openclaw/workspace/vi-foundry/results/xenobot-p2i/cortes-poza/figures/repro_polarity.png
+    with_memory    : {"hist_pre": {"times": "[ 0.   0.6  1.2  1.8  2.4  3.   3.6  4.2  4.8  5.4  6.   6.6  7.2  7.8\n  8.4  9.   9.6 10.2 10.8 11.4 12.  12.6 13.2 13.8 14.4 15.  15.6 16.2\n 16.8 17.4 18.  18.6 19.2 19.8 20.4 21.  21.6 22.2 22.8 23.4 24.  24.6\n 25.2 25.8 26.4 27.  27.6 28.2 28.8 29.4 30.  30.6 31.2 31.8 32.4 33.\n 33.6 34.2 34.8 35.4 36.  36.6 37.2 37.8 38.4 39.  39.6 40.2 40.8 41.4\n 42.  42.6 43.2 4
+    without_memory : {"hist_pre": {"times": "[ 0.   0.6  1.2  1.8  2.4  3.   3.6  4.2  4.8  5.4  6.   6.6  7.2  7.8\n  8.4  9.   9.6 10.2 10.8 11.4 12.  12.6 13.2 13.8 14.4 15.  15.6 16.2\n 16.8 17.4 18.  18.6 19.2 19.8 20.4 21.  21.6 22.2 22.8 23.4 24.  24.6\n 25.2 25.8 26.4 27.  27.6 28.2 28.8 29.4 30.  30.6 31.2 31.8 32.4 33.\n 33.6 34.2 34.8 35.4 36.  36.6 37.2 37.8 38.4 39.  39.6 40.2 40.8 41.4\n 42.  42.6 43.2 4
+
+[5] Lyapunov verification — N=25, T=50
+  Lyapunov verification experiment...
+  Saved: fig5_lyapunov.png
+    Pure bioelectric: ΔE = -5.7825 (DESCENDS ✓); E0=-18.5532, Ef=-24.3357
+    Full model: ΔE = -1.2126 (DESCENDS ✓); E0=-18.5532, Ef=-19.7659
+
+[6] Switching phase diagram — N=16, A∈[0.5,4], T_force∈[2,20], 3 seeds (may take a few minutes)
+  Switching phase diagram (A vs T_force)...
+    30/300 runs complete (A=0.5, Tf=20.0, p_switch=0.00)
