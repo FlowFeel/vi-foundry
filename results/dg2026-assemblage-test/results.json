@@ -1,0 +1,18 @@
+{
+  "lbk_lead_lag": {
+    "best_lag": 2,
+    "rho_at_best_lag": 0.7619,
+    "rho": 0.7619,
+    "perm_p": 0.0369,
+    "n": 8
+  },
+  "wtc_standardization": {
+    "rho": -0.6512,
+    "perm_p": 0.0471,
+    "n": 10
+  },
+  "metadata": {
+    "source": "Diachenko & Gronenborn 2026 PLoS One e0358135 S1 Table",
+    "date": "2026-10-13"
+  }
+}

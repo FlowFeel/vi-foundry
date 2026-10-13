@@ -152,3 +152,76 @@ cross_kingdom_l3:
   supports_vi: true
   distinguishes_from_competitor: true
   caveat: "Ordering transfers across kingdoms; rate does not."
+
+# === Diachenko & Gronenborn 2026 (PLoS One e0358135) — S1 Table verification ===
+# Values transcribed from the paper's S1 Table; verified in-session against
+# Eqs 2/6/7. Tolerance absolute, consistent with the rest of the oracle.
+
+dg2026_eq6_fig5a:
+  prediction: "Stability threshold r_stab = k·C / (C − p/k) reproduces S1 Fig 5A"
+  competitor: "none (equation verification)"
+  values:
+    k_1_1_p_0_25: 1.423529411764706
+    k_1_1_p_0_75: 3.457142857142857
+  tolerance: 0.001
+  supports_vi: false
+  distinguishes_from_competitor: false
+  caveat: "Model-machinery verification; not a VI prediction."
+
+dg2026_eq7_fig3:
+  prediction: "Maximal primary-unit proportion p_max = k·C − k²·C/r_stab reproduces S1 Fig 3"
+  competitor: "none (equation verification)"
+  values:
+    k_0_5: 0.4375
+    k_1_0: 0.75
+    k_1_1: 0.7975
+    k_1_4: 0.91
+    k_2_0: 1.0
+  tolerance: 0.001
+  supports_vi: false
+  distinguishes_from_competitor: false
+  caveat: "Model-machinery verification; not a VI prediction."
+
+dg2026_eq4_fig4:
+  prediction: "Update rule p_{t+1} ∝ p·r·C·(C−p/k) reproduces S1 Fig 4 worked example"
+  competitor: "none (equation verification)"
+  values:
+    A_next: 0.7140495867768595
+    B_next: 0.14297520661157026
+    C_next: 0.14297520661157026
+  tolerance: 0.001
+  supports_vi: false
+  distinguishes_from_competitor: false
+  caveat: "Model-machinery verification; not a VI prediction."
+
+dg2026_eq2_fig6t1:
+  prediction: "Shannon diversity D = exp(−Σ p ln p) reproduces S1 Fig 6 t1"
+  competitor: "none (equation verification)"
+  values:
+    diversity: 2.0306309908905886
+  tolerance: 0.001
+  supports_vi: false
+  distinguishes_from_competitor: false
+  caveat: "Model-machinery verification; not a VI prediction."
+
+dg2026_lbk_lead_lag:
+  prediction: "LBK band-type diversity peaks before population peak (Fig 7)"
+  competitor: "null: no lead-lag structure"
+  values:
+    diversity_peak_row: 6
+    population_peak_row: 9
+  tolerance: 0
+  supports_vi: false
+  distinguishes_from_competitor: false
+  caveat: "n=10; permutation test in test-empirical-assemblage.R. Not a VI prediction."
+
+dg2026_wtc_standardization:
+  prediction: "WTC decoration-class richness declines 6→1 as population rises (Fig 10)"
+  competitor: "null: richness unrelated to population"
+  values:
+    richness_first: 6
+    richness_last: 1
+  tolerance: 0
+  supports_vi: false
+  distinguishes_from_competitor: false
+  caveat: "n=10; 2 missing forms-diversity cells. Permutation test in test-empirical-assemblage.R."

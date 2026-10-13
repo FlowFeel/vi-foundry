@@ -232,9 +232,56 @@ stages:
       dataset_name: serpent
       seed: 42
 
+  # === Salvage Tests (gradient, BSP, ASJP × motif) ===
+  - name: myth_gradient_test
+    inputs: [results/myths/gradient_test.json]
+    outputs: [results/myths/gradient_test]
+    function: run_gradient_tests
+    params:
+      script: tests/myths/test_gradient.R
+      interpreter: R --no-save
+
   - name: myth_full_analysis
     inputs: []
     outputs: [results/myths/full_report]
     function: run_myth_analysis
     params:
+      seed: 42
+
+  # === Diachenko & Gronenborn 2026 — assemblage diversity (dg2026) ===
+  - name: dg2026_eq6_fig5a
+    inputs: []
+    outputs: [results/dg2026-assemblage-test/eq6_fig5a.json]
+    function: dg_stability_threshold
+    params:
+      p: 0.25
+      k: 1.1
+      C: 1
+
+  - name: dg2026_eq7_fig3
+    inputs: []
+    outputs: [results/dg2026-assemblage-test/eq7_fig3.json]
+    function: dg_max_proportion
+    params:
+      k: 1.1
+      C: 1
+      r_stab: 4
+
+  - name: dg2026_lbk_lead_lag
+    inputs:
+      - data/diachenko-gronenborn-2026/fig7.csv
+    outputs: [results/dg2026-assemblage-test/lbk_lead_lag.json]
+    function: dg_lbk_lead_lag
+    params:
+      lag_max: 3
+      n_perm: 9999
+      seed: 42
+
+  - name: dg2026_wtc_standardization
+    inputs:
+      - data/diachenko-gronenborn-2026/fig10.csv
+    outputs: [results/dg2026-assemblage-test/wtc_standardization.json]
+    function: dg_wtc_standardization
+    params:
+      n_perm: 9999
       seed: 42

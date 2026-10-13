@@ -86,6 +86,45 @@ stages <- list(
     plant <- load_orobanchaceae()
     bird <- load_island_birds()
     transfer_test(plant$data, bird$data, seed = 42)$values
+  },
+  # Diachenko & Gronenborn 2026 — assemblage diversity (S1 Table verification)
+  dg2026_eq6_fig5a = function() {
+    list(
+      k_1_1_p_0_25 = dg_stability_threshold(0.25, 1.1, 1),
+      k_1_1_p_0_75 = dg_stability_threshold(0.75, 1.1, 1)
+    )
+  },
+  dg2026_eq7_fig3 = function() {
+    list(
+      k_0_5 = dg_max_proportion(0.5, 1, 4),
+      k_1_0 = dg_max_proportion(1.0, 1, 4),
+      k_1_1 = dg_max_proportion(1.1, 1, 4),
+      k_1_4 = dg_max_proportion(1.4, 1, 4),
+      k_2_0 = dg_max_proportion(2.0, 1, 4)
+    )
+  },
+  dg2026_eq4_fig4 = function() {
+    out <- dg_update(c(A = 0.8, B = 0.1, C = 0.1), c(A = 3.6, B = 1.73, C = 1.73), k = 1.1, C = 1)
+    list(A_next = out[["A"]], B_next = out[["B"]], C_next = out[["C"]])
+  },
+  dg2026_eq2_fig6t1 = function() {
+    list(diversity = dg_diversity(c(0.1, 0.8, 0.05, 0.05)))
+  },
+  dg2026_lbk_lead_lag = function() {
+    dat <- dg_load_empirical("fig7")
+    if (is.null(dat)) stop("LBK data not bundled")
+    list(
+      diversity_peak_row = which.max(as.numeric(dat[[4]])),
+      population_peak_row = which.max(as.numeric(dat[[2]]))
+    )
+  },
+  dg2026_wtc_standardization = function() {
+    dat <- dg_load_empirical("fig10")
+    if (is.null(dat)) stop("WTC data not bundled")
+    list(
+      richness_first = as.numeric(dat[[4]])[1],
+      richness_last = as.numeric(dat[[4]])[10]
+    )
   }
 )
 
