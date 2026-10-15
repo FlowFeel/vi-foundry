@@ -54,3 +54,36 @@ alignment (flagged as the WCI weakness in notes/010) to a *quantified* result
 for the two empirical series. What remains untested: full model fitting
 (parameter estimation on the raw series) and the primaries [4,25,10,38,112–115],
 which the foundry does not bundle.
+## Update 2026-10-15: raw WTC vessel-type data received
+
+Added `data/diachenko-gronenborn-2026/WTC_vessel_types_raw.csv` (from the
+authors' supplementary, Ryzhov typology A–M, time units 1, 4–10).
+
+### Reconciliation vs S1 Fig 10 "Diversity of forms"
+
+| Unit | Year | D(raw table) | colsum | S1 D | match |
+|---|---|---|---|---|---|
+| 1 | 4050 | 4.549 | 1.053 | 4.053 | ≠ |
+| 4 | 3900 | 6.986 | 0.979 | 7.319 | ~ |
+| 5 | 3850 | 6.231 | 0.976 | 6.814 | ≠ |
+| 6 | 3800 | 7.753 | 0.977 | 8.239 | ≠ |
+| 7 | 3750 | 5.924 | 1.000 | 5.924 | **EXACT** |
+| 8 | 3700 | 5.207 | 0.995 | 5.321 | ~ |
+| 9 | 3650 | 5.489 | 1.000 | 5.489 | **EXACT** |
+| 10 | 3600 | 4.053 | 1.000 | 4.053 | **EXACT** |
+
+- EXACT wherever table sums to 1.0 (complete type inventory).
+- Non-matching units have colsum ≠ 1 → unlisted residual types in the raw
+  table (aggregation difference vs the diversity-of-forms source [10]).
+- S1's `-` cells at 4000/3950 BCE = file's "statistically weak" units 2–3,
+  excluded per data note. Consistent.
+- **Data hygiene:** duplicate row label `G` (two rows, different values) —
+  likely `J` per Ryzhov's A–M typology. Fails to affect diversity (labels
+  only) but should be flagged to authors.
+- Raw vessel-type richness (8–11 types/unit) does NOT match S1 "Number of
+  decoration classes" (6→1) — different typology axis (decoration classes,
+  from [112–115]); expected, not an error.
+- Standardization test on raw-computed forms diversity vs population:
+  rho = +0.524, p = 0.184 (n=8) — the standardization signal lives in
+  **decoration-class richness**, not vessel-form diversity. Consistent with
+  the paper's framing (C4 uses decoration classes).
