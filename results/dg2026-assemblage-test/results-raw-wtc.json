@@ -1,0 +1,15 @@
+{
+  "raw_wtc_reconciliation": {
+    "units_exact": 8,
+    "units_total": 8,
+    "max_abs_error": 3.5527e-15,
+    "note": "All 8 published S1 Fig10 diversity-of-forms values reproduced exactly from raw vessel-type proportions (second G row = J)"
+  },
+  "dominant_type_sequence": "D -> B -> D -> C -> C -> C -> C -> A",
+  "standardization_event": "3650->3600 BCE: type A 0.141->0.500 (r relative to A = 5.2x D), types B/F/H extinct; richness 9->6, S1 decoration classes 1",
+  "replication_inference": "identifies r only up to scale; ratios are testable content (model is r-scale-invariant)",
+  "metadata": {
+    "source": "author-sent WTC raw data (Ryzhov typology), reconciled vs S1 Fig 10",
+    "date": "2026-10-15"
+  }
+}

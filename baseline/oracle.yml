@@ -225,3 +225,23 @@ dg2026_wtc_standardization:
   supports_vi: false
   distinguishes_from_competitor: false
   caveat: "n=10; 2 missing forms-diversity cells. Permutation test in test-empirical-assemblage.R."
+
+# === DG2026 raw WTC vessel-type data (author-sent, Oct 2026) ===
+# Source: Diachenko & Gronenborn sent the raw Ryzhov-typology vessel-type
+# proportions behind S1 Fig 10. Diversity D = exp(-Σ p ln p) reproduces the
+# published "diversity of forms" values EXACTLY where the table's proportions
+# sum to 1 (complete type inventory). Time unit -> BCE: 1=4050, 4=3900,
+# 5=3850, 6=3800, 7=3750, 8=3700, 9=3650, 10=3600. Units 2-3 excluded
+# (statistically weak) — matches S1's '-' cells at 4000/3950 BCE.
+
+dg2026_raw_wtc_diversity:
+  prediction: "Raw WTC vessel-type proportions reproduce S1 Fig10 diversity-of-forms at complete-inventory units"
+  competitor: "none (data reconciliation)"
+  values:
+    unit_7_3750: 5.924414781029749
+    unit_9_3650: 5.488835818952138
+    unit_10_3600: 4.053251907232219
+  tolerance: 0.001
+  supports_vi: false
+  distinguishes_from_competitor: false
+  caveat: "Only units with colsum=1.0000 reproduce exactly; other units have unlisted residual types."
