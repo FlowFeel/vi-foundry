@@ -1,0 +1,48 @@
+{
+ "n_regions": 62,
+ "n_motifs_with_presence": 2319,
+ "T1": {
+  "old_within_mean_jaccard": 0.194,
+  "old_pairs": 406,
+  "new_within_mean_jaccard": 0.171,
+  "new_pairs": 528,
+  "cross_mean_jaccard": 0.1029,
+  "cross_pairs": 957,
+  "signal_within_over_cross": 1.77,
+  "old_regions": 29,
+  "new_regions": 33,
+  "cross_pairs_sharing_any_motif_pct": 100.0
+ },
+ "T2": {
+  "explained_ratio_pct": [
+   19.299999237060547,
+   5.699999809265137,
+   5.300000190734863,
+   4.5,
+   3.700000047683716
+  ],
+  "old_mean_pc1": 4.823,
+  "new_mean_pc1": -4.238,
+  "pc1_hemisphere_pointbiserial_r": 0.717
+ },
+ "T3": {
+  "n_pairs": 1891,
+  "spearman_rho": -0.46,
+  "p_value": "1.7×10⁻99",
+  "pearson_r_logdist": -0.569
+ },
+ "T4": {
+  "same_family_mean_jaccard": 0.2691,
+  "cross_family_mean_jaccard": 0.132,
+  "n_same": 131,
+  "n_cross": 1760,
+  "signal": 2.04
+ },
+ "T5": {
+  "same_family_resid_mean": 0.0434,
+  "cross_family_resid_mean": -0.0032,
+  "delta": 0.0466,
+  "perm_p": 0.0005,
+  "n_perm": 2000
+ }
+}
