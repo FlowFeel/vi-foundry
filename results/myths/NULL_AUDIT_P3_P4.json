@@ -1,0 +1,153 @@
+{
+ "P3": {
+  "A_doc": {
+   "Egyptian": {
+    "n_myth": 3,
+    "n_relig": 2,
+    "myth_mean": 2.21,
+    "relig_mean": 4.94,
+    "gap": 2.73,
+    "z": 1.4,
+    "p_perm": 0.2032
+   },
+   "Hittite": {
+    "n_myth": 5,
+    "n_relig": 3,
+    "myth_mean": 2.44,
+    "relig_mean": 7.6,
+    "gap": 5.16,
+    "z": 1.45,
+    "p_perm": 0.1059
+   },
+   "Mesopotamian": {
+    "n_myth": 6,
+    "n_relig": 1,
+    "myth_mean": 2.96,
+    "relig_mean": 10.04,
+    "gap": 7.08,
+    "z": 2.39,
+    "p_perm": 0.1433
+   },
+   "POOLED": {
+    "cultures": [
+     "Egyptian",
+     "Hittite",
+     "Mesopotamian"
+    ],
+    "all_positive_gaps": true,
+    "min_p": 0.1059
+   }
+  },
+  "B_no1st": {
+   "Egyptian": {
+    "n_myth": 3,
+    "n_relig": 2,
+    "myth_mean": 0.89,
+    "relig_mean": 3.47,
+    "gap": 2.58,
+    "z": 1.9,
+    "p_perm": 0.1006
+   },
+   "Hittite": {
+    "n_myth": 5,
+    "n_relig": 3,
+    "myth_mean": 1.17,
+    "relig_mean": 4.17,
+    "gap": 3.0,
+    "z": 1.4,
+    "p_perm": 0.1086
+   },
+   "Mesopotamian": {
+    "n_myth": 6,
+    "n_relig": 1,
+    "myth_mean": 1.35,
+    "relig_mean": 7.85,
+    "gap": 6.5,
+    "z": 2.47,
+    "p_perm": 0.14
+   },
+   "POOLED": {
+    "cultures": [
+     "Egyptian",
+     "Hittite",
+     "Mesopotamian"
+    ],
+    "all_positive_gaps": true,
+    "min_p": 0.1006
+   }
+  },
+  "C_reg1": {
+   "Egyptian": {
+    "n_myth": 3,
+    "n_relig": 2,
+    "myth_mean": 1.67,
+    "relig_mean": 3.45,
+    "gap": 1.78,
+    "z": 1.48,
+    "p_perm": 0.1973
+   },
+   "Hittite": {
+    "n_myth": 5,
+    "n_relig": 3,
+    "myth_mean": 1.61,
+    "relig_mean": 4.84,
+    "gap": 3.23,
+    "z": 2.18,
+    "p_perm": 0.0182
+   },
+   "Mesopotamian": {
+    "n_myth": 6,
+    "n_relig": 1,
+    "myth_mean": 1.97,
+    "relig_mean": 6.32,
+    "gap": 4.35,
+    "z": 2.39,
+    "p_perm": 0.1416
+   },
+   "POOLED": {
+    "cultures": [
+     "Egyptian",
+     "Hittite",
+     "Mesopotamian"
+    ],
+    "all_positive_gaps": true,
+    "min_p": 0.0182
+   }
+  },
+  "SIGN_TEST": {
+   "positive_cells": 9,
+   "total_cells": 9,
+   "p": 0.00195
+  }
+ },
+ "P4": {
+  "Mesopotamia": {
+   "ordering_pct": {
+    "tau": 0.133,
+    "p_rising": 0.425,
+    "p_falling": 0.7167,
+    "n_phases": 6
+   },
+   "royal_per_1000": {
+    "tau": 0.2,
+    "p_rising": 0.3597,
+    "p_falling": 0.7653,
+    "n_phases": 6
+   }
+  },
+  "Egypt": {
+   "ordering_pct": {
+    "tau": -0.667,
+    "p_rising": 0.9583,
+    "p_falling": 0.1667,
+    "n_phases": 4
+   },
+   "royal_per_1000": {
+    "tau": -1.0,
+    "p_rising": 1.0,
+    "p_falling": 0.0417,
+    "n_phases": 4
+   }
+  }
+ }
+}
