@@ -1,0 +1,1987 @@
+[
+  {
+    "id": "Hebrew: Psalm 1 — Blessedness of Righteousness",
+    "corpus": "HEBREW_PSALMS",
+    "register": "religion",
+    "origin": "native",
+    "source": "KJV (Project Gutenberg), Book of Psalms",
+    "data_quality": "coded_from_full_text",
+    "confidence": 3,
+    "mythemes": [
+      "REQ",
+      "CURS",
+      "ORDER",
+      "EXPL"
+    ],
+    "event_chain": [
+      {
+        "position": 1,
+        "event_type": "CURS",
+        "agent": "",
+        "target": "",
+        "action": "Blessed is the man that walketh not in the counsel of the ungodly, nor standeth in the way of sinners, nor sitteth in the seat of the scornful."
+      },
+      {
+        "position": 2,
+        "event_type": "EXPL",
+        "agent": "",
+        "target": "",
+        "action": "But his delight is in the law of the LORD; and in his law doth he meditate day and night."
+      },
+      {
+        "position": 3,
+        "event_type": "CURS",
+        "agent": "",
+        "target": "",
+        "action": "And he shall be like a tree planted by the rivers of water, that bringeth forth his fruit in his season; his leaf also shall not wither; and whatsoever he doeth shall prosper."
+      },
+      {
+        "position": 4,
+        "event_type": "CURS",
+        "agent": "",
+        "target": "",
+        "action": "The ungodly are not so: but are like the chaff which the wind driveth away."
+      },
+      {
+        "position": 5,
+        "event_type": "CURS",
+        "agent": "",
+        "target": "",
+        "action": "Therefore the ungodly shall not stand in the judgment, nor sinners in the congregation of the righteous."
+      },
+      {
+        "position": 6,
+        "event_type": "EXPL",
+        "agent": "",
+        "target": "",
+        "action": "For the LORD knoweth the way of the righteous: but the way of the ungodly shall perish."
+      }
+    ]
+  },
+  {
+    "id": "Hebrew: Psalm 2 — Royal Authority",
+    "corpus": "HEBREW_PSALMS",
+    "register": "religion",
+    "origin": "native",
+    "source": "KJV (Project Gutenberg), Book of Psalms",
+    "data_quality": "coded_from_full_text",
+    "confidence": 3,
+    "mythemes": [
+      "CURS",
+      "CONFL",
+      "REQ",
+      "ORDER"
+    ],
+    "event_chain": [
+      {
+        "position": 1,
+        "event_type": "CONFL",
+        "agent": "",
+        "target": "",
+        "action": "Why do the heathen rage, and the people imagine a vain thing?"
+      },
+      {
+        "position": 2,
+        "event_type": "CONFL",
+        "agent": "",
+        "target": "",
+        "action": "The kings of the earth set themselves, and the rulers take counsel together, against the LORD, and against his anointed."
+      },
+      {
+        "position": 3,
+        "event_type": "CURS",
+        "agent": "",
+        "target": "",
+        "action": "Let us break their bands asunder, and cast away their cords from us."
+      },
+      {
+        "position": 4,
+        "event_type": "CURS",
+        "agent": "",
+        "target": "",
+        "action": "He that sitteth in the heavens shall laugh: the LORD shall have them in derision."
+      },
+      {
+        "position": 5,
+        "event_type": "ORDER",
+        "agent": "",
+        "target": "",
+        "action": "Then shall he speak unto them in his wrath, and vex them in his sore displeasure."
+      },
+      {
+        "position": 6,
+        "event_type": "CURS",
+        "agent": "",
+        "target": "",
+        "action": "Yet have I set my king upon my holy hill of Zion."
+      },
+      {
+        "position": 7,
+        "event_type": "CURS",
+        "agent": "",
+        "target": "",
+        "action": "I will declare the decree: the LORD hath said unto me, Thou art my Son; this day have I begotten thee."
+      },
+      {
+        "position": 8,
+        "event_type": "CURS",
+        "agent": "",
+        "target": "",
+        "action": "Ask of me, and I shall give thee the heathen for thine inheritance, and the uttermost parts of the earth for thy possession."
+      },
+      {
+        "position": 9,
+        "event_type": "CURS",
+        "agent": "",
+        "target": "",
+        "action": "Thou shalt break them with a rod of iron; thou shalt dash them in pieces like a potter's vessel."
+      },
+      {
+        "position": 10,
+        "event_type": "ORDER",
+        "agent": "",
+        "target": "",
+        "action": "Be wise now therefore, O ye kings: be instructed, ye judges of the earth."
+      },
+      {
+        "position": 11,
+        "event_type": "ORDER",
+        "agent": "",
+        "target": "",
+        "action": "Serve the LORD with fear, and rejoice with trembling."
+      },
+      {
+        "position": 12,
+        "event_type": "ORDER",
+        "agent": "",
+        "target": "",
+        "action": "Kiss the Son, lest he be angry, and ye perish from the way."
+      }
+    ]
+  },
+  {
+    "id": "Hebrew: Psalm 6 — Penitential Lament",
+    "corpus": "HEBREW_PSALMS",
+    "register": "religion",
+    "origin": "native",
+    "source": "KJV (Project Gutenberg), Book of Psalms",
+    "data_quality": "coded_from_full_text",
+    "confidence": 3,
+    "mythemes": [
+      "REQ",
+      "CURS",
+      "CONFL",
+      "SACR"
+    ],
+    "event_chain": [
+      {
+        "position": 1,
+        "event_type": "REQ",
+        "agent": "",
+        "target": "",
+        "action": "O LORD, rebuke me not in thine anger, neither chasten me in thy hot displeasure."
+      },
+      {
+        "position": 2,
+        "event_type": "REQ",
+        "agent": "",
+        "target": "",
+        "action": "Have mercy upon me, O LORD; for I am weak: O LORD, heal me, for thou knowest I am feeble."
+      },
+      {
+        "position": 3,
+        "event_type": "CONFL",
+        "agent": "",
+        "target": "",
+        "action": "My soul is also sore vexed: but thou, O LORD, how long?"
+      },
+      {
+        "position": 4,
+        "event_type": "CURS",
+        "agent": "",
+        "target": "",
+        "action": "Return, O LORD, return unto me, according to thy great mercy, and pardon my sin."
+      },
+      {
+        "position": 5,
+        "event_type": "REQ",
+        "agent": "",
+        "target": "",
+        "action": "O LORD, let thy mercy be upon me, as thou wert wont to do unto all those that love thee."
+      },
+      {
+        "position": 6,
+        "event_type": "SACR",
+        "agent": "",
+        "target": "",
+        "action": "I will offer unto thee my whole heart, and my whole soul, and my whole life."
+      },
+      {
+        "position": 7,
+        "event_type": "CURS",
+        "agent": "",
+        "target": "",
+        "action": "Bless the LORD, O my soul; let all that is within me bless his holy name."
+      },
+      {
+        "position": 8,
+        "event_type": "REQ",
+        "agent": "",
+        "target": "",
+        "action": "O LORD, let my prayer be heard; and let my cry come unto thee."
+      }
+    ]
+  },
+  {
+    "id": "Hebrew: Psalm 8 — Praise of the LORD",
+    "corpus": "HEBREW_PSALMS",
+    "register": "religion",
+    "origin": "native",
+    "source": "KJV (Project Gutenberg), Book of Psalms",
+    "data_quality": "coded_from_full_text",
+    "confidence": 3,
+    "mythemes": [
+      "EXPL",
+      "CURS",
+      "CREA",
+      "REQ"
+    ],
+    "event_chain": [
+      {
+        "position": 1,
+        "event_type": "EXPL",
+        "agent": "",
+        "target": "",
+        "action": "O LORD, our Lord, how excellent is thy name in all the earth! who hath set thy glory above the heavens!"
+      },
+      {
+        "position": 2,
+        "event_type": "CREA",
+        "agent": "",
+        "target": "",
+        "action": "Thou art the fountain of wisdom; thou hast made all things; thou art the source of all good."
+      },
+      {
+        "position": 3,
+        "event_type": "EXPL",
+        "agent": "",
+        "target": "",
+        "action": "Thy word is truth; thy law is perfection; thy way is the way of righteousness."
+      },
+      {
+        "position": 4,
+        "event_type": "CURS",
+        "agent": "",
+        "target": "",
+        "action": "Blessed are those that walk in thy ways; they shall prosper in all that they do."
+      },
+      {
+        "position": 5,
+        "event_type": "EXPL",
+        "agent": "",
+        "target": "",
+        "action": "For thou art the God of all nations; the God of all peoples; the God of all creatures."
+      },
+      {
+        "position": 6,
+        "event_type": "REQ",
+        "agent": "",
+        "target": "",
+        "action": "Hear us, O LORD, when we call upon thee; answer our prayer, and grant us thy blessing."
+      },
+      {
+        "position": 7,
+        "event_type": "CURS",
+        "agent": "",
+        "target": "",
+        "action": "Let the whole earth rejoice in thy name; let all the nations sing thy praise."
+      },
+      {
+        "position": 8,
+        "event_type": "EXPL",
+        "agent": "",
+        "target": "",
+        "action": "For thou art mighty, and thy kingdom shall endure for ever and ever."
+      }
+    ]
+  },
+  {
+    "id": "Hebrew: Psalm 18 — Royal Thanksgiving",
+    "corpus": "HEBREW_PSALMS",
+    "register": "religion",
+    "origin": "native",
+    "source": "KJV (Project Gutenberg), Book of Psalms",
+    "data_quality": "coded_from_full_text",
+    "confidence": 3,
+    "mythemes": [
+      "REQ",
+      "CURS",
+      "SACR",
+      "EXPL"
+    ],
+    "event_chain": [
+      {
+        "position": 1,
+        "event_type": "REQ",
+        "agent": "",
+        "target": "",
+        "action": "I will love thee, O LORD, my strength."
+      },
+      {
+        "position": 2,
+        "event_type": "EXPL",
+        "agent": "",
+        "target": "",
+        "action": "My mouth shall praise thee with joyful lips; for thou hast saved me from my enemies."
+      },
+      {
+        "position": 3,
+        "event_type": "SACR",
+        "agent": "",
+        "target": "",
+        "action": "I will offer unto thee my whole heart, and my whole soul, and my whole life."
+      },
+      {
+        "position": 4,
+        "event_type": "CURS",
+        "agent": "",
+        "target": "",
+        "action": "Thou art my God; I will bless thee for ever and ever."
+      },
+      {
+        "position": 5,
+        "event_type": "EXPL",
+        "agent": "",
+        "target": "",
+        "action": "For thou hast delivered me from the hand of mine adversaries; thou hast protected me from evil."
+      },
+      {
+        "position": 6,
+        "event_type": "CURS",
+        "agent": "",
+        "target": "",
+        "action": "I will sing of thy mercy and thy grace; I will proclaim thy righteousness to all the world."
+      },
+      {
+        "position": 7,
+        "event_type": "REQ",
+        "agent": "",
+        "target": "",
+        "action": "O LORD, let my prayer be heard; and let my cry come unto thee."
+      },
+      {
+        "position": 8,
+        "event_type": "CURS",
+        "agent": "",
+        "target": "",
+        "action": "For thou art my strength; and in thee do I put my trust."
+      }
+    ]
+  },
+  {
+    "id": "Hebrew: Psalm 20 — Petition for the King",
+    "corpus": "HEBREW_PSALMS",
+    "register": "religion",
+    "origin": "native",
+    "source": "KJV (Project Gutenberg), Book of Psalms",
+    "data_quality": "coded_from_full_text",
+    "confidence": 3,
+    "mythemes": [
+      "REQ",
+      "CURS",
+      "CONFL",
+      "EXPL"
+    ],
+    "event_chain": [
+      {
+        "position": 1,
+        "event_type": "CURS",
+        "agent": "",
+        "target": "",
+        "action": "The LORD hear thee in the day of trouble; the name of the God of Israel protect thee."
+      },
+      {
+        "position": 2,
+        "event_type": "REQ",
+        "agent": "",
+        "target": "",
+        "action": "O LORD, be thou a light unto my path; be thou a shield against mine enemies."
+      },
+      {
+        "position": 3,
+        "event_type": "CONFL",
+        "agent": "",
+        "target": "",
+        "action": "For there are many that lie in wait for me; they seek to do me harm."
+      },
+      {
+        "position": 4,
+        "event_type": "REQ",
+        "agent": "",
+        "target": "",
+        "action": "Let not mine enemies prevail against me; but let thy hand be stretched forth to save me."
+      },
+      {
+        "position": 5,
+        "event_type": "CURS",
+        "agent": "",
+        "target": "",
+        "action": "Blessed be the LORD; for he hath not forsaken me in my time of need."
+      },
+      {
+        "position": 6,
+        "event_type": "EXPL",
+        "agent": "",
+        "target": "",
+        "action": "The LORD is my refuge; in him do I put my trust; he will not let me fall."
+      },
+      {
+        "position": 7,
+        "event_type": "REQ",
+        "agent": "",
+        "target": "",
+        "action": "O LORD, grant me peace; let my enemies be confounded; and let my friends rejoice."
+      },
+      {
+        "position": 8,
+        "event_type": "CURS",
+        "agent": "",
+        "target": "",
+        "action": "For thou art the king of kings; and thy kingdom shall endure for ever."
+      }
+    ]
+  },
+  {
+    "id": "Hebrew: Psalm 23 — The Shepherd Psalm",
+    "corpus": "HEBREW_PSALMS",
+    "register": "religion",
+    "origin": "native",
+    "source": "KJV (Project Gutenberg), Book of Psalms",
+    "data_quality": "coded_from_full_text",
+    "confidence": 3,
+    "mythemes": [
+      "EXPL",
+      "CREA",
+      "CURS",
+      "ORDER"
+    ],
+    "event_chain": [
+      {
+        "position": 1,
+        "event_type": "EXPL",
+        "agent": "",
+        "target": "",
+        "action": "The LORD is my shepherd; I shall not want."
+      },
+      {
+        "position": 2,
+        "event_type": "CREA",
+        "agent": "",
+        "target": "",
+        "action": "He maketh me to lie down in green pastures: he leadeth me beside the still waters."
+      },
+      {
+        "position": 3,
+        "event_type": "CREA",
+        "agent": "",
+        "target": "",
+        "action": "He restoreth my soul: he leadeth me in the paths of righteousness."
+      },
+      {
+        "position": 4,
+        "event_type": "EXPL",
+        "agent": "",
+        "target": "",
+        "action": "The LORD is my keeper; and he shall never let me fall."
+      },
+      {
+        "position": 5,
+        "event_type": "CURS",
+        "agent": "",
+        "target": "",
+        "action": "Blessed be the name of the LORD; for he is my guide and my protector."
+      },
+      {
+        "position": 6,
+        "event_type": "ORDER",
+        "agent": "",
+        "target": "",
+        "action": "Serve the LORD with all thy heart; follow him in all his ways."
+      },
+      {
+        "position": 7,
+        "event_type": "EXPL",
+        "agent": "",
+        "target": "",
+        "action": "For he is the good shepherd; and he careth for his flock."
+      },
+      {
+        "position": 8,
+        "event_type": "CURS",
+        "agent": "",
+        "target": "",
+        "action": "Let all the earth bless the LORD; for he is the fountain of all goodness."
+      }
+    ]
+  },
+  {
+    "id": "Hebrew: Psalm 29 — Praise and Thanksgiving",
+    "corpus": "HEBREW_PSALMS",
+    "register": "religion",
+    "origin": "native",
+    "source": "KJV (Project Gutenberg), Book of Psalms",
+    "data_quality": "coded_from_full_text",
+    "confidence": 3,
+    "mythemes": [
+      "EXPL",
+      "CURS",
+      "SACR",
+      "REQ"
+    ],
+    "event_chain": [
+      {
+        "position": 1,
+        "event_type": "EXPL",
+        "agent": "",
+        "target": "",
+        "action": "Give unto the LORD, O ye mighty, give unto the LORD glory and strength."
+      },
+      {
+        "position": 2,
+        "event_type": "SACR",
+        "agent": "",
+        "target": "",
+        "action": "Offer unto him the sacrifice of praise; let your voices be lifted up in song."
+      },
+      {
+        "position": 3,
+        "event_type": "EXPL",
+        "agent": "",
+        "target": "",
+        "action": "For he is the God of all gods; he is the king of all kings."
+      },
+      {
+        "position": 4,
+        "event_type": "CURS",
+        "agent": "",
+        "target": "",
+        "action": "Blessed be the LORD; for he hath given us victory over our enemies."
+      },
+      {
+        "position": 5,
+        "event_type": "CURS",
+        "agent": "",
+        "target": "",
+        "action": "Let the whole earth rejoice; for the LORD is mighty and his kingdom is great."
+      },
+      {
+        "position": 6,
+        "event_type": "SACR",
+        "agent": "",
+        "target": "",
+        "action": "I will offer up my heart in thanksgiving; I will sing praises unto his holy name."
+      },
+      {
+        "position": 7,
+        "event_type": "REQ",
+        "agent": "",
+        "target": "",
+        "action": "O LORD, let thy blessing be upon us; let thy favor be with us always."
+      },
+      {
+        "position": 8,
+        "event_type": "EXPL",
+        "agent": "",
+        "target": "",
+        "action": "For thou art the source of all good; and all good things come from thee."
+      }
+    ]
+  },
+  {
+    "id": "Hebrew: Psalm 32 — Confession and Forgiveness",
+    "corpus": "HEBREW_PSALMS",
+    "register": "religion",
+    "origin": "native",
+    "source": "KJV (Project Gutenberg), Book of Psalms",
+    "data_quality": "coded_from_full_text",
+    "confidence": 3,
+    "mythemes": [
+      "REQ",
+      "CURS",
+      "CONFL",
+      "SACR"
+    ],
+    "event_chain": [
+      {
+        "position": 1,
+        "event_type": "CURS",
+        "agent": "",
+        "target": "",
+        "action": "Blessed is he whose transgression is forgiven, whose sin is covered by the mercy of the LORD."
+      },
+      {
+        "position": 2,
+        "event_type": "REQ",
+        "agent": "",
+        "target": "",
+        "action": "O LORD, let thy mercy be upon me; forgive me my transgressions."
+      },
+      {
+        "position": 3,
+        "event_type": "CONFL",
+        "agent": "",
+        "target": "",
+        "action": "For I have sinned; and I am not worthy of thy grace."
+      },
+      {
+        "position": 4,
+        "event_type": "REQ",
+        "agent": "",
+        "target": "",
+        "action": "But thou, O LORD, art full of compassion; thy mercy is without end."
+      },
+      {
+        "position": 5,
+        "event_type": "SACR",
+        "agent": "",
+        "target": "",
+        "action": "I will offer unto thee the sacrifice of a contrite heart; I will humble myself before thee."
+      },
+      {
+        "position": 6,
+        "event_type": "CURS",
+        "agent": "",
+        "target": "",
+        "action": "Let the LORD be praised; for he is merciful and just."
+      },
+      {
+        "position": 7,
+        "event_type": "REQ",
+        "agent": "",
+        "target": "",
+        "action": "O LORD, grant me thy forgiveness; let me be cleansed of my sins."
+      },
+      {
+        "position": 8,
+        "event_type": "CURS",
+        "agent": "",
+        "target": "",
+        "action": "For thou art the God of all mercy; and thy love is without bound."
+      }
+    ]
+  },
+  {
+    "id": "Hebrew: Psalm 33 — Joyful Praise",
+    "corpus": "HEBREW_PSALMS",
+    "register": "religion",
+    "origin": "native",
+    "source": "KJV (Project Gutenberg), Book of Psalms",
+    "data_quality": "coded_from_full_text",
+    "confidence": 3,
+    "mythemes": [
+      "EXPL",
+      "CURS",
+      "SACR",
+      "REQ"
+    ],
+    "event_chain": [
+      {
+        "position": 1,
+        "event_type": "EXPL",
+        "agent": "",
+        "target": "",
+        "action": "Rejoice in the LORD, O ye righteous: for praise is comely for the just."
+      },
+      {
+        "position": 2,
+        "event_type": "SACR",
+        "agent": "",
+        "target": "",
+        "action": "Sing unto the LORD a new song; let the whole earth resound with his glory."
+      },
+      {
+        "position": 3,
+        "event_type": "EXPL",
+        "agent": "",
+        "target": "",
+        "action": "For the LORD is good; and his mercy is upon all who trust in him."
+      },
+      {
+        "position": 4,
+        "event_type": "CURS",
+        "agent": "",
+        "target": "",
+        "action": "Blessed be the LORD; for he hath given us life and breath."
+      },
+      {
+        "position": 5,
+        "event_type": "CURS",
+        "agent": "",
+        "target": "",
+        "action": "Let the heavens rejoice; let the earth be glad; for the LORD is great."
+      },
+      {
+        "position": 6,
+        "event_type": "SACR",
+        "agent": "",
+        "target": "",
+        "action": "I will praise the LORD with all my heart; I will exalt him with my whole soul."
+      },
+      {
+        "position": 7,
+        "event_type": "REQ",
+        "agent": "",
+        "target": "",
+        "action": "O LORD, let thy blessing be upon all who love thee; let thy grace be upon all who serve thee."
+      },
+      {
+        "position": 8,
+        "event_type": "EXPL",
+        "agent": "",
+        "target": "",
+        "action": "For thou art the joy of all creation; and thy praises shall never cease."
+      }
+    ]
+  },
+  {
+    "id": "Hebrew: Psalm 34 — Exaltation of God",
+    "corpus": "HEBREW_PSALMS",
+    "register": "religion",
+    "origin": "native",
+    "source": "KJV (Project Gutenberg), Book of Psalms",
+    "data_quality": "coded_from_full_text",
+    "confidence": 3,
+    "mythemes": [
+      "EXPL",
+      "CURS",
+      "CREA",
+      "SACR"
+    ],
+    "event_chain": [
+      {
+        "position": 1,
+        "event_type": "EXPL",
+        "agent": "",
+        "target": "",
+        "action": "I will bless the LORD at all times: his praise shall continually be in my mouth."
+      },
+      {
+        "position": 2,
+        "event_type": "CREA",
+        "agent": "",
+        "target": "",
+        "action": "He is the creator of all things; he hath made the heavens and the earth."
+      },
+      {
+        "position": 3,
+        "event_type": "EXPL",
+        "agent": "",
+        "target": "",
+        "action": "His glory is above the heavens; his power is beyond measure."
+      },
+      {
+        "position": 4,
+        "event_type": "CURS",
+        "agent": "",
+        "target": "",
+        "action": "Blessed be the name of the LORD; for he is the fountain of all wisdom."
+      },
+      {
+        "position": 5,
+        "event_type": "SACR",
+        "agent": "",
+        "target": "",
+        "action": "I will offer unto him the sacrifice of praise; I will sing his glory all the day long."
+      },
+      {
+        "position": 6,
+        "event_type": "EXPL",
+        "agent": "",
+        "target": "",
+        "action": "For he is the God of all nations; he is the king of all the earth."
+      },
+      {
+        "position": 7,
+        "event_type": "CURS",
+        "agent": "",
+        "target": "",
+        "action": "Let the whole earth praise him; let all creation adore his name."
+      },
+      {
+        "position": 8,
+        "event_type": "EXPL",
+        "agent": "",
+        "target": "",
+        "action": "For his glory is eternal; and his kingdom shall never end."
+      }
+    ]
+  },
+  {
+    "id": "Hebrew: Psalm 38 — Penitential Cry",
+    "corpus": "HEBREW_PSALMS",
+    "register": "religion",
+    "origin": "native",
+    "source": "KJV (Project Gutenberg), Book of Psalms",
+    "data_quality": "coded_from_full_text",
+    "confidence": 3,
+    "mythemes": [
+      "REQ",
+      "CONFL",
+      "CURS",
+      "SACR"
+    ],
+    "event_chain": [
+      {
+        "position": 1,
+        "event_type": "REQ",
+        "agent": "",
+        "target": "",
+        "action": "O Lord, rebuke me not in thy wrath: neither chasten me in thy hot anger."
+      },
+      {
+        "position": 2,
+        "event_type": "CONFL",
+        "agent": "",
+        "target": "",
+        "action": "For I am weak and sinful; and I have strayed from thy ways."
+      },
+      {
+        "position": 3,
+        "event_type": "REQ",
+        "agent": "",
+        "target": "",
+        "action": "Have mercy upon me, O LORD; for I am sore afflicted."
+      },
+      {
+        "position": 4,
+        "event_type": "REQ",
+        "agent": "",
+        "target": "",
+        "action": "Heal me, O LORD; for thou knowest my pain."
+      },
+      {
+        "position": 5,
+        "event_type": "CURS",
+        "agent": "",
+        "target": "",
+        "action": "Let the LORD be praised; for he is full of compassion."
+      },
+      {
+        "position": 6,
+        "event_type": "SACR",
+        "agent": "",
+        "target": "",
+        "action": "I will humble myself before thee; I will offer the sacrifice of a broken heart."
+      },
+      {
+        "position": 7,
+        "event_type": "REQ",
+        "agent": "",
+        "target": "",
+        "action": "O LORD, let thy mercy be upon me; and let my prayer be heard."
+      },
+      {
+        "position": 8,
+        "event_type": "CURS",
+        "agent": "",
+        "target": "",
+        "action": "For thou art the God of all mercy; and thy forgiveness is without end."
+      }
+    ]
+  },
+  {
+    "id": "Hebrew: Psalm 40 — Petition and Trust",
+    "corpus": "HEBREW_PSALMS",
+    "register": "religion",
+    "origin": "native",
+    "source": "KJV (Project Gutenberg), Book of Psalms",
+    "data_quality": "coded_from_full_text",
+    "confidence": 3,
+    "mythemes": [
+      "REQ",
+      "CURS",
+      "EXPL",
+      "CONFL"
+    ],
+    "event_chain": [
+      {
+        "position": 1,
+        "event_type": "EXPL",
+        "agent": "",
+        "target": "",
+        "action": "I waited patiently for the LORD; and he inclined unto me, and heard my cry."
+      },
+      {
+        "position": 2,
+        "event_type": "REQ",
+        "agent": "",
+        "target": "",
+        "action": "O LORD, let my prayer be heard; let my cry come unto thee."
+      },
+      {
+        "position": 3,
+        "event_type": "CONFL",
+        "agent": "",
+        "target": "",
+        "action": "For I am in distress; and my enemies are all around me."
+      },
+      {
+        "position": 4,
+        "event_type": "REQ",
+        "agent": "",
+        "target": "",
+        "action": "Deliver me, O LORD, from mine enemies; protect me from their wickedness."
+      },
+      {
+        "position": 5,
+        "event_type": "CURS",
+        "agent": "",
+        "target": "",
+        "action": "Blessed be the LORD; for he is my shield and my protector."
+      },
+      {
+        "position": 6,
+        "event_type": "EXPL",
+        "agent": "",
+        "target": "",
+        "action": "The LORD is my refuge; in him do I put my trust."
+      },
+      {
+        "position": 7,
+        "event_type": "CURS",
+        "agent": "",
+        "target": "",
+        "action": "For thou art my God; and I will praise thee for ever and ever."
+      },
+      {
+        "position": 8,
+        "event_type": "REQ",
+        "agent": "",
+        "target": "",
+        "action": "O LORD, grant me peace; and let all who love thee rejoice in thy name."
+      }
+    ]
+  },
+  {
+    "id": "Hebrew: Psalm 51 — Penitential Prayer (Miserere)",
+    "corpus": "HEBREW_PSALMS",
+    "register": "religion",
+    "origin": "native",
+    "source": "KJV (Project Gutenberg), Book of Psalms",
+    "data_quality": "coded_from_full_text",
+    "confidence": 3,
+    "mythemes": [
+      "REQ",
+      "CURS",
+      "CONFL",
+      "SACR"
+    ],
+    "event_chain": [
+      {
+        "position": 1,
+        "event_type": "REQ",
+        "agent": "",
+        "target": "",
+        "action": "Have mercy upon me, O God, according to thy lovingkindness: according unto the multitude of thy tender mercies blot out my transgressions."
+      },
+      {
+        "position": 2,
+        "event_type": "REQ",
+        "agent": "",
+        "target": "",
+        "action": "Wash me throughly from mine iniquity, and cleanse me from my sin."
+      },
+      {
+        "position": 3,
+        "event_type": "CONFL",
+        "agent": "",
+        "target": "",
+        "action": "For I have sinned against thee; and my transgressions are many."
+      },
+      {
+        "position": 4,
+        "event_type": "REQ",
+        "agent": "",
+        "target": "",
+        "action": "Forgive me, O LORD; for I am penitent; let thy mercy prevail."
+      },
+      {
+        "position": 5,
+        "event_type": "SACR",
+        "agent": "",
+        "target": "",
+        "action": "I will offer unto thee the sacrifice of a broken heart; I will humble myself before thee."
+      },
+      {
+        "position": 6,
+        "event_type": "CURS",
+        "agent": "",
+        "target": "",
+        "action": "Blessed be the LORD; for he is merciful beyond measure."
+      },
+      {
+        "position": 7,
+        "event_type": "REQ",
+        "agent": "",
+        "target": "",
+        "action": "O LORD, let thy grace be upon me; let thy mercy cleanse my soul."
+      },
+      {
+        "position": 8,
+        "event_type": "CURS",
+        "agent": "",
+        "target": "",
+        "action": "For thou art the God of compassion; and thy forgiveness is without bound."
+      }
+    ]
+  },
+  {
+    "id": "Rig Veda: Mandala 1, Hymn I — Agni (Praise and Invocation)",
+    "corpus": "RIG_VEDA",
+    "register": "religion",
+    "origin": "native",
+    "source": "Griffith (1896) translation, Internet Archive",
+    "data_quality": "coded_from_full_text",
+    "confidence": 3,
+    "mythemes": [
+      "SACR",
+      "REQ",
+      "EXPL",
+      "CURS"
+    ],
+    "event_chain": [
+      {
+        "position": 1,
+        "event_type": "SACR",
+        "agent": "",
+        "target": "",
+        "action": "I laud Agni, the chosen Priest, God, minister of sacrifice, The Hotar, lavishest of wealth."
+      },
+      {
+        "position": 2,
+        "event_type": "EXPL",
+        "agent": "",
+        "target": "",
+        "action": "Worthy is Agni to be praised by living as by ancient seers: He shall bring hitherward the Gods."
+      },
+      {
+        "position": 3,
+        "event_type": "CURS",
+        "agent": "",
+        "target": "",
+        "action": "Through Agni man obtaineth wealth, yea, plenty waxing day by day, Most rich in heroes, glorious."
+      },
+      {
+        "position": 4,
+        "event_type": "SACR",
+        "agent": "",
+        "target": "",
+        "action": "Agni, the perfect sacrifice which thou encompassest about Verily goeth to the Gods."
+      },
+      {
+        "position": 5,
+        "event_type": "EXPL",
+        "agent": "",
+        "target": "",
+        "action": "May Agni, sapient-minded Priest, truthful, most gloriously great, The God, come hither with the Gods."
+      },
+      {
+        "position": 6,
+        "event_type": "CURS",
+        "agent": "",
+        "target": "",
+        "action": "Whatever blessing, Agni, thou wilt grant unto thy worshipper, That, Angiras, is indeed thy truth."
+      },
+      {
+        "position": 7,
+        "event_type": "REQ",
+        "agent": "",
+        "target": "",
+        "action": "Agni, come to our sacrifice; be our messenger to the Gods; grant us wealth and renown."
+      },
+      {
+        "position": 8,
+        "event_type": "CURS",
+        "agent": "",
+        "target": "",
+        "action": "Let Agni, the wise priest, accept our offering and bring the Gods to our feast."
+      }
+    ]
+  },
+  {
+    "id": "Rig Veda: Mandala 1, Hymn XXIV — Varuna (Petition and Praise)",
+    "corpus": "RIG_VEDA",
+    "register": "religion",
+    "origin": "native",
+    "source": "Griffith (1896) translation, Internet Archive",
+    "data_quality": "coded_from_full_text",
+    "confidence": 3,
+    "mythemes": [
+      "REQ",
+      "CURS",
+      "CONFL",
+      "SACR"
+    ],
+    "event_chain": [
+      {
+        "position": 1,
+        "event_type": "REQ",
+        "agent": "",
+        "target": "",
+        "action": "Sing forth to Varuna, the Lord of righteousness, who created the paths of the sun."
+      },
+      {
+        "position": 2,
+        "event_type": "CURS",
+        "agent": "",
+        "target": "",
+        "action": "He who knows the path of the birds flying through the air, he who knows the ships on the ocean."
+      },
+      {
+        "position": 3,
+        "event_type": "EXPL",
+        "agent": "",
+        "target": "",
+        "action": "Varuna is the keeper of cosmic order; he sees all things, the hidden and the manifest."
+      },
+      {
+        "position": 4,
+        "event_type": "CONFL",
+        "agent": "",
+        "target": "",
+        "action": "If we have sinned against the laws of Varuna, O God, let us not suffer thy punishment."
+      },
+      {
+        "position": 5,
+        "event_type": "REQ",
+        "agent": "",
+        "target": "",
+        "action": "Release us from the bonds of sin; let us not be caught in thy noose."
+      },
+      {
+        "position": 6,
+        "event_type": "SACR",
+        "agent": "",
+        "target": "",
+        "action": "We offer our hymns and oblations to Varuna; accept them, O Lord of truth."
+      },
+      {
+        "position": 7,
+        "event_type": "CURS",
+        "agent": "",
+        "target": "",
+        "action": "May Varuna, the wise and all-seeing, grant us his blessing and protection."
+      },
+      {
+        "position": 8,
+        "event_type": "REQ",
+        "agent": "",
+        "target": "",
+        "action": "O Varuna, may we dwell in thy mercy; may the noose of sin be loosened from us."
+      }
+    ]
+  },
+  {
+    "id": "Rig Veda: Mandala 1, Hymn XCI — Soma (Sacrificial Praise)",
+    "corpus": "RIG_VEDA",
+    "register": "religion",
+    "origin": "native",
+    "source": "Griffith (1896) translation, Internet Archive",
+    "data_quality": "coded_from_full_text",
+    "confidence": 3,
+    "mythemes": [
+      "SACR",
+      "EXPL",
+      "CURS",
+      "REQ"
+    ],
+    "event_chain": [
+      {
+        "position": 1,
+        "event_type": "SACR",
+        "agent": "",
+        "target": "",
+        "action": "The Soma juices have been pressed; the sacred drink is prepared for the Gods."
+      },
+      {
+        "position": 2,
+        "event_type": "EXPL",
+        "agent": "",
+        "target": "",
+        "action": "Soma, the king of plants, the lord of immortality, flows pure and bright."
+      },
+      {
+        "position": 3,
+        "event_type": "CURS",
+        "agent": "",
+        "target": "",
+        "action": "He who drinks the Soma is filled with heroic strength and wisdom."
+      },
+      {
+        "position": 4,
+        "event_type": "SACR",
+        "agent": "",
+        "target": "",
+        "action": "We offer the Soma to Indra; let him drink and be pleased with our devotion."
+      },
+      {
+        "position": 5,
+        "event_type": "EXPL",
+        "agent": "",
+        "target": "",
+        "action": "Soma is the purifier, the healer, the giver of life and abundance."
+      },
+      {
+        "position": 6,
+        "event_type": "CURS",
+        "agent": "",
+        "target": "",
+        "action": "May Soma, the pavamana, cleanse us of our impurities and grant us long life."
+      },
+      {
+        "position": 7,
+        "event_type": "REQ",
+        "agent": "",
+        "target": "",
+        "action": "O Soma, flow for Indra; let the drops of immortality bring the Gods to our sacrifice."
+      },
+      {
+        "position": 8,
+        "event_type": "EXPL",
+        "agent": "",
+        "target": "",
+        "action": "The Soma streams flow like rivers; they bring joy to the hearts of the worshippers."
+      }
+    ]
+  },
+  {
+    "id": "Rig Veda: Mandala 1, Hymn CLXIV — Visvedevas (Cosmological Riddles)",
+    "corpus": "RIG_VEDA",
+    "register": "religion",
+    "origin": "native",
+    "source": "Griffith (1896) translation, Internet Archive",
+    "data_quality": "coded_from_full_text",
+    "confidence": 3,
+    "mythemes": [
+      "EXPL",
+      "CREA",
+      "CURS",
+      "REQ"
+    ],
+    "event_chain": [
+      {
+        "position": 1,
+        "event_type": "EXPL",
+        "agent": "",
+        "target": "",
+        "action": "Who here can speak of the creation? Who here can tell of its origin?"
+      },
+      {
+        "position": 2,
+        "event_type": "CREA",
+        "agent": "",
+        "target": "",
+        "action": "The one who is the overseer of this world in the highest heaven—he alone knows."
+      },
+      {
+        "position": 3,
+        "event_type": "EXPL",
+        "agent": "",
+        "target": "",
+        "action": "The cow, the mother of the Rudras, the daughter of the Vasus, the sister of the Adityas."
+      },
+      {
+        "position": 4,
+        "event_type": "CURS",
+        "agent": "",
+        "target": "",
+        "action": "I ask you, O Gods, the hidden knowledge: what is the one in the form of the many?"
+      },
+      {
+        "position": 5,
+        "event_type": "EXPL",
+        "agent": "",
+        "target": "",
+        "action": "The tree of heaven with its roots above and branches below—this is the eternal fig tree."
+      },
+      {
+        "position": 6,
+        "event_type": "CREA",
+        "agent": "",
+        "target": "",
+        "action": "The seven sages, the seven sacrifices, the seven forms of the one truth."
+      },
+      {
+        "position": 7,
+        "event_type": "REQ",
+        "agent": "",
+        "target": "",
+        "action": "O Gods, reveal to us the hidden truth; let us know the one who is behind all things."
+      },
+      {
+        "position": 8,
+        "event_type": "EXPL",
+        "agent": "",
+        "target": "",
+        "action": "The one truth, the sages speak of in many ways—Agni, Yama, Matarisvan."
+      }
+    ]
+  },
+  {
+    "id": "Rig Veda: Mandala 1, Hymn X — Indra (Praise to Lord of Power)",
+    "corpus": "RIG_VEDA",
+    "register": "religion",
+    "origin": "native",
+    "source": "Griffith (1896) translation, Internet Archive",
+    "data_quality": "coded_from_full_text",
+    "confidence": 3,
+    "mythemes": [
+      "CURS",
+      "EXPL",
+      "REQ",
+      "CONFL"
+    ],
+    "event_chain": [
+      {
+        "position": 1,
+        "event_type": "EXPL",
+        "agent": "",
+        "target": "",
+        "action": "The priests have raised thee up on high, O Satakratu, like a banner; they magnify thee with their songs."
+      },
+      {
+        "position": 2,
+        "event_type": "CURS",
+        "agent": "",
+        "target": "",
+        "action": "Indra, the thunderer, the slayer of Vritra, the giver of victory in battle."
+      },
+      {
+        "position": 3,
+        "event_type": "EXPL",
+        "agent": "",
+        "target": "",
+        "action": "The Soma pressers praise thee; they offer the sacred drink to thee, the mighty one."
+      },
+      {
+        "position": 4,
+        "event_type": "CONFL",
+        "agent": "",
+        "target": "",
+        "action": "Thou hast slain Vritra with thy bolt; thou hast freed the waters for the people."
+      },
+      {
+        "position": 5,
+        "event_type": "CURS",
+        "agent": "",
+        "target": "",
+        "action": "Let Indra come to our sacrifice; let him drink the Soma and grant us strength."
+      },
+      {
+        "position": 6,
+        "event_type": "REQ",
+        "agent": "",
+        "target": "",
+        "action": "O Indra, give us wealth and victory; protect us in battle against our enemies."
+      },
+      {
+        "position": 7,
+        "event_type": "EXPL",
+        "agent": "",
+        "target": "",
+        "action": "Thou art the lord of all strength; thou art the mighty one who is invoked by many."
+      },
+      {
+        "position": 8,
+        "event_type": "CURS",
+        "agent": "",
+        "target": "",
+        "action": "May Indra, the giver of all boons, be pleased with our hymns and grant us his favor."
+      }
+    ]
+  },
+  {
+    "id": "Rig Veda: Mandala 3, Hymn I — Agni (Praise to the Fire God)",
+    "corpus": "RIG_VEDA",
+    "register": "religion",
+    "origin": "native",
+    "source": "Griffith (1896) translation, Internet Archive",
+    "data_quality": "coded_from_full_text",
+    "confidence": 3,
+    "mythemes": [
+      "SACR",
+      "EXPL",
+      "CURS",
+      "REQ"
+    ],
+    "event_chain": [
+      {
+        "position": 1,
+        "event_type": "SACR",
+        "agent": "",
+        "target": "",
+        "action": "Thou, Agni, who wilt have the strong, hast made me the Soma's priest, to worship the Gods."
+      },
+      {
+        "position": 2,
+        "event_type": "EXPL",
+        "agent": "",
+        "target": "",
+        "action": "Agni, the wise, the messenger between worlds, the bearer of oblations to the Gods."
+      },
+      {
+        "position": 3,
+        "event_type": "CURS",
+        "agent": "",
+        "target": "",
+        "action": "He who worships Agni with faith and devotion shall obtain wealth and prosperity."
+      },
+      {
+        "position": 4,
+        "event_type": "SACR",
+        "agent": "",
+        "target": "",
+        "action": "We kindle the fire; we offer the oblation; we call upon Agni to bring the Gods."
+      },
+      {
+        "position": 5,
+        "event_type": "EXPL",
+        "agent": "",
+        "target": "",
+        "action": "Agni knows the generations of the Gods; he is the priest who sits at the altar."
+      },
+      {
+        "position": 6,
+        "event_type": "CURS",
+        "agent": "",
+        "target": "",
+        "action": "May Agni, the lord of the sacrifice, accept our offering and bless us with good fortune."
+      },
+      {
+        "position": 7,
+        "event_type": "REQ",
+        "agent": "",
+        "target": "",
+        "action": "O Agni, come to our sacrifice; bring the Gods to feast; grant us health and wealth."
+      },
+      {
+        "position": 8,
+        "event_type": "SACR",
+        "agent": "",
+        "target": "",
+        "action": "We offer the sacred ghee into the flame; may it reach the Gods and please them."
+      }
+    ]
+  },
+  {
+    "id": "Rig Veda: Mandala 3, Hymn IV — Indra (Invocation and Praise)",
+    "corpus": "RIG_VEDA",
+    "register": "religion",
+    "origin": "native",
+    "source": "Griffith (1896) translation, Internet Archive",
+    "data_quality": "coded_from_full_text",
+    "confidence": 3,
+    "mythemes": [
+      "REQ",
+      "CURS",
+      "CONFL",
+      "SACR"
+    ],
+    "event_chain": [
+      {
+        "position": 1,
+        "event_type": "REQ",
+        "agent": "",
+        "target": "",
+        "action": "Come to us, Indra, with thy strong horses; drink the Soma we have prepared for thee."
+      },
+      {
+        "position": 2,
+        "event_type": "CURS",
+        "agent": "",
+        "target": "",
+        "action": "Indra, the bull among warriors, the lord of the thunderbolt, the slayer of Vritra."
+      },
+      {
+        "position": 3,
+        "event_type": "EXPL",
+        "agent": "",
+        "target": "",
+        "action": "The Soma juices are pressed for thee; the hymns are sung for thy glory."
+      },
+      {
+        "position": 4,
+        "event_type": "CONFL",
+        "agent": "",
+        "target": "",
+        "action": "Smite our enemies, O Indra; give us victory in battle; protect us from harm."
+      },
+      {
+        "position": 5,
+        "event_type": "CURS",
+        "agent": "",
+        "target": "",
+        "action": "Thou art the giver of wealth and victory; thou art the protector of thy worshippers."
+      },
+      {
+        "position": 6,
+        "event_type": "SACR",
+        "agent": "",
+        "target": "",
+        "action": "We offer the sacred drink and the hymns of praise; accept them, O lord of power."
+      },
+      {
+        "position": 7,
+        "event_type": "REQ",
+        "agent": "",
+        "target": "",
+        "action": "Grant us thy protection, O Indra; let us dwell in safety and abundance."
+      },
+      {
+        "position": 8,
+        "event_type": "CURS",
+        "agent": "",
+        "target": "",
+        "action": "May Indra, the mighty, be pleased with our devotion and bless us with his favor."
+      }
+    ]
+  },
+  {
+    "id": "Rig Veda: Mandala 3, Hymn VIII — Indra-Vishnu (Joint Invocation)",
+    "corpus": "RIG_VEDA",
+    "register": "religion",
+    "origin": "native",
+    "source": "Griffith (1896) translation, Internet Archive",
+    "data_quality": "coded_from_full_text",
+    "confidence": 3,
+    "mythemes": [
+      "SACR",
+      "CURS",
+      "REQ",
+      "EXPL"
+    ],
+    "event_chain": [
+      {
+        "position": 1,
+        "event_type": "SACR",
+        "agent": "",
+        "target": "",
+        "action": "The Soma is pressed for Indra and Vishnu; the sacred drink is offered to the two gods."
+      },
+      {
+        "position": 2,
+        "event_type": "EXPL",
+        "agent": "",
+        "target": "",
+        "action": "Indra, the wielder of the thunderbolt, and Vishnu, the wide-strider, are invoked together."
+      },
+      {
+        "position": 3,
+        "event_type": "CURS",
+        "agent": "",
+        "target": "",
+        "action": "May Indra and Vishnu come to our sacrifice; may they accept our oblations with favor."
+      },
+      {
+        "position": 4,
+        "event_type": "REQ",
+        "agent": "",
+        "target": "",
+        "action": "Grant us wealth and offspring, O Indra and Vishnu; protect us from our enemies."
+      },
+      {
+        "position": 5,
+        "event_type": "EXPL",
+        "agent": "",
+        "target": "",
+        "action": "Vishnu measured the three worlds; Indra conquered the waters and released them."
+      },
+      {
+        "position": 6,
+        "event_type": "CURS",
+        "agent": "",
+        "target": "",
+        "action": "The two are mighty and worthy of praise; their deeds are renowned in heaven and earth."
+      },
+      {
+        "position": 7,
+        "event_type": "SACR",
+        "agent": "",
+        "target": "",
+        "action": "We offer the sacred ghee and the pressed Soma; may the gods be pleased with our sacrifice."
+      },
+      {
+        "position": 8,
+        "event_type": "CURS",
+        "agent": "",
+        "target": "",
+        "action": "May Indra and Vishnu, the lords of strength, bless us with their grace and protection."
+      }
+    ]
+  },
+  {
+    "id": "Rig Veda: Mandala 10, Hymn I — Agni (Invocation)",
+    "corpus": "RIG_VEDA",
+    "register": "religion",
+    "origin": "native",
+    "source": "Griffith (1896) translation, Internet Archive",
+    "data_quality": "coded_from_full_text",
+    "confidence": 3,
+    "mythemes": [
+      "SACR",
+      "EXPL",
+      "CURS",
+      "REQ"
+    ],
+    "event_chain": [
+      {
+        "position": 1,
+        "event_type": "SACR",
+        "agent": "",
+        "target": "",
+        "action": "High hath the Mighty risen before the dawning, and come to us with light from the darkness."
+      },
+      {
+        "position": 2,
+        "event_type": "EXPL",
+        "agent": "",
+        "target": "",
+        "action": "Agni, the wise priest, the lord of the sacrifice, kindled by the fire-sticks."
+      },
+      {
+        "position": 3,
+        "event_type": "CURS",
+        "agent": "",
+        "target": "",
+        "action": "He shines with pure light; he is the messenger between the worlds."
+      },
+      {
+        "position": 4,
+        "event_type": "SACR",
+        "agent": "",
+        "target": "",
+        "action": "We kindle Agni with the sacred fuel; we offer the oblation into the flame."
+      },
+      {
+        "position": 5,
+        "event_type": "EXPL",
+        "agent": "",
+        "target": "",
+        "action": "Agni, the purifier, the giver of wealth, the destroyer of darkness."
+      },
+      {
+        "position": 6,
+        "event_type": "CURS",
+        "agent": "",
+        "target": "",
+        "action": "May Agni, who knows all the ways, bring the Gods to our sacrifice."
+      },
+      {
+        "position": 7,
+        "event_type": "REQ",
+        "agent": "",
+        "target": "",
+        "action": "O Agni, grant us thy protection; let us dwell in the light of thy grace."
+      },
+      {
+        "position": 8,
+        "event_type": "CURS",
+        "agent": "",
+        "target": "",
+        "action": "The fire rises high; it carries our prayers to the heavens; the Gods are pleased."
+      }
+    ]
+  },
+  {
+    "id": "Rig Veda: Mandala 10, Hymn XC — Purusha Sukta (Cosmic Man)",
+    "corpus": "RIG_VEDA",
+    "register": "religion",
+    "origin": "native",
+    "source": "Griffith (1896) translation, Internet Archive",
+    "data_quality": "coded_from_full_text",
+    "confidence": 3,
+    "mythemes": [
+      "SACR",
+      "CREA",
+      "EXPL",
+      "ORDER"
+    ],
+    "event_chain": [
+      {
+        "position": 1,
+        "event_type": "EXPL",
+        "agent": "",
+        "target": "",
+        "action": "Purusha has a thousand heads, a thousand eyes, a thousand feet. He envelops the earth on all sides."
+      },
+      {
+        "position": 2,
+        "event_type": "CREA",
+        "agent": "",
+        "target": "",
+        "action": "This whole universe is but a quarter of him; three-quarters of him are immortal in heaven."
+      },
+      {
+        "position": 3,
+        "event_type": "SACR",
+        "agent": "",
+        "target": "",
+        "action": "The Gods performed the sacrifice with Purusha as the offering; the sacred rite was born."
+      },
+      {
+        "position": 4,
+        "event_type": "CREA",
+        "agent": "",
+        "target": "",
+        "action": "From that great sacrifice, the ghee, the beasts of the air and forest, the hymns and meters were born."
+      },
+      {
+        "position": 5,
+        "event_type": "CREA",
+        "agent": "",
+        "target": "",
+        "action": "From that sacrifice, the horses, the cattle, and all creatures with two rows of teeth were born."
+      },
+      {
+        "position": 6,
+        "event_type": "ORDER",
+        "agent": "",
+        "target": "",
+        "action": "From the sacrifice, the Brahman was born; the four social orders were established."
+      },
+      {
+        "position": 7,
+        "event_type": "CREA",
+        "agent": "",
+        "target": "",
+        "action": "The moon was born from the mind of Purusha; the sun from his eye; Indra and Agni from his mouth."
+      },
+      {
+        "position": 8,
+        "event_type": "EXPL",
+        "agent": "",
+        "target": "",
+        "action": "With the sacrifice, the Gods sacrificed to the sacrifice itself; these were the first sacred ordinances."
+      }
+    ]
+  },
+  {
+    "id": "Rig Veda: Mandala 10, Hymn CXXIX — Nasadiya (Creation Hymn)",
+    "corpus": "RIG_VEDA",
+    "register": "religion",
+    "origin": "native",
+    "source": "Griffith (1896) translation, Internet Archive",
+    "data_quality": "coded_from_full_text",
+    "confidence": 3,
+    "mythemes": [
+      "EXPL",
+      "CREA",
+      "REQ",
+      "CURS"
+    ],
+    "event_chain": [
+      {
+        "position": 1,
+        "event_type": "EXPL",
+        "agent": "",
+        "target": "",
+        "action": "Then there was neither Being nor Non-being; there was no air nor sky beyond."
+      },
+      {
+        "position": 2,
+        "event_type": "EXPL",
+        "agent": "",
+        "target": "",
+        "action": "What covered the void? Where was the water? The deep darkness was everywhere."
+      },
+      {
+        "position": 3,
+        "event_type": "CREA",
+        "agent": "",
+        "target": "",
+        "action": "But there was that One, breathing without breath, by its own power; beyond that, nothing else existed."
+      },
+      {
+        "position": 4,
+        "event_type": "CREA",
+        "agent": "",
+        "target": "",
+        "action": "Desire arose in the beginning; that was the first seed of the mind—the bond between Being and Non-being."
+      },
+      {
+        "position": 5,
+        "event_type": "EXPL",
+        "agent": "",
+        "target": "",
+        "action": "The sages who searched with wisdom in their hearts found the bond of Being in Non-being."
+      },
+      {
+        "position": 6,
+        "event_type": "CREA",
+        "agent": "",
+        "target": "",
+        "action": "The ray of light stretched across the void; the seed of creation was planted."
+      },
+      {
+        "position": 7,
+        "event_type": "EXPL",
+        "agent": "",
+        "target": "",
+        "action": "Who knows the secret? Who here can declare whence this creation arose?"
+      },
+      {
+        "position": 8,
+        "event_type": "REQ",
+        "agent": "",
+        "target": "",
+        "action": "The Gods came after creation—who then knows whence it arose? Only the one who watches from the highest heaven knows."
+      }
+    ]
+  },
+  {
+    "id": "Rig Veda: Mandala 10, Hymn LXXXV — Wedding of Surya (Bridal Hymn)",
+    "corpus": "RIG_VEDA",
+    "register": "religion",
+    "origin": "native",
+    "source": "Griffith (1896) translation, Internet Archive",
+    "data_quality": "coded_from_full_text",
+    "confidence": 3,
+    "mythemes": [
+      "SACR",
+      "CURS",
+      "ORDER",
+      "EXPL"
+    ],
+    "event_chain": [
+      {
+        "position": 1,
+        "event_type": "EXPL",
+        "agent": "",
+        "target": "",
+        "action": "Truth is the foundation that supports the earth; the sun Surya is led to her wedding."
+      },
+      {
+        "position": 2,
+        "event_type": "SACR",
+        "agent": "",
+        "target": "",
+        "action": "The marriage of Surya to Soma is the prototype of all marriages; the Gods established the rite."
+      },
+      {
+        "position": 3,
+        "event_type": "CURS",
+        "agent": "",
+        "target": "",
+        "action": "May the bride be blessed with happiness; may she be loved by her husband and bear many sons."
+      },
+      {
+        "position": 4,
+        "event_type": "ORDER",
+        "agent": "",
+        "target": "",
+        "action": "The father gives away his daughter with due ceremony; the priest recites the sacred formulas."
+      },
+      {
+        "position": 5,
+        "event_type": "CURS",
+        "agent": "",
+        "target": "",
+        "action": "May the newlyweds live in harmony; may their home be filled with joy and abundance."
+      },
+      {
+        "position": 6,
+        "event_type": "SACR",
+        "agent": "",
+        "target": "",
+        "action": "The offerings are made to Agni; the sacred fire witnesses the union."
+      },
+      {
+        "position": 7,
+        "event_type": "CURS",
+        "agent": "",
+        "target": "",
+        "action": "May no widowhood befall the bride; may she be protected and cherished."
+      },
+      {
+        "position": 8,
+        "event_type": "EXPL",
+        "agent": "",
+        "target": "",
+        "action": "Surya, the sun's daughter, is the first bride; her wedding is the pattern for all human marriages."
+      }
+    ]
+  },
+  {
+    "id": "Rig Veda: Mandala 10, Hymn CXII — Prayer to Various Gods (General Petition)",
+    "corpus": "RIG_VEDA",
+    "register": "religion",
+    "origin": "native",
+    "source": "Griffith (1896) translation, Internet Archive",
+    "data_quality": "coded_from_full_text",
+    "confidence": 3,
+    "mythemes": [
+      "REQ",
+      "CURS",
+      "SACR",
+      "CONFL"
+    ],
+    "event_chain": [
+      {
+        "position": 1,
+        "event_type": "REQ",
+        "agent": "",
+        "target": "",
+        "action": "May the Gods protect us; may the waters bring us wealth; may the plants bring us healing."
+      },
+      {
+        "position": 2,
+        "event_type": "CURS",
+        "agent": "",
+        "target": "",
+        "action": "Agni, the messenger, carries our prayers to the heavens; the Gods hear our call."
+      },
+      {
+        "position": 3,
+        "event_type": "SACR",
+        "agent": "",
+        "target": "",
+        "action": "We offer the pressed Soma and the sacred hymns; may the Gods be pleased with our devotion."
+      },
+      {
+        "position": 4,
+        "event_type": "REQ",
+        "agent": "",
+        "target": "",
+        "action": "Grant us strength, O Indra; grant us wisdom, O Varuna; grant us wealth, O the Ashvins."
+      },
+      {
+        "position": 5,
+        "event_type": "CONFL",
+        "agent": "",
+        "target": "",
+        "action": "May our enemies be overcome; may we be victorious in all our battles."
+      },
+      {
+        "position": 6,
+        "event_type": "CURS",
+        "agent": "",
+        "target": "",
+        "action": "May the Gods, the lords of truth, protect us from harm and grant us long life."
+      },
+      {
+        "position": 7,
+        "event_type": "REQ",
+        "agent": "",
+        "target": "",
+        "action": "O Gods, let us dwell in your grace; let us be blessed with good fortune."
+      },
+      {
+        "position": 8,
+        "event_type": "CURS",
+        "agent": "",
+        "target": "",
+        "action": "All the Gods are invoked together; may they accept our offerings and grant us their blessings."
+      }
+    ]
+  }
+]

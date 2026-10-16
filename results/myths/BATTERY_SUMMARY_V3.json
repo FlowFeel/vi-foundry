@@ -1,0 +1,155 @@
+{
+ "inputs": {
+  "grammar_entries": 30,
+  "p2_entries": 27,
+  "ancient_entries": 22
+ },
+ "P2_ordering": {
+  "Psalms x RigVeda": {
+   "n_pairs": 196,
+   "bigram_jaccard": 0.177,
+   "position_agreement": 0.697,
+   "strict_order_match_pct": 0.0,
+   "set_jaccard": 0.575,
+   "null_mean": 0.693,
+   "null_sd": 0.022,
+   "null_p": 0.44,
+   "position_agreement_significant": false
+  },
+  "Psalms x Egyptian": {
+   "n_pairs": 28,
+   "bigram_jaccard": 0.098,
+   "position_agreement": 0.75,
+   "strict_order_match_pct": 0.0,
+   "set_jaccard": 0.302,
+   "null_mean": 0.722,
+   "null_sd": 0.032,
+   "null_p": 0.19,
+   "position_agreement_significant": false
+  },
+  "Psalms x Mesopotamian": {
+   "n_pairs": 14,
+   "bigram_jaccard": 0.1,
+   "position_agreement": 0.734,
+   "strict_order_match_pct": 0.0,
+   "set_jaccard": 0.362,
+   "null_mean": 0.714,
+   "null_sd": 0.022,
+   "null_p": 0.23,
+   "position_agreement_significant": false
+  },
+  "Psalms x Hittite": {
+   "n_pairs": 42,
+   "bigram_jaccard": 0.15,
+   "position_agreement": 0.72,
+   "strict_order_match_pct": 0.0,
+   "set_jaccard": 0.404,
+   "null_mean": 0.722,
+   "null_sd": 0.026,
+   "null_p": 0.575,
+   "position_agreement_significant": false
+  },
+  "RigVeda x Egyptian": {
+   "n_pairs": 28,
+   "bigram_jaccard": 0.107,
+   "position_agreement": 0.799,
+   "strict_order_match_pct": 0.0,
+   "set_jaccard": 0.27,
+   "null_mean": 0.736,
+   "null_sd": 0.031,
+   "null_p": 0.01,
+   "position_agreement_significant": true
+  },
+  "RigVeda x Mesopotamian": {
+   "n_pairs": 14,
+   "bigram_jaccard": 0.098,
+   "position_agreement": 0.718,
+   "strict_order_match_pct": 0.0,
+   "set_jaccard": 0.34,
+   "null_mean": 0.7,
+   "null_sd": 0.023,
+   "null_p": 0.23,
+   "position_agreement_significant": false
+  },
+  "RigVeda x Hittite": {
+   "n_pairs": 42,
+   "bigram_jaccard": 0.154,
+   "position_agreement": 0.785,
+   "strict_order_match_pct": 0.0,
+   "set_jaccard": 0.388,
+   "null_mean": 0.719,
+   "null_sd": 0.026,
+   "null_p": 0.005,
+   "position_agreement_significant": true
+  },
+  "Egyptian x Mesopotamian": {
+   "n_pairs": 2,
+   "bigram_jaccard": 0.279,
+   "position_agreement": 0.735,
+   "strict_order_match_pct": 0.0,
+   "set_jaccard": 0.667,
+   "null_mean": 0.774,
+   "null_sd": 0.054,
+   "null_p": 0.745,
+   "position_agreement_significant": false
+  },
+  "Egyptian x Hittite": {
+   "n_pairs": 6,
+   "bigram_jaccard": 0.206,
+   "position_agreement": 0.81,
+   "strict_order_match_pct": 0.0,
+   "set_jaccard": 0.359,
+   "null_mean": 0.814,
+   "null_sd": 0.039,
+   "null_p": 0.57,
+   "position_agreement_significant": false
+  },
+  "Mesopotamian x Hittite": {
+   "n_pairs": 3,
+   "bigram_jaccard": 0.269,
+   "position_agreement": 0.813,
+   "strict_order_match_pct": 0.0,
+   "set_jaccard": 0.495,
+   "null_mean": 0.815,
+   "null_sd": 0.042,
+   "null_p": 0.535,
+   "position_agreement_significant": false
+  },
+  "within_Psalms": {
+   "bigram_jaccard": 0.183
+  }
+ },
+ "P2_verdict": {
+  "pairs_meeting_0_6_on_ordering_metrics": [
+   "RigVeda x Egyptian",
+   "RigVeda x Hittite"
+  ],
+  "pairs_meeting_0_6_and_beating_shuffle_null": [
+   "RigVeda x Egyptian",
+   "RigVeda x Hittite"
+  ],
+  "pairs_total": 10,
+  "note": "position_agreement must beat a shuffled-chain null (entry order randomized, multiset preserved, 200 perms); raw ~0.7 agreement is trivial"
+ },
+ "P5_orthogonality": {
+  "content_vs_mytheme_spearman": -0.191,
+  "content_vs_primitive_spearman": -0.355,
+  "grammar_layers_agreement_spearman": 0.843,
+  "falsifier_r_gt_0_3": false,
+  "n_pairs": 15
+ },
+ "P3_deictic_transposition": {
+  "status": "confirmed-in-doc",
+  "evidence": "Egypt 2.07->4.69, Akkadia 3.13->9.98, Hittite 2.37->8.82, Ugaritic Baal 5.69 (ANCIENT_GRAMMAR_DEICTIC.md)",
+  "prediction": "religion > myth deictic index by 2-4x in every culture"
+ },
+ "P4_diachronic_congealing": {
+  "status": "data-in-doc",
+  "evidence": "Mesopotamia ORDERING%xroyal 0.7->14.7 rising; Egypt 5.4->0.6 declining (DIACHRONIC_POLITICAL_RELIGION.md)",
+  "prediction": "monotone rise Mesopotamia, fall Egypt"
+ },
+ "P6_polyphemus_phylogeny": {
+  "status": "PENDING",
+  "blocker": "d'Huy RMN-9 Polyphemus variant list not yet extracted to repo (no data file found)"
+ }
+}
