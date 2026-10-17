@@ -1,0 +1,858 @@
+[
+  {
+    "id": "Egyptian myth #1 (Creation of Atum)",
+    "corpus": "ANCIENT",
+    "register": "myth",
+    "origin": "native",
+    "source": "Wilson in Pritchard (ANET) 1950",
+    "data_quality": "coded_from_full_text",
+    "confidence": 4,
+    "mythemes": [
+      "CREA",
+      "ORIGIN",
+      "SACR"
+    ],
+    "event_chain": [
+      {
+        "position": 1,
+        "event_type": "CREA",
+        "agent": "creator deity",
+        "target": "",
+        "action": "Atum-Kheprer arises upon primeval hill as the ben-bird of Heliopolis"
+      },
+      {
+        "position": 2,
+        "event_type": "CREA",
+        "agent": "creator deity",
+        "target": "primordial deities",
+        "action": "Atum spits out Shu and sputters out Tefnut"
+      },
+      {
+        "position": 3,
+        "event_type": "REWD",
+        "agent": "creator deity",
+        "target": "primordial deities",
+        "action": "Atum embraces Shu and Tefnut with ka arms, investing them with his divine ka"
+      },
+      {
+        "position": 4,
+        "event_type": "REQ",
+        "agent": "speaker",
+        "target": "creator deity",
+        "action": "Speaker petitions Atum to encircle and guard King Nefer-ka-Re and his pyramid for eternity"
+      },
+      {
+        "position": 5,
+        "event_type": "CREA",
+        "agent": "creator deity",
+        "target": "divine council",
+        "action": "Atum begets the Great Ennead of Heliopolis with joy in his heart"
+      },
+      {
+        "position": 6,
+        "event_type": "REQ",
+        "agent": "speaker",
+        "target": "divine council",
+        "action": "Speaker invokes the Ennead never to separate from Atum as he protects the king and pyramid"
+      }
+    ],
+    "coder": "B",
+    "blind": true
+  },
+  {
+    "id": "Egyptian myth #2 (Contest of Horus and Seth)",
+    "corpus": "ANCIENT",
+    "register": "myth",
+    "origin": "native",
+    "source": "Wilson in Pritchard (ANET) 1950",
+    "data_quality": "coded_from_full_text",
+    "confidence": 4,
+    "mythemes": [
+      "CONFL",
+      "TEST",
+      "DECP",
+      "COMB",
+      "VICT"
+    ],
+    "event_chain": [
+      {
+        "position": 1,
+        "event_type": "CONFL",
+        "agent": "hero",
+        "target": "adversary",
+        "action": "Horus and Seth dispute succession to Osiris's throne before the divine tribunal"
+      },
+      {
+        "position": 2,
+        "event_type": "REQ",
+        "agent": "divine council",
+        "target": "elder goddess",
+        "action": "The tribunal writes to goddess Neith requesting arbitration on the eighty-year inheritance case"
+      },
+      {
+        "position": 3,
+        "event_type": "ORDER",
+        "agent": "elder goddess",
+        "target": "divine council",
+        "action": "Neith decrees that Osiris's office be awarded to Horus and Seth given compensation"
+      },
+      {
+        "position": 4,
+        "event_type": "REFU",
+        "agent": "supreme deity",
+        "target": "hero",
+        "action": "Re-Har-akhti rejects the verdict, asserting Horus is too young and weak to rule"
+      },
+      {
+        "position": 5,
+        "event_type": "CONFL",
+        "agent": "adversary",
+        "target": "mother goddess",
+        "action": "Seth threatens violence against the gods over Isis's intervention, isolating the court on Central Island"
+      },
+      {
+        "position": 6,
+        "event_type": "DECP",
+        "agent": "mother goddess",
+        "target": "adversary",
+        "action": "Isis disguises herself, crosses to the island, and tricks Seth into validating Horus's rightful claim"
+      },
+      {
+        "position": 7,
+        "event_type": "TEST",
+        "agent": "adversary",
+        "target": "hero",
+        "action": "Seth challenges Horus to an underwater endurance ordeal disguised as hippopotamuses"
+      },
+      {
+        "position": 8,
+        "event_type": "COMB",
+        "agent": "hero",
+        "target": "mother goddess",
+        "action": "Horus decapitates Isis after she spares Seth, and Seth blinds Horus before Hathor heals his eyes"
+      },
+      {
+        "position": 9,
+        "event_type": "TEST",
+        "agent": "adversary",
+        "target": "hero",
+        "action": "Seth challenges Horus to a stone-ship race; Horus floats a plastered wooden craft while Seth's stone ship sinks"
+      },
+      {
+        "position": 10,
+        "event_type": "REQ",
+        "agent": "divine scribe",
+        "target": "underworld deity",
+        "action": "Thoth writes to Osiris requesting a binding judgment on the claimants"
+      },
+      {
+        "position": 11,
+        "event_type": "WARN",
+        "agent": "underworld deity",
+        "target": "supreme deity",
+        "action": "Osiris threatens to loose ferocious underworld messengers if justice is denied to Horus"
+      },
+      {
+        "position": 12,
+        "event_type": "VICT",
+        "agent": "supreme deity",
+        "target": "hero",
+        "action": "Tribunal brings bound Seth in defeat and crowns Horus king of Egypt with the White Crown"
+      },
+      {
+        "position": 13,
+        "event_type": "REWD",
+        "agent": "supreme deity",
+        "target": "adversary",
+        "action": "Re-Har-akhti takes Seth to live as a son beside him in heaven to thunder from the sky"
+      }
+    ],
+    "coder": "B",
+    "blind": true
+  },
+  {
+    "id": "Egyptian religion #1 (Great Hymn to Aten)",
+    "corpus": "ANCIENT",
+    "register": "religion",
+    "origin": "native",
+    "source": "Wilson in Pritchard (ANET) 1950",
+    "data_quality": "coded_from_full_text",
+    "confidence": 4,
+    "mythemes": [
+      "CREA",
+      "ORIGIN",
+      "ORDER",
+      "SACR"
+    ],
+    "event_chain": [
+      {
+        "position": 1,
+        "event_type": "ORDERING",
+        "agent": "worshipper",
+        "target": "solar deity",
+        "action": "Worshippers offer formal praise and adoration to Aten rising on the eastern horizon"
+      },
+      {
+        "position": 2,
+        "event_type": "DETH",
+        "agent": "solar deity",
+        "target": "creation",
+        "action": "Aten sets in the west, casting the earth into deathlike darkness, stillness, and prowling predators"
+      },
+      {
+        "position": 3,
+        "event_type": "REVR",
+        "agent": "solar deity",
+        "target": "creation",
+        "action": "Aten rises at dawn, banishing shadows and awakening mankind, herds, and flora to life and labor"
+      },
+      {
+        "position": 4,
+        "event_type": "CREA",
+        "agent": "solar deity",
+        "target": "humankind",
+        "action": "Aten generates life within woman, infuses breath into the fetus, and nurtures infants and chicks"
+      },
+      {
+        "position": 5,
+        "event_type": "CREA",
+        "agent": "solar deity",
+        "target": "creation",
+        "action": "Aten creates the diverse nations, varied tongues, and skin colors while dwelling alone"
+      },
+      {
+        "position": 6,
+        "event_type": "ORIGIN",
+        "agent": "solar deity",
+        "target": "earth",
+        "action": "Aten creates the underworld Nile for Egypt and places a celestial Nile of rain in heaven for foreign nations"
+      },
+      {
+        "position": 7,
+        "event_type": "ORDER",
+        "agent": "solar deity",
+        "target": "earth",
+        "action": "Aten institutes changing seasons of winter coolness and summer heat to rear all living things"
+      },
+      {
+        "position": 8,
+        "event_type": "REWD",
+        "agent": "solar deity",
+        "target": "ruler",
+        "action": "Aten reveals divine mysteries and plans solely to his royal son Akhenaten and Queen Nefertiti"
+      }
+    ],
+    "coder": "B",
+    "blind": true
+  },
+  {
+    "id": "Egyptian religion #2 (Prayers/Hymns various)",
+    "corpus": "ANCIENT",
+    "register": "religion",
+    "origin": "native",
+    "source": "Wilson in Pritchard (ANET) 1950",
+    "data_quality": "coded_from_full_text",
+    "confidence": 4,
+    "mythemes": [
+      "COMB",
+      "VICT",
+      "PUNS",
+      "REWD"
+    ],
+    "event_chain": [
+      {
+        "position": 1,
+        "event_type": "REWD",
+        "agent": "supreme deity",
+        "target": "ruler",
+        "action": "Amon-Re welcomes and embraces Thutmose III, bestowing valor and worldwide dominion upon him"
+      },
+      {
+        "position": 2,
+        "event_type": "PUNS",
+        "agent": "supreme deity",
+        "target": "enemies",
+        "action": "Amon-Re binds vast multitudes of Nubian and northern enemies as living captives under the pharaoh's feet"
+      },
+      {
+        "position": 3,
+        "event_type": "COMB",
+        "agent": "supreme deity",
+        "target": "enemies",
+        "action": "Amon-Re leads the pharaoh past the Euphrates bend and sets the royal uraeus to devour rebellious foes"
+      },
+      {
+        "position": 4,
+        "event_type": "COMB",
+        "agent": "ruler",
+        "target": "enemies",
+        "action": "Thutmose III manifests as solar radiance, falling star, and bull to crush chiefs of Djahi and Retenu"
+      },
+      {
+        "position": 5,
+        "event_type": "VICT",
+        "agent": "ruler",
+        "target": "enemies",
+        "action": "Pharaoh courses like a jackal of the south, trampling front lands and binding Sand-Dwellers as captives"
+      },
+      {
+        "position": 6,
+        "event_type": "VICT",
+        "agent": "ruler",
+        "target": "enemies",
+        "action": "Pharaoh tramples Nubian barbarians as far as Shat-Djeba, protected by divine brothers and sisters"
+      },
+      {
+        "position": 7,
+        "event_type": "REWD",
+        "agent": "supreme deity",
+        "target": "ruler",
+        "action": "Amon-Re confirms Thutmose III on the throne of Horus for eternity in return for magnificent temple monuments"
+      }
+    ],
+    "coder": "B",
+    "blind": true
+  },
+  {
+    "id": "Psalm 1",
+    "corpus": "HEBREW_PSALMS",
+    "register": "myth",
+    "origin": "native",
+    "source": "King James Version (KJV) 1611",
+    "data_quality": "coded_from_full_text",
+    "confidence": 4,
+    "mythemes": [
+      "ORDER",
+      "REWD",
+      "PUNS",
+      "DETH"
+    ],
+    "event_chain": [
+      {
+        "position": 1,
+        "event_type": "ORDER",
+        "agent": "righteous person",
+        "target": "sinners",
+        "action": "Righteous man rejects counsel of ungodly, path of sinners, and assembly of scorners"
+      },
+      {
+        "position": 2,
+        "event_type": "ORDERING",
+        "agent": "righteous person",
+        "target": "divine law",
+        "action": "Righteous person delights in and meditates upon the law of the Lord day and night"
+      },
+      {
+        "position": 3,
+        "event_type": "REWD",
+        "agent": "supreme deity",
+        "target": "righteous person",
+        "action": "Righteous person flourishes and prospers like a fruitful tree planted by streams of water"
+      },
+      {
+        "position": 4,
+        "event_type": "PUNS",
+        "agent": "wind",
+        "target": "sinners",
+        "action": "The ungodly are scattered and driven away by wind like weightless chaff"
+      },
+      {
+        "position": 5,
+        "event_type": "REFU",
+        "agent": "divine council",
+        "target": "sinners",
+        "action": "Ungodly and sinners fail to stand in divine judgment or enter congregation of the righteous"
+      },
+      {
+        "position": 6,
+        "event_type": "DETH",
+        "agent": "supreme deity",
+        "target": "sinners",
+        "action": "The Lord upholds the way of the righteous while the path of the wicked perishes"
+      }
+    ],
+    "coder": "B",
+    "blind": true
+  },
+  {
+    "id": "Psalm 2",
+    "corpus": "HEBREW_PSALMS",
+    "register": "myth",
+    "origin": "native",
+    "source": "King James Version (KJV) 1611",
+    "data_quality": "coded_from_full_text",
+    "confidence": 4,
+    "mythemes": [
+      "CONFL",
+      "ORDER",
+      "COMB",
+      "PUNS",
+      "VICT"
+    ],
+    "event_chain": [
+      {
+        "position": 1,
+        "event_type": "CONFL",
+        "agent": "enemies",
+        "target": "supreme deity",
+        "action": "Heathen nations and kings conspire and rebel against the Lord and his anointed king"
+      },
+      {
+        "position": 2,
+        "event_type": "REFU",
+        "agent": "enemies",
+        "target": "supreme deity",
+        "action": "Rebellious rulers resolve to break divine bonds and throw off their cords"
+      },
+      {
+        "position": 3,
+        "event_type": "WARN",
+        "agent": "supreme deity",
+        "target": "enemies",
+        "action": "The Lord derides the rebels from heaven and speaks to them in terrifying wrath"
+      },
+      {
+        "position": 4,
+        "event_type": "ORDER",
+        "agent": "supreme deity",
+        "target": "ruler",
+        "action": "The Lord establishes his king upon holy hill Zion, proclaiming him his begotten Son"
+      },
+      {
+        "position": 5,
+        "event_type": "REWD",
+        "agent": "supreme deity",
+        "target": "ruler",
+        "action": "The Lord promises the nations and ends of the earth as an inheritance to the Son"
+      },
+      {
+        "position": 6,
+        "event_type": "COMB",
+        "agent": "ruler",
+        "target": "enemies",
+        "action": "The king is empowered to break rebels with an iron rod and dash them like clay pottery"
+      },
+      {
+        "position": 7,
+        "event_type": "WARN",
+        "agent": "speaker",
+        "target": "enemies",
+        "action": "Earthly kings are commanded to submit to the Son and revere the Lord to avert ruin"
+      }
+    ],
+    "coder": "B",
+    "blind": true
+  },
+  {
+    "id": "Koryak #1 (Little-Bird-Man and Raven-Man)",
+    "corpus": "BOGORAS_SIBERIA",
+    "register": "myth",
+    "origin": "native",
+    "source": "Bogoras 1917",
+    "data_quality": "coded_from_full_text",
+    "confidence": 4,
+    "mythemes": [
+      "TEST",
+      "DECP",
+      "COMB",
+      "DETH",
+      "REVR"
+    ],
+    "event_chain": [
+      {
+        "position": 1,
+        "event_type": "REQ",
+        "agent": "suitors",
+        "target": "patriarch",
+        "action": "Raven-Man and Little-Bird-Man compete to woo Big-Raven's daughter"
+      },
+      {
+        "position": 2,
+        "event_type": "DECP",
+        "agent": "trickster",
+        "target": "patriarch",
+        "action": "Raven-Man eats carrion in secret while pretending to be an expert hunter"
+      },
+      {
+        "position": 3,
+        "event_type": "TEST",
+        "agent": "patriarch",
+        "target": "suitors",
+        "action": "Big-Raven promises his daughter to whichever suitor calms a prolonged blizzard"
+      },
+      {
+        "position": 4,
+        "event_type": "TEST",
+        "agent": "trickster",
+        "target": "sky",
+        "action": "Raven-Man urinates in his boots under a cliff and gives up, claiming the sky is broken"
+      },
+      {
+        "position": 5,
+        "event_type": "VICT",
+        "agent": "hero",
+        "target": "sky",
+        "action": "Little-Bird-Man flies to the cleft in heaven, plugs it with a stopper and fat, calming the storm"
+      },
+      {
+        "position": 6,
+        "event_type": "REWD",
+        "agent": "patriarch",
+        "target": "hero",
+        "action": "Big-Raven banishes filthy Raven-Man and gives daughter Yinia-nawgut to Little-Bird-Man"
+      },
+      {
+        "position": 7,
+        "event_type": "THEF",
+        "agent": "trickster",
+        "target": "sun",
+        "action": "Vengeful Raven-Man hides the sun in his mouth like a quid, plunging the land into darkness"
+      },
+      {
+        "position": 8,
+        "event_type": "MEET",
+        "agent": "maiden",
+        "target": "river spirit",
+        "action": "A daughter sings while groping for water in the dark; River-Man assists and marries her"
+      },
+      {
+        "position": 9,
+        "event_type": "DECP",
+        "agent": "heroine",
+        "target": "trickster",
+        "action": "Yinia-nawgut visits Raven-Man, tickles him until he laughs, releasing the trapped sun into heaven"
+      },
+      {
+        "position": 10,
+        "event_type": "COMB",
+        "agent": "heroine",
+        "target": "trickster",
+        "action": "Yinia-nawgut flatters Raven-Man, brings him home, and kills him, mounting his palate to ensure clear skies"
+      },
+      {
+        "position": 11,
+        "event_type": "DETH",
+        "agent": "hero",
+        "target": "heroine",
+        "action": "Little-Bird-Man insists on carrying his wife across a swollen river on foot and dies"
+      },
+      {
+        "position": 12,
+        "event_type": "REVR",
+        "agent": "hero",
+        "target": "heroine",
+        "action": "Little-Bird-Man reappears as a wealthy reindeer herder, proves his identity with mittens, and returns home in joy"
+      }
+    ],
+    "coder": "B",
+    "blind": true
+  },
+  {
+    "id": "Koryak #2 (Big-Raven and the Mice)",
+    "corpus": "BOGORAS_SIBERIA",
+    "register": "myth",
+    "origin": "native",
+    "source": "Bogoras 1917",
+    "data_quality": "coded_from_full_text",
+    "confidence": 4,
+    "mythemes": [
+      "THEF",
+      "DECP",
+      "TRAP",
+      "PUNS",
+      "REVR"
+    ],
+    "event_chain": [
+      {
+        "position": 1,
+        "event_type": "THEF",
+        "agent": "trickster",
+        "target": "mouse-girls",
+        "action": "Big-Raven scatters dancing mouse-girls into water and mud, seizing their stranded baby seal"
+      },
+      {
+        "position": 2,
+        "event_type": "DECP",
+        "agent": "mouse-women",
+        "target": "trickster",
+        "action": "Mice drop magical enchanted grass into Big-Raven's house so he postpones eating the cooked seal until morning"
+      },
+      {
+        "position": 3,
+        "event_type": "THEF",
+        "agent": "mouse-women",
+        "target": "trickster",
+        "action": "Mice steal the seal meat and broth while ravens sleep, defecating in the kettle and loading boots with pebbles"
+      },
+      {
+        "position": 4,
+        "event_type": "CONFL",
+        "agent": "trickster",
+        "target": "mouse-women",
+        "action": "Big-Raven encounters stones in boots and foul broth, taking up a club to attack the mouse-women"
+      },
+      {
+        "position": 5,
+        "event_type": "DECP",
+        "agent": "mouse-women",
+        "target": "trickster",
+        "action": "Mice soothe angry Big-Raven with cloudberry pudding and fasten red cloth shreds to his eyelids as he naps"
+      },
+      {
+        "position": 6,
+        "event_type": "DECP",
+        "agent": "trickster",
+        "target": "child",
+        "action": "Big-Raven mistaking red rags for fire orders his wife to tear their son in half before realizing the trick"
+      },
+      {
+        "position": 7,
+        "event_type": "DECP",
+        "agent": "mouse-women",
+        "target": "trickster",
+        "action": "Big-Raven returns with his club; mice ply him with berry pudding and blacken his face with charcoal during sleep"
+      },
+      {
+        "position": 8,
+        "event_type": "TRAP",
+        "agent": "trickster",
+        "target": "trickster",
+        "action": "Mice send Big-Raven to river where he sees his painted reflection, courts it as Painted-Woman, and drowns himself"
+      }
+    ],
+    "coder": "B",
+    "blind": true
+  },
+  {
+    "id": "Australian #1 (Meamei The Seven Sisters)",
+    "corpus": "PARKER_AUSTRALIA",
+    "register": "myth",
+    "origin": "native",
+    "source": "Parker 1896",
+    "data_quality": "coded_from_full_text",
+    "confidence": 4,
+    "mythemes": [
+      "JOUR",
+      "THEF",
+      "TRAP",
+      "ORIGIN",
+      "RESC"
+    ],
+    "event_chain": [
+      {
+        "position": 1,
+        "event_type": "REFU",
+        "agent": "tribe",
+        "target": "hunter",
+        "action": "Tribe refuses hungry Wurrunnah food seeds, driving him to depart in anger for strange lands"
+      },
+      {
+        "position": 2,
+        "event_type": "JOUR",
+        "agent": "hunter",
+        "target": "strangers",
+        "action": "Wurrunnah encounters eyeless honey hunter, vanishing lagoon, terrifying bark spirit, and mistakenly spears featherless man"
+      },
+      {
+        "position": 3,
+        "event_type": "MEET",
+        "agent": "hunter",
+        "target": "maidens",
+        "action": "Wurrunnah reaches encampment of seven Meamei sisters who shelter and feed him"
+      },
+      {
+        "position": 4,
+        "event_type": "THEF",
+        "agent": "hunter",
+        "target": "maidens",
+        "action": "Wurrunnah trails sisters to ant mounds and steals two digging sticks while they feast"
+      },
+      {
+        "position": 5,
+        "event_type": "TRAP",
+        "agent": "hunter",
+        "target": "maidens",
+        "action": "Wurrunnah sticks stolen implements into earth and ambushes two searching sisters, capturing them as wives"
+      },
+      {
+        "position": 6,
+        "event_type": "ORDER",
+        "agent": "hunter",
+        "target": "maidens",
+        "action": "Wurrunnah compels captive wives to cut pine bark despite warnings of perpetual loss"
+      },
+      {
+        "position": 7,
+        "event_type": "ORIGIN",
+        "agent": "pine trees",
+        "target": "maidens",
+        "action": "Pine trees shoot upward into the sky carrying both sisters on their expanding trunks"
+      },
+      {
+        "position": 8,
+        "event_type": "RESC",
+        "agent": "maidens",
+        "target": "maidens",
+        "action": "Five sisters in heaven pull the two rising sisters into the sky to abide together forever as the Pleiades"
+      }
+    ],
+    "coder": "B",
+    "blind": true
+  },
+  {
+    "id": "Australian #2 (Cookooburrahs And Goolahgool)",
+    "corpus": "PARKER_AUSTRALIA",
+    "register": "myth",
+    "origin": "native",
+    "source": "Parker 1896",
+    "data_quality": "coded_from_full_text",
+    "confidence": 4,
+    "mythemes": [
+      "CONFL",
+      "RESC",
+      "DECP",
+      "PUNS",
+      "DETH"
+    ],
+    "event_chain": [
+      {
+        "position": 1,
+        "event_type": "CONFL",
+        "agent": "parents",
+        "target": "children",
+        "action": "Iguana father and mother bird abandon young Cookooburrah brothers without water in camp"
+      },
+      {
+        "position": 2,
+        "event_type": "RESC",
+        "agent": "brother",
+        "target": "children",
+        "action": "Eldest brother finds perishing brothers, scales water-tree goolahgool, and splits trunk to release torrent"
+      },
+      {
+        "position": 3,
+        "event_type": "REWD",
+        "agent": "children",
+        "target": "water",
+        "action": "Young brothers quench thirst and bathe rejoicing in the swelling stream"
+      },
+      {
+        "position": 4,
+        "event_type": "DECP",
+        "agent": "brother",
+        "target": "parents",
+        "action": "Eldest brother directs siblings to deceive returning parents into wading across the dangerous deep current"
+      },
+      {
+        "position": 5,
+        "event_type": "REFU",
+        "agent": "children",
+        "target": "parents",
+        "action": "Children mock drowning mother's pleas for a branch with laughing cries from the safety of the riverbank"
+      },
+      {
+        "position": 6,
+        "event_type": "PUNS",
+        "agent": "water",
+        "target": "parents",
+        "action": "Rushing flood sweeps away and drowns neglectful parents in retribution"
+      }
+    ],
+    "coder": "B",
+    "blind": true
+  },
+  {
+    "id": "Formosan #1 (Text. Amis 1)",
+    "corpus": "BRILL",
+    "register": "myth",
+    "origin": "native",
+    "source": "Yeh 2008",
+    "data_quality": "coded_from_full_text",
+    "confidence": 4,
+    "mythemes": [
+      "CREA",
+      "TRAVL",
+      "ORIGIN",
+      "EXPL"
+    ],
+    "event_chain": [
+      {
+        "position": 1,
+        "event_type": "CREA",
+        "agent": "deity",
+        "target": "ancestor",
+        "action": "Deity creates first Amis ancestor Masera in ancestral land Arapanay"
+      },
+      {
+        "position": 2,
+        "event_type": "ORIGIN",
+        "agent": "ancestor",
+        "target": "descendants",
+        "action": "Ancestor Masera fathers two sons Tapang Masera and Rarog Masera"
+      },
+      {
+        "position": 3,
+        "event_type": "TRAVL",
+        "agent": "spirits",
+        "target": "ancestor",
+        "action": "Spirits generate ocean current carrying brothers to Chippong river mouth in Taitung"
+      },
+      {
+        "position": 4,
+        "event_type": "EXPL",
+        "agent": "ancestor",
+        "target": "landing place",
+        "action": "Brothers designate landing place Arapanay in memory of original homeland"
+      }
+    ],
+    "coder": "B",
+    "blind": true
+  },
+  {
+    "id": "Formosan #2 (Text. Amis 2)",
+    "corpus": "BRILL",
+    "register": "myth",
+    "origin": "native",
+    "source": "Taylor 1886",
+    "data_quality": "coded_from_full_text",
+    "confidence": 4,
+    "mythemes": [
+      "CREA",
+      "TRFM",
+      "ORIGIN",
+      "TRAVL"
+    ],
+    "event_chain": [
+      {
+        "position": 1,
+        "event_type": "CREA",
+        "agent": "deity",
+        "target": "staff",
+        "action": "A god plants a wooden staff in the earth"
+      },
+      {
+        "position": 2,
+        "event_type": "TRFM",
+        "agent": "staff",
+        "target": "bamboo",
+        "action": "The planted staff metamorphoses into a living bamboo plant"
+      },
+      {
+        "position": 3,
+        "event_type": "ORIGIN",
+        "agent": "bamboo",
+        "target": "protoplasts",
+        "action": "Bamboo sprouts two shoots that transform into male and female first ancestors"
+      },
+      {
+        "position": 4,
+        "event_type": "TRAVL",
+        "agent": "descendants",
+        "target": "territory",
+        "action": "Offspring of primeval ancestors multiply and occupy Kouasain near Puyuma"
+      }
+    ],
+    "coder": "B",
+    "blind": true
+  }
+]
