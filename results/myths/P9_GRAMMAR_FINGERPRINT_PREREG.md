@@ -22,3 +22,10 @@ without a third kappa round.
 ## Tier
 M (provisional). Cannot rise to S until the blind deployment passes on independently-coded
 material. Confounded by: single pipeline, 4 unbalanced classes, shared contact history.
+
+## OUTCOME (2026-10-17, commit 88a7cee): rival prediction won
+Blind deployment executed same-day using coders B/C v3 codings placed against pipeline-v1
+centroids. Result: chance or below under cosine (1/12), Jaccard (1/12), coverage (2/12).
+Grammar fingerprint REFUTED as text-level signal; within-pipeline accuracies attributed to
+pipeline coding habits. Content parent-mytheme layer (κ-validated 0.597) is the sole
+surviving cross-tradition instrument. See P9_BLIND_DEPLOYMENT_RESULTS.md.
