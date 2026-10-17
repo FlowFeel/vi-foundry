@@ -1,0 +1,37 @@
+{
+ "G1_mytheme": {
+  "delta": -0.0392,
+  "ci95": [
+   -0.0899,
+   0.006
+  ],
+  "australia_delta": -0.0392,
+  "australia_rank_out_of": "3/13",
+  "n_within": 66,
+  "n_cross": 12
+ },
+ "G2_bigram": {
+  "delta": -0.019,
+  "ci95": [
+   -0.0485,
+   0.0074
+  ],
+  "australia_delta": -0.019,
+  "australia_rank_out_of": "5/13",
+  "n_within": 66,
+  "n_cross": 12
+ },
+ "C_content": {
+  "delta": 0.0405,
+  "ci95": [
+   0.0099,
+   0.0679
+  ],
+  "australia_delta": 0.0405,
+  "australia_rank_out_of": "13/13",
+  "n_within": 66,
+  "n_cross": 12
+ },
+ "n_entries": 705,
+ "n_regions": 13
+}
