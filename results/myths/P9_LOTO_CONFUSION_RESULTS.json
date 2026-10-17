@@ -1,0 +1,868 @@
+{
+ "Ancient Near East": {
+  "loto": {
+   "gram": {
+    "Akkadian": {
+     "landing": {
+      "Hittite": 6
+     },
+     "n": 6
+    },
+    "Egyptian": {
+     "landing": {
+      "Akkadian": 3,
+      "Hittite": 2
+     },
+     "n": 5
+    },
+    "Hittite": {
+     "landing": {
+      "Akkadian": 8
+     },
+     "n": 8
+    }
+   },
+   "myth": {
+    "Akkadian": {
+     "landing": {
+      "Egyptian": 4,
+      "Hittite": 2
+     },
+     "n": 6
+    },
+    "Egyptian": {
+     "landing": {
+      "Hittite": 4,
+      "Akkadian": 1
+     },
+     "n": 5
+    },
+    "Hittite": {
+     "landing": {
+      "Egyptian": 5,
+      "Akkadian": 3
+     },
+     "n": 8
+    }
+   },
+   "pmyth": {
+    "Akkadian": {
+     "landing": {
+      "Egyptian": 4,
+      "Hittite": 2
+     },
+     "n": 6
+    },
+    "Egyptian": {
+     "landing": {
+      "Akkadian": 4,
+      "Hittite": 1
+     },
+     "n": 5
+    },
+    "Hittite": {
+     "landing": {
+      "Egyptian": 5,
+      "Akkadian": 3
+     },
+     "n": 8
+    }
+   }
+  },
+  "close_tests": {}
+ },
+ "Koryak vs Amur": {
+  "loto": {
+   "gram": {
+    "Chukchee": {
+     "landing": {
+      "Koryak": 4
+     },
+     "n": 4
+    },
+    "Koryak": {
+     "landing": {
+      "Chukchee": 9,
+      "Nanai": 2
+     },
+     "n": 11
+    },
+    "Nanai": {
+     "landing": {
+      "Chukchee": 1,
+      "Koryak": 6
+     },
+     "n": 7
+    }
+   },
+   "myth": {
+    "Chukchee": {
+     "landing": {
+      "Nanai": 3,
+      "Koryak": 1
+     },
+     "n": 4
+    },
+    "Koryak": {
+     "landing": {
+      "Nanai": 7,
+      "Chukchee": 4
+     },
+     "n": 11
+    },
+    "Nanai": {
+     "landing": {
+      "Koryak": 4,
+      "Chukchee": 3
+     },
+     "n": 7
+    }
+   },
+   "pmyth": {
+    "Chukchee": {
+     "landing": {
+      "Koryak": 4
+     },
+     "n": 4
+    },
+    "Koryak": {
+     "landing": {
+      "Nanai": 7,
+      "Chukchee": 4
+     },
+     "n": 11
+    },
+    "Nanai": {
+     "landing": {
+      "Koryak": 7
+     },
+     "n": 7
+    }
+   }
+  },
+  "close_tests": {
+   "gram|Chukchee": {
+    "obs": 1.0,
+    "exp": 0.5,
+    "n": 4
+   },
+   "gram|Koryak": {
+    "obs": 0.818,
+    "exp": 0.5,
+    "n": 11
+   },
+   "myth|Chukchee": {
+    "obs": 0.25,
+    "exp": 0.5,
+    "n": 4
+   },
+   "myth|Koryak": {
+    "obs": 0.364,
+    "exp": 0.5,
+    "n": 11
+   },
+   "pmyth|Chukchee": {
+    "obs": 1.0,
+    "exp": 0.5,
+    "n": 4
+   },
+   "pmyth|Koryak": {
+    "obs": 0.364,
+    "exp": 0.5,
+    "n": 11
+   }
+  }
+ },
+ "Formosa tribes": {
+  "loto": {
+   "gram": {
+    "Amis": {
+     "landing": {
+      "Saisiyat": 7,
+      "Atayal": 5,
+      "Sakizaya": 3,
+      "Kavalan": 6,
+      "Puyuma": 1,
+      "Trobiawan": 2,
+      "Paiwan": 1,
+      "Pazeh": 1,
+      "Truku": 2,
+      "Yami": 3
+     },
+     "n": 31
+    },
+    "Atayal": {
+     "landing": {
+      "Paiwan": 6,
+      "Rukai": 1,
+      "Saisiyat": 2,
+      "Amis": 2,
+      "Seediq": 7,
+      "Bunun": 7,
+      "Thao": 1,
+      "Puyuma": 1
+     },
+     "n": 27
+    },
+    "Bunun": {
+     "landing": {
+      "Amis": 3,
+      "Paiwan": 5,
+      "Atayal": 15,
+      "Kanakanavu": 1,
+      "Puyuma": 5,
+      "Pazeh": 1,
+      "Saisiyat": 1,
+      "Rukai": 1,
+      "Truku": 2,
+      "Tsou": 2,
+      "Seediq": 1,
+      "Yami": 3,
+      "Sakizaya": 1
+     },
+     "n": 41
+    },
+    "Kanakanavu": {
+     "landing": {
+      "Puyuma": 2,
+      "Paiwan": 1,
+      "Yami": 1,
+      "Trobiawan": 1
+     },
+     "n": 5
+    },
+    "Kavalan": {
+     "landing": {
+      "Atayal": 1,
+      "Trobiawan": 4,
+      "Amis": 3,
+      "Saisiyat": 3,
+      "Pazeh": 1
+     },
+     "n": 12
+    },
+    "Paiwan": {
+     "landing": {
+      "Saisiyat": 1,
+      "Atayal": 16,
+      "Kavalan": 4,
+      "Amis": 7,
+      "Sakizaya": 3,
+      "Bunun": 3,
+      "Rukai": 4,
+      "Pazeh": 1,
+      "Seediq": 2,
+      "Puyuma": 6,
+      "Tsou": 3,
+      "Trobiawan": 1,
+      "Truku": 3
+     },
+     "n": 54
+    },
+    "Pazeh": {
+     "landing": {
+      "Saisiyat": 2,
+      "Trobiawan": 3,
+      "Yami": 1,
+      "Kavalan": 1
+     },
+     "n": 7
+    },
+    "Puyuma": {
+     "landing": {
+      "Atayal": 5,
+      "Tsou": 1,
+      "Yami": 2,
+      "Kanakanavu": 2,
+      "Paiwan": 3,
+      "Rukai": 1,
+      "Pazeh": 1,
+      "Saisiyat": 1
+     },
+     "n": 16
+    },
+    "Rukai": {
+     "landing": {
+      "Amis": 4,
+      "Puyuma": 3,
+      "Kanakanavu": 3,
+      "Sakizaya": 4,
+      "Pazeh": 1,
+      "Paiwan": 2,
+      "Truku": 8,
+      "Atayal": 1,
+      "Tsou": 2,
+      "Kavalan": 1
+     },
+     "n": 29
+    },
+    "Saisiyat": {
+     "landing": {
+      "Atayal": 3,
+      "Sakizaya": 1,
+      "Kavalan": 1,
+      "Trobiawan": 1,
+      "Pazeh": 2,
+      "Truku": 1
+     },
+     "n": 9
+    },
+    "Sakizaya": {
+     "landing": {
+      "Yami": 2,
+      "Kavalan": 1,
+      "Atayal": 1,
+      "Amis": 1,
+      "Trobiawan": 2,
+      "Pazeh": 1,
+      "Truku": 2
+     },
+     "n": 10
+    },
+    "Seediq": {
+     "landing": {
+      "Amis": 1,
+      "Tsou": 3,
+      "Atayal": 7,
+      "Saisiyat": 1,
+      "Sakizaya": 1,
+      "Kavalan": 1,
+      "Pazeh": 2,
+      "Puyuma": 1,
+      "Rukai": 1
+     },
+     "n": 18
+    },
+    "Siraya": {
+     "landing": {
+      "Atayal": 1,
+      "Trobiawan": 1,
+      "Thao": 1
+     },
+     "n": 3
+    },
+    "Thao": {
+     "landing": {
+      "Tsou": 1,
+      "Truku": 1,
+      "Siraya": 1
+     },
+     "n": 3
+    },
+    "Trobiawan": {
+     "landing": {
+      "Kavalan": 3,
+      "Sakizaya": 2,
+      "Pazeh": 3,
+      "Rukai": 1
+     },
+     "n": 9
+    },
+    "Truku": {
+     "landing": {
+      "Rukai": 4,
+      "Atayal": 2,
+      "Amis": 2,
+      "Kanakanavu": 2,
+      "Trobiawan": 2,
+      "Pazeh": 4,
+      "Yami": 3,
+      "Tsou": 2,
+      "Thao": 1
+     },
+     "n": 22
+    },
+    "Tsou": {
+     "landing": {
+      "Seediq": 2,
+      "Bunun": 1,
+      "Sakizaya": 2,
+      "Kanakanavu": 6,
+      "Puyuma": 1,
+      "Amis": 1,
+      "Yami": 3,
+      "Truku": 1,
+      "Saisiyat": 1
+     },
+     "n": 18
+    },
+    "Yami": {
+     "landing": {
+      "Truku": 3,
+      "Sakizaya": 6,
+      "Tsou": 6,
+      "Amis": 2,
+      "Seediq": 1,
+      "Rukai": 2,
+      "Puyuma": 1,
+      "Pazeh": 1
+     },
+     "n": 22
+    }
+   },
+   "myth": {
+    "Amis": {
+     "landing": {
+      "Kavalan": 11,
+      "Rukai": 4,
+      "Atayal": 3,
+      "Siraya": 6,
+      "Pazeh": 1,
+      "Trobiawan": 1,
+      "Truku": 5
+     },
+     "n": 31
+    },
+    "Atayal": {
+     "landing": {
+      "Seediq": 3,
+      "Kanakanavu": 7,
+      "Sakizaya": 9,
+      "Thao": 3,
+      "Truku": 3,
+      "Trobiawan": 2
+     },
+     "n": 27
+    },
+    "Bunun": {
+     "landing": {
+      "Atayal": 13,
+      "Rukai": 10,
+      "Kavalan": 1,
+      "Truku": 12,
+      "Thao": 4,
+      "Trobiawan": 1
+     },
+     "n": 41
+    },
+    "Kanakanavu": {
+     "landing": {
+      "Rukai": 2,
+      "Atayal": 2,
+      "Truku": 1
+     },
+     "n": 5
+    },
+    "Kavalan": {
+     "landing": {
+      "Thao": 1,
+      "Pazeh": 8,
+      "Siraya": 1,
+      "Trobiawan": 2
+     },
+     "n": 12
+    },
+    "Paiwan": {
+     "landing": {
+      "Kavalan": 3,
+      "Rukai": 13,
+      "Siraya": 20,
+      "Atayal": 10,
+      "Thao": 5,
+      "Pazeh": 1,
+      "Trobiawan": 1,
+      "Truku": 1
+     },
+     "n": 54
+    },
+    "Pazeh": {
+     "landing": {
+      "Siraya": 2,
+      "Kavalan": 3,
+      "Thao": 2
+     },
+     "n": 7
+    },
+    "Puyuma": {
+     "landing": {
+      "Rukai": 4,
+      "Siraya": 4,
+      "Atayal": 4,
+      "Seediq": 1,
+      "Pazeh": 1,
+      "Kavalan": 1,
+      "Truku": 1
+     },
+     "n": 16
+    },
+    "Rukai": {
+     "landing": {
+      "Tsou": 5,
+      "Seediq": 5,
+      "Thao": 8,
+      "Atayal": 5,
+      "Truku": 1,
+      "Siraya": 3,
+      "Kavalan": 2
+     },
+     "n": 29
+    },
+    "Saisiyat": {
+     "landing": {
+      "Atayal": 3,
+      "Kanakanavu": 1,
+      "Kavalan": 2,
+      "Thao": 2,
+      "Trobiawan": 1
+     },
+     "n": 9
+    },
+    "Sakizaya": {
+     "landing": {
+      "Atayal": 3,
+      "Kavalan": 4,
+      "Siraya": 1,
+      "Truku": 2
+     },
+     "n": 10
+    },
+    "Seediq": {
+     "landing": {
+      "Rukai": 6,
+      "Atayal": 7,
+      "Kavalan": 1,
+      "Thao": 3,
+      "Truku": 1
+     },
+     "n": 18
+    },
+    "Siraya": {
+     "landing": {
+      "Paiwan": 1,
+      "Pazeh": 1,
+      "Kavalan": 1
+     },
+     "n": 3
+    },
+    "Thao": {
+     "landing": {
+      "Truku": 2,
+      "Trobiawan": 1
+     },
+     "n": 3
+    },
+    "Trobiawan": {
+     "landing": {
+      "Thao": 5,
+      "Kavalan": 4
+     },
+     "n": 9
+    },
+    "Truku": {
+     "landing": {
+      "Siraya": 1,
+      "Seediq": 1,
+      "Atayal": 5,
+      "Rukai": 1,
+      "Kavalan": 1,
+      "Thao": 9,
+      "Yami": 3,
+      "Trobiawan": 1
+     },
+     "n": 22
+    },
+    "Tsou": {
+     "landing": {
+      "Rukai": 5,
+      "Atayal": 4,
+      "Siraya": 2,
+      "Thao": 3,
+      "Pazeh": 1,
+      "Truku": 3
+     },
+     "n": 18
+    },
+    "Yami": {
+     "landing": {
+      "Atayal": 3,
+      "Rukai": 4,
+      "Siraya": 3,
+      "Kavalan": 2,
+      "Truku": 3,
+      "Trobiawan": 1,
+      "Pazeh": 1,
+      "Thao": 5
+     },
+     "n": 22
+    }
+   },
+   "pmyth": {
+    "Amis": {
+     "landing": {
+      "Kavalan": 11,
+      "Rukai": 4,
+      "Atayal": 3,
+      "Siraya": 6,
+      "Pazeh": 1,
+      "Trobiawan": 1,
+      "Truku": 5
+     },
+     "n": 31
+    },
+    "Atayal": {
+     "landing": {
+      "Seediq": 3,
+      "Kanakanavu": 7,
+      "Sakizaya": 9,
+      "Thao": 3,
+      "Truku": 3,
+      "Trobiawan": 2
+     },
+     "n": 27
+    },
+    "Bunun": {
+     "landing": {
+      "Atayal": 13,
+      "Rukai": 10,
+      "Kavalan": 1,
+      "Truku": 12,
+      "Thao": 4,
+      "Trobiawan": 1
+     },
+     "n": 41
+    },
+    "Kanakanavu": {
+     "landing": {
+      "Rukai": 2,
+      "Atayal": 2,
+      "Truku": 1
+     },
+     "n": 5
+    },
+    "Kavalan": {
+     "landing": {
+      "Thao": 3,
+      "Pazeh": 8,
+      "Siraya": 1
+     },
+     "n": 12
+    },
+    "Paiwan": {
+     "landing": {
+      "Kavalan": 3,
+      "Rukai": 13,
+      "Siraya": 20,
+      "Atayal": 10,
+      "Thao": 5,
+      "Pazeh": 1,
+      "Trobiawan": 1,
+      "Truku": 1
+     },
+     "n": 54
+    },
+    "Pazeh": {
+     "landing": {
+      "Siraya": 2,
+      "Kavalan": 3,
+      "Thao": 2
+     },
+     "n": 7
+    },
+    "Puyuma": {
+     "landing": {
+      "Rukai": 4,
+      "Siraya": 4,
+      "Atayal": 4,
+      "Seediq": 1,
+      "Pazeh": 1,
+      "Kavalan": 1,
+      "Truku": 1
+     },
+     "n": 16
+    },
+    "Rukai": {
+     "landing": {
+      "Tsou": 5,
+      "Seediq": 5,
+      "Thao": 8,
+      "Atayal": 5,
+      "Truku": 1,
+      "Siraya": 3,
+      "Kavalan": 2
+     },
+     "n": 29
+    },
+    "Saisiyat": {
+     "landing": {
+      "Atayal": 3,
+      "Kanakanavu": 1,
+      "Kavalan": 2,
+      "Thao": 2,
+      "Trobiawan": 1
+     },
+     "n": 9
+    },
+    "Sakizaya": {
+     "landing": {
+      "Atayal": 3,
+      "Kavalan": 4,
+      "Siraya": 1,
+      "Truku": 2
+     },
+     "n": 10
+    },
+    "Seediq": {
+     "landing": {
+      "Rukai": 6,
+      "Atayal": 7,
+      "Kavalan": 1,
+      "Thao": 3,
+      "Truku": 1
+     },
+     "n": 18
+    },
+    "Siraya": {
+     "landing": {
+      "Paiwan": 1,
+      "Pazeh": 1,
+      "Kavalan": 1
+     },
+     "n": 3
+    },
+    "Thao": {
+     "landing": {
+      "Truku": 2,
+      "Trobiawan": 1
+     },
+     "n": 3
+    },
+    "Trobiawan": {
+     "landing": {
+      "Thao": 5,
+      "Kavalan": 4
+     },
+     "n": 9
+    },
+    "Truku": {
+     "landing": {
+      "Siraya": 1,
+      "Seediq": 1,
+      "Atayal": 4,
+      "Rukai": 1,
+      "Kavalan": 1,
+      "Thao": 10,
+      "Yami": 3,
+      "Trobiawan": 1
+     },
+     "n": 22
+    },
+    "Tsou": {
+     "landing": {
+      "Rukai": 5,
+      "Atayal": 4,
+      "Siraya": 2,
+      "Thao": 3,
+      "Pazeh": 1,
+      "Truku": 3
+     },
+     "n": 18
+    },
+    "Yami": {
+     "landing": {
+      "Atayal": 3,
+      "Rukai": 4,
+      "Siraya": 3,
+      "Kavalan": 2,
+      "Truku": 3,
+      "Trobiawan": 1,
+      "Pazeh": 1,
+      "Thao": 5
+     },
+     "n": 22
+    }
+   }
+  },
+  "close_tests": {
+   "gram|Atayal": {
+    "obs": 0.259,
+    "exp": 0.118,
+    "n": 27
+   },
+   "gram|Paiwan": {
+    "obs": 0.074,
+    "exp": 0.059,
+    "n": 54
+   },
+   "gram|Rukai": {
+    "obs": 0.069,
+    "exp": 0.059,
+    "n": 29
+   },
+   "gram|Seediq": {
+    "obs": 0.389,
+    "exp": 0.118,
+    "n": 18
+   },
+   "gram|Truku": {
+    "obs": 0.091,
+    "exp": 0.118,
+    "n": 22
+   },
+   "gram|Tsou": {
+    "obs": 0.333,
+    "exp": 0.059,
+    "n": 18
+   },
+   "myth|Atayal": {
+    "obs": 0.222,
+    "exp": 0.118,
+    "n": 27
+   },
+   "myth|Paiwan": {
+    "obs": 0.241,
+    "exp": 0.059,
+    "n": 54
+   },
+   "myth|Rukai": {
+    "obs": 0.0,
+    "exp": 0.059,
+    "n": 29
+   },
+   "myth|Seediq": {
+    "obs": 0.444,
+    "exp": 0.118,
+    "n": 18
+   },
+   "myth|Truku": {
+    "obs": 0.273,
+    "exp": 0.118,
+    "n": 22
+   },
+   "myth|Tsou": {
+    "obs": 0.0,
+    "exp": 0.059,
+    "n": 18
+   },
+   "pmyth|Atayal": {
+    "obs": 0.222,
+    "exp": 0.118,
+    "n": 27
+   },
+   "pmyth|Paiwan": {
+    "obs": 0.241,
+    "exp": 0.059,
+    "n": 54
+   },
+   "pmyth|Rukai": {
+    "obs": 0.0,
+    "exp": 0.059,
+    "n": 29
+   },
+   "pmyth|Seediq": {
+    "obs": 0.444,
+    "exp": 0.118,
+    "n": 18
+   },
+   "pmyth|Truku": {
+    "obs": 0.227,
+    "exp": 0.118,
+    "n": 22
+   },
+   "pmyth|Tsou": {
+    "obs": 0.0,
+    "exp": 0.059,
+    "n": 18
+   }
+  }
+ }
+}
