@@ -1,0 +1,41 @@
+{
+ "schema": "p8_parent_mytheme.v1",
+ "delta_residual": 0.0026,
+ "ci95_residual": [
+  -0.1089,
+  0.1117
+ ],
+ "raw_within_laurasian": 0.537,
+ "raw_cross_australia": 0.529,
+ "regions": [
+  14,
+  17,
+  18,
+  20,
+  23,
+  25,
+  26,
+  29,
+  37,
+  38,
+  39,
+  42,
+  59
+ ],
+ "region_parent_cat_counts": {
+  "14": 9,
+  "17": 11,
+  "18": 6,
+  "20": 9,
+  "23": 6,
+  "25": 7,
+  "26": 4,
+  "29": 11,
+  "37": 3,
+  "38": 7,
+  "39": 6,
+  "42": 6,
+  "59": 8
+ },
+ "note": "parent-category mytheme sets (18 cats; legacy codes mapped via CODE2P table - single-coder judgment layer, logged); distance-residualized; bootstrap CI 5000; Australia outgroup contrast per P7 prereg logic; provisional tier M (kappa 0.597 borderline)"
+}

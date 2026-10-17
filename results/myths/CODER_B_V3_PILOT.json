@@ -1,0 +1,910 @@
+[
+  {
+    "coder": "B",
+    "blind": true,
+    "codebook": "v3-predicate",
+    "id": "Egyptian: Contest of Horus and Seth (ANET)",
+    "tradition": "Egyptian",
+    "register": "myth",
+    "mythemes": [
+      "conflict",
+      "kingship",
+      "creation",
+      "cosmology",
+      "divine-punishment"
+    ],
+    "event_chain": [
+      {
+        "position": 1,
+        "episode": 1,
+        "event_type": "ORDER",
+        "agent_role": "deity",
+        "agent_text": "Geb",
+        "syntactic_frame": "transitive",
+        "action": "prevented Horus and Seth from quarreling"
+      },
+      {
+        "position": 2,
+        "episode": 1,
+        "event_type": "ORDER",
+        "agent_role": "deity",
+        "agent_text": "Geb",
+        "syntactic_frame": "transitive",
+        "action": "made Seth King of Upper Egypt at Su"
+      },
+      {
+        "position": 3,
+        "episode": 1,
+        "event_type": "ORDER",
+        "agent_role": "deity",
+        "agent_text": "Geb",
+        "syntactic_frame": "transitive",
+        "action": "made Horus King of Lower Egypt"
+      },
+      {
+        "position": 4,
+        "episode": 2,
+        "event_type": "MEET",
+        "agent_role": "deity",
+        "agent_text": "they",
+        "syntactic_frame": "reciprocal",
+        "action": "were reconciled about the Two Lands"
+      },
+      {
+        "position": 5,
+        "episode": 3,
+        "event_type": "REQ",
+        "agent_role": "deity",
+        "agent_text": "Geb",
+        "syntactic_frame": "speech",
+        "action": "judged Horus and Seth and commanded their seats"
+      },
+      {
+        "position": 6,
+        "episode": 3,
+        "event_type": "REW",
+        "agent_role": "deity",
+        "agent_text": "Geb",
+        "syntactic_frame": "transitive",
+        "action": "gave his entire inheritance to Horus"
+      },
+      {
+        "position": 7,
+        "episode": 4,
+        "event_type": "ORDER",
+        "agent_role": "hero",
+        "agent_text": "Horus",
+        "syntactic_frame": "stative",
+        "action": "stood over the entire land united"
+      },
+      {
+        "position": 8,
+        "episode": 4,
+        "event_type": "ORDER",
+        "agent_role": "hero",
+        "agent_text": "Horus",
+        "syntactic_frame": "stative",
+        "action": "appeared as King of Upper and Lower Egypt"
+      },
+      {
+        "position": 9,
+        "episode": 5,
+        "event_type": "MEET",
+        "agent_role": "cosmic",
+        "agent_text": "reed and papyrus",
+        "syntactic_frame": "stative",
+        "action": "were set joining Two Lands at Ptah House"
+      },
+      {
+        "position": 10,
+        "episode": 6,
+        "event_type": "CREA",
+        "agent_role": "creator",
+        "agent_text": "Ptah",
+        "syntactic_frame": "transitive",
+        "action": "gave birth to the gods and Ennead"
+      },
+      {
+        "position": 11,
+        "episode": 6,
+        "event_type": "CREA",
+        "agent_role": "creator",
+        "agent_text": "Ptah",
+        "syntactic_frame": "transitive",
+        "action": "transmitted life to all gods through his heart"
+      },
+      {
+        "position": 12,
+        "episode": 6,
+        "event_type": "ORDER",
+        "agent_role": "creator",
+        "agent_text": "the heart and tongue",
+        "syntactic_frame": "transitive",
+        "action": "gained control over every member of body"
+      },
+      {
+        "position": 13,
+        "episode": 6,
+        "event_type": "CREA",
+        "agent_role": "creator",
+        "agent_text": "mouth",
+        "syntactic_frame": "speech",
+        "action": "pronounced the name of everything creating Shu Tefnut"
+      },
+      {
+        "position": 14,
+        "episode": 6,
+        "event_type": "ORDER",
+        "agent_role": "creator",
+        "agent_text": "divine order",
+        "syntactic_frame": "stative",
+        "action": "came into being through heart and tongue command"
+      },
+      {
+        "position": 15,
+        "episode": 6,
+        "event_type": "CREA",
+        "agent_role": "creator",
+        "agent_text": "speech",
+        "syntactic_frame": "transitive",
+        "action": "made ka-spirits and hemsut-spirits providing nourishment"
+      },
+      {
+        "position": 16,
+        "episode": 6,
+        "event_type": "REW",
+        "agent_role": "creator",
+        "agent_text": "command",
+        "syntactic_frame": "transitive",
+        "action": "gave justice to liked and life to peace"
+      },
+      {
+        "position": 17,
+        "episode": 6,
+        "event_type": "CURS",
+        "agent_role": "creator",
+        "agent_text": "command",
+        "syntactic_frame": "transitive",
+        "action": "gave injustice and death to him who sinned"
+      },
+      {
+        "position": 18,
+        "episode": 6,
+        "event_type": "CREA",
+        "agent_role": "creator",
+        "agent_text": "command",
+        "syntactic_frame": "transitive",
+        "action": "made all work crafts and bodily activities"
+      }
+    ]
+  },
+  {
+    "coder": "B",
+    "blind": true,
+    "codebook": "v3-predicate",
+    "id": "Egyptian: The Two Brothers (ANET)",
+    "tradition": "Egyptian",
+    "register": "myth",
+    "mythemes": [
+      "kinship",
+      "taboo-violation",
+      "conflict",
+      "trickery"
+    ],
+    "event_chain": [
+      {
+        "position": 1,
+        "episode": 1,
+        "event_type": "PREP",
+        "agent_role": "sibling",
+        "agent_text": "his younger brother",
+        "syntactic_frame": "transitive",
+        "action": "made clothes plowed harvested and tended cattle for Anubis"
+      },
+      {
+        "position": 2,
+        "episode": 1,
+        "event_type": "JOUR",
+        "agent_role": "sibling",
+        "agent_text": "he",
+        "syntactic_frame": "motion",
+        "action": "returned home loaded with field plants and milk"
+      },
+      {
+        "position": 3,
+        "episode": 1,
+        "event_type": "REW",
+        "agent_role": "sibling",
+        "agent_text": "he",
+        "syntactic_frame": "transitive",
+        "action": "laid field provisions before his elder brother"
+      },
+      {
+        "position": 4,
+        "episode": 1,
+        "event_type": "PREP",
+        "agent_role": "sibling",
+        "agent_text": "he",
+        "syntactic_frame": "transitive",
+        "action": "prepared cooked food and laid it before brother"
+      },
+      {
+        "position": 5,
+        "episode": 1,
+        "event_type": "JOUR",
+        "agent_role": "sibling",
+        "agent_text": "he",
+        "syntactic_frame": "motion",
+        "action": "drove cattle out to good pasture understanding speech"
+      },
+      {
+        "position": 6,
+        "episode": 2,
+        "event_type": "ORDER",
+        "agent_role": "sibling",
+        "agent_text": "his elder brother",
+        "syntactic_frame": "speech",
+        "action": "told Bata to prepare yoke of oxen and seed"
+      },
+      {
+        "position": 7,
+        "episode": 3,
+        "event_type": "PREP",
+        "agent_role": "sibling",
+        "agent_text": "his younger brother",
+        "syntactic_frame": "transitive",
+        "action": "did all things elder brother ordered for plowing"
+      },
+      {
+        "position": 8,
+        "episode": 4,
+        "event_type": "JOUR",
+        "agent_role": "sibling",
+        "agent_text": "they",
+        "syntactic_frame": "motion",
+        "action": "went to fields with seed and plowed together"
+      },
+      {
+        "position": 9,
+        "episode": 5,
+        "event_type": "REQ",
+        "agent_role": "sibling",
+        "agent_text": "he",
+        "syntactic_frame": "speech",
+        "action": "sent younger brother to fetch seed from village"
+      },
+      {
+        "position": 10,
+        "episode": 6,
+        "event_type": "MEET",
+        "agent_role": "sibling",
+        "agent_text": "his younger brother",
+        "syntactic_frame": "transitive",
+        "action": "found wife of elder brother doing her hair"
+      },
+      {
+        "position": 11,
+        "episode": 6,
+        "event_type": "REQ",
+        "agent_role": "sibling",
+        "agent_text": "he",
+        "syntactic_frame": "speech",
+        "action": "asked wife to give him seed without delay"
+      },
+      {
+        "position": 12,
+        "episode": 7,
+        "event_type": "ORDER",
+        "agent_role": "human",
+        "agent_text": "she",
+        "syntactic_frame": "speech",
+        "action": "told him to open bin and take seed"
+      },
+      {
+        "position": 13,
+        "episode": 8,
+        "event_type": "PREP",
+        "agent_role": "sibling",
+        "agent_text": "the lad",
+        "syntactic_frame": "transitive",
+        "action": "loaded heavy sacks of barley and emmer on shoulder"
+      },
+      {
+        "position": 14,
+        "episode": 9,
+        "event_type": "REQ",
+        "agent_role": "human",
+        "agent_text": "she",
+        "syntactic_frame": "speech",
+        "action": "praised his strength and invited him to sleep together"
+      },
+      {
+        "position": 15,
+        "episode": 10,
+        "event_type": "CONFL",
+        "agent_role": "sibling",
+        "agent_text": "the lad",
+        "syntactic_frame": "speech",
+        "action": "became enraged rebuked her incestuous crime and refused"
+      },
+      {
+        "position": 16,
+        "episode": 10,
+        "event_type": "JOUR",
+        "agent_role": "sibling",
+        "agent_text": "he",
+        "syntactic_frame": "motion",
+        "action": "lifted load returned to fields and rejoined brother"
+      },
+      {
+        "position": 17,
+        "episode": 11,
+        "event_type": "JOUR",
+        "agent_role": "sibling",
+        "agent_text": "his elder brother",
+        "syntactic_frame": "motion",
+        "action": "left off work and returned home in evening"
+      },
+      {
+        "position": 18,
+        "episode": 12,
+        "event_type": "PREP",
+        "agent_role": "sibling",
+        "agent_text": "his younger brother",
+        "syntactic_frame": "transitive",
+        "action": "loaded produce and drove cattle to village stable"
+      },
+      {
+        "position": 19,
+        "episode": 13,
+        "event_type": "PREP",
+        "agent_role": "human",
+        "agent_text": "the wife",
+        "syntactic_frame": "transitive",
+        "action": "took fat and grease in fear of exposure"
+      }
+    ]
+  },
+  {
+    "coder": "B",
+    "blind": true,
+    "codebook": "v3-predicate",
+    "id": "Hebrew: Psalm 1 (KJV)",
+    "tradition": "Hebrew",
+    "register": "religion",
+    "mythemes": [
+      "divine-punishment",
+      "cosmology",
+      "ritual"
+    ],
+    "event_chain": [
+      {
+        "position": 1,
+        "episode": 1,
+        "event_type": "ESCP",
+        "agent_role": "human",
+        "agent_text": "the man",
+        "syntactic_frame": "reflexive",
+        "action": "walketh not in counsel of ungodly nor sinners"
+      },
+      {
+        "position": 2,
+        "episode": 1,
+        "event_type": "SACR",
+        "agent_role": "human",
+        "agent_text": "his",
+        "syntactic_frame": "stative",
+        "action": "delighteth in the law of the Lord meditating"
+      },
+      {
+        "position": 3,
+        "episode": 1,
+        "event_type": "REW",
+        "agent_role": "human",
+        "agent_text": "he",
+        "syntactic_frame": "stative",
+        "action": "shall be like fruitful tree prospering in work"
+      },
+      {
+        "position": 4,
+        "episode": 2,
+        "event_type": "CONFL",
+        "agent_role": "cosmic",
+        "agent_text": "the wind",
+        "syntactic_frame": "transitive",
+        "action": "driveth away the ungodly like chaff"
+      },
+      {
+        "position": 5,
+        "episode": 3,
+        "event_type": "FAIL",
+        "agent_role": "human",
+        "agent_text": "the ungodly",
+        "syntactic_frame": "stative",
+        "action": "shall not stand in judgment nor in congregation"
+      },
+      {
+        "position": 6,
+        "episode": 4,
+        "event_type": "REW",
+        "agent_role": "deity",
+        "agent_text": "the Lord",
+        "syntactic_frame": "transitive",
+        "action": "knoweth the way of the righteous"
+      },
+      {
+        "position": 7,
+        "episode": 4,
+        "event_type": "DETH",
+        "agent_role": "human",
+        "agent_text": "the way of the ungodly",
+        "syntactic_frame": "stative",
+        "action": "shall perish in destruction"
+      }
+    ]
+  },
+  {
+    "coder": "B",
+    "blind": true,
+    "codebook": "v3-predicate",
+    "id": "Koryak: Big-Raven tale A (Bogoras 1917 excerpt)",
+    "tradition": "Koryak",
+    "register": "myth",
+    "mythemes": [
+      "trickery",
+      "death",
+      "transformation",
+      "cosmology",
+      "weather-celestial"
+    ],
+    "event_chain": [
+      {
+        "position": 1,
+        "episode": 1,
+        "event_type": "ORIG",
+        "agent_role": "cosmic",
+        "agent_text": "dawn",
+        "syntactic_frame": "stative",
+        "action": "appeared and was created"
+      },
+      {
+        "position": 2,
+        "episode": 1,
+        "event_type": "REQ",
+        "agent_role": "human",
+        "agent_text": "They",
+        "syntactic_frame": "speech",
+        "action": "spoke among themselves how they should do it"
+      },
+      {
+        "position": 3,
+        "episode": 2,
+        "event_type": "PREP",
+        "agent_role": "hero",
+        "agent_text": "Yinia-nawgut",
+        "syntactic_frame": "reflexive",
+        "action": "prepared for a journey"
+      },
+      {
+        "position": 4,
+        "episode": 2,
+        "event_type": "JOUR",
+        "agent_role": "hero",
+        "agent_text": "She",
+        "syntactic_frame": "motion",
+        "action": "went to Raven-Man"
+      },
+      {
+        "position": 5,
+        "episode": 2,
+        "event_type": "REQ",
+        "agent_role": "hero",
+        "agent_text": "She",
+        "syntactic_frame": "speech",
+        "action": "asked if Raven-Man was at home"
+      },
+      {
+        "position": 6,
+        "episode": 3,
+        "event_type": "ORDER",
+        "agent_role": "animal",
+        "agent_text": "Raven-Woman",
+        "syntactic_frame": "speech",
+        "action": "said he is at home"
+      },
+      {
+        "position": 7,
+        "episode": 4,
+        "event_type": "REQ",
+        "agent_role": "hero",
+        "agent_text": "She",
+        "syntactic_frame": "speech",
+        "action": "found Raven-Man and spoke coaxingly to him"
+      },
+      {
+        "position": 8,
+        "episode": 5,
+        "event_type": "FAIL",
+        "agent_role": "trickster",
+        "agent_text": "He",
+        "syntactic_frame": "reflexive",
+        "action": "turned his back to her refusing face"
+      },
+      {
+        "position": 9,
+        "episode": 6,
+        "event_type": "CONFL",
+        "agent_role": "hero",
+        "agent_text": "she",
+        "syntactic_frame": "transitive",
+        "action": "tickled him under armpits with hands"
+      },
+      {
+        "position": 10,
+        "episode": 7,
+        "event_type": "REQ",
+        "agent_role": "sibling",
+        "agent_text": "His sister",
+        "syntactic_frame": "speech",
+        "action": "told him to stop and treat good girl"
+      },
+      {
+        "position": 11,
+        "episode": 8,
+        "event_type": "ORIG",
+        "agent_role": "trickster",
+        "agent_text": "he",
+        "syntactic_frame": "speech",
+        "action": "laughed out loud ha ha ha"
+      },
+      {
+        "position": 12,
+        "episode": 9,
+        "event_type": "CREA",
+        "agent_role": "cosmic",
+        "agent_text": "The sun",
+        "syntactic_frame": "motion",
+        "action": "jumped out and fastened itself to sky"
+      },
+      {
+        "position": 13,
+        "episode": 10,
+        "event_type": "MARRIAGE",
+        "agent_role": "hero",
+        "agent_text": "they",
+        "syntactic_frame": "reciprocal",
+        "action": "slept together"
+      },
+      {
+        "position": 14,
+        "episode": 10,
+        "event_type": "REQ",
+        "agent_role": "hero",
+        "agent_text": "She",
+        "syntactic_frame": "speech",
+        "action": "asked about his tent fork and plate"
+      },
+      {
+        "position": 15,
+        "episode": 10,
+        "event_type": "JOUR",
+        "agent_role": "hero",
+        "agent_text": "They",
+        "syntactic_frame": "motion",
+        "action": "moved on together to Big-Raven's house"
+      },
+      {
+        "position": 16,
+        "episode": 10,
+        "event_type": "DETH",
+        "agent_role": "hero",
+        "agent_text": "she",
+        "syntactic_frame": "transitive",
+        "action": "killed Raven-Man after flattering him"
+      },
+      {
+        "position": 17,
+        "episode": 11,
+        "event_type": "CREA",
+        "agent_role": "hero",
+        "agent_text": "Yinia-nawgut",
+        "syntactic_frame": "transitive",
+        "action": "stuck palate above to grow into cloudless sky"
+      },
+      {
+        "position": 18,
+        "episode": 11,
+        "event_type": "JOUR",
+        "agent_role": "hero",
+        "agent_text": "She",
+        "syntactic_frame": "motion",
+        "action": "came back home"
+      },
+      {
+        "position": 19,
+        "episode": 11,
+        "event_type": "ORDER",
+        "agent_role": "hero",
+        "agent_text": "She",
+        "syntactic_frame": "speech",
+        "action": "reported killing Raven-Man who held sun in mouth"
+      },
+      {
+        "position": 20,
+        "episode": 12,
+        "event_type": "JOUR",
+        "agent_role": "animal",
+        "agent_text": "Raven-Woman",
+        "syntactic_frame": "motion",
+        "action": "visited brother and discovered him dead"
+      },
+      {
+        "position": 21,
+        "episode": 12,
+        "event_type": "ESCP",
+        "agent_role": "animal",
+        "agent_text": "She",
+        "syntactic_frame": "motion",
+        "action": "cried for his annoying people and left him"
+      }
+    ]
+  },
+  {
+    "coder": "B",
+    "blind": true,
+    "codebook": "v3-predicate",
+    "id": "Australian: Meamei The Seven Sisters",
+    "tradition": "Australian",
+    "register": "myth",
+    "mythemes": [
+      "journey",
+      "conflict",
+      "taboo-violation",
+      "kinship",
+      "weather-celestial"
+    ],
+    "event_chain": [
+      {
+        "position": 1,
+        "episode": 1,
+        "event_type": "JOUR",
+        "agent_role": "hero",
+        "agent_text": "Wurrunnah",
+        "syntactic_frame": "motion",
+        "action": "returned to camp hungry after long day hunting"
+      },
+      {
+        "position": 2,
+        "episode": 1,
+        "event_type": "REQ",
+        "agent_role": "hero",
+        "agent_text": "He",
+        "syntactic_frame": "speech",
+        "action": "asked mother and tribe members for food seeds"
+      },
+      {
+        "position": 3,
+        "episode": 1,
+        "event_type": "JOUR",
+        "agent_role": "hero",
+        "agent_text": "he",
+        "syntactic_frame": "motion",
+        "action": "gathered weapons and strode forth in rage to strangers"
+      },
+      {
+        "position": 4,
+        "episode": 2,
+        "event_type": "MEET",
+        "agent_role": "hero",
+        "agent_text": "he",
+        "syntactic_frame": "transitive",
+        "action": "saw eyeless stranger Mooroonumildah chopping bee nests"
+      },
+      {
+        "position": 5,
+        "episode": 3,
+        "event_type": "REW",
+        "agent_role": "human",
+        "agent_text": "Mooroonumildah",
+        "syntactic_frame": "transitive",
+        "action": "gave hungry Wurrunnah honey and invited to camp"
+      },
+      {
+        "position": 6,
+        "episode": 4,
+        "event_type": "JOUR",
+        "agent_role": "hero",
+        "agent_text": "Wurrunnah",
+        "syntactic_frame": "motion",
+        "action": "took honey turned away and journeyed to lagoon"
+      },
+      {
+        "position": 7,
+        "episode": 4,
+        "event_type": "PREP",
+        "agent_role": "hero",
+        "agent_text": "He",
+        "syntactic_frame": "reflexive",
+        "action": "drank water from lagoon and lay down sleeping"
+      },
+      {
+        "position": 8,
+        "episode": 5,
+        "event_type": "EXPL",
+        "agent_role": "hero",
+        "agent_text": "he",
+        "syntactic_frame": "stative",
+        "action": "woke seeing plain and wondered at vanished water"
+      },
+      {
+        "position": 9,
+        "episode": 5,
+        "event_type": "JOUR",
+        "agent_role": "hero",
+        "agent_text": "he",
+        "syntactic_frame": "motion",
+        "action": "hurried into thick bush for shelter from storm"
+      },
+      {
+        "position": 10,
+        "episode": 5,
+        "event_type": "PREP",
+        "agent_role": "hero",
+        "agent_text": "He",
+        "syntactic_frame": "transitive",
+        "action": "cut poles and lifted bark to build dardurr"
+      },
+      {
+        "position": 11,
+        "episode": 6,
+        "event_type": "CONFL",
+        "agent_role": "monster",
+        "agent_text": "Bulgahnunnoo",
+        "syntactic_frame": "speech",
+        "action": "cried terrifyingly from under bark sheet"
+      },
+      {
+        "position": 12,
+        "episode": 7,
+        "event_type": "ESCP",
+        "agent_role": "hero",
+        "agent_text": "Wurrunnah",
+        "syntactic_frame": "motion",
+        "action": "dropped bark and ran away hard from Bulgahnunnoo"
+      },
+      {
+        "position": 13,
+        "episode": 7,
+        "event_type": "JOUR",
+        "agent_role": "hero",
+        "agent_text": "he",
+        "syntactic_frame": "motion",
+        "action": "reached river hemmed in and turned another direction"
+      },
+      {
+        "position": 14,
+        "episode": 8,
+        "event_type": "COMB",
+        "agent_role": "hero",
+        "agent_text": "Wurrunnah",
+        "syntactic_frame": "transitive",
+        "action": "climbed tree and speared featherless emu for food"
+      },
+      {
+        "position": 15,
+        "episode": 9,
+        "event_type": "CONFL",
+        "agent_role": "human",
+        "agent_text": "black fellows",
+        "syntactic_frame": "transitive",
+        "action": "stood round dead friend making savage vengeance signs"
+      },
+      {
+        "position": 16,
+        "episode": 10,
+        "event_type": "ESCP",
+        "agent_role": "hero",
+        "agent_text": "Wurrunnah",
+        "syntactic_frame": "motion",
+        "action": "took to heels and sped away into distant camp"
+      },
+      {
+        "position": 17,
+        "episode": 11,
+        "event_type": "REW",
+        "agent_role": "human",
+        "agent_text": "seven young girls",
+        "syntactic_frame": "transitive",
+        "action": "gave hungry Wurrunnah food and allowed overnight camp"
+      },
+      {
+        "position": 18,
+        "episode": 12,
+        "event_type": "REQ",
+        "agent_role": "hero",
+        "agent_text": "He",
+        "syntactic_frame": "speech",
+        "action": "asked sisters where tribe was and their name"
+      },
+      {
+        "position": 19,
+        "episode": 13,
+        "event_type": "ORDER",
+        "agent_role": "human",
+        "agent_text": "They",
+        "syntactic_frame": "speech",
+        "action": "answered their name was Meamei"
+      }
+    ]
+  },
+  {
+    "coder": "B",
+    "blind": true,
+    "codebook": "v3-predicate",
+    "id": "Text. Amis 1",
+    "tradition": "Amis",
+    "register": "myth",
+    "mythemes": [
+      "creation",
+      "genealogy",
+      "journey",
+      "etiology-local"
+    ],
+    "event_chain": [
+      {
+        "position": 1,
+        "episode": 1,
+        "event_type": "CREA",
+        "agent_role": "creator",
+        "agent_text": "the deity",
+        "syntactic_frame": "transitive",
+        "action": "created the Amis ancestor Masera"
+      },
+      {
+        "position": 2,
+        "episode": 2,
+        "event_type": "ORIG",
+        "agent_role": "parent",
+        "agent_text": "He",
+        "syntactic_frame": "possessive",
+        "action": "had two sons Tapang Masera and Rarog Masera"
+      },
+      {
+        "position": 3,
+        "episode": 2,
+        "event_type": "PREP",
+        "agent_role": "parent",
+        "agent_text": "They",
+        "syntactic_frame": "stative",
+        "action": "lived in a place named Arapanay originally"
+      },
+      {
+        "position": 4,
+        "episode": 3,
+        "event_type": "CONFL",
+        "agent_role": "monster",
+        "agent_text": "the kawas",
+        "syntactic_frame": "transitive",
+        "action": "caused a swift ocean current sweeping them away"
+      },
+      {
+        "position": 5,
+        "episode": 4,
+        "event_type": "JOUR",
+        "agent_role": "sibling",
+        "agent_text": "they",
+        "syntactic_frame": "motion",
+        "action": "were carried to Chippong river mouth in Taitung"
+      },
+      {
+        "position": 6,
+        "episode": 4,
+        "event_type": "ORIG",
+        "agent_role": "sibling",
+        "agent_text": "They",
+        "syntactic_frame": "transitive",
+        "action": "named landing point Arapanay in memory of homeland"
+      }
+    ]
+  }
+]
