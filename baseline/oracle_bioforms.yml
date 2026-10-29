@@ -1,0 +1,145 @@
+# Oracle: Bioforms Archive — Geometric Morphoresonance grammar tests
+# Source: bioforms.ai.studio, Edu Nauta Collin-Hernández (Oct 2026). Loaded 2026-10-29 by Flow
+# per Jan: "create tests in foundry to identify life forms and blindly predict their
+# behaviors, their predators, how they adapt in different kinds of environments;
+# combine forms to explain intelligence/parameters of behavior, modes of learning."
+# Data: vi-foundry/data/bioforms/bioforms.json (101 entries; fields: id, categoryId,
+# title, geometry_en (de), example_en, function_en, significance_en, traits_en, svgType).
+# Companion analysis: data/analysis/bioforms-affinity-groups.md (INFERNO: WCI 42.2 T3 —
+# classifier not model; substrate ready for machine testing).
+
+archive:
+  title: "Bioforms · The Biomorph Archive"
+  author: "Edu Nauta Collin-Hernández"
+  edition: "2026-10"
+  url: "https://bioforms.ai.studio/"
+  forms: 101
+  levels: 7
+
+# ---- identification rules (family assignment, from affinity analysis) ----
+# 8 state-families + 1 operator algebra. Each family has keyword weights applied
+# to geometry_en only (blind input). Partition verified 101/101 upstream.
+families:
+  F1_AXIS:        # line -> tube -> worm -> fish
+    members: [1, 3, 6, 20, 42, 43, 68, 76, 84, 89]
+    keywords: {axial: 3, axis: 2, elongated: 2, tubular: 2, vermiform: 4, fusiform: 4,
+               worm: 2, coiled: 2, undulat: 2, tapering: 2, serially: 2}
+    behavior: "undulatory/borrowing locomotion; axial reach"
+    adaptation: "substrate penetration; drag-streamlined flow; thermal/economy via coiling"
+    learning_mode: "oscillator entrainment (phase-locked periodic repertories)"
+  F2_SHEET:       # plane -> wing -> fan/comb/brush
+    members: [2, 5, 17, 18, 50, 51, 52, 53, 62, 63, 64, 79, 80, 85, 86]
+    keywords: {plan: 3, laminar: 3, flat: 2, flatten: 3, disc: 3, wing: 4, membran: 3,
+               fan: 3, comb: 3, brush: 3, glid: 3, lift: 4, lateral branch: 2, stretched: 2}
+    behavior: "lift/surface-mediated locomotion; filtration via expanded surface"
+    adaptation: "flow/current capture; light/gas interface maximization; crypsis via surface patterning"
+    learning_mode: "predictive/kinematic learning (aero/hydrodynamic state estimation)"
+  F3_RADIAL:      # center -> spokes -> tentacles
+    members: [14, 15, 21, 22, 48, 49, 61, 67, 71, 99]
+    keywords: {radial: 4, center: 3, central: 3, stellate: 4, tentac: 4, crown: 3,
+               medus: 3, omnidirection: 3, around a central: 3}
+    behavior: "omnidirectional capture/sensing; 360° prey interception"
+    adaptation: "equally responsive to all approach angles; vortex feeding currents"
+    learning_mode: "omnidirectional associative mapping (no privileged axis)"
+  F4_CONTAINER:   # sphere -> armor -> spine -> shell
+    members: [4, 7, 12, 54, 65, 66, 82, 83, 90]
+    keywords: {spher: 4, globul: 4, ovoid: 3, armor: 4, spin: 4, shell: 3, helical: 3,
+               protect: 3, enclosure: 3, compact: 2, rigid: 3}
+    behavior: "passive defense; environmental buffering; slow, conservative activity"
+    adaptation: "predation deterrence (gape-limitation, puncture), desiccation buffering"
+    learning_mode: "avoidance/aversion learning (defense-biased value function)"
+  F5_CONDUIT:     # cavity -> funnel -> bell -> torus
+    members: [8, 9, 10, 11, 55, 58, 69, 74, 75, 77, 96]
+    keywords: {cavity: 3, hollow: 3, funnel: 4, cup: 3, bell: 4, torus: 4, annular: 3,
+               conduit: 3, nozzle: 3, pressure: 3, casing: 2, fixed to: 2}
+    behavior: "pressure-driven capture (suction/jet); flow-channeling filtration"
+    adaptation: "fluid regime exploitation; hydrostatic gradient use"
+    learning_mode: "ballistic/reflex triggering (threshold-triggered stereotyped acts)"
+  F6_BRANCH:      # tree -> vascular -> reticular -> fields
+    members: [25, 26, 57, 72, 87, 88, 91, 92, 93, 95]
+    keywords: {branch: 4, bifurcat: 4, tree: 3, vascular: 4, reticular: 4, mesh: 3,
+               phyllotax: 4, gradient: 4, reaction-diffusion: 4, field: 3, root: 2}
+    behavior: "distributed resource access; parallel exploration of volume"
+    adaptation: "volume filling; interface maximization; fault-tolerant transport"
+    learning_mode: "gradient ascent / parallel search (the gradient layer's native algorithm)"
+  F7_MODULE_COLLECTIVE: # segment -> colony -> swarm -> network
+    members: [23, 24, 29, 56, 59, 60, 94, 97, 98, 100, 101]
+    keywords: {segment: 4, repetit: 3, modular: 4, module: 4, colon: 4, chain: 3,
+               catenary: 4, aggregat: 4, cluster: 3, swarm: 4, network: 3, serial: 2}
+    behavior: "collective/composite action; division of labor; coordinated swarming"
+    adaptation: "indefinite scaling; partial predation (module redundancy); higher-order integration"
+    learning_mode: "compositional/collective learning (distributed credit assignment)"
+  F8_CHASSIS:     # bilateral -> limbed locomotors
+    members: [13, 44, 45, 46, 47, 70, 73, 78, 81]
+    keywords: {bilater: 3, limb: 4, leg: 4, quadr: 4, biped: 4, arthropod: 4, carcin: 4,
+               pincer: 3, claw: 3, jump: 3, excavat: 3, appendage: 3, exoskeleton: 3}
+    behavior: "articulated appendage locomotion; manipulation/grasp; excavation"
+    adaptation: "terrestrial/substrate locomotion; mechanical work on environment"
+    learning_mode: "operant/action-sequence learning (limbed manipulation)"
+  F9_OPERATORS:   # the transform verbs (Level 3 machinery)
+    members: [16, 19, 27, 28, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41]
+    keywords: {reduction: 3, loss: 2, elongat: 2, compress: 3, expansion: 2, constrict: 3,
+               coil: 3, rotation: 3, migration: 3, inversion: 3, specializ: 3, hypertroph: 4,
+               atrophy: 4, fusion: 3, division: 3, asymmetry: 3, reorganiz: 2}
+    behavior: "transformation of other families; developmental/plasticity operators"
+    adaptation: "evolutionary/developmental response layer (slow-fast coupling)"
+    learning_mode: "plasticity operators proper — pruning (reduction/atrophy), specialization (hypertrophy), reallocation (migration)"
+
+# ---- compound rules (generative grammar, from affinity analysis) ----
+# These are the rewrite rules: operands (state families + operators) -> product forms.
+compound_rules:
+  - {id: R1,  rule: "axis + taper -> fusiform",               operands: [F1_AXIS, F9_OPERATORS], product: [6, 43]}
+  - {id: R2,  rule: "axis + segmentation + flexibility -> vermiform", operands: [F1_AXIS, F7_MODULE_COLLECTIVE], product: [42]}
+  - {id: R3,  rule: "module + repetition + integration -> superorganism", operands: [F7_MODULE_COLLECTIVE], product: [94, 100, 101]}
+  - {id: R4,  rule: "sheet + branch -> pinnate/fan/comb/brush", operands: [F2_SHEET, F6_BRANCH], product: [50, 62, 63, 64]}
+  - {id: R5,  rule: "sheet + lift -> gliding/flight",        operands: [F2_SHEET, F9_OPERATORS], product: [51, 79, 80]}
+  - {id: R6,  rule: "cavity + funnel + pressure -> suction/jet", operands: [F5_CONDUIT, F9_OPERATORS], product: [75, 77]}
+  - {id: R7,  rule: "bell + jet -> medusoid",                operands: [F5_CONDUIT, F3_RADIAL], product: [67]}
+  - {id: R8,  rule: "sphere + armor -> armored/globular-protected", operands: [F4_CONTAINER], product: [54, 66, 82]}
+  - {id: R9,  rule: "sphere + spine -> spiny defense",       operands: [F4_CONTAINER, F9_OPERATORS], product: [65, 83]}
+  - {id: R10, rule: "radial + extension -> stellate/tentacular/crown", operands: [F3_RADIAL, F9_OPERATORS], product: [48, 49, 61, 71]}
+  - {id: R11, rule: "branch + mesh -> reticular (fault tolerance)", operands: [F6_BRANCH, F9_OPERATORS], product: [88]}
+  - {id: R12, rule: "collective ladder: chain -> colony -> swarm -> network", operands: [F7_MODULE_COLLECTIVE], product: [59, 56, 100, 101]}
+  - {id: R13, rule: "carcinization chain: reduction->broadening->tucking->reorientation->hypertrophy", operands: [F9_OPERATORS, F8_CHASSIS], product: [47]}
+
+# ---- blind-prediction protocols (holdout, seeded) ----
+blind:
+  seed: 20261029
+  holdout_fraction: 0.10
+  tests:
+    T2_identify:   "hold out id+title; predict family from geometry_en keywords only"
+    T3_behavior:   "hold out function_en; predict behavior class from geometry+family"
+    T4_adaptation: "hold out significance_en; predict adaptation class from geometry+family"
+    T5_closure:    "grammar closure: do R1-R13 regenerate the archive's L4/L5 forms? residue = novel predictions"
+    T6_predators:  "mechanistic predator rules from defense morphology; GATED on external trait matrix (e.g., FishBase/predator-prey trait data) — oracle recorded, benchmark pending"
+    T7_learning:   "family x operator -> learning-mode matrix; coverage vs archive's own plasticity language (Levin imports)"
+
+# ---- predator rules (T6; recorded now, scored when benchmark data staged) ----
+predator_rules:
+  F4_CONTAINER:   "gape-limited predators excluded (size/rigidity); spiny forms deter puncturing/gape predators; shell = drilling/crushing specialists only"
+  F1_AXIS:        "interstitial predators (burrow invaders); piscivores for fusiform (gape + pursuit, mitigated by speed)"
+  F2_SHEET:       "aerial predators (raptors) and aquatic ambush (speed-neutralized by maneuver); crypsis as counter"
+  F3_RADIAL:      "specialist predators only (crown-of-thorns on stellate; cnidarian specialists); 360° defense offsets ambush"
+  F5_CONDUIT:     "suction/jet reduces pursuit risk via burst escape; sedentary filters vulnerable to benthic grazers"
+  F7_MODULE_COLLECTIVE: "partial predation absorbed by module redundancy; superorganisms defended by emergent swarm action"
+  F8_CHASSIS:     "pursuit predators; countered by speed, armor (R8), weaponry (pincer)"
+  F9_OPERATORS:   "not a body; predator rules inapplicable (operator layer)"
+
+# ---- intelligence / learning parameters (the VD bridge, T7) ----
+# Parameters of behavior = (family x operator) cells; modes of learning mapped per family above.
+intelligence_parameters:
+  repertoire_breadth: "number of families instantiated by an organism (multi-family hybrids = richer repertoire)"
+  operator_count: "number of distinct transform operators available to the lineage (fast layer toolkit size)"
+  trajectory_length: "3rd-order: length of ordered operator chains (carcinization = 5)"
+  tau_ratio: "VD: tau1 (gradient/behavior layer) vs tau2 (record/form layer) separation"
+  recursion_depth: "L7 mirror: how many nested scales instantiate the same grammar (body -> colony -> ecosystem)"
+  integration_level: "module + repetition + integration ladder (R3/R12)"
+
+xenobot_worked_example:
+  input: "liberated Xenopus epithelial cell collective (Levin lab xenobot)"
+  identify: "F7 aggregation (#60) + F2 sheet wound-healing + F1 ciliary axis (#78 appendage-based propulsion via cilia)"
+  predict_behavior: "collective ciliary transport locomotion (the ancestral mucociliary job, not novel competence)"
+  predict_predator: "immune phagocytes (macrophage clearance); counter = aggregation microclimate (#60) / armor (R8)"
+  predict_adaptation: "wound-gap knitting = epithelial restitution default (F2 fast-layer deployment)"
+  learning_prediction: "no novel learning mode; capacity reallocation on tau1 (VD), not new possession (Levin)"
+  falsifier: "if xenobots exhibit competence NOT drawable from the ancestral epithelial repertoire (e.g., non-epithelial sensorimotor acts), the F7/F2/F1 identification fails"

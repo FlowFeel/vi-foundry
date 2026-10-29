@@ -1,0 +1,358 @@
+{
+ "oracle": "baseline/oracle_bioforms.yml",
+ "seed": 20261029,
+ "T1_partition": {
+  "n_forms": 101,
+  "n_family_members": 101,
+  "partition_complete": true,
+  "family_x_level_matrix": {
+   "F1_AXIS": [
+    3,
+    1,
+    0,
+    3,
+    2,
+    1,
+    0
+   ],
+   "F2_SHEET": [
+    2,
+    2,
+    0,
+    7,
+    4,
+    0,
+    0
+   ],
+   "F3_RADIAL": [
+    0,
+    4,
+    0,
+    4,
+    1,
+    0,
+    1
+   ],
+   "F4_CONTAINER": [
+    3,
+    0,
+    0,
+    3,
+    2,
+    1,
+    0
+   ],
+   "F5_CONDUIT": [
+    4,
+    0,
+    0,
+    3,
+    3,
+    0,
+    1
+   ],
+   "F6_BRANCH": [
+    0,
+    0,
+    2,
+    1,
+    1,
+    5,
+    1
+   ],
+   "F7_MODULE_COLLECTIVE": [
+    0,
+    0,
+    3,
+    3,
+    0,
+    0,
+    5
+   ],
+   "F8_CHASSIS": [
+    0,
+    1,
+    0,
+    4,
+    4,
+    0,
+    0
+   ],
+   "F9_OPERATORS": [
+    0,
+    2,
+    14,
+    0,
+    0,
+    0,
+    0
+   ]
+  },
+  "operator_layer_check": true
+ },
+ "T2_blind_identify": {
+  "holdout_ids": [
+   24,
+   29,
+   37,
+   45,
+   57,
+   59,
+   69,
+   82,
+   88,
+   93
+  ],
+  "accuracy_holdout": 0.9,
+  "correct": 9,
+  "n_holdout": 10,
+  "train_consistency_all_101": 0.594,
+  "confusions": [
+   "F4_CONTAINER->F4_CONTAINER:1",
+   "F5_CONDUIT->F5_CONDUIT:1",
+   "F6_BRANCH->F6_BRANCH:2",
+   "F6_BRANCH->F7_MODULE_COLLECTIVE:1",
+   "F7_MODULE_COLLECTIVE->F7_MODULE_COLLECTIVE:3",
+   "F8_CHASSIS->F8_CHASSIS:1",
+   "F9_OPERATORS->F9_OPERATORS:1"
+  ]
+ },
+ "T3_blind_behavior": {
+  "holdout_ids": [
+   5,
+   29,
+   34,
+   43,
+   53,
+   67,
+   70,
+   72,
+   76,
+   94
+  ],
+  "accuracy_holdout": 0.571,
+  "correct": 4,
+  "n_scoreable": 7,
+  "train_consistency_all_101": 0.243,
+  "unscoreable_true_label": [
+   29,
+   72,
+   94
+  ],
+  "confusions": [
+   "CAPTURE->CAPTURE:1",
+   "CAPTURE->UNKNOWN:1",
+   "LOCOMOTE->GROW:1",
+   "LOCOMOTE->LOCOMOTE:3",
+   "TRANSPORT->UNKNOWN:1"
+  ]
+ },
+ "T4_blind_adaptation": {
+  "holdout_ids": [
+   6,
+   10,
+   27,
+   31,
+   32,
+   40,
+   49,
+   66,
+   94,
+   98
+  ],
+  "accuracy_holdout": 0.5,
+  "correct": 3,
+  "n_scoreable": 6,
+  "train_consistency_all_101": 0.281,
+  "unscoreable_true_label": [
+   27,
+   31,
+   40,
+   49
+  ],
+  "confusions": [
+   "COLLECTIVE->COLLECTIVE:1",
+   "CONSTRAINT->DEFENSE:1",
+   "DEFENSE->UNKNOWN:1",
+   "FLUID->UNKNOWN:1",
+   "SURFACE->SURFACE:2"
+  ]
+ },
+ "T5_grammar_closure": {
+  "l4l5_total": 45,
+  "reachable_by_rules": 24,
+  "coverage": 0.533,
+  "covered_ids": [
+   42,
+   43,
+   47,
+   48,
+   49,
+   50,
+   51,
+   54,
+   56,
+   59,
+   61,
+   62,
+   63,
+   64,
+   65,
+   66,
+   67,
+   71,
+   75,
+   77,
+   79,
+   80,
+   82,
+   83
+  ],
+  "residue_ids": [
+   44,
+   45,
+   46,
+   52,
+   53,
+   55,
+   57,
+   58,
+   60,
+   68,
+   69,
+   70,
+   72,
+   73,
+   74,
+   76,
+   78,
+   81,
+   84,
+   85,
+   86
+  ],
+  "candidate_missing_bioforms": [
+   [
+    "F1_AXIS",
+    "F2_SHEET"
+   ],
+   [
+    "F1_AXIS",
+    "F3_RADIAL"
+   ],
+   [
+    "F1_AXIS",
+    "F4_CONTAINER"
+   ],
+   [
+    "F1_AXIS",
+    "F6_BRANCH"
+   ],
+   [
+    "F1_AXIS",
+    "F7_MODULE_COLLECTIVE"
+   ],
+   [
+    "F2_SHEET",
+    "F4_CONTAINER"
+   ],
+   [
+    "F2_SHEET",
+    "F5_CONDUIT"
+   ],
+   [
+    "F2_SHEET",
+    "F8_CHASSIS"
+   ],
+   [
+    "F3_RADIAL",
+    "F4_CONTAINER"
+   ],
+   [
+    "F3_RADIAL",
+    "F6_BRANCH"
+   ],
+   [
+    "F3_RADIAL",
+    "F7_MODULE_COLLECTIVE"
+   ],
+   [
+    "F3_RADIAL",
+    "F8_CHASSIS"
+   ],
+   [
+    "F4_CONTAINER",
+    "F6_BRANCH"
+   ],
+   [
+    "F4_CONTAINER",
+    "F7_MODULE_COLLECTIVE"
+   ],
+   [
+    "F5_CONDUIT",
+    "F6_BRANCH"
+   ],
+   [
+    "F5_CONDUIT",
+    "F8_CHASSIS"
+   ],
+   [
+    "F6_BRANCH",
+    "F8_CHASSIS"
+   ]
+  ]
+ },
+ "T6_predators": {
+  "status": "GATED",
+  "note": "oracle predator_rules recorded; benchmark requires external trait matrix (FishBase or staged literature matrix). Not scored \u2014 pending, not failed."
+ },
+ "T7_learning_coverage": {
+  "learning_mode_hint_coverage": {
+   "F1_AXIS": {
+    "family_members": 10,
+    "members_with_hints": 1
+   },
+   "F2_SHEET": {
+    "family_members": 15,
+    "members_with_hints": 5
+   },
+   "F3_RADIAL": {
+    "family_members": 10,
+    "members_with_hints": 5
+   },
+   "F4_CONTAINER": {
+    "family_members": 9,
+    "members_with_hints": 1
+   },
+   "F5_CONDUIT": {
+    "family_members": 11,
+    "members_with_hints": 1
+   },
+   "F6_BRANCH": {
+    "family_members": 10,
+    "members_with_hints": 1
+   },
+   "F7_MODULE_COLLECTIVE": {
+    "family_members": 11,
+    "members_with_hints": 3
+   },
+   "F8_CHASSIS": {
+    "family_members": 9,
+    "members_with_hints": 3
+   },
+   "F9_OPERATORS": {
+    "family_members": 16,
+    "members_with_hints": 4
+   }
+  },
+  "plasticity_language_counts": {
+   "gradient": 3,
+   "adapt": 5,
+   "signal": 2,
+   "reorganiz": 1,
+   "plastic": 1,
+   "bioelectric": 1,
+   "field": 1
+  }
+ }
+}
