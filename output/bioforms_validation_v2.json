@@ -1,0 +1,473 @@
+{
+ "seed": 20261030,
+ "emb_model": "nomic-embed-text",
+ "k_folds": 5,
+ "T2b_family_embed_kfold": {
+  "scheme": "stratified 5-fold, seed 20261030, n=101 scoreable (unscoreable: 0)",
+  "embedding_accuracy": 0.416,
+  "knn3_accuracy": 0.465,
+  "keyword_baseline_accuracy_on_same_folds": 0.594,
+  "per_fold_embedding_acc": [
+   0.435,
+   0.15,
+   0.6,
+   0.35,
+   0.556
+  ],
+  "per_fold_knn3_acc": [
+   0.565,
+   0.2,
+   0.65,
+   0.3,
+   0.611
+  ],
+  "confusion": [
+   "F1_AXIS->F2_SHEET:2",
+   "F1_AXIS->F4_CONTAINER:2",
+   "F1_AXIS->F5_CONDUIT:1",
+   "F1_AXIS->F6_BRANCH:1",
+   "F1_AXIS->F8_CHASSIS:1",
+   "F1_AXIS->F9_OPERATORS:1",
+   "F2_SHEET->F5_CONDUIT:2",
+   "F2_SHEET->F6_BRANCH:2",
+   "F2_SHEET->F8_CHASSIS:3",
+   "F2_SHEET->F9_OPERATORS:2",
+   "F3_RADIAL->F4_CONTAINER:1",
+   "F3_RADIAL->F5_CONDUIT:1",
+   "F4_CONTAINER->F1_AXIS:5",
+   "F4_CONTAINER->F3_RADIAL:1",
+   "F4_CONTAINER->F8_CHASSIS:1",
+   "F5_CONDUIT->F2_SHEET:4",
+   "F5_CONDUIT->F3_RADIAL:1",
+   "F5_CONDUIT->F7_MODULE_COLLECTIVE:2",
+   "F5_CONDUIT->F8_CHASSIS:1",
+   "F5_CONDUIT->F9_OPERATORS:1",
+   "F6_BRANCH->F1_AXIS:1",
+   "F6_BRANCH->F2_SHEET:1",
+   "F6_BRANCH->F3_RADIAL:1",
+   "F6_BRANCH->F5_CONDUIT:1",
+   "F6_BRANCH->F7_MODULE_COLLECTIVE:2",
+   "F6_BRANCH->F9_OPERATORS:1",
+   "F7_MODULE_COLLECTIVE->F3_RADIAL:1",
+   "F7_MODULE_COLLECTIVE->F4_CONTAINER:1",
+   "F7_MODULE_COLLECTIVE->F5_CONDUIT:1",
+   "F7_MODULE_COLLECTIVE->F6_BRANCH:1",
+   "F7_MODULE_COLLECTIVE->F9_OPERATORS:1",
+   "F8_CHASSIS->F1_AXIS:2",
+   "F8_CHASSIS->F2_SHEET:3",
+   "F8_CHASSIS->F4_CONTAINER:1",
+   "F8_CHASSIS->F9_OPERATORS:1",
+   "F9_OPERATORS->F1_AXIS:1",
+   "F9_OPERATORS->F2_SHEET:1",
+   "F9_OPERATORS->F4_CONTAINER:1",
+   "F9_OPERATORS->F5_CONDUIT:1",
+   "F9_OPERATORS->F7_MODULE_COLLECTIVE:1"
+  ],
+  "unscoreable_ids": []
+ },
+ "T3b_behavior_embed_kfold": {
+  "scheme": "stratified 5-fold, seed 20261030, n=70 scoreable (unscoreable: 31)",
+  "embedding_accuracy": 0.243,
+  "knn3_accuracy": 0.386,
+  "keyword_baseline_accuracy_on_same_folds": "n/a",
+  "per_fold_embedding_acc": [
+   0.222,
+   0.2,
+   0.143,
+   0.5,
+   0.182
+  ],
+  "per_fold_knn3_acc": [
+   0.5,
+   0.267,
+   0.286,
+   0.5,
+   0.364
+  ],
+  "confusion": [
+   "ATTACH->PROTECT:1",
+   "CAPTURE->LOCOMOTE:7",
+   "CAPTURE->PROTECT:3",
+   "CAPTURE->TRANSPORT:4",
+   "GROW->LOCOMOTE:1",
+   "INTEGRATE->CAPTURE:1",
+   "INTEGRATE->TRANSPORT:2",
+   "LOCOMOTE->CAPTURE:5",
+   "LOCOMOTE->PROTECT:1",
+   "LOCOMOTE->TRANSPORT:6",
+   "PROTECT->CAPTURE:5",
+   "PROTECT->LOCOMOTE:2",
+   "PROTECT->TRANSPORT:1",
+   "SENSE->LOCOMOTE:1",
+   "SENSE->PROTECT:1",
+   "SENSE->TRANSPORT:2",
+   "TRANSPORT->CAPTURE:5",
+   "TRANSPORT->LOCOMOTE:3",
+   "TRANSPORT->PROTECT:2"
+  ],
+  "unscoreable_ids": [
+   6,
+   8,
+   16,
+   19,
+   20,
+   22,
+   23,
+   24,
+   27,
+   28,
+   29,
+   32,
+   33,
+   37,
+   39,
+   41,
+   48,
+   64,
+   72,
+   73,
+   78,
+   79,
+   81,
+   83,
+   89,
+   90,
+   91,
+   94,
+   95,
+   99,
+   101
+  ]
+ },
+ "T4b_adaptation_embed_kfold": {
+  "scheme": "stratified 5-fold, seed 20261030, n=57 scoreable (unscoreable: 44)",
+  "embedding_accuracy": 0.439,
+  "knn3_accuracy": 0.439,
+  "keyword_baseline_accuracy_on_same_folds": "n/a",
+  "per_fold_embedding_acc": [
+   0.385,
+   0.583,
+   0.333,
+   0.5,
+   0.375
+  ],
+  "per_fold_knn3_acc": [
+   0.385,
+   0.5,
+   0.333,
+   0.5,
+   0.5
+  ],
+  "confusion": [
+   "COLLECTIVE->FLUID:1",
+   "COLLECTIVE->SURFACE:1",
+   "CONSTRAINT->COLLECTIVE:2",
+   "CONSTRAINT->DEVELOPMENT:2",
+   "CONSTRAINT->FLUID:2",
+   "CONSTRAINT->SURFACE:2",
+   "DEFENSE->CONSTRAINT:3",
+   "DEFENSE->SURFACE:1",
+   "DEVELOPMENT->CONSTRAINT:2",
+   "DEVELOPMENT->FLUID:1",
+   "DEVELOPMENT->SURFACE:1",
+   "FLUID->CONSTRAINT:3",
+   "FLUID->DEVELOPMENT:1",
+   "FLUID->SURFACE:3",
+   "PACKING->DEFENSE:1",
+   "SURFACE->COLLECTIVE:1",
+   "SURFACE->DEFENSE:2",
+   "SURFACE->DEVELOPMENT:1",
+   "SURFACE->FLUID:2"
+  ],
+  "unscoreable_ids": [
+   8,
+   13,
+   14,
+   15,
+   16,
+   17,
+   20,
+   23,
+   27,
+   28,
+   30,
+   31,
+   34,
+   36,
+   37,
+   38,
+   39,
+   40,
+   42,
+   44,
+   47,
+   48,
+   49,
+   51,
+   53,
+   54,
+   56,
+   59,
+   61,
+   67,
+   68,
+   69,
+   70,
+   71,
+   73,
+   76,
+   78,
+   79,
+   83,
+   84,
+   89,
+   91,
+   92,
+   97
+  ]
+ },
+ "T5b_closure_forward": {
+  "l4l5_total": 45,
+  "compound_rule_coverage": 0.533,
+  "full_rule_coverage": 1.0,
+  "residue_after_extension": [],
+  "cross_family_pairs_present_in_archive": [
+   [
+    "F1_AXIS",
+    "F5_CONDUIT"
+   ],
+   [
+    "F2_SHEET",
+    "F6_BRANCH"
+   ],
+   [
+    "F2_SHEET",
+    "F7_MODULE_COLLECTIVE"
+   ],
+   [
+    "F4_CONTAINER",
+    "F8_CHASSIS"
+   ],
+   [
+    "F5_CONDUIT",
+    "F7_MODULE_COLLECTIVE"
+   ],
+   [
+    "F6_BRANCH",
+    "F7_MODULE_COLLECTIVE"
+   ],
+   [
+    "F7_MODULE_COLLECTIVE",
+    "F8_CHASSIS"
+   ]
+  ],
+  "absent_pairs": [
+   [
+    "F1_AXIS",
+    "F2_SHEET"
+   ],
+   [
+    "F1_AXIS",
+    "F3_RADIAL"
+   ],
+   [
+    "F1_AXIS",
+    "F4_CONTAINER"
+   ],
+   [
+    "F1_AXIS",
+    "F6_BRANCH"
+   ],
+   [
+    "F1_AXIS",
+    "F7_MODULE_COLLECTIVE"
+   ],
+   [
+    "F1_AXIS",
+    "F8_CHASSIS"
+   ],
+   [
+    "F2_SHEET",
+    "F3_RADIAL"
+   ],
+   [
+    "F2_SHEET",
+    "F4_CONTAINER"
+   ],
+   [
+    "F2_SHEET",
+    "F5_CONDUIT"
+   ],
+   [
+    "F2_SHEET",
+    "F8_CHASSIS"
+   ],
+   [
+    "F3_RADIAL",
+    "F4_CONTAINER"
+   ],
+   [
+    "F3_RADIAL",
+    "F5_CONDUIT"
+   ],
+   [
+    "F3_RADIAL",
+    "F6_BRANCH"
+   ],
+   [
+    "F3_RADIAL",
+    "F7_MODULE_COLLECTIVE"
+   ],
+   [
+    "F3_RADIAL",
+    "F8_CHASSIS"
+   ],
+   [
+    "F4_CONTAINER",
+    "F5_CONDUIT"
+   ],
+   [
+    "F4_CONTAINER",
+    "F6_BRANCH"
+   ],
+   [
+    "F4_CONTAINER",
+    "F7_MODULE_COLLECTIVE"
+   ],
+   [
+    "F5_CONDUIT",
+    "F6_BRANCH"
+   ],
+   [
+    "F5_CONDUIT",
+    "F8_CHASSIS"
+   ],
+   [
+    "F6_BRANCH",
+    "F8_CHASSIS"
+   ]
+  ],
+  "novel_form_candidates": {
+   "F1_AXIS+F4_CONTAINER": "Armored vermiform \u2014 scale worms (Polynoidae),\u5251\u5c3e armor on elongated body; real, not a distinct archive entry",
+   "F3_RADIAL+F8_CHASSIS": "Radial limbed walker \u2014 echinoderm tube-foot locomotion (#48 covers radial capture, not radial chassis)",
+   "F2_SHEET+F5_CONDUIT": "Sheet-conduit filter \u2014 bivalve gill sheets / baleen: conduit flow through expanded sheet",
+   "F6_BRANCH+F8_CHASSIS": "Branching limbs \u2014 hirudiform? best real case: articulate brachiopod arms / briozoan tentacle crowns; weak candidate",
+   "F1_AXIS+F6_BRANCH": "Branched axis body \u2014 colonial hydroid stolon systems at body scale; boundary case with #57",
+   "F2_SHEET+F4_CONTAINER": "Armored sheet \u2014 turtle carapace / placoderm plates; real; partially covered by #66",
+   "F3_RADIAL+F6_BRANCH": "Radially branching \u2014 dendritic colony growth from a center ( branching sponge Achelina); boundary case with #88",
+   "F5_CONDUIT+F8_CHASSIS": "Jet chassis \u2014 squid-like articulated jetter with fins; squid covers F1+F5; articulated jet chassis rare"
+  }
+ },
+ "T6_predators_scored": {
+  "status": "SCORED on curated seed (n=15); ropensci FishBase API DNS-blocked in sandbox; fishbase.se reachable for expansion",
+  "accuracy_on_seed": 1.0,
+  "details": [
+   {
+    "prey": "marine snails (conchs, periwinkles)",
+    "predator": "shell-drilling gastropods (Naticidae, Muricidae)",
+    "predicted": "countered",
+    "observed": "countered",
+    "match": true
+   },
+   {
+    "prey": "boxfish (Ostracion spp.)",
+    "predator": "gape-limited reef piscivores",
+    "predicted": "deterred",
+    "observed": "deterred",
+    "match": true
+   },
+   {
+    "prey": "sea urchins",
+    "predator": "generalist reef fish",
+    "predicted": "deterred",
+    "observed": "deterred",
+    "match": true
+   },
+   {
+    "prey": "sea urchins (barren-ground populations)",
+    "predator": "crushing specialists (sea otters, triggerfish, lobsters)",
+    "predicted": "countered",
+    "observed": "countered",
+    "match": true
+   },
+   {
+    "prey": "sardines/herrings (schooling fusiforms)",
+    "predator": "pursuit piscivores (tuna, cormorants)",
+    "predicted": "deterred_partially",
+    "observed": "deterred_partially",
+    "match": true
+   },
+   {
+    "prey": "bryozoan/coral colonies",
+    "predator": "module grazers (nudibranchs, parrotfish)",
+    "predicted": "deterred_partially",
+    "observed": "deterred_partially",
+    "match": true
+   },
+   {
+    "prey": "medusae (jellyfish)",
+    "predator": "cnidocyte-resistant specialists (sea turtles)",
+    "predicted": "countered",
+    "observed": "countered",
+    "match": true
+   },
+   {
+    "prey": "squid (jetting coleoids)",
+    "predator": "pursuit predators (dolphins, tuna)",
+    "predicted": "deterred",
+    "observed": "deterred_partially",
+    "match": true
+   },
+   {
+    "prey": "crabs (carcinized decapods)",
+    "predator": "gape-limited fish",
+    "predicted": "deterred",
+    "observed": "deterred",
+    "match": true
+   },
+   {
+    "prey": "flat reef fish (laterally compressed)",
+    "predator": "ambush piscivores (lizardfish, groupers)",
+    "predicted": "deterred",
+    "observed": "deterred_partially",
+    "match": true
+   },
+   {
+    "prey": "camouflaged blennies/flatfish",
+    "predator": "visual hunters",
+    "predicted": "deterred",
+    "observed": "deterred",
+    "match": true
+   },
+   {
+    "prey": "fusiform pelagic fish (mackerel)",
+    "predator": "pursuit predators (sharks, marine mammals)",
+    "predicted": "deterred",
+    "observed": "deterred_partially",
+    "match": true
+   },
+   {
+    "prey": "starfish ( stellate echinoderms)",
+    "predator": "generalist fish",
+    "predicted": "deterred",
+    "observed": "deterred",
+    "match": true
+   },
+   {
+    "prey": "turtles (armored sheet-form)",
+    "predator": "crushing jaws (alligators, orcas)",
+    "predicted": "countered",
+    "observed": "countered",
+    "match": true
+   },
+   {
+    "prey": "branching corals",
+    "predator": "scrapers (parrotfish)",
+    "predicted": "deterred",
+    "observed": "deterred_partially",
+    "match": true
+   }
+  ],
+  "scaling_path": "expand via fishbase.se species pages (Predators table per species) into this schema; target n>=100 for stable T6 accuracy; then re-run scripts/validate_bioforms_v2.py"
+ }
+}

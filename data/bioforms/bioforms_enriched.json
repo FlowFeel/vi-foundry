@@ -1,0 +1,2870 @@
+[
+ {
+  "id": 1,
+  "categoryId": 1,
+  "title_es": "Morfología lineal / axial",
+  "title_en": "Linear / Axial Morphology",
+  "geometry_es": "Organización alrededor de un eje longitudinal.",
+  "geometry_en": "Organization around a longitudinal axis.",
+  "example_es": "Lombriz de tierra (Earthworm).",
+  "example_en": "Earthworm.",
+  "function_es": "Establecimiento de polaridad direccional, extremos cefálico/caudal y repetición seriada.",
+  "function_en": "Establishment of directional polarity, cephalic/caudal ends, and serial repetition.",
+  "significance_es": "Una de las soluciones geométricas más básicas para un cuerpo vivo. Proporciona la base arquitectónica sobre la que operan transformaciones más complejas.",
+  "significance_en": "One of the most basic geometrical solutions for a living body. Provides an architectural basis upon which more complex transformations operate.",
+  "svgType": "axial",
+  "traits_es": [
+   "Eje longitudinal",
+   "Extremos diferenciados",
+   "Repetición seriada"
+  ],
+  "traits_en": [
+   "Longitudinal axis",
+   "Differentiated ends",
+   "Serial repetition"
+  ],
+  "family_id": "F1_AXIS",
+  "operator_chain": []
+ },
+ {
+  "id": 2,
+  "categoryId": 1,
+  "title_es": "Morfología planar / laminar",
+  "title_en": "Planar / Laminar Morphology",
+  "geometry_es": "Expansión predominante a lo largo de una superficie relativamente plana.",
+  "geometry_en": "Predominant expansion across a relatively flat surface.",
+  "example_es": "Hoja vegetal, fronda de alga, membrana alar, estructuras aplanadas animales.",
+  "example_en": "Leaf, algal frond, wing membrane, flattened animal structures.",
+  "function_es": "Aumento de superficie respecto al grosor: captura de luz, intercambio de gases y calor, filtración e interacción aerodinámica.",
+  "function_en": "Increase of surface area relative to thickness: light capture, gas and heat exchange, filtration, aerodynamic interaction.",
+  "significance_es": "Aparece recurrentemente cuando la interacción con una superficie externa es más crítica que la ocupación volumétrica.",
+  "significance_en": "Repeatedly appears when interaction with an external surface is more important than volumetric occupation.",
+  "svgType": "laminar",
+  "traits_es": [
+   "Alta área superficial",
+   "Espesor mínimo",
+   "Intercambio difuso"
+  ],
+  "traits_en": [
+   "High surface area",
+   "Minimal thickness",
+   "Diffusive exchange"
+  ],
+  "family_id": "F2_SHEET",
+  "operator_chain": []
+ },
+ {
+  "id": 3,
+  "categoryId": 1,
+  "title_es": "Morfología tubular / cilíndrica",
+  "title_en": "Tubular / Cylindrical Morphology",
+  "geometry_es": "Organización en torno a un conducto o eje hueco.",
+  "geometry_en": "Organization around a conduit or hollow axis.",
+  "example_es": "Gusano tubular, intestino, vaso sanguíneo, tallo vegetal, estructuras bronquiales.",
+  "example_en": "Tube worm, intestine, blood vessel, plant stem, bronchial structures.",
+  "function_es": "Combina eje elongado, cavidad interna, pared envolvente y transporte direccional.",
+  "function_en": "Combines an elongated axis, internal cavity, surrounding wall, and directional transport.",
+  "significance_es": "Sumamente recurrente porque proporciona simultáneamente soporte estructural y una vía protegida para el flujo de materia o fluidos.",
+  "significance_en": "Particularly recurrent because it simultaneously provides structural support and a pathway for transport.",
+  "svgType": "tubular",
+  "traits_es": [
+   "Conducto axial",
+   "Pared estructural",
+   "Flujo direccional"
+  ],
+  "traits_en": [
+   "Axial conduit",
+   "Structural wall",
+   "Directional flow"
+  ],
+  "family_id": "F1_AXIS",
+  "operator_chain": []
+ },
+ {
+  "id": 4,
+  "categoryId": 1,
+  "title_es": "Morfología esférica / globular",
+  "title_en": "Spherical / Globular Morphology",
+  "geometry_es": "Configuración compacta y aproximadamente equidimensional.",
+  "geometry_en": "Approximately compact and equidimensional configuration.",
+  "example_es": "Erizo de mar, esporas, células microbianas, huevos, posturas defensivas globulares.",
+  "example_en": "Sea urchin, spores, microbial cells, eggs, defensive globular configurations.",
+  "function_es": "Minimiza el área superficial respecto al volumen para protección y conservación interna.",
+  "function_en": "Minimizes surface area relative to volume for internal protection and retention.",
+  "significance_es": "Tiene una base física directa: minimización de tensión superficial y reducción de exposición con el entorno.",
+  "significance_en": "Straightforward geometric and physical basis: surface tension minimization and reduced environmental exposure.",
+  "svgType": "spherical",
+  "traits_es": [
+   "Superficie mínima",
+   "Volumen protegido",
+   "Equidimensional"
+  ],
+  "traits_en": [
+   "Minimal surface",
+   "Protected volume",
+   "Equidimensional"
+  ],
+  "family_id": "F4_CONTAINER",
+  "operator_chain": []
+ },
+ {
+  "id": 5,
+  "categoryId": 1,
+  "title_es": "Morfología discoidal",
+  "title_en": "Discoidal Morphology",
+  "geometry_es": "Cuerpo expandido y aplanado radialmente.",
+  "geometry_en": "Body expanded and radially flattened.",
+  "example_es": "Raya (Ray), medusas discoidales.",
+  "example_en": "Ray, discoidal medusae.",
+  "function_es": "Aumento de superficie lateral reduciendo espesor vertical: interacción hidrodinámica bentónica y planeo subacuático.",
+  "function_en": "Increases lateral surface area while reducing vertical thickness for benthic locomotion and underwater gliding.",
+  "significance_es": "Asociada de manera reiterada a la interacción con sustratos o con el flujo laminar de fluidos.",
+  "significance_en": "Repeatedly associated with substrate contact and laminar fluid interaction.",
+  "svgType": "discoidal",
+  "traits_es": [
+   "Expansión radial plana",
+   "Bajo perfil hidrodinámico",
+   "Contacto con sustrato"
+  ],
+  "traits_en": [
+   "Flat radial expansion",
+   "Low hydrodynamic profile",
+   "Substrate contact"
+  ],
+  "family_id": "F2_SHEET",
+  "operator_chain": []
+ },
+ {
+  "id": 6,
+  "categoryId": 1,
+  "title_es": "Morfología fusiforme",
+  "title_en": "Fusiform Morphology",
+  "geometry_es": "Cuerpo alargado y ahusado progresivamente hacia ambos extremos.",
+  "geometry_en": "Body elongated and progressively tapered toward the ends.",
+  "example_es": "Atún, tiburón, ictiosaurio, cetáceo.",
+  "example_en": "Tuna, shark, ichthyosaur, cetacean.",
+  "function_es": "Reducción drástica del arrastre hidrodinámico o aerodinámico manteniendo suficiente volumen interno.",
+  "function_en": "Drastically reduces fluid drag while preserving internal payload volume.",
+  "significance_es": "Uno de los ejemplos canónicos más limpios de convergencia física: la resolución recurrente ante el flujo laminar de un fluido.",
+  "significance_en": "One of the clearest examples of recurrent morphology associated with a recurring physical fluid problem.",
+  "svgType": "fusiform",
+  "traits_es": [
+   "Extremos ahusados",
+   "Mínimo arrastre",
+   "Volumen hidrodinámico"
+  ],
+  "traits_en": [
+   "Tapered ends",
+   "Minimal drag",
+   "Hydrodynamic volume"
+  ],
+  "family_id": "F1_AXIS",
+  "operator_chain": [
+   "elongation",
+   "tapering"
+  ]
+ },
+ {
+  "id": 7,
+  "categoryId": 1,
+  "title_es": "Morfología piriforme / ovoide",
+  "title_en": "Pyriform / Ovoid Morphology",
+  "geometry_es": "Configuración ovoide ensanchada asimétricamente hacia uno de sus polos.",
+  "geometry_en": "Ovoid configuration or body broadened toward one pole.",
+  "example_es": "Huevo de ave, fruto piriforme, embriones iniciales.",
+  "example_en": "Egg, pyriform fruit, early embryos.",
+  "function_es": "Empaquetamiento espacial, rodadura sin caída en cornisas, orientación gravitatoria.",
+  "function_en": "Spatial packing, non-drop cliff roll, gravitational orientation.",
+  "significance_es": "Emerge del crecimiento diferencial polarizado, las restricciones del canal de parto/puesta y la gravedad.",
+  "significance_en": "Emerges from asymmetric growth, gravitational orientation, and developmental constraints.",
+  "svgType": "pyriform",
+  "traits_es": [
+   "Polaridad asimétrica",
+   "Base ensanchada",
+   "Ápice cónico suave"
+  ],
+  "traits_en": [
+   "Asymmetric polarity",
+   "Broadened base",
+   "Smooth conical apex"
+  ],
+  "family_id": "F4_CONTAINER",
+  "operator_chain": []
+ },
+ {
+  "id": 8,
+  "categoryId": 1,
+  "title_es": "Morfología toroidal / anular",
+  "title_en": "Toroidal / Annular Morphology",
+  "geometry_es": "Organización continua alrededor de un vacío central.",
+  "geometry_en": "Organization around a central empty space.",
+  "example_es": "Estructuras anulares en ciertos tejidos, esfínteres, anillos coloniales.",
+  "example_en": "Annular tissue structures, sphincters, colonial rings.",
+  "function_es": "Circunscripción de una apertura, acción valvular y contención periférica.",
+  "function_en": "Circumscription of an opening, valvular action, peripheral containment.",
+  "significance_es": "Rara como cuerpo animal completo autónomo, pero fundamental como topología en la que la materia se estructura alrededor de una ausencia.",
+  "significance_en": "Uncommon as complete animal bodies but crucial topologically as material organized around a void.",
+  "svgType": "toroidal",
+  "traits_es": [
+   "Topología de toro",
+   "Vacío central regulado",
+   "Fuerza perimetral"
+  ],
+  "traits_en": [
+   "Torus topology",
+   "Regulated central void",
+   "Perimeter force"
+  ],
+  "family_id": "F5_CONDUIT",
+  "operator_chain": []
+ },
+ {
+  "id": 9,
+  "categoryId": 1,
+  "title_es": "Morfología cónica / infundibuliforme",
+  "title_en": "Conical / Funnel-shaped Morphology",
+  "geometry_es": "Expansión progresiva desde una región estrecha hacia una abierta.",
+  "geometry_en": "Progressive expansion from a narrow region toward a broader one.",
+  "example_es": "Sifón de molusco, esponjas cónicas, toberas biológicas.",
+  "example_en": "Molluscan siphon, conical sponges, biological nozzles.",
+  "function_es": "Estructura colectora, tobera de propulsión o canalizador de gradientes de presión hidrostática.",
+  "function_en": "Collecting structure, propulsion nozzle, hydrostatic pressure gradient director.",
+  "significance_es": "Estrechamente vinculada a la física del movimiento forzado de materia o fluidos.",
+  "significance_en": "Closely associated with the directed movement of matter or fluid.",
+  "svgType": "conical",
+  "traits_es": [
+   "Divergencia cónica",
+   "Aceleración Venturi",
+   "Captura focalizada"
+  ],
+  "traits_en": [
+   "Conical divergence",
+   "Venturi acceleration",
+   "Focal capture"
+  ],
+  "family_id": "F5_CONDUIT",
+  "operator_chain": []
+ },
+ {
+  "id": 10,
+  "categoryId": 1,
+  "title_es": "Morfología cupular / cóncava",
+  "title_en": "Cupular / Concave Morphology",
+  "geometry_es": "Estructura que genera una superficie receptora o envolvente.",
+  "geometry_en": "Structure generating an enclosing or receiving surface.",
+  "example_es": "Copa floral, cáliz esponjoso, órganos en cúpula.",
+  "example_en": "Floral cup, sponge calyx, cupular organs.",
+  "function_es": "Retener, recolectar, recibir, canalizar y proteger selectivamente.",
+  "function_en": "Collect, retain, receive, channel, and selectively protect.",
+  "significance_es": "Materialización canónica del concepto de superficie receptora selectiva.",
+  "significance_en": "Directly related to the concept of a selective receiving surface.",
+  "svgType": "cupular",
+  "traits_es": [
+   "Concavidad envolvente",
+   "Retención pasiva",
+   "Superficie selectiva"
+  ],
+  "traits_en": [
+   "Enclosing concavity",
+   "Passive retention",
+   "Selective surface"
+  ],
+  "family_id": "F5_CONDUIT",
+  "operator_chain": []
+ },
+ {
+  "id": 11,
+  "categoryId": 1,
+  "title_es": "Morfología campaniforme",
+  "title_en": "Bell-shaped Morphology",
+  "geometry_es": "Forma aproximadamente de campana, dilatada desde una base apical hacia un borde.",
+  "geometry_en": "Approximately bell-shaped form, expanding from a base toward a rim.",
+  "example_es": "Medusa, campanas natatorias de sifonóforos.",
+  "example_en": "Jellyfish, siphonophore nectophores.",
+  "function_es": "Cavidad hidrodinámica propulsora, flotabilidad activa y barrera de fluido circundante.",
+  "function_en": "Hydrodynamic propulsion cavity, active buoyancy, and boundary between internal/external fluid.",
+  "significance_es": "Surge reiteradamente cuando un organismo gelatinoso debe interactuar dinámicamente con un medio acuoso.",
+  "significance_en": "Repeatedly arises where an organism must dynamically interact with surrounding fluid.",
+  "svgType": "campaniform",
+  "traits_es": [
+   "Cúpula elástica",
+   "Borde contráctil",
+   "Propulsión por pulsos"
+  ],
+  "traits_en": [
+   "Elastic dome",
+   "Contractile margin",
+   "Pulsed propulsion"
+  ],
+  "family_id": "F5_CONDUIT",
+  "operator_chain": []
+ },
+ {
+  "id": 12,
+  "categoryId": 1,
+  "title_es": "Morfología helicoidal / espiral",
+  "title_en": "Helical / Spiral Morphology",
+  "geometry_es": "Organización que sigue una curva helicoidal o espiral logarítmica.",
+  "geometry_en": "Organization following a helix or logarithmic spiral.",
+  "example_es": "Concha de caracol, flagelo bacteriano, zarcillo de enredadera, crecimiento en espiral.",
+  "example_en": "Snail shell, bacterial flagellum, plant tendril, spiral growth structures.",
+  "function_es": "Empaquetamiento compacto, crecimiento continuo sin alteración de forma, propiedades de torsión.",
+  "function_en": "Compact packing, continuous growth with shape conservation, torsional mechanics.",
+  "significance_es": "Pertenece simultáneamente a la morfología externa, la mecánica del crecimiento celular y la física macromolecular.",
+  "significance_en": "Belongs simultaneously to external morphology, internal organization, development, and mechanics.",
+  "svgType": "spiral",
+  "traits_es": [
+   "Crecimiento equiangular",
+   "Resistencia a torsión",
+   "Compacidad geométrica"
+  ],
+  "traits_en": [
+   "Equiangular growth",
+   "Torsional resistance",
+   "Geometric compactness"
+  ],
+  "family_id": "F4_CONTAINER",
+  "operator_chain": []
+ },
+ {
+  "id": 13,
+  "categoryId": 2,
+  "title_es": "Bilateralidad",
+  "title_en": "Bilaterality",
+  "geometry_es": "Correspondencia simétrica entre dos mitades respecto a un plano sagital medio.",
+  "geometry_en": "Correspondence between two sides with respect to an axis or plane.",
+  "example_es": "Ser humano, insecto, pez, vertebrados.",
+  "example_en": "Human, insect, fish, vertebrates.",
+  "function_es": "Organización direccional, diferenciación izquierda-derecha y coordinación motriz orientada.",
+  "function_en": "Directional organization, left-right differentiation, coordinated oriented locomotion.",
+  "significance_es": "La solución arquitectónica hegemónica entre los animales dotados de locomoción activa unidireccional.",
+  "significance_en": "One of the dominant architectural solutions among actively mobile animals.",
+  "svgType": "bilateral",
+  "traits_es": [
+   "Plano sagital medio",
+   "Locomoción frontal",
+   "Cefalización"
+  ],
+  "traits_en": [
+   "Mid-sagittal plane",
+   "Forward locomotion",
+   "Cephalization"
+  ],
+  "family_id": "F8_CHASSIS",
+  "operator_chain": []
+ },
+ {
+  "id": 14,
+  "categoryId": 2,
+  "title_es": "Simetría radial",
+  "title_en": "Radial Symmetry",
+  "geometry_es": "Organización de partes semejantes alrededor de un punto o eje central.",
+  "geometry_en": "Organization of parts around a central point or axis.",
+  "example_es": "Estrella de mar, anémona de mar, pólipo.",
+  "example_en": "Starfish, sea anemone, cnidarian polyp.",
+  "function_es": "Interacción omnidireccional con el medio: recepción de estímulos y alimento desde 360°.",
+  "function_en": "Omnidirectional environmental interaction: sensing and feeding across 360 degrees.",
+  "significance_es": "Favorecida con insistencia en organismos sésiles, flotantes o con movilidad radial no orientada.",
+  "significance_en": "Advantageous for sessile, drifting, or multidirectionally interacting organisms.",
+  "svgType": "radial",
+  "traits_es": [
+   "Eje central",
+   "Recepción omnidireccional",
+   "Estructura en rayos"
+  ],
+  "traits_en": [
+   "Central axis",
+   "Omnidirectional sensing",
+   "Radial rays"
+  ],
+  "family_id": "F3_RADIAL",
+  "operator_chain": []
+ },
+ {
+  "id": 15,
+  "categoryId": 2,
+  "title_es": "Birradialidad",
+  "title_en": "Biradiality",
+  "geometry_es": "Combinación de simetría radial con un eje bilateral dominante.",
+  "geometry_en": "Combination of radial organization with a dominant bilateral axis.",
+  "example_es": "Ctenóforo (peine de mar).",
+  "example_en": "Ctenophore (comb jelly).",
+  "function_es": "Transición entre equilibrio hidrostático radial y dirección motriz preferente.",
+  "function_en": "Transition between radial hydrostatic stability and preferred locomotor axis.",
+  "significance_es": "Demuestra que la simetría no es binaria, sino que existen estados arquitectónicos intermedios viables.",
+  "significance_en": "Demonstrates symmetry is not binary; rich intermediate organizational possibilities exist.",
+  "svgType": "biradial",
+  "traits_es": [
+   "Dos planos ortogonales",
+   "Transición morfológica",
+   "Doble orientación"
+  ],
+  "traits_en": [
+   "Two orthogonal planes",
+   "Morphological transition",
+   "Dual orientation"
+  ],
+  "family_id": "F3_RADIAL",
+  "operator_chain": []
+ },
+ {
+  "id": 16,
+  "categoryId": 2,
+  "title_es": "Asimetría organizada",
+  "title_en": "Organized Asymmetry",
+  "geometry_es": "Pérdida de la simetría primaria acompañada de reorganización funcional estable.",
+  "geometry_en": "Loss of symmetry accompanied by stable reorganization.",
+  "example_es": "Peces planos (lenguado), cangrejo violinista.",
+  "example_en": "Flatfish (flounder), fiddler crab.",
+  "function_es": "Adaptación a nichos bentónicos de contacto unilateral o especialización de apéndices singulares.",
+  "function_en": "Adaptation to unilateral benthic contact or single specialized appendages.",
+  "significance_es": "No es una deformidad caótica, sino un estado morfológico altamente canalizado y regulado.",
+  "significance_en": "Not random deformation; a stable, highly canalized functional region of morphospace.",
+  "svgType": "asymmetry",
+  "traits_es": [
+   "Ruptura de plano sagital",
+   "Estabilidad adaptativa",
+   "Desplazamiento anatómico"
+  ],
+  "traits_en": [
+   "Sagittal plane breakdown",
+   "Adaptive stability",
+   "Anatomical migration"
+  ],
+  "family_id": "F9_OPERATORS",
+  "operator_chain": []
+ },
+ {
+  "id": 17,
+  "categoryId": 2,
+  "title_es": "Aplanamiento dorsoventral",
+  "title_en": "Dorsoventral Flattening",
+  "geometry_es": "Compresión del cuerpo entre las superficies dorsal y ventral.",
+  "geometry_en": "Compression of the body between dorsal and ventral surfaces.",
+  "example_es": "Planaria, gusano plano, manta.",
+  "example_en": "Planarian flatworm, flatfish, manta ray.",
+  "function_es": "Incremento drástico de la superficie respecto al espesor; difusión gaseosa sin sistema circulatorio.",
+  "function_en": "Drastic surface area to thickness increase; direct gas diffusion without complex circulation.",
+  "significance_es": "Permite la supervivencia celular directa por difusión y la reptación o planeo adherente sobre fondos.",
+  "significance_en": "Enables direct cellular diffusion and benthic gliding without thick body penalties.",
+  "svgType": "dorsoventral",
+  "traits_es": [
+   "Espesor mínimo",
+   "Difusión cutánea",
+   "Locomoción adherente"
+  ],
+  "traits_en": [
+   "Minimal thickness",
+   "Cutaneous diffusion",
+   "Adherent locomotion"
+  ],
+  "family_id": "F2_SHEET",
+  "operator_chain": []
+ },
+ {
+  "id": 18,
+  "categoryId": 2,
+  "title_es": "Compresión lateral",
+  "title_en": "Lateral Compression",
+  "geometry_es": "Aplanamiento pronunciado entre los lados izquierdo y derecho.",
+  "geometry_en": "Flattening between the left and right sides.",
+  "example_es": "Pez ángel, peces de arrecife coralino.",
+  "example_en": "Angelfish, coral reef fish.",
+  "function_es": "Maniobrabilidad instantánea, deslizamiento entre hendiduras y giros rápidos en espacios angostos.",
+  "function_en": "Instant maneuverability, movement through narrow reef crevices, fast turning.",
+  "significance_es": "Respuesta recurrente a ecosistemas tridimensionales saturados de obstáculos.",
+  "significance_en": "Recurrent architecture for densely crowded three-dimensional environments.",
+  "svgType": "lateral_comp",
+  "traits_es": [
+   "Perfil vertical alto",
+   "Fina sección transversal",
+   "Agilidad angular"
+  ],
+  "traits_en": [
+   "Tall vertical profile",
+   "Thin cross section",
+   "Angular agility"
+  ],
+  "family_id": "F2_SHEET",
+  "operator_chain": []
+ },
+ {
+  "id": 19,
+  "categoryId": 2,
+  "title_es": "Elongación vertical",
+  "title_en": "Vertical Elongation",
+  "geometry_es": "Desarrollo predominante a lo largo de un eje gravitatorio vertical.",
+  "geometry_en": "Predominant development along a vertical gravitational axis.",
+  "example_es": "Árbol, tallo de bambú, hidrozoo columnar.",
+  "example_en": "Tree, bamboo stalk, columnar hydrozoan.",
+  "function_es": "Competencia activa por radiación lumínica, dispersión aérea de propágulos y acceso al aire.",
+  "function_en": "Active competition for sunlight, aerial propagule dispersal, atmospheric access.",
+  "significance_es": "Emerge universalmente bajo la fuerza gravitatoria cuando la luz o el espacio cenital son limitantes.",
+  "significance_en": "Universally selected when organisms compete for light or aerial dispersal height.",
+  "svgType": "vertical_elong",
+  "traits_es": [
+   "Contra-gravedad",
+   "Fuste compresivo",
+   "Fototropismo positivo"
+  ],
+  "traits_en": [
+   "Counter-gravity",
+   "Compressive trunk",
+   "Positive phototropism"
+  ],
+  "family_id": "F9_OPERATORS",
+  "operator_chain": []
+ },
+ {
+  "id": 20,
+  "categoryId": 2,
+  "title_es": "Polarización axial",
+  "title_en": "Axial Polarization",
+  "geometry_es": "Diferenciación funcional y estructural entre los dos extremos de un eje.",
+  "geometry_en": "Functional and structural differentiation between the ends of an axis.",
+  "example_es": "Renacuajo, embrión vertebrado, hidra.",
+  "example_en": "Tadpole, vertebrate embryo, hydra.",
+  "function_es": "Transforma una línea neutra en un cuerpo direccional: cabeza/cola, anterior/posterior.",
+  "function_en": "Transforms an undifferentiated line into an organized directional body (anterior/posterior, head/tail).",
+  "significance_es": "Condición previa para la locomoción dirigida y la integración sensorial cefálica.",
+  "significance_en": "Prerequisite for directed locomotion and sensory cephalization.",
+  "svgType": "axial_polar",
+  "traits_es": [
+   "Extremo líder y estela",
+   "Gradiente morfógeno",
+   "Cefalización"
+  ],
+  "traits_en": [
+   "Leading & trailing ends",
+   "Morphogen gradient",
+   "Cephalization"
+  ],
+  "family_id": "F1_AXIS",
+  "operator_chain": []
+ },
+ {
+  "id": 21,
+  "categoryId": 2,
+  "title_es": "Centralización",
+  "title_en": "Centralization",
+  "geometry_es": "Concentración de estructuras procesadoras o metabólicas en una región nodal.",
+  "geometry_en": "Concentration of structures or functions around a central region.",
+  "example_es": "Cerebro, ganglio central, núcleo celular.",
+  "example_en": "Brain, central ganglion, cell nucleus.",
+  "function_es": "Integración sensorial rápida, procesamiento de señales y coordinación decisional unificada.",
+  "function_en": "Sensory integration, signal processing, unified coordinated motor command.",
+  "significance_es": "Reorganización geométrica y funcional que reduce retardos temporales de transmisión de información.",
+  "significance_en": "Geometric reorganization that minimizes signal transmission delays.",
+  "svgType": "centralization",
+  "traits_es": [
+   "Núcleo integrador",
+   "Vías convergentes",
+   "Topología nodal"
+  ],
+  "traits_en": [
+   "Integrating nucleus",
+   "Converging pathways",
+   "Nodal topology"
+  ],
+  "family_id": "F3_RADIAL",
+  "operator_chain": []
+ },
+ {
+  "id": 22,
+  "categoryId": 2,
+  "title_es": "Radialización de apéndices",
+  "title_en": "Radialization of Appendages",
+  "geometry_es": "Distribución de apéndices periféricos que divergen desde un cuerpo central.",
+  "geometry_en": "Distribution of peripheral structures around a central region.",
+  "example_es": "Estrella de mar, erizo, pólipo.",
+  "example_en": "Starfish arms, sea urchin spines, polyp tentacles.",
+  "function_es": "Convierte el tronco en una plataforma multidireccional de locomoción, alimentación o defensa.",
+  "function_en": "Converts the core body into a platform from which multiple appendages radiate for 360° tasks.",
+  "significance_es": "La solución geométrica cuando la presión ambiental no tiene un vector prioritario.",
+  "significance_en": "Geometric solution when environmental pressure lacks a single directional vector.",
+  "svgType": "radial_append",
+  "traits_es": [
+   "Apéndices radiados",
+   "Cobertura periférica",
+   "Plataforma central"
+  ],
+  "traits_en": [
+   "Radiated limbs",
+   "Peripheral coverage",
+   "Central platform"
+  ],
+  "family_id": "F3_RADIAL",
+  "operator_chain": []
+ },
+ {
+  "id": 23,
+  "categoryId": 3,
+  "title_es": "Segmentación",
+  "title_en": "Segmentation",
+  "geometry_es": "División seriada de una estructura corporal en unidades metámeras sucesivas.",
+  "geometry_en": "Division of a structure into successive units.",
+  "example_es": "Ciempiés, lombriz, somitas embrionarios.",
+  "example_en": "Centipede, annelid worm, vertebrate somites.",
+  "function_es": "Aporta flexibilidad mecánica, redundancia funcional y modularidad genética para especialización.",
+  "function_en": "Provides mechanical flexibility, functional redundancy, and modular developmental units.",
+  "significance_es": "Operador clave que permite aumentar el tamaño corporal sin inventar genes enteros para cada región.",
+  "significance_en": "Fundamental operator allowing size increase through repetition of identical genetic programs.",
+  "svgType": "segmentation",
+  "traits_es": [
+   "Metamería seriada",
+   "Modularidad",
+   "Redundancia"
+  ],
+  "traits_en": [
+   "Serial metamery",
+   "Modularity",
+   "Redundancy"
+  ],
+  "family_id": "F7_MODULE_COLLECTIVE",
+  "operator_chain": []
+ },
+ {
+  "id": 24,
+  "categoryId": 3,
+  "title_es": "Repetición / Modularización",
+  "title_en": "Repetition / Modularization",
+  "geometry_es": "Reiteración de unidades similares a distintas escalas estructurales.",
+  "geometry_en": "Reiteration of similar units across scales.",
+  "example_es": "Colonia de coral, pólipos de sifonóforo, osteonas óseas.",
+  "example_en": "Coral colony, siphonophore zooids, bone osteons.",
+  "function_es": "Crecimiento indefinido con preservación del coste de codificación genética.",
+  "function_en": "Indefinite scaling while preserving low genetic specification cost.",
+  "significance_es": "Opera en todas las escalas jerárquicas: célula → tejido → órgano → individuo → colonia.",
+  "significance_en": "Operates across all biological scales: cell → tissue → organ → organism → colony.",
+  "svgType": "repetition",
+  "traits_es": [
+   "Reiteración fractal",
+   "Bajo coste informativo",
+   "Escalabilidad"
+  ],
+  "traits_en": [
+   "Fractal reiteration",
+   "Low informational cost",
+   "Scalability"
+  ],
+  "family_id": "F7_MODULE_COLLECTIVE",
+  "operator_chain": []
+ },
+ {
+  "id": 25,
+  "categoryId": 3,
+  "title_es": "Ramificación",
+  "title_en": "Branching",
+  "geometry_es": "Generación de múltiples extensiones secundarias a partir de un eje principal.",
+  "geometry_en": "Generation of multiple extensions from an axis.",
+  "example_es": "Árbol, micelio fúngico, árbol bronquial, corales.",
+  "example_en": "Tree, fungal mycelium, bronchial tree, corals.",
+  "function_es": "Ocupación de volumen, maximización de área de contacto e intercepción de recursos.",
+  "function_en": "Volume filling, interface maximization, and distributed resource access.",
+  "significance_es": "Entre los operadores geométricos más universales de los sistemas físicos y biológicos disipativos.",
+  "significance_en": "Among the most universal dissipative geometric operators across all living systems.",
+  "svgType": "branching",
+  "traits_es": [
+   "Árbol generativo",
+   "Llenado espacial",
+   "Redes de transporte"
+  ],
+  "traits_en": [
+   "Generative tree",
+   "Space filling",
+   "Transport networks"
+  ],
+  "family_id": "F6_BRANCH",
+  "operator_chain": []
+ },
+ {
+  "id": 26,
+  "categoryId": 3,
+  "title_es": "Bifurcación",
+  "title_en": "Bifurcation",
+  "geometry_es": "División binaria elemental de una estructura en dos ramas.",
+  "geometry_en": "Division of a structure into two branches.",
+  "example_es": "Vaso sanguíneo arterial, nervio motor, dicotomía vegetal.",
+  "example_en": "Arterial blood vessel, motor nerve, plant dichotomy.",
+  "function_es": "Reducción de resistencia hidráulica y distribución igualitaria de flujo.",
+  "function_en": "Reduction of hydraulic resistance and balanced flow distribution.",
+  "significance_es": "Caso mínimo del operador de ramificación (1 eje → 2 ejes); su reiteración engendra redes colosales.",
+  "significance_en": "The simplest case of branching (1 axis → 2 axes); its iteration yields massive networks.",
+  "svgType": "bifurcation",
+  "traits_es": [
+   "División binaria",
+   "Ley de Murray",
+   "Transición fractal"
+  ],
+  "traits_en": [
+   "Binary split",
+   "Murray law",
+   "Fractal transition"
+  ],
+  "family_id": "F6_BRANCH",
+  "operator_chain": []
+ },
+ {
+  "id": 27,
+  "categoryId": 3,
+  "title_es": "Fusión",
+  "title_en": "Fusion",
+  "geometry_es": "Unión y coalescencia de estructuras que originalmente estaban separadas.",
+  "geometry_en": "Union of structures that were originally separate.",
+  "example_es": "Dígitos fusionados en aves, suturas craneales, huesos carpianos.",
+  "example_en": "Fused digits in birds, cranial sutures, carpometacarpus.",
+  "function_es": "Generación de estructuras reforzadas de carga o superficies funcionales continuas.",
+  "function_en": "Reinforced load-bearing units, structural bracing, and new continuous functional surfaces.",
+  "significance_es": "Elimina grados de libertad móviles para conferir rigidez mecánica insuperable.",
+  "significance_en": "Sacrifices kinetic degrees of freedom to gain mechanical structural stiffness.",
+  "svgType": "fusion",
+  "traits_es": [
+   "Coalescencia",
+   "Rigidez mecánica",
+   "Simplificación esquelética"
+  ],
+  "traits_en": [
+   "Coalescence",
+   "Mechanical stiffness",
+   "Skeletal consolidation"
+  ],
+  "family_id": "F9_OPERATORS",
+  "operator_chain": []
+ },
+ {
+  "id": 28,
+  "categoryId": 3,
+  "title_es": "División",
+  "title_en": "Division",
+  "geometry_es": "Separación física o embrionaria de una unidad en componentes diferenciados.",
+  "geometry_en": "Separation of one structure into differentiated components.",
+  "example_es": "Citocinesis celular, escisión de pólipos, compartimentación celómica.",
+  "example_en": "Cellular cytokinesis, polyp strobilation, coelomic compartmentalization.",
+  "function_es": "Generación de nuevas unidades independientes o dominios de desarrollo autónomos.",
+  "function_en": "Generation of new cells, separate organs, and distinct developmental domains.",
+  "significance_es": "Operador inverso a la fusión; motor básico de proliferación orgánica.",
+  "significance_en": "The inverse conceptual operator to fusion; primary engine of organic proliferation.",
+  "svgType": "division",
+  "traits_es": [
+   "Citocinesis",
+   "Compartimentación",
+   "Auto-replicación"
+  ],
+  "traits_en": [
+   "Cytokinesis",
+   "Compartmentalization",
+   "Self-replication"
+  ],
+  "family_id": "F9_OPERATORS",
+  "operator_chain": []
+ },
+ {
+  "id": 29,
+  "categoryId": 3,
+  "title_es": "Duplicación",
+  "title_en": "Duplication",
+  "geometry_es": "Aparición de una copia adicional homóloga de una estructura existente.",
+  "geometry_en": "Appearance of an additional copy or homologous structure.",
+  "example_es": "Polidactilia, duplicación de aletas, duplicación de genes Hox.",
+  "example_en": "Polydactyly, extra fin formation, Hox cluster duplications.",
+  "function_es": "Aporta sustrato morfológico neutro libre de selección restrictiva para futura innovación.",
+  "function_en": "Provides redundant developmental material upon which natural selection can innovate.",
+  "significance_es": "Uno de los operadores de mayor trascendencia evolutiva: la redundancia previa permite la especialización posterior.",
+  "significance_en": "One of the most consequential evolutionary operators: redundancy precedes radical innovation.",
+  "svgType": "duplication",
+  "traits_es": [
+   "Copia homóloga",
+   "Materia prima evolutiva",
+   "Neo-funcionalización"
+  ],
+  "traits_en": [
+   "Homologous copy",
+   "Evolutionary raw material",
+   "Neofunctionalization"
+  ],
+  "family_id": "F7_MODULE_COLLECTIVE",
+  "operator_chain": []
+ },
+ {
+  "id": 30,
+  "categoryId": 3,
+  "title_es": "Reducción / Pérdida",
+  "title_en": "Reduction / Loss",
+  "geometry_es": "Disminución métrica progresiva o desaparición completa de una estructura.",
+  "geometry_en": "Decrease or disappearance of a structure.",
+  "example_es": "Pérdida de extremidades en serpientes, atrofia ocular en fauna cavernícola.",
+  "example_en": "Limb loss in snakes, eye reduction in cavefish, vestigial pelvis in whales.",
+  "function_es": "Ahorro energético, eliminación de fricción o adaptación a nichos fosoriales estrechos.",
+  "function_en": "Energetic conservation, drag removal, and subterranean streamline adaptation.",
+  "significance_es": "No es degeneración pasiva: la pérdida es una transformación adaptativa activa y positiva.",
+  "significance_en": "Not degenerative decay: loss is an active, canalized adaptive transformation.",
+  "svgType": "reduction",
+  "traits_es": [
+   "Involución activa",
+   "Optimización metabólica",
+   "Remoción de rozamiento"
+  ],
+  "traits_en": [
+   "Active involution",
+   "Metabolic saving",
+   "Friction elimination"
+  ],
+  "family_id": "F9_OPERATORS",
+  "operator_chain": []
+ },
+ {
+  "id": 31,
+  "categoryId": 3,
+  "title_es": "Elongación",
+  "title_en": "Elongation",
+  "geometry_es": "Alargamiento pronunciado de una estructura a lo largo de su eje.",
+  "geometry_en": "Lengthening of a structure.",
+  "example_es": "Cuerpo de serpiente, cuello de jirafa, probóscide de insecto.",
+  "example_en": "Snake body, giraffe neck, insect proboscis.",
+  "function_es": "Modificación del alcance trófico, régimen locomotor o paso por orificios angostos.",
+  "function_en": "Alters locomotion, reach, feeding access, and surface-to-volume ratio.",
+  "significance_es": "Transformación métrica directa capaz de alterar radicalmente el morfoespacio de un clado.",
+  "significance_en": "Direct metric transformation capable of shifting an entire clade into new locomotion modes.",
+  "svgType": "elongation",
+  "traits_es": [
+   "Extensión de eje",
+   "Alotopía métrica",
+   "Alcance distal"
+  ],
+  "traits_en": [
+   "Axis extension",
+   "Allometric shift",
+   "Distal reach"
+  ],
+  "family_id": "F9_OPERATORS",
+  "operator_chain": []
+ },
+ {
+  "id": 32,
+  "categoryId": 3,
+  "title_es": "Compresión",
+  "title_en": "Compression",
+  "geometry_es": "Acortamiento o reducción dimensional en una dirección determinada.",
+  "geometry_en": "Spatial shortening or reduction of a structure.",
+  "example_es": "Cuerpo comprimido de peces abisales, braquicefalia, esqueleto condensado.",
+  "example_en": "Compressed fish body, brachiocephaly, condensed tortoise carapace.",
+  "function_es": "Mayor solidez estructural, aumento de empaquetamiento y resistencia al pandeo.",
+  "function_en": "Heightened structural stiffness, increased packing density, and buckling resistance.",
+  "significance_es": "Dependiendo del eje en que opere, engendra arquitecturas de navegación, defensa o enterramiento.",
+  "significance_en": "Depending on the axis, produces specialized architectures for swimming, defense, or burrowing.",
+  "svgType": "compression",
+  "traits_es": [
+   "Acortamiento axial",
+   "Rigidez ante cargas",
+   "Condensación tisular"
+  ],
+  "traits_en": [
+   "Axial shortening",
+   "Load stiffness",
+   "Tissue condensation"
+  ],
+  "family_id": "F9_OPERATORS",
+  "operator_chain": []
+ },
+ {
+  "id": 33,
+  "categoryId": 3,
+  "title_es": "Expansión",
+  "title_en": "Expansion",
+  "geometry_es": "Incremento general o local del área superficial o volumen.",
+  "geometry_en": "Increase in size or surface.",
+  "example_es": "Expansión alar de lepidópteros, aletas pectorales de pez volador, limbo foliar.",
+  "example_en": "Wing expansion, flying fish pectoral fins, plant leaf blade.",
+  "function_es": "Maximización de sustentación aerodinámica, captación fotónica o disipación térmica.",
+  "function_en": "Maximizes aerodynamic lift, photon harvesting, or thermal dissipation.",
+  "significance_es": "Operador decisivo cada vez que el aumento de interacción con el medio confiere ventaja selectiva.",
+  "significance_en": "Decisive operator whenever increased environmental interface confers an advantage.",
+  "svgType": "expansion",
+  "traits_es": [
+   "Aumento de interfase",
+   "Sustentación dinámica",
+   "Superficie laminar"
+  ],
+  "traits_en": [
+   "Interface increase",
+   "Dynamic lift",
+   "Laminar expanse"
+  ],
+  "family_id": "F9_OPERATORS",
+  "operator_chain": []
+ },
+ {
+  "id": 34,
+  "categoryId": 3,
+  "title_es": "Constricción",
+  "title_en": "Constriction",
+  "geometry_es": "Estrechamiento localizado que individualiza regiones dentro de una estructura continua.",
+  "geometry_en": "Localized narrowing that modifies structure organization.",
+  "example_es": "Cintura de avispa (pecíolo himenóptero), cuello cervical, esfínteres.",
+  "example_en": "Wasp waist (hymenopteran petiole), cervical neck, sphincters.",
+  "function_es": "Articulación mecánica flexible, aislamiento compartimental y control valvular de flujos.",
+  "function_en": "Mechanical articulation, compartmental isolation, and flow control.",
+  "significance_es": "Precursora directa de la metamerización, la diferenciación cefalotórax/abdomen y el plegamiento.",
+  "significance_en": "A direct precursor to segmentation, regional differentiation, articulation, and folding.",
+  "svgType": "constriction",
+  "traits_es": [
+   "Estrechamiento nodal",
+   "Articulación cinemática",
+   "Frontera funcional"
+  ],
+  "traits_en": [
+   "Nodal narrowing",
+   "Kinematic hinge",
+   "Functional boundary"
+  ],
+  "family_id": "F9_OPERATORS",
+  "operator_chain": []
+ },
+ {
+  "id": 35,
+  "categoryId": 3,
+  "title_es": "Enrollamiento",
+  "title_en": "Coiling / Enrolment",
+  "geometry_es": "Curvatura helicoidal o circular continua de una estructura lineal previa.",
+  "geometry_en": "Transformation of a linear structure into a curved or spiral configuration.",
+  "example_es": "Concha de caracol, enrollamiento defensivo de cochinilla de humedad o armadillo.",
+  "example_en": "Snail shell, pill millipede enrolled ball, defensive armadillo coil.",
+  "function_es": "Compacidad, protección pasiva total de tejidos blandos y estabilidad mecánica.",
+  "function_en": "Compactness, complete protection of soft tissues, and mechanical enclosure.",
+  "significance_es": "Opera simultáneamente como operador geométrico de crecimiento, estado corporal y reflejo defensivo.",
+  "significance_en": "Functions simultaneously as a developmental operator, a body architecture, and a reflex.",
+  "svgType": "coiling",
+  "traits_es": [
+   "Oclusión de vulnerabilidades",
+   "Geometría circular",
+   "Auto-contención"
+  ],
+  "traits_en": [
+   "Vulnerability shielding",
+   "Circular closure",
+   "Self-containment"
+  ],
+  "family_id": "F9_OPERATORS",
+  "operator_chain": []
+ },
+ {
+  "id": 36,
+  "categoryId": 3,
+  "title_es": "Rotación",
+  "title_en": "Rotation",
+  "geometry_es": "Giro angular de una estructura o apéndice respecto a su orientación original de primordio.",
+  "geometry_en": "Rotation of a structure relative to its original orientation.",
+  "example_es": "Torsión gasterópoda (180°), rotación de alas de insectos durante la metamorfosis.",
+  "example_en": "Gastropod visceral torsion (180°), developmental wing inversion in diptera.",
+  "function_es": "Reubicación de órganos excretores, alineación motriz y optimización de flujos.",
+  "function_en": "Repositioning of mantle cavities, locomotor alignment, and fluid flow optimization.",
+  "significance_es": "Demuestra que la transformación morfológica puede operar sin añadir tejido, únicamente reorientándolo.",
+  "significance_en": "Shows transformation occurs through spatial reorientation as well as volumetric growth.",
+  "svgType": "rotation",
+  "traits_es": [
+   "Giro angular",
+   "Torsión morfogenética",
+   "Conservación de identidad"
+  ],
+  "traits_en": [
+   "Angular turn",
+   "Morphogenetic torsion",
+   "Identity preservation"
+  ],
+  "family_id": "F9_OPERATORS",
+  "operator_chain": []
+ },
+ {
+  "id": 37,
+  "categoryId": 3,
+  "title_es": "Migración / Desplazamiento",
+  "title_en": "Migration / Displacement",
+  "geometry_es": "Cambio de posición relativa de un órgano o linaje celular dentro del cuerpo en desarrollo.",
+  "geometry_en": "Change in the position of a structure within the organism.",
+  "example_es": "Migración del ojo en el pez plano hacia el lado cenital, migración de células de cresta neural.",
+  "example_en": "Eye migration in pleuronectiform flatfish, neural crest cell streaming.",
+  "function_es": "Reconfiguración adaptativa de la simetría original hacia asimetría funcional.",
+  "function_en": "Adaptive reconfiguration of initial symmetrical anatomy into functional asymmetry.",
+  "significance_es": "La estructura conserva su identidad tisular interna mientras transmuta por completo sus coordenadas espaciales.",
+  "significance_en": "The organ preserves internal identity while completely transmuting its spatial coordinate frame.",
+  "svgType": "migration",
+  "traits_es": [
+   "Desplazamiento ontogénico",
+   "Plasticidad de cresta",
+   "Translocación"
+  ],
+  "traits_en": [
+   "Ontogenic displacement",
+   "Neural crest plasticity",
+   "Translocation"
+  ],
+  "family_id": "F9_OPERATORS",
+  "operator_chain": []
+ },
+ {
+  "id": 38,
+  "categoryId": 3,
+  "title_es": "Inversión",
+  "title_en": "Inversion",
+  "geometry_es": "Reorganización polarizada de la orientación de un eje o relación anatómica.",
+  "geometry_en": "Reorganization of the relative orientation of an axis.",
+  "example_es": "Inversión dorsoventral en cordados frente a protóstomos (tubo neural dorsal vs ventral).",
+  "example_en": "Dorsoventral axis inversion in chordates vs. protostomes (dorsal vs ventral nerve cord).",
+  "function_es": "Topología corporal inversa que reubica centros neurales y vasculares.",
+  "function_en": "Inverted bodily topology realigning neural and vascular centers relative to gravity.",
+  "significance_es": "Conceptualmente distinta a la rotación: es un cambio de quiralidad u orientación relacional del eje completo.",
+  "significance_en": "Different from simple rotation: alters the polarity of an entire organizational relationship.",
+  "svgType": "inversion",
+  "traits_es": [
+   "Inversión polar",
+   "Reorientación de eje",
+   "Quiralidad relacional"
+  ],
+  "traits_en": [
+   "Polar flip",
+   "Axis reorientation",
+   "Relational chirality"
+  ],
+  "family_id": "F9_OPERATORS",
+  "operator_chain": []
+ },
+ {
+  "id": 39,
+  "categoryId": 3,
+  "title_es": "Especialización / Diferenciación",
+  "title_en": "Specialization / Differentiation",
+  "geometry_es": "Transformación de unidades previamente homólogas en estructuras con formas y funciones dispares.",
+  "geometry_en": "Transformation of originally similar units into structures with different functions.",
+  "example_es": "Extremidades de tetrápodos (aleta, ala, brazo, pata fosorial), apéndices de crustáceo.",
+  "example_en": "Tetrapod pentadactyl limbs (fin, wing, hand, digging claw), crustacean appendages.",
+  "function_es": "Conversión de la repetición modular en diversidad funcional hiper-adaptada.",
+  "function_en": "Converts modular repetition into dedicated, hyper-adapted functional diversity.",
+  "significance_es": "El ejemplo más elocuente de la evolución operando como una gramática sobre un alfabeto preexistente.",
+  "significance_en": "The clearest example of evolution acting as a grammatical transformer over pre-existing units.",
+  "svgType": "differentiation",
+  "traits_es": [
+   "Homología profunda",
+   "Divergencia funcional",
+   "Gramática anatómica"
+  ],
+  "traits_en": [
+   "Deep homology",
+   "Functional divergence",
+   "Anatomical grammar"
+  ],
+  "family_id": "F9_OPERATORS",
+  "operator_chain": []
+ },
+ {
+  "id": 40,
+  "categoryId": 3,
+  "title_es": "Hipertrofia localizada",
+  "title_en": "Localized Hypertrophy",
+  "geometry_es": "Expansión volumétrica desproporcionada de una región o apéndice específico.",
+  "geometry_en": "Particularly intense expansion of a particular region.",
+  "example_es": "Pinza mayor del cangrejo violinista, cornamenta de ciervo, colmillo de narval.",
+  "example_en": "Major claw of fiddler crabs, elk antlers, narwhal tusk.",
+  "function_es": "Señalización sexual, combate ritualizado o hiper-eficacia en captura/defensa.",
+  "function_en": "Sexual signaling, ritualized combat, or extreme specialized prey capture.",
+  "significance_es": "Transforma una arquitectura simétrica o generalista en un estado fuertemente asimétrico y especializado.",
+  "significance_en": "Transforms a generalized architecture into a functionally asymmetric, specialized one.",
+  "svgType": "hypertrophy",
+  "traits_es": [
+   "Crecimiento alométrico",
+   "Asimetría funcional",
+   "Exageración adaptativa"
+  ],
+  "traits_en": [
+   "Allometric growth",
+   "Functional asymmetry",
+   "Adaptive exaggeration"
+  ],
+  "family_id": "F9_OPERATORS",
+  "operator_chain": []
+ },
+ {
+  "id": 41,
+  "categoryId": 3,
+  "title_es": "Atrofia localizada",
+  "title_en": "Localized Atrophy",
+  "geometry_es": "Reducción selectiva y localizada de una región anatómica concreta.",
+  "geometry_en": "Particularly intense reduction of a particular region.",
+  "example_es": "Alas vestigiales de insectos ápteros, reducción de miembros en lagartos escíncidos.",
+  "example_en": "Reduced wings of flightless insects, limb bud involution in burrowing skinks.",
+  "function_es": "Eliminación selectiva de una función redundante mientras se preserva íntegra la arquitectura restante.",
+  "function_en": "Eliminates redundant function while preserving the integrity of the remaining architecture.",
+  "significance_es": "Demuestra cómo la poda sustractiva afina el ajuste entre la forma y el nicho ecológico.",
+  "significance_en": "Demonstrates how subtractive developmental pruning tunes organismal fit.",
+  "svgType": "atrophy",
+  "traits_es": [
+   "Poda sustractiva",
+   "Preservación del marco",
+   "Optimización selectiva"
+  ],
+  "traits_en": [
+   "Subtractive pruning",
+   "Chassis preservation",
+   "Selective streamlining"
+  ],
+  "family_id": "F9_OPERATORS",
+  "operator_chain": []
+ },
+ {
+  "id": 42,
+  "categoryId": 4,
+  "title_es": "Configuración vermiforme",
+  "title_en": "Vermiform Morphospace",
+  "geometry_es": "Cuerpo axial, alargado, estrecho y sumamente flexible.",
+  "geometry_en": "Axial, elongated, narrow, and generally flexible body.",
+  "example_es": "Lombriz, nematodo, planaria, sanguijuela, larvas vermiformes.",
+  "example_en": "Earthworm, nematode, planarian, leech, vermiform larvae.",
+  "function_es": "Locomoción a través de poros estrechos, sedimentos o tejidos internos sin apéndices.",
+  "function_en": "Movement through narrow substrate cracks, dense soils, or tissues without appendages.",
+  "significance_es": "Surge convergentemente en decenas de filos cuando la flexibilidad axial supera en eficacia al transporte apendicular.",
+  "significance_en": "Evolved independently across dozens of animal phyla for burrowing and interstitial movement.",
+  "svgType": "vermiform",
+  "traits_es": [
+   "Flexibilidad continua",
+   "Falta de apéndices",
+   "Locomoción peristáltica"
+  ],
+  "traits_en": [
+   "Continuous flexibility",
+   "Limb-free",
+   "Peristaltic burrowing"
+  ],
+  "family_id": "F1_AXIS",
+  "operator_chain": [
+   "segmentation",
+   "flexibility"
+  ]
+ },
+ {
+  "id": 43,
+  "categoryId": 4,
+  "title_es": "Configuración fusiforme hidrodinámica",
+  "title_en": "Hydrodynamic Fusiform Morphospace",
+  "geometry_es": "Cuerpo ahusado y simétrico optimizado hidrodinámicamente para fluidos.",
+  "geometry_en": "Body structurally optimized for movement through a fluid.",
+  "example_es": "Atún, tiburón, delfín, ictiosaurio, pingüino.",
+  "example_en": "Tuna, mackerel shark, dolphin, ichthyosaur, penguin.",
+  "function_es": "Minimización de turbulencias y capa límite para natación pelágica sostenida de alta velocidad.",
+  "function_en": "Minimizes boundary layer turbulence for sustained, high-speed pelagic locomotion.",
+  "significance_es": "La cumbre indiscutible de la convergencia evolutiva gobernada por las leyes inmutables de Navier-Stokes.",
+  "significance_en": "The definitive textbook showcase of convergence driven by Navier-Stokes fluid mechanics.",
+  "svgType": "fusiform_hydro",
+  "traits_es": [
+   "Coeficiente de arrastre mínimo",
+   "Pedúnculo caudal",
+   "Perfil laminar"
+  ],
+  "traits_en": [
+   "Minimal drag coefficient",
+   "Caudal peduncle",
+   "Laminar profile"
+  ],
+  "family_id": "F1_AXIS",
+  "operator_chain": [
+   "elongation",
+   "tapering"
+  ]
+ },
+ {
+  "id": 44,
+  "categoryId": 4,
+  "title_es": "Configuración cuadrúpeda / de chasis",
+  "title_en": "Quadrupedal / “Chassis” Morphospace",
+  "geometry_es": "Tronco corporal suspendido y desplazado por cuatro extremidades articuladas.",
+  "geometry_en": "Trunk supported and moved by four limbs.",
+  "example_es": "Lagarto, salamandra, cocodrilo, mamífero cuadrúpedo, dinosaurio.",
+  "example_en": "Lizard, salamander, crocodile, mammal, quadrupedal dinosaur.",
+  "function_es": "Estabilidad estática y dinámica en marcha terrestre y reparto eficiente del centro de masa.",
+  "function_en": "Static and dynamic balance during terrestrial locomotion, distributing body center of mass.",
+  "significance_es": "El «chasis» locomotor que permitió la conquista definitiva del medio terrestre por los vertebrados.",
+  "significance_en": "The dominant terrestrial locomotion chassis of land-dwelling vertebrates.",
+  "svgType": "quadrupedal",
+  "traits_es": [
+   "Cuatro apoyos articulados",
+   "Viga troncal dorsal",
+   "Equilibrio tetrápodo"
+  ],
+  "traits_en": [
+   "Four articulating limbs",
+   "Dorsal trunk beam",
+   "Tetrapod equilibrium"
+  ],
+  "family_id": "F8_CHASSIS",
+  "operator_chain": [
+   "bilateral-limbs"
+  ]
+ },
+ {
+  "id": 45,
+  "categoryId": 4,
+  "title_es": "Configuración bípeda",
+  "title_en": "Bipedal Morphospace",
+  "geometry_es": "Soporte y locomoción gravitatoria sustentada exclusivamente en dos extremidades.",
+  "geometry_en": "Locomotion and bodily support predominantly through two limbs.",
+  "example_es": "Avestruz, ser humano, canguro, dinosaurios terópodos.",
+  "example_en": "Ostrich, human, kangaroo, theropod dinosaurs.",
+  "function_es": "Liberación de las extremidades anteriores, economía energética a altas velocidades o alcance vertical.",
+  "function_en": "Frees anterior limbs, energetic efficiency at speed, upright foraging reach.",
+  "significance_es": "Alcanzado por vías ontogénicas y filogenéticas totalmente dispares (aves vs homínidos vs marsupiales).",
+  "significance_en": "Reached independently via completely distinct developmental pathways (birds, hominids, macropods).",
+  "svgType": "bipedal",
+  "traits_es": [
+   "Bipedestación",
+   "Extremidades anteriores libres",
+   "Centro de gravedad vertical"
+  ],
+  "traits_en": [
+   "Bipedal stance",
+   "Freed anterior limbs",
+   "Vertical center of gravity"
+  ],
+  "family_id": "F8_CHASSIS",
+  "operator_chain": [
+   "forelimb-release"
+  ]
+ },
+ {
+  "id": 46,
+  "categoryId": 4,
+  "title_es": "Configuración artrópoda segmentada",
+  "title_en": "Segmented Arthropod Morphospace",
+  "geometry_es": "Exoesqueleto cuticular articulado con metámeros y apéndices seriados multirramificados.",
+  "geometry_en": "Exoskeleton, segmentation, and repeated articulated appendages.",
+  "example_es": "Insecto, araña, crustáceo, trilobite, ciempiés.",
+  "example_en": "Insect, spider, crustacean, trilobite, millipede.",
+  "function_es": "Protección rígida perimetral combinada con locomoción multipatas de alta agilidad.",
+  "function_en": "Rigid external armor paired with multi-legged, high-traction kinematic agility.",
+  "significance_es": "Sintetiza segmentación + repetición + especialización + quitinización; el plano corporal animal más prolífico de la Tierra.",
+  "significance_en": "Synthesizes segmentation + repetition + specialization + chitin armor: the most specious animal bauplan on Earth.",
+  "svgType": "arthropod",
+  "traits_es": [
+   "Exoesqueleto de quitina",
+   "Apéndices articulados",
+   "Tagmosis"
+  ],
+  "traits_en": [
+   "Chitin exoskeleton",
+   "Jointed appendages",
+   "Tagmosis"
+  ],
+  "family_id": "F8_CHASSIS",
+  "operator_chain": [
+   "segmentation",
+   "exoskeleton",
+   "appendage-articulation"
+  ]
+ },
+ {
+  "id": 47,
+  "categoryId": 4,
+  "title_es": "Configuración carcinizada",
+  "title_en": "Carcinized Morphospace",
+  "geometry_es": "Cuerpo deprimido y ensanchado con abdomen replegado bajo el cefalotórax y reorganización apendicular.",
+  "geometry_en": "Compact body, reduced abdomen, and reorganization of appendages.",
+  "example_es": "Cangrejo braquiuro, cangrejo porcelana, cangrejo real litódido.",
+  "example_en": "True brachyuran crab, porcelain crab, king crab (lithodid).",
+  "function_es": "Protección integral del abdomen vulnerable, hidroagilidad lateral y potencia quelar.",
+  "function_en": "Shields vulnerable abdomen, enhances lateral agility, stabilizes crushing pincer torque.",
+  "significance_es": "La «carcinización» ha evolucionado de forma independiente al menos cinco veces en crustáceos decápodos.",
+  "significance_en": "Evolved independently at least 5 times in decapod crustaceans: a celebrated evolutionary attractor.",
+  "svgType": "carcinized",
+  "traits_es": [
+   "Abdomen plegado",
+   "Cefalotórax ensanchado",
+   "Convergencia múltiple"
+  ],
+  "traits_en": [
+   "Tucked abdomen",
+   "Broad cephalothorax",
+   "Multiple convergence"
+  ],
+  "family_id": "F8_CHASSIS",
+  "operator_chain": [
+   "abdominal-reduction",
+   "cephalothoracic-broadening",
+   "ventral-tucking",
+   "lateral-leg-reorientation",
+   "cheliped-hypertrophy"
+  ]
+ },
+ {
+  "id": 48,
+  "categoryId": 4,
+  "title_es": "Configuración estrellada",
+  "title_en": "Stellate Morphospace",
+  "geometry_es": "Organización radial con brazos o proyecciones puntiagudas que parten de un centro.",
+  "geometry_en": "Radial organization with extensions around a center.",
+  "example_es": "Estrella de mar, ofiura, ciertas colonias radiadas.",
+  "example_en": "Starfish, brittle star, radial colonies.",
+  "function_es": "Tracción multidireccional mediante pies ambulacrales y apertura bivalva por fuerza continua.",
+  "function_en": "Multidirectional traction via tube feet and steady torque leverage for opening bivalves.",
+  "significance_es": "Arquetipo corporal pentarradial secundario derivado de un ancestro bilateral.",
+  "significance_en": "Secondary pentaradial body plan derived from an ancient bilateral ancestor.",
+  "svgType": "stellate",
+  "traits_es": [
+   "Pentarradialidad",
+   "Brazos extensos",
+   "Tracción ambulacral"
+  ],
+  "traits_en": [
+   "Pentaradiality",
+   "Radiating arms",
+   "Ambulacral traction"
+  ],
+  "family_id": "F3_RADIAL",
+  "operator_chain": [
+   "radial-extension"
+  ]
+ },
+ {
+  "id": 49,
+  "categoryId": 4,
+  "title_es": "Configuración tentacular radial",
+  "title_en": "Radial Tentacular Morphospace",
+  "geometry_es": "Cuerpo central cilíndrico rodeado por una corona de tentáculos capturadores.",
+  "geometry_en": "Central body surrounded by tentacles or capturing structures.",
+  "example_es": "Anémona de mar, hidra, pólipo de coral.",
+  "example_en": "Sea anemone, hydra, coral polyp.",
+  "function_es": "Captura pasiva de presas y micropartículas desde cualquier ángulo mediante filamentos urticantes.",
+  "function_en": "Captures drifting prey from any 360° approach angle via cnidocyte-armed tentacles.",
+  "significance_es": "Combina centralización + radialización + repetición de apéndices flexibles.",
+  "significance_en": "Combines centralization + radialization + flexible appendage repetition.",
+  "svgType": "radial_tentacular",
+  "traits_es": [
+   "Corona oral",
+   "Tentáculos flexibles",
+   "Alimentación omnidireccional"
+  ],
+  "traits_en": [
+   "Oral crown",
+   "Flexible tentacles",
+   "Omnidirectional feeding"
+  ],
+  "family_id": "F3_RADIAL",
+  "operator_chain": [
+   "radial-extension",
+   "tentacle-elongation"
+  ]
+ },
+ {
+  "id": 50,
+  "categoryId": 4,
+  "title_es": "Configuración pinnada / plumosa",
+  "title_en": "Pinnate / Plumose Morphospace",
+  "geometry_es": "Eje axial central con densas hileras de ramificaciones laterales dispuestas en plano.",
+  "geometry_en": "Central structure with numerous lateral branches.",
+  "example_es": "Pluma de ave, branquias de pez, fronda vegetal, apéndice filtrador.",
+  "example_en": "Bird feather, fish gills, fern frond, filter-feeding limb.",
+  "function_es": "Máxima relación entre área de intercambio y peso estructural; intercepción de fluidos.",
+  "function_en": "Peak interface surface to structural mass ratio; fluid/particle interception.",
+  "significance_es": "Geometría ultraligera recurrente tanto para sustentación aérea como para intercambio respiratorio.",
+  "significance_en": "Ultralight geometry recurring equally for aerodynamic lift and aquatic respiration.",
+  "svgType": "pinnate",
+  "traits_es": [
+   "Raquis central",
+   "Barbas paralelas",
+   "Ultraligereza"
+  ],
+  "traits_en": [
+   "Central rachis",
+   "Parallel barbs",
+   "Ultralightweight"
+  ],
+  "family_id": "F2_SHEET",
+  "operator_chain": [
+   "branching",
+   "lateral repetition"
+  ]
+ },
+ {
+  "id": 51,
+  "categoryId": 4,
+  "title_es": "Configuración alada / superficie de sustentación",
+  "title_en": "Winged / Lift-generating Surface Morphospace",
+  "geometry_es": "Superficie aerodinámica laminar especializada en generar fuerza de sustentación vertical.",
+  "geometry_en": "Body surface specialized to generate aerodynamic lift.",
+  "example_es": "Ala de murciélago, ala de ave, ala de insecto, ala de pterosaurio.",
+  "example_en": "Bat wing, bird wing, insect wing, pterosaur wing.",
+  "function_es": "Desplazamiento aéreo activo y control vectorial del vuelo tridimensional.",
+  "function_en": "Active aerial locomotion and vector control of three-dimensional flight.",
+  "significance_es": "Convergencia morfológica cuadrúple en la historia zoológica (insectos, pterosaurios, aves, murciélagos).",
+  "significance_en": "Fourfold independent evolutionary convergence across insects, pterosaurs, birds, and bats.",
+  "svgType": "winged",
+  "traits_es": [
+   "Perfil alar aerodinámico",
+   "Diferencia de presiones",
+   "Propulsión aérea"
+  ],
+  "traits_en": [
+   "Aerodynamic airfoil",
+   "Pressure camber",
+   "Aerial propulsion"
+  ],
+  "family_id": "F2_SHEET",
+  "operator_chain": [
+   "expansion",
+   "lift-shaping"
+  ]
+ },
+ {
+  "id": 52,
+  "categoryId": 4,
+  "title_es": "Configuración membranosa",
+  "title_en": "Membranous Morphospace",
+  "geometry_es": "Capa flexible y elástica extendida entre puntos o radios esqueléticos de anclaje.",
+  "geometry_en": "Flexible surface stretched between structural points.",
+  "example_es": "Patagio de ardilla voladora, membrana de Draco volans, aletas membranosas.",
+  "example_en": "Flying squirrel patagium, Draco lizard gliding membrane, interdigital webbing.",
+  "function_es": "Planeo pasivo, estabilización o incremento del área de propulsión natatoria.",
+  "function_en": "Passive gliding, aerodynamic braking, increased swimming stroke area.",
+  "significance_es": "Transformación parsimoniosa: piel preexistente + separación de miembros = nueva interfaz de vuelo.",
+  "significance_en": "Parsimonious evolutionary transformation: existing skin + limb extension = aerial interface.",
+  "svgType": "membranous",
+  "traits_es": [
+   "Tejido elástico tenso",
+   "Soporte esquelético radial",
+   "Bajo coste de desarrollo"
+  ],
+  "traits_en": [
+   "Tense elastic sheet",
+   "Radial skeletal struts",
+   "Low developmental cost"
+  ],
+  "family_id": "F2_SHEET",
+  "operator_chain": [
+   "stretching"
+  ]
+ },
+ {
+  "id": 53,
+  "categoryId": 4,
+  "title_es": "Configuración discoidal locomotora",
+  "title_en": "Locomotor Discoidal Morphospace",
+  "geometry_es": "Cuerpo extremadamente aplanado y ensanchado en disco involucrado activamente en el nado.",
+  "geometry_en": "Flattened and expanded body actively involved in locomotion.",
+  "example_es": "Manta raya, raya águila marina.",
+  "example_en": "Manta ray, eagle ray, stingray.",
+  "function_es": "Vuelo subacuático ondulatorio continuo de extraordinaria eficiencia hidrodinámica.",
+  "function_en": "Continuous undulating underwater flight with remarkable energetic efficiency.",
+  "significance_es": "El disco deja de ser un reposo bentónico pasivo y se transforma en propulsor alar tridimensional.",
+  "significance_en": "The disc transcends passive bottom-resting to become a dynamic 3D wing.",
+  "svgType": "discoidal_loco",
+  "traits_es": [
+   "Ondulación marginal",
+   "Sustentación bentónica",
+   "Propulsión alar marina"
+  ],
+  "traits_en": [
+   "Marginal undulation",
+   "Benthic lift",
+   "Marine wing propulsion"
+  ],
+  "family_id": "F2_SHEET",
+  "operator_chain": [
+   "flattening",
+   "undulation"
+  ]
+ },
+ {
+  "id": 54,
+  "categoryId": 4,
+  "title_es": "Configuración globular protectora",
+  "title_en": "Protected Globular Morphospace",
+  "geometry_es": "Esfera compacta que oculta en su interior todos los órganos vulnerables.",
+  "geometry_en": "Compact, approximately spherical configuration associated with protection.",
+  "example_es": "Pez erizo inflado, cochinilla hecha bola, armadillo en bola, espora.",
+  "example_en": "Inflated pufferfish, rolled pill bug, three-banded armadillo in ball, spore.",
+  "function_es": "Exponer un blindaje perimetral inexpugnable e incrementar el diámetro de deglución de predadores.",
+  "function_en": "Presents an impenetrable armored perimeter and exceeds predator gape limits.",
+  "significance_es": "Puede manifestarse como morfología permanente (erizo de mar) o como operador cinemático defensivo temporal.",
+  "significance_en": "Manifests either as a permanent body plan (urchin) or as a temporary behavioral shield.",
+  "svgType": "globular_prot",
+  "traits_es": [
+   "Defensa omnidireccional",
+   "Aumento de diámetro",
+   "Esferoide sellado"
+  ],
+  "traits_en": [
+   "Omnidirectional defense",
+   "Diameter inflation",
+   "Sealed spheroid"
+  ],
+  "family_id": "F4_CONTAINER",
+  "operator_chain": [
+   "compaction",
+   "armor"
+  ]
+ },
+ {
+  "id": 55,
+  "categoryId": 4,
+  "title_es": "Configuración tubular sésil",
+  "title_en": "Sessile Tubular Morphospace",
+  "geometry_es": "Cuerpo o estuche cilíndrico anclado firmemente por su base al sustrato geológico.",
+  "geometry_en": "Elongated tubular organism or body structure, generally fixed to substrate.",
+  "example_es": "Gusano poliqueto tubícola, coral tubular, hidrozoo solitario.",
+  "example_en": "Serpulid tube worm, tubular coral, colonial hydroid sheath.",
+  "function_es": "Anclaje bentónico permanente, protección dentro del estuche mineral y alimentación por penacho apical.",
+  "function_en": "Permanent benthic anchor, mineral casing protection, and apical plume feeding.",
+  "significance_es": "Combina anclaje sustractivo, aislamiento en tubo protector y filtro en corriente de agua.",
+  "significance_en": "Combines anchorage, protective tubular enclosure, and plume current filtration.",
+  "svgType": "sessile_tubular",
+  "traits_es": [
+   "Anclaje al sustrato",
+   "Tubo mineralizado",
+   "Penacho retráctil"
+  ],
+  "traits_en": [
+   "Substrate anchorage",
+   "Mineralized tube",
+   "Retractile plume"
+  ],
+  "family_id": "F5_CONDUIT",
+  "operator_chain": [
+   "fixation",
+   "casing"
+  ]
+ },
+ {
+  "id": 56,
+  "categoryId": 4,
+  "title_es": "Configuración colonial modular",
+  "title_en": "Modular Colonial Morphospace",
+  "geometry_es": "Superorganismo compuesto por la reiteración física integrada de módulos o zooides idénticos.",
+  "geometry_en": "Collective organism composed of repeated modules.",
+  "example_es": "Colonia de coral pétreo, briozoo incrustante, ascidia colonial.",
+  "example_en": "Stony coral, encrusting bryozoan, colonial ascidian, siphonophore.",
+  "function_es": "Ocupación masiva de sustrato, longevidad potencialmente ilimitada y tolerancia a depredación parcial.",
+  "function_en": "Indefinite substrate colonization, negligible senescence, partial predation tolerance.",
+  "significance_es": "El módulo individual deja de ser el organismo terminal y pasa a ser el ladrillo de un meta-cuerpo biológico.",
+  "significance_en": "The individual module ceases to be the terminal organism, becoming the brick of a meta-body.",
+  "svgType": "colonial_modular",
+  "traits_es": [
+   "Zooides integrados",
+   "Indeterminación de tamaño",
+   "Metabolismo compartido"
+  ],
+  "traits_en": [
+   "Integrated zooids",
+   "Indeterminate size",
+   "Shared metabolism"
+  ],
+  "family_id": "F7_MODULE_COLLECTIVE",
+  "operator_chain": []
+ },
+ {
+  "id": 57,
+  "categoryId": 4,
+  "title_es": "Configuración colonial ramificada",
+  "title_en": "Branching Colonial Morphospace",
+  "geometry_es": "Superestructura colonial que crece mediante ramificación fractal en el espacio líquido.",
+  "geometry_en": "Colony growing through repeated branching.",
+  "example_es": "Coral cuerno de ciervo (Acropora), hidroides arboriformes, briozoos arbóreos.",
+  "example_en": "Staghorn coral (Acropora), dendroid hydrozoan, branching bryozoan.",
+  "function_es": "Dispersión tridimensional en corrientes marinas para interceptar microplancton suspendido.",
+  "function_en": "Three-dimensional elevation into water currents to capture suspended plankton.",
+  "significance_es": "Reitera a escala colonial el mismo operador de ramificación que las plantas exhiben a escala celular.",
+  "significance_en": "Reiterates at the colonial scale the exact same branching operator seen in plants.",
+  "svgType": "branching_colonial",
+  "traits_es": [
+   "Arboladura colonial",
+   "Interceptación tridimensional",
+   "Brotación fractal"
+  ],
+  "traits_en": [
+   "Colonial scaffolding",
+   "3D current interception",
+   "Fractal budding"
+  ],
+  "family_id": "F6_BRANCH",
+  "operator_chain": [
+   "branching",
+   "colonial-repetition"
+  ]
+ },
+ {
+  "id": 58,
+  "categoryId": 4,
+  "title_es": "Configuración colonial tubular",
+  "title_en": "Tubular Colonial Morphospace",
+  "geometry_es": "Colonia constituida por la asociación paralela o concéntrica de unidades cilíndricas.",
+  "geometry_en": "Colony constituted by tubular units or structures.",
+  "example_es": "Briozoo tubular colonial, sifonóforos tubulares, corales tubipóridos.",
+  "example_en": "Tubular colonial bryozoan, siphonophores, organ pipe coral (Tubipora musica).",
+  "function_es": "Conductos paralelos protegidos para intercambio comunal de fluidos y rigidez vertical en grupo.",
+  "function_en": "Protected parallel conduits for communal fluid transport and collective vertical strength.",
+  "significance_es": "Evidencia que el tubo es un principio invariante de escala: célula tubular → vaso → colonia de tubos.",
+  "significance_en": "Highlights the tube as a scale-invariant principle: tubular cell → organ pipe → colony.",
+  "svgType": "tubular_colonial",
+  "traits_es": [
+   "Tubos paralelos en batería",
+   "Refuerzo transversal",
+   "Canalización colonial"
+  ],
+  "traits_en": [
+   "Parallel tube banks",
+   "Transverse bracing",
+   "Colonial conduit"
+  ],
+  "family_id": "F5_CONDUIT",
+  "operator_chain": [
+   "tubular-repetition"
+  ]
+ },
+ {
+  "id": 59,
+  "categoryId": 4,
+  "title_es": "Configuración catenaria / en cadena",
+  "title_en": "Catenary / Chain Morphospace",
+  "geometry_es": "Organización a través de eslabones celulares o modulares conectados linealmente en fila.",
+  "geometry_en": "Organization through units connected linearly.",
+  "example_es": "Cianobacteria filamentosa (Anabaena), cadenas de salpas coloniales, algas filamentosas.",
+  "example_en": "Filamentous cyanobacteria, salp chain, filamentous algae.",
+  "function_es": "Propulsión colectiva sincronizada o intercambio metabólico celular directo en fila india.",
+  "function_en": "Synchronized collective jetting or linear metabolic exchange along single-file cells.",
+  "significance_es": "Unidad → conexión → unidad → conexión... El umbral geométrico entre la agregación y el metazoo.",
+  "significance_en": "Unit → link → unit → link... The topological boundary between unicellularity and metazoa.",
+  "svgType": "catenary",
+  "traits_es": [
+   "Disposición en fila",
+   "Eslabones interconectados",
+   "Crecimiento unidimensional"
+  ],
+  "traits_en": [
+   "Single-file chain",
+   "Interlinked nodes",
+   "One-dimensional growth"
+  ],
+  "family_id": "F7_MODULE_COLLECTIVE",
+  "operator_chain": [
+   "linear-chaining"
+  ]
+ },
+ {
+  "id": 60,
+  "categoryId": 4,
+  "title_es": "Configuración agregativa / en racimo",
+  "title_en": "Aggregative / Cluster Morphospace",
+  "geometry_es": "Concentración espacial densa de múltiples unidades individuales alrededor de una región.",
+  "geometry_en": "Concentration of multiple units around a common region.",
+  "example_es": "Colonia bacteriana en biofilm, racimo de levaduras, agrupaciones de tunicados.",
+  "example_en": "Bacterial biofilm cluster, yeast budding clusters, botryllid ascidian clumps.",
+  "function_es": "Defensa cooperativa química, resistencia a antimicrobianos y amortiguamiento de gradientes adversos.",
+  "function_en": "Chemical cooperation, antimicrobial defense, microenvironmental buffering.",
+  "significance_es": "Difiere de la colonia integrada porque los miembros retienen autonomía fisiológica y adhesión transitoria.",
+  "significance_en": "Differs from integrated colonies: individual units retain transient, flexible mechanical bonds.",
+  "svgType": "cluster",
+  "traits_es": [
+   "Adhesión pericelular",
+   "Matriz extracelular",
+   "Agrupación sinérgica"
+  ],
+  "traits_en": [
+   "Pericellular adhesion",
+   "Extracellular matrix",
+   "Synergistic clumping"
+  ],
+  "family_id": "F7_MODULE_COLLECTIVE",
+  "operator_chain": [
+   "aggregation"
+  ]
+ },
+ {
+  "id": 61,
+  "categoryId": 4,
+  "title_es": "Configuración en corona",
+  "title_en": "Crown Morphospace",
+  "geometry_es": "Estructuras periféricas articuladas en anillo circular continuo alrededor de un centro elevado.",
+  "geometry_en": "Structures arranged circularly around a center.",
+  "example_es": "Corona tentacular de poliqueto plumoso, corona floral, corona ciliada de rotífero.",
+  "example_en": "Tentacular crown of sabellid feather duster, floral perianth, rotifer ciliated corona.",
+  "function_es": "Vórtices de filtración concentrados hacia la boca central o atracción visual en 360° para polinizadores.",
+  "function_en": "Generates inward vortex feeding currents toward central mouth; 360° visual pollinator beacon.",
+  "significance_es": "Aparece tanto en el reino vegetal (flores) como animal (gusanos abanico y rotíferos) bajo física simétrica idéntica.",
+  "significance_en": "Recurs across plants (floral crowns) and animals (fan worms, rotifers) under identical radial mechanics.",
+  "svgType": "crown",
+  "traits_es": [
+   "Anillo periférico",
+   "Embudo alimentador",
+   "Circunferencia activa"
+  ],
+  "traits_en": [
+   "Peripheral ring",
+   "Inflow funnel",
+   "Active circumference"
+  ],
+  "family_id": "F3_RADIAL",
+  "operator_chain": [
+   "radial-extension"
+  ]
+ },
+ {
+  "id": 62,
+  "categoryId": 4,
+  "title_es": "Configuración en abanico",
+  "title_en": "Fan Morphospace",
+  "geometry_es": "Expansión planar de elementos que divergen desde un pedúnculo basal hacia una orla abierta.",
+  "geometry_en": "Expansion of structures from a base toward an open surface.",
+  "example_es": "Gorgonia abanico de mar, aleta caudal en abanico, cola de pavo real.",
+  "example_en": "Sea fan (gorgonian), flabellate caudal fin, peacock display fan.",
+  "function_es": "Colocación perpendicular a la corriente marina para máxima filtración o despliegue visual disuasorio.",
+  "function_en": "Perpendicular orientation across marine currents for filtration; broad courtship display.",
+  "significance_es": "Optimiza la cobertura bidimensional sin el peso ni la resistencia excesiva de una lámina ciega sólida.",
+  "significance_en": "Optimizes 2D surface projection without the drag and weight of a completely solid plate.",
+  "svgType": "fan",
+  "traits_es": [
+   "Divergencia flabelada",
+   "Orientación perpendicular",
+   "Celosía filtrante"
+  ],
+  "traits_en": [
+   "Flabellate spread",
+   "Perpendicular orientation",
+   "Filtration lattice"
+  ],
+  "family_id": "F2_SHEET",
+  "operator_chain": [
+   "branching",
+   "expansion"
+  ]
+ },
+ {
+  "id": 63,
+  "categoryId": 4,
+  "title_es": "Configuración en peine",
+  "title_en": "Comb Morphospace",
+  "geometry_es": "Serie rectilínea de elementos rígidos o flexibles paralelos que se proyectan lateralmente.",
+  "geometry_en": "Series of parallel repeated elements extending laterally.",
+  "example_es": "Paletas natatorias de ctenóforos (ctenes), branquias pectinadas (ctenidios), barbas de ballena.",
+  "example_en": "Ctenophore comb plates, molluscan ctenidia gills, baleen plates.",
+  "function_es": "Natación coordinada por metacronismo ciliar o tamizado mecánico estricto de partículas.",
+  "function_en": "Coordinated metachronal swimming or strict mechanical size-exclusion sieving.",
+  "significance_es": "La solución geométrica universal para el cribado de partículas y la hidrodinámica a microescala.",
+  "significance_en": "Universal geometric solution for particle sieving and low Reynolds number metachronal rowing.",
+  "svgType": "comb",
+  "traits_es": [
+   "Varillas paralelas",
+   "Cribado micrométrico",
+   "Golpe metacrónico"
+  ],
+  "traits_en": [
+   "Parallel teeth",
+   "Micrometric sieving",
+   "Metachronal stroke"
+  ],
+  "family_id": "F2_SHEET",
+  "operator_chain": [
+   "repetition",
+   "parallel extension"
+  ]
+ },
+ {
+  "id": 64,
+  "categoryId": 4,
+  "title_es": "Configuración en cepillo",
+  "title_en": "Brush Morphospace",
+  "geometry_es": "Conjunto denso y tridimensional de proyecciones filiformes apretadas en una superficie.",
+  "geometry_en": "Dense set of fine, repeated projections.",
+  "example_es": "Microvellosidades intestinales, cerdas limpiadoras de insectos, setas adhesivas de geco.",
+  "example_en": "Intestinal microvilli, insect grooming brushes, gecko foot setae.",
+  "function_es": "Multiplicación exponencial de área de absorción o adhesión por fuerzas intermoleculares de Van der Waals.",
+  "function_en": "Exponential surface absorption increase or molecular Van der Waals contact adhesion.",
+  "significance_es": "Emerge cuando la escala microscópica requiere contacto íntimo continuo a nivel molecular.",
+  "significance_en": "Selected whenever nanoscopic intimacy is required for molecular absorption or contact adhesion.",
+  "svgType": "brush",
+  "traits_es": [
+   "Ultra-densidad filiforme",
+   "Absorción multiplicada",
+   "Adhesión molecular"
+  ],
+  "traits_en": [
+   "Filiform density",
+   "Multiplied absorption",
+   "Molecular adhesion"
+  ],
+  "family_id": "F2_SHEET",
+  "operator_chain": [
+   "repetition",
+   "densification"
+  ]
+ },
+ {
+  "id": 65,
+  "categoryId": 4,
+  "title_es": "Configuración espinosa",
+  "title_en": "Spiny Morphospace",
+  "geometry_es": "Cuerpo cubierto por numerosas proyecciones rígidas, punzantes y divergentes hacia el exterior.",
+  "geometry_en": "Body organized with numerous rigid or defensive projections.",
+  "example_es": "Puercoespín, erizo de mar, pez león, espinas de cactus.",
+  "example_en": "Porcupine quills, sea urchin spines, lionfish fin spines, cactus spines.",
+  "function_es": "Disuasión mecánica pasiva instantánea e incremento del diámetro aparente del cuerpo ante predadores.",
+  "function_en": "Instant passive mechanical deterrent and artificial increase of apparent prey diameter.",
+  "significance_es": "Se repite en plantas, vertebrados, equinodermos e insectos: el arma defensiva pasiva más simple y eficaz.",
+  "significance_en": "Spans plants, vertebrates, echinoderms, and insects: the simplest, most effective passive armor.",
+  "svgType": "spiny",
+  "traits_es": [
+   "Espinas cónicas rígidas",
+   "Peligro punzante",
+   "Defensa omnidireccional"
+  ],
+  "traits_en": [
+   "Rigid conical spines",
+   "Puncture threat",
+   "Omnidirectional perimeter"
+  ],
+  "family_id": "F4_CONTAINER",
+  "operator_chain": [
+   "compaction",
+   "spine-extension"
+  ]
+ },
+ {
+  "id": 66,
+  "categoryId": 4,
+  "title_es": "Configuración acorazada / encapsulada",
+  "title_en": "Armored / Encapsulated Morphospace",
+  "geometry_es": "Envoltura externa mineralizada, esclerotizada o córnea continua que encierra la masa corporal.",
+  "geometry_en": "Protection through rigid external covering or enclosing structure.",
+  "example_es": "Tortuga, armadillo, escarabajo, concha bivalva, trilobite.",
+  "example_en": "Turtle shell, armadillo carapace, beetle elytra, bivalve shell, trilobite.",
+  "function_es": "Resistencia contra la trituración, punción, deshidratación y abrasión mecánica externa.",
+  "function_en": "Protection against mechanical crushing, puncture, dehydration, and environmental stress.",
+  "significance_es": "Realizada mediante materiales dispares (queratina, hueso, calcita, aragonito, quitina) para la misma función.",
+  "significance_en": "Constructed from diverse materials (keratin, bone, chitin, calcium carbonate) solving the same physical stress.",
+  "svgType": "armored",
+  "traits_es": [
+   "Blindaje continuo",
+   "Resistencia a compresión",
+   "Encapsulamiento vital"
+  ],
+  "traits_en": [
+   "Continuous armor",
+   "Compressive strength",
+   "Vital encapsulation"
+  ],
+  "family_id": "F4_CONTAINER",
+  "operator_chain": [
+   "compaction",
+   "armor"
+  ]
+ },
+ {
+  "id": 67,
+  "categoryId": 4,
+  "title_es": "Configuración medusoide",
+  "title_en": "Medusoid Morphospace",
+  "geometry_es": "Cuerpo gelatinoso sombrilliforme con campana convexa y tentáculos orales colgantes.",
+  "geometry_en": "Gelatinous, generally radial body with central region and peripheral structures.",
+  "example_es": "Medusa scyphozoa, hidromedusa, sifonóforo nectosoma.",
+  "example_en": "Jellyfish, hydromedusa, siphonophore nectosome.",
+  "function_es": "Flotabilidad neutra en columna de agua, propulsión a chorro periódica y captura de presas en suspensión.",
+  "function_en": "Neutral pelagic buoyancy, periodic vortex jetting, and suspension prey trawling.",
+  "significance_es": "Asociada de forma casi exclusiva a organismos de hidratación extrema (~96% agua) en medio pelágico.",
+  "significance_en": "Almost exclusively tailored to hyper-hydrated organisms interacting with ambient water columns.",
+  "svgType": "medusoid",
+  "traits_es": [
+   "Umbrela gelatinosa",
+   "Borde contráctil",
+   "Flotabilidad neutra"
+  ],
+  "traits_en": [
+   "Gelatinous umbrella",
+   "Contractile margin",
+   "Neutral buoyancy"
+  ],
+  "family_id": "F3_RADIAL",
+  "operator_chain": [
+   "radial-expansion",
+   "jet-expulsion"
+  ]
+ },
+ {
+  "id": 68,
+  "categoryId": 4,
+  "title_es": "Configuración corporal espiral / enrollada",
+  "title_en": "Bodily Spiral / Coiling Morphospace",
+  "geometry_es": "Organismo capaz de adoptar o desarrollar en su crecimiento una morfología espiral tridimensional.",
+  "geometry_en": "Organism capable of adopting or developing a coiled configuration.",
+  "example_es": "Caracol gasterópodo, serpiente enroscada, oruga en espiral defensiva.",
+  "example_en": "Gastropod snail, coiled snake, defensive caterpillar spiral.",
+  "function_es": "Conservación de calor, reducción de exposición perimetral y estabilidad arquitectónica en concha.",
+  "function_en": "Thermal conservation, surface minimization, structural stability under shell coiling.",
+  "significance_es": "Aquí la espiral se analiza como disposición anatómica integral y no únicamente como fórmula geométrica.",
+  "significance_en": "Treated here as a holistic bodily architecture rather than merely an abstract mathematical curve.",
+  "svgType": "spiral_body",
+  "traits_es": [
+   "Curvatura concéntrica",
+   "Retención de calor",
+   "Estabilidad centrípeta"
+  ],
+  "traits_en": [
+   "Concentric curve",
+   "Heat retention",
+   "Centripetal stability"
+  ],
+  "family_id": "F1_AXIS",
+  "operator_chain": [
+   "coiling"
+  ]
+ },
+ {
+  "id": 69,
+  "categoryId": 4,
+  "title_es": "Configuración anular",
+  "title_en": "Annular Morphospace",
+  "geometry_es": "Disposición corporal u organísmica estructurada en torno a un hueco o vacío central.",
+  "geometry_en": "Bodily or colonial organization around a central void.",
+  "example_es": "Estructuras anulares en ciertas colonias bacterianas o tejidos epiteliales.",
+  "example_en": "Annular structures in certain colonial ascidians or epithelial blastopores.",
+  "function_es": "Delimitación de un canal de paso, bombeo peristáltico y absorción perimetral equilibrada.",
+  "function_en": "Delimitation of a conduit passageway, peristaltic pumping, and balanced perimeter uptake.",
+  "significance_es": "Configuración de frontera topológica: materia viva organizada rigurosamente alrededor de la nada.",
+  "significance_en": "Topological frontier configuration: living matter structured rigorously around a central void.",
+  "svgType": "annular",
+  "traits_es": [
+   "Vacío circunscrito",
+   "Simetría circular",
+   "Frontera topológica"
+  ],
+  "traits_en": [
+   "Circumscribed void",
+   "Circular symmetry",
+   "Topological boundary"
+  ],
+  "family_id": "F5_CONDUIT",
+  "operator_chain": [
+   "void-circumscription"
+  ]
+ },
+ {
+  "id": 70,
+  "categoryId": 5,
+  "title_es": "Captura mediante pinzas",
+  "title_en": "Pincer Capture",
+  "geometry_es": "Aparato prensil constituido por dos superficies móviles opuestas que se cierran.",
+  "geometry_en": "Grasping between two opposing surfaces.",
+  "example_es": "Pinza de cangrejo, quelíceros de escorpión, mandíbulas raptoriales de ciervo volante.",
+  "example_en": "Crab chela, scorpion pincer, stag beetle jaws.",
+  "function_es": "Generación de una fuerza de prensión focalizada: oposición + cierre → sujeción firme de presa.",
+  "function_en": "Generates focused grasping force: opposition + closure → mechanical capture.",
+  "significance_es": "Producida independientemente a partir de aletas articuladas, patas marchadoras, mandíbulas o antenas.",
+  "significance_en": "Evolved independently from walking legs, modified jaws, or specialized antennae.",
+  "svgType": "pincer",
+  "traits_es": [
+   "Palanca biomecánica",
+   "Superficies oponibles",
+   "Aplastamiento y sujeción"
+  ],
+  "traits_en": [
+   "Biomechanical lever",
+   "Opposing surfaces",
+   "Crushing and gripping"
+  ],
+  "family_id": "F8_CHASSIS",
+  "operator_chain": [
+   "appendage-hypertrophy",
+   "opposition"
+  ]
+ },
+ {
+  "id": 71,
+  "categoryId": 5,
+  "title_es": "Captura tentacular",
+  "title_en": "Tentacular Capture",
+  "geometry_es": "Apéndices alargados, altamente deformables y desprovistos de esqueleto articular interno.",
+  "geometry_en": "Capture through flexible projecting structures.",
+  "example_es": "Brazo de pulpo, tentáculo de calamar, tentáculo de anémona.",
+  "example_en": "Octopus arm, squid tentacle, sea anemone tentacle.",
+  "function_es": "Extensión muscular tridimensional hidrostática, enrollamiento de presa y tracción adhesiva.",
+  "function_en": "Three-dimensional muscular hydrostatic reach, prey wrapping, and suction adhesion.",
+  "significance_es": "Hidrostato muscular puro: movimiento infinito sin necesidad de articulaciones rígidas.",
+  "significance_en": "Pure muscular hydrostat: infinite degrees of freedom without rigid skeletal joints.",
+  "svgType": "tentacular",
+  "traits_es": [
+   "Hidrostato muscular",
+   "Flexibilidad ilimitada",
+   "Adhesión por ventosas"
+  ],
+  "traits_en": [
+   "Muscular hydrostat",
+   "Unlimited flexibility",
+   "Suction adhesion"
+  ],
+  "family_id": "F3_RADIAL",
+  "operator_chain": [
+   "radial-extension",
+   "tentacle-elongation",
+   "wrapping"
+  ]
+ },
+ {
+  "id": 72,
+  "categoryId": 5,
+  "title_es": "Anclaje",
+  "title_en": "Anchorage",
+  "geometry_es": "Estructuras mecánicas o químicas de sujeción inamovible a un sustrato sólido.",
+  "geometry_en": "Stable attachment to a substrate through specialized structures.",
+  "example_es": "Bálano (percebe), rizoide de alga, biso de mejillón, garfios de parásito.",
+  "example_en": "Barnacle cement base, algal holdfast, mussel byssus, parasite hooks.",
+  "function_es": "Contrarrestar las enormes fuerzas hidrodinámicas de arrastre de las olas o de corrientes fluviales.",
+  "function_en": "Counteracting massive hydrodynamic drag forces in breaking waves or turbulent rivers.",
+  "significance_es": "Fuerza ambiental desestabilizadora → necesidad convergente de fijación permanente irreductible.",
+  "significance_en": "Environmental drag force → convergent necessity for irreversible mechanical attachment.",
+  "svgType": "anchorage",
+  "traits_es": [
+   "Cemento bioquímico",
+   "Garfios de anclaje",
+   "Resistencia a cizalladura"
+  ],
+  "traits_en": [
+   "Biochemical cement",
+   "Anchor hooks",
+   "Shear resistance"
+  ],
+  "family_id": "F6_BRANCH",
+  "operator_chain": [
+   "fixation"
+  ]
+ },
+ {
+  "id": 73,
+  "categoryId": 5,
+  "title_es": "Excavación",
+  "title_en": "Excavation",
+  "geometry_es": "Modificación del cuerpo y extremidades para penetración y desplazamiento a través de sustrato denso.",
+  "geometry_en": "Modification of body for penetration and movement through substrate.",
+  "example_es": "Topo, grillo topo, lagarto excavador, gusano arenícola.",
+  "example_en": "Mole paws, mole cricket, amphisbaenian worm-lizard, lugworm.",
+  "function_es": "Palancas óseas cortas de alto torque mecánico, garras hipertrofiadas y reducción de apéndices sobresalientes.",
+  "function_en": "Short, high-torque bone levers, enlarged spade claws, and reduction of protruding structures.",
+  "significance_es": "Reiteración morfológica asombrosa entre mamíferos, insectos y reptiles bajo la resistencia del suelo.",
+  "significance_en": "Striking morphological convergence across mammals, insects, and reptiles moving through soils.",
+  "svgType": "excavation",
+  "traits_es": [
+   "Palas fosoriales",
+   "Cuerpo cilíndrico liso",
+   "Alto torque mecánico"
+  ],
+  "traits_en": [
+   "Fossorial spades",
+   "Smooth cylindrical hull",
+   "High mechanical torque"
+  ],
+  "family_id": "F8_CHASSIS",
+  "operator_chain": [
+   "substrate-penetration"
+  ]
+ },
+ {
+  "id": 74,
+  "categoryId": 5,
+  "title_es": "Filtración",
+  "title_en": "Filtration",
+  "geometry_es": "Superficies porosas o cribas reticulares calibradas para retener partículas en suspensión acuosa.",
+  "geometry_en": "Capture of suspended particles using selective surfaces.",
+  "example_es": "Barbas de ballena misticeta, lofóforo de briozoo, branquias de bivalvo, coanocitos de esponja.",
+  "example_en": "Baleen whale plates, bryozoan lophophore, bivalve gills, sponge choanocytes.",
+  "function_es": "Extracción de nutrientes microscópicos a partir de caudales inmensos de agua: flujo + malla → retención.",
+  "function_en": "Extraction of micro-nutrients from massive water throughput: flow + selective mesh → harvest.",
+  "significance_es": "Una de las resonancias funcionales más poderosas: el problema físico es idéntico para una esponja que para una ballena azul.",
+  "significance_en": "A supreme functional resonance: identical fluid mechanics whether inside a sponge or a 100-ton whale.",
+  "svgType": "filtration",
+  "traits_es": [
+   "Criba calibrada",
+   "Flujo unidireccional",
+   "Retención pasiva masiva"
+  ],
+  "traits_en": [
+   "Calibrated mesh",
+   "Unidirectional throughput",
+   "Mass passive harvest"
+  ],
+  "family_id": "F5_CONDUIT",
+  "operator_chain": []
+ },
+ {
+  "id": 75,
+  "categoryId": 5,
+  "title_es": "Succión",
+  "title_en": "Suction",
+  "geometry_es": "Cavidad deformable capaz de dilatarse bruscamente generando un diferencial de presión negativa.",
+  "geometry_en": "Generation of a pressure differential causing fluid and prey to move toward an opening.",
+  "example_es": "Boca protráctil de pez teleósteo, ventosas de pulpo, plantas carnívoras acuáticas (Utricularia).",
+  "example_en": "Teleost suction jaw, octopus suction cup, bladderwort (Utricularia).",
+  "function_es": "Ingestión fulminante de presa acuática mediante vacío inducido o anclaje por depresión hidrostática.",
+  "function_en": "Instant underwater prey capture through vacuum cavitation or hydrostatic cup adhesion.",
+  "significance_es": "No es una forma fija sino una dinámica mecánica: expansión brusca de cavidad → caída de presión → flujo centrípeto.",
+  "significance_en": "Not a static form but a dynamic solution: cavity expansion → pressure drop → inward rush.",
+  "svgType": "suction",
+  "traits_es": [
+   "Depresión hidrostática",
+   "Protrusión rápida",
+   "Vacío de captación"
+  ],
+  "traits_en": [
+   "Hydrostatic depression",
+   "Rapid protrusion",
+   "Inward intake vacuum"
+  ],
+  "family_id": "F5_CONDUIT",
+  "operator_chain": [
+   "cavity",
+   "pressure-differential"
+  ]
+ },
+ {
+  "id": 76,
+  "categoryId": 5,
+  "title_es": "Propulsión ondulatoria",
+  "title_en": "Undulatory Propulsion",
+  "geometry_es": "Onda progresiva de deformación lateral o dorsoventral que viaja a lo largo del cuerpo o flagelo.",
+  "geometry_en": "A wave of deformation travels along the body or an appendage.",
+  "example_es": "Anguila, serpiente marina, renacuajo, espermatozoide, nematodo.",
+  "example_en": "Eel, sea snake, tadpole, spermatozoon, nematode.",
+  "function_es": "Conversión de la flexión ondulatoria periódica en empuje cinético axial hacia adelante.",
+  "function_en": "Converts oscillatory lateral bending waves into continuous forward axial thrust.",
+  "significance_es": "Opera idénticamente en la escala de micras (flagelo a bajo Reynolds) que en vertebrados de varios metros.",
+  "significance_en": "Functions identically at microscopic scales (low Reynolds sperm) and meter-scale vertebrate eels.",
+  "svgType": "undulatory",
+  "traits_es": [
+   "Onda sinusoidal",
+   "Flexión continua",
+   "Empuje axial"
+  ],
+  "traits_en": [
+   "Sinusoidal wave",
+   "Continuous bending",
+   "Axial forward thrust"
+  ],
+  "family_id": "F1_AXIS",
+  "operator_chain": [
+   "axial-wave"
+  ]
+ },
+ {
+  "id": 77,
+  "categoryId": 5,
+  "title_es": "Propulsión a chorro",
+  "title_en": "Jet Propulsion",
+  "geometry_es": "Cámara compresiva que expulsa una masa de fluido a alta velocidad a través de una tobera estrecha.",
+  "geometry_en": "Fluid is expelled through an opening, generating thrust in opposite direction.",
+  "example_es": "Calamar, pulpo, medusa, salpa colonial, larvas de libélula.",
+  "example_en": "Squid, octopus, jellyfish, salp, dragonfly nymph.",
+  "function_es": "Aceleración instantánea y escape reactivo según el principio newtoniano de acción y reacción.",
+  "function_en": "Instant acceleration and escape based on Newtonian action-reaction thrust.",
+  "significance_es": "Emerge directamente de la dinámica de fluidos pulsátiles sin requerir extremidades esqueléticas.",
+  "significance_en": "Emerges from pulsed fluid mechanics rather than phylogenetic limb bauplans.",
+  "svgType": "jet_prop",
+  "traits_es": [
+   "Compresión muscular de cavidad",
+   "Tobera orientable",
+   "Aceleración reactiva"
+  ],
+  "traits_en": [
+   "Muscular chamber compression",
+   "Steerable siphon nozzle",
+   "Reactive acceleration"
+  ],
+  "family_id": "F5_CONDUIT",
+  "operator_chain": [
+   "cavity",
+   "jet-expulsion"
+  ]
+ },
+ {
+  "id": 78,
+  "categoryId": 5,
+  "title_es": "Propulsión mediante apéndices",
+  "title_en": "Appendage-based Propulsion",
+  "geometry_es": "Estructuras externas que interactúan periódicamente con el medio circundante para transferir momento.",
+  "geometry_en": "One or more external structures interact repeatedly with the medium to generate thrust.",
+  "example_es": "Aletas de pez, patas nadadoras de escarabajo buceador, remos de crustáceo, alas de pato.",
+  "example_en": "Fish fins, diving beetle swimming legs, crustacean pleopods, turtle flippers.",
+  "function_es": "Empuje propulsivo cíclico mediante paletas móviles con resistencia asimétrica en ida y retorno.",
+  "function_en": "Cyclic paddle strokes with asymmetric hydrodynamic drag between power and recovery phases.",
+  "significance_es": "Concepto funcional más amplio que «aleta» o «pata»: describe la interacción motriz articulada periódica.",
+  "significance_en": "Broader than \"fin\" or \"leg\": the periodic kinetic interaction of an appendage with a medium.",
+  "svgType": "append_prop",
+  "traits_es": [
+   "Carrera de potencia y recobro",
+   "Paleta hidrodinámica",
+   "Propulsión cíclica"
+  ],
+  "traits_en": [
+   "Power and recovery stroke",
+   "Hydrodynamic paddle",
+   "Cyclic propulsion"
+  ],
+  "family_id": "F8_CHASSIS",
+  "operator_chain": [
+   "cyclic-stroking"
+  ]
+ },
+ {
+  "id": 79,
+  "categoryId": 5,
+  "title_es": "Planeo",
+  "title_en": "Gliding",
+  "geometry_es": "Superficie de sustentación aerodinámica ensanchada respecto a la masa para descenso gradual controlado.",
+  "geometry_en": "Body develops a large supporting surface relative to mass for controlled descent.",
+  "example_es": "Ardilla voladora, pez volador, lagarto Draco, serpiente voladora Chrysopelea.",
+  "example_en": "Flying squirrel, flying fish, Draco volans lizard, Chrysopelea gliding snake.",
+  "function_es": "Dispersión arbórea a larga distancia sin impacto letal y huida rápida de predadores.",
+  "function_en": "Long-distance canopy traversal without lethal fall impact; rapid predator evasion.",
+  "significance_es": "Ha evolucionado independientemente decenas de veces mediante piel, costillas expandidas o aletas pélvicas.",
+  "significance_en": "Evolved independently dozens of times using patagia, expanded ribs, or hypertrophied fins.",
+  "svgType": "gliding",
+  "traits_es": [
+   "Membrana extendida",
+   "Ángulo de descenso suave",
+   "Control de cabeceo"
+  ],
+  "traits_en": [
+   "Extended membrane",
+   "Shallow glide slope",
+   "Pitch control"
+  ],
+  "family_id": "F2_SHEET",
+  "operator_chain": [
+   "expansion",
+   "surface-load ratio"
+  ]
+ },
+ {
+  "id": 80,
+  "categoryId": 5,
+  "title_es": "Vuelo",
+  "title_en": "Flight",
+  "geometry_es": "Aparato muscular y alar capaz de generar fuerzas aerodinámicas superiores al peso del cuerpo.",
+  "geometry_en": "Organism generates sufficient aerodynamic forces to remain airborne and control motion.",
+  "example_es": "Aves, murciélagos, insectos voladores, pterosaurios extintos.",
+  "example_en": "Birds, bats, winged insects, extinct pterosaurs.",
+  "function_es": "Locomoción tridimensional completa, migración continental y caza aérea activa.",
+  "function_en": "Full 3D aerial locomotion, continental migration, and active pursuit hunting.",
+  "significance_es": "El cenit de la convergencia biomecánica: masa + superficie aerodinámica + sustentación + empuje + control.",
+  "significance_en": "The pinnacle of convergence: mass + aerodynamic foil + lift + thrust + neuro-sensory control.",
+  "svgType": "flight",
+  "traits_es": [
+   "Alas batientes",
+   "Músculos pectorales potentes",
+   "Control tridimensional"
+  ],
+  "traits_en": [
+   "Flapping wings",
+   "High power-to-weight engine",
+   "3D spatial control"
+  ],
+  "family_id": "F2_SHEET",
+  "operator_chain": [
+   "expansion",
+   "lift-shaping",
+   "flapping"
+  ]
+ },
+ {
+  "id": 81,
+  "categoryId": 5,
+  "title_es": "Salto",
+  "title_en": "Jumping",
+  "geometry_es": "Mecanismo que acumula energía elástica lentamente y la libera de forma instantánea.",
+  "geometry_en": "Body stores mechanical energy and releases it rapidly, producing large displacement.",
+  "example_es": "Pulga, saltamontes, rana, canguro, araña saltarina.",
+  "example_en": "Flea (resilin spring), grasshopper, frog, kangaroo, jumping spider (hydraulic).",
+  "function_es": "Escape balístico explosivo en fracciones de milisegundo ante una agresión inminente.",
+  "function_en": "Ballistic explosive escape in milliseconds away from strikes of predators.",
+  "significance_es": "Ilustra cómo una misma función recurre por arquitecturas radicalmente distintas: tendones elásticos, proteínas resilinas o hidráulica hemolinfática.",
+  "significance_en": "Achieved through radically different physical systems: elastic tendons, resilin springs, or hydraulic pressure.",
+  "svgType": "jumping",
+  "traits_es": [
+   "Almacenamiento elástico",
+   "Gatillo mecánico",
+   "Aceleración balística"
+  ],
+  "traits_en": [
+   "Elastic energy storage",
+   "Mechanical latch trigger",
+   "Ballistic acceleration"
+  ],
+  "family_id": "F8_CHASSIS",
+  "operator_chain": [
+   "energy-storage",
+   "rapid-release"
+  ]
+ },
+ {
+  "id": 82,
+  "categoryId": 5,
+  "title_es": "Armadura defensiva",
+  "title_en": "Defensive Armor",
+  "geometry_es": "Escudo rígido y resistente que recubre las partes blandas y órganos vitales.",
+  "geometry_en": "Rigid external structure surrounding vulnerable tissues.",
+  "example_es": "Tortuga, armadillo, cocodrilo, escarabajo, cangrejo, trilobite.",
+  "example_en": "Turtle, armadillo, crocodile osteoderms, beetle cuticle, crab, trilobite.",
+  "function_es": "Protección contra colmillos, garras, impacto mecánico y abrasión ambiental.",
+  "function_en": "Defense against predation crushing, puncture, and environmental trauma.",
+  "significance_es": "Los materiales cambian radicalmente (hueso, carbonato cálcico, quitina), pero el principio estructural es idéntico.",
+  "significance_en": "The materials differ widely (bone, calcium carbonate, chitin); the architectural physics is identical.",
+  "svgType": "defensive_armor",
+  "traits_es": [
+   "Resistencia al impacto",
+   "Placas articuladas",
+   "Blindaje mineral"
+  ],
+  "traits_en": [
+   "Impact toughness",
+   "Articulated plates",
+   "Mineral armor"
+  ],
+  "family_id": "F4_CONTAINER",
+  "operator_chain": [
+   "compaction",
+   "armor"
+  ]
+ },
+ {
+  "id": 83,
+  "categoryId": 5,
+  "title_es": "Defensa mediante espinas",
+  "title_en": "Spiny Defense",
+  "geometry_es": "Proyecciones afiladas y rígidas que apuntan hacia el exterior desde la epidermis.",
+  "geometry_en": "Thin, rigid structures extend outward, increasing attack difficulty.",
+  "example_es": "Erizo de mar, puercoespín, equidna, pez león, espinas de cactáceas.",
+  "example_en": "Sea urchin, porcupine, echidna, lionfish, cactus spines.",
+  "function_es": "Disuasión del contacto físico mediante amenaza punzante de daño tisular severo al atacante.",
+  "function_en": "Deterrence through physical puncture threat causing severe tissue trauma to attackers.",
+  "significance_es": "Presente por igual en animales y vegetales; no requiere parentesco para evolucionar de forma clónica.",
+  "significance_en": "Shared equally between plants and animals; needs no common ancestry to emerge identically.",
+  "svgType": "spiny_defense",
+  "traits_es": [
+   "Púas divergentes",
+   "Punta penetrante",
+   "Daño al atacante"
+  ],
+  "traits_en": [
+   "Diverging quills",
+   "Penetrating tip",
+   "Attacker retaliation trauma"
+  ],
+  "family_id": "F4_CONTAINER",
+  "operator_chain": [
+   "spine-extension"
+  ]
+ },
+ {
+  "id": 84,
+  "categoryId": 5,
+  "title_es": "Defensa mediante enrollamiento",
+  "title_en": "Coiling Defense",
+  "geometry_es": "Contracción muscular que flexiona el cuerpo hasta encerrar en su interior todas las áreas blandas.",
+  "geometry_en": "Organism reduces exposed vulnerable surfaces by bending or enclosing its body.",
+  "example_es": "Armadillo, cochinilla de la humedad (Oniscidea), orugas, serpientes en ovillo.",
+  "example_en": "Three-banded armadillo, pill bug (isopod), caterpillars, coiled snakes.",
+  "function_es": "Reducción a cero de la superficie corporal desprotegida.",
+  "function_en": "Reduces unprotected soft surface area to virtually zero.",
+  "significance_es": "Ejemplo donde la forma final y el operador de transformación son una sola y misma realidad dinámica.",
+  "significance_en": "A case where final bodily form and transformation operator are one dynamic unity.",
+  "svgType": "coiling_defense",
+  "traits_es": [
+   "Enclaustramiento esférico",
+   "Protección de vientre",
+   "Oclusión pasiva"
+  ],
+  "traits_en": [
+   "Spherical enclosure",
+   "Ventral protection",
+   "Passive occlusion"
+  ],
+  "family_id": "F1_AXIS",
+  "operator_chain": [
+   "coiling",
+   "enclosure"
+  ]
+ },
+ {
+  "id": 85,
+  "categoryId": 5,
+  "title_es": "Camuflaje estructural",
+  "title_en": "Structural Camouflage",
+  "geometry_es": "El cuerpo adquiere una geometría que imita o disrumpe la estructura visual del hábitat vegetal o rocoso.",
+  "geometry_en": "Body acquires a shape reproducing or disrupting environmental visual structures.",
+  "example_es": "Insecto palo, insecto hoja, dragón marino foliáceo, pez piedra, mantis orquídea.",
+  "example_en": "Stick insect, leaf insect, leafy sea dragon, stonefish, orchid mantis.",
+  "function_es": "Invisibilidad perceptiva ante depredadores o presas mediante semejanza geométrica con el entorno.",
+  "function_en": "Perceptual invisibility via geometric structural resemblance to background objects.",
+  "significance_es": "Morforresonancia ecológica directa: la geometría del entorno se imprime sobre la anatomía del ser vivo.",
+  "significance_en": "Direct ecological morphoresonance: environmental geometry sculpts organismal geometry.",
+  "svgType": "camouflage",
+  "traits_es": [
+   "Mímesis vegetal/mineral",
+   "Disrupción de bordes",
+   "Invisibilidad fenotípica"
+  ],
+  "traits_en": [
+   "Plant/mineral mimesis",
+   "Edge disruption",
+   "Phenotypic invisibility"
+  ],
+  "family_id": "F2_SHEET",
+  "operator_chain": [
+   "surface-patterning"
+  ]
+ },
+ {
+  "id": 86,
+  "categoryId": 5,
+  "title_es": "Superficie colectora",
+  "title_en": "Collecting Surface",
+  "geometry_es": "Expansión bidimensional o ramificada destinada a interceptar un recurso disperso en el ambiente.",
+  "geometry_en": "Expansion of surface to intercept and collect something from environment.",
+  "example_es": "Hojas recolectando luz, raíces recolectando agua, branquias intercambiando oxígeno, micelios fúngicos.",
+  "example_en": "Leaves gathering photons, root networks absorbing water, mycelia scouting soil.",
+  "function_es": "Aumento de contacto con el medio para acelerar la captación de energía, minerales o gases.",
+  "function_en": "Maximized interface contact to accelerate capture of solar energy, minerals, or oxygen.",
+  "significance_es": "Principio físico invariable: mayor área interfacial = mayor flujo de absorción por unidad de tiempo.",
+  "significance_en": "Invariable physical principle: larger interfacial area = higher intake flux per unit time.",
+  "svgType": "collecting_surf",
+  "traits_es": [
+   "Gran superficie / volumen",
+   "Intercepción pasiva",
+   "Optimización difusiva"
+  ],
+  "traits_en": [
+   "High surface-to-volume",
+   "Passive interception",
+   "Diffusive optimization"
+  ],
+  "family_id": "F2_SHEET",
+  "operator_chain": [
+   "expansion"
+  ]
+ },
+ {
+  "id": 87,
+  "categoryId": 6,
+  "title_es": "Ramificación vascular y de transporte",
+  "title_en": "Vascular and Transport Branching",
+  "geometry_es": "Un conducto principal que se divide sucesiva y jerárquicamente en conductos de menor calibre.",
+  "geometry_en": "A principal conduit repeatedly divides into smaller conduits.",
+  "example_es": "Arterias y capilares, árbol bronquial, xilema y floema vegetal, tráqueas de insectos.",
+  "example_en": "Arteries and capillaries, lung bronchi, plant xylem/phloem, insect tracheae.",
+  "function_es": "Distribución y recolección masiva de fluidos y solutos a lo largo de un volumen tridimensional completo.",
+  "function_en": "Distributes and collects fluids, gases, and metabolites evenly throughout a 3D volume.",
+  "significance_es": "El transporte a través de volúmenes biológicos densos siempre tropieza con el mismo dilema geométrico.",
+  "significance_en": "Transport through 3D biological volumes universally encounters the same geometric constraint.",
+  "svgType": "vascular_branch",
+  "traits_es": [
+   "Jerarquía de diámetros",
+   "Ley de Murray",
+   "Distribución volumétrica"
+  ],
+  "traits_en": [
+   "Caliber hierarchy",
+   "Murray flow optimization",
+   "Volumetric delivery"
+  ],
+  "family_id": "F6_BRANCH",
+  "operator_chain": []
+ },
+ {
+  "id": 88,
+  "categoryId": 6,
+  "title_es": "Redes reticulares",
+  "title_en": "Reticular Networks",
+  "geometry_es": "Múltiples ramificaciones interconectadas que forman una malla o red anastomosada.",
+  "geometry_en": "Multiple interconnected branches form a mesh rather than a simple tree.",
+  "example_es": "Capilares en red, nervadura foliar secundaria, redes neuronales, trabéculas óseas.",
+  "example_en": "Capillary beds, leaf venation meshes, neuronal networks, bone trabeculae.",
+  "function_es": "Redundancia ante daños, comunicación multidireccional y resiliencia estructural.",
+  "function_en": "Fault tolerance through loop redundancy, multidirectional communication, structural resilience.",
+  "significance_es": "Difiere del árbol jerárquico: el árbol distribuye sin retorno; la red conecta con caminos alternativos.",
+  "significance_en": "Tree = hierarchical distribution. Network = distributed reconnection and resilience.",
+  "svgType": "reticular",
+  "traits_es": [
+   "Anastomosis",
+   "Malla cerrada",
+   "Caminos redundantes"
+  ],
+  "traits_en": [
+   "Anastomosis",
+   "Closed loop mesh",
+   "Redundant pathways"
+  ],
+  "family_id": "F6_BRANCH",
+  "operator_chain": [
+   "branching",
+   "anastomosis"
+  ]
+ },
+ {
+  "id": 89,
+  "categoryId": 6,
+  "title_es": "Segmentación interna",
+  "title_en": "Internal Segmentation",
+  "geometry_es": "Repetición seriada de órganos o tejidos internos a lo largo del eje longitudinal.",
+  "geometry_en": "Internal structures repeat serially along an axis.",
+  "example_es": "Columna vertebral y vértebras, somitas, sacos celómicos, ganglios en cadena.",
+  "example_en": "Vertebral column, embryological somites, muscle blocks (myotomes), serial nephridia.",
+  "function_es": "Construcción modular de cuerpos de gran tamaño con unidades de inervación y soporte idénticas.",
+  "function_en": "Modular building blocks for large vertebrate bodies with repeated innervation zones.",
+  "significance_es": "Demuestra que la metamería opera en la intimidad visceral tanto o más que en la cutícula externa.",
+  "significance_en": "Proves segmentation operates in visceral anatomy just as deeply as on external carapaces.",
+  "svgType": "internal_seg",
+  "traits_es": [
+   "Vértebras / Somitas",
+   "Inervación segmentaria",
+   "Modularidad visceral"
+  ],
+  "traits_en": [
+   "Vertebrae / Somites",
+   "Segmental innervation",
+   "Visceral modularity"
+  ],
+  "family_id": "F1_AXIS",
+  "operator_chain": []
+ },
+ {
+  "id": 90,
+  "categoryId": 6,
+  "title_es": "Espirales y hélices biológicas",
+  "title_en": "Biological Spirals and Helices",
+  "geometry_es": "Trayectorias curvadas que avanzan rotando alrededor de un eje central.",
+  "geometry_en": "Structures follow a curved trajectory around an axis.",
+  "example_es": "Doble hélice del ADN, triple hélice de colágeno, flagelo bacteriano, caracol coclear del oído.",
+  "example_en": "DNA double helix, collagen triple helix, bacterial flagellum, cochlea of inner ear.",
+  "function_es": "Empaquetamiento hiper-denso de información, resistencia torsional en tendones y análisis de frecuencias.",
+  "function_en": "Information packing density, elastic tensile strength, auditory frequency discrimination.",
+  "significance_es": "Aparece desde la escala de ångströms macromoleculares hasta el órgano auditivo humano.",
+  "significance_en": "Universal recurrence spanning Ångström macromolecular scale up to macroscopic auditory organs.",
+  "svgType": "bio_helices",
+  "traits_es": [
+   "Quiralidad molecular",
+   "Resistencia a torsión",
+   "Empaquetamiento denso"
+  ],
+  "traits_en": [
+   "Molecular chirality",
+   "Torsional resistance",
+   "Dense information packing"
+  ],
+  "family_id": "F4_CONTAINER",
+  "operator_chain": []
+ },
+ {
+  "id": 91,
+  "categoryId": 6,
+  "title_es": "Filotaxis y empaquetamiento",
+  "title_en": "Phyllotaxis and Packing",
+  "geometry_es": "Disposición angular ordenada de órganos repetidos alrededor de un meristemo apical.",
+  "geometry_en": "Spatial arrangement of repeated plant organs around a stem or center.",
+  "example_es": "Semillas de girasol, piñas de pino, espirales de hojas, escamas de piña.",
+  "example_en": "Sunflower disc florets, pinecone scales, leaf spiral phyllotaxis.",
+  "function_es": "Máximo empaquetamiento de semillas sin solapamiento destructivo; captación solar óptima.",
+  "function_en": "Maximal seed packing density without wasting space; optimal leaf sun exposure.",
+  "significance_es": "Ilustra cómo el ángulo áureo (~137.5°) emerge espontáneamente de la repulsión e inhibición local de primordios.",
+  "significance_en": "Classic example of the golden angle (~137.5°) emerging naturally from local growth inhibition.",
+  "svgType": "phyllotaxis",
+  "traits_es": [
+   "Ángulo áureo (137.5°)",
+   "Espiral de Fibonacci",
+   "Empaquetamiento óptimo"
+  ],
+  "traits_en": [
+   "Golden angle (137.5°)",
+   "Fibonacci spiral",
+   "Optimal packing density"
+  ],
+  "family_id": "F6_BRANCH",
+  "operator_chain": []
+ },
+ {
+  "id": 92,
+  "categoryId": 6,
+  "title_es": "Patrones de reacción-difusión",
+  "title_en": "Reaction-Diffusion Patterns",
+  "geometry_es": "Manchas, bandas y rayas periódicas generadas por interacción química de activador e inhibidor.",
+  "geometry_en": "Biological patterns arising from local activation and long-range inhibition combined with diffusion.",
+  "example_es": "Rayas de cebra, manchas de leopardo, pigmentación de conchas marinas, digitación embrionaria.",
+  "example_en": "Zebra stripes, leopard rosettes, cone snail shell patterns, embryonic digit spacing.",
+  "function_es": "Camuflaje críptico o señalización cromática sin necesidad de un mapa previo centralizado.",
+  "function_en": "Self-organized camouflage patterns or warning displays generated without a central blueprint.",
+  "significance_es": "Descubierto por Alan Turing en 1952: la complejidad visual surge espontáneamente de ecuaciones físico-químicas.",
+  "significance_en": "Formulated by Alan Turing in 1952: spatial order spontaneously emerges from simple chemistry.",
+  "svgType": "reaction_diff",
+  "traits_es": [
+   "Activador-Inhibidor",
+   "Ruptura espontánea de simetría",
+   "Patrones de Turing"
+  ],
+  "traits_en": [
+   "Activator-Inhibitor",
+   "Spontaneous symmetry break",
+   "Turing pattern"
+  ],
+  "family_id": "F6_BRANCH",
+  "operator_chain": []
+ },
+ {
+  "id": 93,
+  "categoryId": 6,
+  "title_es": "Gradientes, polaridad y campos organizativos",
+  "title_en": "Gradients, Polarity, and Organizational Fields",
+  "geometry_es": "Campos de información espacial química y bioeléctrica que indican a las células sus coordenadas corporales.",
+  "geometry_en": "Biological development depending on spatial gradients and positional information.",
+  "example_es": "Gradientes de Bicoid en Drosophila, patrones bioeléctricos de voltaje (Levin), gradiente Wnt.",
+  "example_en": "Bicoid morphogen gradient, Michael Levin bioelectric membrane voltage pre-patterns, Wnt signaling.",
+  "function_es": "Determinar qué estructura se desarrolla en cada coordenada espacial precisa del embrión.",
+  "function_en": "Instructs cells what structures to form and which orientation to adopt in 3D morphospace.",
+  "significance_es": "El cuerpo no se construye añadiendo piezas ciegas: se organiza mediante campos dinámicos de información posicional.",
+  "significance_en": "The body is sculpted by dynamic positional spatial information fields and bioelectric states.",
+  "svgType": "gradients",
+  "traits_es": [
+   "Información posicional",
+   "Voltaje bioeléctrico",
+   "Morfógenos"
+  ],
+  "traits_en": [
+   "Positional information",
+   "Bioelectric voltage pattern",
+   "Morphogen slope"
+  ],
+  "family_id": "F6_BRANCH",
+  "operator_chain": []
+ },
+ {
+  "id": 94,
+  "categoryId": 7,
+  "title_es": "Colonia modular",
+  "title_en": "Modular Colony",
+  "geometry_es": "Entidad multicorporal formada por zooides idénticos físicamente integrados.",
+  "geometry_en": "A colony formed from multiple repeated biological modules.",
+  "example_es": "Corales formadores de arrecife, briozoos, colonias de hidroides.",
+  "example_en": "Stony corals, bryozoans, colonial ascidians, siphonophores.",
+  "function_es": "Creación de un supraorganismo con longevidad indefinida y regeneración ilimitada.",
+  "function_en": "Creation of a higher-level superorganism with indeterminate lifespan and shared resources.",
+  "significance_es": "Módulo + repetición + integración: el colectivo actúa como un objeto morfológico unitario superior.",
+  "significance_en": "Module + repetition + integration: the collective functions as a higher-order biological individual.",
+  "svgType": "colony_mod",
+  "traits_es": [
+   "Zooides fusionados",
+   "Superorganismo",
+   "Integración somática"
+  ],
+  "traits_en": [
+   "Fused zooids",
+   "Superorganism",
+   "Somatic integration"
+  ],
+  "family_id": "F7_MODULE_COLLECTIVE",
+  "operator_chain": [
+   "repetition",
+   "integration"
+  ]
+ },
+ {
+  "id": 95,
+  "categoryId": 7,
+  "title_es": "Colonia ramificada",
+  "title_en": "Branching Colony",
+  "geometry_es": "Colonia modular que expande su arquitectura mediante bifurcaciones arboriformes sucesivas.",
+  "geometry_en": "A modular collective growing through repeated branching.",
+  "example_es": "Coral asta de ciervo, colonias fúngicas ramificadas, algas arborescentes.",
+  "example_en": "Branching acroporid corals, hydrozoan branching plumes, fungal mycelial colonies.",
+  "function_es": "Ocupación volumétrica de capas de agua estratificadas para interceptar nutrientes.",
+  "function_en": "Volumetric exploration of stratified water layers to optimize nutrient uptake.",
+  "significance_es": "El mismo operador de ramificación que rige un árbol individual se aplica a miles de individuos fusionados.",
+  "significance_en": "The exact branching operator governing a single plant applies across thousands of colonial zooids.",
+  "svgType": "colony_branch",
+  "traits_es": [
+   "Crecimiento fractal",
+   "Colonización tridimensional",
+   "Arborización"
+  ],
+  "traits_en": [
+   "Fractal growth",
+   "3D fluid exploration",
+   "Colonial arborescence"
+  ],
+  "family_id": "F6_BRANCH",
+  "operator_chain": []
+ },
+ {
+  "id": 96,
+  "categoryId": 7,
+  "title_es": "Colonia tubular",
+  "title_en": "Tubular Colony",
+  "geometry_es": "Organización colectiva basada en tubos paralelos fusionados o cavidades tubulares comunes.",
+  "geometry_en": "Collective organization based on tubular units.",
+  "example_es": "Sifonóforo tubular, briozoo cilíndrico, corales tubipóridos marinos.",
+  "example_en": "Pyrosoma (pelagic tunicate tube), siphonophores, organ pipe coral.",
+  "function_es": "Canalizar un flujo hidráulico colectivo para propulsión y filtración conjunta.",
+  "function_en": "Channels collective hydrodynamics for coordinated propulsion and shared filtration.",
+  "significance_es": "El cilindro hueco se reitera a nivel de meta-organismo para coordinar la motilidad colonial.",
+  "significance_en": "The hollow cylinder recurs at the meta-organism level to coordinate colonial jet motility.",
+  "svgType": "colony_tube",
+  "traits_es": [
+   "Tubo de tunicados",
+   "Propulsión conjunta",
+   "Cilindro colonial"
+  ],
+  "traits_en": [
+   "Tunicate pyrosome tube",
+   "Joint jetting",
+   "Colonial cylinder"
+  ],
+  "family_id": "F5_CONDUIT",
+  "operator_chain": [
+   "tubular-repetition",
+   "integration"
+  ]
+ },
+ {
+  "id": 97,
+  "categoryId": 7,
+  "title_es": "Morfología catenaria",
+  "title_en": "Catenary Morphology",
+  "geometry_es": "Estructura colonial dispuesta en cadena flexible de eslabones sucesivos.",
+  "geometry_en": "Collective structure arranged in a chain.",
+  "example_es": "Cadenas de salpas pelágicas, cianobacterias en filamento, cadenas de zooides.",
+  "example_en": "Pelagic salp chains, filamentous cyanobacteria, chain-forming diatom colonies.",
+  "function_es": "Flexibilidad hidrodinámica combinada con multiplicación lineal de la superficie de propulsión.",
+  "function_en": "Hydrodynamic snake-like flexibility combined with linear amplification of propulsion.",
+  "significance_es": "Frontera entre la individualidad de los eslabones y la conducta coordinada de una serpiente viva.",
+  "significance_en": "Bridging boundary between independent linked nodes and the coordinated action of a sea serpent.",
+  "svgType": "colony_chain",
+  "traits_es": [
+   "Eslabones lineales",
+   "Flexibilidad coordinada",
+   "Cadena natatoria"
+  ],
+  "traits_en": [
+   "Linear chain links",
+   "Coordinated flexibility",
+   "Swimming filament"
+  ],
+  "family_id": "F7_MODULE_COLLECTIVE",
+  "operator_chain": [
+   "linear-chaining"
+  ]
+ },
+ {
+  "id": 98,
+  "categoryId": 7,
+  "title_es": "Agregación / racimo",
+  "title_en": "Aggregation / Cluster",
+  "geometry_es": "Múltiples organismos independientes que se condensan densamente en un espacio circunscrito.",
+  "geometry_en": "Multiple organisms spatially concentrated around a region.",
+  "example_es": "Floraciones de algas rojas, biofilms bacterianos en placa dental, piñas de orugas procesionarias.",
+  "example_en": "Bacterial biofilms, algal blooms, processionary caterpillar clusters, fruit bodies.",
+  "function_es": "Creación de un microclima protector, resistencia ante antibióticos y digestión extracelular masiva.",
+  "function_en": "Creates a protected microclimate, communal antibiotic shielding, pooled digestion.",
+  "significance_es": "La geometría colectiva más elemental: muchos entes atraídos hacia un atractor espacial o gradiente químico.",
+  "significance_en": "The simplest collective geometry: many units concentrated around a chemical gradient.",
+  "svgType": "colony_cluster",
+  "traits_es": [
+   "Enjambre estático",
+   "Quórum sensing",
+   "Densidad protectora"
+  ],
+  "traits_en": [
+   "Static clump",
+   "Quorum sensing",
+   "Protective density"
+  ],
+  "family_id": "F7_MODULE_COLLECTIVE",
+  "operator_chain": [
+   "aggregation"
+  ]
+ },
+ {
+  "id": 99,
+  "categoryId": 7,
+  "title_es": "Corona colectiva",
+  "title_en": "Collective Crown",
+  "geometry_es": "Múltiples individuos dispuestos en anillo concéntrico alrededor de una cavidad central común.",
+  "geometry_en": "Multiple individuals forming a circular or radial arrangement.",
+  "example_es": "Colonias de briozoos en flor, zooides dispuestos circularmente en ascidias compuestas (Botryllus).",
+  "example_en": "Botryllus schlosseri star colonies, radial floral coral heads.",
+  "function_es": "Descarga compartida de agua filtrada en un sifón cloacal central común (cloaca colonial).",
+  "function_en": "Shared exhaust of filtered water through a common central exhalant cloacal siphon.",
+  "significance_es": "Reitera a nivel del colectivo la geometría floral y radial de los organismos individuales.",
+  "significance_en": "Repeats at the collective colony level the exact radial floral geometry of individual organisms.",
+  "svgType": "colony_crown",
+  "traits_es": [
+   "Sifón cloacal común",
+   "Estrella colonial",
+   "Sinergia exhalante"
+  ],
+  "traits_en": [
+   "Shared cloacal siphon",
+   "Colonial star flower",
+   "Exhalant synergy"
+  ],
+  "family_id": "F3_RADIAL",
+  "operator_chain": []
+ },
+ {
+  "id": 100,
+  "categoryId": 7,
+  "title_es": "Enjambre",
+  "title_en": "Swarm",
+  "geometry_es": "Configuración espacial dinámica y móvil que emerge de la interacción local de miles de individuos.",
+  "geometry_en": "A dynamic collective whose spatial configuration emerges from interaction of many individuals.",
+  "example_es": "Banco de peces, bandada de estorninos (murmuración), enjambre de langostas o abejas.",
+  "example_en": "Fish schools, starling murmurations, bee swarms, locust clouds.",
+  "function_es": "Confusión sensorial de predadores, navegación de alta eficiencia aerodinámica e inteligencia distribuida.",
+  "function_en": "Sensory confusion of predators, aerodynamically optimal drafting, distributed cognition.",
+  "significance_es": "La morfología trasciende la materia sólida y pasa a existir en el tiempo: una morfología del movimiento puro.",
+  "significance_en": "Morphology transcends fixed matter into time: a true geometry of pure collective movement.",
+  "svgType": "swarm",
+  "traits_es": [
+   "Morfología temporal",
+   "Reglas locales",
+   "Vórtices y nubes dinámicas"
+  ],
+  "traits_en": [
+   "Temporal morphology",
+   "Local behavioral rules",
+   "Dynamic vortices and clouds"
+  ],
+  "family_id": "F7_MODULE_COLLECTIVE",
+  "operator_chain": [
+   "repetition",
+   "coordination"
+  ]
+ },
+ {
+  "id": 101,
+  "categoryId": 7,
+  "title_es": "Red ecológica / morfología relacional",
+  "title_en": "Ecological Network / Relational Morphology",
+  "geometry_es": "Estructura topológica no espacial donde las especies son nodos y las interacciones son aristas.",
+  "geometry_en": "Relational network defined by interactions connecting species across an ecosystem.",
+  "example_es": "Redes tróficas, redes mutualistas planta-polinizador, ciclos biogeoquímicos de nutrientes.",
+  "example_en": "Food webs, plant-pollinator mutualisms, host-parasite networks, nutrient cycles.",
+  "function_es": "Resiliencia ecológica del bioma, transferencia de energía y amortiguamiento de colapsos tróficos.",
+  "function_en": "Biomic ecological stability, energy transfer efficiency, cascading collapse damping.",
+  "significance_es": "El horizonte más abstracto de la morforresonancia: la forma entendida como arquitectura matemática de relaciones.",
+  "significance_en": "The highest horizon of morphoresonance: form understood purely as relational topological geometry.",
+  "svgType": "ecological_network",
+  "traits_es": [
+   "Topología relacional",
+   "Nodos y aristas",
+   "Morfología inmaterial"
+  ],
+  "traits_en": [
+   "Relational topology",
+   "Nodes and edges",
+   "Immaterial morphology"
+  ],
+  "family_id": "F7_MODULE_COLLECTIVE",
+  "operator_chain": [
+   "repetition",
+   "integration",
+   "relational-structuring"
+  ]
+ }
+]
